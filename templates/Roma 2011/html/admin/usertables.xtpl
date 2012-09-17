@@ -1,0 +1,117 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: usertables -->
+<script type="text/javascript">
+   function CheckAll()
+   {
+      for (var i = 0; i < document.admin.elements.length; i++)
+      {
+         if(document.admin.elements[i].type == "checkbox")
+         {
+            document.admin.elements[i].checked = !(document.admin.elements[i].checked);
+         }
+      }
+}
+</script>
+{FORM}
+{HIDDEN_FIELDS}
+<div class="admin_table">
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="{VIEW_WIDTH}">
+   <tr>
+      <td align="left" valign="top">
+         <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="admin2" width="100%" colspan="2">{USERTBL_PAGE_TITLE}<br /></td>
+            </tr>
+            <tr>
+               <td class="form1">{USERTBL_TABLES_LABEL}</td>
+               <td class="form1" width="100%">
+                  <select class="fpull1" name="table" size="1">
+<!-- BEGIN: Table -->
+                     <option value="{USERTBL_TABLE_VALUE}" {USERTBL_TABLE_SELECTED}>{USERTBL_TABLE_CAPTION}</option>
+<!-- END: Table -->
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td class="form1">&nbsp;</td>
+               <td class="form2" width="100%">
+                  <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+                     <tr>
+                        <td colspan="2" width="100%">
+                           <input  class="fbuttonup1" name="tables_tupleView" type="submit" value="{BTN_VIEW_LABEL}" alt="{BTN_VIEW_ALT}" title="{BTN_VIEW_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                           <a id="tables_tupleAdd" class="lbutton1" href="{BTN_ADD_URL}" title=""><input class="fbuttonup1" type="button" value="&nbsp;{BTN_ADD_LABEL}&nbsp;" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></a>
+                        </td>
+                     </tr>
+                  </table>
+              </td>
+            </tr>
+<!-- BEGIN: Msg -->
+            <tr>
+               <td class="admin3" width="100%" colspan="2">{USERTBL_MSG}<br></td>
+            </tr>
+<!-- END: Msg -->
+            <tr>
+               <td class="admin2" width="100%" colspan="2">{USERTBL_ACTION_TITLE}<br></td>
+            </tr>
+         </table>
+<!-- BEGIN: EditTuples -->
+         <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="form1"><label for="descr">{USERTBL_DESCR_1}</label></td>
+               <td class="form1" width="100%"><input class="finput1" id="descr" type="text" name="descr" size="50" value="{USERTBL_DESCR1_VALUE}" /></td>
+            </tr>
+            <tr>
+               <td class="form1"><label for="descr2">{USERTBL_DESCR_2}</label></td>
+               <td class="form1" width="100%"><input class="finput1" id="descr2" type="text" name="descr2" size="150" value="{USERTBL_DESCR2_VALUE}" /></td>
+            </tr>
+            <tr>
+               <td class="form2" width="100%" colspan="2">
+                  <input  class="fbuttonup1" type="submit" value="{BTN_EDIT_LABEL}" alt="{BTN_EDIT_ALT}" title="{BTN_EDIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+            </tr>
+         </table>
+<!-- END: EditTuples -->
+<!-- BEGIN: AddTuples -->
+         <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="form1"><label for="descr">{USERTBL_DESCR_1}</label></td>
+               <td class="form1" width="100%"><input class="finput1" id="descr" type="text" name="descr" size="50" value="" /></td>
+            </tr>
+            <tr>
+               <td class="form1"><label for="descr2">{USERTBL_DESCR_2}</label></td>
+               <td class="form1" width="100%"><input class="finput1" id="descr2" type="text" name="descr2" size="150" value="" /></td>
+            </tr>
+            <tr>
+               <td class="form2" width="100%" colspan="2">
+                  <input  class="fbuttonup1" type="submit" value="{BTN_ADD_LABEL}" alt="{BTN_ADD_ALT}" title="{BTN_ADD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+            </tr>
+         </table>
+<!-- END: AddTuples -->
+<!-- BEGIN: ViewTuples -->
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tbody>
+               <tr>
+                  <td class="subtitle">{USERTBL_TITLE_DESC1}</td>
+                  <td class="subtitle1">{USERTBL_TITLE_DESC2}</td>
+                  <td class="subtitle1" colspan="2">{USERTBL_TITLE_ACTIONS}</td>
+               </tr>
+<!-- BEGIN: Rows -->
+               <tr>
+                  <td class="{TD_CLASS}">{USERTBL_DESC1}</td>
+                  <td class="{TD_CLASS}">{USERTBL_DESC2}</td>
+                  <td class="{TD_CLASS}" align="center"><a href="{USERTBL_EDIT_URL}">{USERTBL_EDIT_LABEL}</a></td>
+                  <td class="{TD_CLASS}" align="center"><a href="{USERTBL_DEL_URL}">{USERTBL_DEL_LABEL}</a></td>
+               </tr>
+<!-- END: Rows -->
+            </tbody>
+         </table>
+<!-- END: ViewTuples -->
+      </td>
+   </tr>
+</table>
+</div><!-- /admin_table -->  
+</form>
+<!-- END: usertables -->
+{FILE "html/footer.xtpl"}

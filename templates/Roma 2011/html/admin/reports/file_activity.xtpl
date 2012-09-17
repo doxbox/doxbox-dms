@@ -1,0 +1,124 @@
+<!-- BEGIN: Report1 -->
+<tr>
+   <td class='title1' colspan='3'>{REPORT_TITLE_USERNAME}</td>
+   <td class='title1'>{REPORT_TITLE_TOTAL}</td></tr>
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td class='admin2' align='left' colspan='4'>{REPORT_FILES_TITLE}</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+
+<!-- BEGIN: Files -->
+<tr>
+   <td class='{REPORT_TD_CLASS}' colspan='2'>{REPORT_FILES_USERNAME}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_FILES_COUNT}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_FILES_SIZE}</td>
+</tr>
+<!-- END: Files -->
+<tr>
+   <td class='title1' colspan='2'>{REPORT_FILES_GT_LABEL}</td>
+   <td class='title1'>{REPORT_FILES_GT_COUNT}</td>
+   <td class='title1'>{REPORT_FILES_GT_SIZE}</td>
+</tr>
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+
+<tr>
+   <td class='admin2' align='left' colspan='4'>{REPORT_FOLDERS_TITLE}</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<!-- BEGIN: Folders -->
+<tr>
+<td class='{REPORT_TD_CLASS}' colspan='3'>{REPORT_FOLDERS_USERNAME}</td>
+<td class='{REPORT_TD_CLASS}'>{REPORT_FOLDERS_COUNT}</td>
+</tr>
+<!-- END: Folders -->
+<tr>
+   <td class='title1' colspan='3'>{REPORT_FOLDERS_GT_LABEL}</td>
+   <td class='title1'>{REPORT_FOLDERS_GT_COUNT}</td>
+</tr>
+<!-- BEGIN: Syslog -->
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td  class='admin2' colspan='4'>{REPORT_SYSLOG_TITLE}</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<!-- BEGIN: Users -->
+<tr>
+   <td class='{REPORT_TD_CLASS}' colspan='3'>{REPORT_SYSLOG_USERNAME}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_SYSLOG_COUNTS}</td>
+</tr>
+<!-- END: Users -->
+<tr>
+   <td class='title1' colspan='3'>{REPORT_SYSLOG_GT_TITLE}</td>
+   <td class='title1'>{REPORT_SYSLOG_GT_COUNTS}</td>
+</tr>
+<!-- END: Syslog -->
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td  class='admin2' align='left' colspan='4'>{REPORT_LOGGEDIN_TITLE}</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<!-- BEGIN: LoggedinUsers -->
+<tr>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_LOGGEDIN_USERNAME}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_LOGGEDIN_SESSION}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_LOGGEDIN_IP}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_LOGGEDIN_HOST}</td>
+</tr>
+<!-- END: LoggedinUsers -->
+<tr>
+   <td align='left' colspan='3'>&nbsp;</td>
+   <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td class='title1' colspan='3'>{REPORT_TOP_DNLD_FILE_TITLE}</td>
+   <td class='title1'>{REPORT_TOP_DNLD_TOTAL_TITLE}</td>
+</tr>
+<tr>
+  <td align='left' colspan='3'>&nbsp;</td>
+  <td align='left'>&nbsp;</td>
+</tr>
+<tr>
+   <td class='title1' colspan='3'>{REPORT_TOP_DNLD_TITLE}</td>
+   <td class='title1'>&nbsp;</td>
+</tr>
+<tr>
+<td align='left' colspan='3'>&nbsp;</td>
+<td align='left'>&nbsp;</td>
+</tr>
+
+<!-- BEGIN: TopFile -->
+<tr>
+   <td class='{REPORT_TD_CLASS}' colspan='3'>{REPORT_TOP_DNLD_FILE}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_TOP_DNLD_COUNT}</td>
+</tr>
+<!-- END: TopFile -->
+<!-- END: Report1 -->

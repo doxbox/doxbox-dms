@@ -1,0 +1,76 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: ViewFileLog -->
+{FORM}
+{HIDDEN_FIELDS}
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="browse0" width="100%" colspan="20">{VIEW_LOG_FOR}</td>
+            </tr>
+            <tr>
+               <td class="title1">{VIEW_LOG_TITLE_VERSION}</td>
+               <td class="title1">{VIEW_LOG_TITLE_OWNER}</td>
+<!-- BEGIN: DiffFromToTitle -->
+               <td class="title1">{VIEW_LOG_TITLE_DIFF_FROM}</td>
+               <td class="title1">{VIEW_LOG_TITLE_DIFF_TO}</td>
+<!-- END: DiffFromToTitle -->
+               <td class="title1">{VIEW_LOG_TITLE_FILE}</td>
+<!-- BEGIN: PeerStatusTitle -->
+               <td class="title1" align="center">{VIEW_LOG_TITLE_PEER_STATUS}</td>
+<!-- END: PeerStatusTitle -->
+               <td class="title1">{VIEW_LOG_TITLE_MODIFIED}</td>
+               <td class="title1">{VIEW_LOG_TITLE_LAST_MOD}</td>
+            </tr>
+<!-- BEGIN: FileVersions -->
+            <tr>
+               <td class="{FILE_TD_CLASS}" valign="top">{FILE_VERSION}</td>
+               <td class="{FILE_TD_CLASS}" valign="top">{FILE_CREATOR}</td>
+<!-- BEGIN: DiffFromToRadio -->
+               <td class="{FILE_TD_CLASS}" valign="top"><input type="radio" name="diff_from" value="{FILE_ID}" /></td>
+               <td class="{FILE_TD_CLASS}" valign="top"><input type="radio" name="diff_to" value="{FILE_ID}" /></td>
+<!-- END: DiffFromToRadio -->
+
+               <td class="{FILE_TD_CLASS}" valign="top" align="left" width="70%" style="white-space: nowrap">
+                  <table cellspacing="2" cellpadding="0" border="0">
+                     <tr>
+                        <td>{FILE_ACTION_LOG}</td>
+                        <td>{FILE_ACTION_HOTLINK}</td>
+                        <td>{FILE_ACTION_DEL}</td>
+                        <td>{FILE_ACTION_MOD}</td>
+                        <td>{FILE_ACTION_INLINE}</td>
+                        <td>{FILE_ACTION_ACL}</td>
+                        <td>{FILE_ACTION_LINK}</td>
+                        <td>{FILE_ACTION_COPY}</td>
+                        <td>{FILE_ACTION_MOVE}</td>
+                        <td>{FILE_ACTION_UPD}</td>
+                        <td>{FILE_ACTION_DNLD}</td>
+                        <td>{FILE_ACTION_COMMENT}</td>
+                        <td>{FILE_ACTION_CHECKOUT}</td>
+                        <td>{FILE_ACTION_EMAIL}</td>
+                        <td>{FILE_ACTION_MON}</td>
+                        <td>{FILE_ACTION_RELATED}</td>
+                        <td>{FILE_ACTION_VIEW}</td>
+                        <td>{FILE_ACTION_GENTHUMB}</td>
+                        <td><font size="2" style="font-weight:bold"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="4" alt=""></img>[{FILE_NAME_VERSION}]</font><br />{FILE_DESCRIPTION}</td>
+                     </tr>
+                  </table>
+               </td>
+               <td class="{FILE_TD_CLASS}" valign="top" align="center"><div class="capproved">&#8212; A P P R O V E D &#8212;</div></td>
+               <td class="{FILE_TD_CLASS}" valign="top">{FILE_DATE_MODIFIED}</td>
+               <td class="{FILE_TD_CLASS}" valign="top">{FILE_UPDATOR}</td>
+            </tr>
+<!-- END: FileVersions -->
+<!-- BEGIN: DiffFromToButtons -->
+            <tr>
+               <td colspan="10" class="form2"><input  class="fbuttonup1" type="submit" value="{BTN_SHOW_DIFF}" alt="{BTN_SHOW_DIFF_ALT}" title="{BTN_SHOW_DIFF_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+            </tr>
+<!-- END: DiffFromToButtons -->
+         </table>
+      </td>
+   </tr>
+</table>
+</form>
+<!-- END: ViewFileLog -->
+{FILE "html/footer.xtpl"}

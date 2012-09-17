@@ -1,0 +1,96 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: Jupload -->
+
+<script language="Javascript" type="text/javascript">
+     if(!navigator.javaEnabled()){
+          alert('JAVA required to run the Jupload Applet. Please Install JAVA');
+     }
+</script>
+
+<form name="owl_data">
+<div class="table_container"> 
+<table class="log_table width_driver" cellpadding="7" cellspacing="0" border="0">
+      <tr>
+         <td class="browse0" width="100%" colspan="20">{JUPLOAD_PAGE_TITLE}</td>
+      </tr>
+      <tr>
+      <td align="left" valign="top">
+         <table class="table_inside" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <tr>
+              <td colspan="2" align="center">
+                   <applet
+                            code="wjhk.jupload2.JUploadApplet"
+                            name="JUpload"
+                            archive="wjhk.jupload.jar"
+                            width="100%"
+                            height="300"
+                            mayscript
+                            alt="The java pugin must be installed.">
+                    <!-- param name="CODE"    value="wjhk.jupload2.JUploadApplet" / -->
+                    <!-- param name="ARCHIVE" value="wjhk.jupload.jar" / -->
+                    <!-- param name="type"    value="application/x-java-applet;version=1.5" /  -->
+        <!-- BEGIN: Normal -->
+                    <param name="debugLevel" value="0" />
+                    <param name="showStatusBar" value="false" />
+                    <param name="showLogWindow" value="false" />;
+        <!-- END: Normal -->
+        <!-- BEGIN: Debug -->
+                    <param name="debugLevel" value="10" />
+                    <param name="showStatusBar" value="true" />
+                    <param name="showLogWindow" value="true" />;
+        <!-- END: Debug -->
+                    <param name="postURL" value="{POST_URL}" />
+                    <param name="afterUploadURL" value="{AFTER_UPLOAD_URL}" />
+                    <param name="scriptable" value="false" />
+                    <param name="stringUploadSuccess" value="SUCCESS" />
+                    <param name="nbFilesPerRequest" value="1" />
+                    <param name="formdata" value="owl_data" />
+                    <!-- <param name="maxChunkSize" value="500000" / --> 
+                    Java 1.5 or higher plugin required.
+                  </applet>
+             </td>
+          </tr>         
+               <tr>
+                  <td class="form1"><label for="title">{FILE_TITLE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" type="text" name="title" size="60" value="" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="metadata">{FILE_KEYWORDS_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="metadata" type="text" name="metadata" size="60" value="" />
+<!-- BEGIN: SaveKeyWords -->
+                                  &nbsp;(<input class="fcheckbox1" type="checkbox" name="savekeyword" value="1" />&nbsp;{FILE_KEYWORDS_SAVE_LABEL})
+<!-- END: SaveKeyWords -->
+                  </td>
+                           </tr>
+<!-- BEGIN: SaveKeyWordPick -->
+               <tr>
+                  <td class="form1">{FILE_KEYWORDS_SAVED_LABEL}</td>
+                  <td class="form1" width="100%">
+                                     <select class="fpull1" name="keywordpick[]" size="5" multiple="multiple" >
+   <!-- BEGIN: SelectBox -->
+                                    <option value="{SELECT_BOX.KEYWORDS_SELECTBOX_VALUE}"{SELECT_BOX.KEYWORDS_SELECTBOX_SELECTED}>{SELECT_BOX.KEYWORDS_SELECTBOX_LABEL}</option>
+   <!-- END: SelectBox -->
+                                     </select>
+                  </td>
+               </tr>
+<!-- END: SaveKeyWordPick -->
+               <tr>
+                  <td class="form1"><label for="major_revision">{FILE_MAJORVERSION_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="major_revision" type="text" name="major_revision" size="5" value="{FILE_MAJORVERSION_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="minor_revision">{FILE_MINORVERSION_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="minor_revision" type="text" name="minor_revision" size="5" value="{FILE_MINORVERSION_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{FILE_DESC_LABEL}<font color="red"><b>&nbsp;{FILE_DESC_REQUIRED}&nbsp;&nbsp;</b></font></td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="description" rows="10" cols="50"></textarea></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+</div>
+</form>
+<!-- END: Jupload -->
+{FILE "html/footer.xtpl"}

@@ -1,0 +1,63 @@
+<!-- BEGIN: Report4 -->
+<tr>
+   <td class="form1">{REPORT_FILTER_LABEL}</td>
+   <td colspan="19" class="form1" width="100%">
+      <input type="text" name="filter" value="{REPORT_FILTER_VALUE}" />
+      <input  class="fbuttonup1" type="submit" value="{REPORT_BTN_SUBMIT_LABEL}" alt="{REPORT_BTN_SUBMIT_ALT}" title="{REPORT_BTN_SUBMIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <input  class="fbuttonup1" name="export" type="submit" value="{REPORT_BTN_EXPORT_LABEL}" alt="{REPORT_BTN_EXPORT_ALT}" title="{REPORT_BTN_EXPORT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+   </td>
+</tr>
+<tr>
+   <td align="left" colspan="19">&nbsp;</td>
+   <td align="left">&nbsp;</td>
+</tr>
+<tr>
+   <td class="admin2" align="left" colspan="19">{REPORT_TITLE}</td>
+   <td align="left">&nbsp;</td>
+</tr>
+<tr>
+   <td align="left" colspan="19">&nbsp;</td>
+   <td align="left">&nbsp;</td>
+</tr>
+<tr>
+   <td align="left" class="title1">{REPORT_NAME_TITLE}</td>
+   <td align="left" class="title1">{REPORT_USERNAME_TITLE}</td>
+   <td align="left" class="title1">{REPORT_FILEFOLDER_TITLE}</td>
+   <td align="center" class="title1">{REPORT_READ_TITLE}</td>
+   <td align="center" class="title1">{REPORT_FLD_WRITE_TITLE}</td>
+   <td align="center" class="title1">{REPORT_VIEWLOG_TITLE}</td>
+   <td align="center" class="title1">{REPORT_DELETE_TITLE}</td>
+   <td align="center" class="title1">{REPORT_COPY_TITLE}</td>
+   <td align="center" class="title1">{REPORT_MOVE_TITLE}</td>
+   <td align="center" class="title1">{REPORT_MODIFY_TITLE}</td>
+   <td align="center" class="title1">{REPORT_UPDATE_TITLE}</td>
+   <td align="center" class="title1">{REPORT_COMMENT_TITLE}</td>
+   <td align="center" class="title1">{REPORT_CHECKIN_TITLE}</td>
+   <td align="center" class="title1">{REPORT_EMAIL_TITLE}</td>
+   <td align="center" class="title1">{REPORT_SEARCH_TITLE}</td>
+   <td align="center" class="title1">{REPORT_SETACL_TITLE}</td>
+   <td align="center" class="title1">{REPORT_MONITOR_TITLE}</td>
+</tr>
+
+<!-- BEGIN: User -->
+<!-- BEGIN: UserInfo -->
+<tr>
+   <td class="{REPORT_TD_STYLE}">{REPORT_NAME_VALUE}</td>
+   <td class="{REPORT_TD_STYLE}">{REPORT_USERNAME_VALUE}</td>
+   <td class="{REPORT_TD_STYLE}" colspan="16">{REPORT_ACCESS_VALUE}</td>
+</tr>
+<!-- END: UserInfo -->
+
+<!-- BEGIN: Access -->
+<tr>
+   <td align="left" colspan="2" class="{REPORT_TD_STYLE}">&nbsp;</td>
+   <td align="left" class="{REPORT_TD_STYLE}"><img src="{THEME}/img/icon_filetype/{REPORT_FILEFOLDER_IMG}.gif" border="0" alt="" />&nbsp;{REPORT_FILEFOLDER_PATH}</td>
+<!-- BEGIN: ACL -->
+   <td align="center" class="{REPORT_TD_STYLE}">{ACL}</td>
+<!-- END: ACL -->
+</tr>
+<!-- END: Access-->
+<!-- END: User -->
+
+
+<!-- END: Report4 -->

@@ -1,0 +1,94 @@
+<!-- BEGIN: UpdFiles -->
+{FORM}
+{HIDDEN_FIELDS}
+  <div class="table_container"> 
+   <table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+         <td class="browse0" width="100%" colspan="20">{UPD_FILE_PAGE_TITLE}</td>
+      </tr>   
+      <tr>
+         <td align="left" valign="top">
+            <table class="table_inside" cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: Doctypes -->
+                <tr class="tr_white">
+                    <td class="td_label">Document type:</td>
+                    <td class="td_input">NOT IMPLEMENTED YET</td>
+                </tr>
+<!-- END: Doctypes -->
+<!-- BEGIN: FileUploads -->
+               <tr>
+                  <td class="form1">{FILE_UPLOAD_LABEL}</td>
+<!-- BEGIN: UpdURL -->
+                    <td class="td_input"><input type="text" class="textfield" name="{FILE_UPLOAD_FIELDNAME}" size="60" maxlength="255" value="http://"/>
+<!-- END: UpdURL -->
+<!-- BEGIN: UpdOther -->
+                  <td class="form1" width="100%"><input class="finput1" type="file" name="{FILE_UPLOAD_FIELDNAME}" size="80" maxlength="512" />
+<!-- END: UpdOther -->
+<!-- BEGIN: Scan -->
+                    <div class="small_button"><a href="{FILE_UPLOAD_SCAN_URL}"   title="{FILE_UPLOAD_SCAN_ALT}" alt="{FILE_UPLOAD_SCAN_ALT}"  >{FILE_UPLOAD_SCAN_LABEL}</a></div>
+                    {FILE_UPLOAD_SCAN_JS}
+<!-- END: Scan -->
+                    </td>
+                </tr>
+<!-- END: FileUploads -->
+<!-- BEGIN: indexoptional -->
+               <tr>
+                  <td class="form1"><label for="index_file">{FILE_INDEXOPTIONAL_LABEL}</label></td>
+                  <td class="form1" width="100%">input class="fcheckbox1" type="checkbox" name="index_file" value="1" /></td>
+               </tr>
+<!-- END: indexoptional -->
+<!-- BEGIN: Reviewers -->
+               <tr>
+                  <td class="form1">{FILE_REVIEWER_LIST_LABEL}</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="reviewers[]" size="10" multiple="multiple" >
+<!-- BEGIN: SelectBox -->
+                     <option value="{SELECT_BOX.REVIEWERS_SELECTBOX_VALUE}"{SELECT_BOX.REVIEWERS_SELECTBOX_SELECTED}>{SELECT_BOX.REVIEWERS_SELECTBOX_LABEL}</option>
+<!-- END: SelectBox -->
+                  </td>
+               </tr>
+<!-- END: Reviewers -->
+<!-- BEGIN: VersionType -->
+               <tr>
+                  <td class="form1">{FILE_VERSIONTYPE_LABEL}</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="versionchange" size="1">
+                     <option value="major_revision">{FILE_MAJORVERSION_LABEL}</option>
+                     <option selected="selected" value="minor_revision">{FILE_MINORVERSION_LABEL}</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1">{FILE_DESC_LABEL}:</td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="newdesc" rows="10" cols="50">{FILE_DESC_VALUE}</textarea></td>
+               </tr>
+<!-- END: VersionType -->
+<!-- BEGIN:  UpdInLine -->
+               <tr>
+                  <td class="form1">{FILE_INLINE_LABEL}:</td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="document_content" rows="10" cols="50">{FILE_INLINE_VALUE}</textarea></td>
+               </tr>
+<!-- END: UpdInLine -->
+               <tr>
+                  <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
+                  <td class="right_text" width="100%">
+                     <input  class="fbuttonup1" name="send_file_x" type="submit" value="{FILE_BTN_UPD_FILE}" alt="{FILE_BTN_UPD_FILE_ALT}" title="{FILE_BTN_UPD_FILE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- BEGIN:  CancelBtn -->
+                     <input  class="fbuttonup1" type="submit" value="{FILE_BTN_CANCEL}" alt="{FILE_BTN_CANCEL_ALT}" title="{FILE_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- END:  CancelBtn --> 
+                  </td>
+               </tr>
+            </table>
+         </td>
+	  </tr>
+   </table>
+   </div>
+</form>
+
+<!-- BEGIN: UpdNote -->
+                <tr class="tr_blue">
+                    <td class="td_label_textarea">{FILE_ADDNOTE_LABEL}</td>
+                    <td class="td_input"><textarea class="textarea" name="note_content" style="height: 190px;"></textarea></td>
+                </tr>
+<!-- END: UpdNote -->
+
+<!-- END: UpdFiles -->

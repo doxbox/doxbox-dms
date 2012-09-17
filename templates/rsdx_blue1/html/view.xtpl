@@ -1,0 +1,288 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: ViewFile -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: ViewFileTitle -->
+               <tr>
+                  <td class="browse0" width="100%" colspan="20">{VIEW_FILE_TITLE}</td>
+               </tr>
+<!-- END: ViewFileTitle -->
+
+<!-- BEGIN: Details -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td class="form1">{FILE_TITLE_LABEL}</td>
+      <td class="form1" width="100%">
+         <table cellspacing="2" cellpadding="0" border="0">
+            <tr>
+               <td><font size="2" style="font-weight:bold">{FILE_TITLE}</font><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="4" alt=""></img></td>
+               <td>{FILE_ACTION_LOG}</td>
+               <td>{FILE_ACTION_HOTLINK}</td>
+               <td>{FILE_ACTION_DEL}</td>
+               <td>{FILE_ACTION_MOD}</td>
+               <td>{FILE_ACTION_INLINE}</td>
+               <td>{FILE_ACTION_ACL}</td>
+               <td>{FILE_ACTION_LINK}</td>
+               <td>{FILE_ACTION_COPY}</td>
+               <td>{FILE_ACTION_MOVE}</td>
+               <td>{FILE_ACTION_UPD}</td>
+               <td>{FILE_ACTION_DNLD}</td>
+               <td>{FILE_ACTION_COMMENT}</td>
+               <td>{FILE_ACTION_CHECKOUT}</td>
+               <td>{FILE_ACTION_EMAIL}</td>
+               <td>{FILE_ACTION_MON}</td>
+               <td>{FILE_ACTION_RELATED}</td>
+               <td>{FILE_ACTION_VIEW}</td>
+               <td>{FILE_ACTION_GENTHUMB}</td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{FILE_LINK_LABEL}</td>
+      <td class="form1" width="100%">{FILE_LINKS}</td>
+   </tr>
+   <tr>
+      <td class="form1">{FILE_NAME_LABEL}</td>
+      <td class="form1" width="100%">{FILE_NAME} ({FILE_SIZE})</td>
+   </tr>
+<!-- BEGIN: RelatedDocs -->
+   <tr>
+      <td class="form1"><label for="{RELATED_LABEL_ID}">{RELATED_LABEL_NAME}</td>
+      <td class="form1">&nbsp;</td>
+   </tr>
+   <tr>
+      <td class="form1">&nbsp;</td>
+      <td class="form1">{RELATED_FILE_LINK}</td>
+   </tr>
+<!-- END: RelatedDocs -->
+<!-- BEGIN: MP3 -->
+   <tr>
+      <td class="form1">{FILE_MP3_LABEL}</td>
+      <td class="form1">&nbsp;</td>
+   </tr>
+   <tr>
+      <td class="form1" style="text-align:right; vertical-align:top;">{FILE_MP3_SONG_LABEL}
+<br />{FILE_MP3_ALBUM_LABEL}
+<br />{FILE_MP3_BITRATE_LABEL}
+<br />{FILE_MP3_DURATION_LABEL}
+<br />{FILE_MP3_GENRE_LABEL}
+<br />{FILE_MP3_COMMENT_LABEL}
+      </td>
+      <td class="form1" style="vertical-align:top;">{FILE_MP3_SONG}
+<br />A Day Without Rain             
+<br />64 kbps&nbsp;&nbsp;22050 Hz&nbsp;Joint Stereo 
+<br />03:38
+<br />
+<br />                           
+      </td>
+   </tr>
+<!-- END: MP3 -->
+   <tr>
+      <td class="form1">{FILE_OWNER_LABEL}</td>
+      <td class="form1" width="100%">{FILE_OWNER}&nbsp;({FILE_OWNER_GROUP})</td>
+   </tr>
+   <tr>
+      <td class="form1">{FILE_METADATA_LABEL}</td>
+      <td class="form1" width="100%">{FILE_METADATA}</td>
+   </tr>
+<!-- BEGIN: DocFields -->
+<!-- BEGIN: Row -->
+<!-- BEGIN: Heading -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">{DOC_TYPE_HEADING}</td>
+                     </tr>
+<!-- END: Heading -->
+
+<!-- BEGIN: PickList -->
+                     <tr>
+                        <td  class="form1">Language:<font color=red><b>&nbsp;&nbsp;&nbsp;</b></font></td>
+                        <td  class="form1"><input class="readonly" disabled="disabled" type="picklist" name="Language" size="10" value= "English" /></td>
+                     </tr>
+<!-- END: PickList -->
+<!-- BEGIN: Text -->
+                     <tr>
+                        <td  class="form1">{DOC_TYPE_TEXT_LABEL}{DOC_TYPE_TEXT_REQ}</td>
+                        <td  class="form1"><input class="{DOC_TYPE_TEXT_CLASS}" {DOC_TYPE_TEXT_DISABLED} type="{DOC_TYPE_TEXT_TYPE}" name="{DOC_TYPE_TEXT_NAME}" size="{DOC_TYPE_TEXT_SIZE}" value= "{DOC_TYPE_TEXT_VALUE}" /></td>
+                     </tr>
+<!-- END: Text -->
+<!-- BEGIN: TextArea -->
+                     <tr>
+                        <td class="form1">{DOC_TYPE_TEXTAREA_LABEL}{DOC_TYPE_TEXTAREA_REQ}</td>
+                        <td class="form1" width="100%"><textarea class="ftext1" name="{DOC_TYPE_TEXTAREA_NAME}" rows="{DOC_TYPE_TEXTAREA_SIZE}" cols="50" disabled="disabled">{DOC_TYPE_TEXTAREA_VALUE}</textarea></td>
+                     </tr>
+<!-- END: TextArea -->
+<!-- BEGIN: CheckBox -->
+                     <tr>
+                        <td class="form1">{DOC_TYPE_CHECKBOX_LABEL}{DOC_TYPE_CHECKBOX_REQ}</td>
+                        <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="{DOC_TYPE_CHECKBOX_NAME}" value="{DOC_TYPE_CHECKBOX_VALUE}" {DOC_TYPE_CHECKBOX_CHECKED} {DOC_TYPE_CHECKBOX_DISABLED} /></td>
+                     </tr>
+<!-- END: CheckBox -->
+<!-- BEGIN: Radio -->
+                     <tr>
+                        <td class="form1">{DOC_TYPE_RADIO_LABEL}</td>
+                        <td class="form1" width="100%" {DOC_TYPE_RADIO_EXTENDED}>
+   <!-- BEGIN: Input -->
+                           <input {DOC_TYPE_RADIO_READONLY} type="radio" value="{DOC_TYPE_RADIO_VALUE}" name="{DOC_TYPE_RADIO_NAME}" {DOC_TYPE_RADIO_CHECKED} />{DOC_TYPE_RADIO_VALUE_LABEL}
+   <!-- END: Input -->
+                        </td>
+                     </tr>
+<!-- END: Radio -->
+<!-- BEGIN: Table -->
+                     <tr>
+                        <td class="form1" width="10%">{DOC_TYPE_TABLE_LABEL} <font color=red><b>&nbsp;{DOC_TYPE_TABLE_REQ}&nbsp;</b></font></td>
+                        <td class="form1" width="90%"><select disabled="disabled" class="fpull1" name="{DOC_TYPE_TABLE_NAME}" size="1">
+<!-- BEGIN: Value -->
+                              <option value="{DOC_TYPE_TABLE_VALUE}" {DOC_TYPE_TABLE_SELECTED}>{DOC_TYPE_TABLE_VALUE}</option>
+<!-- END: Value -->
+                           </select>
+                        </td>
+                     </tr>
+<!-- END: Table -->
+
+<!-- BEGIN: Url -->
+                     <tr>
+                        <td class="form1" width="10%">{DOC_TYPE_URL_LABEL} <font color=red><b>&nbsp;{DOC_TYPE_URL_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="100%"><a href="{DOC_TYPE_TYPE_URL_LOC}?sess=0" target="_new">{DOC_TYPE_TYPE_URL_LABEL}</a></td>
+                     </tr>
+<!-- END: Url -->
+<!-- BEGIN: MultipleCheck -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">{DOC_TYPE_MCHECK_LABEL}{DOC_TYPE_MCHECK_REQ}</td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                           <table class="form1" width="100%">
+   <!-- BEGIN: Input -->
+                              <tr>
+                                 <td class="form9" width="1%"><input class="fcheckbox1" {DOC_TYPE_MCHECK_DISABLED} type="checkbox" name="{DOC_TYPE_MCHECK_NAME}" value="{DOC_TYPE_MCHECK_VALUE}" {DOC_TYPE_MCHECK_CHECKED} /></td>
+                                 <td  class="form9">{DOC_TYPE_MCHECK_VALUE}</td>
+                              </tr>
+   <!-- END: Input -->
+                           </table>
+                        </td>
+                     </tr>
+<!-- END: MultipleCheck -->
+<!-- BEGIN: Separator -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">{DOC_TYPE_SEP_LABEL}</td>
+                     </tr>
+<!-- END: Separator -->
+<!-- END: Row -->
+<!-- BEGIN: Footer -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">&nbsp;</td>
+                     </tr>
+<!-- END: Footer -->
+<!-- END: DocFields -->
+
+   <tr>
+      <td class="form1">{FILE_DESCRIPTION_LABEL}</td>
+      <td class="form1" width="100%">{FILE_DESCRIPTION}</td>
+   </tr>
+<!-- END: Details -->
+<!-- BEGIN: Video -->
+               <tr>
+                  <td align="left"><p align="{VIEW_ALIGN}">
+                     <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                           <td>
+<script type="text/javascript"src="scripts/flowplayer/js/jquery.tools.min.js?v=1"></script>
+<script src="scripts/flowplayer/js/jquery.mousewheel.js"></script>
+<script src="scripts/flowplayer/js/flowplayer.playlist-3.0.7.min.js"></script>
+<link rel="stylesheet" type="text/css" href="scripts/flowplayer/playlist.css"/>
+<script>
+$(function() {
+    // setup scrolling for the playlist elements
+    $("div.playlist").scrollable({
+        items:'div.clips',
+        vertical:true,
+        next:'a.down',
+        prev:'a.up'
+    });
+    
+    // setup player 
+    $f("player", "scripts/flowplayer/swf/flowplayer-3.1.4.swf", {
+    
+        clip: {
+           baseUrl: '{VIDEO_BASE_URL}',
+           autoPlay: true,  
+           autoBuffering: true
+        } 
+        
+    // use playlist plugin to enable playlist items work as movie clips
+    }).playlist("div.clips", {loop:true});       
+});
+</script>
+
+
+<div style="float:left;width:150px">
+    <a class="go up"></a>
+    <div class="playlist">
+        <div class="clips low">
+<!-- BEGIN: Track -->
+        <a href="{VIDEO_TRACK_URL}" {VIDEO_TRACK_CLASS}>{VIDEO_TRACK_NAME}<br /></a>
+<!-- END: Track -->
+        </div>
+    </div>
+    <a class="go down"></a>
+
+</div>
+<div style="float:left;width:450px">
+<a id="player" class="player plain" style="float:left;margin-top:25px;" href="{VIDEO_FIRST_TRACK}">
+<div style="position:relative; bottom: 110px; right: 120px; z-index:0;">
+    <img src="scripts/flowplayer/img/splash.png" />
+</div>
+<div style="position: relative; bottom:460px; z-index:99;">
+    <img src="scripts/flowplayer/img/play.png"/>
+</div>
+</a>
+</div>
+    <!-- accordion setup -->
+    <script>
+        $(function() {
+            var index = $("#right ul").index($("#right .selected").parents("ul"));
+            $("#right").tabs("#right ul", {tabs: 'h2', initialIndex: index});
+            $("#right h2").eq(index).addClass("active");
+        });
+        
+        // remove numbering
+        $("#right h2").each(function() {
+          var t = $(this).text();
+          $(this).text(t.substring(3));
+        });
+    </script>
+<img src="{THEME}/ui_misc/x_clear.gif" height="12" width="1" alt=""></img>
+</p></td>
+		</tr>
+</table>
+</td>
+</tr>
+<!-- END: Video -->
+
+<!-- BEGIN: Other -->
+               <tr>
+                  <td align="left"><p align="{VIEW_ALIGN}">{VIEW_CONTENT}</p></td>
+		</tr>
+<!-- END: Other -->
+            </table>
+         </td>
+      </tr>
+<!-- BEGIN: GenPDF -->
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="40">
+               <tr>
+                  <td><img src="{THEME}/ui_misc/x_clear.gif" height="0" width="20" alt=""></img></td>
+                  <td class="button1" width="20"><img src="{THEME}/img/icon_filetype/pdf.gif"></img></td>
+                  <td class="button1" width="40"><a class="lbutton1" href="{GENPDF_URL}" title="{GENPDF_ALT}">&nbsp;{GENPDF_LABEL}&nbsp;</a></td>
+              </tr>
+            </table>
+         </td>
+      </tr>
+<!-- END: GenPDF -->
+</table>
+<!-- END: ViewFile -->
+{FILE "html/footer.xtpl"}

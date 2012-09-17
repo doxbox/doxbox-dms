@@ -1,0 +1,269 @@
+<!-- BEGIN: EditFiles -->
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+{FORM}
+{HIDDEN_FIELDS}
+<div class="table_container">
+   <table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0" width="100%">
+     <tr>
+        <td class="browse0" width="100%" colspan="2">{MOD_FILE_PAGE_TITLE}<br /></td>
+     </tr>   
+      <tr>
+         <td align="left" valign="top">
+            <table class="table_inside" cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: Doctypes -->
+               <tr>
+                  <td class="form1">{DOCTYPE_LABEL}</td>
+                  <td class="form1" width="100%">
+                     <select class="fpull1" name="doctype" size="1" onchange="return alert('{DOCTYPE_ONCHANGE_WARNING}');">
+<!-- BEGIN: Value -->
+                       <option value="{DOCTYPE_VALUE}" {DOCTYPE_VALUE_SELECTED}>{DOCTYPE_VALUE_LABEL}</option>
+<!-- END: Value -->
+                     </select>
+                  </td>
+               </tr>
+<!-- END: Doctypes -->
+               <tr>
+                  <td class="form1"><label for="title">{FILE_TITLE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" type="text" name="title" size="60" value="{FILE_TITLE_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{FILE_LINK_LABEL}</td>
+                  <td class="form1" width="100%">{FILE_LINK_VALUE}</td>
+               </tr>
+<!-- BEGIN: Url -->
+               <tr>
+                  <td class="form1"><label for="modify_url">{FILE_URL_LABEL}</label></td>
+                  <td class="form1" width="100%">{FILE_URL_VALUE}</td>
+               </tr>
+<!-- End: Url -->
+               <tr>
+                  <td class="form1"><label for="new_filename">{FILE_NEWNAME_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="new_filename" type="text" name="new_filename" size="40" value="{FILE_NEWNAME_VALUE}" />&nbsp;{FILE_NEWNAME_SIZE}</td>
+               </tr>
+<!-- BEGIN: MP3 -->
+   <tr>
+      <td class="form1">{FILE_MP3_LABEL}</td>
+      <td class="form1">&nbsp;</td>
+   </tr>
+   <tr>
+      <td class="form1" style="text-align:right; vertical-align:top;">{FILE_MP3_SONG_LABEL}
+<br />{FILE_MP3_ALBUM_LABEL}
+<br />{FILE_MP3_BITRATE_LABEL}
+<br />{FILE_MP3_DURATION_LABEL}
+<br />{FILE_MP3_GENRE_LABEL}
+<br />{FILE_MP3_COMMENT_LABEL}
+      </td>
+      <td class="form1" style="vertical-align:top;">{FILE_MP3_SONG}
+<br />A Day Without Rain
+<br />64 kbps&nbsp;&nbsp;22050 Hz&nbsp;Joint Stereo
+<br />03:38
+<br />
+<br />                            
+      </td>
+   </tr>
+<!-- END: MP3 -->
+<!-- BEGIN:  FileOwner -->
+               <tr>
+                  <td class="form1">{FILE_OWNER_LABEL}</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="file_owner" size="1">
+<!-- BEGIN: Owner -->
+   <option value="{FILE_OWNER_VALUE}" {FILE_OWNER_SELECTED}>{FILE_OWNER_CAPTION}</option>
+<!-- END:  Owner -->
+                     </select>
+                  </td>
+                </tr>
+<!-- END:  FileOwner -->
+
+<!-- BEGIN:  FileGroupOwner -->
+                <tr>
+                   <td class="form1">{FILE_GROUPOWNER_LABEL}</td>
+                   <td class="form1" width="100%"><select class="fpull1" name="groupid" size="1">
+<!-- BEGIN: GroupOwner -->
+<option value="{FILE_GROUPOWNER_VALUE}" {FILE_GROUPOWNER_SELECTED}>{FILE_GROUPOWNER_CAPTION}</option>
+<!-- END:  GroupOwner -->
+                      </select>
+                   </td>
+                </tr>
+<!-- END:  FileGroupOwner -->
+<!-- BEGIN:  OtherUser -->
+                <tr>
+                   <td class="form1"><label for="modify_url">{FILE_OWNER_LABEL}</label></td>
+                   <td class="form1" width="100%">{FILE_OWNER_VALUE}</td>
+                </tr>
+<!-- END:  OtherUser -->
+<!-- BEGIN:  PassWordOveride -->
+                <tr>
+                   <td class="form1"><label for="newpassword">{FILE_NEWPASS_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FILE_NEWPASS_VALUE}"></td>
+                </tr>
+                <tr>
+                   <td class="form1"><label for="modify_url">{FILE_CONFIRM_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FILE_CONFIRM_VALUE}"></td>
+                </tr>
+<!-- END:  PassWordOveride -->
+                <tr>
+                   <td class="form1">{FILE_KEYWORDS_LABEL}</td>
+                   <td class="form1" width="100%"><input class="finput1" type="text" name="metadata" value="{FILE_KEYWORDS_VALUE}" size="60" maxlength="255" />
+<!-- BEGIN:  SaveKeywords -->
+&nbsp;<input class="fcheckbox1" type="checkbox" name="savekeyword" value="1" />&nbsp;{FILE_SAVEKEYWORDS_LABEL}
+<!-- End:  SaveKeywords -->
+                   </td>
+                </tr>
+<!-- BEGIN:  SaveKeywordsList -->
+                <tr>
+                   <td class="form1">{FILE_KEYWORDS_SAVED_LABEL}</td>
+                   <td class="form1" width="100%"><select class="fpull1" name="keywordpick[]" size="5" multiple="multiple" >
+<!-- BEGIN:  Options -->
+                      <option value="{FILE_KEYWORD_LIST_VALUE}"{FILE_KEYWORD_LIST_SELECTED}>{FILE_KEYWORD_LIST_LABEL}</option>
+<!-- END:  Options -->
+                   </td>
+                </tr>
+<!-- END:  SaveKeywordsList -->
+<!-- BEGIN:  Version -->
+                <tr>
+                   <td class="form1"><label for="major_revision">{FILE_MAJORVERSION_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="major_revision" type="text" name="major_revision" size="5" value="{FILE_MAJORVERSION_VALUE}" {FILE_MAJORVERSION_READONLY} /></td>
+                </tr>
+                <tr>
+                   <td class="form1"><label for="minor_revision">{FILE_MINORVERSION_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="minor_revision" type="text" name="minor_revision" size="5" value="{FILE_MINORVERSION_VALUE}"{FILE_MINORVERSION_READONLY} /></td>
+                </tr>
+<!-- END:  Version -->
+<!-- BEGIN: useFileExpiry -->
+                <tr>
+                   <td class="form1"><label for="expires">{FILE_EXPIRES_LABEL}</label></td>
+                   <td class="form1" width="100%">
+                      <input class="finput1" type="text" id="expires" name="expires" size="15" value="{FILE_EXPIRES_VALUE}" />
+                   </td>
+                </tr>
+<!-- END: useFileExpiry -->
+               <tr>
+                  <td class="form9" width="100%" colspan="2"><div id="DocTypeFields"></div></td>
+               </tr>
+<!-- BEGIN: DocRel -->
+               <tr>
+                  <td class="form1">{FILE_DOCREL_LIST_LABEL}:</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="docRelPick[]" size="10" multiple="multiple" >
+<!-- BEGIN: SelectBox -->
+                     <option value="{SELECT_BOX.DOCREL_SELECTBOX_VALUE}"{SELECT_BOX.DOCREL_SELECTBOX_SELECTED}>{SELECT_BOX.DOCREL_SELECTBOX_LABEL}</option>
+<!-- END: SelectBox -->
+                  </td>
+               </tr>
+<!-- END: DocRel -->
+                <tr>
+                   <td class="form1">{FILE_DESC_LABEL}<font color="red"><b>&nbsp;&nbsp;&nbsp;{FILE_DESC_REQUIRED}</b></font></td>
+                   <td class="form1" width="100%"><textarea class="ftext1" name="description" rows="10" cols="50">{FILE_DESC_VALUE}</textarea></td>
+                </tr>
+<!-- BEGIN: NoteContent -->
+                <tr>
+                   <td class="form1">{FILE_NOTE_LABEL}</td>
+                   <td class="form1" width="100%"><textarea class="ftext1" name="note_content" rows="20" cols="50">{FILE_NOTE_VALUE}</textarea></td>
+                </tr>
+<!-- END: NoteContent -->
+<!-- BEGIN: DocLargeThumb -->
+                <tr>
+                   <td class="form1">&nbsp;</td>
+                   <td class="form1" width="100%"><a class="lightbox" href="{FILE_CUR_FILE_URL}"><img src="{FILE_LARGE_THUMB_URL}" border="1" /></a></td>
+                </tr>
+<!-- END: DocLargeThumb -->
+                <tr>
+                   <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
+                   <td class="form2 right_text" width="100%">
+                      <input class="fbuttonup1" type="submit" value="{FILE_BTN_MOD_FILE}" alt="{FILE_BTN_MOD_FILE_ALT}" title="{FILE_BTN_MOD_FILE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                      <input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                   </td>
+                </tr>
+             </table>
+          </td>
+       </tr>
+    </table>
+    </div>
+</form>
+<script language="JavaScript">
+<!--
+function isPositiveInteger(fieldValue,errorMssg) {
+    if ( ( isNaN(Number(fieldValue)) ) || ( fieldValue < 0 ) ) {
+        alert(errorMssg + ' : ' + fieldValue);
+        return false;
+    }
+    return true;
+}
+
+function trim( s ) {
+  while ( s.substring(0,1) == ' ' ) { s = s.substring(1,s.length); }
+  while ( s.substring(s.length-1,s.length) == ' ' ) { s = s.substring(0,s.length-1); }
+  return s;
+}
+
+function isEmptyField( s ) {
+  return ( '' == trim( s ) );
+}
+function isValidEmailAddress( s ) {
+  var email_regex = new RegExp( "^([a-zA-Z0-9_\.\-]+)\@([a-zA-Z0-9\-]+\\.)+([a-zA-Z0-9]{2,4})$" );
+  return email_regex.test( trim( s ) );
+}
+
+
+function hasChosenRadio( formToValidate, fieldToValidate ) {
+   var bChosen = false;
+   // Loop from zero to the one minus the number of radio button selections
+   for (counter = 0; counter < eval('formToValidate.' + fieldToValidate + '.length'); counter++)
+   {
+      // If a radio button has been selected it will return true
+      // (If not it will return false)
+      if (eval('formToValidate.' + fieldToValidate + '[counter].checked'))
+      {
+         bChosen = true;
+      }
+   }
+
+     if ( bChosen )
+     {
+         bChosen = true;
+     }
+
+     return bChosen;
+}
+
+-->
+</script>
+
+<script language="javascript">
+<!--
+function isFormOK(formToValidate) {
+    var isValid = true;
+    var title = document.getElementById('title'); // in case this function is invoked in a form without a 'title' element.
+    if ( title && title.value.length > 80 ) {
+        isValid = false;
+        alert('{ERR_TITLE_TOO_LONG}' + title.value);
+    }
+
+    var major_revision = document.getElementById('major_revision');
+    if (  major_revision && ! isPositiveInteger(major_revision.value,'{ERR_MAJOR_VER}') ) {
+        isValid = false;
+    }
+
+    var minor_revision = document.getElementById('minor_revision');
+    if ( minor_revision && ! isPositiveInteger(minor_revision.value,'{ERR_MINOR_VER}') ) {
+        isValid = false;
+    }
+
+{DOCTYPE_REQUIRED_FIELD_VALIDATION}
+
+    return isValid;
+}
+-->
+</script>
+
+<script type="text/javascript">
+jQuery.ajax({
+      url: 'scripts/Ajax/Owl/getdoctype.php?sess={OWL_SESS}&doctype={DOCTYPE_ID}&fileid={FILE_ID}&readonly={DOCTYPE_RO}',
+      cache: false,
+      success: function(html){
+                     jQuery("#DocTypeFields").html(html);
+               }
+   });
+</script>
+<!-- END: EditFiles -->

@@ -1,0 +1,208 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: Search -->
+<br />
+<div class="searchresult">{SEARCH_FOR_FOLDERS}</div>
+<div class="searchresult">{SEARCH_FOR_FILES}</div>
+<div class="searchresult">{SEARCH_SCORE}</div>
+<div class="searchresult">{SEARCH_ELAPSE}</div>
+<div class="searchresult">{SEARCH_FOR_QUERY}</div><br />
+         <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="{VIEW_WIDTH}">
+<!-- BEGIN: Title -->
+            <tr>
+   <!-- BEGIN: Bulk -->
+               <td class="title1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="4" alt=""></img><a href="{TITLE_BULK_URL}"{TITLE_BULK_ONCLICK}"><img src="{THEME}/ui_icons/tg_check.gif" alt="{TITLE_BULK_TITLE}" title="{TITLE_BULK_TITLE}" border="0"></img></a></td>
+   <!-- END: Bulk -->
+   <!-- BEGIN: Score -->
+               <td class="title1">{SEARCH_SCORE_TITLE}</td>
+   <!-- END: Score -->
+   <!-- BEGIN: FldPath -->
+               <td class="title1">{SEARCH_FOLDER_PATH_TITLE}</td>
+   <!-- END: FldPath -->
+   <!-- BEGIN: DocNum -->
+               <td class="title1">{SEARCH_DOCNUM_TITLE}</td>
+   <!-- END: DocNum -->
+   <!-- BEGIN: Thumb -->
+               <td class="title1">&nbsp;</td>
+   <!-- END: Thumb -->
+   <!-- BEGIN: DocFields -->
+               <td class="title1">{SEARCH_DOCFIELDS_TITLE}</td>
+   <!-- END: DocFields -->
+   <!-- BEGIN: DocType -->
+               <td class="title1">&nbsp;</td>
+   <!-- END: DocType -->
+   <!-- BEGIN: filename -->
+               <td class="title1" width="50%">{SEARCH_FILENAME_TITLE}<br /></td>
+   <!-- END: filename -->
+   <!-- BEGIN: f_size -->
+               <td class="title1">{SEARCH_SIZE_TITLE}<br /></td>
+   <!-- END: f_size -->
+   <!-- BEGIN: creatorid -->
+               <td class="title1">{SEARCH_POSTEDBY_TITLE}<br /></td>
+   <!-- END: creatorid -->
+   <!-- BEGIN: updatorid -->
+               <td class="title1">{SEARCH_UPDATEDBY_TITLE}<br /></td>
+   <!-- END: updatorid -->
+   <!-- BEGIN: smodified -->
+               <td class="title1">{SEARCH_SMODIFIED_TITLE}</td>
+   <!-- END: smodified -->
+   <!-- BEGIN: Actions -->
+               <td class="title1">{SEARCH_ACTIONS_TITLE}</td>
+   <!-- END: Actions -->
+            </tr>
+<!-- END: Title -->
+<!-- BEGIN: ErrorMsg -->
+              <tr>
+               <td colspan="{COLSPAN}">
+                  <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                     <tr>
+                       <td class="admin3" width="100%">{ERROR_MESSAGE}<br /></td>
+                     </tr>
+                 </table>
+                 <img src="{THEME}ui_misc/x_clear.gif" height="12" width="1" alt=""></img>
+               </td>
+             </tr>
+<!-- END: ErrorMsg -->
+<!-- BEGIN: Folder -->
+            <tr class="{FOLDER_TR_CLASS}" {FOLDER_TR_MOUSOVER}>
+<!-- BEGIN: Bulk -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: Bulk -->
+<!-- BEGIN: Score -->
+               <td class="{FOLDER_TD_CLASS}"><a href="#" class="{FOLDER_AHREF_CLASS}" title="{FOLDER_SCORE_ALT}">({FOLDER_SCORE_LABEL})</a>&nbsp;
+<!-- BEGIN: Image -->
+{FOLDER_SCORE_IMG}
+<!-- END: Image -->
+               </td>
+<!-- END: Score -->
+<!-- BEGIN: FldPath -->
+               <td class="{FOLDER_TD_CLASS}"><a class="{FOLDER_AHREF_CLASS}" href="{FOLDER_PATH_URL}" onmouseover="return makeTrue(domTT_activate(this, event, 'caption', '{FOLDER_DESC_LABEL}', 'content', '{FOLDER_DESC_VALUE}', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true));">{FOLDER_HIT}. {FOLDER_PATH}</a></td>
+<!-- END: FldPath -->
+<!-- BEGIN: DocNum -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: DocNum -->
+<!-- BEGIN: Thumb -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: Thumb -->
+<!-- BEGIN: DocFields -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: DocFields -->
+<!-- BEGIN: DocType -->
+               <td class="{FOLDER_TD_CLASS}"><img src="{THEME}/icon_filetype/folder_closed.gif" border="0" alt=""></img></td>
+<!-- END: DocType -->
+<!-- BEGIN: filename -->
+               <td class="{FOLDER_TD_CLASS}"><a class="{FOLDER_AHREF_CLASS}" href="{FOLDER_NAME_URL}" onmouseover="return makeTrue(domTT_activate(this, event, 'caption', '{FOLDER_NAME_DESC_LABEL}', 'content', '{FOLDER_NAME_DESC_VALUE}', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true));">{FOLDER_NAME}</a>{FOLDER_NAME_COUNT}</td>
+<!-- END: filename -->
+<!-- BEGIN: f_size -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: f_size -->
+<!-- BEGIN: creatorid -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_CREATOR}</td>
+<!-- END: creatorid -->
+<!-- BEGIN: updatorid -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: updatorid -->
+<!-- BEGIN: smodified -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_SMODIFIED}</td>
+<!-- END: smodified -->
+<!-- BEGIN: Action -->
+               <td class="{FOLDER_TD_CLASS}">
+                  <table cellspacing="2" cellpadding="0" border="0">
+                     <tr>
+                        <td>{FOLDER_ACTION_LOG}</td>
+                        <td>{FOLDER_ACTION_HOTLINK}</td>
+                        <td>{FOLDER_ACTION_DEL}</td>
+                        <td>{FOLDER_ACTION_MOD}</td>
+                        <td>{FOLDER_ACTION_INLINE}</td>
+                        <td>{FOLDER_ACTION_ACL}</td>
+                        <td>{FOLDER_ACTION_LINK}</td>
+                        <td>{FOLDER_ACTION_COPY}</td>
+                        <td>{FOLDER_ACTION_MOVE}</td>
+                        <td>{FOLDER_ACTION_UPD}</td>
+                        <td>{FOLDER_ACTION_DNLD}</td>
+                        <td>{FOLDER_ACTION_COMMENT}</td>
+                        <td>{FOLDER_ACTION_CHECKOUT}</td>
+                        <td>{FOLDER_ACTION_EMAIL}</td>
+                        <td>{FOLDER_ACTION_MON}</td>
+                        <td>{FOLDER_ACTION_RELATED}</td>
+                        <td>{FOLDER_ACTION_VIEW}</td>
+                        <td>{FOLDER_ACTION_GENTHUMB}</td>
+                     </tr>
+                  </table>
+               </td>
+<!-- END: Action -->
+            </tr>
+<!-- END: Folder -->
+
+<!-- BEGIN: File -->
+         <tr id="{FILE_TR_ID}" class="{FILE_TR_CLASS}" {FILE_TR_MOUSOVER}>
+<!-- BEGIN: Bulk -->
+               <td class="{FILE_TD_CLASS}">{FILE_BULK_CHECKBOX}<br /></td>
+<!-- END: Bulk -->
+<!-- BEGIN: Score -->
+               <td class="{FILE_TD_CLASS}"><a href="#" class="{FILE_AHREF_CLASS}" title="{FILE_SCORE_ALT}">({FILE_SCORE_LABEL})</a>&nbsp;
+<!-- BEGIN: Image -->
+{FILE_SCORE_IMG}
+<!-- END: Image -->
+               </td>
+<!-- END: Score -->
+<!-- BEGIN: FldPath -->
+               <td class="{FILE_TD_CLASS}"><a class="{FILE_AHREF_CLASS}" href="{FILE_PATH_URL}" onmouseover="return makeTrue(domTT_activate(this, event, 'caption', '{FILE_DESC_LABEL}', 'content', '{FILE_DESC_VALUE}', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true));">{FILE_HIT}. {FILE_PATH}</a></td>
+<!-- END: FldPath -->
+<!-- BEGIN: DocNum -->
+               <td class="{FILE_TD_CLASS}">{FILE_DOC_NUMBER}</td>
+<!-- END: DocNum -->
+<!-- BEGIN: Thumb -->
+               <td class="{FILE_TD_CLASS}">{FILE_THUMBNAIL}</td>
+<!-- END: Thumb -->
+<!-- BEGIN: DocFields -->
+               <td class="{FILE_TD_CLASS}">&nbsp;</td>
+<!-- END: DocFields -->
+<!-- BEGIN: DocType -->
+                 <td class="{FILE_TD_CLASS}">{FILE_DOCTYPE_URL_OPEN}<img src="{THEME}/icon_filetype/{FILE_DOCTYPE_IMG}.gif" border="0" alt="">{FILE_DOCTYPE_URL_CLOSE}</td>
+<!-- END: DocType -->
+<!-- BEGIN: filename -->
+               <td class="{FILE_TD_CLASS}"><a class="{FILE_AHREF_CLASS}" href="{FILE_URL}">{FILE_NAME}</a></td>
+<!-- END: filename -->
+<!-- BEGIN: f_size -->
+               <td class="{FILE_TD_CLASS}" style="text-align:right;">{FILE_SIZE}</td>
+<!-- END: f_size -->
+<!-- BEGIN: creatorid -->
+               <td class="{FILE_TD_CLASS}">{FILE_CREATOR}</td>
+<!-- END: creatorid -->
+<!-- BEGIN: updatorid -->
+               <td class="{FILE_TD_CLASS}">{FILE_UPDATOR}</td>
+<!-- END: updatorid -->
+<!-- BEGIN: smodified -->
+               <td class="{FILE_TD_CLASS}">{FILE_SMODIFIED}</td>
+<!-- END: smodified -->
+<!-- BEGIN: Action -->
+               <td class="{FILE_TD_CLASS}">
+                  <table cellspacing="2" cellpadding="0" border="0">
+                     <tr>
+                        <td>{FILE_ACTION_LOG}</td>
+                        <td>{FILE_ACTION_HOTLINK}</td>
+                        <td>{FILE_ACTION_DEL}</td>
+                        <td>{FILE_ACTION_MOD}</td>
+                        <td>{FILE_ACTION_INLINE}</td>
+                        <td>{FILE_ACTION_ACL}</td>
+                        <td>{FILE_ACTION_LINK}</td>
+                        <td>{FILE_ACTION_COPY}</td>
+                        <td>{FILE_ACTION_MOVE}</td>
+                        <td>{FILE_ACTION_UPD}</td>
+                        <td>{FILE_ACTION_DNLD}</td>
+                        <td>{FILE_ACTION_COMMENT}</td>
+                        <td>{FILE_ACTION_CHECKOUT}</td>
+                        <td>{FILE_ACTION_EMAIL}</td>
+                        <td>{FILE_ACTION_MON}</td>
+                        <td>{FILE_ACTION_RELATED}</td>
+                        <td>{FILE_ACTION_VIEW}</td>
+                        <td>{FILE_ACTION_GENTHUMB}</td>
+                     </tr>
+                  </table>
+               </td>
+<!-- END: Action -->
+            </tr>
+<!-- END: File -->
+<!-- END: Search -->
+</table>
+{FILE "html/footer.xtpl"}

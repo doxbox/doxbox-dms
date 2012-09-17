@@ -1,0 +1,23 @@
+# File Title: %FILE_TITLE%
+# File Name: %FILE_NAME%
+# File Path: %OWL_FILE_PATH%
+# File Size: %FILE_SIZE%
+# File Owner: %FILE_OWNER%
+# File Updator: %FILE_UPDATOR%
+# File Created: %FILE_CREATION_DATE%
+# File Description: %FILE_DESC%
+# File Modified: %FILE_MODIFICATION_DATE%
+# File Version: %FILE_VERSION%
+# File Link: %FILE_URL%
+# File Comment: %FILE_COMMENT%
+# Current User: %CURRENT_USER%
+
+ESTA &Eacute; UMA MENSAGEM AUTOM&Aacute;TICA DE Owl
+
+Estimado %FILE_OWNER%,
+
+%CURRENT_USER% comentou em %OWL_FILE_PATH%
+
+Coment&aacute;rio:
+
+%FILE_COMMENT%

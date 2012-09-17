@@ -1,0 +1,4 @@
+groupid_name,username,name,password,quota_max,quota_current,email,notify,attachfile,disabled,noprefaccess,language,maxsessions,newsadmin,comment_notify,buttonstyle,homedir,firstdir,email_tool,change_paswd_at_login,expire_account,user_auth,logintonewre, user_minor_revision, user_major_revision, user_default_revision
+newgroup,jlee,John Lee,password1,0,0,jlee@domain.com,1,0,0,0,English,1,0,1,rsdx_blue1,1,1,1,1,,1,0,0,1,2
+newgroup,jspear,Joan Spear,password2,0,0,jspear@domain.com,1,0,0,0,English,1,0,1,rsdx_blue1,1,1,1,1,,1,0,0,1,2
+Administrators,pauljones,Paul Jones,password3,0,0,myemail@domain.com,1,0,0,0,English,1,0,1,rsdx_blue1,1,1,1,1,,1,0,0,1,2

@@ -1,0 +1,67 @@
+<OwlXML>
+<Block>
+<BlockIdentification>1</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Add Folder</Action>
+<ParentID>1</ParentID>
+<Name>NEW FOLDER</Name>
+<Owner>1</Owner>
+<OwnerGroup>0</OwnerGroup>
+<Description>SOME DESC</Description>
+</Block>
+
+<Block>
+<BlockIdentification>2</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Delete Folder</Action>
+<ID>157</ID>
+<ParentID></ParentID>
+<Name></Name>
+</Block>
+
+<Block>
+<BlockIdentification>3</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Move Folder</Action>
+<SourceID>10</SourceID>
+<DestID>10</DestID>
+</Block>
+
+<Block>
+<BlockIdentification>4</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Add File</Action>
+<Path>PATH TO FILE</Path>
+<DocumentType>DOCTYPE</DocumentType>
+<SendFile>ABC_FILE</SendFile>
+<Title>ABC Title</Title>
+<Keywords>keywords</Keywords>
+<MajorRevision>1</MajorRevision>
+<MinorRevision>0</MinorRevision>
+<Owner>abc </Owner >
+<Permissions>PERMS</Permissions>
+<ProposalNumber>Doctyome 1</ProposalNumber>
+<PolicyNumber>DOCTYPE 2</PolicyNumber>
+<Estipulator>DOCTYPE 3</Estipulator>
+<Tomador>DocTYPE 4</Tomador>
+<Insurancer>DocTYPE 4</Insurancer>
+<DocumetsStorage>STORAGTE</DocumetsStorage>
+<Description>FILE DESC</Description>
+</Block> 
+
+<Block>
+<BlockIdentification>5</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Delete File</Action>
+<ID>10</ID>
+</Block>
+
+<Block>
+<BlockIdentification>6</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Move File</Action>
+<SourceID>10</SourceID>
+<DestID>10</DestID>
+</Block>
+
+</OwlXML>

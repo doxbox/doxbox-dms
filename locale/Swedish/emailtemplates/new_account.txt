@@ -1,0 +1,15 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+DETTA ÄR ETT AUTOMATISERAT MEDDELANDE FRÅN OWL Intranet
+
+Bästa %USER_FULLNAME%,
+
+Ett OWL-konto har skapats åt dig, nedan ser du detaljerna:
+
+Användarnamn: %USERNAME%
+
+Lösenord: %PASSWORD%
+
+Du kan logga in från följande webbadress: %LINK%

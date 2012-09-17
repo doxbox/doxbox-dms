@@ -1,0 +1,37 @@
+<!-- BEGIN: edhtml -->
+<!-- BEGIN: StatusMsg -->
+   <tr>
+      <td class="admin3" width="100%" colspan="2">{STATUS_MSG}<br /></td>
+   </tr>
+<!-- END: StatusMsg -->
+   <tr>
+      <td class="admin2" width="100%" colspan="2">{EDHTML_TITLE}<br /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="expand_width">{EDHTML_EXPAND_TITLE}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="expand_width" type="text" name="expand_width" size="10" value="{EDHTML_EXPAND_VALUE}" /></td>
+  </tr>
+  <tr>
+      <td class="form1"><label for="collapse_width">{EDHTML_COLLAPSE_TITLE}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="collapse_width" type="text" name="collapse_width" size="10" value="{EDHTML_COLLAPSE_VALUE}" /></td>
+  </tr>
+  <tr>
+      <td class="form1"><label for="body_background">{EDHTML_BODY_TITLE}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="body_background" type="text" name="body_background" size="80" value="{EDHTML_BODY_VALUE}" /></td>
+  </tr>
+  <tr>
+      <td class="form1"><label for="owl_logo">{EDHTML_LOGO_TITLE}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="owl_logo" type="text" name="owl_logo" size="80" value="{EDHTML_LOGO_VALUE}" /></td>
+  </tr>
+  <tr>
+      <td class="form2" width="100%" colspan="2">
+         <input  class="fbuttonup1" type="submit" value="{BTN_CHANGE}" alt="{BTN_CHANGE_ALT}" title="{BTN_CHANGE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+         <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      </td>
+  </tr>
+<!-- BEGIN: VerInfo -->
+   <tr>
+      <td class="form1" width="100%" colspan="2"><pre>{EDHTML_VERINFO}<pre><br /></td>
+   </tr>
+<!-- END: VerInfo -->
+<!-- END: edhtml -->

@@ -1,0 +1,32 @@
+# Titel bestand: %FILE_TITLE%
+# Bestandsnaam: %FILE_NAME%
+# Locatie: %OWL_FILE_PATH%
+# Omvang: %FILE_SIZE%
+# Eigenaar: %FILE_OWNER%
+# Bijgewerkt door: %FILE_UPDATOR%
+# Geplaatst op: %FILE_CREATION_DATE%
+# Omschrijving: %FILE_DESC%
+# Bijgewerkt op: %FILE_MODIFICATION_DATE%
+# Bestandsversie: %FILE_VERSION%
+# Link naar bestand: %FILE_URL%
+# Huidige gebruiker: %CURRENT_USER%
+
+UW BESTAND IS AFGEKEURD
+
+Uw bestand is afgekeurd door: %CURRENT_USER%
+
+Afgekeurde bestand: %FILE_NAME% 
+
+Titel: %FILE_TITLE% 
+
+Omschrijving: %FILE_DESC% 
+
+Locatie: %OWL_FILE_PATH% 
+
+Versie: %FILE_VERSION%
+Geplaatst/bijgewerkt door: %FILE_UPDATOR%
+
+REDEN VAN AFKEURING:
+
+%USER_MESSAGE%
+

@@ -1,0 +1,29 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+
+<script type="text/javascript">
+function CheckAll() {
+  for (var i = 0; i < document.admin.elements.length; i++) {
+    if(document.admin.elements[i].type == "checkbox"){
+      document.admin.elements[i].checked =         !(document.admin.elements[i].checked);
+    }
+  }
+}
+</script>
+
+<form name="admin" action="admin_dbmodify.php" method="post">
+{HIDDEN_FIELDS}
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+{FILE "html/admin/includes/users_groups.xtpl"}
+{FILE "html/admin/includes/user.xtpl"}
+{FILE "html/admin/includes/site_features.xtpl"}
+{FILE "html/admin/includes/edhtml.xtpl"}
+            </table>
+         </td>
+      </tr>
+   </table>
+</form>
+{FILE "html/footer.xtpl"}

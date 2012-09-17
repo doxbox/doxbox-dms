@@ -1,0 +1,15 @@
+## site2owl.php in /owl_batch.d/jobs/owl-docs-fs-to-db
+
+INCOMPLETE AND UNSUPPORTED
+
+This code's purpose might be to convert documents stored in a database back to using the filesystem.
+
+However we haven't reviewed it in a while.
+
+
+This may be reviewed in the future and if appropriated, updated to be complete and supported status.
+
+
+INCOMPLETE AND UNSUPPORTED
+
+## end ##

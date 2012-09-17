@@ -1,0 +1,22 @@
+# Titel bestand: %FILE_TITLE%
+# Bestandsnaam: %FILE_NAME%
+# Locatie: %OWL_FILE_PATH%
+# Omvang: %FILE_SIZE%
+# Eigenaar: %FILE_OWNER%
+# Bijgewerkt door: %FILE_UPDATOR%
+# Geplaatst op: %FILE_CREATION_DATE%
+# Omschrijving: %FILE_DESC%
+# Bijgewerkt op: %FILE_MODIFICATION_DATE%
+# Bestandsversie: %FILE_VERSION%
+# Link naar bestand: %FILE_URL%
+# Huidige gebruiker: %CURRENT_USER%
+
+DIT IS EEN AUTOMATISCH BERICHT VAN OWL INTRANET
+
+Geachte %FILE_OWNER%,<br />
+
+%CURRENT_USER%  heeft een opmerking geplaatst bij %OWL_FILE_PATH%
+
+Opmerking:
+
+%FILE_COMMENT%

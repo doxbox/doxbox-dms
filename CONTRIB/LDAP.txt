@@ -1,0 +1,81 @@
+The code might be a bit sloppy but it seems to work correctly. The only thing that I don't like about what I have right now is that you have to hard code (in the owl.php config file) a username and password to search the LDAP database. No big deal if you have a generic account, but in my case I'm actually using my domain name and password. I will be asking for a generic account to replace this. 
+ 
+CHANGES IN OWL.LIB.PHP 
+ 
+function ldap_authenticate($u, $p) 
+{ 
+global $default; 
+// connect to ldap server to aquire the CN to use for authentication------------------------------------------------------------- 
+//modified by jedunaway@netzero.net, 4/21/05 
+$dsCon = ldap_connect($default->ldapserver); 
+ldap_set_option($dsCon, LDAP_OPT_PROTOCOL_VERSION, $default->ldapprotocolversion); 
+ldap_set_option($dsCon, LDAP_OPT_REFERRALS, 0); 
+ 
+// Make sure we connected 
+if (!($dsCon)) 
+{ 
+printError("Sorry, cannot contact LDAP server"); 
+return(1); 
+} 
+ 
+// bind to ldap server using our bind user (anonymous wouldn't work for me) 
+$bind = ldap_bind($dsCon, $default->ldapbindas, $default->ldapbindpass); 
+ 
+if(!($bind)) 
+{ 
+printError("Sorry, unsuccesful bind using default credentials"); 
+return(1); 
+} 
+else 
+{ 
+//search for the user's CN using the login ID entered 
+$sr = ldap_search($dsCon,$default->ldapsearchdn,$default->ldapuserattr."=".$u); 
+if (!$sr) 
+{ 
+printError("Sorry, could not search LDAP directory"); 
+return(1); 
+} 
+else 
+{ 
+//get field(s) from search 
+$info = ldap_get_entries($dsCon,$sr); 
+if ($info["count"] == 0) 
+{ 
+printError("Sorry, search for CN returned no matches using entered login id"); 
+return(1); 
+} 
+else 
+{ 
+$user_cn = $info[0]["distinguishedName"][0]; 
+} 
+//disconnect 
+ldap_unbind($dsCon); 
+} 
+ 
+$dsCon = ldap_connect($default->ldapserver); 
+$authenticate_DN = "CN=".$user_cn.",".$default->ldapserverroot; 
+ 
+//if we bind, then the user has authenticated via username / password with his/her CN 
+if (!($res = ldap_bind($dsCon,$authenticate_DN,$p))) 
+{ 
+printError("Sorry, invalid password entered for ".$u); 
+return(1); 
+} 
+// If we got here, the username/password worked. 
+ldap_unbind($dsCon); 
+ldap_close($dsCon); 
+return(0); 
+} 
+ 
+CHANGES IN OWL.PHP (CONFIG FOLDER) 
+ 
+// Auth 3 LDAP 
+$default->ldapserver = "IP address of LDAP server"; 
+$default->ldapserverroot = "root LDAP OU of user to authenticate"; 
+$default->ldapbindas = "generic bind account using CN=generic user"; 
+$default->ldapbindpass = "password of generic user"; 
+$default->ldapsearchdn = "base dn to search"; 
+$default->ldapuserattr = "sAMAccountName"; 
+$default->ldapprotocolversion = "3"; // or 2 to match your ldap
+
+

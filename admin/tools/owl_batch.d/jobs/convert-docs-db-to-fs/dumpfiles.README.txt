@@ -1,0 +1,17 @@
+dumpfiles.README.txt - in owl_batch.d/jobs/dumpfiles
+
+INCOMPLETE AND UNSUPPORTED
+
+that is an owl tool that dumps all files stored to the owl db filedata table, to a physical location on disc.  
+
+This is useful for people that want to go from DB Storage back to FileSystem Storage.
+
+NOTE: this is intentionally left as a zip file to prevent running it from online if the owl_batch.d directory is not relocated outside of the webspace.
+
+
+This may be reviewed in the future and if appropriated, updated to be complete and supported status.
+
+
+INCOMPLETE AND UNSUPPORTED
+
+## end ##

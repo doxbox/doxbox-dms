@@ -1,0 +1,67 @@
+BODY {
+background-color:#D4D0C8;
+margin-top:0px; margin-left:0px; margin-right:0px; margin-bottom:0px;
+}
+
+.logo {
+text-align:left; vertical-align:top;
+background-color:#A2C4D5;
+border-style:solid;
+border-bottom-color:#F4F3F1;
+border-top-width:0px; border-left-width:0px; border-right-width:0px; border-bottom-width:1px;
+padding-left:14px; padding-right:0px; padding-top:8px; padding-bottom:8px;
+}
+
+.visited {
+  font-family:Arial,Verdana,Helvetica, sans-serif;
+  color: #efefef;
+}
+.current {
+  font-weight: bold;
+  font-family:Arial,Verdana,Helvetica, sans-serif;
+  color: black;
+}
+.remaining {
+  font-family:Arial,Verdana,Helvetica, sans-serif;
+  color: #0071E4;
+}
+
+.middle_text {
+text-align:left; vertical-align:middle;
+color:#0071E4; font-size:.75em; font-family:Arial,Verdana,Helvetica, sans-serif;
+padding-left:4px; padding-right:4px; padding-top:32px; padding-bottom:14px;
+}
+
+.xbutton2 {
+background-color:#019DFF;
+color:#FFFFFF; font-size:.95em; font-weight:bold; font-family:Arial,Verdana,Helvetica, sans-serif;
+border-style:solid;
+border-left-color:#A3DCFF; border-top-color:#A3DCFF; border-right-color:#00395C; border-bottom-color:#00395C;
+border-top-width:1px; border-left-width:1px; border-right-width:1px; border-bottom-width:1px;
+padding-left:3px; padding-right:3px; padding-top:0px; padding-bottom:0px;
+cursor: pointer;
+}
+
+.form1 {
+  white-space: nowrap;
+  text-align:left; vertical-align:middle;
+  font-family:Arial,Verdana; font-size:11px; font-weight:bold; color:#000000;
+  background-color:#D5DFE7;
+  border-top-color:#FDFEFF; border-bottom-color:#8199AB; border-left-color:#FDFEFF; border-right-color:#8199AB;
+  border-style:solid;
+  border-top-width:1px; border-bottom-width:1px; border-left-width:1px; border-right-width:1px;
+  padding-top:1px; padding-bottom:1px; padding-left:4px; padding-right:4px
+  }
+
+.admin3 {
+  white-space: nowrap;
+  text-align:center; vertical-align:middle;
+  font-family:Arial,Verdana; font-size:14px; font-weight:bold; color:#01B4FF;
+  background-color:#000000;
+  border-top-color:#8199AB; border-bottom-color:#8199AB; border-left-color:#8199AB; border-right-color:#8199AB;
+  border-style:solid;
+  border-top-width:0px; border-bottom-width:1px; border-left-width:1px; border-right-width:1px;
+  padding-top:2px; padding-bottom:2px; padding-left:3px; padding-right:3px
+  }
+
+

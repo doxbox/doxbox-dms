@@ -1,0 +1,10 @@
+# Current User: %CURRENT_USER%
+# NEW Password : %NEW_PASSWORD%
+# Repository Name: %REPO_NAME%
+# USERNAME: %USERNAME%
+DMS: AUTOMATED MESSAGE 
+
+%USERNAME% Owl Password is: %NEW_PASSWORD%
+
+
+Repository: %REPO_NAME%

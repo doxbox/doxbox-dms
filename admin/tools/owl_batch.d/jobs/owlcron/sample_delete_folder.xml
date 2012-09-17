@@ -1,0 +1,26 @@
+<OwlXML>
+<Block>
+<BlockIdentification>1</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Delete Folder</Action>
+<ID></ID>
+<ParentID>1</ParentID>
+<Name>1MAINXML/SUBXML</Name>
+</Block>
+<Block>
+<BlockIdentification>2</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Delete Folder</Action>
+<ID></ID>
+<ParentID>1</ParentID>
+<Name>MAINXML/XXXX</Name>
+</Block>
+<Block>
+<BlockIdentification>3</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Delete Folder</Action>
+<ID>157</ID>
+<ParentID></ParentID>
+<Name></Name>
+</Block>
+</OwlXML>

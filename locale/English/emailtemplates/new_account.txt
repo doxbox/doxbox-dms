@@ -1,0 +1,18 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+# Repository Name: %REPO_NAME%
+DMS: AUTOMATED MESSAGE 
+
+Dear %USER_FULLNAME%,
+
+An Account has been created for you, here are the details:
+
+User Name: %USERNAME%
+
+Password: %PASSWORD%
+
+You can login from the following URL: %LINK%
+
+Repository: %REPO_NAME%

@@ -1,0 +1,68 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: Recycle -->
+{FORM}
+{HIDDEN_FIELDS}
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="admin0" width="100%" colspan="8">{RECYCE_ADMIN_TITLE}</td>
+            </tr>
+            <tr>
+               <td class="dir1" colspan="3" align="left">{RECYCE_TRASH_LOCATION}</td></tr>				
+            <tr>
+               <td class="title1" width="1%" align="left">&nbsp;</td>
+               <td class="title1" width="1%" align="left"><img src="{THEME}/img/icon_filetype/folder_closed.gif" border="0" alt="" /></td>
+               <td class="title1" align="left"><a class="{RECYCLE_A_STYLE}" href="{RECYCE_TRASH_PREV_FOLDER_URL}">{RECYCE_TRASH_PREV_FOLDER_LABEL}</a></td>
+            </tr>
+<!-- BEGIN: Folders -->
+            <tr>
+               <td class="{RECYCLE_TD_STYLE}"><input type="checkbox" name="fbatch[]" value="{RECYCLE_FOLDER_CHXBX_VALUE}"><a href="{RECYCLE_FOLDER_DEL_URL}" onclick="return confirm('{RECYCLE_FOLDER_DEL_CONF}');"><img src="{THEME}/ui_misc/admin_del_folder.gif" alt="{RECYCLE_FOLDER_DEL_ALT}" title="{RECYCLE_FOLDER_DEL_ALT}" border="0"></a></td>
+               <td class="{RECYCLE_TD_STYLE}"><img src="{THEME}/img/icon_filetype/folder_closed.gif" border="0" alt=""></td>
+               <td class="{RECYCLE_TD_STYLE}"><a class="{RECYCLE_A_STYLE}" href="{RECYCLE_FOLDER_URL}">{RECYCLE_FOLDER_LABEL}</a></td>
+            </tr>
+<!-- END: Folders -->
+<!-- BEGIN: Files -->
+            <tr>
+               <td class="{RECYCLE_TD_STYLE}" width="1%"><input type="checkbox" name="batch[]" value="{RECYCLE_FILE_CHXBX_VALUE}" />
+               <td  class="{RECYCLE_TD_STYLE}" width="1%"><img src="{THEME}/img/icon_filetype/{RECYCLE_FILE_TYPE}.gif" border="0" alt="" /></td>
+               <td class="{RECYCLE_TD_STYLE}">{RECYCLE_FILE_NAME}</td>
+            </tr>
+<!-- END: Files -->
+            <tr>
+               <td  class="file2" align="left" colspan="3" height="40" align="left"><a href="#" onclick="CheckAll();"><img src="{THEME}/ui_icons/tg_check.gif" alt="{RECYCLE_TG_ALT}" title="{RECYCLE_TG_ALT}" border="0" /></a></td></tr>
+            <tr>
+               <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
+               <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
+               <td class="form2" width="100%">
+                  <label for="mailto">{RECYCLE_EMAILTO_LABEL}</label>
+                  <input class="finput1" id="mailto" type="text" name="mailto" size="24" maxlength="255" value="" />
+                  <input class="fbuttonup1" name="bemailaction_x" type="submit" value="{RECYCLE_EMAILTO_BTN_LABEL}" title="{RECYCLE_EMAILTO_BTN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{RECYCLE_DEL_BTN_LABEL}" title="RECYCLE_DEL_BTN_ALT}" onclick='return confirm("{RECYCLE_DEL_BTN_CONF}?");' onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input class="fbuttonup1" name="bemptyaction_x" type="submit" value="{RECYCLE_EMPTY_BTN_LABEL}" title="{RECYCLE_EMPTY_BTN_ALT}" onclick='return confirm("{RECYCLE_DEL_BTN_CONF}?");' onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+               </td>
+            </tr>
+            <tr>
+               <td colspan="3" class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="20" width="1" alt="" /></td>
+            </tr>
+            <tr>
+               <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
+               <td class="form2" width="1%">&nbsp;</td>
+               <td class="form2" width="100%">
+                  <input class="fbuttonup1" name="brestoreaction_x" type="submit" value="{RECYCLE_RESTORE_BTN_LABEL}" title="{RECYCLE_RESTORE_BTN_ALT}" onclick='return confirm("{RECYCLE_RESTORE_BTN_CONF} ?");' onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />&nbsp;&nbsp;
+                  <select class="fpull1" name="folder_id">
+<!-- BEGIN: RestLocation -->
+                     <option value="{RECYCLE_DEST_VALUE}">{RECYCLE_DEST_SPACER}{RECYCLE_DEST_CAPTION}</option>
+<!-- END: RestLocation -->
+                  </select>
+               </td>
+            </tr>
+        </table>
+      </td>
+   </tr>
+</table>
+</form>
+<!-- END: Recyle -->
+{FILE "html/footer.xtpl"}

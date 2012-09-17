@@ -1,0 +1,31 @@
+# Titel bestand: %FILE_TITLE%
+# Bestandsnaam: %FILE_NAME%
+# Locatie: %OWL_FILE_PATH%
+# Omvang: %FILE_SIZE%
+# Eigenaar: %FILE_OWNER%
+# Bijgewerkt door: %FILE_UPDATOR%
+# Geplaatst op: %FILE_CREATION_DATE%
+# Omschrijving: %FILE_DESC%
+# Bijgewerkt op: %FILE_MODIFICATION_DATE%
+# Bestandsversie: %FILE_VERSION%
+# Link naar bestand: %FILE_URL%
+# Huidige gebruiker: %CURRENT_USER%
+
+Uw goedkeuring is gevraagd voor het volgende bestand:
+
+Te beoordelen bestand: %FILE_NAME%
+File Version: %FILE_VERSION%
+
+Locatie: %OWL_FILE_PATH% <br />
+
+Titel: %FILE_TITLE%
+
+Omschrijving: 
+%FILE_DESC%
+
+Geplaatst/bijgewerkt door: %FILE_UPDATOR%
+
+Bericht van plaatser:
+
+%USER_MESSAGE%
+

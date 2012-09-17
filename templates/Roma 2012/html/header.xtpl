@@ -1,0 +1,582 @@
+<!-- BEGIN: main -->
+<div id="container">
+<div id="div_scroll">
+  <div id="header">
+  
+    <div id="motd">
+    <a name="top"></a>
+  <!-- BEGIN: PrefsBarTop -->  
+      <div id="userinfo">
+        <strong>{USERNAME_LABEL}</strong> {USERNAME} -
+        <strong>{LASTLOG_LABEL}</strong> {LASTLOG}
+        <strong>{CURRENTDB_LABEL}</strong> {CURRENTDB}
+      </div>
+      
+      <div id="up_menu">
+        <ul class="nav">
+  <!-- BEGIN: AdminMenu -->      
+          <li class="li_father"><span class="halftab">{ADMINS_TOOLS_MENU}</span><span class="fake_link">&nbsp;<img src="{THEME}/img/white_arrow.png" /> </span>
+            <ul>
+              <!-- BEGIN: Admin -->      
+                <li><a class="lbutton1" href="{BUTTON_ADMIN_URL}" title="{BUTTON_ADMIN_TITLE}"><img src="{THEME}/img/icons/application_form_edit.png" />{BUTTON_ADMIN_LABEL}</a></li>
+              <!-- END: Admin -->        
+              <!-- BEGIN: Trash -->
+                <li><a class="lbutton1" href="{BUTTON_TRASH_URL}" title="{BUTTON_TRASH_TITLE}"><img src="{THEME}/img/icons/bin.png" />{BUTTON_TRASH_LABEL}</a></li>
+              <!-- END: Trash -->
+              <!-- BEGIN: RepView -->
+                <li><a class="lbutton1" href="{BUTTON_REPVIEW_URL}" title="{BUTTON_REPVIEW_TITLE}"><img src="{THEME}/img/icons/report.png" />{BUTTON_REPVIEW_LABEL}</a></li>
+              <!-- END: RepView -->
+              <!-- BEGIN: LogView -->
+                <li><a class="lbutton1" href="{BUTTON_LOGVIEW_URL}" title="{BUTTON_LOGVIEW_TITLE}"><img src="{THEME}/img/icons/server_error.png" />{BUTTON_LOGVIEW_LABEL}</a></li>
+              <!-- END: LogView -->
+              <!-- BEGIN: AdminUserGroup -->
+                <li><a class="lbutton1" href="{BUTTON_ADMIN_USER_GROUP_URL}" title="{BUTTON_ADMIN_USER_GROUP_TITLE}"><img src="{THEME}/img/icons/group_edit.png" />{BUTTON_ADMIN_USER_GROUP_LABEL}</a></li>
+              <!-- END: AdminUserGroup -->
+              <!-- BEGIN: News -->
+                <li><a class="lbutton1" href="{BUTTON_ADMIN_NEWS_URL}" title="{BUTTON_ADMIN_NEWS_TITLE}"><img src="{THEME}/img/icons/newspaper.png" />{BUTTON_ADMIN_NEWS_LABEL}</a></li>
+              <!-- END: News -->
+            </ul>    
+          </li>
+  <!-- END: AdminMenu -->
+  <!-- BEGIN: UserToolsMenu -->
+          <li class="li_father"><span class="halftab">{USERS_TOOLS_MENU}</span><span class="fake_link">&nbsp;<img src="{THEME}/img/white_arrow.png" /> </span>
+            <ul>
+              <!-- BEGIN: Prefs -->
+                <li><a class="lbutton1" href="{BUTTON_PREFS_URL}" title="{BUTTON_PREFS_TITLE}"><img src="{THEME}/img/icons/user_edit.png" />{BUTTON_PREFS_LABEL}</a></li>
+              <!-- END: Prefs -->
+              <!-- BEGIN: MailTool -->
+                <li><a class="lbutton1" href="{BUTTON_MAILTOOL_URL}" title="{BUTTON_MAILTOOL_TITLE}"><img src="{THEME}/img/icons/email.png" />{BUTTON_MAILTOOL_LABEL}</a></li>
+              <!-- END: MailTool -->            
+            </ul>
+          </li>
+  <!-- END: UserToolsMenu -->
+          <!-- BEGIN: QuickLink -->
+            <li><a class="lbutton1" href="{BUTTON_QUICKLINK_BOTTOM_URL}" title="{BUTTON_QUICKLINK_BOTTOM_TITLE}">{BUTTON_QUICKLINK_BOTTOM_LABEL}</a></li>
+          <!-- END: QuickLink -->
+          <!-- BEGIN: Help -->
+            <li><a class="help_button" class="lbutton1" href="#" title="{BUTTON_HELP_TITLE}">{BUTTON_HELP_LABEL}</a></li>
+          <!-- END: Help -->
+          <!-- BEGIN: Browse -->
+            <li><a class="lbutton1" href="{BUTTON_BROWSE_URL}" title="{BUTTON_BROWSE_TITLE}">{BUTTON_BROWSE_LABEL}</a></li>
+          <!-- END: Browse -->
+          <!-- BEGIN: LoginOut -->
+            <li>
+              <a class="quick_icon button logout" href="{BUTTON_LOGINOUT_URL}" title="{BUTTON_LOGINOUT_TITLE}">
+                &nbsp;{BUTTON_LOGINOUT_LABEL}<span class="icon unlock"></span>
+              </a>
+            </li>
+          <!-- END: LoginOut -->
+          
+          <div class="clearbox"></div>                      
+        </ul>
+      </div>
+      
+      <div class="clearbox"></div>
+  <!-- END: PrefsBarTop -->    
+    </div><!-- /motd -->
+  
+
+    <div id="logo_left" class="logo">{LOGO_LEFT}</div>
+    <div id="title">{SITE_TITLE}</div>
+
+  <!-- BEGIN: ActionButtons0 -->
+    <div id="top_mainmenu" class="mainmenu">
+     <!-- <h3>{ACTIONBUTTON_MENU_TITLE}</h3> -->
+        <div id="menu_container">
+          <ul class="mainmenu_list">
+        <!-- BEGIN: AddFolder -->
+        		<li><a class="button" href="{ACTIONBUTTON_ADDFOLDER_URL}" title="{ACTIONBUTTON_ADDFOLDER_TITLE}">&nbsp;{ACTIONBUTTON_ADDFOLDER_LABEL}<span class="icon book"></span></a></li>
+        <!-- END: AddFolder -->
+        <!-- BEGIN: AddFile -->
+        		<li><a class="button" href="{ACTIONBUTTON_ADDFILE_URL}" title="{ACTIONBUTTON_ADDFILE_TITLE}">&nbsp;{ACTIONBUTTON_ADDFILE_LABEL}<span class="icon pen"></span></a></li>
+        <!-- END: AddFile -->
+        <!-- BEGIN: UnzipFolder -->
+        		<li><a class="button" href="{ACTIONBUTTON_UNZIP_URL}" title="{ACTIONBUTTON_UNZIP_TITLE}">&nbsp;{ACTIONBUTTON_UNZIP_LABEL}<span class="icon fork"></span></a></li>
+        <!-- END: UnzipFolder -->
+        <!-- BEGIN: AddUrl -->
+        		<li><a class="button" href="{ACTIONBUTTON_ADDURL_URL}" title="{ACTIONBUTTON_ADDURL_TITLE}">&nbsp;{ACTIONBUTTON_ADDURL_LABEL}<span class="icon tag"></span></a></li>
+        <!-- END: AddUrl -->
+        <!-- BEGIN: AddNote -->
+        		<li><a class="button" href="{ACTIONBUTTON_ADDNOTE_URL}" title="{ACTIONBUTTON_ADDNOTE_TITLE}">&nbsp;{ACTIONBUTTON_ADDNOTE_LABEL}<span class="icon pin"></span></a></li>
+        <!-- END: AddNote -->
+        <!-- BEGIN: RSSFeed -->
+        		<li><a class="button" href="{ACTIONBUTTON_RSSFEED_URL}" title="{ACTIONBUTTON_RSSFEED_TITLE}">&nbsp;{ACTIONBUTTON_RSSFEED_LABEL}<span class="icon rss"></span></a></li>
+        <!-- END: RSSFeed -->
+            <div class="clearbox"></div>
+        	</ul>
+        </div>
+    </div><!-- /mainmenu -->
+    
+  	<ul class="view_options_list">
+  	  <!-- <li id="menu_container_toggler"><a class="slide_up" title="{MENU_COLLAPSE_BUTTON_TITLE}"></a></li> --> 
+  <!-- BEGIN: NormalView -->
+  		<li><a class="normal_view" href="{ACTIONBUTTON_NORMALVIEW_URL}" title="{ACTIONBUTTON_NORMALVIEW_TITLE}">&nbsp;</a></li>
+  <!-- BEGIN: ThumbView -->
+  		<li><a class="thumb_view" href="{ACTIONBUTTON_THUMBVIEW_URL}" title="{ACTIONBUTTON_THUMBVIEW_TITLE}">&nbsp;</a></li>
+  <!-- END: ThumbView -->
+  <!-- END: NormalView -->
+  <!-- BEGIN: ThumbView -->
+  		<li><a class="normal_view2" href="{ACTIONBUTTON_NORMALVIEW_URL}" title="{ACTIONBUTTON_NORMALVIEW_TITLE}">&nbsp;</a></li>
+  <!-- END: ThumbView -->        
+    </ul>
+  <!-- END: ActionButtons0 --> 
+  
+  </div><!-- /header -->
+  
+  <div id="grey_line"></div>
+
+  <div id="tool_bar">
+<!-- BEGIN: FolderToolsTop -->
+      <ul id="folder_tools_top">
+        <!-- BEGIN: UpDisabled -->
+        <li><a href="#"><img src="{THEME}/img/icons/folder_up_dis.png" border="0" name="folder_up"/></a></li>
+        <!-- END: UpDisabled -->
+        <!-- BEGIN: Up -->
+        <li><a href="{FOLDERTOOLS_FOLDER_UP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('folder_up','','{THEME}/img/icons/folder_up_hover.png',1)"><img src="{THEME}/img/icons/folder_up_hover.png" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up" /></a></li>
+        <!-- END: Up -->
+        <li><a href="{FOLDERTOOLS_HOME_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('home','','{THEME}/img/icons/house_hover.png',1)"><img src="{THEME}/img/icons/house_hover.png" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home" /></a></li>
+        <!-- BEGIN: InitialDir -->
+        <li><a href="{FOLDERTOOLS_INITIAL_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('set_initial','','{THEME}/img/icons/house_link_hover.png',1)"><img src="{THEME}/img/icons/house_link_hover.png" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial" /></a></li>
+        <!-- END: InitialDir -->
+        <li class="sitemap"><a href="{FOLDERTOOLS_SITEMAP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('sitemap','','{THEME}/img/icons/sitemap_hover.png',1)"><img src="{THEME}/img/icons/sitemap_hover.png" alt="{FOLDERTOOLS_SITEMAP_ALT}" title="{FOLDERTOOLS_SITEMAP_ALT}" border="0" name="sitemap" /></a></li>
+      </ul><!-- /folder_tools_top -->
+      <ul id="pager">  
+        <!-- BEGIN: Pagination -->
+        <!-- BEGIN: FirstPage -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_PAGE_HOME_URL}" title="{FOLDERTOOLS_PAGE_HOME_TITLE}">{FOLDERTOOLS_PAGE_HOME_LABEL}</a></li>
+        <!-- END: FirstPage -->
+        <!-- BEGIN: PrevPage -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_PAGE_PREV_URL}" title="{FOLDERTOOLS_PAGE_PREV_TITLE}">{FOLDERTOOLS_PAGE_PREV_LABEL}</a></li>
+        <!-- END: PrevPage -->
+        <!-- BEGIN: Pages -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_PAGE_URL}" title="{FOLDERTOOLS_PAGE_TITLE}" {FOLDERTOOLS_PAGE_ONCLICK}>{FOLDERTOOLS_PAGE_LABEL}</a></li>
+        <!-- END: Pages -->
+        <!-- BEGIN: NextPage -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_PAGE_NEXT_URL}" title="{FOLDERTOOLS_PAGE_NEXT_TITLE}">{FOLDERTOOLS_PAGE_NEXT_LABEL}</a></li>
+        <!-- END: NextPage -->
+        <!-- BEGIN: LastPage -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_PAGE_LAST_URL}" title="{FOLDERTOOLS_PAGE_LAST_TITLE}">{FOLDERTOOLS_PAGE_LAST_LABEL}</a></li>
+        <!-- END: LastPage -->
+        <!-- BEGIN: Status -->
+        <li class="navbar2"><a class="fake_link" href="#">{FOLDERTOOLS_PAGE_STATUS_LABEL} <strong>{FOLDERTOOLS_PAGE_STATUS_CUR}</strong> / {FOLDERTOOLS_PAGE_STATUS_TOTAL}</a></li>
+        <!-- END: Status -->
+        <!-- END: Pagination -->
+      </ul><!-- /pager -->
+<!-- END: FolderToolsTop -->
+  
+    <ul id="tool_bar_list">
+<!-- BEGIN: SearchPanelTop -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/find.png" alt="{SEARCH_BUTTON_LABEL}" title="{SEARCH_BUTTON_LABEL}" />
+        <div class="child">
+          <div class="search_panel">
+            <div class="separator">
+              <h3>{SEARCH_BUTTON_LABEL}</h3>  
+            </div><!-- /separator -->
+            <form action="{ROOT_URL}/search.php" method="post">
+              {SEARCH_HIDDEN}
+              <div class="separator">
+                <input class="sinput1" type="text" name="query" size="24" maxlength="255" value="{SEARCH_VALUE}" />
+              </div><!-- /separator -->
+              <div class="separator">
+                <select class="spull1" name="boolean" size="1">
+                <!-- BEGIN: SelectBox -->
+                <option value="{SELECT_BOX.SELECT_BOOL_VALUE}" {SELECT_BOX.SELECT_BOOL_SELECTED}>{SELECT_BOX.SELECT_BOOL_LABEL}</option>
+                <!-- END: SelectBox -->
+                </select>
+              </div><!-- /separator -->
+              <div class="separator">                    
+                <span>{SEARCH_WITHIN_LABEL} <input type="checkbox" name="withindocs" value="1"{SEARCH_WITHIN_SELECTED} /></span>
+                <span>{SEARCH_CURRENT_LABEL} <input type="checkbox" name="currentfolder" value="1"{SEARCH_CURRENT_SELECTED} /></span>
+              </div><!-- /separator -->
+              <div class="separator">                                            
+                <input name="search_{SEARCH_ID}" class="fbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+              </div><!-- /separator -->                              
+            </form>  
+          </div><!-- /tools_panels -->
+        </div><!-- /child -->
+      </li>
+<!-- END: SearchPanelTop -->    
+    
+<!-- BEGIN: InfoPanelTopWide -->
+  <!-- BEGIN: FilePanel -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/infopanel.png" alt="{INFOPANEL_TITLE}" title="{INFOPANEL_TITLE}" />
+        <div class="child">
+          <div class="separator">
+            <h3>{INFOPANEL_TITLE}</h3>
+          </div><!-- /separator --> 
+          <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/new.png" border="0" title="{INFOPANEL_NEW_IMG_TITLE}" alt="{INFOPANEL_NEW_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_NEW_URL}" title="{INFOPANEL_NEW_URL_TITLE}">{INFOPANEL_NEW_LABEL}</a></span>
+            <span>{INFOPANEL_NEW_TOTAL}</span>
+          </div><!-- /separator -->                          
+          <div class="separator">          
+            <span><img src="{THEME}/img/fp_icons/updated.png" border="0" title="{INFOPANEL_UPD_IMG_TITLE}" alt="{INFOPANEL_UPD_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_UPD_URL}" title="{INFOPANEL_UPD_URL_TITLE}">{INFOPANEL_UPD_LABEL}</a></span>
+            <span>{INFOPANEL_UPD_TOTAL}</span>
+          </div><!-- /separator -->
+          <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/my.png" border="0" title="{INFOPANEL_MY_IMG_TITLE}" alt="{INFOPANEL_MY_IMG_TITLE}" /></span>
+            <span"><a class="lstats1" href="{INFOPANEL_MY_URL}" title="{INFOPANEL_MY_URL_TITLE}">{INFOPANEL_MY_LABEL}</a></span>
+            <span>{INFOPANEL_MY_TOTAL}</span>
+          </div><!-- /separator -->                          
+          <div class="separator">                           
+            <span><img src="{THEME}/img/fp_icons/group.png" border="0" title="{INFOPANEL_GRP_IMG_TITLE}" alt="{INFOPANEL_GRP_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_GRP_URL}" title="{INFOPANEL_GRP_URL_TITLE}">{INFOPANEL_GRP_LABEL}</a></span>
+            <span>{INFOPANEL_GRP_TOTAL}</span>
+          </div><!-- /separator -->
+          <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/lock.png" border="0" title="{INFOPANEL_CHK_IMG_TITLE}" alt="{INFOPANEL_CHK_IMG_TITLE}" /></span>
+            <!-- BEGIN: CheckedOutZero -->
+            <span>{INFOPANEL_CHK_LABEL}</span>
+            <!-- END: CheckedOutZero -->
+            <!-- BEGIN: CheckedOut -->
+            <span><a class="lstats1" href="{INFOPANEL_CHK_URL}" title="{INFOPANEL_CHK_URL_TITLE}">{INFOPANEL_CHK_LABEL}</a></span>
+            <!-- END: CheckedOut -->
+            <span>{INFOPANEL_CHK_TOTAL}</span>                          
+          </div><!-- /separator -->                          
+          <div class="separator">                           
+            <span><img src="{THEME}/img/fp_icons/monitored.png" border="0" title="{INFOPANEL_MON_IMG_TITLE}" alt="{INFOPANEL_MON_IMG_TITLE}" /></span>
+            <!-- BEGIN: MonitorZero -->
+            <span>{INFOPANEL_MON_LABEL}</span>
+            <!-- END: MonitorZero -->
+            <!-- BEGIN: Monitor -->
+            <span><a class="lstats1" href="{INFOPANEL_MON_URL}" title="{INFOPANEL_MON_URL_TITLE}">{INFOPANEL_MON_LABEL}</a></span>
+            <!-- END: Monitor -->
+            <span>&nbsp;(<a href="#" class="cfolders1">{INFOPANEL_MONFOLDER_TOTAL}</a>:<a href="#" class="cfiles1">{INFOPANEL_MONFILE_TOTAL}</a>)</span>
+         </div><!-- /separator -->
+         <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/news.png" border="0" title="{INFOPANEL_NEWS_IMG_TITLE}" alt="{INFOPANEL_NEWS_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_NEWS_URL}" title="{INFOPANEL_NEWS_URL_TITLE}"{INFOPANEL_NEWS_ONCLICK}>{INFOPANEL_NEWS_LABEL}</a></span>
+            <span>{INFOPANEL_NEWS_TOTAL}</span>
+          </div><!-- /separator -->                          
+          <div class="separator">                           
+            <span><img src="{THEME}/img/fp_icons/star.png" border="0" title="{INFOPANEL_SPEC_IMG_TITLE}" alt="{INFOPANEL_SPEC_IMG_TITLE}" /></span>
+            <!-- BEGIN: SpecAccessZero -->
+            <span>{INFOPANEL_SPEC_LABEL}</span>
+            <!-- END: SpecAccessZero -->
+            <!-- BEGIN: SpecAccess -->
+            <span><a class="lstats1" href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}">{INFOPANEL_SPEC_LABEL}</a></span>
+            <!-- END: SpecAccess -->
+            <span>&nbsp;(<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfolders1">{INFOPANEL_SPECFOLDER_TOTAL}<a>:<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfiles1">{INFOPANEL_SPECFILE_TOTAL}</a>)</span>
+         </div><!-- /separator -->
+            <!-- BEGIN: Quota -->
+         <div class="separator">
+            <span><img src="{THEME}/ui_icons/{INFOPANEL_QUOTA_IMG}.png" border="0" title="{INFOPANEL_QUOTA_IMG_TITLE}" alt="{INFOPANEL_QUOTA_IMG_TITLE}" /> {INFOPANEL_QUOTA_LABEL} {INFOPANEL_QUOTA_TOTAL}</span>
+         </div><!-- /separator -->
+            <!-- END: Quota -->
+         <div class="separator">
+            <span><h3>{INFOPANEL_TOTAL_LABEL}&nbsp;{INFOPANEL_TOTAL}</h3></span>
+         </div><!-- /separator -->
+        </div><!-- /child -->
+      </li>
+  <!-- END: FilePanel -->      
+     
+  <!-- BEGIN: NewsPanel -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/newspaper.png" alt="{INFOPANEL_NEWSPANEL_HEADER}" title="{INFOPANEL_NEWSPANEL_HEADER}" />
+        <div class="child">
+          <div class="separator">
+            <h3>{INFOPANEL_NEWSPANEL_HEADER}</h3>
+          </div><!-- /separator -->
+      <!-- BEGIN: NewsRow -->
+          <div class="separator">
+                <a href="{INFOPANEL_NEWSPANEL_URL}"{INFOPANEL_NEWSPANEL_JAVASCRIPT}><img src="{THEME}/img/toolbar_icons/arrow.png" />{INFOPANEL_NEWSPANEL_TITLE}</a>
+          </div><!-- /separator -->
+      <!-- END: NewsRow -->
+        </div><!-- /child -->
+      </li>
+  <!-- END: NewsPanel -->
+
+  <!-- BEGIN: PeerPanel -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/eye.png" alt="{INFOPANEL_NEWSPANEL_HEADER}" title="{INFOPANEL_NEWSPANEL_HEADER}" />
+        <div class="child">
+        <!-- BEGIN: MyApprovalZero -->
+          <div class="separator">
+            <span>{INFOPANEL_PEERPANEL_MY_APPROVAL}:</span>
+            <span>{INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</span>          
+        <!-- END: MyApprovalZero -->
+        <!-- BEGIN: MyApproval -->
+            <span><a href="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}</a>:</span>
+            <span> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</span>
+          </div><!-- /separator -->            
+        <!-- END: MyApproval -->
+        <!-- BEGIN: MyPendingZero -->
+          <div class="separator">
+            <span>{INFOPANEL_PEERPANEL_PENDING_APPROVAL}:</span>
+            <span> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</span>
+        <!-- END: MyPendingZero -->
+        <!-- BEGIN: MyPending -->
+            <span><a href="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}</a>:</span>
+            <span> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</span>
+          </div><!-- /separator -->            
+        <!-- END: MyPending -->
+        </div><!-- /child -->
+      </li>
+  <!-- END: PeerPanel -->      
+<!-- END: InfoPanelTopWide-->       
+
+<!-- BEGIN: InfoPanelTop -->
+  <!-- BEGIN: FilePanel -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/infopanel.png" alt="{INFOPANEL_TITLE}" title="{INFOPANEL_TITLE}" />
+        <div class="child">
+          <div class="separator">
+            <h3>{INFOPANEL_TITLE}</h3>
+          </div><!-- /separator --> 
+          <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/new.png" border="0" title="{INFOPANEL_NEW_IMG_TITLE}" alt="{INFOPANEL_NEW_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_NEW_URL}" title="{INFOPANEL_NEW_URL_TITLE}">{INFOPANEL_NEW_LABEL}</a></span>
+            <span>{INFOPANEL_NEW_TOTAL}</span>
+          </div><!-- /separator -->                          
+          <div class="separator">          
+            <span><img src="{THEME}/img/fp_icons/updated.png" border="0" title="{INFOPANEL_UPD_IMG_TITLE}" alt="{INFOPANEL_UPD_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_UPD_URL}" title="{INFOPANEL_UPD_URL_TITLE}">{INFOPANEL_UPD_LABEL}</a></span>
+            <span>{INFOPANEL_UPD_TOTAL}</span>
+          </div><!-- /separator -->
+          <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/my.png" border="0" title="{INFOPANEL_MY_IMG_TITLE}" alt="{INFOPANEL_MY_IMG_TITLE}" /></span>
+            <span"><a class="lstats1" href="{INFOPANEL_MY_URL}" title="{INFOPANEL_MY_URL_TITLE}">{INFOPANEL_MY_LABEL}</a></span>
+            <span>{INFOPANEL_MY_TOTAL}</span>
+          </div><!-- /separator -->                          
+          <div class="separator">                           
+            <span><img src="{THEME}/img/fp_icons/group.png" border="0" title="{INFOPANEL_GRP_IMG_TITLE}" alt="{INFOPANEL_GRP_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_GRP_URL}" title="{INFOPANEL_GRP_URL_TITLE}">{INFOPANEL_GRP_LABEL}</a></span>
+            <span>{INFOPANEL_GRP_TOTAL}</span>
+          </div><!-- /separator -->
+          <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/lock.png" border="0" title="{INFOPANEL_CHK_IMG_TITLE}" alt="{INFOPANEL_CHK_IMG_TITLE}" /></span>
+            <!-- BEGIN: CheckedOutZero -->
+            <span>{INFOPANEL_CHK_LABEL}</span>
+            <!-- END: CheckedOutZero -->
+            <!-- BEGIN: CheckedOut -->
+            <span><a class="lstats1" href="{INFOPANEL_CHK_URL}" title="{INFOPANEL_CHK_URL_TITLE}">{INFOPANEL_CHK_LABEL}</a></span>
+            <!-- END: CheckedOut -->
+            <span>{INFOPANEL_CHK_TOTAL}</span>                          
+          </div><!-- /separator -->                          
+          <div class="separator">                           
+            <span><img src="{THEME}/img/fp_icons/monitored.png" border="0" title="{INFOPANEL_MON_IMG_TITLE}" alt="{INFOPANEL_MON_IMG_TITLE}" /></span>
+            <!-- BEGIN: MonitorZero -->
+            <span>{INFOPANEL_MON_LABEL}</span>
+            <!-- END: MonitorZero -->
+            <!-- BEGIN: Monitor -->
+            <span><a class="lstats1" href="{INFOPANEL_MON_URL}" title="{INFOPANEL_MON_URL_TITLE}">{INFOPANEL_MON_LABEL}</a></span>
+            <!-- END: Monitor -->
+            <span>&nbsp;(<a href="#" class="cfolders1">{INFOPANEL_MONFOLDER_TOTAL}</a>:<a href="#" class="cfiles1">{INFOPANEL_MONFILE_TOTAL}</a>)</span>
+         </div><!-- /separator -->
+         <div class="separator">
+            <span><img src="{THEME}/img/fp_icons/news.png" border="0" title="{INFOPANEL_NEWS_IMG_TITLE}" alt="{INFOPANEL_NEWS_IMG_TITLE}" /></span>
+            <span><a class="lstats1" href="{INFOPANEL_NEWS_URL}" title="{INFOPANEL_NEWS_URL_TITLE}"{INFOPANEL_NEWS_ONCLICK}>{INFOPANEL_NEWS_LABEL}</a></span>
+            <span>{INFOPANEL_NEWS_TOTAL}</span>
+          </div><!-- /separator -->                          
+          <div class="separator">                           
+            <span><img src="{THEME}/img/fp_icons/star.png" border="0" title="{INFOPANEL_SPEC_IMG_TITLE}" alt="{INFOPANEL_SPEC_IMG_TITLE}" /></span>
+            <!-- BEGIN: SpecAccessZero -->
+            <span>{INFOPANEL_SPEC_LABEL}</span>
+            <!-- END: SpecAccessZero -->
+            <!-- BEGIN: SpecAccess -->
+            <span><a class="lstats1" href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}">{INFOPANEL_SPEC_LABEL}</a></span>
+            <!-- END: SpecAccess -->
+            <span>&nbsp;(<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfolders1">{INFOPANEL_SPECFOLDER_TOTAL}<a>:<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfiles1">{INFOPANEL_SPECFILE_TOTAL}</a>)</span>
+         </div><!-- /separator -->
+            <!-- BEGIN: Quota -->
+         <div class="separator">
+            <span><img src="{THEME}/ui_icons/{INFOPANEL_QUOTA_IMG}.png" border="0" title="{INFOPANEL_QUOTA_IMG_TITLE}" alt="{INFOPANEL_QUOTA_IMG_TITLE}" /> {INFOPANEL_QUOTA_LABEL} {INFOPANEL_QUOTA_TOTAL}</span>
+         </div><!-- /separator -->
+            <!-- END: Quota -->
+         <div class="separator">
+            <span><h3>{INFOPANEL_TOTAL_LABEL}&nbsp;{INFOPANEL_TOTAL}</h3></span>
+         </div><!-- /separator -->
+        </div><!-- /child -->
+      </li>
+  <!-- END: FilePanel -->      
+     
+  <!-- BEGIN: NewsPanel -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/newspaper.png" alt="{INFOPANEL_NEWSPANEL_HEADER}" title="{INFOPANEL_NEWSPANEL_HEADER}" />
+        <div class="child">
+          <div class="separator">
+            <h3>{INFOPANEL_NEWSPANEL_HEADER}</h3>
+          </div><!-- /separator -->
+      <!-- BEGIN: NewsRow -->
+          <div class="separator">
+                <a href="{INFOPANEL_NEWSPANEL_URL}"{INFOPANEL_NEWSPANEL_JAVASCRIPT}><img src="{THEME}/img/toolbar_icons/arrow.png" />{INFOPANEL_NEWSPANEL_TITLE}</a>
+          </div><!-- /separator -->
+      <!-- END: NewsRow -->
+        </div><!-- /child -->
+      </li>
+  <!-- END: NewsPanel -->
+
+  <!-- BEGIN: PeerPanel -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/eye.png" alt="{INFOPANEL_NEWSPANEL_HEADER}" title="{INFOPANEL_NEWSPANEL_HEADER}" />
+        <div class="child">
+        <!-- BEGIN: MyApprovalZero -->
+          <div class="separator">
+            <span>{INFOPANEL_PEERPANEL_MY_APPROVAL}:</span>
+            <span>{INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</span>          
+        <!-- END: MyApprovalZero -->
+        <!-- BEGIN: MyApproval -->
+            <span><a href="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}</a>:</span>
+            <span> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</span>
+          </div><!-- /separator -->            
+        <!-- END: MyApproval -->
+        <!-- BEGIN: MyPendingZero -->
+          <div class="separator">
+            <span>{INFOPANEL_PEERPANEL_PENDING_APPROVAL}:</span>
+            <span> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</span>
+        <!-- END: MyPendingZero -->
+        <!-- BEGIN: MyPending -->
+            <span><a href="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}</a>:</span>
+            <span> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</span>
+          </div><!-- /separator -->            
+        <!-- END: MyPending -->
+        </div><!-- /child -->
+      </li>
+  <!-- END: PeerPanel -->      
+<!-- END: InfoPanelTop -->       
+
+<!-- BEGIN: Favorite0 --> 
+      <li>
+        <img src="{THEME}/img/toolbar_icons/favourite.png" alt="{FAVORITE_TEXT}" title="{FAVORITE_TEXT}" />
+        <div class="child">
+          <div id="favorite_{FAVORITE_ID}">
+            <div class="separator">
+              <h3>{FAVORITE_TEXT}</h3>  
+            </div><!-- /separator -->
+            <div class="separator">
+              <form action="dbmodify.php" method="post">
+                {FAVORITE_HIDDEN}
+                <select class="fpull1" name="favorite_id_{FAVORITE_ID}" size="1">
+                <!-- BEGIN: SelectBox -->
+                  <option value="{SELECT_BOX.FAVORITE_SELECTBOX_VALUE}"{SELECT_BOX.FAVORITE_SELECTBOX_SELECTED}>{SELECT_BOX.FAVORITE_SELECTBOX_LABEL}</option>
+                <!-- END: SelectBox -->
+                </select>
+            </div><!-- /separator -->
+            <div class="separator">
+                <input name="go_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_GO}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                <input name="del_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_DELETE}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                <input name="add_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_ADD}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+             </div><!-- /separator -->
+             <div class="separator">
+                <h3>{FAVORITE_LABEL}</h3>                
+             </div><!-- /separator -->
+             <div class="separator">
+                <input name="fav_label_{FAVORITE_ID}" class="finput1" type="text" value="" />  
+             </div><!-- /separator -->              
+            </form>
+          </div><!-- /tools_panels -->
+        </div><!-- /child -->
+      </li>
+<!-- END: Favorite0 --> 
+      
+<!-- BEGIN: Bulk0 -->       
+<!-- BEGIN: BulkButtonsTop -->
+      <li>
+        <img src="{THEME}/img/toolbar_icons/bulk.png" />
+        <div class="child bulk_btns">
+          <form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
+          {BULKBUTTONS_HIDDEN}
+          <!-- BEGIN: Download -->
+          <div class="separator">
+            <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          </div><!-- /separator -->
+          <!-- END: Download -->
+          <div class="separator">
+            <input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          </div><!-- /separator -->
+          <div class="separator">
+            <input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          </div><!-- /separator -->
+          <div class="separator">
+            <input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" />
+          </div><!-- /separator -->
+          <!-- BEGIN: Checkout -->
+          <div class="separator">
+            <input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          </div><!-- /separator -->  
+          <!-- END: Checkout -->
+          <!-- BEGIN: JUpload -->
+          <div class="separator">
+            <input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/>
+          </div><!-- /separator -->  
+          <!-- END: JUpload -->      
+        </div><!-- /child -->
+      </li>
+<!-- END: BulkButtonsTop -->      
+<!-- END: Bulk0 -->        
+      
+<!-- BEGIN: FileLink -->        
+      <li>
+        <img src="{THEME}/img/toolbar_icons/link.png" alt="{FILELINK_LABEL}" title="{FILELINK_LABEL}" />
+        <div class="child">
+          <div class="separator">        
+            <h3>{FILELINK_LABEL}</h3>
+          </div><!-- /separator -->
+          <div class="separator">            
+            <div id='file_link_out'></div>
+          </div><!-- /separator -->             
+        </div><!-- /child -->
+      </li>
+<!-- END: FileLink -->
+      
+    </ul><!-- /tool_bar_list -->
+    
+    <div class="clearbox"></div>
+  </div><!-- /tool_bar -->
+</div><!-- /div_scroll -->
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div id="content" style="width:{VIEW_WIDTH}">
+    
+    <div id="gradient">
+      <div class="switch abs_left"></div>
+      <div class="switch abs_right"></div>
+    </div>
+
+<!-- BEGIN: ShowRecTitle -->
+    <div id="showrec_cont">
+      <div id="showrec_title">{PAGE_TITLE}</div>
+<!-- END: ShowRecTitle -->
+<!-- BEGIN: ShowRecFilter -->
+      <div id="showrec">
+        <form action="showrecords.php" method="post">
+          {SHOWREC_HIDDEN}
+          <label for="filter">{SHOWREC_NUM_DAY_LABEL}</label>
+          <input class="finput1" id="filter" type="text" name="filter" size="10" value="{SHOWREC_NUM_DAY_VALUE}" />
+          <input  class="fbuttonup1" name="submit" type="submit" value="{SHOWREC_SUBMIT_VALUE}" alt="{SHOWREC_SUBMIT_ALT}" title="{SHOWREC_SUBMIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          <input  class="fbuttonup1" type="reset" value="{SHOWREC_RESET_VALUE}" alt="{SHOWREC_RESET_ALT}" title="{SHOWREC_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+        </form>
+      </div><!-- /showrec -->
+    </div><!-- /showrec_cont -->
+<!-- END: ShowRecFilter --> 
+
+<!-- BEGIN: NavBar -->
+    <div id="nav_bar">
+      <!-- BEGIN: AdminACL -->
+      <a href="{NAVBAR_ADMINACL_URL}"><img src="{THEME}/img/icons/cog.png" border="0" alt="{NAVBAR_ADMINACL_TITLE}" title="{NAVBAR_ADMINACL_TITLE}" /></a> 
+      <!-- END: AdminACL -->
+      {NAVBAR_LABEL} <strong>{NAVBAR_MSG}</strong> 
+      <!-- BEGIN: BreadCrumb -->
+      <a class="lfile1" href="{NAVBAR.BREADCRUMB_URL}" title="{NAVBAR.BREADCRUMB_TITLE}">{NAVBAR.BREADCRUMB_LABEL}</a> {NAVBAR.BREADCRUMB_SEPARATOR}
+      <!-- END: BreadCrumb -->
+    </div><!-- /nav_bar -->
+    <div id="apice"></div>
+<!-- END: NavBar -->

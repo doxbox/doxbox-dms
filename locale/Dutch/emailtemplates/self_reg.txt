@@ -1,0 +1,9 @@
+# Huidige gebruiker: %CURRENT_USER%
+# NIEUW Wachtwoord : %NEW_PASSWORD%
+# Gebruikersnaam: %USERNAME%
+# Bericht dat de gebruiker is vergrendeld: %DISABLED%
+
+
+ DIT IS EEN AUTOMATISCH BERICHT VAN OWL INTRANET
+
+Owl Wachtwoord van %USERNAME% is: %NEW_PASSWORD%

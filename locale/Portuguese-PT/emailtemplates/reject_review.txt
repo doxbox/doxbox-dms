@@ -1,0 +1,32 @@
+# File Title: %FILE_TITLE%
+# File Name: %FILE_NAME%
+# File Path: %OWL_FILE_PATH%
+# File Size: %FILE_SIZE%
+# File Owner: %FILE_OWNER%
+# File Updator: %FILE_UPDATOR%
+# File Created: %FILE_CREATION_DATE%
+# File Description: %FILE_DESC%
+# File Modified: %FILE_MODIFICATION_DATE%
+# File Version: %FILE_VERSION%
+# File Link: %FILE_URL%
+# Current User: %CURRENT_USER%
+
+O seu documento foi rejeitado:
+
+O documento foi rejeitado por: %CURRENT_USER%
+
+Arquivo rejeitado: %FILE_NAME% 
+
+T&iacute;tulo: %FILE_TITLE% 
+
+Descri&ccedil;&atilde;o: %FILE_DESC% 
+
+Caminho: %OWL_FILE_PATH% 
+
+Vers&atilde;o: %FILE_VERSION%
+Criado/Actualizado por: %FILE_UPDATOR%
+
+MOTIVO DA REJEI&Ccedil;&Atilde;O
+
+%USER_MESSAGE%
+

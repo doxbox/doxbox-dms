@@ -1,0 +1,12 @@
+Style  : yesi_RedGrey
+Date   : Nov 9, 2003
+Version: 1.0
+Author : Yesideez
+
+Font: Arial 8pt Bold
+
+Template Buttons: 
+graphics\locale\English\yesi_RedGrey\ui_misc\btn_blank1.bmp
+graphics\locale\English\yesi_RedGrey\ui_misc\btn_blank_hover1.bmp
+graphics\locale\English\yesi_RedGrey\ui_misc\btn_blank2.bmp
+graphics\locale\English\yesi_RedGrey\ui_misc\btn_blank_hover2.bmp

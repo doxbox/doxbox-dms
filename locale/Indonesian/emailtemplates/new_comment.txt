@@ -1,0 +1,25 @@
+# File Title: %FILE_TITLE%
+# File Name: %FILE_NAME%
+# File Path: %OWL_FILE_PATH%
+# File Size: %FILE_SIZE%
+# File Owner: %FILE_OWNER%
+# File Updator: %FILE_UPDATOR%
+# File Created: %FILE_CREATION_DATE%
+# File Description: %FILE_DESC%
+# File Modified: %FILE_MODIFICATION_DATE%
+# File Version: %FILE_VERSION%
+# File Link: %FILE_URL%
+# File Comment: %FILE_COMMENT%
+# Current User: %CURRENT_USER%
+
+INI ADALAH PESAN OTOMATIS DARI Intranet OWL
+
+Assalamu 'alaikum warahmatullahi wabarakatuh %FILE_OWNER%,<br />
+
+%CURRENT_USER%  telah memberikan komentar pada %OWL_FILE_PATH%
+
+Komentar:
+
+%FILE_COMMENT%
+
+Wassalamu 'alaikum warahmatullahi wabarakatuh

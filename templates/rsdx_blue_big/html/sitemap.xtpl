@@ -1,0 +1,18 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: SiteMap -->
+<div align="center">
+<br />
+<table cellspacing="0" cellpadding="0" border="0" width="95%">
+   <tr>
+      <td class="admin2" width="100%" colspan="2">{SITEMAP_TITLE}<br /></td>
+   </tr>
+</table>
+<br />
+   <table cellspacing="0" border="1" cellpadding="4" bgcolor="white">
+      <tr>
+         <td align="left">{SITE_TREE}</td>
+      </tr>
+   </table>
+</div>
+<!-- END: SiteMap -->
+{FILE "html/footer.xtpl"}

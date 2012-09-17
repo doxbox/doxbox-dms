@@ -1,0 +1,24 @@
+## owl_batch.TODO.txt file for OWL/admin/tools/owl_batch.d ##
+
+Author Robert Geleta www.rgeleta.com
+Version: 2011-09-11
+
+Directory: /admin/tools/owl_batch.d for OWL Intranet batch jobs and programs
+
+TODO items for owl_batch.d
+
+NOTE: Numbering is for reference only, does not indicate priority or preference
+
+1.	Check all scripts to verify they are using $default->owl_x_table notation
+    and not table name only
+
+2.	Update convert-docs-db-to-fs/dumpfiles.php.zip to owl_batch.d standards	
+
+3.	Update convert-docs-fs-to-db/site2owl.php to owl_batch.d.standards
+
+4.	Converge batch load-db-from-fs and online populate.php code
+	a. Abstract populate logic to a class
+	b. update /admin/populate.php to use class
+	c. update /owl_batch.d/populate.php to use class
+
+## end ##

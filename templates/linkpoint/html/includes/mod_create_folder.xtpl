@@ -1,0 +1,68 @@
+<!-- BEGIN: CreateFolder -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="spacer1"><img src="{THEME}/ui_misc/x_clear.gif" height="12" width="1" alt=""></img></td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+{FORM}
+{HIDDEN_FIELDS}
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                 <td class="browse0" width="100%" colspan="20">{ADD_FOLDER_PAGE_TITLE}</td>
+              </tr>
+<!-- BEGIN: RssFeed -->
+               <tr>
+                  <td class="form1">{RSS_LABEL}</td>
+                  <td class="form1" width="100%"><input  type="radio" value="{RSS_YES_VALUE}" name="rss_feed" {RSS_YES_SELECTED} />{RSS_YES}<input  type="radio" value="{RSS_NO_VALUE}" name="rss_feed" {RSS_NO_SELECTED} />{RSS_NO}</td>
+			   </tr>
+<!-- END: RssFeed -->
+               <tr>
+                  <td class="form1"><label for="name">{FOLDER_NAME_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="name" type="text" name="name" size="24" value="" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{FOLDER_GROUP_LABEL}</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="groupid" size="1">
+<!-- BEGIN: Groups -->
+                     <option value="{FOLDER_GROUP_ID}" {FOLDER_GROUP_ID_SELECTED}>{FOLDER_GROUP_ID_LABEL}</option>
+<!-- END: Groups -->
+                     </select>
+                  </td>
+               </tr>
+<!-- BEGIN:  PassWordOveride -->
+                <tr>
+                   <td class="form1"><label for="newpassword">{FOLDER_NEWPASS_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FOLDER_NEWPASS_VALUE}"></td>
+                </tr>
+                <tr>
+                   <td class="form1"><label for="modify_url">{FOLDER_CONFIRM_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FOLDER_CONFIRM_VALUE}"></td>
+                </tr>
+<!-- END:  PassWordOveride -->
+               <tr>
+                  <td class="form1">{SET_SECURITY_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="set_acl" value="1" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{FOLDER_DESC_LABEL}<font color="red"><b>&nbsp;{FOLDER_DESC_REQUIRED}&nbsp;</b></font></td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="description" rows="10" cols="50"></textarea></td>
+               </tr>
+               <tr>
+                  <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt=""></img></td><td class="form2" width="100%"><input  class="fbuttonup1" type="submit" value="{FOLDER_BTN_CREATE}" alt="{FOLDER_BTN_CREATE_ALT}" title="{FOLDER_BTN_CREATE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /><input  class="fbuttonup1" type="reset" value="{FOLDER_BTN_RESET}" alt="{FOLDER_BTN_RESET_ALT}" title="{FOLDER_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  </td>
+                </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+</form>
+<!-- END: CreateFolder -->

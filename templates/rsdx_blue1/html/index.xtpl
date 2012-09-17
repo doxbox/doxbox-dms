@@ -1,0 +1,108 @@
+<!-- BEGIN: main -->
+<center>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+   <tr>
+      <td class="logo" width="25%">{LOGO_LEFT}</td>
+      <td class="logo" width="50%">{LOGO_CENTER}<br />{MOTD}</td>
+      <td class="logo" width="25%">{LOG_RIGHT}</td>
+   </tr>
+</table>
+<!-- BEGIN: infomsg -->
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+   <tr>
+      <td class="note" colspan="3">{INFO_MESSAGE}<br /> </td>
+   </tr>
+</table>
+<!-- END: infomsg --> 
+<table border="0" cellspacing="0" cellpadding="0">
+   <form name="login" action="index.php" method="post">
+{HIDDEN_FIELDS}
+      <tr>
+         <td width="50%">&nbsp;<br /></td>
+         <td class="shadow">
+           <table class="box" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+	             <td class="title">{SITE_TITLE}<br /></td>
+	          </tr>
+<!-- BEGIN: Databases -->
+           <table class="box" border="0" cellspacing="0" cellpadding="0" width="100%">
+		       <tr>
+    	          <td width="50%">&nbsp;<br /></td>
+                  <td class="repo1">{REPOSITORY_LABEL}<br /></td>
+                  <td class="repo2">
+                     <select class="repo3" name="currentdb" size="1" onchange="submit();">
+<!-- BEGIN: Options -->
+				     <option value="{SELECT_VALUE}" {SELECT_SELECTED}>{SELECT_LABEL}</option>
+<!-- END: Options -->
+                     </select>
+                  </td>
+                  <td width="50%">&nbsp;<br /></td>
+              </tr>
+           </table>
+<!-- END: Databases -->
+           <table class="box" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+	             <td colspan="4"><img src="{THEME}/ui_misc/x_clear.gif" width="1" height="18" border="0" alt=""></img></td>
+	          </tr>
+              <tr>
+                 <td width="50%">&nbsp;<br /></td>
+                 <td class="text1"><label for="loginname">{USERNAME_LABEL}</label><br /></td>
+                 <td class="text2"><input id="loginname" class="input_login" type="text" name="loginname" size="20" maxlength="255" tabindex="1" /></td>
+    	         <td width="50%">&nbsp;<br /></td>
+              </tr>
+              <tr>
+                 <td>&nbsp;<br /></td>
+                 <td class="text1"><label for="password">{PASSWORD_LABEL}</label><br /></td>
+                 <td class="text2"><input id="password" class="input_password" type="password" name="password" size="20" maxlength="255" tabindex="2" /></td>
+                 <td>&nbsp;<br /></td>
+              </tr>
+              <tr>
+    	         <td colspan="2">&nbsp;<br /></td>
+                 <td class="xbutton1"><input tabindex="3" class="xbutton2" type="submit" value="{BTN_LOGIN_VALUE}" alt="{BTN_LOGIN_ALT}" title="{BTN_LOGIN_ALT}" onmouseover="highlightButton('xbutton2', this)" onmouseout="highlightButton('xbutton2', this)" /></td>
+                 <td>&nbsp;<br /></td>
+              </tr>
+<!-- BEGIN: RememberMe -->
+              <tr>
+                 <td colspan="2">&nbsp;<br /></td>
+                 <td class="remember">{REMEMBERME_LABEL}<input type="checkbox" id="remember" name="rememberme" value="1" /></td>
+                 <td>&nbsp;<br /></td>
+              </tr>
+<!-- END: RememberMe -->
+           </table>
+<!-- BEGIN: AnonAccess -->
+           <table class="box" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <tr>
+	             <td class="anon1"><a class="anon2" href="{ANON_URL}"{ANON_SCRIPT}>{ANON_LABEL}<br /></a></td>
+	          </tr>
+           </table>
+<!-- END: AnonAccess -->
+          </td>
+          <td width="50%">&nbsp;</td>
+      </tr>
+      <tr>
+         <td class="link1" colspan="3">&nbsp;
+<!-- BEGIN: SelfHelp -->
+<!-- BEGIN: Register -->
+		 <a class="link2" href="{REGISTER_URL}">{REGISTER_LABEL}</a>&nbsp;&nbsp;
+<!-- END: Register -->
+<!-- BEGIN: Separator -->
+		 |&nbsp;&nbsp;
+<!-- END: Separator -->
+<!-- BEGIN: ForgotPass -->
+		 <a class="link2" href="{FORGOT_URL}">{FORGOT_LABEL}</a>
+<!-- END: ForgotPass -->
+<!-- END: SelfHelp -->
+         </td>
+      </tr>
+   </form>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+   <tr>
+      <td class="version1" width="15%">&nbsp;</td>
+	  <td class="version1" align="center" width="70%"><a class="version2" href="{VERSION_URL}" target="_blank">{VERSION_LABEL}</a></td>
+	  <td class="version1" width="15%">&nbsp;</td>
+   </tr>
+</table>
+</center>
+<script type="text/javascript">document.login.loginname.focus();</script> 
+<!-- END: main -->

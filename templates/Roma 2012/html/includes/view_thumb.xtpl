@@ -1,0 +1,151 @@
+<!-- BEGIN: ThumbsView -->
+<table class="standard_browse thumb_browse width_driver" cellspacing="0" cellpadding="0" border="0" >
+   <tbody>
+<!-- BEGIN: NoRecs -->
+      <tr>
+         <td class="empty_folder" width="3000px">{EMPTY_FOLDER}</td>
+      </tr>
+<!-- End: NoRecs -->
+<!-- BEGIN: Items -->
+                  <tr class="browse_titles">
+<!-- BEGIN: Title -->
+                     <td class="{THUMB_TITLE_TD_CLASS}" nowrap="nowrap" width="{COLUMN_WIDTH}%">{BULK_CHECKBOX}&nbsp;{THUMB_FILE_STATUS}&nbsp;{THUMB_FILE_HREF_BEGIN}<img src="{THEME}/img/icon_filetype/{THUMB_FILE_ICON}.png" border="0" alt="">{THUMB_FILE_HREF_END}&nbsp;{THUMB_FILE_NAME}</td>
+<!-- END: Title -->
+                  </tr>
+                  <tr valign="top">
+<!-- BEGIN: FileFolder -->
+	             <td class="{THUMB_FILE_TD_CLASS}">
+<!-- BEGIN: Folder -->
+<!-- BEGIN: filename -->
+<div class="layerMenuAnchor"><span>{FOLDER_MENU_NAME}&nbsp;<img src="{ROOT_URL}/scripts/phplayersmenu/menuimages/forward-arrow.png" /></span>
+<!-- BEGIN: Menu -->
+  <ul class="jqLayerMenu">
+<!-- BEGIN: Browse -->
+  <li><img src="{THEME}/icon_action/folder_closed.gif" />&nbsp;<a href="{FOLDER_MENU_BROWSE_ACTION}" alt="{FOLDER_MENU_BROWSE_ALT}">{FOLDER_MENU_BROWSE_LABEL}</a></li>
+<!-- END: Browse -->
+<!-- BEGIN: Delete -->
+  <li><img src="{THEME}/icon_action/trash.gif" />&nbsp;<a href="{FOLDER_MENU_DELETE_ACTION}" alt="{FOLDER_MENU_DELETE_ALT}" onclick="{FOLDER_MENU_DELETE_CONFIRM}">{FOLDER_MENU_DELETE_LABEL}</a></li>
+<!-- END: Delete -->
+<!-- BEGIN: Edit -->
+  <li><img src="{THEME}/icon_action/edit.gif" />&nbsp;<a href="{FOLDER_MENU_EDIT_ACTION}" alt="{FOLDER_MENU_EDIT_ALT}">{FOLDER_MENU_EDIT_LABEL}</a></li>
+<!-- END: Edit -->
+<!-- BEGIN: Copy -->
+  <li><img src="{THEME}/icon_action/copy.gif" />&nbsp;<a href="{FOLDER_MENU_COPY_ACTION}" alt="{FOLDER_MENU_COPY_ALT}">{FOLDER_MENU_COPY_LABEL}</a></li>
+<!-- END: Copy -->
+<!-- BEGIN: Move -->
+  <li><img src="{THEME}/icon_action/move.gif" />&nbsp;<a href="{FOLDER_MENU_MOVE_ACTION}" alt="{FOLDER_MENU_MOVE_ALT}">{FOLDER_MENU_MOVE_LABEL}</a></li>
+<!-- END: Move -->
+<!-- BEGIN: Link -->
+  <li><img src="{THEME}/icon_action/fld_link.gif" />&nbsp;<a href="{FOLDER_MENU_LINK_ACTION}" alt="{FOLDER_MENU_LINK_ALT}">{FOLDER_MENU_LINK_LABEL}</a></li>
+<!-- END: Link -->
+<!-- BEGIN: Monitor -->
+  <li><img src="{THEME}/icon_action/{FOLDER_MENU_MONITOR_IMG}.gif" />&nbsp;<a href="{FOLDER_MENU_MONITOR_ACTION}" alt="{FOLDER_MENU_MONITOR_ALT}">{FOLDER_MENU_MONITOR_LABEL}</a></li>
+<!-- END: Monitor -->
+<!-- BEGIN: Download -->
+  <li><img src="{THEME}/icon_action/zip.gif" />&nbsp;<a href="{FOLDER_MENU_DOWNLD_ACTION}" alt="{FOLDER_MENU_DOWNLD_ALT}">{FOLDER_MENU_DOWNLD_LABEL}</a></li>
+<!-- END: Download -->
+<!-- BEGIN: SetACL -->
+  <li><img src="{THEME}/icon_action/setacl.png" />&nbsp;<a href="{FOLDER_MENU_SETACL_ACTION}" alt="{FOLDER_MENU_SETACL_ALT}">{FOLDER_MENU_SETACL_LABEL}</a></li>
+<!-- END: SetACL -->
+<!-- BEGIN: GenThumb -->
+  <li><img src="{THEME}/icon_action/thumb.png" />&nbsp;<a href="{FOLDER_MENU_GENTHUMB_ACTION}" alt="{FOLDER_MENU_GENTHUMB_ALT}">{FOLDER_MENU_GENTHUMB_LABEL}</a></li>
+<!-- END: GenThumb -->
+  </ul>
+<!-- END: Menu -->
+  </div>
+<!-- END: filename -->
+<!-- END: Folder -->
+
+<!-- BEGIN: File -->
+<!-- BEGIN: filename -->
+<div class="layerMenuAnchor"><a href="{FILE_MENU_ACTION}" alt="{FILE_MENU_ACTION_ALT}">{FILE_FILENAME}</a>&nbsp;<img src="{ROOT_URL}/scripts/phplayersmenu/menuimages/forward-arrow.png" />
+<!-- BEGIN: Menu -->
+  <ul class="jqLayerMenu">
+<!-- BEGIN: Download -->
+  <li><img src="{THEME}/icon_action/bin.gif" />&nbsp;<a href="{FILE_MENU_DOWNLD_ACTION}" alt="{FILE_MENU_DOWNLD_ALT}">{FILE_MENU_DOWNLD_LABEL}</a></li>
+<!-- END: Download -->
+<!-- BEGIN: Delete -->
+  <li><img src="{THEME}/icon_action/trash.gif" />&nbsp;<a href="{FILE_MENU_DELETE_ACTION}" alt="{FILE_MENU_DELETE_ALT}" onclick="{FILE_MENU_DELETE_CONFIRM}">{FILE_MENU_DELETE_LABEL}</a></li>
+<!-- END: Delete -->
+<!-- BEGIN: FileLog -->
+  <li><img src="{THEME}/icon_action/log.gif" />&nbsp;<a href="{FILE_MENU_FILELOG_ACTION}" alt="{FILE_MENU_FILELOG_ALT}">{FILE_MENU_FILELOG_LABEL}</a></li>
+<!-- END: FileLog -->
+<!-- BEGIN: HotLink -->
+  <li><img src="{THEME}/icon_action/link.gif" />&nbsp;<a href="{FILE_MENU_HOTLINK_ACTION}" alt="{FILE_MENU_HOTLINK_ALT}" onclick="{FILE_MENU_HOTLINK_GET}">{FILE_MENU_HOTLINK_LABEL}</a></li>
+<!-- END: HotLink -->
+<!-- BEGIN: SetACL -->
+  <li><img src="{THEME}/icon_action/setacl.png" />&nbsp;<a href="{FILE_MENU_SETACL_ACTION}" alt="{FILE_MENU_SETACL_ALT}">{FILE_MENU_SETACL_LABEL}</a></li>
+<!-- END: SetACL -->
+<!-- BEGIN: Link -->
+  <li><img src="{THEME}/icon_action/link.gif" />&nbsp;<a href="{FILE_MENU_LINK_ACTION}" alt="{FILE_MENU_LINK_ALT}">{FILE_MENU_LINK_LABEL}</a></li>
+<!-- END: Link -->
+<!-- BEGIN: Copy -->
+  <li><img src="{THEME}/icon_action/copy.gif" />&nbsp;<a href="{FILE_MENU_COPY_ACTION}" alt="{FILE_MENU_COPY_ALT}">{FILE_MENU_COPY_LABEL}</a></li>
+<!-- END: Copy -->
+<!-- BEGIN: Move -->
+  <li><img src="{THEME}/icon_action/move.gif" />&nbsp;<a href="{FILE_MENU_MOVE_ACTION}" alt="{FILE_MENU_MOVE_ALT}">{FILE_MENU_MOVE_LABEL}</a></li>
+<!-- END: Move -->
+<!-- BEGIN: Update -->
+  <li><img src="{THEME}/icon_action/update.gif" />&nbsp;<a href="{FILE_MENU_UPDATE_ACTION}" alt="{FILE_MENU_UPDATE_ALT}">{FILE_MENU_UPDATE_LABEL}</a></li>
+<!-- END: Update -->
+<!-- BEGIN: Comments -->
+  <li><img src="{THEME}/icon_action/{FILE_MENU_COMMENT_IMG}.gif" />&nbsp;<a href="{FILE_MENU_COMMENT_ACTION}" alt="{FILE_MENU_COMMENT_ALT}">{FILE_MENU_COMMENT_LABEL}</a></li>
+<!-- END: Comments -->
+<!-- BEGIN: FileLock -->
+  <li><img src="{THEME}/icon_action/{FILE_MENU_FILELOCK_IMG}.gif" />&nbsp;<a href="{FILE_MENU_FILELOCK_ACTION}" alt="{FILE_MENU_FILELOCK_ALT}" {FILE_MENU_FILELOCK_ONCLICK}>{FILE_MENU_FILELOCK_LABEL}</a></li>
+<!-- END: FileLock -->
+<!-- BEGIN: Email  -->
+  <li><img src="{THEME}/icon_action/email.gif" />&nbsp;<a href="{FILE_MENU_EMAIL_ACTION}" alt="{FILE_MENU_EMAIL_ALT}">{FILE_MENU_EMAIL_LABEL}</a></li>
+<!-- END: Email  -->
+<!-- BEGIN: Inline -->
+  <li><img src="{THEME}/icon_action/edit_file.gif" />&nbsp;<a href="{FILE_MENU_INLINE_ACTION}" alt="{FILE_MENU_INLINE_ALT}">{FILE_MENU_INLINE_LABEL}</a></li>
+<!-- END: Inline -->
+<!-- BEGIN: Monitor -->
+  <li><img src="{THEME}/icon_action/{FILE_MENU_MONITOR_IMG}.gif" />&nbsp;<a href="{FILE_MENU_MONITOR_ACTION}" alt="{FILE_MENU_MONITOR_ALT}">{FILE_MENU_MONITOR_LABEL}</a></li>
+<!-- END: Monitor -->
+<!-- BEGIN: FindRelated -->
+  <li><img src="{THEME}/icon_action/related.gif" />&nbsp;<a href="{FILE_MENU_FINDRELATED_ACTION}" alt="{FILE_MENU_FINDRELATED_ALT}">{FILE_MENU_FINDRELATED_LABEL}</a></li>
+<!-- END: FindRelated -->
+<!-- BEGIN: View -->
+  <li><img src="{THEME}/icon_action/{FILE_MENU_VIEW_IMG}.gif" />&nbsp;<a href="{FILE_MENU_VIEW_ACTION}" alt="{FILE_MENU_VIEW_ALT}" {FILE_MENU_VIEW_TARGET}>{FILE_MENU_VIEW_LABEL}</a></li>
+<!-- END: View -->
+<!-- BEGIN: GenThumb -->
+  <li><img src="{THEME}/icon_action/thumb.png" />&nbsp;<a href="{FILE_MENU_GENTHUMB_ACTION}" alt="{FILE_MENU_GENTHUMB_ALT}">{FILE_MENU_GENTHUMB_LABEL}</a></li>
+<!-- END: GenThumb -->
+          </ul>
+<!-- END: Menu -->
+  </div>
+<!-- END: filename -->
+<!-- END: File -->
+<div class="{MED_THUMB_CLASS}">
+<!-- Begin: Clip -->
+   <span></span>
+<!-- END: Clip -->
+      <div style="width: {MAX_THUMB_WIDTH}px; height:{MAX_THUMB_HEIGHT}px;">
+         {THUMB_FILE_MED_THUMBNAIL}
+      </div>
+</div>
+<!-- Begin: FileEdge -->
+<div class="text_edge"></div>
+<!-- End: FileEdge -->
+<div class="{THUMB_TEXT}">
+  <ul>
+    <li>{THUMB_FILE_IMAGE_SIZE}</li>
+    <li>{THUMB_FILE_MENU}</li>
+    <li>{THUMB_FILE_VERSION}</li>
+    <li>{THUMB_FILE_FILENAME}</li>
+    <li>{THUMB_FILE_DOCID}</li>
+    <li>{THUMB_FILE_SIZE}</li>
+    <li>{THUMB_FILE_POSTEDBY}</li>
+    <li>{THUMB_FILE_UPDATEDBY}</li>
+    <li>{THUMB_FILE_SMODIFIED}</li>
+    <li>{THUMB_FILE_CHECKEDOUT}</li>
+  </ul>
+</div><!-- /thumb_text -->
+                    </td>
+<!-- END: FileFolder -->
+                  </tr>
+<!-- END: Items -->
+   </tbody>
+</table>
+<!-- END: ThumbsView -->

@@ -1,0 +1,227 @@
+<!-- BEGIN: Users -->
+               <tr>
+                  <td class="admin2" width="100%" colspan="2">{USER_ADMIN_TITLE}</td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td class="form1">{USERS_LABEL}</td>
+                  <td class="form1" width="100%">
+                     <select class="fpull1" name="owluser" size="1">
+<!-- BEGIN: UserOptions -->
+	                <option value="{USER_VALUE}"{USER_SELECTED}>{USER_LABEL}</option>
+<!-- END: UserOptions -->
+                     </select>
+                  </td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td class="nostyle_table right_text" width="100%" colspan="2">
+                    <a class="lbutton1" href="{BTN_NEW_USER_URL}" title="{BTN_NEW_USER_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_USER_LABEL}&nbsp;" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href('{BTN_NEW_USER_URL}');"/>&nbsp;</a>
+                    <input  class="fbuttonup1" name="btn_ed_user_x" type="submit" value="{BTN_EDIT_USER_LABEL}" alt="{BTN_EDIT_USER_TITLE}" title="{BTN_EDIT_USER_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  </td>
+               </tr>
+<!-- END: Users -->
+<!-- BEGIN: Groups -->
+               <tr>
+                  <td class="admin2" width="100%" colspan="2">{GROUP_ADMIN_TITLE}<br /></td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td class="form1">{GROUPS_LABEL}</td>
+                  <td class="form1" width="100%">
+                     <select class="fpull1" name="group" size="1">
+<!-- BEGIN: GroupOptions -->
+                        <option value="{GROUP_VALUE}"{GROUP_SELECTED}>{GROUP_LABEL}</option>
+<!-- END: GroupOptions -->
+                     </select>
+                  </td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td class="nostyle_table right_text" width="100%" colspan="2">
+                    <a class="lbutton1" href="{BTN_NEW_GROUP_URL}" title="{BTN_NEW_GROUP_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_GROUP_LABEL}&nbsp;" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href('{BTN_NEW_GROUP_URL}');" /></a>
+                    <input  class="fbuttonup1" name="btn_ed_group_x" type="submit" value="{BTN_EDIT_GROUP_LABEL}" alt="{BTN_EDIT_GROUP_TITLE}" title="{BTN_EDIT_GROUP_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  </td>
+               </tr>
+<!-- END: Groups -->
+<!-- BEGIN: NewGroup -->
+               <tr>
+                  <td class="subtitle" width="100%" colspan="2">{NEW_GROUP_HEADING}<br /></td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td class="form1"><label for="name">{NEW_GROUP_TITLE}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="name" type="text" name="name" size="40" value="" /></td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td class="form2" width="100%" colspan="2">
+                     <input  class="fbuttonup1" type="submit" value="{NEW_GROUP_ADD_BTN}" alt="{NEW_GROUP_ADD_BTN_ALT}" title="{NEW_GROUP_ADD_BTN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" type="reset" value="{NEW_GROUP_RESET_BTN}" alt="{NEW_GROUP_RESET_BTN_ALT}" title="{NEW_GROUP_RESET_BTN_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+               </tr>
+<!-- END: NewGroup -->
+<!-- BEGIN: EditGroup -->
+               <tr>
+                  <td class="subtitle" width="100%" colspan="2">{HEADING_TITLE}<br /></td>
+               </tr>
+<!-- BEGIN: Saved -->
+               <tr class="nostyle_table">
+                  <td class="admin3" width="100%" colspan="2">{HEADING_SAVED}<br /></td>
+               </tr>
+<!-- END: Saved -->
+               <tr class="nostyle_table">
+                  <td class="form1"><label for="name">{GROUP_TITLE}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="name" type="text" name="name" size="40" value="{GROUP_VALUE}"/></td>
+               </tr>
+               <tr>
+                  <td class="form2" width="100%" colspan="2">
+                     <input class="fbuttonup1" type="submit" name="{BTN_CHANGE}" value="{BTN_CHANGE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- BEGIN: DelGroup -->
+                     <input class="fbuttonup1" name="bdeletegroup_x" type="submit" value="{BTN_DEL_GROUP}" alt="{BTN_DEL_GROUP_ALT}" title="{BTN_DEL_GROUP_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- END: DelGroup -->
+                     <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  </td>
+               </tr>
+               <tr>
+                  <td class="subtitle" width="100%" colspan="2">{HEADING_MEMBER_GROUP}<br /></td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td></td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td colspan="2">
+                     <table cellspacing="0" align="center" colspan="3" cellpadding="0" border="0">
+                        <tr>
+                           <td class="admin3" align="center" nowrap="nowrap">{TITLE_AVAILABLE}</td>
+                           <td class="admin3" align="center" nowrap="nowrap">&nbsp;</td>
+                           <td class="admin3" align="center" nowrap="nowrap">{TITLE_SELECTED}</td>
+                        </tr>
+                        <tr>
+                           <td class="form2">
+                              <select multiple="multiple" size="10" name="fallusers[]" class="fpullacl">
+<!-- BEGIN: MembUsersAvail -->
+                                 <option value="{MEMB_USER_AVAIL_VALUE}">{MEMB_USER_AVAIL_CAPTION}</option>
+<!-- END: MembUsersAvail -->
+                              </select>
+                           </td>
+                           <td class="form1" nowrap="nowrap">
+                            <div class="acl_buttons">
+                              <input type="button" onclick="move(this.form.elements['fselectedusers[]'],this.form.elements['fallusers[]'])" value="&lsaquo;" />
+                              <input type="button" onclick="move(this.form.elements['fallusers[]'],this.form.elements['fselectedusers[]'])" value="&rsaquo;" />
+                            </div>
+                            <div class="acl_buttons">  
+                              <input type="button" onclick="selectAllUsers(this.form.elements['fselectedusers[]'],this.form.elements['fallusers[]'])" value="&laquo;" />
+                              <input type="button" onclick="selectAllUsers(this.form.elements['fallusers[]'],this.form.elements['fselectedusers[]'])" value="&raquo;" />
+                            </div>
+                           </td>
+                           <td class="form2">
+                              <select multiple="multiple" size="10" name="fselectedusers[]" class="fpullacl">
+<!-- BEGIN: MembUsersSelected -->
+                                 <option value="{MEMB_USER_SELECTED_VALUE}">{MEMB_USER_SELECTED_CAPTION}</option>
+<!-- END: MembUsersSelected -->
+                              </select>
+                           </td>
+                        </tr>
+                        <tr class="nostyle_table">
+                           <td colspan="2" class="form1" ></td>
+                           <td class="form2" nowrap="nowrap">
+                              <input onclick="subSelection('users'); selectAll(document.admin.elements['fselectedusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                              <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                           </td>
+                         </tr>
+                      </table>
+                   </td>
+               </tr>
+               <tr>
+                   <td class="subtitle" width="100%" colspan="2">{HEADING_PRIMARY_GROUP}<br /></td>
+               </tr>
+               <tr class="nostyle_table">
+                   <td></td>
+               </tr>
+               <tr class="nostyle_table">
+                  <td colspan="2">
+                     <table cellspacing="0" align="center" colspan="3" cellpadding="0" border="0">
+                        <tr>
+                           <td class="admin3" align="center" nowrap="nowrap">{TITLE_AVAILABLE}</td>
+                           <td class="admin3" align="center" nowrap="nowrap">&nbsp;</td>
+                           <td class="admin3" align="center" nowrap="nowrap">{TITLE_SELECTED}</td>
+                        </tr>
+                        <tr>
+                           <td class="form2">
+                              <select multiple="multiple" size="10" name="fallmainusers[]" class="fpullacl">
+<!-- BEGIN: PrimUserAvail -->
+                                 <option value="{PRIM_USER_AVAIL_VALUE}">{PRIM_USER_AVAIL_CAPTION}</option>
+<!-- END: PrimUserAvail -->
+                              </select>
+                           </td>
+                           <td class="form2" nowrap="nowrap">
+                              <div class="acl_buttons">
+                              <input type="button" onclick="move(this.form.elements['fselectedmainusers[]'],this.form.elements['fallmainusers[]'])" value="&lsaquo;" />
+                                 <input type="button" onclick="move(this.form.elements['fallmainusers[]'],this.form.elements['fselectedmainusers[]'])" value="&rsaquo;" />
+                              </div>
+                              <div class="acl_buttons">
+                              <input type="button" onclick="selectAllUsers(this.form.elements['fselectedmainusers[]'],this.form.elements['fallmainusers[]'])" value="&laquo;" />
+                                 <input type="button" onclick="selectAllUsers(this.form.elements['fallmainusers[]'],this.form.elements['fselectedmainusers[]'])" value="&raquo;" />
+                              </div>
+                          </td>
+                           <td class="form2">
+                              <select multiple="multiple" size="10" name="fselectedmainusers[]" class="fpullacl">
+<!-- BEGIN: PrimUserSelected -->
+                                 <option value="{PRIM_USER_SELECTED_VALUE}">{PRIM_USER_SELECTED_CAPTION}</option>
+<!-- END: PrimUserSelected -->
+                              </select>
+                           </td>
+                        </tr>
+                        <tr class="nostyle_table">
+                           <td colspan="2" class="form1" ></td>
+                           <td class="form2" nowrap="nowrap">
+                              <input onclick="subSelection('mainusers'); selectAll(document.admin.elements['fselectedmainusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                              <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="subtitle" width="100%" colspan="2">{HEADING_GROUP_ADMIN}<br /></td>
+               </tr>
+
+               <tr class="nostyle_table">
+                  <td colspan="2">
+                     <table cellspacing="0" align="center" colspan="3" cellpadding="0" border="0">
+                        <tr>
+                           <td class="admin3" align="center" nowrap="nowrap">{TITLE_AVAILABLE}</td>
+                           <td class="admin3" align="center" nowrap="nowrap">&nbsp;</td>
+                           <td class="admin3" align="center" nowrap="nowrap">{TITLE_SELECTED}</td>
+                       </tr>
+                       <tr>
+                          <td class="form2">
+                             <select multiple="multiple" size="10" name="falladminusers[]" class="fpullacl">
+<!-- BEGIN: GroupAdmUserAvail -->
+                                 <option value="{GROUPADM_USER_AVAIL_VALUE}">{GROUPADM_USER_AVAIL_CAPTION}</option>
+<!-- END: GroupAdmUserAvail -->
+                             </select>
+                          </td>
+                          <td class="form2" nowrap="nowrap">
+                            <div class="acl_buttons">
+                               <input type="button" onclick="move(this.form.elements['fselectedadminusers[]'],this.form.elements['falladminusers[]'])" value="&lsaquo;" />
+                               <input type="button" onclick="move(this.form.elements['falladminusers[]'],this.form.elements['fselectedadminusers[]'])" value="&rsaquo;" />
+                            </div>
+                            <div class="acl_buttons">   
+                               <input type="button" onclick="selectAllUsers(this.form.elements['fselectedadminusers[]'],this.form.elements['falladminusers[]'])" value="&laquo;" />
+                               <input type="button" onclick="selectAllUsers(this.form.elements['falladminusers[]'],this.form.elements['fselectedadminusers[]'])" value="&raquo;" />
+                            </div>
+                         </td>
+                         <td class="form2">
+                            <select multiple="multiple" size="10" name="fselectedadminusers[]" class="fpullacl">
+<!-- BEGIN: GroupAdmUserSelected -->
+                                 <option value="{GROUPADM_USER_SELECTED_VALUE}">{GROUPADM_USER_SELECTED_CAPTION}</option>
+<!-- END: GroupAdmUserSelected -->
+                            </select>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td colspan="2" class="form1" ></td>
+                        <td class="form2" nowrap="nowrap">
+                           <input onclick="subSelection('adminusers'); selectAll(document.admin.elements['fselectedadminusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                           <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+               </tr>
+<!-- END: EditGroup -->

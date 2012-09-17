@@ -1,0 +1,35 @@
+<!-- BEGIN: Report5 -->
+<tr>
+   <td class="form1">{REPORT_FILTER_LABEL}</td>
+   <td colspan="4" class="form1" width="100%">
+      <input class="finput1" type="text" name="since" value="{REPORT_FILTER_VALUE}" />
+      <input class="fbuttonup1" type="submit" value="{REPORT_BTN_SUBMIT_LABEL}" alt="{REPORT_BTN_SUBMIT_ALT}" title="{REPORT_BTN_SUBMIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <input  class="fbuttonup1" name="export" type="submit" value="{REPORT_BTN_EXPORT_LABEL}" alt="{REPORT_BTN_EXPORT_ALT}" title="{REPORT_BTN_EXPORT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+   </td>
+</tr>
+<tr>
+   <td align="left" colspan="3">&nbsp;</td>
+   <td align="left">&nbsp;</td>
+</tr>
+<tr>
+   <td class="admin2" align="left" colspan="4">{REPORT_TITLE}</td>
+   <td align="left">&nbsp;</td>
+</tr>
+<tr>
+   <td align="left" colspan="3">&nbsp;</td>
+   <td align="left">&nbsp;</td>
+</tr>
+<tr>
+   <td align="left" class="title1">{REPORT_NAME_TITLE}</td>
+   <td align="left" class="title1">{REPORT_USERNAME_TITLE}</td>
+   <td align="left" colspan="2" width="100%" class="title1">{REPORT_LASTLOG_TITLE}</td>
+</tr>
+
+<!-- BEGIN: Users -->
+<tr>
+   <td class="{REPORT_TD_STYLE}">{REPORT_NAME_VALUE}</td>
+   <td class="{REPORT_TD_STYLE}">{REPORT_USERNAME_VALUE}</td>
+   <td class="{REPORT_TD_STYLE}" colspan="2">{REPORT_LASTLOG_VALUE}</td>
+</tr>
+<!-- END: Users -->
+<!-- END: Report5 -->

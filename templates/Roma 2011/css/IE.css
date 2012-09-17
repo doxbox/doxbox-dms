@@ -1,0 +1,254 @@
+/*
+ *  author: Marco Chillemi
+ *  mail: marco.chillemi [at] gmail [dot] com
+ *  URL: http://www.killodesign.com   
+ *
+ *  IE StyleSheet fix
+ */ 
+body {
+line-height:0px;
+text-align:center;
+}
+#container {
+line-height:180%;
+width:100%;
+}
+#content {
+min-height:100%;
+width:100%;
+text-align:left;
+padding-bottom:64px;
+}
+#header {
+text-align:center;
+} 
+#motd {
+height:30px;
+}
+#motd_bottom {
+position:static;
+clear:both;
+left:0;
+bottom:0;
+}
+#grey_line {
+height:auto;
+margin:0;
+padding:0; 
+background-color:#DCDCDC;
+}
+#form_wrapper {
+min-height:100%;
+margin:0;
+padding:0;
+text-align:center;
+}
+#form_fields {
+width:390px;
+text-align:left;
+}
+.input_field {
+margin:0;
+}
+.line {
+height:1px;
+overflow:hidden;
+}
+.tab_content {
+}
+#top_mainmenu {
+width:260px;
+}
+#bottom_mainmenu {
+height:250px;
+}
+.mainmenu_list li {}
+.mainmenu .icon {
+margin:0;
+width:21px;
+background-position:right auto !important; 
+}
+.mainmenu h3 {
+background-color:#CCC;
+}
+.table_container,
+.standard_browse {
+margin-top:-14px !important;
+width:96%;
+}
+#hidden_fields form {
+background-color:transparent;
+}
+#nav_bar {
+/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#FFFFFF'); /* for IE */
+text-align:left;
+background-color:#F6F6F6;
+}
+.nav a:hover {
+color: #095C9F;
+background-color: #FFF;
+border:0px solid transparent;
+}
+.nav ul li a {
+display:block;
+padding:5px 2px;
+margin:2px 0;
+}
+.nav ul li a:hover {
+display:block;
+padding:5px 2px;
+margin:2px 0;
+}
+#apice {
+}
+.tools_panels {
+height:40px;
+text-align:left;
+}
+.view_options_list li a {
+height:20px;
+width:20px;
+}
+ul.tabs li {
+height: 37px;
+line-height: 37px;
+}
+.monitor {
+padding:0;
+}
+.zindex_fix {
+position:relative;
+z-index:90;
+}
+.li_father {
+position:relative;
+z-index:1001;
+}
+.nav ul {
+width:150px;
+}
+.nav ul li {
+float:none;
+text-align:left;
+}
+.li_father {
+cursor:pointer;
+}
+.blu {
+background-color:#095C9F;
+}
+/*#down_menu .nav ul {
+top:-130px;
+}*/
+.jqLayerMenu {
+width:220px;
+}
+.layerMenuAnchor a.HoverDx {
+border:none;
+background-color:transparent;
+}
+.layerMenuAnchor a.HoverSx {
+border:none;
+background-color:transparent;
+}
+.nostyle ul,
+.thumb_text ul {
+padding:0;
+}
+#folder_tools_bottom ul li { 
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+} 
+#folder_tools_top ul li {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+}
+.view_options_list li {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC'); /* for IE */
+}
+.tab_content {
+width:auto 110%;
+}
+.the_last {
+border-bottom:none !important;
+}
+.status_icons_container {
+border:1px solid transparent;
+}
+.status_icons {
+text-align:left;
+margin:0;
+padding:0;
+}
+#header {}
+#login_edge {
+position:relative;
+z-index:201;
+}
+#login_edge2 {
+z-index:202;
+}
+.jqLayerMenu a:hover {
+background-color:#DDD;
+}
+#showrec_cont {
+text-align:center;
+}
+#info_message {
+margin:0;
+}
+.ui-dialog {
+line-height: 130% !important;
+text-align:left;
+}
+/* Tables and Forms
+---------------------------------------------------------------*/
+table {
+font-size:10px;
+}
+.log_table {
+border-left:1px solid #6e6e6e;
+width:auto;
+min-width:900px;
+}
+.infopanel table {
+width:97.5%;
+}
+td.browse0 {
+border-left:none !important;
+}
+.finput1, .search_panel .sinput1 {
+height:25px;
+}
+#loginname,
+#password {
+padding:5px;
+height:35px;
+width:350px;
+}
+td.hover1,
+td.hover2 {
+white-space:normal;
+}
+.acl_table select {
+width:470px;
+}
+/* Admin Section
+-------------------------------------------------------------------*/
+.admin_table {
+width:100%;
+z-index:200;
+}
+.admin_table .newspreview1,
+.admin_table .newspreview2 {
+white-space:normal;
+}
+.error_table {
+margin-top:-14px;
+}
+.ie_left_text {
+text-align:left !important;
+}
+#ui-datepicker-div dt {
+height:20px;
+text-align:left;
+line-height:20px;
+}

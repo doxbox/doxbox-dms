@@ -1,0 +1,36 @@
+<OwlXML>
+
+<Block>
+<BlockIdentification>1</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Add Folder</Action>
+<ParentID>1</ParentID>
+<Name>NEW FOLDER/SUB FOLDER</Name>
+<Owner>1</Owner>
+<OwnerGroup>0</OwnerGroup>
+<Description>SOME DESC</Description>
+</Block>
+
+<Block>
+<BlockIdentification>2</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Add Folder</Action>
+<ParentID>1</ParentID>
+<Name>NEW FOLDER</Name>
+<Owner>1</Owner>
+<OwnerGroup>0</OwnerGroup>
+<Description>SOME DESC</Description>
+</Block>
+
+<Block>
+<BlockIdentification>3</BlockIdentification>
+<OwlDB>0</OwlDB>
+<Action>Add Folder</Action>
+<ParentID>1</ParentID>
+<Name>NEW FOLDER/SUB FOLDER/SUB SUB SUB</Name>
+<Owner>1</Owner>
+<OwnerGroup>0</OwnerGroup>
+<Description>SOME DESC</Description>
+</Block>
+
+</OwlXML>

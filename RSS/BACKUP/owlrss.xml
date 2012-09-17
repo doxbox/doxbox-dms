@@ -1,0 +1,70 @@
+<rss version="2.0">
+<channel>
+<title>Bozz IT RSS Torrent Prototype</title>
+<link>http://www.bozzit.comm/</link>
+<description>Owl Generated Torrents</description>
+<language>en-us</language>
+                 <item>
+		    <title>Bozz IT Logo</title>
+		    <pubDate>Thu, 08 Jun 2006 21:14:05 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/NewLogo.jpg.torrent</link>
+		    <description></description>
+		 </item>
+						      
+                 <item>
+		    <title>test word doc</title>
+		    <pubDate>Thu, 08 Jun 2006 21:26:56 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/testtest.doc.torrent</link>
+		    <description></description>
+		 </item>
+						      
+                 <item>
+		    <title>test.doc</title>
+		    <pubDate>Thu, 08 Jun 2006 21:28:12 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/test.doc.torrent</link>
+		    <description></description>
+		 </item>
+						      
+                 <item>
+		    <title>test2.doc</title>
+		    <pubDate>Thu, 08 Jun 2006 22:04:01 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/test2.doc.torrent</link>
+		    <description></description>
+		 </item>
+						      
+                 <item>
+		    <title>VPN Error</title>
+		    <pubDate>Sat, 10 Jun 2006 07:39:10 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/VPN Error.PNG.torrent</link>
+		    <description>Some Small Description<br /></description>
+		 </item>
+						      
+                 <item>
+		    <title>XRMS OWL API.txt</title>
+		    <pubDate>Sat, 10 Jun 2006 07:47:32 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/XRMS OWL API.txt.torrent</link>
+		    <description>TEST</description>
+		 </item>
+						      
+                 <item>
+		    <title>test3</title>
+		    <pubDate>Sat, 10 Jun 2006 11:23:38 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/333testtest.doc.torrent</link>
+		    <description></description>
+		 </item>
+                 <item>
+		    <title>tree</title>
+		    <pubDate>Sat, 10 Jun 2006 11:30:26 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/tree.jpg.torrent</link>
+		    <description></description>
+		 </item>
+						      
+                 <item>
+		    <title>TImeSampleDirect2Root</title>
+		    <pubDate>Sat, 10 Jun 2006 12:10:19 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/TimeSample2.swf.torrent</link>
+		    <description></description>
+		 </item>
+						      
+</channel>
+</rss>

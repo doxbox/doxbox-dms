@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+"
+  codebase="http://www.darchive.co.il/xscan/"
+>
+<information>
+  <title>Document Scan</title>
+  <vendor>Engr. Kobi Mendel</vendor>
+  <homepage href="/" />
+  <description>From selected Twain Source, An Image is captured</description>
+</information>
+<offline-allowed/>
+<security>
+	<all-permissions/>
+</security>
+<resources>
+  <j2se version="1.2+" />
+  <jar href="xScan.jar"/>
+</resources>
+<application-desc main-class="xScan">
+  <argument>xScan</argument>
+</application-desc>
+</jnlp>

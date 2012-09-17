@@ -1,0 +1,318 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: DataBlock -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+<!-- BEGIN: Title -->
+<!-- BEGIN: Bulk -->
+               <td class="title1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="4" alt=""></img><a href="{TITLE_BULK_URL}"{TITLE_BULK_ONCLICK}"><img src="{THEME}/ui_icons/tg_check.gif" alt="{TITLE_BULK_TITLE}" title="{TITLE_BULK_TITLE}" border="0"></img></a></td>
+<!-- END: Bulk -->
+<!-- BEGIN: Status -->
+               <td class="title1">{TITLE_STATUS}&nbsp;</td>
+<!-- END: Status -->
+<!-- BEGIN: id -->
+               <td class="title1">&nbsp;</td>
+<!-- END: id -->
+<!-- BEGIN: Thumb -->
+               <td class="title1">&nbsp;</td>
+<!-- END: Thumb -->
+<!-- BEGIN: DocType -->
+               <td class="title1">&nbsp;</td>
+<!-- END: DocType -->
+<!-- BEGIN: name -->
+               <td class="title1" width="50%"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: name -->
+<!-- BEGIN: DocFields -->
+               <td class="title1">{TITLE_DOCFIELDS}</td>
+<!-- END: DocFields -->
+<!-- BEGIN: major_minor_revision -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: major_minor_revision -->
+<!-- BEGIN: filename -->
+               <td class="title1" width="50%"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: filename -->
+<!-- BEGIN: f_size -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: f_size -->
+<!-- BEGIN: creatorid -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: creatorid -->
+<!-- BEGIN: updatorid -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: updatorid -->
+<!-- BEGIN: smodified -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: smodified -->
+<!-- BEGIN: Actions -->
+               <td class="title1">{TITLE_ACTIONS}</td>
+<!-- END: Actions -->
+<!-- BEGIN: checked_out -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: checked_out -->
+<!-- BEGIN: peerreview -->
+               <td class="title1">{PEER_STATUS_TITLE}<br /></td>
+<!-- END: peerreview -->
+
+            </tr>
+<!-- END: Title -->
+
+<!-- BEGIN: Folder -->
+            <tr id="{FOLDER_TR_ID}" class="{FOLDER_TR_CLASS}" {FOLDER_TR_MOUSOVER}>
+<!-- BEGIN: Bulk -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_BULK_CHECKBOX}<br /></td>
+<!-- END: Bulk -->
+<!-- BEGIN: Status -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_STATUS}{FOLDER_STATUS_RSS_IMG}<br /></td>
+<!-- END: Status -->
+<!-- BEGIN: id -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
+<!-- END: id -->
+<!-- BEGIN: Thumb -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
+<!-- END: Thumb -->
+<!-- BEGIN: DocType -->
+               <td class="{FOLDER_TD_CLASS}"><a class="lfile1" href="{FOLDER_DOCTYPE_URL}" title="{FOLDER_DOCTYPE_TITLE}"><img src="{THEME}/icon_filetype/folder_closed.gif" border="0" alt=""></img></a></td>
+<!-- END: DocType -->
+<!-- BEGIN: Name -->
+               <td class="{FOLDER_TD_CLASS}"><a class="lfile1" href="{FOLDER_NAME_URL}" title="{FOLDER_NAME_TITLE}" {FOLDER_NAME_MOUSEOVER}>{FOLDER_NAME_NAME}</a>{FOLDER_NAME_COUNTS}{FOLDER_NAME_DESC_POP}</td>
+<!-- END: Name -->
+<!-- BEGIN: DocFields -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
+<!-- END: DocFields -->
+<!-- BEGIN: major_minor_revision -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
+<!-- END: major_minor_revision -->
+<!-- BEGIN: filename -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_MENU}</td>
+<!-- END: filename -->
+<!-- BEGIN: f_size -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_SIZE}</td>
+<!-- END: f_size -->
+<!-- BEGIN: creatorid -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_CREATOR}</td>
+<!-- END: creatorid -->
+<!-- BEGIN: updatorid -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: updatorid -->
+<!-- BEGIN: smodified -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_MODIFIED}</td>
+<!-- END: smodified -->
+<!-- BEGIN: Action -->
+               <td class="{FOLDER_TD_CLASS}">
+                  <table cellspacing="2" cellpadding="0" border="0">
+                     <tr>
+                        <td>{FOLDER_ACTION_LOG}</td>
+                        <td>{FOLDER_ACTION_HOTLINK}</td>
+                        <td>{FOLDER_ACTION_DEL}</td>
+                        <td>{FOLDER_ACTION_MOD}</td>
+                        <td>{FOLDER_ACTION_INLINE}</td>
+                        <td>{FOLDER_ACTION_ACL}</td>
+                        <td>{FOLDER_ACTION_LINK}</td>
+                        <td>{FOLDER_ACTION_COPY}</td>
+                        <td>{FOLDER_ACTION_MOVE}</td>
+                        <td>{FOLDER_ACTION_UPD}</td>
+                        <td>{FOLDER_ACTION_DNLD}</td>
+                        <td>{FOLDER_ACTION_COMMENT}</td>
+                        <td>{FOLDER_ACTION_CHECKOUT}</td>
+                        <td>{FOLDER_ACTION_EMAIL}</td>
+                        <td>{FOLDER_ACTION_MON}</td>
+                        <td>{FOLDER_ACTION_RELATED}</td>
+                        <td>{FOLDER_ACTION_VIEW}</td>
+                        <td>{FOLDER_ACTION_GENTHUMB}</td>
+                     </tr>
+                  </table>
+               </td>
+<!-- END: Action -->
+<!-- BEGIN: checked_out -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
+<!-- END: checked_out -->
+            </tr>
+<!-- END: Folder -->
+
+<!-- BEGIN: File -->
+            <tr id="{FILE_TR_ID}" class="{FILE_TR_CLASS}" {FILE_TR_MOUSOVER}>
+<!-- BEGIN: Bulk -->
+               <td class="{FILE_TD_CLASS}">{FILE_BULK_CHECKBOX}<br /></td>
+<!-- END: Bulk -->
+<!-- BEGIN: Status -->
+               <td class="{FILE_TD_CLASS}" align="left"><a class=\"curl1\">{FILE_STATUS}{FILE_STATUS_INDEXED}</a>&nbsp;{FILE_STATUS_COMMENT_IMG}{FILE_STATUS_NEW}{FILE_STATUS_UPDATED}{FILE_STATUS_INFECTED}<br /></td>
+<!-- END: Status -->
+<!-- BEGIN: id -->
+               <td class="{FILE_TD_CLASS}">{FILE_ID_VALUE}</td>
+<!-- END: id -->
+<!-- BEGIN: Thumb -->
+               <td class="{FILE_TD_CLASS}">{FILE_THUMBNAIL}</td>
+<!-- END: Thumb -->
+<!-- BEGIN: DocType -->
+                 <td class="{FILE_TD_CLASS}">{FILE_DOCTYPE_URL_OPEN}<img src="{THEME}/img/icon_filetype/{FILE_DOCTYPE_IMG}.gif" border="0" alt="">{FILE_DOCTYPE_URL_CLOSE}</td>
+<!-- END: DocType -->
+<!-- BEGIN: Name -->
+               <td class="{FILE_TD_CLASS}">{FILE_NAME}</td>
+<!-- END: Name -->
+<!-- BEGIN: DocFields -->
+               <td class="{FILE_TD_CLASS}">
+                  <table cellspacing="0" cellpadding="0" border="0">
+<!-- BEGIN: Row -->
+<!-- BEGIN: Heading -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">{DOC_TYPE_HEADING}</td>
+                     </tr>
+<!-- END: Heading -->
+
+<!-- BEGIN: PickList -->
+                     <tr>
+                        <td  class="form1">Language:<font color=red><b>&nbsp;&nbsp;&nbsp;</b></font></td>
+                        <td  class="form1"><input class="readonly" disabled="disabled" type="picklist" name="Language" size="10" value= "English" /></td>
+                     </tr>
+<!-- END: PickList -->
+<!-- BEGIN: Text -->
+                     <tr>
+                        <td  class="form1">{DOC_TYPE_TEXT_LABEL}{DOC_TYPE_TEXT_REQ}</td>
+                        <td  class="form1"><input class="{DOC_TYPE_TEXT_CLASS}" {DOC_TYPE_TEXT_DISABLED} type="{DOC_TYPE_TEXT_TYPE}" name="{DOC_TYPE_TEXT_NAME}" size="{DOC_TYPE_TEXT_SIZE}" value= "{DOC_TYPE_TEXT_VALUE}" /></td>
+                     </tr>
+<!-- END: Text -->
+<!-- BEGIN: TextArea -->
+                     <tr>
+                        <td class="form1">{DOC_TYPE_TEXTAREA_LABEL}{DOC_TYPE_TEXTAREA_REQ}</td>
+                        <td class="form1" width="100%"><textarea class="ftext1" name="{DOC_TYPE_TEXTAREA_NAME}" rows="{DOC_TYPE_TEXTAREA_SIZE}" cols="50">{DOC_TYPE_TEXTAREA_VALUE}</textarea></td>
+                     </tr>
+<!-- END: TextArea -->
+<!-- BEGIN: CheckBox -->
+                     <tr>
+                        <td class="form1">{DOC_TYPE_CHECKBOX_LABEL}{DOC_TYPE_CHECKBOX_REQ}</td>
+                        <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="{DOC_TYPE_CHECKBOX_NAME}" value="{DOC_TYPE_CHECKBOX_VALUE}" {DOC_TYPE_CHECKBOX_CHECKED} {DOC_TYPE_CHECKBOX_DISABLED} /></td>
+                     </tr>
+<!-- END: CheckBox -->
+<!-- BEGIN: Radio -->
+                     <tr>
+                        <td class="form1">{DOC_TYPE_RADIO_LABEL}</td>
+                        <td class="form1" width="100%" {DOC_TYPE_RADIO_EXTENDED}>
+   <!-- BEGIN: Input -->
+                           <input {DOC_TYPE_RADIO_READONLY} type="radio" value="{DOC_TYPE_RADIO_VALUE}" name="{DOC_TYPE_RADIO_NAME}" {DOC_TYPE_RADIO_CHECKED} />{DOC_TYPE_RADIO_VALUE_LABEL}
+   <!-- END: Input -->
+                        </td>
+                     </tr>
+<!-- END: Radio -->
+<!-- BEGIN: MultipleCheck -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">{DOC_TYPE_MCHECK_LABEL}{DOC_TYPE_MCHECK_REQ}</td>
+                     </tr>
+                     <tr>
+                        <td colspan="2">
+                           <table class="form1" width="100%">
+   <!-- BEGIN: Input -->
+                              <tr>
+                                 <td class="form9" width="1%"><input class="fcheckbox1" {DOC_TYPE_MCHECK_DISABLED} type="checkbox" name="{DOC_TYPE_MCHECK_NAME}" value="{DOC_TYPE_MCHECK_VALUE}" {DOC_TYPE_MCHECK_CHECKED} /></td>
+                                 <td  class="form9">{DOC_TYPE_MCHECK_VALUE}</td>
+                              </tr>
+   <!-- END: Input -->
+                           </table>
+                        </td>
+                     </tr>
+<!-- END: MultipleCheck -->
+<!-- BEGIN: Separator -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">{DOC_TYPE_SEP_LABEL}</td>
+                     </tr>
+<!-- END: Separator -->
+<!-- BEGIN: Footer -->
+                     <tr>
+                        <td class="browse0" width="100%" colspan="2">&nbsp;</td>
+                     </tr>
+<!-- END: Footer -->
+<!-- END: Row -->
+                  </table>
+               </td>
+<!-- END: DocFields -->
+
+<!-- BEGIN: major_minor_revision -->
+               <td class="{FILE_TD_CLASS}">{FILE_VERSION}</td>
+<!-- END: major_minor_revision -->
+<!-- BEGIN: filename -->
+               <td class="{FILE_TD_CLASS}">{FILE_FILENAME}</td>
+<!-- END: filename -->
+<!-- BEGIN: f_size -->
+               <td class="{FILE_TD_CLASS}">{FILE_SIZE}</td>
+<!-- END: f_size -->
+<!-- BEGIN: creatorid -->
+               <td class="{FILE_TD_CLASS}">{FILE_CREATOR}</td>
+<!-- END: creatorid -->
+<!-- BEGIN: updatorid -->
+               <td class="{FILE_TD_CLASS}">{FILE_UPDATOR}</td>
+<!-- END: updatorid -->
+<!-- BEGIN: smodified -->
+               <td class="{FILE_TD_CLASS}">{FILE_MODIFIED}</td>
+<!-- END: smodified -->
+<!-- BEGIN: Action -->
+               <td class="{FILE_TD_CLASS}">
+                  <table cellspacing="2" cellpadding="0" border="0">
+                     <tr>
+                        <td>{FILE_ACTION_LOG}</td>
+                        <td>{FILE_ACTION_HOTLINK}</td>
+                        <td>{FILE_ACTION_DEL}</td>
+                        <td>{FILE_ACTION_MOD}</td>
+                        <td>{FILE_ACTION_INLINE}</td>
+                        <td>{FILE_ACTION_ACL}</td>
+                        <td>{FILE_ACTION_LINK}</td>
+                        <td>{FILE_ACTION_COPY}</td>
+                        <td>{FILE_ACTION_MOVE}</td>
+                        <td>{FILE_ACTION_UPD}</td>
+                        <td>{FILE_ACTION_DNLD}</td>
+                        <td>{FILE_ACTION_COMMENT}</td>
+                        <td>{FILE_ACTION_CHECKOUT}</td>
+                        <td>{FILE_ACTION_EMAIL}</td>
+                        <td>{FILE_ACTION_MON}</td>
+                        <td>{FILE_ACTION_RELATED}</td>
+                        <td>{FILE_ACTION_VIEW}</td>
+                        <td>{FILE_ACTION_GENTHUMB}</td>
+                     </tr>
+                  </table>
+               </td>
+<!-- END: Action -->
+<!-- BEGIN: PeerAction -->
+               <td class="{FILE_TD_CLASS}">
+                  <table cellspacing="2" cellpadding="0" border="0">
+                     <tr>
+<!-- BEGIN: WaitApproval -->
+                        <td><a href="{PEER_DOWNLOAD_URL}"><img src="{THEME}/icon_action/bin.gif" border="0" alt="{PEER_DOWNLOAD_ALT}" title="{PEER_DOWNLOAD_ALT}" /></a></td>
+                        <td><a href="{PEER_APPROVED_URL}"><img src="{THEME}/icon_action/approve.gif" border="0" alt="{PEER_APPROVED_ALT}" title="{PEER_APPROVED_ALT}" /></a></td>
+                        <td><a href="{PEER_REJECTED_URL}"><img src="{THEME}/icon_action/reject.gif" border="0" alt="{PEER_REJECTED_ALT}" title="{PEER_REJECTED_ALT}" /></a></td>
+<!-- END: WaitApproval -->
+<!-- BEGIN: PendApproval -->
+                        <td><a href="{PEER_REMINDER_URL}"><img src="{THEME}/icon_action/email.gif" border="0" alt="{PEER_REMINDER_ALT}" title="{PEER_REMINDER_ALT}" /></a></td>
+                        <td><a href="{PEER_DELETE_URL}" onclick="return confirm('{PEER_DELETE_CONFIRM}');"><img src="{THEME}/icon_action/trash.gif" border="0" alt="{PEER_DELETE_ALT}" title="{PEER_DELETE_ALT}" /></a></td>
+                        <td><a href="{PEER_UPDATE_URL}"><img src="{THEME}/icon_action/update.gif" border="0" alt="{PEER_UPDATE_ALT}" title="{PEER_UPDATE_ALT}" /></a></td>
+<!-- BEGIN: Publish -->
+                        <td><a href="{PEER_PUB_URL}"><img src="{THEME}/icon_action/publish.gif" border="0" alt="{PEER_PUB_ALT}" title="{PEER_PUB_ALT}" /></a></td>
+<!-- END: Publish -->
+<!-- END: PendApproval -->
+                     </tr>
+                  </table>
+               </td>
+<!-- END: PeerAction -->
+<!-- BEGIN: checked_out -->
+               <td class="{FILE_TD_CLASS}">{FILE_CHECKEDOUT}</td>
+<!-- END: checked_out -->
+<!-- BEGIN: PeerStatus -->
+               <td class="{FILE_TD_CLASS}">
+                  <table>
+                     <tbody>
+                        <tr>
+                           <td nowrap="nowrap">{PEER_STATUS_REVIEWER}&nbsp;</td>
+                           <td align="center" nowrap="nowrap"><div class="{PEER_STATUS_CLASS}">&mdash; {PEER_STATUS_LABEL} &mdash;</div></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+<!-- END: PeerStatus -->
+
+            </tr>
+<!-- END: File -->
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END: DataBlock -->
+{FILE "html/footer.xtpl"}

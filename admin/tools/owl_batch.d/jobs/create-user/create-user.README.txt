@@ -1,0 +1,13 @@
+## create-user in owl_batch.d/jobs
+
+INCOMPLETE AND UNSUPPORTED
+
+directory contains two files (that may not even be related)
+   createuser.zip - contains php code that probably creates users
+   import_users.csv - a file of user data that might be used by code above.
+
+These may be reviewed in the future and if appropriated, updated to be complete and supported status.
+
+INCOMPLETE AND UNSUPPORTED
+
+## end ##

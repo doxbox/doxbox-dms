@@ -1,0 +1,15 @@
+move-dirs.README.txt
+
+move-dirs-out.bat is a utility for an administrator to reorganize owl directories.
+
+Usage:
+    one time setup
+        create a (or use an existing) temporary directory
+        copy move-dirs-out.bat to the temporary directory
+        edit move-dirs-out.bat and verify (and change if appropriate) my_name... variables
+    for each distribution release
+        extract the distribution tarball to the temporary directory
+        run move-dirs-out.bat
+        copy directories to the webserver
+    
+## end ##

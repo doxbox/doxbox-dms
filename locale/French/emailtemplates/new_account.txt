@@ -1,0 +1,15 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+Ceci est un message automatique de OWL Intranet
+
+Cher %USER_FULLNAME%,
+
+Un nouveau compte a été créé pour vous. En voici les details:
+
+Nom d'utilisateur: %USERNAME%
+
+Mot de passe: %PASSWORD%
+
+Vous pouvez vous connecter en suivant ce lien: %LINK%

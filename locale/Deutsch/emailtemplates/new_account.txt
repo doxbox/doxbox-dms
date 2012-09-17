@@ -1,0 +1,14 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+DAS IST EINE AUTOMATISIERTE NACHRICHT VON OWL Intranet
+
+Sehr geehrte(r)  %USER_FULLNAME%,
+Ein OWL Benutzerkonto wurde fuer Sie erstellt. Hier sind die Details:
+
+Benutzername: %USERNAME%
+
+Kennwort: %PASSWORD%
+
+Sie koennen sich unter folgender URL anmelden: %LINK% 

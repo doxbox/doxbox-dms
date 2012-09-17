@@ -1,0 +1,209 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: EditPrefs -->
+{FORM}
+{HIDDEN_FIELDS}
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+       <tr>
+         <td class="browse0" width="100%" colspan="20">{PREF_PAGE_TITLE}</td>
+      </tr>
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: TitleRO -->
+               <tr>
+                  <td class="form1"><label for="name">{PREF_TITLE_LABEL}</label></td>
+                  <td class="form1" width="100%">{PREF_TITLE_VALUE}</td>
+               </tr>
+<!-- END: TitleRO -->
+<!-- BEGIN: Title -->
+               <tr>
+                  <td class="form1"><label for="name">{PREF_TITLE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="name" type="text" name="name" size="20" value="{PREF_TITLE_VALUE}" /></td>
+               </tr>
+<!-- END: Title -->
+               <tr>
+                  <td class="form1">{PREF_GROUP_LABEL}</td>
+                  <td class="form1" width="100%">{PREF_GROUP_VALUE}</td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREF_GROUP_MEM_LABEL}</td>
+                  <td class="form1" width="100%">{PREF_GROUP_MEM_VALUE}</td>
+               </tr>
+<!-- BEGIN: LangRO -->
+               <tr>
+                  <td class="form1">{PREF_USER_LANG_LABEL}</td>
+                  <td class="form1" width="100%">{PREF_USER_LANG_VALUE}</td>
+               </tr>
+<!-- END: LangRO -->
+<!-- BEGIN: Lang -->
+               <tr>
+                  <td class="form1">Language:</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="newlanguage" size="1">
+<!-- BEGIN: Values -->
+                     <option value="{PREF_USER_LANG_VALUE}"{PREF_USER_LANG_SELECTED}>{PREF_USER_LANG_LABEL}</option>
+<!-- END: Values -->
+                     </select>
+                  </td>
+               </tr>
+<!-- END: Lang -->
+               <tr>
+                  <td class="form1">Button Style:</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="newbuttons" size="1">
+<!-- BEGIN: StyleValues -->
+                     <option value="{PREF_STYLE_VALUE}"{PREF_STYLE_SELECTED}>{PREF_STYLE_LABEL}</option>
+<!-- END: StyleValues -->
+                     </select>
+                  </td>
+               </tr>
+<!-- BEGIN: Passwords -->
+               <tr>
+                  <td class="form1">{PREFS_OLD_PASS_LABEL}</td>
+                  <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="20" value="" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREFS_NEW_PASS_LABEL}</td>
+                  <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="20" value="" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREFS_CONF_PASS_LABEL}</td>
+                  <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="" /></td>
+               </tr>
+<!-- END: Passwords -->
+<!-- BEGIN: Email -->
+               <tr>
+                  <td class="form1"><label for="email">{PREFS_EMAIL_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="email" type="text" name="email" size="40" value="{PREFS_EMAIL_VALUE}" /></td>
+               </tr>
+<!-- END: Email -->
+<!-- BEGIN: EmailRO -->
+               <tr>
+                  <td class="form1"><label for="email">{PREFS_EMAIL_LABEL}</label></td>
+                  <td class="form1" width="100%">{PREFS_EMAIL_VALUE}</td>
+               </tr>
+<!-- END: EmailRO -->
+<!-- Begin: Notify -->
+               <tr>
+                  <td class="form1">{PREFS_NOTIFY_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="notify" value="1" {PREFS_NOTIFY_CHECKED} /></td>
+               </tr>
+<!-- END: Notify -->
+<!-- Begin: NotifyRO -->
+               <tr>
+                  <td class="form1">{PREFS_NOTIFY_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_NOTIFY_VALUE}</td>
+               </tr>
+<!-- END: NotifyRO -->
+<!-- BEGIN: AttachFile -->
+               <tr>
+                  <td class="form1">{PREFS_ATTACH_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="attachfile" value="1" {PREFS_ATTACH_CHECKED} /></td>
+               </tr>
+<!-- END: AttachFile -->
+<!-- BEGIN: AttachFileRO -->
+               <tr>
+                  <td class="form1">{PREFS_ATTACH_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_ATTACH_VALUE}</td>
+               </tr>
+<!-- END: AttachFileRO -->
+<!-- BEGIN: PrefsView -->
+               <tr>
+                  <td class="form1">{PREFS_VIEW_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="user_default_view" value="1" {PREFS_VIEW_CHECKED} /></td>
+               </tr>
+<!-- END: PrefsView -->
+<!-- BEGIN: PrefsViewRO -->
+               <tr>
+                  <td class="form1">{PREFS_VIEW_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_VIEW_VALUE}</td>
+               </tr>
+<!-- END: PrefsViewRO -->
+<!-- BEGIN: Revision -->
+               <tr>
+                  <td class="form1"><label for="user_major_revision">{PREFS_MAJOR_REV_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="user_major_revision" type="text" name="user_major_revision" size="5" value="{PREFS_MAJOR_REV_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_minor_revision">{PREFS_MINOR_REV_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="user_minor_revision" type="text" name="user_minor_revision" size="5" value="{PREFS_MINOR_REV_VALUE}" /></td>
+               </tr>
+<!-- END: Revision -->
+<!-- BEGIN: RevisionRO -->
+               <tr>
+                  <td class="form1"><label for="user_major_revision">{PREFS_MAJOR_REV_LABEL}</label></td>
+                  <td class="form1" width="100%">{PREFS_MAJOR_REV_VALUE}</td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_minor_revision">{PREFS_MINOR_REV_LABEL}</label></td>
+                  <td class="form1" width="100%">{PREFS_MINOR_REV_VALUE}</td>
+               </tr>
+<!-- END: RevisionRO -->
+<!-- BEGIN: LoginToNewRec -->
+               <tr>
+                  <td class="form1">{PREFS_LOG_TO_NEWREC_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="logintonewrec" value="1" {PREFS_LOG_TO_NEWREC_CHECKED} /></td>
+               </tr>
+<!-- END: LoginToNewRec -->
+<!-- BEGIN: LoginToNewRecRO -->
+               <tr>
+                  <td class="form1">{PREFS_LOG_TO_NEWREC_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_LOG_TO_NEWREC_VALUE}</td>
+               </tr>
+<!-- END: LoginToNewRecRO -->
+<!-- BEGIN: CommentNotify -->
+               <tr>
+                  <td class="form1">{PREFS_COMMENT_NOTIFY_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="comment_notify" value="1" {PREFS_COMMENT_NOTIFY_CHECKED} /></td>
+               </tr>
+<!-- END: CommentNotify -->
+<!-- BEGIN: CommentNotifyRO -->
+               <tr>
+                  <td class="form1">{PREFS_COMMENT_NOTIFY_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_COMMENT_NOTIFY_VALUE}</td>
+               </tr>
+<!-- END: CommentNotifyRO -->
+               <tr>
+                  <td class="form1">{PREFS_USER_ADMIN_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_USER_ADMIN_VALUE}</td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREFS_NEWS_ADMIN_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_NEWS_ADMIN_VALUE}</td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREFS_GROUP_ADMIN_LABEL}</td>
+                  <td class="form1" width="100%">{PREFS_GROUP_ADMIN_VALUE}</td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_phone">{PREFS_PHONE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="user_phone" type="text" name="user_phone" size="30" value="{PREFS_PHONE_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_department">{PREFS_DEPT_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="user_department" type="text" name="user_department" size="80" value="{PREFS_DEPT_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_address">{PREFS_ADDRESS_LABEL}</label></td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="user_address" rows="5" cols="80">{PREFS_ADDRESS_VALUE}</textarea></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_note">{PREFS_NOTE_LABEL}</label></td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="user_note" rows="5" cols="80">{PREFS_NOTE_VALUE}</textarea></td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREFS_EMAIL_SIG_LABEL}</td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="email_sig" rows="5" cols="50">{PREFS_EMAIL_SIG_VALUE}</textarea></td>
+               </tr>
+<!-- BEGIN: ChangePrefs -->
+               <tr>
+                  <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt=""></img></td>
+                  <td class="form2" width="100%"><input  class="fbuttonup1" type="submit" value="{FILE_BTN_UPD_PREF}" alt="{FILE_BTN_UPD_PREF_ALT" title="{FILE_BTN_UPD_PREF_ALT" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /><input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  </td>
+               </tr>
+<!-- END: ChangePrefs -->
+            </table>
+         </td>
+      </tr>
+   </table>
+</form>
+<!-- END: EditPrefs -->
+{FILE "html/footer.xtpl"}

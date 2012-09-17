@@ -1,0 +1,32 @@
+# Titel bestand: %FILE_TITLE%
+# Bestandsnaam: %FILE_NAME%
+# Locatie: %OWL_FILE_PATH%
+# Omvang: %FILE_SIZE%
+# Eigenaar: %FILE_OWNER%
+# Bijgewerkt door: %FILE_UPDATOR%
+# Geplaatst op: %FILE_CREATION_DATE%
+# Omschrijving: %FILE_DESC%
+# Bijgewerkt op: %FILE_MODIFICATION_DATE%
+# Bestandsversie: %FILE_VERSION%
+# Link naar bestand: %FILE_URL%
+# Huidige gebruiker: %CURRENT_USER%
+
+Definitieve goedkeuring:
+
+Uw bestand is goedgekeurd door alle controleurs.
+
+Uw bestand is nu voor iedereen beschikbaar.
+
+
+Uw bestand is goedgekeurd door: %CURRENT_USER%
+
+Goedgekeurd bestand: %FILE_NAME% 
+
+Titel: %FILE_TITLE% 
+
+Omschrijving: %FILE_DESC% 
+
+Locatie: %OWL_FILE_PATH%  
+
+Versie: %FILE_VERSION%
+Geplaatst/Bijgewerkt door: %FILE_UPDATOR%

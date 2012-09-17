@@ -1,0 +1,103 @@
+<!-- BEGIN: main -->
+<div id="container">
+  <div id="motd">{MOTD}</div>
+
+  <div id="header">
+    <div id="logo_left" class="logo">{LOGO_LEFT}</div>
+    <div id="logo_right" class="logo">{LOGO_RIGHT}</div>
+    
+    <div id="title_and_logo">
+      <div id="logo_center" class="logo">{LOGO_CENTER}</div>    
+      <div id="title">{SITE_TITLE}</div>
+      <div class="clearbox"></div>
+    </div>        
+  </div><!-- /header -->
+  <div id="test"></div>
+
+<!-- BEGIN: infomsg -->
+  <div class="{SEVERITY}">
+    <div id="info_message"><span class="status_icon"></span>{INFO_MESSAGE}</div>
+    <div id="login_edge">
+      <div id="login_edge2"></div>
+    </div>
+  </div>
+<!-- END: infomsg -->
+
+  <div id="content">
+    <div id="hidden_fields">
+        <form name="login" action="index.php" method="post">
+          {HIDDEN_FIELDS}  
+    </div><!-- /hidden_fields -->  
+  
+    <div id="form_wrapper">
+      <div id="form_fields">
+  <!-- BEGIN: Databases -->    
+        <div id="rep" class="input_field">
+          <label>{REPOSITORY_LABEL}</label>
+          <select class="repo3" name="currentdb" size="1" onchange="submit();">
+          <!-- BEGIN: Options -->
+    			   <option value="{SELECT_VALUE}" {SELECT_SELECTED}>{SELECT_LABEL}</option>
+          <!-- END: Options -->
+          </select>
+        </div><!-- /rep -->
+  <!-- END: Databases -->
+    
+        <div class="input_field">
+          <label>{USERNAME_LABEL}</label>
+          <input id="loginname" class="input_login" type="text" name="loginname" autocomplete="off" size="20" maxlength="255" tabindex="1" />    
+        </div>
+      
+        <div class="input_field">
+          <label>{PASSWORD_LABEL}</label>
+          <Input id="password" class="input_login input_password" type="password" name="password" autocomplete="off" size="20" maxlength="255" tabindex="2" />
+        </div>
+  
+        <div class="clearbox"></div>
+        <div id="anon_and_remeberme">
+        <!-- BEGIN: AnonAccess -->
+          <div id="anon">
+            <a class="anon2" href="{ANON_URL}"{ANON_SCRIPT}>{ANON_LABEL}</a>
+          </div>
+        <!-- END: AnonAccess -->      
+  
+        <!-- BEGIN: RememberMe -->
+          <div id="rem_me">
+            {REMEMBERME_LABEL}&nbsp;<input type="checkbox" id="remember" name="rememberme" value="1" />
+          </div>
+        <!-- END: RememberMe -->
+          <div class="clearbox"></div>
+        </div><!-- /anon_and_rememberme -->       
+  
+        <!-- BEGIN: Submit form button -->
+        <div id="submit_form" class="input_field">
+          <input id="submit_form_button" class="fbuttonup1" tabindex="3" type="submit" value="{BTN_LOGIN_VALUE}" alt="{BTN_LOGIN_ALT}" title="{BTN_LOGIN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          <div class="clearbox"></div>
+        </div>
+        <!-- END: Submit form button -->      
+  
+        <!-- BEGIN: SelfHelp -->
+        <div class="clearbox"></div>      
+        <div id="self_help">
+        <!-- BEGIN: Register -->
+        		 <a class="link2" href="{REGISTER_URL}">{REGISTER_LABEL}</a>
+        <!-- END: Register -->
+        <!-- BEGIN: Separator -->
+        		 |
+        <!-- END: Separator -->
+        <!-- BEGIN: ForgotPass -->
+        		 <a class="link2" href="{FORGOT_URL}">{FORGOT_LABEL}</a>
+        <!-- END: ForgotPass -->
+        </div><!-- /self_help -->
+        <!-- END: SelfHelp -->                   
+        </form>
+        
+      </div><!-- /form_fields -->
+    </div><!-- /form_wrapper -->
+    
+    <div class="signature"><a class="version2" href="http://owl.sourceforge.net/" target="_blank">{VERSION_LABEL}</a></div>
+    
+  </div><!-- /content -->
+
+<div id="papercorner"></div>
+</div><!-- /container -->
+<!-- END: main -->

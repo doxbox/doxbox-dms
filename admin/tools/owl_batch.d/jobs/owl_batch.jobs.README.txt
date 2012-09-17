@@ -1,0 +1,34 @@
+## README file for OWL/admin/tools/owl_batch.d/jobs ##
+Author Robert Geleta www.rgeleta.com
+Version: 2011-09-04
+
+Directory: /admin/tools/owl_batch.d/jobs for OWL Intranet batch jobs 
+
+Jobs Directory Contents
+
+	owl_batch.jobs.README.txt - this file
+	
+    owl_batch.jobs.php-scripts.README.txt 
+        contains guidelines on how jobs are built
+        
+    Directories for each individual job
+     
+    If there is a online script to perform a functions duplicated here, 
+       the "DOSOMETHING" part of the name is the same as the oniine script name
+
+    In each /job/DOSOMETHING directory, you may have:
+        batch-DOSOMETHING.bat - a windows batch file to run the program
+        	See notes on multiple .sh scripts below.
+        batch-DOSOMETHING.php - a php script to be run in batch mode 
+                                Note: scripts written in other languages should follow
+                                      the same convention
+        batch-DOSOMETHING.log - log file from running the script
+        batch-DOSOMETHING.sh  - a *nix shell script to run the program
+        	Note: You may want to build multiple shell scripts
+        	if your php script has multiple options 
+        	based on arguments passed.  In this case, name the scripts
+        	batch-DOSOMETHING-DESC1.sh
+        	batch-DOSOMETHING-DESC2.sh
+        	etc.
+
+## end ##

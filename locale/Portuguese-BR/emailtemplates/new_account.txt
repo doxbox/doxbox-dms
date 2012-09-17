@@ -1,0 +1,15 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+ESTA É UMA MENSAGEM AUTOMÁTICA DA INTRANET OWL
+
+Prezado(a) %USER_FULLNAME%,
+
+Uma conta OWL foi criada para você, aqui estão os detalhes:
+
+Nome de usuário: %USERNAME%
+
+Senha: %PASSWORD%
+
+Você pode logar na seguinte URL: %LINK%

@@ -1,0 +1,6 @@
+# Current User: %CURRENT_USER%
+# NEW Password : %NEW_PASSWORD%
+# USERNAME: %USERNAME%
+ESTA &Eacute; UMA MENSAGEM AUTOM&Aacute;TICA DE Owl
+
+%USERNAME% a palavra-passe &eacute;: %NEW_PASSWORD%

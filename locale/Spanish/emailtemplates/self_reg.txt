@@ -1,0 +1,6 @@
+# Current User: %CURRENT_USER%
+# NEW Password : %NEW_PASSWORD%
+# USERNAME: %USERNAME%
+ESTE ES UN MENSAJE ENVIADO AUTOMATICAMENTE DESDE OWL Intranet
+
+El usuario %USERNAME% de OWL Intranet tiene el passowrd: %NEW_PASSWORD%

@@ -1,0 +1,42 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: userimport -->
+{FORM}
+{HIDDEN_FIELDS}
+<div class="admin_table">
+<table class="margin2" width="{VIEW_WIDTH}" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+      <tr>
+         <td class="admin2" colspan="2" width="100%">{IMPUSER_PAGE_TITLE}<br></td>
+      </tr>
+      <tr>
+         <td valign="top" align="left">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+               <tbody>
+                  <tr>
+                     <td class="form1">{IMPUSER_SEND_FILE}</td>
+                     <td class="form1" colspan="2" width="100%"><input class="finput1" name="userfile" size="24" maxlength="512" type="file" /></td>
+                  </tr>
+                  <tr>
+                     <td class="form2"><img src="{THEME}/ui_misc/x_clear.gif" alt="" height="1" width="1"></td>
+                     <td class="form2" width="100%" colspan="2">
+                        <input class="fbuttonup1" name="send_file_x" value="{IMPUSER_BTN_SEND_VALUE}" alt="{IMPUSER_BTN_SEND_ALT}" title="{IMPUSER_BTN_SEND_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" type="submit" />
+                        <input class="fbuttonup1" value="{IMPUSER_BTN_RESET_VALUE}" alt="{IMPUSER_BTN_RESET_ALT}" title="{IMPUSER_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" type="reset" />
+                     </td>
+                  </tr>
+<!-- BEGIN: Row -->
+                  <tr>
+                     <td class="{TD_CLASS}">{IMPUSER_LABEL}</td>
+                     <td class="{TD_CLASS}">{IMPUSER_VALUE}</td>
+                     <td class="{TD_CLASS}" width="100%">{IMPUSER_MSG}</td>
+                  </tr>
+<!-- END: Row -->
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>
+</div><!-- /admin_table -->
+<!-- END: userimport -->
+{FILE "html/footer.xtpl"}

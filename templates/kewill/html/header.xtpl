@@ -1,0 +1,621 @@
+<!-- BEGIN: main -->
+<center>
+<a name="top"></a>
+<div id="main_body">
+<table class="border1" cellspacing="0" cellpadding="0" border="0" width="{VIEW_WIDTH}">
+   <tr>
+      <td align="center" valign="top" width="100%">
+         <img src="{THEME}/ui_misc/x_clear.gif" height="4" width="1" alt="" />
+         <table class="border2" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td align="left" valign="top" width="100%">
+
+
+   <!-- BEGIN: PrefsBarTop -->
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                     <tr>
+                        <td class="infobar1" width="100%">
+                           <b>{USERNAME_LABEL}</b>&nbsp;{USERNAME}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />
+                           <b>{FULLNAME_LABEL}</b>&nbsp;{FULLNAME}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />
+                           <b>{LASTLOG_LABEL}</b>&nbsp;{LASTLOG}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />
+                           <b>{CURRENTDB_LABEL}</b>&nbsp;{CURRENTDB}&nbsp;&nbsp;<br />
+                       </td>
+<!-- BEGIN: AdminMenu -->
+      <!-- BEGIN: Admin -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_URL}" title="{BUTTON_ADMIN_TITLE}">&nbsp;{BUTTON_ADMIN_LABEL}&nbsp;</a></td>
+      <!-- END: Admin -->
+      <!-- BEGIN: Trash -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_TRASH_URL}" title="{BUTTON_TRASH_TITLE}">&nbsp;{BUTTON_TRASH_LABEL}&nbsp;</a></td>
+      <!-- END: Trash -->
+      <!-- BEGIN: RepView -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_REPVIEW_URL}" title="{BUTTON_REPVIEW_TITLE}">&nbsp;{BUTTON_REPVIEW_LABEL}&nbsp;</a></td>
+      <!-- END: RepView -->
+      <!-- BEGIN: LogView -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_LOGVIEW_URL}" title="{BUTTON_LOGVIEW_TITLE}">&nbsp;{BUTTON_LOGVIEW_LABEL}&nbsp;</a></td>
+      <!-- END: LogView -->
+      <!-- BEGIN: AdminUserGroup -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_USER_GROUP_URL}" title="{BUTTON_ADMIN_USER_GROUP_TITLE}">&nbsp;{BUTTON_ADMIN_USER_GROUP_LABEL}&nbsp;</a></td>
+      <!-- END: AdminUserGroup -->
+      <!-- BEGIN: News -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_NEWS_URL}" title="{BUTTON_ADMIN_NEWS_TITLE}">&nbsp;{BUTTON_ADMIN_NEWS_LABEL}&nbsp;</a></td>
+      <!-- END: News -->
+<!-- END: AdminMenu -->
+<!-- BEGIN: UserToolsMenu -->
+      <!-- BEGIN: Prefs -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_PREFS_URL}" title="{BUTTON_PREFS_TITLE}">&nbsp;{BUTTON_PREFS_LABEL}&nbsp;</a></td>
+      <!-- END: Prefs -->
+      <!-- BEGIN: MailTool -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_MAILTOOL_URL}" title="{BUTTON_MAILTOOL_TITLE}">&nbsp;{BUTTON_MAILTOOL_LABEL}&nbsp;</a></td>
+      <!-- END: MailTool -->
+<!-- END: UserToolsMenu -->
+      <!-- BEGIN: LoginOut -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_LOGINOUT_URL}" title="{BUTTON_LOGINOUT_TITLE}">&nbsp;{BUTTON_LOGINOUT_LABEL}&nbsp;</a></td>
+      <!-- END: LoginOut -->
+      <!-- BEGIN: QuickLink -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_QUICKLINK_BOTTOM_URL}" title="{BUTTON_QUICKLINK_BOTTOM_TITLE}">&nbsp;{BUTTON_QUICKLINK_BOTTOM_LABEL}&nbsp;</a></td>
+      <!-- END: QuickLink -->
+      <!-- BEGIN: Help -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_HELP_URL}" title="{BUTTON_HELP_TITLE}">&nbsp;{BUTTON_HELP_LABEL}&nbsp;</a></td>
+      <!-- END: Help -->
+      <!-- BEGIN: Browse -->
+                        <td class="button1"><a class="lbutton1" href="{BUTTON_BROWSE_URL}" title="{BUTTON_BROWSE_TITLE}">&nbsp;{BUTTON_BROWSE_LABEL}&nbsp;</a></td>
+      <!-- END: Browse -->
+                     </tr>
+                  </table>
+   <!-- END: PrefsBarTop -->
+
+
+   <!-- BEGIN: InfoPanelTopWide -->
+<table class="margin1" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0">
+            <tr>
+               <td valign="top">
+      <!-- BEGIN: FilePanel -->
+                  <div id="info_panel">
+                     <table cellspacing="0" cellpadding="0" border="0" width="500">
+                        <tr>
+                           <td class="stats1" colspan="12"><a id="fileinfo_toggle_{INFOPANEL_ID}" href="#" onclick="if (imgInfoState_{INFOPANEL_ID} == 0 ) { document.fileinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/minimize.png';} else {document.fileinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="fileinfo_panel_image_{INFOPANEL_ID}" border="0">&nbsp;&nbsp;</a>{INFOPANEL_TITLE}<br /></td>
+                        </tr>
+                     </table>
+                     <div id="fileinfo_slide_{INFOPANEL_ID}" style='display:none'>
+                        <table cellspacing="0" cellpadding="0" border="0" width="500">
+                           <tr>
+                              <td class="stats2"><img src="{THEME}/ui_icons/new.gif" border="0" title="{INFOPANEL_NEW_IMG_TITLE}" alt="{INFOPANEL_NEW_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEW_URL}" title="{INFOPANEL_NEW_URL_TITLE}">{INFOPANEL_NEW_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_NEW_TOTAL}<br /></td>
+   
+                              <td class="stats2"><img src="{THEME}/ui_icons/updated.gif" border="0" title="{INFOPANEL_UPD_IMG_TITLE}" alt="{INFOPANEL_UPD_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_UPD_URL}" title="{INFOPANEL_UPD_URL_TITLE}">{INFOPANEL_UPD_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_UPD_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/ui_icons/my.gif" border="0" title="{INFOPANEL_MY_IMG_TITLE}" alt="{INFOPANEL_MY_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_MY_URL}" title="{INFOPANEL_MY_URL_TITLE}">{INFOPANEL_MY_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_MY_TOTAL}<br /></td>
+
+                              <td class="stats2"><img src="{THEME}/ui_icons/group.gif" border="0" title="{INFOPANEL_GRP_IMG_TITLE}" alt="{INFOPANEL_GRP_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_GRP_URL}" title="{INFOPANEL_GRP_URL_TITLE}">{INFOPANEL_GRP_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_GRP_TOTAL}<br /></td>
+                           </tr>
+                           <tr>
+                              <td class="stats2"><img src="{THEME}/icon_action/lock.gif" border="0" title="{INFOPANEL_CHK_IMG_TITLE}" alt="{INFOPANEL_CHK_IMG_TITLE}" /><br /></td>
+
+         <!-- BEGIN: CheckedOutZero -->
+                              <td class="stats2">{INFOPANEL_CHK_LABEL}<br /></td>
+         <!-- END: CheckedOutZero -->
+         <!-- BEGIN: CheckedOut -->
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_CHK_URL}" title="{INFOPANEL_CHK_URL_TITLE}">{INFOPANEL_CHK_LABEL}</a><br /></td>
+         <!-- END: CheckedOut -->
+                              <td class="stats2">{INFOPANEL_CHK_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/icon_action/monitored.gif" border="0" title="{INFOPANEL_MON_IMG_TITLE}" alt="{INFOPANEL_MON_IMG_TITLE}" /><br /></td>
+         <!-- BEGIN: MonitorZero -->
+                              <td class="stats2">{INFOPANEL_MON_LABEL}<br /></td>
+         <!-- END: MonitorZero -->
+         <!-- BEGIN: Monitor -->
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_MON_URL}" title="{INFOPANEL_MON_URL_TITLE}">{INFOPANEL_MON_LABEL}</a><br /></td>
+         <!-- END: Monitor -->
+                              <td class="stats2">&nbsp;(<a href="#" class="cfolders1">{INFOPANEL_MONFOLDER_TOTAL}</a>:<a href="#" class="cfiles1">{INFOPANEL_MONFILE_TOTAL}</a>)<br /></td>
+                              <td class="stats2"><img src="{THEME}/ui_icons/news.gif" border="0" title="{INFOPANEL_NEWS_IMG_TITLE}" alt="{INFOPANEL_NEWS_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEWS_URL}" title="{INFOPANEL_NEWS_URL_TITLE}"{INFOPANEL_NEWS_ONCLICK}>{INFOPANEL_NEWS_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_NEWS_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/ui_icons/br_tree.gif" border="0" title="{INFOPANEL_SPEC_IMG_TITLE}" alt="{INFOPANEL_SPEC_IMG_TITLE}" /><br /></td>
+         <!-- BEGIN: SpecAccessZero -->
+                              <td class="stats2">{INFOPANEL_SPEC_LABEL}<br /></td>
+         <!-- END: SpecAccessZero -->
+         <!-- BEGIN: SpecAccess -->
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}">{INFOPANEL_SPEC_LABEL}</a><br /></td>
+         <!-- END: SpecAccess -->
+                              <td class="stats2">&nbsp;(<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfolders1">{INFOPANEL_SPECFOLDER_TOTAL}<a>:<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfiles1">{INFOPANEL_SPECFILE_TOTAL}</a>)<br /></td>
+                           </tr>
+
+         <!-- BEGIN: Quota -->
+<tr><td class="stats3" colspan="12"><img src="{THEME}/ui_icons/{INFOPANEL_QUOTA_IMG}.gif" border="0" title="{INFOPANEL_QUOTA_IMG_TITLE}" alt="{INFOPANEL_QUOTA_IMG_TITLE}" />&nbsp;{INFOPANEL_QUOTA_LABEL}{INFOPANEL_QUOTA_TOTAL}<br /></td></tr>
+         <!-- END: Quota -->
+
+                           <tr>
+                              <td class="stats3" colspan="12"><b>{INFOPANEL_TOTAL_LABEL}</b>&nbsp;{INFOPANEL_TOTAL}<br /></td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+      <!-- END: FilePanel -->
+               </td>
+               <td>&nbsp;&nbsp;</td>
+      <!-- BEGIN: NewsPanel -->
+               <td valign="top">
+                  <table cellspacing="0" cellpadding="0" border="0" width="190">
+                     <tr>
+                        <td class="stats1" colspan="12"><a id="newsinfo_toggle_{INFOPANEL_ID}" href="#" onclick="if (imgNewsState_{INFOPANEL_ID} == 0 ) { document.newsinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/minimize.png';} else {document.newsinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="newsinfo_panel_image_{INFOPANEL_ID}" border="0">&nbsp;&nbsp;</a>{INFOPANEL_NEWSPANEL_HEADER}<br /></td>
+                     </tr>
+                  </table>
+                  <div id="newsinfo_slide_{INFOPANEL_ID}" style='display:none'>
+                     <table cellspacing="0" cellpadding="0" border="0" width="190">
+         <!-- BEGIN: NewsRow -->
+                        <tr>
+                           <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEWSPANEL_URL}"{INFOPANEL_NEWSPANEL_JAVASCRIPT}>{INFOPANEL_NEWSPANEL_TITLE}</a></td>
+                        </tr>
+         <!-- END: NewsRow -->
+                     </table>
+                  </div>
+                  </td>
+      <!-- END: NewsPanel -->
+               <td>&nbsp;&nbsp;</td>
+      <!-- BEGIN: PeerPanel -->
+               <td valign="top">
+                  <table cellspacing="0" cellpadding="0" border="0" width="190">
+                  <tr>
+                     <td class="stats1" colspan="12"><a id="peerrev_toggle_{INFOPANEL_ID}" href="#" onclick="if (imgRevState_{INFOPANEL_ID} == 0 ) { document.peerrev_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/minimize.png';} else {document.peerrev_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="peerrev_panel_image_{INFOPANEL_ID}" border="0">&nbsp;&nbsp;</a>{INFOPANEL_PEERPANEL_HEADER}{INFOPANEL_PEERPANEL_STATUS_IMG}<br /></td>
+                  </tr>
+                  </table>
+                  <div id="peerrev_slide_{INFOPANEL_ID}" style='display:none'>
+                     <table cellspacing="0" cellpadding="0" border="0" width="190">
+                        <tr>
+         <!-- BEGIN: MyApprovalZero -->
+                           <td class="stats2">{INFOPANEL_PEERPANEL_MY_APPROVAL}:</td><td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+         <!-- END: MyApprovalZero -->
+         <!-- BEGIN: MyApproval -->
+                           <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}</a>:</td><td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+         <!-- END: MyApproval -->
+                        </tr>
+                        <tr>
+         <!-- BEGIN: MyPendingZero -->
+                           <td class="stats2">{INFOPANEL_PEERPANEL_PENDING_APPROVAL}:</td><td class="stats2"> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</td>
+         <!-- END: MyPendingZero -->
+         <!-- BEGIN: MyPending -->
+                           <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}</a>:</td><td class="stats2"> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</td>
+         <!-- END: MyPending -->
+                        </tr>
+                     </table>
+                  </div>
+               </td>
+      <!-- END: PeerPanel -->
+
+            </tr>
+
+
+         </table>
+      </td>
+   </tr>
+</table>
+</div>
+   <!-- END: InfoPanelTopWide-->
+
+   <!-- BEGIN: InfoPanelTop -->
+<table class="margin1" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0">
+            <tr>
+               <td valign="top">
+      <!-- BEGIN: FilePanel -->
+                  <div id="info_panel">
+                     <table cellspacing="0" cellpadding="0" border="0" width="360">
+                        <tr>
+                           <td class="stats1" colspan="6"><a id="fileinfo_toggle_{INFOPANEL_ID}" href="#" onclick="if (imgInfoState_{INFOPANEL_ID} == 0 ) { document.fileinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/minimize.png';} else {document.fileinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="fileinfo_panel_image_{INFOPANEL_ID}" border="0">&nbsp;&nbsp;</a>{INFOPANEL_TITLE}<br /></td>
+                        </tr>
+                     </table>
+                     <div id="fileinfo_slide_{INFOPANEL_ID}" style='display:none'>
+                        <table cellspacing="0" cellpadding="0" border="0" width="360">
+                           <tr>
+                              <td class="stats2"><img src="{THEME}/ui_icons/new.gif" border="0" title="{INFOPANEL_NEW_IMG_TITLE}" alt="{INFOPANEL_NEW_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEW_URL}" title="{INFOPANEL_NEW_URL_TITLE}">{INFOPANEL_NEW_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_NEW_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/ui_icons/updated.gif" border="0" title="{INFOPANEL_UPD_IMG_TITLE}" alt="{INFOPANEL_UPD_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_UPD_URL}" title="{INFOPANEL_UPD_URL_TITLE}">{INFOPANEL_UPD_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_UPD_TOTAL}<br /></td>
+                           </tr>
+                           </tr>
+                              <td class="stats2"><img src="{THEME}/ui_icons/my.gif" border="0" title="{INFOPANEL_MY_IMG_TITLE}" alt="{INFOPANEL_MY_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_MY_URL}" title="{INFOPANEL_MY_URL_TITLE}">{INFOPANEL_MY_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_MY_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/ui_icons/group.gif" border="0" title="{INFOPANEL_GRP_IMG_TITLE}" alt="{INFOPANEL_GRP_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_GRP_URL}" title="{INFOPANEL_GRP_URL_TITLE}">{INFOPANEL_GRP_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_GRP_TOTAL}<br /></td>
+                           </tr>
+                           <tr>
+                              <td class="stats2"><img src="{THEME}/icon_action/lock.gif" border="0" title="{INFOPANEL_CHK_IMG_TITLE}" alt="{INFOPANEL_CHK_IMG_TITLE}" /><br /></td>
+
+         <!-- BEGIN: CheckedOutZero -->
+                              <td class="stats2">{INFOPANEL_CHK_LABEL}<br /></td>
+         <!-- END: CheckedOutZero -->
+
+         <!-- BEGIN: CheckedOut -->
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_CHK_URL}" title="{INFOPANEL_CHK_URL_TITLE}">{INFOPANEL_CHK_LABEL}</a><br /></td>
+         <!-- END: CheckedOut -->
+                              <td class="stats2">{INFOPANEL_CHK_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/icon_action/monitored.gif" border="0" title="{INFOPANEL_MON_IMG_TITLE}" alt="{INFOPANEL_MON_IMG_TITLE}" /><br /></td>
+         <!-- BEGIN: MonitorZero -->
+                              <td class="stats2">{INFOPANEL_MON_LABEL}<br /></td>
+         <!-- END: MonitorZero -->
+         <!-- BEGIN: Monitor -->
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_MON_URL}" title="{INFOPANEL_MON_URL_TITLE}">{INFOPANEL_MON_LABEL}</a><br /></td>
+         <!-- END: Monitor -->
+                              <td class="stats2">&nbsp;(<a href="#" class="cfolders1">{INFOPANEL_MONFOLDER_TOTAL}</a>:<a href="#" class="cfiles1">{INFOPANEL_MONFILE_TOTAL}</a>)<br /></td>
+                           </tr>
+                           <tr>
+                              <td class="stats2"><img src="{THEME}/ui_icons/news.gif" border="0" title="{INFOPANEL_NEWS_IMG_TITLE}" alt="{INFOPANEL_NEWS_IMG_TITLE}" /><br /></td>
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEWS_URL}" title="{INFOPANEL_NEWS_URL_TITLE}"{INFOPANEL_NEWS_ONCLICK}>{INFOPANEL_NEWS_LABEL}</a><br /></td>
+                              <td class="stats2">{INFOPANEL_NEWS_TOTAL}<br /></td>
+                              <td class="stats2"><img src="{THEME}/ui_icons/br_tree.gif" border="0" title="{INFOPANEL_SPEC_IMG_TITLE}" alt="{INFOPANEL_SPEC_IMG_TITLE}" /><br /></td>
+         <!-- BEGIN: SpecAccessZero -->
+                              <td class="stats2">{INFOPANEL_SPEC_LABEL}<br /></td>
+         <!-- END: SpecAccessZero -->
+         <!-- BEGIN: SpecAccess -->
+                              <td class="stats2"><a class="lstats1" href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}">{INFOPANEL_SPEC_LABEL}</a><br /></td>
+         <!-- END: SpecAccess -->
+                              <td class="stats2">&nbsp;(<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfolders1">{INFOPANEL_SPECFOLDER_TOTAL}<a>:<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfiles1">{INFOPANEL_SPECFILE_TOTAL}</a>)<br /></td>
+                           </tr>
+
+         <!-- BEGIN: Quota -->
+<tr><td class="stats3" colspan="6"><img src="{THEME}/ui_icons/{INFOPANEL_QUOTA_IMG}.gif" border="0" title="{INFOPANEL_QUOTA_IMG_TITLE}" alt="{INFOPANEL_QUOTA_IMG_TITLE}" />&nbsp;{INFOPANEL_QUOTA_LABEL}{INFOPANEL_QUOTA_TOTAL}<br /></td></tr>
+         <!-- END: Quota -->
+
+                           <tr>
+                              <td class="stats3" colspan="6"><b>{INFOPANEL_TOTAL_LABEL}</b>&nbsp;{INFOPANEL_TOTAL}<br /></td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+      <!-- END: FilePanel -->
+               </td>
+               <td>&nbsp;&nbsp;</td>
+      <!-- BEGIN: NewsPanel -->
+               <td valign="top">
+                  <table cellspacing="0" cellpadding="0" border="0" width="190">
+                     <tr>
+                        <td class="stats1" colspan="6"><a id="newsinfo_toggle_{INFOPANEL_ID}" href="#" onclick="if (imgNewsState_{INFOPANEL_ID} == 0 ) { document.newsinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/minimize.png';} else {document.newsinfo_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="newsinfo_panel_image_{INFOPANEL_ID}" border="0">&nbsp;&nbsp;</a>{INFOPANEL_NEWSPANEL_HEADER}<br /></td>
+                     </tr>
+                  </table>
+                  <div id="newsinfo_slide_{INFOPANEL_ID}" style='display:none'>
+                     <table cellspacing="0" cellpadding="0" border="0" width="190">
+         <!-- BEGIN: NewsRow -->
+                        <tr>
+                           <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEWSPANEL_URL}"{INFOPANEL_NEWSPANEL_JAVASCRIPT}>{INFOPANEL_NEWSPANEL_TITLE}</a></td>
+                        </tr>
+         <!-- END: NewsRow -->
+                     </table>
+                  </div>
+                  </td>
+         <!-- END: NewsPanel -->
+               <td>&nbsp;&nbsp;</td>
+         <!-- BEGIN: PeerPanel -->
+               <td valign="top">
+                  <table cellspacing="0" cellpadding="0" border="0" width="190">
+                  <tr>
+                     <td class="stats1" colspan="6"><a id="peerrev_toggle_{INFOPANEL_ID}" href="#" onclick="if (imgRevState_{INFOPANEL_ID} == 0 ) { document.peerrev_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/minimize.png';} else {document.peerrev_panel_image_{INFOPANEL_ID}.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="peerrev_panel_image_{INFOPANEL_ID}" border="0">&nbsp;&nbsp;</a>{INFOPANEL_PEERPANEL_HEADER}{INFOPANEL_PEERPANEL_STATUS_IMG}<br /></td>
+                  </tr>
+                  </table>
+                  <div id="peerrev_slide_{INFOPANEL_ID}" style='display:none'>
+                     <table cellspacing="0" cellpadding="0" border="0" width="190">
+                        <tr>
+         <!-- BEGIN: MyApprovalZero -->
+                           <td class="stats2">{INFOPANEL_PEERPANEL_MY_APPROVAL}:</td><td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+         <!-- END: MyApprovalZero -->
+         <!-- BEGIN: MyApproval -->
+                           <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}</a>:</td><td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+         <!-- END: MyApproval -->
+                        </tr>
+                        <tr>
+         <!-- BEGIN: MyPendingZero -->
+                           <td class="stats2">{INFOPANEL_PEERPANEL_PENDING_APPROVAL}:</td><td class="stats2"> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</td>
+         <!-- END: MyPendingZero -->
+         <!-- BEGIN: MyPending -->
+                           <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_PENDING_APPROVAL_URL_TITLE}</a>:</td><td class="stats2"> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</td>
+         <!-- END: MyPending -->
+                        </tr>
+                     </table>
+                  </div>
+               </td>
+      <!-- END: PeerPanel -->
+
+            </tr>
+
+
+         </table>
+      </td>
+   </tr>
+</table>
+</div>
+   <!-- END: InfoPanelTop -->
+
+
+   <!-- BEGIN: FileLink -->
+      <div id="file_link">
+         <table class="margin1" cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td align="left" valign="top">
+                  <table cellspacing="0" cellpadding="0" border="0">
+                     <tr>
+                        <td>
+                           <table cellspacing="0" cellpadding="0" border="0">
+                              <tr>
+                                 <td class="stats1">{FILELINK_LABEL}<br /></td>
+                                 <td class="stats1" width="447"><div id='file_link_out'>&nbsp;</div></td>
+                              </tr>
+                           </table>
+                         </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </table>
+      </div>
+   <!-- END: FileLink -->
+
+<!-- BEGIN: ShowRecTitle -->
+<table class="margin1" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top" width="100%">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="admin2" width="100%" colspan="2">{PAGE_TITLE}<br /></td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END: ShowRecTitle -->
+
+<!-- BEGIN: ShowRecFilter -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <form action="showrecords.php" method="post">
+{SHOWREC_HIDDEN}
+   <tr>
+      <td class="form1"><label for="filter">{SHOWREC_NUM_DAY_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="filter" type="text" name="filter" size="10" value="{SHOWREC_NUM_DAY_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td colspan="2" class="form2" width="100%">
+		   <input  class="fbuttonup1" name="submit" type="submit" value="{SHOWREC_SUBMIT_VALUE}" alt="{SHOWREC_SUBMIT_ALT}" title="{SHOWREC_SUBMIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+		   <input  class="fbuttonup1" type="reset" value="{SHOWREC_RESET_VALUE}" alt="{SHOWREC_RESET_ALT}" title="{SHOWREC_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+   </tr>
+   </form>
+</table>
+<!-- END: ShowRecFilter -->
+
+   <!-- BEGIN: SearchPanelTop -->
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <form action="{ROOT_URL}/search.php" method="post">
+   {SEARCH_HIDDEN} 
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="search1"><input class="sinput1" type="text" name="query" size="24" maxlength="255" value="{SEARCH_VALUE}" /></td>
+               <td class="search1"><input name="search_{SEARCH_ID}" class="sbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" onmouseover="highlightButton('sbuttondown1', this)" onmouseout="highlightButton('sbuttonup1', this)" /></td>
+
+               <td class="search1">
+                  <select class="spull1" name="boolean" size="1">
+      <!-- BEGIN: SelectBox -->
+                     <option value="{SELECT_BOX.SELECT_BOOL_VALUE}" {SELECT_BOX.SELECT_BOOL_SELECTED}>{SELECT_BOX.SELECT_BOOL_LABEL}</option>
+      <!-- END: SelectBox -->
+                  </select>
+               </td>
+               <td class="search1"><input type="checkbox" name="withindocs" value="1"{SEARCH_WITHIN_SELECTED} /></td>
+               <td class="search1">{SEARCH_WITHIN_LABEL}<br /></td>
+               <td class="search1"><input type="checkbox" name="currentfolder" value="1"{SEARCH_CURRENT_SELECTED} /></td>
+               <td class="search1">{SEARCH_CURRENT_LABEL}<br /></td>
+               <td class="search1" width="100%">&nbsp;<br /></td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+   </form>
+</table>
+   <!-- END: SearchPanelTop -->
+
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="spacer1"><img src="{THEME}/ui_misc/x_clear.gif" height="12" width="1" alt="" /></td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+
+   <!-- BEGIN: Favorite0 -->
+<div id="favorite_{FAVORITE_ID}">
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <form action="dbmodify.php" method="post">
+{FAVORITE_HIDDEN}
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+               <tr>
+		   <td class="navbar1"><a class="lbutton1" href="#">{FAVORITE_TEXT}</a></td>
+                   <td class="navbar1">
+                      <select class="fpull1" name="favorite_id_{FAVORITE_ID}" size="1">
+   <!-- BEGIN: SelectBox -->
+                         <option value="{SELECT_BOX.FAVORITE_SELECTBOX_VALUE}"{SELECT_BOX.FAVORITE_SELECTBOX_SELECTED}>{SELECT_BOX.FAVORITE_SELECTBOX_LABEL}</option>
+   <!-- END: SelectBox -->
+                      </select>&nbsp;
+                      <input name="go_favorite_{FAVORITE_ID}" class="sbuttonup1" type="submit" value="{FAVORITE_GO}" onmouseover="highlightButton('sbuttondown1', this)" onmouseout="highlightButton('sbuttonup1', this)" />&nbsp;
+                      <input name="del_favorite_{FAVORITE_ID}" class="sbuttonup1" type="submit" value="{FAVORITE_DELETE}" onmouseover="highlightButton('sbuttondown1', this)" onmouseout="highlightButton('sbuttonup1', this)" />&nbsp;
+                      <input name="add_favorite_{FAVORITE_ID}" class="sbuttonup1" type="submit" value="{FAVORITE_ADD}" onmouseover="highlightButton('sbuttondown1', this)" onmouseout="highlightButton('sbuttonup1', this)" />&nbsp;{FAVORITE_LABEL}&nbsp;
+                      <input name="fav_label_{FAVORITE_ID}" class="finput1" type="text" value="" /><br />
+                   </td>
+                   <td class="navbar1" width="100%">&nbsp;<br /></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      </form>
+   </table>
+</div>
+   <!-- END: Favorite0 -->
+
+<!-- BEGIN: Bulk0 -->
+<!-- BEGIN: BulkButtonsTop -->
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+               <tr>
+<!-- BEGIN: Download -->
+                  <td><input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+<!-- END: Download -->
+                  <td><input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                  <td><input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                  <td><input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('Really Delete all selected files');" /></td>
+<!-- BEGIN: Checkout -->
+                  <td><input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+<!-- END: Checkout -->
+     <!-- BEGIN: JUpload -->
+      <td><input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/></td>
+      <!-- END: JUpload -->
+
+                  <td class="fbuttonfill1" width="100%"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /><br /></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+<!-- END: BulkButtonsTop -->
+<!-- END: Bulk0 -->
+
+<!-- BEGIN: ActionButtons0 -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+<!-- BEGIN: RSSFeed -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_RSSFEED_URL}" title="{ACTIONBUTTON_RSSFEED_TITLE}">&nbsp;{ACTIONBUTTON_RSSFEED_LABEL}&nbsp;</a></td>
+<!-- END: RSSFeed -->
+      <!-- BEGIN: AddFolder -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_ADDFOLDER_URL}" title="{ACTIONBUTTON_ADDFOLDER_TITLE}">&nbsp;{ACTIONBUTTON_ADDFOLDER_LABEL}&nbsp;</a></td>
+      <!-- END: AddFolder -->
+<!-- BEGIN: UnzipFolder -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_UNZIP_URL}" title="{ACTIONBUTTON_UNZIP_TITLE}">&nbsp;{ACTIONBUTTON_UNZIP_LABEL}&nbsp;</a></td>
+<!-- END: UnzipFolder -->
+      <!-- BEGIN: AddFile -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_ADDFILE_URL}" title="{ACTIONBUTTON_ADDFILE_TITLE}">&nbsp;{ACTIONBUTTON_ADDFILE_LABEL}&nbsp;</a></td>
+      <!-- END: AddFile -->
+      <!-- BEGIN: AddUrl -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_ADDURL_URL}" title="{ACTIONBUTTON_ADDURL_TITLE}">&nbsp;{ACTIONBUTTON_ADDURL_LABEL}&nbsp;</a></td>
+      <!-- END: AddUrl -->
+      <!-- BEGIN: AddNote -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_ADDNOTE_URL}" title="{ACTIONBUTTON_ADDNOTE_TITLE}">&nbsp;{ACTIONBUTTON_ADDNOTE_LABEL}&nbsp;</a></td>
+      <!-- END: AddNote -->
+	        <td class="button1" width="100%"><a class="lbutton1" href="#"><br /></a></td>
+<!-- BEGIN: NormalView -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_NORMALVIEW_URL}" title="{ACTIONBUTTON_NORMALVIEW_TITLE}">&nbsp;{ACTIONBUTTON_NORMALVIEW_LABEL}&nbsp;</a></td>
+<!-- BEGIN: ThumbView -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_THUMBVIEW_URL}" title="{ACTIONBUTTON_THUMBVIEW_TITLE}">&nbsp;{ACTIONBUTTON_THUMBVIEW_LABEL}&nbsp;</a></td>
+<!-- END: ThumbView -->
+<!-- END: NormalView -->
+<!-- BEGIN: ThumbView -->
+		<td class="button1"><a class="lbutton1" href="{ACTIONBUTTON_NORMALVIEW_URL}" title="{ACTIONBUTTON_NORMALVIEW_TITLE}">&nbsp;{ACTIONBUTTON_NORMALVIEW_LABEL}&nbsp;</a></td>
+<!-- END: ThumbView -->
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END: ActionButtons0 -->
+
+<!-- BEGIN: FolderToolsTop -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+<!-- BEGIN: UpDisabled -->
+               <td class="navbar1"><a href="#"><img src="{THEME}/ui_nav/nav1_dis.gif" border="0" name="folder_up"/></td>
+<!-- END: UpDisabled -->
+<!-- BEGIN: Up -->
+               <td class="navbar1"><a href="{FOLDERTOOLS_FOLDER_UP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('folder_up','','{THEME}/ui_nav/nav1_hover.gif',1)"><img src="{THEME}/ui_nav/nav1.gif" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up" border="0"/></a></td>
+<!-- END: Up -->
+               <td class="navbar1"><a href="{FOLDERTOOLS_HOME_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('home','','{THEME}/ui_nav/nav2_hover.gif',1)"><img src="{THEME}/ui_nav/nav2.gif" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home" /></a><br /></td>
+<!-- BEGIN: InitialDir -->
+               <td class="navbar1" ><a href="{FOLDERTOOLS_INITIAL_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('set_initial','','{THEME}/ui_nav/nav3_hover.gif',1)"><img src="{THEME}/ui_nav/nav3.gif" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial" /></a><br /></td>
+<!-- END: InitialDir -->
+               <td class="navbar1"><a class="lbutton1" href="{FOLDERTOOLS_SITEMAP_URL}" title="{FOLDERTOOLS_SITEMAP_ALT}">{FOLDERTOOLS_SITEMAP_LABEL}</a><br /></td>
+               <td class="navbar1" width="100%">&nbsp;<br /></td>
+
+<!-- BEGIN: Pagination -->
+<!-- BEGIN: FirstPage -->
+               <td class="navbar3"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_HOME_URL}" title="{FOLDERTOOLS_PAGE_HOME_TITLE}">{FOLDERTOOLS_PAGE_HOME_LABEL}</a><br /></td>
+<!-- END: FirstPage -->
+<!-- BEGIN: PrevPage -->
+               <td class="navbar3"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_PREV_URL}" title="{FOLDERTOOLS_PAGE_PREV_TITLE}">{FOLDERTOOLS_PAGE_PREV_LABEL}</a><br /></td>
+<!-- END: PrevPage -->
+<!-- BEGIN: Pages -->
+               <td class="navbar3"><a class="{FOLDERTOOLS_PAGE_CLASS}" title="{FOLDERTOOLS_PAGE_TITLE}" href="{FOLDERTOOLS_PAGE_URL}"{FOLDERTOOLS_PAGE_ONCLICK}>{FOLDERTOOLS_PAGE_LABEL}&nbsp;</a></td>
+<!-- END: Pages -->
+<!-- BEGIN: NextPage -->
+               <td class="navbar3"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_NEXT_URL}" title="{FOLDERTOOLS_PAGE_NEXT_TITLE}">{FOLDERTOOLS_PAGE_NEXT_LABEL}</a><br /></td>
+<!-- END: NextPage -->
+<!-- BEGIN: LastPage -->
+               <td class="navbar3"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_LAST_URL}" title="{FOLDERTOOLS_PAGE_LAST_TITLE}">{FOLDERTOOLS_PAGE_LAST_LABEL}</a><br /></td>
+<!-- END: LastPage -->
+<!-- BEGIN: Status -->
+               <td class="navbar2">{FOLDERTOOLS_PAGE_STATUS_LABEL} <b>{FOLDERTOOLS_PAGE_STATUS_CUR}</b> / {FOLDERTOOLS_PAGE_STATUS_TOTAL}<br /></td>
+<!-- END: Status -->
+<!-- END: Pagination -->
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END: FolderToolsTop -->
+
+<!-- BEGIN: NavBar -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+	    <tr>
+               <td class="dir1" id="ldir1" width="100%">
+<!-- BEGIN: AdminACL -->
+                  <a href="{NAVBAR_ADMINACL_URL}"><img src="{THEME}/icon_action/setacl.png" border="0" alt="{NAVBAR_ADMINACL_TITLE}" title="{NAVBAR_ADMINACL_TITLE}" /></a> 
+<!-- END: AdminACL -->
+                  {NAVBAR_LABEL} <b>{NAVBAR_MSG}</b> 
+<!-- BEGIN: BreadCrumb -->
+<a class="lfile1" href="{NAVBAR.BREADCRUMB_URL}" title="{NAVBAR.BREADCRUMB_TITLE}">{NAVBAR.BREADCRUMB_LABEL}</a> {NAVBAR.BREADCRUMB_SEPARATOR}
+<!-- END: BreadCrumb -->
+               <br />
+               </td>
+	    </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END: NavBar -->
+        <div id="popupHelp">
+           <a id="popupHelpClose">x</a>
+           <h1>{PAGE_TITLE}</h1>
+           <p id="textStyle">
+           <div class="scroll-pane">
+              <div class="scrollbar">
+                 <!-- Help Begins Here -->
+                 {HELP_TEXT}
+                 <!-- Help Ends Here -->
+              </div>
+           </div>
+           <br/><br/>   
+        </div>          
+        <div id="HelpPopup"></div>

@@ -1,0 +1,13 @@
+{FILE "html/header.xtpl"}
+
+{FILE "html/includes/mod_create_folder.xtpl"}
+{FILE "html/includes/mod_edit_folder.xtpl"}
+
+{FILE "html/includes/mod_add_file.xtpl"}
+{FILE "html/includes/mod_upd_file.xtpl"}
+{FILE "html/includes/mod_edit_file.xtpl"}
+{FILE "html/includes/mod_email_file.xtpl"}
+{FILE "html/includes/mod_comment_file.xtpl"}
+{FILE "html/includes/mod_bulk_email_file.xtpl"}
+
+{FILE "html/footer.xtpl"}

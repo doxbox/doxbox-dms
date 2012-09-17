@@ -1,0 +1,4 @@
+# Owl Intranet robots.txt
+
+User-agent: *
+Disallow: /intranet/

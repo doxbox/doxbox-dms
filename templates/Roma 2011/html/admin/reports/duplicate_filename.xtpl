@@ -1,0 +1,27 @@
+<!-- BEGIN: Report7 -->
+<tr>
+   <td class='admin2' align='left' colspan='7'>{DUPLICATE_FILE_REPORT_TITLE}</td>
+</tr>
+<tr>
+   <td class='title1'>&nbsp;</td>
+   <td class='title1'>{REPORT_TITLE_FILEID}</td>
+   <td class='title1'>{REPORT_TITLE_DOCNUM}</td>
+   <td class='title1'>{REPORT_TITLE_FILENAME} / </br />{REPORT_TITLE_PATH}</td>
+   <td class='title1'>{REPORT_TITLE_FILESIZE}</td>
+   <td class='title1'>{REPORT_TITLE_FILECOUNT}</td>
+</tr>
+<!-- BEGIN: Files -->
+<tr>
+   <td class='{REPORT_TD_CLASS}'><input type="checkbox" name="bulkdelete[]" value="{REPORT_FILEID}"/></td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_FILEID}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_DOCNUM}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_FILENAME} <br />{REPORT_PATH}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_FILESIZE}</td>
+   <td class='{REPORT_TD_CLASS}'>{REPORT_FILECOUNT}</td>
+</tr>
+<!-- END: Files -->
+<tr>
+<td colspan="5">&nbsp;</td>
+<td><input  class="fbuttonup1" name="bdelete" type="submit" value="{DELETE_LABEL}" alt="{DELETE_ALT}" title="{DELETE_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{DELETE_CONFIRM}');" /></td>
+</tr>
+<!-- END: Report7 -->

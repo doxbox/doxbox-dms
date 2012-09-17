@@ -1,0 +1,7 @@
+Style  : linkpoint
+Date   : July 4, 2006
+Version: 1.0
+Author : ?
+
+Style Donated by Wilton Daniel Consulting
+http://www.wiltondaniel.com/

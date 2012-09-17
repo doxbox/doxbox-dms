@@ -1,0 +1,101 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: News -->
+{FORM}
+{HIDDEN_FIELDS}
+<div class="admin_table">
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td class="nostyle_table" align="left" valign="top">
+         <table class="bordered_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: StatusMsg -->
+            <tr>
+               <td width="100%" colspan="2">
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                     <tbody> 
+                        <tr>
+                           <td class="admin3" width="100%" colspan="2">{STATUS_MSG_TEXT}<br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+<!-- END: StatusMsg -->
+            <tr>
+               <td class="admin2" width="100%" colspan="2">{NEWS_PAGE_TITLE}</td>
+            </tr>
+            <tr>
+               <td class="form1"><label for="news_title">{NEWS_TITLE_LABEL}</label></td>
+               <td class="form1" width="100%"><input class="finput1" id="news_title" type="text" name="news_title" size="60" value="{NEWS_TITLE_VALUE}" /></td>
+            </tr>
+            <tr>
+               <td class="form1">{NEWS_CONTENT_LABEL}</td>
+               <td class="form1" width="100%"><textarea class="ftext1" name="newsdesc" rows="10" cols="50"  >{NEWS_CONTENT_VALUE}</textarea></td>
+            </tr>
+            <tr>
+               <td class="form1">{NEWS_EXPIRES_LABEL}</td>
+               <td class="form1" width="100%"><input class="finput1" id="news_expires" type="text" name="news_end_date" size="6" value="{NEWS_EXPIRES_VALUE}" />
+            </tr>
+            <tr>
+               <td class="form1">{NEWS_AUDIENCE_LABEL}</td>
+               <td class="form1" width="100%"><select class="fpull1" name="audience" size="1">
+<!-- BEGIN: Audience -->
+                  <option value="{NEWS_AUDIENCE_VALUE}" {NEWS_AUDIENCE_SELECTED}>{NEWS_AUDIENCE_CAPTION}</option>
+<!-- END: Audience -->
+                  </select>
+               </td>
+            </tr>
+<!-- BEGIN: CreatedOn -->
+            <tr>
+               <td class="form1">{NEWS_CREATEDON_LABEL}</td>
+               <td class="form1" width="100%">{NEWS_CREATEDON_VALUE}</td>
+            </tr>
+<!-- END: CreatedOn -->
+            <tr>
+               <td class="form2" width="100%" colspan="2">
+<!-- BEGIN: AddNewsBTN -->
+                  <input class="fbuttonup1" name="btn_add_news_x" type="submit" value="{NEWS_BTN_ADD_VALUE}" alt="{NEWS_BTN_ADD_ALT}" title="{NEWS_BTN_ADD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
+<!-- END: AddNewsBTN -->
+<!-- BEGIN: EditNewsBTN -->
+                  <input  class="fbuttonup1" name="btn_ed_news_x" type="submit" value="{NEWS_BTN_CHANGE_VALUE}" alt="{NEWS_BTN_CHANGE_ALT}" title="{NEWS_BTN_CHANGE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input  class="fbuttonup1" name="btn_cancel_news_x" type="submit" value="{NEWS_BTN_CANCEL_VALUE}" alt="{NEWS_BTN_CANCEL_ALT}" title="{NEWS_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- END: EditNewsBTN -->
+                  <input  class="fbuttonup1" type="reset" value="{NEWS_BTN_RESET_VALUE}" alt="{NEWS_BTN_RESET_ALT} Form Values" title="{NEWS_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+</form>
+<img src="{THEME}/ui_misc/x_clear.gif" height="20" width="1" alt="" /><br />
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="subtitle">&nbsp;</td>
+               <td class="subtitle1">{NEWS_TITLE_HD}</td>
+               <td class="subtitle1">{NEWS_TITLE_HD_CREATED}</td>
+               <td class="subtitle1">{NEWS_TITLE_HD_EXPIRES}</td>
+               <td class="subtitle1">{NEWS_TITLE_HD_AUDIENCE}</td>
+            </tr>
+<!-- BEGIN: Rows -->
+            <tr>
+               <td class="{TD_CLASS}">
+                  <a href="{NEWS_EDIT_BTN_URL}"><img src="{THEME}/icon_action/edit.gif" alt="{NEWS_EDIT_BTN_ALT}" title="{NEWS_EDIT_BTN_ALT}" border="0" /></a>
+                   <a href="{NEWS_DEL_BTN_URL}" onclick="{NEWS_DEL_BTN_CONFIRM}"><img src="{THEME}/icon_action/reject.gif" alt="{NEWS_DEL_BTN_ALT}" title="{NEWS_DEL_BTN_ALT}" border="0" /></a>
+                  {NEWS_READ_LABEL} {NEWS_READ_NUMBERS}
+               </td>
+               <td class="{TD_CLASS} no_wrap_news"><h4>{NEWS_ITEM_TITLE}</h4>{NEWS_ITEM_CONTENT}</td>
+               <td class="{TD_CLASS}">{NEWS_ITEM_START}</td>
+               <td class="{TD_CLASS}">{NEWS_ITEM_END}</td>
+               <td class="{TD_CLASS}" align="center">{NEWS_ITEM_AUDIENCE}</td>
+            </tr>
+<!-- END: Rows -->
+        </table>
+      </td>
+   </tr>
+</table>
+</div><!-- /admin_table -->  
+<!-- END: News -->
+{FILE "html/footer.xtpl"}

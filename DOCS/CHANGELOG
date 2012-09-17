@@ -1,0 +1,43 @@
+January 2011 - (Owl 1.10)
+Enhancement Requests
+--------------------
+
+Tracker Number  Description
+-------------   ---------------------------------------
+                html seperation from the php  Fully templatable
+                New "Roma 2011" Template
+
+
+BUGS Fixed
+----------
+
+Tracker Number  Description
+-------------   ---------------------------------------
+2833186         do not use TEXTAREA to present data
+2943625         Fixed error in mimetypes
+
+
+February 2010 - (Owl 1.00)
+
+Enhancement Requests
+--------------------
+
+Tracker Number  Description
+-------------   ---------------------------------------
+                WEBDAV (Edit your MS OFFICE Documents Inline using MS OFFICE Tools)
+                Bulk Upload via Jupload Java Applet Supports Drag and Drop from End Users Desktop.
+                Anonymous / Guest Account Restricted by IP Address / Sub nets
+                Message OF the Day displayed on the Login Page
+                Multiple File Upload at the same time
+                File Hashing (3 different File Hashing are calculated)
+                RSS Feeds
+                File Expiry (Files Automatically removed on Expiry date)
+                Force Browser into SSL
+                File Update can now be done with a file of a different name
+                Auto Checkout of files on Download
+                Additional Logging of Peer Review actions
+                Maintenance mode to disable Logins
+                Maximum Attachment size for Notifications
+                Folder Linking
+                Better Search performance and search "Begins With" "Ends With" and "Exact Match"
+

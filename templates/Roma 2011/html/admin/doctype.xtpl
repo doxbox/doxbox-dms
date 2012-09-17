@@ -1,0 +1,275 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: DocType -->
+{FORM}
+{HIDDEN_FIELDS}
+ <div class="admin_table">
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+               <tr>
+                  <td class="admin2" width="100%" colspan="2">{DOCTYPE_HEADING}</td>
+               </tr>
+
+   <!-- BEGIN: List -->
+               <tr>
+                  <td class="form1">{DOCTYPE_LABEL}</td>
+                  <td class="form1" width="100%">
+                        <select class="fpull1" name="doctype" size="1" onchange="javascript:this.form.submit();">
+   <!-- BEGIN: Values -->
+                           <option value="{DOCTYPE_LIST_VALUE}" {DOCTYPE_LIST_SELECTED}>{DOCTYPE_LIST_LABEL}</option>
+   <!-- END: Values -->
+                           <option value="add_doctype">{DOCTYPE_ADD_NEW_LABEL}</option>
+                        </select>
+                  </td>
+               </tr>
+   <!-- END: List -->
+
+   <!-- BEGIN: New -->
+               <tr>
+                  <td class="form1"><label for="doctype">{DOCTYPE_NEWNAME_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="doctype" type="text" name="doctype" size="30" value="" /></td>
+               </tr>
+               <tr>
+                  <td class="form2" width="100%" colspan="2">
+                  <input  class="fbuttonup1" name="btn_add_doctype_x" type="submit" value="{DOCTYPE_BTN_CREATE_VALUE}" alt="{DOCTYPE_BTN_CREATE_ALT}" title="{DOCTYPE_BTN_CREATE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input  class="fbuttonup1" name="myaction" type="submit" value="{DOCTYPE_BTN_CANCEL_VALUE}" alt="{DOCTYPE_BTN_CANCEL_ALT}" title="{DOCTYPE_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+               </tr>
+   <!-- END: New -->
+   <!-- BEGIN: NewField -->
+               <tr>
+                  <td class="form1"><label for="field_name">{DOCTYPE_FIELDNAME_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="field_name" type="text" name="field_name" size="15" value="{DOCTYPE_FIELDNAME_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="field_position">{DOCTYPE_FIELDPOS_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="field_position" type="text" name="field_position" size="3" value="{DOCTYPE_FIELDPOS_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{DOCTYPE_FIELDLABEL_LABEL}</td>
+                  <td class="form1" width="100%">
+                     <table cellspacing="0" cellpadding="0" border="0">
+      <!-- BEGIN: Locale -->
+                        <tr>
+                           <td class="form1">{DOCTYPE_FIELDLABEL_LOCALE_LABEL}</td>
+                           <td class="form1" width="100%"><input class="finput1" type="text" name="field_label[{DOCTYPE_FIELDLABEL_LOCALE_LABEL}]" size="20" maxlength="255" value="{DOCTYPE_FIELDLABEL_LOCALE_VALUE}" />
+                        </tr>
+      <!-- END: Locale -->
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="field_size">{DOCTYPE_FIELDSIZE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="field_size" type="text" name="field_size" size="5" value="{DOCTYPE_FIELDSIZE_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{DOCTYPE_FIELDSEARCHABLE_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="searchable" value="1" {DOCTYPE_FIELDSEARCHABLE_CHECKED} /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{DOCTYPE_FIELDREQ_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="required" value="1" {DOCTYPE_FIELDREQ_CHECKED} /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{DOCTYPE_FIELDPOP_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="show_desc" value="1" {DOCTYPE_FIELDPOP_CHECKED} /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{DOCTYPE_FIELDINLIST_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="show_in_list" value="1" {DOCTYPE_FIELDINLISTPOP_CHECKED}/></td>
+               </tr>
+               <tr>
+                  <td class="form1">{DOCTYPE_FIELDTYPE_LABEL}</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="field_type" size="1">
+      <!-- BEGIN: FieldType -->
+                        <option value="{SELECT_BOX.FIELDTYPE_SELECTBOX_VALUE}"{SELECT_BOX.FIELDTYPE_SELECTBOX_SELECTED}>{SELECT_BOX.FIELDTYPE_SELECTBOX_LABEL}</option>
+      <!-- END: FieldType -->
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="field_values">{DOCTYPE_FIELDVALUES_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="field_values" type="text" name="field_values" size="50" value="{DOCTYPE_FIELDVALUES_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form2" width="100%" colspan="2">
+
+      <!-- BEGIN: AddField -->
+                     <input  class="fbuttonup1" name="btn_add_field_x" type="submit" value="{DOCTYPE_BTN_ADDFIELD_VALUE}" alt="{DOCTYPE_BTN_ADDFIELD_ALT}" title="{DOCTYPE_BTN_ADDFIELD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" name="btn_del_doctype_x" type="submit" value="{DOCTYPE_BTN_DELDOCTYP_VALUE}" alt="{DOCTYPE_BTN_DELDOCTYP_ALT}" title="{DOCTYPE_BTN_DELDOCTYP_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+
+      <!-- END: AddField -->
+   <!-- BEGIN: EditField -->
+                     <input  class="fbuttonup1" name="btn_upd_field_x" type="submit" value="{DOCTYPE_BTN_EDITFIELD_VALUE}" alt="{DOCTYPE_BTN_EDITFIELD_ALT}" title="{DOCTYPE_BTN_EDITFIELD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+   <!-- END: EditField -->
+                     <input  class="fbuttonup1" type="reset" value="Reset" alt="{DOCTYPE_BTN_RESET_VALUE}" title="{DOCTYPE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+               </tr>
+      <!-- END: NewField -->
+            </table>
+            <img src="{THEME}/ui_misc/x_clear.gif" height="12" width="1" alt="" />
+         </td>
+      </tr>
+   </table>
+</div><!-- /admin_table -->     
+</form>
+
+<!-- BEGIN: FieldList -->
+<div class="admin_table">
+<table class="margin2 smallforms" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="subtitle">&nbsp;</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_NAME_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_POS_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_LABEL_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_SIZE_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_SEARCHABLE_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_REQUIRED_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_POPUP_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_BROWSE_TITLE}</td>
+               <td class="subtitle_wrap">{DOCTYPE_FIELD_SAMPLE_TITLE}</td>
+            </tr>
+<!-- BEGIN: Field -->
+            <tr>
+               <td class="{DOCTYPE_TD_STYLE}"><a href="{DOCTYPE_EDIT_FIELD_URL}"><img src="{THEME}/icon_action/edit.gif" alt="{DOCTYPE_EDIT_FIELD_ALT}" title="{DOCTYPE_EDIT_FIELD_ALT}" border="0" /></a>&nbsp;<a href="{DOCTYPE_DEL_FIELD_URL}" onclick="return confirm('{DOCTYPE_DEL_FIELD_CONFIRM}');"><img src="{THEME}/icon_action/reject.gif" alt="{DOCTYPE_DEL_FIELD_ALT}" title="{DOCTYPE_DEL_FIELD_ALT}" border="0" /></a></td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_NAME_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_POS_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+   <!-- BEGIN: Locale -->
+                     <tr>
+                        <td class="{DOCTYPE_LOCALE_TD_STYLE} nostyle_table" width="10%">{DOCTYPE_LOCALE_LABEL}</td>
+                        <td class="{DOCTYPE_LOCALE_TD_STYLE} nostyle_table" width="90%">{DOCTYPE_LOCALE_VALUE}</td>
+                     </tr>
+   <!-- END: Locale -->
+                  </table>
+               </td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_SIZE_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_SEARCHABLE_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_REQUIRED_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_SHOWDESC_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">{DOCTYPE_FIELD_INLIST_VALUE}</td>
+               <td class="{DOCTYPE_TD_STYLE}" align="center">
+                  <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: PickList -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="90%"><select class="fpull1" name="{DOCTYPE_FIELD_TYPE_NAME}" size="1">
+<!-- BEGIN: Value -->
+                              <option value="{DOCTYPE_FIELD_TYPE_VALUE}" >{DOCTYPE_FIELD_TYPE_VALUE}</option>
+<!-- END: Value -->
+                           </select>
+                        </td>
+                     </tr>
+<!-- END: PickList -->
+<!-- BEGIN: Radio -->
+                     <tr>
+                     <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                     <td class="form1" width="90%">
+<!-- BEGIN: Value -->
+                     <input  type="radio" value="{DOCTYPE_FIELD_TYPE_VALUE}" name="{DOCTYPE_FIELD_TYPE_NAME}" />{DOCTYPE_FIELD_TYPE_VALUE}
+<!-- END: Value -->
+                     </td>
+                     </tr>
+<!-- END: Radio -->
+
+<!-- BEGIN: TextArea -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="90%"><textarea class="ftext1" name="{DOCTYPE_FIELD_TYPE_NAME}" rows="{DOCTYPE_FIELD_TYPE_TEXTAREA_ROWS}" cols="50">{DOCTYPE_FIELD_TYPE_VALUE}</textarea></td>
+                    </tr>
+<!-- END: TextArea -->
+<!-- BEGIN: Seperator -->
+                     <tr>
+                        <td class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></td>
+                        <td class="browse0" width="100%">{DOCTYPE_FIELD_TYPE_VALUE}<br /></td>
+                     </tr>
+<!-- END: Seperator -->
+<!-- BEGIN: mCheckBox -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td>
+                           <table cellspacing="0" cellpadding="0" border="0" width="100%">
+<!-- BEGIN: NewCol -->
+                              <tr>
+<!-- BEGIN: Value -->
+                                 <td width="1%"><input class="fcheckbox1" type="checkbox" name="single_checkbox_{DOCTYPE_FIELD_TYPE_ID}" value="{DOCTYPE_FIELD_TYPE_VALUE}" /></td>
+                                 <td>{DOCTYPE_FIELD_TYPE_VALUE}</td>
+<!-- END: Value -->
+<!-- BEGIN: ValueFiller -->
+                                 <td>&nbsp;</td>
+                                 <td>&nbsp;</td>
+<!-- END: ValueFiller -->
+                              </tr>
+<!-- END: NewCol -->
+
+                           </table>
+                        </td>
+                     </tr>
+<!-- END: mCheckBox -->
+<!-- BEGIN: CheckBox -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="90%"><input class="fcheckbox1" type="checkbox" name="{DOCTYPE_FIELD_TYPE_NAME}" value="1" {DOCTYPE_FIELD_TYPE_CHECKED}/></td>
+                     </tr>
+<!-- END: CheckBox -->
+<!-- BEGIN: Calendar -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="100%">
+                           <input class="finput1" type="text" id="{DOCTYPE_FIELD_TYPE_NAME}" name="{DOCTYPE_FIELD_TYPE_NAME}" size="{DOCTYPE_FIELD_TYPE_SIZE}" readonly="readonly" />
+                        </td>
+                     </tr>
+<script type="text/javascript">
+                jQuery( "#{DOCTYPE_FIELD_TYPE_NAME}" ).datetimepicker({
+                        showOn: "button",
+                        dateFormat: 'yy/mm/dd',
+                        timeFormat: 'hh:mm:ss',
+                        showButtonPanel: false,
+                        buttonImage: "{THEME}/ui_icons/calendar_day.png",
+                        buttonImageOnly: true,
+                        onClose: function(date) {
+                        }
+                });
+</script>
+
+<!-- END: Calendar -->
+<!-- BEGIN: Table -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="90%"><select class="fpull1" name="{DOCTYPE_FIELD_TYPE_NAME}" size="1">
+<!-- BEGIN: Value -->
+                              <option value="{DOCTYPE_FIELD_TYPE_VALUE}" >{DOCTYPE_FIELD_TYPE_VALUE}</option>
+<!-- END: Value -->
+                           </select>
+                        </td>
+                     </tr>
+<!-- END: Table -->
+
+<!-- BEGIN: Url -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="100%"><a href="{DOCTYPE_FIELD_TYPE_URL_LOC}?sess=0" target="_new">{DOCTYPE_FIELD_TYPE_URL_LABEL}</a></td>
+                     </tr>
+<!-- END: Url -->
+<!-- BEGIN: Text -->
+                     <tr>
+                        <td class="form1" width="10%">{DOCTYPE_FIELD_TYPE_TITLE} <font color=red><b>&nbsp;{DOCTYPE_FIELD_REQUIRED}&nbsp;</b></font></td>
+                        <td class="form1" width="90%"><input class="finput1" type="text" name="{DOCTYPE_FIELD_TYPE_NAME}" size="{DOCTYPE_FIELD_TYPE_SIZE}" value="{DOCTYPE_FIELD_TYPE_VALUE}" /></td>
+                     </tr>
+<!-- END: Text -->
+                  </table>
+               </td>
+            </tr>
+<!-- END: Field -->
+         </table>
+      </td>
+   </tr>
+</table>
+</div><!-- /admin_table -->  
+<!-- END: FieldList -->
+<!-- END: DocType -->
+{FILE "html/footer.xtpl"}

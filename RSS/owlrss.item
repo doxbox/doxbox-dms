@@ -1,0 +1,7 @@
+                 <item>
+		    <title>%TITLE%</title>
+		    <pubDate>%PUBDATE%</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/%TORRENTFILE%</link>
+		    <description>%DESCRIPTION%</description>
+		 </item>
+						      

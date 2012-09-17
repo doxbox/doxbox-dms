@@ -1,0 +1,15 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+ ESTA &Eacute; UMA MENSAGEM AUTOM&Aacute;TICA DE Owl
+
+Estimado %USER_FULLNAME%,
+
+Foi criada uma conta para si. Seguem os detalhes:
+
+Nome de Utilizador: %USERNAME%
+
+Palavra-passe: %PASSWORD%
+
+Pode autenticar-se atrav&eacute;s do URL: %LINK%

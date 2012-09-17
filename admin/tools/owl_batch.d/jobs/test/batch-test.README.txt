@@ -1,0 +1,10 @@
+batch-test
+
+Run this job to verify that your config files are set up correctly.
+
+If everything is working properly, the job should
+1. provide a log file with its results
+2. show progress on screen with a copy in the log file
+3. cause an abnormal ending due to a divide-by-zero error in the php script
+
+## end ##

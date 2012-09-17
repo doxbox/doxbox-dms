@@ -1,0 +1,260 @@
+<!-- BEGIN: User -->
+   <tr>
+      <td class="admin2" width="100%" colspan="2">{HEADING_TITLE}<br /></td>
+   </tr>
+<!-- BEGIN: StatusMsg -->
+   <tr>
+      <td class="admin3" width="100%" colspan="2">{STATUS_MSG}<br /></td>
+   </tr>
+<!-- END: StatusMsg -->
+   <tr>
+      <td class="form1"><label for="name">{USER_FULL_NAME_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="name" type="text" name="name" size="40" value="{USER_FULL_NAME_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="edit_loginname">{USER_USERNAME_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="edit_loginname" type="text" name="edit_loginname" size="40" value="{USER_USERNAME_VALUE}" /></td>
+   </tr>
+<!-- BEGIN: Groups -->
+   <tr>
+      <td class="form1">{USER_GROUP_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="groupid" size="1">
+<!-- BEGIN: Items -->
+   <option value="{USER_GROUP_VALUE}" {USER_GROUP_SELECTED}>{USER_GROUP_CAPTION}</option>
+<!-- END: Items -->
+         </select>
+      </td>
+   </tr>
+<!-- END: Groups -->
+   <tr>
+      <td class="form1">{USER_LANG_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="newlanguage" size="1">
+<!-- BEGIN: Locales -->
+            <option value="{USER_LANG_VALUE}" {USER_LANG_SELECTED}>{USER_LANG_CAPTION}</option>
+<!-- END: Locales -->
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_MEMB_GROUP_LABEL}</td>
+      <td class="form1" width="100%">
+         <table>
+            <tr>
+               <td class="title1">{USER_MEMB_MEMB_TITLE}</td>
+               <td class="title1">{USER_MEMB_FILEADMIN_TITLE}</td>
+               <td class="title1">{USER_MEMB_GROUP_TITLE}</td>
+           </tr>
+<!-- BEGIN: GroupMember -->
+           <tr>
+              <td align="center"><input class="fcheckbox1" type="checkbox" name="{USER_MEMB_GROUP_NAME}" value="{USER_MEMB_GROUP_VALUE}" {USER_MEMB_GROUP_CHECKED} /></td>
+              <td align="center"><input class="fcheckbox1" type="checkbox" name="{USER_MEMB_ADMINGROUP_NAME}" value="{USER_MEMB_ADMINGROUP_VAULE}" {USER_MEMB_ADMINGROUP_CHECKED} /></td>
+              <td>{USER_MEMB_GROUP_CAPTION}</td>
+           </tr>
+<!-- END: GroupMember -->
+         </table>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_HOMEDIR_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="homedir">
+<!-- BEGIN: HomeDir -->
+            <option value="{USER_HOMEDIR_VALUE}" {USER_HOMEDIR_SELECTED}>{USER_HOMEDIR_CAPTION}</option>
+<!-- END: HomeDir -->
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_FIRSTDIR_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="firstdir" size="1">
+<!-- BEGIN: FirstDir -->
+            <option value="{USER_FIRSTDIR_VALUE}" {USER_FIRSTDIR_SELECTED}>{USER_FIRSTDIR_CAPTION}</option>
+<!-- END: FirstDir -->
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_BTN_STYLE_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="newbuttons" size="1">
+<!-- BEGIN: BtnStyle -->
+            <option value="{USER_BTN_STYLE_VALUE}" {USER_BTN_STYLE_SELECTED}>{USER_BTN_STYLE_CAPTION}</option>
+<!-- END: BtnStyle -->
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="quota">{USER_QUOTA_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="quota" type="text" name="quota" size="20" value="{USER_QUOTA_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="maxsessions">{USER_MAXSESS_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="maxsessions" type="text" name="maxsessions" size="20" value="{USER_MAXSESS_VALUE}" />
+<!-- BEGIN: FlushActiveSessions -->
+&nbsp;&nbsp;&nbsp;<a href="{FLUSH_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('admin_flush','','{THEME}/ui_icons/admin_flush_hover.gif',1)"><img src="{THEME}/ui_icons/admin_flush.gif" alt="{FLUSH_ALT}" title="{FLUSH_ALT}" border="0" name="admin_flush"></img></a>
+<!-- END: FlushActiveSessions -->
+      </td>
+   </tr>
+<!-- BEGIN: DefaultAuth -->
+   <tr>
+      <td class="form1">{USER_EDIT_PASSWD_LABEL}</td>
+      <td class="form1" width="100%"><input class="finput1" id="edit_password" type="password" name="edit_password" size="20" value="{USER_EDIT_PASSWD_VALUE}" onfocus="document.admin.edit_password.value=''" /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_CONF_PASSWD_LABEL}</td>
+      <td class="form1" width="100%"><input class="finput1" id="edit_confpassword" type="password" name="edit_confpassword" size="20" value="{USER_CONF_PASSWD_VALUE}" /></td>
+   </tr>
+<!-- END: DefaultAuth -->
+   <tr>
+      <td class="form1"><label for="email">{USER_EMAIL_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="email" type="text" name="email" size="40" value="{USER_EMAIL_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_NOTIFY_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="notify" value="1" {USER_NOTIFY_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_ATTACH_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="attachfile" value="1" {USER_ATTACH_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_DEF_VIEW_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="user_default_view" value="1" {USER_DEF_VIEW_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="user_major_revision">{USER_MAJ_REVISION_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="user_major_revision" type="text" name="user_major_revision" size="5" value="{USER_MAJ_REVISION_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="user_minor_revision">{USER_MIN_REVISION_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="user_minor_revision" type="text" name="user_minor_revision" size="5" value="{USER_MIN_REVISION_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_DEF_REVISION_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="user_default_revision" size="1">
+<!-- BEGIN: Revisions -->
+            <option value="{USER_DEF_REVISION_VALUE}" {USER_DEF_REVISION_SELECTED}>{USER_DEF_REVISION_CAPTION}</option>
+<!-- END: Revisions -->
+         </select>
+      </td>
+   </tr>
+<!-- BEGIN: Disabled -->
+   <tr>
+      <td class="form1">{USER_DISABLE_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="disabled" value="1" {USER_DISABLE_SELECTED} /></td>
+   </tr>
+<!-- END: Disabled -->
+   </tr>
+      <td class="form1">{USER_PREF_ACCESS_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="noprefaccess" value="1" {USER_PREF_ACCESS_SELECTED} /></td>
+   </tr>
+<!-- BEGIN: RegularUserOnly -->
+<!-- BEGIN: Disabled -->
+   <tr>
+      <td class="form1">{USER_DISABLE_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="disabled" value="1" {USER_DISABLE_SELECTED} /></td>
+   </tr>
+<!-- END: Disabled -->
+   <tr>
+      <td class="form1">{USER_GROUP_ADMIN_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="groupadmin" value="1" {USER_GROUP_ADMIN_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_PDF_WATERMARK_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="pdf_watermarks" value="1" {USER_PDF_WATERMARK_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_VIEW_LOG_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="viewlogs" value="1" {USER_VIEW_LOG_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_VIEW_REPORTS_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="viewreports" value="1" {USER_VIEW_REPORTS_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_NEWS_ADMIN_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="newsadmin" value="1" {USER_NEWS_ADMIN_SELECTED} /></td>
+   </tr>
+<!-- END: RegularUserOnly -->
+   <tr>
+      <td class="form1">{USER_NEW_REC_PAGE_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="logintonewrec" value="1" {USER_NEW_REC_PAGE_SELECTED} /></td>
+<!-- BEGIN: UserAdmin -->
+   <tr>
+      <td class="form1">{USER_USER_ADMIN_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="useradmin" value="1" {USER_USER_ADMIN_SELECTED} /></td>
+   </tr>
+<!-- END: UserAdmin -->
+   <tr>
+      <td class="form1">{USER_COMMENT_NOTIFY_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="comment_notify" value="1" {USER_COMMENT_NOTIFY_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_EMAIL_TOOL_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="email_tool" value="1" {USER_EMAIL_TOOL_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_CHANGE_PASSWD_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="change_paswd_at_login" value="1"{USER_CHANGE_PASSWD_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="expire_account">{USER_EXPIRES_LABEL}</label></td>
+      <td class="form1" width="100%"><input class="finput1" id="expire_account" type="text" name="expire_account" size="20" value="{USER_EXPIRES_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_AUTH_TYPE_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="user_auth" size="1">
+<!-- BEGIN: AuthType -->
+            <option value="{USER_AUTH_TYPE_VALUE}" {USER_AUTH_TYPE_SELECTED}>{USER_AUTH_TYPE_CAPTION}</option>
+<!-- END: AuthType -->
+         </select>
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_GMT_OFFSET_LABEL}</td>
+      <td class="form1" width="100%">
+         <select class="fpull1" name="user_offset" size="1">
+<!-- BEGIN: GmtOffset -->
+            <option value="{USER_GMT_OFFSET_VALUE}" {USER_GMT_OFFSET_SELECTED}>{USER_GMT_OFFSET_CAPTION}</option>
+<!-- END: GmtOffset -->
+         </select>
+      </td>
+   </tr>
+             <tr>
+                  <td class="form1"><label for="user_phone">{PREFS_PHONE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="user_phone" type="text" name="user_phone" size="30" value="{PREFS_PHONE_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_department">{PREFS_DEPT_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="user_department" type="text" name="user_department" size="80" value="{PREFS_DEPT_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="user_address">{PREFS_ADDRESS_LABEL}</label></td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="user_address" rows="5" cols="80">{PREFS_ADDRESS_VALUE}</textarea></td>
+               </tr>
+               <tr>
+                  <td class="form1">{PREFS_EMAIL_SIG_LABEL}</td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="email_sig" rows="5" cols="50">{PREFS_EMAIL_SIG_VALUE}</textarea></td>
+               </tr>
+
+   <tr>
+      <td class="form2" width="100%" colspan="2">
+<!-- BEGIN: AddNewUser -->
+      {USER_EMAIL_PASS_LABEL}<input class="fcheckbox1" type="checkbox" name="email_password" value="1" />&nbsp;<input  class="fbuttonup1" type="submit" value="{BTN_ADD_USER_LABEL}" alt="{BTN_ADD_USER_TITLE}" title="{BTN_ADD_USER_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- END: AddNewUser -->
+<!-- BEGIN: ChangeUser -->
+         <input  class="fbuttonup1" type="submit" value="{BTN_CHANGE}" alt="{BTN_CHANGE_ALT}" title="{BTN_CHANGE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+<!-- END: ChangeUser -->
+<!-- BEGIN: DeleteUser -->
+      <input class="fbuttondown1" name="bdeleteuser_x" type="submit" value="{BTN_DEL_USER_LABEL}" alt="{BTN_DEL_USER_ALT}" title="{BTN_DEL_USER_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BTN_DEL_USER_CONFIRM}');">
+<!-- END: DeleteUser -->
+         <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      </td>
+   </tr>
+<script type="text/javascript">document.admin.name.focus();</script>
+<!-- END: User -->

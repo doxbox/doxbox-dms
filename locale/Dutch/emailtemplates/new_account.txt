@@ -1,0 +1,15 @@
+# Volledige naam: %USER_FULLNAME%
+# Gebruikersnaam: %USERNAME%
+# Wachtwoord: %PASSWORD%
+# Login pagina: %LINK%
+
+ DIT IS EEN AUTOMATISCH BERICHT VAN OWL INTRANET
+
+Beste %USER_FULLNAME%,
+
+Er is een OWL account voor u aangemaakt, hier zijn de details:
+
+Gebruikersnaam: %USERNAME%
+Wachtwoord: %PASSWORD%
+
+U kunt zich aanmelden via de volgende link: %LINK%

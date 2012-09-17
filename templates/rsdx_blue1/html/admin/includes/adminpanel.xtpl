@@ -1,0 +1,97 @@
+<!-- BEGIN: AdminPanel -->
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="admin0" width="100%" colspan="50">{ADMIN_PANEL_TITLE}</td>
+            </tr>
+            <tr>
+	       <td class="abutton1">&nbsp;</td>
+<!-- BEGIN: UsersGroupOff -->
+	       <td class="abutton">{BUTTON_USER_GROUP}</td>
+<!-- END: UsersGroupOff -->
+<!-- BEGIN: UsersGroupOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_USER_GROUP_URL}" title="{BUTTON_USER_GROUP_TITLE}">{BUTTON_USER_GROUP}</a></td>
+<!-- END: UsersGroupOn -->
+
+<!-- BEGIN: EditHtmlOff -->
+	       <td class="abutton">{BUTTON_EDIT_HTML}</td>
+<!-- END: EditHtmlOff -->
+<!-- BEGIN: EditHtmlOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_EDIT_HTML_URL}" title="{BUTTON_EDIT_HTML_TITLE}">{BUTTON_EDIT_HTML}</a></td>
+<!-- END: EditHtmlOn -->
+
+<!-- BEGIN: EditSiteFeaturesOff -->
+	       <td class="abutton">{BUTTON_EDIT_SITE_FEATURES}</td>
+<!-- END: EditSiteFeaturesOff -->
+<!-- BEGIN: EditSiteFeaturesOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_EDIT_SITE_FEATURES_URL}" title="{BUTTON_EDIT_SITE_FEATURES_TITLE}">{BUTTON_EDIT_SITE_FEATURES}</a></td>
+<!-- END: EditSiteFeaturesOn -->
+
+<!-- BEGIN: ViewLogOff -->
+	       <td class="abutton">{BUTTON_VIEW_LOG}</td>
+<!-- END: ViewLogOff -->
+<!-- BEGIN: ViewLogOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_VIEW_LOG_URL}" title="{BUTTON_VIEW_LOG_TITLE}">{BUTTON_VIEW_LOG}</a></td>
+<!-- END: ViewLogOn -->
+
+<!-- BEGIN: ViewStatsOff -->
+	       <td class="abutton">{BUTTON_VIEW_STATS}</td>
+<!-- END: ViewStatsOff -->
+<!-- BEGIN: ViewStatsOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_VIEW_STATS_URL}" title="{BUTTON_VIEW_STATS_TITLE}">{BUTTON_VIEW_STATS}</a></td>
+<!-- END: ViewStatsOn -->
+
+<!-- BEGIN: NewsAdminOff -->
+	       <td class="abutton">{BUTTON_NEWS_ADMIN}</td>
+<!-- END: NewsAdminOff -->
+<!-- BEGIN: NewsAdminOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_NEWS_ADMIN_URL}" title="{BUTTON_NEWS_ADMIN_TITLE}">{BUTTON_NEWS_ADMIN}</a></td>
+<!-- END: NewsAdminOn -->
+
+<!-- BEGIN: DocTypeAdminOff -->
+	       <td class="abutton">{BUTTON_DOCTYPE_ADMIN}</td>
+<!-- END: DocTypeAdminOff -->
+<!-- BEGIN: DocTypeAdminOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_DOCTYPE_ADMIN_URL}" title="{BUTTON_DOCTYPE_ADMIN_TITLE}">{BUTTON_DOCTYPE_ADMIN}</a></td>
+<!-- END: DocTypeAdminOn -->
+
+<!-- BEGIN: BackupOff -->
+	       <td class="abutton0">{BUTTON_BACKUP}</td>
+<!-- END: BackupOff -->
+<!-- BEGIN: BackupOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_BACKUP_URL}" title="{BUTTON_BACKUP_TITLE}">{BUTTON_BACKUP}</a></td>
+<!-- END: BackupOn -->
+
+<!-- BEGIN: RecycleOff -->
+	       <td class="abutton0">{BUTTON_RECYCLE}</td>
+<!-- END: RecycleOff -->
+<!-- BEGIN: RecycleOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_RECYCLE_URL}" title="{BUTTON_RECYCLE_TITLE}">{BUTTON_RECYCLE}</a></td>
+<!-- END: RecycleOn -->
+
+<!-- BEGIN: ImportUsersOff -->
+	       <td class="abutton0">{BUTTON_IMPORT_USERS}</td>
+<!-- END: ImportUsersOff -->
+<!-- BEGIN: ImportUsersOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_IMPORT_USERS_URL}" title="{BUTTON_IMPORT_USERS_TITLE}">{BUTTON_IMPORT_USERS}</a></td>
+<!-- END: ImportUsersOn -->
+
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_INITIAL_LOAD_URL}" title="{BUTTON_INITIAL_LOAD_TITLE}" onclick="return confirm('{BUTTON_INITIAL_LOAD_CONFIRM}');">{BUTTON_INITIAL_LOAD}</a></td>
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_PURGE_HIST_URL}" title="{BUTTON_PURGE_HIST_TITLE}" onclick="return confirm('{BUTTON_PURGE_HIST_CONFIRM}');">{BUTTON_PURGE_HIST}</a></td>
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_MAINT_URL}" title="{BUTTON_ADMIN_MAINT_TITLE}">{BUTTON_ADMIN_MAINT}</a></td>
+
+<!-- BEGIN: UserTableOff -->
+	       <td class="abutton0">{BUTTON_ADMIN_USER_TABLE}</td>
+<!-- END: UserTableOff -->
+<!-- BEGIN: UserTableOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_USER_TABLE_URL}" title="{BUTTON_ADMIN_USER_TABLE_TITLE}">{BUTTON_ADMIN_USER_TABLE}</a></td>
+<!-- END: UserTableOn -->
+	       <td class="abutton1">&nbsp;</td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<!-- END: AdminPanel -->

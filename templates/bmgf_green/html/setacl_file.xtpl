@@ -1,0 +1,146 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: FileSecurity -->
+{FORM}
+{HIDDEN_FIELDS}
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+     <tr>
+         <td class="browse0" width="100%" colspan="20">{SETACL_FILE_PAGE_TITLE}</td>
+      </tr>
+      <tr>
+         <td align="center" valign="top">
+		    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+			   <tr>
+			      <td class="admin2" width="100%" colspan="2">{FILE_SECTION_HEADING}<br /></td>
+			   </tr>
+            </table>
+		 </td>
+	  </tr>
+   </table>
+   <br />
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td align="center" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0">
+               <tr>
+                  <td class="admin3" align="center" nowrap="nowrap">{FILE_SECTION_AVAILABLE_GRPS}</td>
+                  <td class="admin3" align="center" nowrap="nowrap">&nbsp;</td>
+                  <td class="admin3" align="center" nowrap="nowrap">{FILE_SECTION_SELECTED_GRPS}</td>
+               </tr>
+			   <tr>
+                  <td class="form1">
+				     <select multiple="multiple" size="10" class="fpullacl" name="allgroups[]" {ON_CHANGE}>
+<!-- BEGIN: AllGroups -->
+                        <option class="group_item" value="{ALL_GROUPS_VALUE}">{ALL_GROUPS_CAPTION}</option>
+<!-- END: AllGroups -->
+				     </select>
+		          </td>
+		          <td class="form1" nowrap="nowrap">
+		             &nbsp;&nbsp;<input type="button" onclick="move(this.form.elements['selectedgroups[]'],this.form.elements['allgroups[]'])" value="<--" />
+		             <input type="button" onclick="move(this.form.elements['allgroups[]'],this.form.elements['selectedgroups[]'])" value="-->" /><br />
+		             <input type="button" onclick="selectAllGroups(this.form.elements['selectedgroups[]'],this.form.elements['allgroups[]'])" value="<<--" />
+		             <input type="button" onclick="selectAllGroups(this.form.elements['allgroups[]'],this.form.elements['selectedgroups[]'])" value="-->>" />
+				   </td>
+				   <td class="form1">
+		              <select multiple="multiple" size="10" name="selectedgroups[]" class="fpullacl">
+<!-- BEGIN: SelectedGroups -->
+					     <option value="{SELECTED_GROUPS_VALUE}">{SELECTED_GROUPS_CAPTION}</option>
+<!-- END: SelectedGroups -->
+					  </select>
+		           </td>
+		        </tr>
+		        <tr>
+		           <td class="admin3" align="center" nowrap="nowrap">{FILE_SECTION_AVAILABLE_USERS}</td>
+		           <td class="admin3" align="center" nowrap="nowrap">&nbsp;</td>
+		           <td class="admin3" align="center" nowrap="nowrap">{FILE_SECTION_SELECTED_USERS}</td>
+		        </tr>
+				<tr>
+		           <td class="form1">
+				      <select multiple="multiple" size="10" name="allusers[]" class="fpullacl">
+<!-- BEGIN: AllUsers -->
+                         <option value="{ALL_USERS_VALUE}">{ALL_USERS_CAPTION}</option>
+<!-- END: AllUsers -->
+		              </select>
+		           </td>
+		           <td class="form1" nowrap="nowrap">
+		              &nbsp;&nbsp;<input type="button" onclick="move(this.form.elements['selectedusers[]'],this.form.elements['allusers[]'])" value="<--" />
+		              <input type="button" onclick="move(this.form.elements['allusers[]'],this.form.elements['selectedusers[]'])" value="-->" />
+		        <br /><input type="button" onclick="selectAllUsers(this.form.elements['selectedusers[]'],this.form.elements['allusers[]'])" value="<<--" />
+		              <input type="button" onclick="selectAllUsers(this.form.elements['allusers[]'],this.form.elements['selectedusers[]'])" value="-->>" />
+		           </td>
+		           <td class="form1">
+		              <select multiple="multiple" size="10" name="selectedusers[]" class="fpullacl">
+<!-- BEGIN: SelectedUsers -->
+                         <option value="{SELECTED_USERS_VALUE}">{SELECTED_USERS_CAPTION}</option>
+<!-- END: SelectedUsers -->
+		              </select>
+		           </td>
+		        </tr>
+		        <tr>
+		           <td colspan="2" class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt=""></img></td>
+		           <td class="form2"><input class="fbuttonup1" type="submit" name="submit_button" value="{SET_SELECTED}" onclick="selectAll(document.combo_box.elements['selectedusers[]']); selectAll(document.combo_box.elements['selectedgroups[]']);"></td>
+		        </tr>
+		     </table>
+          </td>
+       </tr>
+	</table>
+</form>
+
+{SETACL_FORM}
+{SETACL_HIDDEN}
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+		<tr>
+		   <td align="left" valign="top">
+		      <table cellspacing="0" cellpadding="0" border="0" width="100%">
+		         <tr>
+			        <td class="admin2" width="100%" colspan="2">{SET_FILE_PERM}<br /></td>
+			     </tr>
+		      </table>
+		   </td>
+		</tr>
+   </table>
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+		<tr>
+		   <td align="left" valign="top">
+		      <table cellspacing="0" cellpadding="0" border="0" width="100%">
+			     <tr>
+		            <td class="title1" align="center"><b>{HEADING_FILE_PERM}</b></td>
+<!-- BEGIN: FilePermTitle -->
+	                <td class="title1" align="center"><a class="ltitle1" href="{FILE_TITLE_URL}">{FILE_TITLE_LABEL}</a></td>		
+<!-- END: FilePermTitle -->
+		         </tr>
+<!-- BEGIN: FilePermUsrGrp -->
+		         <tr>
+		            <td class="{TR_COLOR}"><a class="title1" href="{FILE_USER_GRP_URL}">{FILE_USER_GRP_LABEL}</a></td>
+<!-- BEGIN: FilePermUsrGrpAcl -->
+		            <td class="file2" align="center"><b><input type="checkbox" name="{FILE_USER_GRP_NAME}" value="{FILE_USER_GRP_VALUE}" {FILE_USER_GRP_CHECKED} /></b></td>
+<!-- END: FilePermUsrGrpAcl -->
+		         </tr>
+<!-- END: FilePermUsrGrp -->
+<!-- BEGIN: FilePermPropagate -->
+                 <tr>
+                    <td colspan="13" class="form1" width="100%"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt=""></img></td>
+                    <td class="form2" nowrap="nowrap">
+                       <table>
+                          <tr>
+                             <td class="form1">{FILE_PROPAGATE_LABEL}</td>
+                             <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="file_propagate" value="1" /></td>
+                          </tr>
+                       </table>
+                   </td>
+                 </tr>
+<!-- END: FilePermPropagate -->
+		         <tr>
+		            <td colspan="13" class="form1" width="100%"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt=""></img></td>
+		            <td class="form2" nowrap="nowrap">
+                       <input  class="fbuttonup1" type="submit" value="{BTN_SAVE}" alt="{BTN_SAVE_ALT}" title="{BTN_SAVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                       <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                    </td>
+		         </tr>
+		      </table>
+		   </td>
+		</tr>
+ 	</table>
+</form>
+<br />
+<!-- END: FileSecurity -->
+{FILE "html/footer.xtpl"}

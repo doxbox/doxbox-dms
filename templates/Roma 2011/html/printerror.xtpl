@@ -1,0 +1,30 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: ErrorPage -->
+<div class="width_driver" style="margin:0 21px 0 20px;"></div>
+<div id="nav_bar" style="height:20px;"></div>
+<div id="apice"></div>
+<div class="error_table">
+  <div class="error_page">
+    <div class="{MSG_CLASS}">
+      <div class="float_left status_icon"></div>
+      <div class="float_left"> 
+        <div class="display_errors">
+        --- {ERROR_TYPE} ---
+        {ERROR_MSG}
+        </div>
+      <!-- BEGIN: Details -->
+        <div class="display_errors">
+        {ERROR_DETAIL}
+        {ERROR_DETAIL_MSG}
+        </div>
+      <!-- END: Details -->
+      </div>
+      <div class="clearbox"></div>
+    </div><!-- /{MSG_CLASS} -->
+  </div><!-- /error_page -->
+  <div style="text-align:right;">
+    <input class="fbuttonup1" type="submit" value="{BTN_BACK}" alt="{BTN_BACK_ALT}" title="{BTN_BACK_ALT}" onclick="history.back();" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+  </div>  
+ </div><!-- /admin_table -->	           
+<!-- END: ErrorPage --> 
+{FILE "html/footer.xtpl"}

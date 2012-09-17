@@ -1,0 +1,148 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: SysLogs -->
+{FORM}
+{HIDDEN_FIELDS}
+<div class="admin_table">
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+ <tr>
+    <td class="admin2" width="100%" colspan="9">{SYSLOG_HEADING}<br></td>
+ </tr>
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tbody>
+               <tr>
+                  <td class="subtitle">{SYSLOG_TITLE_ACTION}</td>
+                  <td class="subtitle1">{SYSLOG_TITLE_FILE}</td>
+                  <td class="subtitle1">{SYSLOG_TITLE_FILE_SIZE}</td>
+                  <td class="subtitle1">{SYSLOG_TITLE_FLD_PATH}</td>
+                  <td class="subtitle1">{SYSLOG_TITLE_USER}</td>
+                  <td class="subtitle1">{SYSLOG_TITLE_DT_TM}</td>
+                  <td class="subtitle1">{SYSLOG_TITLE_IP}</td>
+<!-- BEGIN: TlAgent -->
+                  <td class="subtitle1">{SYSLOG_TITLE_AGENT}</td>
+<!-- END: TlAgent -->
+<!-- BEGIN: TlDetails -->
+                  <td class="subtitle1">{SYSLOG_TITLE_DETAILS}</td>
+<!-- END: TlDetails -->
+               </tr>
+
+<!-- BEGIN: Row -->
+               <tr>
+                  <td class="{SYSLOG_TD_CLASS}"><font color="green"><b>&lsaquo;{SYSLOG_ACTION}&rsaquo;</b></font></td>
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_FILE}</td>
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_FILE_SIZE}</td>
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_FLD_PATH}</td>
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_USER}</td>
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_DT_TM}</td>
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_IP}</td>
+<!-- BEGIN: TtAgent -->
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_AGENT}</td>
+<!-- END: TtAgent -->
+<!-- BEGIN: TtDetails -->
+                  <td class="{SYSLOG_TD_CLASS}">{SYSLOG_DETAILS}</td>
+<!-- END: TtDetails -->
+               </tr>
+<!-- END: Row -->
+               <tr>
+                  <td class="admin3" width="100%" colspan="9">{SYSLOG_STATUS_MSG}<br></td>
+               </tr>
+               <tr>
+                  <td class="form1">{SYSLOG_ACTION_LABEL}</td>
+                  <td class="form1" width="100%" colspan="8"><select class="fpull1" size="8" name="filteraction[]" multiple="multiple">
+<!-- BEGIN: FilterAction -->
+                        <option value="{SYSLOG_ACTION_VALUE}" {SYSLOG_ACTION_SELECTED}>{SYSLOG_ACTION_CAPTION}</option>
+<!-- END: FilterAction -->
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1">{SYSLOG_USER_LABEL}</td>
+                  <td class="form1" width="100%" colspan="8"><select class="fpull1" name="filteruser">
+<!-- BEGIN: FilterUser -->
+                        <option value="{SYSLOG_USER_VALUE}" {SYSLOG_USER_SELECTED}>{SYSLOG_USER_CAPTION}</option>
+<!-- END: FilterUser -->
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1">{SYSLOG_GROUP_LABEL}</td>
+                  <td class="form1" width="100%" colspan="8"><select class="fpull1" name="filtergroup" size="1">
+<!-- BEGIN: FilterGroup -->
+                        <option value="{SYSLOG_GROUP_VALUE}" {SYSLOG_GROUP_SELECTED}>{SYSLOG_GROUP_CAPTION}</option>
+<!-- END: FilterGroup -->
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="filter_file">{SYSLOG_FILENAME_LABEL}</label></td>
+                  <td class="form1" width="100%" colspan="8"><input class="finput1" id="filter_file" type="text" name="filter_file" size="60" value="{SYSLOG_FILENAME_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="filter_from">{SYSLOG_DATEFROM_LABEL}</label></td>
+                  <td class="form1" width="100%" colspan="8"><input class="finput1" id="filter_from" type="text" name="filter_from" size="20" value="{SYSLOG_DATEFROM_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="filter_to">{SYSLOG_DATETO_LABEL}</label></td>
+                  <td class="form1" width="100%" colspan="8"><input class="finput1" id="filter_to" type="text" name="filter_to" size="20" value="{SYSLOG_DATETO_VALUE}"/></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="ip_hostname">{SYSLOG_IPHOST_LABEL}</label></td>
+                  <td class="form1" width="100%" colspan="8"><input class="finput1" id="ip_hostname" type="text" name="ip_hostname" size="20" value="{SYSLOG_IPHOST_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{SYSLOG_HIDEAGENT_LABEL}</td>
+                  <td class="form1" width="100%" colspan="8"><input class="fcheckbox1" type="checkbox" name="hideagent" value="1" {SYSLOG_HIDEAGENT_CHECKED} /></td>
+               </tr>
+               <tr>
+                  <td class="form1">{SYSLOG_HIDEDETAILS_LABEL}</td>
+                  <td class="form1" width="100%" colspan="8"><input class="fcheckbox1" type="checkbox" name="hidedetail" value="1" {SYSLOG_HIDEDETAILS_CHECKED}/></td>
+               </tr>
+               <tr class="form2">
+                  <td class="form2">&nbsp;</td>
+                  <td class="form2 ie_left_text" colspan="8">
+                     <table class="nostyle_table">
+                        <tbody>
+                           <tr>
+                              <td align="left"><input class="fbuttonup1" name="myaction" type="submit" value="{SYSLOG_FILTERBTN_LABEL}" alt="{SYSLOG_FILTERBTN_ALT}" title="{SYSLOG_FILTERBTN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                              <td class="button1"><img src="{THEME}/img/icon_filetype/pdf.png"/></td>
+                              <td class="button1"><a class="lbutton1" href="{SYSLOG_GENPDF_URL}" title="{SYSLOG_GENPDF_ALT}">&nbsp;{SYSLOG_GENPDF_LABEL}&nbsp;</a></td>
+                              <td class="button1"><img src="{THEME}/img/icon_filetype/xls.png" /></td>
+                              <td class="button1"><a class="lbutton1" href="{SYSLOG_GENCSV_URL}" title="{SYSLOG_GENCSV_ALT}">&nbsp;{SYSLOG_GENCSV_LABEL}&nbsp;</a></td>
+                           </tr>
+                        <tbody>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form2">&nbsp;</td>
+                  <td class="form2 ie_left_text" colspan="8">
+                     <table class="nostyle_table">
+                        <tbody>
+                           <tr>
+                              <td><a href="{SYSLOG_PREVRECS_URL}"><img src="{THEME}/ui_nav/prev.gif" border="0" alt="{SYSLOG_PREVRECS_ALT}" title="{SYSLOG_PREVRECS_ALT}" /></a></td>
+                              <td><a href="{SYSLOG_TOPRECS_URL}"><img src="{THEME}/ui_nav/top.gif" border="0" alt="{SYSLOG_TOPRECS_ALT}" title="{SYSLOG_TOPRECS_ALT}" /></a></td>
+                              <td>
+<!-- BEGIN: NextRecs -->
+                                 <a href="{SYSLOG_NEXTRECS_URL}"><img src="{THEME}/ui_nav/next.gif" border="0" alt="{SYSLOG_NEXTRECS_ALT}" title="{SYSLOG_NEXTRECS_ALT}" /></a>
+<!-- END: NextRecs -->
+<!-- BEGIN: NoMoreRecs -->
+                                 <img src="{THEME}/ui_misc/transparent.gif" border="0" alt="" />
+<!-- END: NoMoreRecs -->
+                              </td>
+                              <td align="left"><a href="{SYSLOG_CLEARLOG_URL}" onclick="return confirm('{SYSLOG_CLEARLOG_CONFIRM}?');"><img src="{THEME}/ui_misc/log_delete.gif" border="0" alt="{SYSLOG_CLEARLOG_ALT}" title="{SYSLOG_CLEARLOG_ALT}" /></a></td>
+                              <td>&nbsp;{SYSLOG_RECORD_STATUS}&nbsp;</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </td>
+               </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+</div><!-- /admin_table -->   
+</form>
+<!-- END: SysLogs -->
+{FILE "html/footer.xtpl"}

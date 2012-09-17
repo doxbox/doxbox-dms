@@ -1,0 +1,26 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: SiteMap -->
+<div class="table_container">
+<table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td class="browse0" width="100%" colspan="20">{SITEMAP_TITLE}</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <table class="nostyle_table table_inside" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td>
+            <table class="nostyle_table move_table" style="border:1px solid #6E6E6E !important;" cellspacing="0" border="0" cellpadding="4">
+                <tr>
+                   <td align="left">{SITE_TREE}</td>
+                </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>  
+  </tr>
+</table>    
+</div><!-- /table_container -->
+<!-- END: SiteMap -->
+{FILE "html/footer.xtpl"}

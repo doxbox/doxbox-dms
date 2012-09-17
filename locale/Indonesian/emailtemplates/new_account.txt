@@ -1,0 +1,18 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+INI ADALAH PESAN OTOMATIS DARI Intranet OWL
+
+Assalamu 'alaikum warahmatullahi wabarakatuh %USER_FULLNAME%,
+
+Sebuah akun OWL telah dibuat untuk Anda, dibawah ini adalah perinciannya:
+
+Nama Pengguna: %USERNAME%
+
+Kata Sandi: %PASSWORD%
+
+Anda dapat log masuk dari URL berikut:
+%LINK%
+
+Wassalamu 'alaikum warahmatullahi wabarakatuh

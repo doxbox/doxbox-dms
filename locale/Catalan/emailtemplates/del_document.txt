@@ -1,0 +1,22 @@
+# File Title: %FILE_TITLE%
+# File Name: %FILE_NAME%
+# File Path: %OWL_FILE_PATH%
+# File Size: %FILE_SIZE%
+# File Owner: %FILE_OWNER%
+# File Updator: %FILE_UPDATOR%
+# File Created: %FILE_CREATION_DATE%
+# File Description: %FILE_DESC%
+# File Modified: %FILE_MODIFICATION_DATE%
+# File Version: %FILE_VERSION%
+# File Link: %FILE_URL%
+Aquest &eacute;s un missatge autom&agrave;tic generat per OWL Intranet
+
+Un document ha estat esborrat de la BDD. Aqu&iacute; tens els detalls: 
+
+T&iacute;tol: %FILE_TITLE%
+
+Descripci&oacute;: %FILE_DESC%
+
+Ruta del fitxer: %OWL_FILE_PATH%
+
+Versi&oacute;:  %FILE_VERSION%

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>OWL TEST</title>
+        <link>http://bozzit.homelinux.com/Projects/Owl/owl-0.90/</link>
+        <description>Prototype Owl File Distribution Via RSS</description>
+        <pubDate>Thu, 4 May 2006 08:52:00 +0000</pubDate>
+                     <item>
+		    <title>dungeonman.gif</title>
+		    <pubDate>Thu, 16 Aug 2007 22:03:34 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/dungeonman.gif.torrent</link>
+		    <description></description>
+		 </item>
+						      
+                 <item>
+		    <title>Test feed 1</title>
+		    <pubDate>Thu, 16 Aug 2007 22:03:34 -0400</pubDate>
+		    <link>http://www.bozzit.com/RSSTorrent/feed_test.xml.torrent</link>
+		    <description></description>
+		 </item>
+						      
+</channel>
+</rss>

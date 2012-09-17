@@ -1,0 +1,13 @@
+# User Full Name: %USER_FULLNAME%
+# User USER Name: %USERNAME%
+# User USER PASSWORD: %PASSWORD%
+# OWL Login Page: %LINK%
+
+Witaj %USER_FULLNAME%,,
+
+Twoje konto w Repozytorium Owl zostało właśnie utworzone.
+
+Użytkownik: %USERNAME%
+Hasło: %PASSWORD%
+
+Możesz zalogować się na tej stronie: %LINK%

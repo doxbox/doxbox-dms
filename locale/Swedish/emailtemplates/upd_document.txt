@@ -1,0 +1,26 @@
+# File Title: %FILE_TITLE%
+# File Name: %FILE_NAME%
+# File Path: %OWL_FILE_PATH%
+# File Size: %FILE_SIZE%
+# File Owner: %FILE_OWNER%
+# File Updator: %FILE_UPDATOR%
+# File Created: %FILE_CREATION_DATE%
+# File Description: %FILE_DESC%
+# File Modified: %FILE_MODIFICATION_DATE%
+# File Version: %FILE_VERSION%
+# File Link: %FILE_URL%
+# Current User: %CURRENT_USER%
+
+DETTA ÄR ETT AUTOMATISERAT MEDDELANDE FRÅN OWL Intranet
+
+Ett UPPDATERAT Dokument harr lagts till i förråder, nedan ser du detaljerna: 
+
+Titel: %FILE_TITLE%
+
+URL: %FILE_URL%
+
+Beskrivning: %FILE_DESC%
+
+Sökväg till fil: %OWL_FILE_PATH%
+
+Uppdaterad av: %FILE_UPDATOR%

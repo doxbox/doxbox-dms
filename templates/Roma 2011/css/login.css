@@ -1,0 +1,285 @@
+/*
+ *  author: Marco Chillemi
+ *  mail: marco.chillemi [at] gmail [dot] com
+ *  URL: http://www.killodesign.com   
+ */      
+  
+/* RESET
+--------------------------------------------------*/
+* { margin: 0; }
+html, body { height: 100%; }
+html { background: #fff; }
+html > body #container { height: auto; }
+body {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+	margin:0;
+	padding:0;
+	color: #444;
+	font: normal 11px "Lucida Sans Unicode", Calibri, tahoma, Georgia,"Times New Roman",Times,serif;
+	line-height:180%;
+	position:relative;
+}
+body a {
+	color:#134D9F;  
+	outline:none;
+}
+body a:hover {
+	color:#1F76FF; 
+}
+
+h3, h4, h5, h6, p, form, fieldset {
+	margin:0;
+	padding:0;
+	border:none;
+	background:#FFF;
+}
+.clearbox {
+	clear:both;
+}
+.strong {
+font-weight:bold;
+}
+h1 {
+padding: 0;
+font-weight:100;
+font-size:28px;
+color:#444;
+margin-top:0;
+}
+h2 {
+margin:0;
+font-size:x-large;
+}
+h3 a p {
+	text-decoration:underline;
+}
+ol{
+list-style:decimal;
+}
+ul{
+	list-style:none;
+	padding-left:20px;
+}
+.float_left {
+float:left;
+}
+.float_right {
+float:right;
+}
+#container {
+background-color:#EAEAEA;
+}
+/* HEADER 
+----------------------------------------------------------------------------*/
+#motd {
+min-height:30px;
+background-color:#000;
+line-height:30px;
+text-align:center;
+color:#FFF;
+font-size:12px;
+}
+#header {
+position:relative;
+height:134px;
+background: url(../img/header_background.jpg) top left repeat-x;
+}
+#title_and_logo {
+width:940px;
+margin:0 auto;
+}
+#title {
+font-size:30px;
+padding:15px 0;
+color:#FFF;
+text-align:center;
+margin-top:-30px;
+}
+.logo {
+width:286px;
+height:96px;
+color:#FFF;
+}
+#logo_center {
+margin:0 auto;
+}
+#logo_left {
+position:absolute;
+left:15px;
+top:10px;
+}
+#logo_right {
+position:absolute;
+right:15px;
+top:10px;
+}
+/* CONTENT 
+----------------------------------------------------------------------------*/
+#info_message {
+text-align:center;
+font-size:12px;
+padding:2px;
+width:350px;
+margin:-12px auto 0;
+color:#000;
+}
+#login_edge {
+position:relative;
+height:12px;
+width:350px;
+margin:0 auto 0 auto;
+margin-top:-1px;
+}
+#login_edge2 {
+position:absolute;
+top:0;
+right:30px;
+height:12px;
+width:22px;
+z-index:101;
+}
+.status_icon {
+display:inline-block;
+float:left;
+width:20px;
+height:18px;
+margin:0;
+padding:0;
+}
+.msg_info #info_message { background-color:#CCFFCC; border:1px solid #7DDB7D; }
+.msg_warning #info_message { background-color:#FFDD66; border:1px solid #B58C07; }
+.msg_error #info_message { background-color:#ffdddd; border:1px solid #ffbbbb; }
+.msg_info #login_edge2 { background: url(../img/infologin_edge_info.png) top right no-repeat; }
+.msg_warning #login_edge2 { background: url(../img/infologin_edge_warning.png) top right no-repeat; }
+.msg_error #login_edge2 { background: url(../img/infologin_edge_error.png) top right no-repeat; }
+.msg_info .status_icon { background: url(../img/icons/info.png) center center no-repeat; }
+.msg_warning .status_icon { background: url(../img/icons/alert.png) center center no-repeat; }
+.msg_error .status_icon { background: url(../img/icons/error.png) center center no-repeat; }
+#content {
+width:100%;
+margin:0 auto;
+margin-top:-10px;
+background: url(../img/login_background.jpg) top left repeat-x;
+}
+#hidden_fields {
+text-align:center;
+color:#000;
+}
+#form_fields {
+width:350px;
+margin:0 auto;
+padding:20px;
+background: url(../img/login_form_bg.png) top left no-repeat;
+}
+#rep {
+margin:0 auto 30px auto;
+}
+#rep select {
+width:325px;
+}
+.input_field {
+margin:5px 0;
+}
+.input_field label {
+}
+#anon_and_remeberme {
+margin:10px auto;
+}
+#anon {
+width:50%;
+float:left;
+}
+#rem_me {
+width:50%;
+float:right;
+text-align:right;
+}
+#rem_me #remember {
+margin-left:10px;
+}
+#submit_form {
+margin:20px auto 20px auto;
+}
+#submit_form_button {
+float:right;
+padding:5px;
+}
+#self_help {
+margin:40px auto 0 auto;
+text-align:center;
+}
+.signature {
+position:absolute;
+width:100%;
+padding:5px 0;
+bottom:0;
+text-align:center;
+background-color:#000;
+}
+#papercorner {
+position:absolute;
+bottom:0;
+right:0;
+width:121px;
+height:121px;
+background: url(../img/paper_corner.png) top left no-repeat;
+z-index:100;
+}
+/* FORM ELEMENTS 
+--------------------------------------------------------------------------------*/
+.repo3,
+#password,
+#loginname {
+position:relative;
+background-color:#E9EEF4;
+border:1px solid #AAA;
+border-bottom:1px solid #CCC;
+border-right:1px solid #CCC;
+margin:5px 0 0 0;
+font-weight:normal;
+font-size:18px;
+padding:5px;
+width:339px;
+z-index:100;
+}
+.repo3:focus,
+#password:focus,
+#loginname:focus{
+background-color:#fff8bc;
+}
+/* Buttons Stiles
+-------------------------------------------------------------------*/
+.fbuttondown1 {
+  border: 1px solid #CACACA;
+  padding: 5px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #FFFFFF;
+  white-space: nowrap;
+  background-color: #ECECEC;
+  background-image: url("../img/css3buttons_backgrounds.png");
+  background-repeat:no-repeat;
+  background-attachment:scroll;  
+  background-position: 0 0;
+  font-size:10px;
+  color: #134D9F;
+  }
+.fbuttonup1 {
+  border: 1px solid #388AD4;
+  color:#FFF;
+  padding: 5px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #444;
+  white-space: nowrap;
+  background-color: #ECECEC;
+  background-image: url("../img/css3buttons_backgrounds.png");
+  background-repeat:no-repeat;
+  background-attachment:scroll;  
+  background-position: 0 -40px;
+  font-size:10px;  
+  }

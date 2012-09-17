@@ -1,0 +1,9 @@
+# This file is a sample file
+# This file allows you to create alter 
+# Read HD Defaults set in the admin section
+# All you have to do is put 2 files in the Folder for the LookATHD feature to find.
+# sample-file.pdf, is the actual document, and
+# sample-file.owlctl  (this file)
+#creatorid,ownergroupid,description,metadata,title,security,userid,groupid,owlread,owlviewlog,owldelete,owlcopy,owlmove,owlproperties,owlupdate,owlcomment,owlcheckin,owlemail,owlrelsearch,owlsetacl,owlmonitor 
+1,0,Default Description,metadata keywords,title,4,10,,1,1,0,0,0,0,0,0,0,0,0,0,0
+1,0,Default Description,metadata keywords,title,4,,101,1,1,0,0,1,0,0,0,0,0,0,0,0

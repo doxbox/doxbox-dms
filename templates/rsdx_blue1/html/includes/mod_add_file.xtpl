@@ -1,0 +1,257 @@
+<!-- BEGIN: AddFiles -->
+{FORM}
+{HIDDEN_FIELDS}
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                 <td class="browse0" width="100%" colspan="20">{ADD_FILE_PAGE_TITLE}</td>
+              </tr>
+<!-- BEGIN: Doctypes -->
+               <tr>
+                  <td class="form1">{DOCTYPE_LABEL}</td>
+                  <td class="form1" width="100%">
+                     <select class="fpull1" name="doctype" size="1" onchange="AjaxGethtml('scripts/Ajax/Owl/getdoctype.php?sess={OWL_SESS}&doctype=' + this.value, 'DocTypeFields', '{THEME}/ui_misc/ajax-loader.gif');">
+<!-- BEGIN: Value -->
+                       <option value="{DOCTYPE_VALUE}" {DOCTYPE_VALUE_SELECTED}>{DOCTYPE_VALUE_LABEL}</option>
+<!-- END: Value -->
+                     </select>
+                  </td>
+               </tr>
+<!-- END: Doctypes -->
+
+<!-- BEGIN: FileUploads -->
+               <tr>
+                  <td class="form1">{FILE_UPLOAD_LABEL}</td>
+<!-- BEGIN: AddURL -->
+                  <td class="form1" width="100%"><input id="my_file_element" class="finput1" type="text" name="userfile" size="80" maxlength="512" value="http://" />
+<!-- END: AddURL -->
+<!-- BEGIN: AddOther -->
+                  <td class="form1" width="100%"><input id="my_file_element" accesskey="1" class="finput1" type="file" name="userfile" size="80" maxlength="512" />
+<!-- END: AddOther -->
+<!-- BEGIN: Scan -->
+                    <a class="fbuttonup1" style="position:relative;top:2px;left:2px;font-size:12px;padding:1px 4px;" href="{FILE_UPLOAD_SCAN_URL}"  size="255" title="{FILE_UPLOAD_SCAN_ALT}" alt="{FILE_UPLOAD_SCAN_ALT}">{FILE_UPLOAD_SCAN_LABEL}</a>
+					{FILE_UPLOAD_SCAN_JS}
+<!-- END: Scan -->
+					</td> 
+                </tr>
+<!-- BEGIN: MultiAddFile -->
+               <tr>
+                  <td class="form1"><label for="file_list">UPLOADING:</label></td>
+                  <td class="form1" width="100%"><div id="files_list"></div></td>
+               </tr>
+<!-- END: MultiAddFile -->
+<!-- END: FileUploads -->
+               <tr>
+                  <td class="form1"><label for="title">{FILE_TITLE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="title" type="text" name="title" size="60" value="" /></td>
+               </tr>
+<!-- BEGIN:  PassWordOveride -->
+                <tr>
+                   <td class="form1"><label for="newpassword">{FILE_NEWPASS_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FILE_NEWPASS_VALUE}"></td>
+                </tr>
+                <tr>
+                   <td class="form1"><label for="modify_url">{FILE_CONFIRM_LABEL}</label></td>
+                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FILE_CONFIRM_VALUE}"></td>
+                </tr>
+<!-- END:  PassWordOveride -->
+               <tr>
+                  <td class="form1"><label for="metadata">{FILE_KEYWORDS_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="metadata" type="text" name="metadata" size="60" value="" />
+<!-- BEGIN: SaveKeyWords -->
+				  &nbsp;(<input class="fcheckbox1" type="checkbox" name="savekeyword" value="1" />&nbsp;{FILE_KEYWORDS_SAVE_LABEL})
+<!-- END: SaveKeyWords -->
+                  </td>
+			   </tr>
+<!-- BEGIN: SaveKeyWordPick -->
+               <tr>
+                  <td class="form1">{FILE_KEYWORDS_SAVED_LABEL}</td>
+                  <td class="form1" width="100%">
+				     <select class="fpull1" name="keywordpick[]" size="5" multiple="multiple" >
+   <!-- BEGIN: SelectBox -->
+			            <option value="{SELECT_BOX.KEYWORDS_SELECTBOX_VALUE}"{SELECT_BOX.KEYWORDS_SELECTBOX_SELECTED}>{SELECT_BOX.KEYWORDS_SELECTBOX_LABEL}</option>
+   <!-- END: SelectBox -->                      
+				     </select>
+                  </td>
+               </tr>
+<!-- END: SaveKeyWordPick -->
+               <tr>
+                  <td class="form1"><label for="major_revision">{FILE_MAJORVERSION_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="major_revision" type="text" name="major_revision" size="5" value="{FILE_MAJORVERSION_VALUE}" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="minor_revision">{FILE_MINORVERSION_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="finput1" id="minor_revision" type="text" name="minor_revision" size="5" value="{FILE_MINORVERSION_VALUE}" /></td>
+               </tr>
+<!-- BEGIN: zipupload -->
+               <tr>
+                  <td class="form1"><label for="to_current_folder">{FILE_TOCURRENT_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="to_current_folder" value="1" /></td>
+               </tr>
+               <tr>
+                  <td class="form1"><label for="Overwrite">{FILE_OVERWRITE_LABEL}</label></td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="Overwrite" value="1" /></td>
+               </tr>
+<!-- END: zipupload -->
+<!-- BEGIN: indexoptional -->
+               <tr>
+                  <td class="form1"><label for="index_file">{FILE_INDEXOPTIONAL_LABEL}</label></td>
+                  <td class="form1" width="100%">input class="fcheckbox1" type="checkbox" name="index_file" value="1" /></td>
+               </tr>
+<!-- END: indexoptional -->
+<!-- BEGIN: useFileExpiry -->
+               <tr>
+                  <td class="form1"><label for="expires">{FILE_EXPIRES_LABEL}</label></td>
+                  <td class="form1" width="100%">
+                     <input class="finput1" type="text" id="expires" name="expires" size="15" />
+                  </td>
+               </tr>
+<!-- END: useFileExpiry -->
+               <tr>
+                  <td class="form1">{FILE_SETACL_LABEL}</td>
+                  <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="set_acl" value="1"    /></td>
+               </tr>
+<!-- BEGIN: Reviewers -->
+               <tr>
+                  <td class="form1">{FILE_REVIEWER_LIST_LABEL}:</td>
+                  <td class="form1" width="100%"><select class="fpull1" name="reviewers[]" size="10" multiple="multiple" >
+<!-- BEGIN: SelectBox -->
+                     <option value="{SELECT_BOX.REVIEWERS_SELECTBOX_VALUE}"{SELECT_BOX.REVIEWERS_SELECTBOX_SELECTED}>{SELECT_BOX.REVIEWERS_SELECTBOX_LABEL}</option>
+<!-- END: SelectBox -->
+                  </td>
+               </tr>
+               <tr>
+                  <td class="form1">{FILE_REVIEWER_MSG_LABEL}</td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="message" rows="2" cols="80"></textarea></td>
+               </tr>
+<!-- END: Reviewers -->
+               <tr>
+                  <td class="form9" width="100%" colspan="2"><div id="DocTypeFields"></div></td>
+               </tr>
+               <tr>
+                  <td class="form1">{FILE_DESC_LABEL}<font color="red"><b>&nbsp;{FILE_DESC_REQUIRED}&nbsp;&nbsp;</b></font></td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="description" rows="10" cols="50"></textarea></td>
+               </tr>
+<!-- BEGIN:  AddNote -->
+               <tr>
+                  <td class="form1">{FILE_ADDNOTE_LABEL}</td>
+                  <td class="form1" width="100%"><textarea class="ftext1" name="note_content" rows="10" cols="50"></textarea></td>
+                </tr>
+<!-- END:  AddNote -->
+               <tr>
+                  <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt=""></img></td>
+                  <td class="form2" width="100%"><input  class="fbuttonup1" name="send_file_x" type="submit" value="{FILE_BTN_ADD_FILE}" alt="{FILE_BTN_ADD_FILE_ALT}" title="{FILE_BTN_ADD_FILE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /><input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+</form>
+
+
+
+
+<script language="JavaScript">
+<!--
+function isPositiveInteger(fieldValue,errorMssg) {
+    if ( ( isNaN(Number(fieldValue)) ) || ( fieldValue < 0 ) ) {
+        alert(errorMssg + ' : ' + fieldValue);
+        return false;
+    }
+    return true;
+}
+
+function trim( s ) {
+  while ( s.substring(0,1) == ' ' ) { s = s.substring(1,s.length); }
+  while ( s.substring(s.length-1,s.length) == ' ' ) { s = s.substring(0,s.length-1); }
+  return s;
+}
+
+function isEmptyField( s ) {
+  return ( '' == trim( s ) );
+}
+function isValidEmailAddress( s ) {
+  var email_regex = new RegExp( "^([a-zA-Z0-9_\.\-]+)\@([a-zA-Z0-9\-]+\\.)+([a-zA-Z0-9]{2,4})$" );
+  return email_regex.test( trim( s ) );
+}
+
+
+function hasChosenRadio( formToValidate, fieldToValidate ) {
+   var bChosen = false;
+   // Loop from zero to the one minus the number of radio button selections
+   for (counter = 0; counter < eval('formToValidate.' + fieldToValidate + '.length'); counter++)
+   {
+      // If a radio button has been selected it will return true
+      // (If not it will return false)
+      if (eval('formToValidate.' + fieldToValidate + '[counter].checked'))
+      {
+         bChosen = true;
+      }
+   }
+
+     if ( bChosen )
+     {
+         bChosen = true;
+     }
+
+     return bChosen;
+}
+
+-->
+</script>
+
+<script language="javascript">
+<!--
+function isFormOK(formToValidate) {
+    var isValid = true;
+    var title = document.getElementById('title'); // in case this function is invoked in a form without a 'title' element.
+    if ( title && title.value.length > 80 ) {
+        isValid = false;
+        alert('{ERR_TITLE_TOO_LONG}' + title.value);
+    }
+    
+    var major_revision = document.getElementById('major_revision');
+    if (  major_revision && ! isPositiveInteger(major_revision.value,'{ERR_MAJOR_VER}') ) {     
+        isValid = false;
+    }
+
+    var minor_revision = document.getElementById('minor_revision');
+    if ( minor_revision && ! isPositiveInteger(minor_revision.value,'{ERR_MINOR_VER}') ) {
+        isValid = false;
+    }
+
+{DOCTYPE_REQUIRED_FIELD_VALIDATION}
+
+    return isValid;
+}
+-->
+</script>
+<script type="text/javascript">
+    Calendar.setup({
+        inputField     :    "expires",     // id of the input field
+        ifFormat       :    "%Y-%m-%d %H:%M",      // format of the input field
+        button         :    "f_trigger_c",  // trigger for the calendar (button ID)
+        align          :    "Tr",           // alignment (defaults to "Bl")
+        showsTime      :    true,
+        timeFormat     :    "24",
+        singleClick    :    true
+    });
+</script>
+<script type="text/javascript">
+function highlightButton(s, button) 
+{
+      button.className=s
+}
+</script>
+
+<!-- BEGIN: MultiAddFileJS -->
+<script>
+        <!-- Create an instance of the multiSelector class, pass it the output target and the max number of files -->
+        var multi_selector = new MultiSelector( document.getElementById( 'files_list' ), 5 );
+        <!-- Pass in the file element -->
+        multi_selector.addElement( document.getElementById( 'my_file_element' ) );
+</script>
+<!-- END: MultiAddFileJS -->
+<!-- END: AddFiles -->

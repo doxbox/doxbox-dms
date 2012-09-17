@@ -1,0 +1,17 @@
+<OwlXML>
+   <Block>
+      <BlockIdentification>1</BlockIdentification>
+      <OwlDB>0</OwlDB>
+      <Action>Add File</Action>
+      <Path>Documents/owlCron</Path>
+      <DocumentType>Default</DocumentType>
+      <UploadFile>/var/www/html/Projects/owl-intranet/owl-1.10/admin/tools/test.txt</UploadFile>
+      <Title>NF SPEED Contbil</Title>
+      <MajorRevision>1</MajorRevision>
+      <MinorRevision>0</MinorRevision>
+      <Keywords>Quote Acme Account</Keywords>
+      <Description>File Full Description</Description>
+      <Owner>1</Owner>
+      <GroupOwner>0</GroupOwner>
+   </Block>
+</OwlXML>

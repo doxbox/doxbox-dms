@@ -1,0 +1,26 @@
+Style  : Blue 1a
+Date   : Nov 9, 2003
+Version: 1.0
+Author : rsdx
+
+Font: Arial 8pt Bold
+
+Template Buttons: 
+graphics\locale\English\rsdx_blue1\ui_misc\btn_blank1.bmp
+graphics\locale\English\rsdx_blue1\ui_misc\btn_blank_hover1.bmp
+graphics\locale\English\rsdx_blue1\ui_misc\btn_blank2.bmp
+graphics\locale\English\rsdx_blue1\ui_misc\btn_blank_hover2.bmp
+
+Blank are in .BMP format to retain original quality. Convert to
+.GIF for use.
+
+Suggested HTML Color Scheme
+
+Header Background..............: #B9C1CB
+Table Cell Background Color....: #EDF0F3
+Table Cell Background Color Alt: #D5DBE3
+Main Header Background Color...: #B9C1CB
+Body Background Color..........: #B9C1CB
+Body Text Color................: #000000
+Body Link Color................: #000000
+Body Visited Color.............: #000000

@@ -1,0 +1,24 @@
+# File Title: %FILE_TITLE%
+# File Name: %FILE_NAME%
+# File Path: %OWL_FILE_PATH%
+# File Size: %FILE_SIZE%
+# File Owner: %FILE_OWNER%
+# File Updator: %FILE_UPDATOR%
+# File Created: %FILE_CREATION_DATE%
+# File Description: %FILE_DESC%
+# File Modified: %FILE_MODIFICATION_DATE%
+# File Version: %FILE_VERSION%
+# File Link: %FILE_URL%
+# Current User: %CURRENT_USER%
+
+Twój dokument został zaakceptowany przez: %CURRENT_USER%
+
+Nazwa: %FILE_TITLE% 
+Plik: %FILE_NAME% 
+Opis: %FILE_DESC% 
+Ścieżka: %OWL_FILE_PATH% 
+Wersja: %FILE_VERSION%
+Utworzony/Zmodyfikowany przez: %FILE_UPDATOR%
+
+--
+Wiadomość została wygenerowana przez Repozytorium Owl.

@@ -1,0 +1,37 @@
+{FILE "html/header.xtpl"}
+{FILE "html/admin/includes/adminpanel.xtpl"}
+<!-- BEGIN: Stats -->
+{FORM}
+{HIDDEN_FIELDS}
+<div class="admin_table">
+<table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+   <td class="admin2" width="100%" colspan="19">{STATS_TITLE_HEADING}</td>
+</tr>
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="form1">Available Reports:&nbsp;</td>
+               <td colspan="18" class="form1" width="100%">
+                  <select class="fpull1" name="execreport" size="1" onchange="javascript:this.form.submit();">
+<!-- BEGIN: Reports -->
+                     <option value="{STATS_REPORT_VALUE}"{STATS_REPORT_SELECTED}>{STATS_REPORT_CAPTION}</option>
+<!-- END: Reports -->
+                  </select>
+               </td>
+            </tr>
+{FILE "html/admin/reports/file_activity.xtpl"}
+{FILE "html/admin/reports/user_inactive.xtpl"}
+{FILE "html/admin/reports/user_entilement.xtpl"}
+{FILE "html/admin/reports/user_disabled.xtpl"}
+{FILE "html/admin/reports/user_special_access.xtpl"}
+{FILE "html/admin/reports/duplicate_filename.xtpl"}
+         </table>
+      </td>
+   </tr>
+</table>
+</div><!-- /admin_table -->  
+</form>
+<!-- END: Stats -->
+{FILE "html/footer.xtpl"}

@@ -1,0 +1,434 @@
+    <div id="nav_bar_bottom">
+      <strong>{ELAPSE_TIME}</strong>
+    </div><!-- /nav_bar -->
+
+<!-- BEGIN: FolderToolsBottom -->
+    <div id="folder_tools_bottom">
+      <ul>
+        <!-- BEGIN: UpDisabled -->
+        <li class="navbar2"><a href="#"><img src="{THEME}/img/icons/folder_up_dis.png" border="0" name="folder_up1"/></a></li>
+        <!-- END: UpDisabled -->
+        <!-- BEGIN: Up -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_FOLDER_UP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('folder_up1','','{THEME}/img/icons/folder_up_hover.png',1)"><img src="{THEME}/img/icons/folder_up.png" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up1" /></a></li>
+        <!-- END: Up -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_HOME_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('home1','','{THEME}/img/icons/house_hover.png',1)"><img src="{THEME}/img/icons/house.png" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home1" /></a></li>
+        <!-- BEGIN: InitialDir -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_INITIAL_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('set_initial1','','{THEME}/img/icons/house_link_hover.png',1)"><img src="{THEME}/img/icons/house_link.png" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial1" /></a></li>
+        <!-- END: InitialDir -->
+        <li class="navbar2 sitemap"><a href="{FOLDERTOOLS_SITEMAP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('sitemap1','','{THEME}/img/icons/sitemap_hover.png',1)"><img src="{THEME}/img/icons/sitemap.png" alt="{FOLDERTOOLS_SITEMAP_ALT}" title="{FOLDERTOOLS_SITEMAP_ALT}" border="0" name="sitemap1" /></a></li>
+      </ul>
+      <ul class="paginator">  
+        <!-- BEGIN: Pagination -->
+        <!-- BEGIN: FirstPage -->
+        <li class="navbar2"><a href="{FOLDERTOOLS_PAGE_HOME_URL}" title="{FOLDERTOOLS_PAGE_HOME_TITLE}">{FOLDERTOOLS_PAGE_HOME_LABEL}</a></li>
+        <!-- END: FirstPage -->
+        <!-- BEGIN: PrevPage -->
+        <li class="navbar2"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_PREV_URL}" title="{FOLDERTOOLS_PAGE_PREV_TITLE}">{FOLDERTOOLS_PAGE_PREV_LABEL}</a></li>
+        <!-- END: PrevPage -->
+        <!-- BEGIN: Pages -->
+        <li class="navbar2"><a class="{FOLDERTOOLS_PAGE_CLASS}" title="{FOLDERTOOLS_PAGE_TITLE}" href="{FOLDERTOOLS_PAGE_URL}"{FOLDERTOOLS_PAGE_ONCLICK}>{FOLDERTOOLS_PAGE_LABEL}</a></li>
+        <!-- END: Pages -->
+        <!-- BEGIN: NextPage -->
+        <li class="navbar2"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_NEXT_URL}" title="{FOLDERTOOLS_PAGE_NEXT_TITLE}">{FOLDERTOOLS_PAGE_NEXT_LABEL}</a></li>
+        <!-- END: NextPage -->
+        <!-- BEGIN: LastPage -->
+        <li class="navbar2"><a class="lnavbar1" href="{FOLDERTOOLS_PAGE_LAST_URL}" title="{FOLDERTOOLS_PAGE_LAST_TITLE}">{FOLDERTOOLS_PAGE_LAST_LABEL}</a></li>
+        <!-- END: LastPage -->
+        <!-- BEGIN: Status -->
+        <li class="navbar2">{FOLDERTOOLS_PAGE_STATUS_LABEL} <strong>{FOLDERTOOLS_PAGE_STATUS_CUR}</strong> / {FOLDERTOOLS_PAGE_STATUS_TOTAL}</li>
+        <!-- END: Status -->
+        <!-- END: Pagination -->
+      </ul>
+      <div class="clearbox"></div>    
+    </div><!-- /folder_tools_top -->
+<!-- END: FolderToolsBottom -->
+
+  <div id="pre_footer">
+    <!-- <div id="gradient_bottom"></div> -->
+
+<!-- BEGIN: Bulk1 -->
+<!-- BEGIN: BulkButtonsBottom -->       
+    <div class="tools_panels_bottom">
+      <!-- BEGIN: Download -->
+      <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <!-- END: Download -->
+      <input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" />
+      <!-- BEGIN: Checkout -->
+      <input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <!-- END: Checkout -->
+      <!-- BEGIN: JUpload -->
+      <input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/>
+      <!-- END: JUpload -->      
+    </div><!-- /tools_panels_bottom -->        
+<!-- END: BulkButtonsBottom -->
+      </form>  
+<!-- END: Bulk1 -->
+
+<!-- BEGIN: SearchPanelBottom -->    
+    <div class="tools_panels_bottom search_panel">
+      <form action="{ROOT_URL}/search.php" method="post">
+        {SEARCH_HIDDEN}
+        <input class="sinput1" type="text" name="query" size="24" maxlength="255" value="{SEARCH_VALUE}" />
+        <input name="search_{SEARCH_ID}" class="fbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+        <span>
+        <select class="spull1" name="boolean" size="1">
+        <!-- BEGIN: SelectBox -->
+          <option value="{SELECT_BOX.SELECT_BOOL_VALUE}" {SELECT_BOX.SELECT_BOOL_SELECTED}>{SELECT_BOX.SELECT_BOOL_LABEL}</option>
+        <!-- END: SelectBox -->
+        </select>
+        </span>
+        <span>{SEARCH_WITHIN_LABEL} <input type="checkbox" name="withindocs" value="1"{SEARCH_WITHIN_SELECTED} /></span>
+        <span>{SEARCH_CURRENT_LABEL} <input type="checkbox" name="currentfolder" value="1"{SEARCH_CURRENT_SELECTED} /></span>        
+      </form>  
+    </div><!-- /tools_panels_bottom -->
+<!-- END: SearchPanelBottom -->
+
+      <!-- <div class="line"></div> -->
+
+<!-- BEGIN: InfoPanelBottomWide-->
+      <div class="infopanel infopanel_bottom">
+        <ul class="tabs">
+            <li><a href="#tab1">{INFOPANEL_TITLE}</a></li>
+<!-- BEGIN: NewsPanelTab -->
+            <li><a href="#tab2">{INFOPANEL_NEWSPANEL_HEADER}</a></li>
+<!-- END: NewsPanelTab -->
+<!-- BEGIN: PeerPanelTab -->
+            <li><a href="#tab3">{INFOPANEL_PEERPANEL_HEADER}</a></li>
+<!-- END: PeerPanelTab -->
+        </ul>
+        <div class="tab_container">
+            <!-- BEGIN: FilePanel -->
+            <div id="tab1" class="tab_content">
+              <table>
+                 <tr>
+                    <td class="fp1"><img src="{THEME}/img/fp_icons/new.png" border="0" title="{INFOPANEL_NEW_IMG_TITLE}" alt="{INFOPANEL_NEW_IMG_TITLE}" /></td>
+                    <td class="fp2"><a class="lstats1" href="{INFOPANEL_NEW_URL}" title="{INFOPANEL_NEW_URL_TITLE}">{INFOPANEL_NEW_LABEL}</a></td>
+                    <td class="fp3">{INFOPANEL_NEW_TOTAL}</td>
+  
+                    <td class="fp1"><img src="{THEME}/img/fp_icons/updated.png" border="0" title="{INFOPANEL_UPD_IMG_TITLE}" alt="{INFOPANEL_UPD_IMG_TITLE}" /></td>
+                    <td class="fp2"><a class="lstats1" href="{INFOPANEL_UPD_URL}" title="{INFOPANEL_UPD_URL_TITLE}">{INFOPANEL_UPD_LABEL}</a></td>
+                    <td class="fp3">{INFOPANEL_UPD_TOTAL}</td>
+                    
+                    <td class="fp1"><img src="{THEME}/img/fp_icons/my.png" border="0" title="{INFOPANEL_MY_IMG_TITLE}" alt="{INFOPANEL_MY_IMG_TITLE}" /></td>
+                    <td class="fp2"><a class="lstats1" href="{INFOPANEL_MY_URL}" title="{INFOPANEL_MY_URL_TITLE}">{INFOPANEL_MY_LABEL}</a></td>
+                    <td class="fp3">{INFOPANEL_MY_TOTAL}</td>
+  
+                    <td class="fp1"><img src="{THEME}/img/fp_icons/group.png" border="0" title="{INFOPANEL_GRP_IMG_TITLE}" alt="{INFOPANEL_GRP_IMG_TITLE}" /></td>
+                    <td class="fp2"><a class="lstats1" href="{INFOPANEL_GRP_URL}" title="{INFOPANEL_GRP_URL_TITLE}">{INFOPANEL_GRP_LABEL}</a></td>
+                    <td class="fp3">{INFOPANEL_GRP_TOTAL}</td>
+                 </tr>
+                 <tr>
+                    <td class="fp1"><img src="{THEME}/img/fp_icons/lock.png" border="0" title="{INFOPANEL_CHK_IMG_TITLE}" alt="{INFOPANEL_CHK_IMG_TITLE}" /></td>
+                    <!-- BEGIN: CheckedOutZero -->
+                    <td class="fp2">{INFOPANEL_CHK_LABEL}</td>
+                    <!-- END: CheckedOutZero -->
+                    <!-- BEGIN: CheckedOut -->
+                    <td class="fp3"><a class="lstats1" href="{INFOPANEL_CHK_URL}" title="{INFOPANEL_CHK_URL_TITLE}">{INFOPANEL_CHK_LABEL}</a></td>
+                    <!-- END: CheckedOut -->
+                    <td class="fp1">{INFOPANEL_CHK_TOTAL}</td>
+                    <td class="fp2"><img src="{THEME}/img/fp_icons/monitored.png" border="1" title="{INFOPANEL_MON_IMG_TITLE}" alt="{INFOPANEL_MON_IMG_TITLE}" /></td>
+                    <!-- BEGIN: MonitorZero -->
+                    <td class="fp3">{INFOPANEL_MON_LABEL}</td>
+                    <!-- END: MonitorZero -->
+                    <!-- BEGIN: Monitor -->
+                    <td class="fp1"><a class="lstats1" href="{INFOPANEL_MON_URL}" title="{INFOPANEL_MON_URL_TITLE}">{INFOPANEL_MON_LABEL}</a></td>
+                    <!-- END: Monitor -->
+                    <td class="fp2">&nbsp;(<a href="#" class="cfolders1">{INFOPANEL_MONFOLDER_TOTAL}</a>:<a href="#" class="cfiles1">{INFOPANEL_MONFILE_TOTAL}</a>)</td>
+                    <td class="fp3"><img src="{THEME}/img/fp_icons/news.png" border="0" title="{INFOPANEL_NEWS_IMG_TITLE}" alt="{INFOPANEL_NEWS_IMG_TITLE}" /></td>
+                    <td class="fp1"><a class="lstats1" href="{INFOPANEL_NEWS_URL}" title="{INFOPANEL_NEWS_URL_TITLE}"{INFOPANEL_NEWS_ONCLICK}>{INFOPANEL_NEWS_LABEL}</a></td>
+                    <td class="fp2">{INFOPANEL_NEWS_TOTAL}<br /></td>
+                    <td class="fp3"><img src="{THEME}/img/fp_icons/star.png" border="0" title="{INFOPANEL_SPEC_IMG_TITLE}" alt="{INFOPANEL_SPEC_IMG_TITLE}" /></td>
+                    <!-- BEGIN: SpecAccessZero -->
+                    <td class="fp1">{INFOPANEL_SPEC_LABEL}<br /></td>
+                    <!-- END: SpecAccessZero -->
+                    <!-- BEGIN: SpecAccess -->
+                    <td class="fp2"><a class="lstats1" href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}">{INFOPANEL_SPEC_LABEL}</a></td>
+                    <!-- END: SpecAccess -->
+                    <td class="fp3">&nbsp;(<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfolders1">{INFOPANEL_SPECFOLDER_TOTAL}<a>:<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfiles1">{INFOPANEL_SPECFILE_TOTAL}</a>)</td>
+                 </tr>
+                 <!-- BEGIN: Quota -->
+                 <tr>
+                    <td class="fp1" colspan="12"><img src="{THEME}/ui_icons/{INFOPANEL_QUOTA_IMG}.png" border="0" title="{INFOPANEL_QUOTA_IMG_TITLE}" alt="{INFOPANEL_QUOTA_IMG_TITLE}" /> {INFOPANEL_QUOTA_LABEL} {INFOPANEL_QUOTA_TOTAL}</td>
+                 </tr>
+                 <!-- END: Quota -->
+                 <tr>
+                    <td colspan="12"><b>{INFOPANEL_TOTAL_LABEL}</b>&nbsp;{INFOPANEL_TOTAL}</td>
+                 </tr>
+              </table>
+            </div>
+            <!-- END: FilePanel -->
+            <!-- BEGIN: NewsPanel -->            
+            <div id="tab2" class="tab_content">
+              <table>
+              <!-- BEGIN: NewsRow -->
+                <tr>
+                  <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEWSPANEL_URL}"{INFOPANEL_NEWSPANEL_JAVASCRIPT}>{INFOPANEL_NEWSPANEL_TITLE}</a></td>
+                </tr>
+              <!-- END: NewsRow -->
+              </table>
+            </div>
+            <!-- END: NewsPanel -->            
+            <!-- BEGIN: PeerPanel -->
+            <div id="tab3" class="tab_content">
+              <table>
+                <tr>
+                <!-- BEGIN: MyApprovalZero -->
+                  <td class="stats2">{INFOPANEL_PEERPANEL_MY_APPROVAL}:</td><td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+                <!-- END: MyApprovalZero -->
+                <!-- BEGIN: MyApproval -->
+                  <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</a>:</td><td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+                <!-- END: MyApproval -->
+                </tr>
+                <tr>
+                <!-- BEGIN: MyPendingZero -->
+                  <td class="stats2">{INFOPANEL_PEERPANEL_PENDING_APPROVAL}:</td>
+                  <td class="stats2"> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</td>
+                <!-- END: MyPendingZero -->
+                <!-- BEGIN: MyPending -->
+                  <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_PEER_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_PEER_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_PEER_APPROVAL_TOT}</a>:</td>
+                  <td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+                <!-- END: MyPending -->
+                </tr>
+              </table>
+            </div>
+            <!-- END: PeerPanel -->    
+        </div><!-- /tab_container -->
+        <div class="clearbox"></div>  
+      </div><!-- /infopanel -->        
+<!-- END: InfoPanelBottomWide-->
+
+<!-- BEGIN: InfoPanelBottom -->
+      <div class="infopanel infopanel_bottom">      
+        <ul class="tabs">
+            <li><a href="#tab10">{INFOPANEL_TITLE}</a></li>
+<!-- BEGIN: NewsPanelTab -->
+            <li><a href="#tab11">{INFOPANEL_NEWSPANEL_HEADER}</a></li>
+<!-- END: NewsPanelTab -->
+<!-- BEGIN: PeerPanelTab -->
+            <li><a href="#tab12">{INFOPANEL_PEERPANEL_HEADER}</a></li>
+<!-- END: PeerPanelTab -->
+        </ul>
+        <div class="tab_container">
+            <!-- BEGIN: FilePanel -->
+            <div id="tab10" class="tab_content">
+              <table cellspacing="0" cellpadding="0" border="0" width="360">
+                <tr>
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/new.png" border="0" title="{INFOPANEL_NEW_IMG_TITLE}" alt="{INFOPANEL_NEW_IMG_TITLE}" /></td>
+                  <td class="fp2"><a class="lstats1" href="{INFOPANEL_NEW_URL}" title="{INFOPANEL_NEW_URL_TITLE}">{INFOPANEL_NEW_LABEL}</a></td>
+                  <td class="fp3">{INFOPANEL_NEW_TOTAL}</td>
+  
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/updated.png" border="0" title="{INFOPANEL_UPD_IMG_TITLE}" alt="{INFOPANEL_UPD_IMG_TITLE}" /></td>
+                  <td class="fp2"><a class="lstats1" href="{INFOPANEL_UPD_URL}" title="{INFOPANEL_UPD_URL_TITLE}">{INFOPANEL_UPD_LABEL}</a></td>
+                  <td class="fp3">{INFOPANEL_UPD_TOTAL}</td>
+                </tr>
+                <tr>
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/my.png" border="0" title="{INFOPANEL_MY_IMG_TITLE}" alt="{INFOPANEL_MY_IMG_TITLE}" /></td>
+                  <td class="fp2"><a class="lstats1" href="{INFOPANEL_MY_URL}" title="{INFOPANEL_MY_URL_TITLE}">{INFOPANEL_MY_LABEL}</a><br /></td>
+                  <td class="fp3">{INFOPANEL_MY_TOTAL}</td>
+                  
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/group.png" border="0" title="{INFOPANEL_GRP_IMG_TITLE}" alt="{INFOPANEL_GRP_IMG_TITLE}" /></td>
+                  <td class="fp2"><a class="lstats1" href="{INFOPANEL_GRP_URL}" title="{INFOPANEL_GRP_URL_TITLE}">{INFOPANEL_GRP_LABEL}</a></td>
+                  <td class="fp3">{INFOPANEL_GRP_TOTAL}</td>
+                </tr>
+                <tr>
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/lock.png" border="0" title="{INFOPANEL_CHK_IMG_TITLE}" alt="{INFOPANEL_CHK_IMG_TITLE}" /></td>
+                  <!-- BEGIN: CheckedOutZero -->
+                  <td class="fp2">{INFOPANEL_CHK_LABEL}</td>
+                  <!-- END: CheckedOutZero -->
+                  <!-- BEGIN: CheckedOut -->
+                  <td class="fp3"><a class="lstats1" href="{INFOPANEL_CHK_URL}" title="{INFOPANEL_CHK_URL_TITLE}">{INFOPANEL_CHK_LABEL}</a></td>
+                  <!-- END: CheckedOut -->
+                  <td class="fp1">{INFOPANEL_CHK_TOTAL}</td>
+                  <td class="fp2"><img src="{THEME}/img/fp_icons/monitored.png" border="2" title="{INFOPANEL_MON_IMG_TITLE}" alt="{INFOPANEL_MON_IMG_TITLE}" /></td>
+                  <!-- BEGIN: MonitorZero -->
+                  <td class="fp3">{INFOPANEL_MON_LABEL}</td>
+                  <!-- END: MonitorZero -->
+                  <!-- BEGIN: Monitor -->
+                  <td class="fp1"><a class="lstats1" href="{INFOPANEL_MON_URL}" title="{INFOPANEL_MON_URL_TITLE}">{INFOPANEL_MON_LABEL}</a></td>
+                  <!-- END: Monitor -->
+                  <td class="fp2">&nbsp;(<a href="#" class="cfolders1">{INFOPANEL_MONFOLDER_TOTAL}</a>:<a href="#" class="cfiles1">{INFOPANEL_MONFILE_TOTAL}</a>)</td>
+               </tr>
+               <tr>
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/news.png" border="0" title="{INFOPANEL_NEWS_IMG_TITLE}" alt="{INFOPANEL_NEWS_IMG_TITLE}" /></td>
+                  <td class="fp2"><a class="lstats1" href="{INFOPANEL_NEWS_URL}" title="{INFOPANEL_NEWS_URL_TITLE}"{INFOPANEL_NEWS_ONCLICK}>{INFOPANEL_NEWS_LABEL}</a></td>
+                  <td class="fp3">{INFOPANEL_NEWS_TOTAL}</td>
+                  <td class="fp1"><img src="{THEME}/img/fp_icons/star.png" border="0" title="{INFOPANEL_SPEC_IMG_TITLE}" alt="{INFOPANEL_SPEC_IMG_TITLE}" /></td>
+                  <!-- BEGIN: SpecAccessZero -->
+                  <td class="fp2">{INFOPANEL_SPEC_LABEL}</td>
+                  <!-- END: SpecAccessZero -->
+                  <!-- BEGIN: SpecAccess -->
+                  <td class="fp3"><a class="lstats1" href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}">{INFOPANEL_SPEC_LABEL}</a></td>
+                  <!-- END: SpecAccess -->
+                  <td class="fp1">&nbsp;(<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfolders1">{INFOPANEL_SPECFOLDER_TOTAL}<a>:<a href="{INFOPANEL_SPEC_URL}" title="{INFOPANEL_SPEC_URL_TITLE}" class="cfiles1">{INFOPANEL_SPECFILE_TOTAL}</a>)</td>
+               </tr>
+                  <!-- BEGIN: Quota -->
+               <tr>
+                  <td class="fp1" colspan="6"><img src="{THEME}/ui_icons/{INFOPANEL_QUOTA_IMG}.png" border="0" title="{INFOPANEL_QUOTA_IMG_TITLE}" alt="{INFOPANEL_QUOTA_IMG_TITLE}" /> {INFOPANEL_QUOTA_LABEL} {INFOPANEL_QUOTA_TOTAL}</td>
+               </tr>
+                  <!-- END: Quota -->
+               <tr>
+                  <td class="fp2" colspan="6"><b>{INFOPANEL_TOTAL_LABEL}</b>&nbsp;{INFOPANEL_TOTAL}<br /></td>
+               </tr>
+            </table>            
+            </div>
+            <!-- END: FilePanel -->
+            <!-- BEGIN: NewsPanel -->            
+            <div id="tab11" class="tab_content">
+              <table>
+              <!-- BEGIN: NewsRow -->
+                <tr>
+                  <td class="stats2"><a class="lstats1" href="{INFOPANEL_NEWSPANEL_URL}"{INFOPANEL_NEWSPANEL_JAVASCRIPT}>{INFOPANEL_NEWSPANEL_TITLE}</a></td>
+                </tr>
+              <!-- END: NewsRow -->
+              </table>
+            </div>
+            <!-- END: NewsPanel -->            
+            <!-- BEGIN: PeerPanel -->
+            <div id="tab12" class="tab_content">
+              <table>
+                <tr>
+                <!-- BEGIN: MyApprovalZero -->
+                  <td class="stats2">{INFOPANEL_PEERPANEL_MY_APPROVAL}:</td>
+                  <td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+                <!-- END: MyApprovalZero -->
+                <!-- BEGIN: MyApproval -->
+                  <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_MY_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</a>:</td>
+                  <td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+                <!-- END: MyApproval -->
+                </tr>
+                <tr>
+                <!-- BEGIN: MyPendingZero -->
+                  <td class="stats2">{INFOPANEL_PEERPANEL_PENDING_APPROVAL}:</td>
+                  <td class="stats2"> {INFOPANEL_PEERPANEL_PENDING_APPROVAL_TOT}</td>
+                <!-- END: MyPendingZero -->
+                <!-- BEGIN: MyPending -->
+                  <td class="stats2"><a class="lstats1" href="{INFOPANEL_PEERPANEL_PEER_APPROVAL_URL}" title="{INFOPANEL_PEERPANEL_PEER_APPROVAL_URL_TITLE}">{INFOPANEL_PEERPANEL_PEER_APPROVAL_TOT}</a>:</td>
+                  <td class="stats2"> {INFOPANEL_PEERPANEL_MY_APPROVAL_TOT}</td>
+                <!-- END: MyPending -->
+                </tr>
+              </table>
+            </div>
+            <!-- END: PeerPanel -->    
+        </div><!-- /tab_container -->
+        <div class="clearbox"></div>  
+      </div><!-- /infopanel -->        
+<!-- END: InfoPanelBottom -->        
+
+    </div><!-- /pre_footer -->
+  </div><!-- /content -->
+  
+  <div id="footer">
+    <div id="grey_line"></div>
+    
+<!-- BEGIN: ActionButtons1 -->
+  <div id="bottom_mainmenu" class="mainmenu">
+  <!-- <h3>{ACTIONBUTTON_MENU_TITLE}</h3> -->
+    <ul class="mainmenu_list">
+  <!-- BEGIN: RSSFeed -->
+  		<li><a class="button" href="{ACTIONBUTTON_RSSFEED_URL}" title="{ACTIONBUTTON_RSSFEED_TITLE}">&nbsp;{ACTIONBUTTON_RSSFEED_LABEL}<span class="icon rss"></span></a></li>
+  <!-- END: RSSFeed -->
+  <!-- BEGIN: AddFolder -->
+  		<li><a class="button" href="{ACTIONBUTTON_ADDFOLDER_URL}" title="{ACTIONBUTTON_ADDFOLDER_TITLE}">&nbsp;{ACTIONBUTTON_ADDFOLDER_LABEL}<span class="icon book"></span></a></li>
+  <!-- END: AddFolder -->
+  <!-- BEGIN: UnzipFolder -->
+  		<li><a class="button" href="{ACTIONBUTTON_UNZIP_URL}" title="{ACTIONBUTTON_UNZIP_TITLE}">&nbsp;{ACTIONBUTTON_UNZIP_LABEL}<span class="icon fork"></span></a></li>
+  <!-- END: UnzipFolder -->
+  <!-- BEGIN: AddFile -->
+  		<li><a class="button" href="{ACTIONBUTTON_ADDFILE_URL}" title="{ACTIONBUTTON_ADDFILE_TITLE}">&nbsp;{ACTIONBUTTON_ADDFILE_LABEL}<span class="icon pen"></span></a></li>
+  <!-- END: AddFile -->
+  <!-- BEGIN: AddUrl -->
+  		<li><a class="button" href="{ACTIONBUTTON_ADDURL_URL}" title="{ACTIONBUTTON_ADDURL_TITLE}">&nbsp;{ACTIONBUTTON_ADDURL_LABEL}<span class="icon tag"></span></a></li>
+  <!-- END: AddUrl -->
+  <!-- BEGIN: AddNote -->
+  		<li><a class="button" href="{ACTIONBUTTON_ADDNOTE_URL}" title="{ACTIONBUTTON_ADDNOTE_TITLE}">&nbsp;{ACTIONBUTTON_ADDNOTE_LABEL}<span class="icon pin"></span></a></li>      	
+  <!-- END: AddNote -->
+    </ul>
+
+    <div class="clearbox"></div>
+  </div><!-- /mainmenu -->
+<!-- END: ActionButtons1 --> 
+
+    
+  <!-- BEGIN: PrefsBarBottom -->  
+    <div id="down_menu">
+      <ul class="nav">
+  <!-- BEGIN: AdminMenu -->
+        <li class="li_father"><span class="halftab">{ADMINS_TOOLS_MENU}</span><span class="fake_link">&nbsp;<img src="{THEME}/img/white_arrow_upsidedown.png" /> </span>
+          <ul id="admin_tools_bottom">
+            <!-- BEGIN: Admin -->      
+              <li><a class="lbutton1" href="{BUTTON_ADMIN_URL}" title="{BUTTON_ADMIN_TITLE}"><img src="{THEME}/img/icons/application_form_edit.png" />{BUTTON_ADMIN_LABEL}</a></li>
+            <!-- END: Admin -->        
+            <!-- BEGIN: Trash -->
+              <li><a class="lbutton1" href="{BUTTON_TRASH_URL}" title="{BUTTON_TRASH_TITLE}"><img src="{THEME}/img/icons/bin.png" />{BUTTON_TRASH_LABEL}</a></li>
+            <!-- END: Trash -->
+            <!-- BEGIN: RepView -->
+              <li><a class="lbutton1" href="{BUTTON_REPVIEW_URL}" title="{BUTTON_REPVIEW_TITLE}"><img src="{THEME}/img/icons/report.png" />{BUTTON_REPVIEW_LABEL}</a></li>
+            <!-- END: RepView -->
+            <!-- BEGIN: LogView -->
+              <li><a class="lbutton1" href="{BUTTON_LOGVIEW_URL}" title="{BUTTON_LOGVIEW_TITLE}"><img src="{THEME}/img/icons/server_error.png" />{BUTTON_LOGVIEW_LABEL}</a></li>
+            <!-- END: LogView -->
+            <!-- BEGIN: AdminUserGroup -->
+              <li><a class="lbutton1" href="{BUTTON_ADMIN_USER_GROUP_URL}" title="{BUTTON_ADMIN_USER_GROUP_TITLE}"><img src="{THEME}/img/icons/group_edit.png" />{BUTTON_ADMIN_USER_GROUP_LABEL}</a></li>
+            <!-- END: AdminUserGroup -->
+            <!-- BEGIN: News -->
+              <li><a class="lbutton1" href="{BUTTON_ADMIN_NEWS_URL}" title="{BUTTON_ADMIN_NEWS_TITLE}"><img src="{THEME}/img/icons/newspaper.png" />{BUTTON_ADMIN_NEWS_LABEL}</a></li>
+            <!-- END: News -->
+          </ul>    
+        </li>
+  <!-- END: AdminMenu -->
+  <!-- BEGIN: UserToolsMenu -->
+        <li class="li_father"><span class="halftab">{USERS_TOOLS_MENU}</span><span class="fake_link">&nbsp;<img src="{THEME}/img/white_arrow_upsidedown.png" /> </span>
+          <ul id="user_tools_bottom">
+            <!-- BEGIN: Prefs -->
+              <li><a class="lbutton1" href="{BUTTON_PREFS_URL}" title="{BUTTON_PREFS_TITLE}"><img src="{THEME}/img/icons/user_edit.png" />{BUTTON_PREFS_LABEL}</a></li>
+            <!-- END: Prefs -->
+            <!-- BEGIN: MailTool -->
+              <li><a class="lbutton1" href="{BUTTON_MAILTOOL_URL}" title="{BUTTON_MAILTOOL_TITLE}"><img src="{THEME}/img/icons/email.png" />{BUTTON_MAILTOOL_LABEL}</a></li>
+            <!-- END: MailTool -->            
+          </ul>
+        </li>
+  <!-- END: UserToolsMenu -->
+        <!-- BEGIN: QuickLink -->
+          <li><a class="lbutton1" href="{BUTTON_QUICKLINK_TOP_URL}" title="{BUTTON_QUICKLINK_TOP_TITLE}">{BUTTON_QUICKLINK_TOP_LABEL}</a></li>
+        <!-- END: QuickLink -->
+        <!-- BEGIN: Help -->
+          <li><a class="help_button" class="lbutton1" href="#" title="{BUTTON_HELP_TITLE}">{BUTTON_HELP_LABEL}</a></li>
+        <!-- END: Help -->
+        <!-- BEGIN: Browse -->
+          <li><a class="lbutton1" href="{BUTTON_BROWSE_URL}" title="{BUTTON_BROWSE_TITLE}">{BUTTON_BROWSE_LABEL}</a></li>
+        <!-- END: Browse -->
+        <!-- BEGIN: LoginOut -->
+          <li><a class="quick_icon button" href="{BUTTON_LOGINOUT_URL}" title="{BUTTON_LOGINOUT_TITLE}">{BUTTON_LOGINOUT_LABEL}<span class="icon unlock"></span></a></li>
+        <!-- END: LoginOut -->                      
+      </ul>
+    </div>
+    
+    <div class="clearbox"></div>
+  <!-- END: PrefsBarBottom -->
+  <!-- BEGIN: Footer -->
+      <a name="bottom"></a>
+      <div class="center"><a href="#"><strong>{OWL_VERSION}</strong></a></div>
+  <!-- END: Footer -->    
+  </div><!-- /footer -->
+  
+</div><!-- /container -->
+
+<div id="helper">        
+        <div id="HelpPopup"></div>
+        <div id="popupHelp">
+           <a id="popupHelpClose">x</a>
+           <h1>{PAGE_TITLE}</h1>
+           <p id="textStyle">
+           <div class="scroll-pane">
+              <div class="scrollbar owlHelp">
+                 <!-- Help Begins Here -->
+                 {HELP_TEXT}
+                 <!-- Help Ends Here -->
+              </div>
+           </div>
+           <br/><br/>
+        </div>
+</div><!-- /helper -->
+<!-- END: main -->

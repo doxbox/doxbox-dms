@@ -1,0 +1,79 @@
+<style>
+/*
+	Author: Robert Geleta
+	Date	2011-05-07
+*/
+/* ::::::::::::::: */
+/* Global Settings */
+div.owlHelp {
+	font-family: arial, sans-serif;
+}	
+/* ::::::::::::::: */
+/* Definition List */
+div.owlHelp dt {
+    font-weight: bold;
+}
+
+/* :::::::: */
+/* Headings */
+div.owlHelp h2 {
+	text-align: center; 
+}
+div.owlHelp h3 {
+	text-align: center;
+}
+
+/* :::::::::::::: */
+/* Table Elements */
+div.owlHelp table {
+	width: 99% ;
+    border-width: 1px;
+    border-collapse: collapse; 
+    border: 1px solid black ;
+}
+
+div.owlHelp th {
+	text-align: center; 
+    vertical-align: top;
+    border: 1px solid black ;
+	font-style:italic;
+}
+div.owlHelp td {
+    vertical-align: top;
+    border: 1px solid black ;
+    padding: 3px;
+}
+
+div.owlHelp .trTitles {
+	text-align:center;
+	background-color: #AAAAAA ;
+}	
+div.owlHelp .trSubsection {
+	text-align: center;
+    font-weight: bold;
+	background-color: #CCCCCC;
+}
+div.owlHelp .thItem {
+	width: 15% ;
+}
+div.owlHelp .thDesc {
+	width: 35% ;
+}
+div.owlHelp .thAction {
+	width: 40%;
+}
+div.owlHelp .tdGroup {
+	text-align: center;
+}
+/* Uncomment this section to check classes
+div.owlHelp .tdItem {
+	color: green ;
+}
+div.owlHelp .tdDesc {
+	color: orange ;
+}
+div.owlHelp .tdAction {
+	color: yellow ;
+}
+*/
+</style>

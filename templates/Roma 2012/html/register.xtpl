@@ -1,0 +1,141 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: Register -->
+
+<!-- BEGIN: ThankYou -->
+  <div class="table_container">
+   <table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="browse0" width="100%" colspan="2">{THANKYOU_HEADING}<br /></td>
+      </tr>
+      <tr>
+         <td class="form1" align="center">{THANKYOU_MESSAGE}<br /></td>
+      </tr>
+<!-- BEGIN: DebugErrorMsg -->
+      <tr>
+         <td class="form1" align="center">{DEBUG_MESSAGE}<br /></td>
+      </tr>
+<!-- END: DebugErrorMsg -->
+   </table>
+  </div><!-- /table_container -->   
+<!-- END: ThankYou -->
+
+<!-- BEGIN: ErrorMsg -->
+   <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+         <td class="admin3" width="100%" colspan="2">{REGISTER_ERROR}<br /></td>
+      </tr>
+<!-- End: ErrorMsg -->
+
+<!-- BEGIN: Forgot -->
+{FORM}
+{HIDDEN_FIELDS}
+  <div class="table_container">
+   <table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="browse0" width="100%" colspan="2">{HEADING_USER_FORGOT}</td>
+      </tr>
+<!-- BEGIN: Databases -->
+           <tr>
+                  <td class="form1">{REPOSITORY_LABEL}<br /></td>
+                  <td class="form1">
+                     <select class="form1" name="currentdb" size="1">
+<!-- BEGIN: Options -->
+                        <option value="{SELECT_VALUE}" {SELECT_SELECTED}>{SELECT_LABEL}</option>
+<!-- END: Options -->
+                     </select>
+                  </td>
+              </tr>
+<!-- END: Databases -->
+      <tr>
+         <td class="form1"><label for="username">{FORGOTNAME_LABEL}</label></td>
+         <td class="form1" width="100%"><input class="finput1" id="username" type="text" name="username" size="40" value="{FORGOTNAME_VALUE}" /></td>
+      </tr>
+      <tr>
+         <td class="form1">&nbsp;</td>
+         <td class="form2" width="100%">
+            <input  class="fbuttonup1" name="getpasswd_btn_x" type="submit" value="{BTN_SENDPASS}" alt="{BTN_SENDPASS_ALT}" title="{BTN_SENDPASS_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+         </td>
+      </tr>
+   </table>
+  </div><!-- /table_container -->   
+<!-- END: Forgot -->
+
+<!-- BEGIN: Form -->
+{FORM}
+{HIDDEN_FIELDS}
+  <div class="table_container">
+   <table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+         <td class="browse0" width="100%" colspan="2">{HEADING_USER_REG}</td>
+      </tr>
+      <tr>
+         <td class="form1"><label for="name">{FULLNAME_LABEL}</label></td>
+         <td class="form1" width="100%"><input class="finput1" id="name" type="text" name="name" size="40" value="{FULLNAME_VALUE}" /></td>
+      </tr>
+      <tr>
+         <td class="form1"><label for="username">{USERNAME_LABEL}</label></td>
+         <td class="form1" width="100%"><input class="finput1" id="username" type="text" name="username" size="{USERNAME_VALUE}" value="" /></td>
+      </tr>
+      <tr>
+         <td class="form1"><label for="email">{EMAIL_LABEL}</label></td>
+         <td class="form1" width="100%"><input class="finput1" id="email" type="text" name="email" size="40" value="{EMAIL_VALUE}" /></td>
+      </tr>
+      <tr>
+         <td class="form1">&nbsp;</td>
+         <td class="form2" width="100%">
+            <input  class="fbuttonup1" name="register_btn_x" type="submit" value="{BTN_REGISTER}" alt="{BTN_REGISTER_ALT}" title="{BTN_REGISTER_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+         </td>
+      </tr>
+   </table>
+  </div><!-- /table_container -->
+</form>
+<!-- END: Form -->
+<!-- BEGIN: ChangePass -->
+{FORM}
+{HIDDEN_FIELDS}
+  <div class="table_container">
+   <table class="log_table width_driver" cellspacing="0" cellpadding="0" border="0">
+   <tbody>
+      <tr>
+         <td class="browse0" width="100%" colspan="20">{HEADING_PASSWD_CHANGE}</td></tr>
+      <tr>
+         <td align="left" valign="top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+               <tbody>
+<!-- BEGIN: PasswdRestrict -->
+                  <tr>
+                     <td class="form1" colspan="2">{PASSWD_RESTRICTIONS}</td>
+                  </tr>
+<!-- END: PasswdRestrict -->
+                  <tr>
+                     <td class="form1">{CHGPASS_OLD_PASS}</td>
+                     <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="" value=""></td>
+                  </tr>
+                  <tr>
+                     <td class="form1">{CHGPASS_NEW_PASS}</td>
+                     <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value=""></td>
+                  </tr>
+                  <tr>
+                     <td class="form1">{CHGPASS_CONF_PASS}</td>
+                     <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value=""></td>
+                  </tr>
+                  <tr>
+                     <td class="form1">&nbsp;</td>
+                     <td class="form2" width="100%">
+                        <input class="fbuttonup1" name="getpasswd_btn_x" type="submit" value="{BTN_CHANGEPASS}" alt="{BTN_CHANGEPASS}" title="{BTN_CHANGEPASS}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
+                        <input class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>
+</div><!-- /table_container -->
+</form>
+<!-- END: ChangePass -->
+<!-- END: Register -->
+{FILE "html/footer.xtpl"}

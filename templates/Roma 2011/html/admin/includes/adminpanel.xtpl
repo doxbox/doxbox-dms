@@ -1,0 +1,110 @@
+<!-- BEGIN: AdminPanel -->
+
+<script>
+        jQuery(function() {
+                jQuery( "#sitefeatures" ).accordion({
+                        event: "click hoverintent",
+                        autoHeight: false,
+                        navigation: true
+                });
+
+                jQuery( "#AdminPanel" ).tabs({
+                   cookie: {
+				// store cookie for a day, without, it would be a session cookie
+				name: 'AdminPanel',
+				expires: 1
+			   },
+                   select: function(event, ui) {
+                      id = ui.tab.hash;
+                      var confirmed = true;
+                      var retval = true;
+                      if (id == '#initialload')
+                      {
+                         confirmed =  confirm('{BUTTON_INITIAL_LOAD_CONFIRM}');
+                         retval = false;
+                      }
+
+                      if (id == '#purgehist')
+                      {
+                         confirmed =  confirm('{BUTTON_PURGE_HIST_CONFIRM}');
+                         retval = false;
+                      }
+
+                      if (id == '#maintmodeoff')
+                      {
+                         retval = false;
+                      }
+
+                      if (id == '#maintmode')
+                      {
+                         confirmed =  confirm('{BUTTON_ADMIN_CONF_MAINT}');
+                         retval = false;
+                      }
+
+                      if (confirmed)
+                      {
+                         if (jQuery(id).attr('url'))
+                         {
+                            window.location = jQuery(id).attr('url');
+                         }
+                      }
+                      if (!retval)
+                      {
+                         jQuery( "#AdminPanel").tabs('select', 0);
+                      }
+                      return retval;
+                  }
+              });
+          });
+</script>
+
+
+<div class="width_driver" style="margin:0 21px 0 20px;"></div>
+<table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+         <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <tr>
+               <td class="admin0" width="100%" colspan="50"><h2 class="admin_panel_title">{ADMIN_PANEL_TITLE}</h2></td>
+            </tr>
+         </table>
+      </td>
+   </tr>
+</table>
+<div id="AdminPanel">
+               <ul>
+                 <li><a href="#groups" title="{BUTTON_USER_GROUP_TITLE}">{BUTTON_USER_GROUP}</a></li>
+                 <li><a href="#html" title="{BUTTON_EDIT_HTML_TITLE}">{BUTTON_EDIT_HTML}</a></li>
+                 <li><a href="#sitefeat" title="{BUTTON_EDIT_SITE_FEATURES_TITLE}">{BUTTON_EDIT_SITE_FEATURES}</a></li>
+                 <li><a href="#viewlog" title="{BUTTON_VIEW_LOG_TITLE}">{BUTTON_VIEW_LOG}</a></li>
+                 <li><a href="#viewstats" title="{BUTTON_VIEW_STATS_TITLE}">{BUTTON_VIEW_STATS}</a></li>
+                 <li><a href="#newsadmin" title="{BUTTON_NEWS_ADMIN_TITLE}">{BUTTON_NEWS_ADMIN}</a></li>
+                 <li><a href="#doctype" title="{BUTTON_DOCTYPE_ADMIN_TITLE}">{BUTTON_DOCTYPE_ADMIN}</a></li>
+<!-- BEGIN: BackupOn -->
+                 <li><a href="#dobackup" title="{BUTTON_BACKUP_TITLE}">{BUTTON_BACKUP}</a></li>
+<!-- END: BackupOn -->
+                 <li><a href="#recycle" title="{BUTTON_RECYCLE_TITLE}">{BUTTON_RECYCLE}</a></li>
+                 <li><a href="#userimport" title="{BUTTON_IMPORT_USERS_TITLE}">{BUTTON_IMPORT_USERS}</a></li>
+                 <li><a href="#initialload" title="{BUTTON_INITIAL_LOAD_TITLE}">{BUTTON_INITIAL_LOAD}</a></li>
+                 <li><a href="#purgehist" title="{BUTTON_PURGE_HIST_TITLE}">{BUTTON_PURGE_HIST}</a></li>
+                 <li><a href="#{BUTTON_ADMIN_DIVID}" title="{BUTTON_ADMIN_MAINT_TITLE}">{BUTTON_ADMIN_MAINT}</a></li>
+                 <li><a href="#usertable" title="{BUTTON_ADMIN_USER_TABLE_TITLE}">{BUTTON_ADMIN_USER_TABLE}</a></li>
+               </ul>
+                 <div id="groups" url="{BUTTON_USER_GROUP_URL}"></div>
+                 <div id="html" url="{BUTTON_EDIT_HTML_URL}"></div>
+                 <div id="sitefeat" url="{BUTTON_EDIT_SITE_FEATURES_URL}"></div>
+                 <div id="viewlog" url="{BUTTON_VIEW_LOG_URL}"></div>
+                 <div id="viewstats" url="{BUTTON_VIEW_STATS_URL}"></div>
+                 <div id="newsadmin" url="{BUTTON_NEWS_ADMIN_URL}"></div>
+                 <div id="doctype" url="{BUTTON_DOCTYPE_ADMIN_URL}"></div>
+<!-- BEGIN: BackupOnDiv -->
+                 <div id="dobackup" url="{BUTTON_BACKUP_URL}">BACKUP PERFORMED</div>
+<!-- END: BackupOnDiv -->
+                 <div id="recycle" url="{BUTTON_RECYCLE_URL}"></div>
+                 <div id="userimport" url="{BUTTON_IMPORT_USERS_URL}"></div>
+                 <div id="initialload" url="{BUTTON_PURGE_HIST_URL}"></div>
+                 <div id="purgehist" url="{BUTTON_IMPORT_USERS_URL}"></div>
+                 <div id="{BUTTON_ADMIN_DIVID}" url="{BUTTON_ADMIN_MAINT_URL}">{BUTTON_ADMIN_MAINT_TITLE}</div>
+                 <div id="usertable" url="{BUTTON_ADMIN_USER_TABLE_URL}"></div>
+</div>
+<!-- END: AdminPanel -->

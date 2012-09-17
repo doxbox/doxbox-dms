@@ -1,0 +1,63 @@
+<!-- BEGIN: main -->
+<!-- BEGIN: newsreader -->
+<table align="center" width="90%" cellspacing="2" cellpadding="2" border="0" height="100%">
+   <tr>
+      <td align=left width="90%">
+         <h4>{NEWS_TITLE}</h4>
+      </td>
+
+      <td>
+         <a href="#" onClick="window.print(); return false");><img src="{THEME}/icon_action/print.gif" border="0" alt="{NEWS_PRINT_ALT}" title="{NEWS_PRINT_ALT}" /></a>
+      </td>
+<!-- BEGIN: BtnPrevTop -->
+      <td>
+         <a href="{PREV_URL}"><img src="{THEME}/ui_nav/{PREV_IMG}.gif" border="0" alt="{PREV_URL_ALT}" title="{PREV_URL_ALT}"></a>
+     </td>
+<!-- END: BtnPrevTop -->
+<!-- BEGIN: BtnNextTop -->
+      <td>
+         <a href="{NEXT_URL}"><img src="{THEME}/ui_nav/{NEXT_IMG}.gif" border="0" alt="{NEXT_URL_ALT}" title="{NEXT_URL_ALT}"></a>
+     </td>
+<!-- END: BtnNextTop -->
+<!-- BEGIN: BtnCloseTop -->
+      <td>
+         <a href="{CLOSE_URL}"><img src="{THEME}/ui_nav/close.gif" border="0" alt="{CLOSE_URL_ALT}" title="{CLOSE_URL_ALT}"></a>
+     </td>
+<!-- END: BtnCloseTop -->
+   </tr>
+
+
+   <tr>
+      <td valign="top" height="90%" colspan="5" align="left">{NEWS_DESC}</td>
+   </tr>
+   <tr>
+      <td colspan="5" align="left"><br />{NEWS_POSTED}</td>
+   </tr>
+
+
+   <tr>
+      <td>&nbsp;</td>
+      <td>
+         <a href="#" onClick="window.print(); return false");><img src="{THEME}/icon_action/print.gif" border="0" alt="{NEWS_PRINT_ALT}" title="{NEWS_PRINT_ALT}" /></a>
+     </td>
+     </td>
+<!-- BEGIN: BtnPrevBottom -->
+      <td>
+         <a href="{PREV_URL}"><img src="{THEME}/ui_nav/{PREV_IMG}.gif" border="0" alt="{PREV_URL_ALT}" title="{PREV_URL_ALT}"></a>
+     </td>
+<!-- END: BtnPrevBottom -->
+<!-- BEGIN: BtnNextBottom -->
+      <td>
+         <a href="{NEXT_URL}"><img src="{THEME}/ui_nav/{NEXT_IMG}.gif" border="0" alt="{NEXT_URL_ALT}" title="{NEXT_URL_ALT}"></a>
+     </td>
+<!-- END: BtnNextBottom -->
+<!-- BEGIN: BtnCloseBottom -->
+      <td>
+         <a href="{CLOSE_URL}"><img src="{THEME}/ui_nav/close.gif" border="0" alt="{CLOSE_URL_ALT}" title="{CLOSE_URL_ALT}"></a>
+     </td>
+<!-- END: BtnCloseBottom -->
+   </tr>
+</table>
+{JS_CLOSE}
+<!-- END: newsreader -->
+<!-- END: main -->

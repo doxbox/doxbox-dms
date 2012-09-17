@@ -1,0 +1,9 @@
+# Current User: %CURRENT_USER%
+# NEW Password : %NEW_PASSWORD%
+# USERNAME: %USERNAME%
+INI ADALAH PESAN OTOMATIS DARI Intranet OWL
+
+Nama Pengguna:
+%USERNAME%
+Kata Sandi:
+%NEW_PASSWORD%

@@ -1,0 +1,103 @@
+/* FORM TOOLS CSS */
+
+html {
+  overflow: -moz-scrollbars-vertical;
+}
+body {
+  margin: 0px; 
+  background-color: #505A50;
+  font-family: tahoma;
+  font-size: 9pt;  
+  color: black; 
+  text-align: center;  
+}
+
+a:link {
+  color: #006699;
+  text-decoration: none;
+  border-bottom: 1px #006699 dotted;
+}
+
+a:visited {
+  color: #006699;
+  text-decoration: none;
+  border-bottom: 1px #006699 dotted;
+}
+
+table {
+  font-family: tahoma;
+  font-size: 9pt;  
+  color: #333333;
+  line-height: 20px;
+}
+
+#body {
+  width: 720px;
+  background-color: #e6e6e6;
+  text-align: left;
+  height: 100%;
+}
+
+#main {
+  background-color: #ffffff;
+  text-align: left;
+  padding: 9px;
+  border: 9px solid #e6e6e6;
+  vertical-align: top;
+}
+
+#navbar {
+  width: 720px;
+  height: 29px;
+  background-image: url(/projects/ft_root/images/navbar.jpg);
+  text-align: center;
+  font-family: tahoma;
+  font-size: 8pt;
+}
+#navbar .nav_separator { color: #cccccc; }
+
+#navbar td a {
+  color: black;
+  text-decoration: none;
+  border-style: none;
+}
+
+#navbar td a:hover {
+  color: #006699;
+  text-decoration: underline;
+  border-style: none;
+}
+
+.title {
+  letter-spacing: 2px;
+  font-family: georgia;
+  font-size: 11pt;
+  font-weight: bold;
+  color: #006699;
+  margin-bottom: 15px;
+}
+
+.th {
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.nav_visited {
+  color: #cccccc;
+}
+.nav_current {
+  font-weight: bold;
+  color: black;
+}
+.nav_remaining {
+  color: #336699;
+}
+
+.answer {
+  color: #336699;
+}
+
+.highlight { 
+  color: #336699;
+}

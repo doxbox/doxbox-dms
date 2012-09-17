@@ -1,0 +1,61 @@
+## owl_batch.README.txt file for OWL/admin/tools/owl_batch.d ##
+
+Author Robert Geleta www.rgeleta.com
+Version: 2011-09-04
+
+Directory: /admin/tools/owl_batch.d for OWL Intranet batch jobs and programs
+
+Contents:
+    Directory - configs - configuration file(s) used by jobs
+    Directory - jobs - a directory containing individual jobs
+    Directory - lib - included libraries 
+                      naming convention batch-FUNCTION.lib.php
+                      where FUNCTION indicates the functions included in this library
+    File - owl_batch.README.txt - this file
+
+Installation Instructions
+
+    1. Move the /admin/tools/owl_batch.d directory to 
+       a location outside your web server's root directory
+
+    2. Edit /configs directory configuration files 
+       to set the directory location values
+           config-batch-dir-docs-root.inc.php - the directory containing your Documents directory
+           config-batch-dir-tmp.inc.php - your tmp directory
+           config-batch-dir-web-root - the root directory of your Owl web pages
+
+    3. Go to /jobs/test directory
+       run the batch-test.sh (or .bat) script
+       Review the results in batch-test.log
+       The output should show
+          phpinfo() results
+          notification that all required directories were found
+          a php divide by zero error message
+        
+Jobs Directory Contents
+
+    A directory for each individual job 
+    File owl_batch.jobs.README.txt - guidelines on building job script files
+    File owl_batch.jobs.php-scripts.README.txt - guidelines for writing batch php scripts
+
+Job Preparing and running instructions
+
+    Note: 
+       If there is a online script to perform a functions duplicated here, 
+       the "DOSOMETHING" part of the name is the same as the online script name
+       
+    1. navigate to the appropriate /jobs/DOSOMETHING directory
+    
+    2. Verify script permissions
+        a. Make sure all script (.sh and/or .bat) files are executable
+        b. Make sure owner and group names are correct
+        
+    3. Open and read the batch-DOSOMETHING.php file.  
+       There is documentation at the beginning of the file telling you 
+           what the program does
+           how to configure it
+       Update parameters if appropriate
+    
+    4. Run the shell script appropriate for your OS 
+
+## end ##

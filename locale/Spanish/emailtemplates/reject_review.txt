@@ -1,0 +1,32 @@
+# Título de Archivo: %FILE_TITLE%
+# Nombre de Archivo: %FILE_NAME%
+# Ruta de Archivo: %OWL_FILE_PATH%
+# Tamaño de Archivo: %FILE_SIZE%
+# Propietario de Archivo: %FILE_OWNER%
+# Actualizador de Archivo: %FILE_UPDATOR%
+# Archivo Creado: %FILE_CREATION_DATE%
+# Descripción de Archivo: %FILE_DESC%
+# Archivo Modificado: %FILE_MODIFICATION_DATE%
+# Versión de Archivo: %FILE_VERSION%
+# Vínculo de Archivo: %FILE_URL%
+# Usuario Actual: %CURRENT_USER%
+
+SU ARCHIVO HA SIDO RECHAZADO
+
+Su archivo ha sido rechazado por: %CURRENT_USER%
+
+Archivo Rechazado: %FILE_NAME% 
+
+Título: %FILE_TITLE% 
+
+Descripción: %FILE_DESC% 
+
+Ruta de Archivo: %OWL_FILE_PATH% 
+
+Versión: %FILE_VERSION%
+Creado/Actualizado por: %FILE_UPDATOR%
+
+RAZON DE RECHAZO:
+
+%USER_MESSAGE%
+

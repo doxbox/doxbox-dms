@@ -1,0 +1,25 @@
+# Nazwa: %FILE_TITLE%
+# Plik: %FILE_NAME%
+# Œcie¿ka: %OWL_FILE_PATH%
+# Rozmiar: %FILE_SIZE%
+# W³aœciciel: %FILE_OWNER%
+# Zmodyfikowany przez: %FILE_UPDATOR%
+# Data utworzenia: %FILE_CREATION_DATE%
+# Opis pliku: %FILE_DESC%
+# Data modyfikacji: %FILE_MODIFICATION_DATE%
+# Wersja: %FILE_VERSION%
+# Odnoœnik do pliku: %FILE_URL%
+# U¿ytkownik: %CURRENT_USER%
+
+W repozytorium zostaÅ‚ zmodyfikowany nastÄ™pujÄ…cy plik: 
+
+Nazwa: %FILE_TITLE%
+URL: %FILE_URL%
+Opis: %FILE_DESC%
+ÅšcieÅ¼ka: %OWL_FILE_PATH%
+Zmodyfikowany przez: %FILE_UPDATOR%
+
+--
+WiadomoÅ›Ä‡ zostaÅ‚a wygenerowana przez Repozytorium Owl.
+
+

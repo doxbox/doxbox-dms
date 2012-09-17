@@ -1,0 +1,16 @@
+Style  : 
+Date   : oct 15, 2005
+Version: 1.0
+Author : 
+         login.css created by Yesideez (Ivan Rood) using styles.css as a guide (28-Jan-2009)
+
+Suggested HTML Color Scheme
+
+Header Background..............: 
+Table Cell Background Color....: 
+Table Cell Background Color Alt: 
+Main Header Background Color...:
+Body Background Color..........: 
+Body Text Color................:
+Body Link Color................:
+Body Visited Color.............:

@@ -1,0 +1,8 @@
+
+batch-parse-rsync.README.txt
+
+Update the file batch-rsync.sh 
+to have the name of your rsync log file 
+as the argument 1 
+
+## end ## 

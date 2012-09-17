@@ -1,0 +1,10 @@
+# Current User: %CURRENT_USER%
+# NEW Password : %NEW_PASSWORD%
+# USERNAME: %USERNAME%
+
+Wiadomość została wygenerowana przez Repozytorium Owl.
+
+Nowe hasło dla użytkownika %USERNAME% to: %NEW_PASSWORD%
+
+--
+Wiadomość została wygenerowana przez Repozytorium Owl.

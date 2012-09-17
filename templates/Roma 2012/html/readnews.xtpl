@@ -1,0 +1,41 @@
+{FILE "html/header.xtpl"}
+<!-- BEGIN: newsreader --> 
+  <div id="nav_bar" style="height:20px;">
+    <div class="float_left">
+        <h4>{NEWS_TITLE}</h4> 
+    </div>
+    <div class="float_right">
+        <a href="#" onClick="window.print(); return false");><img src="{THEME}/icon_action/print.gif" border="0" alt="{NEWS_PRINT_ALT}" title="{NEWS_PRINT_ALT}" /></a>
+  <!-- BEGIN: BtnPrevTop -->
+        <a href="{PREV_URL}"><img src="{THEME}/ui_nav/{PREV_IMG}.gif" border="0" alt="{PREV_URL_ALT}" title="{PREV_URL_ALT}"></a>
+  <!-- END: BtnPrevTop -->
+  <!-- BEGIN: BtnNextTop -->
+        <a href="{NEXT_URL}"><img src="{THEME}/ui_nav/{NEXT_IMG}.gif" border="0" alt="{NEXT_URL_ALT}" title="{NEXT_URL_ALT}"></a>
+  <!-- END: BtnNextTop -->
+  <!-- BEGIN: BtnCloseTop -->
+        <a href="{CLOSE_URL}"><img src="{THEME}/ui_nav/close.gif" border="0" alt="{CLOSE_URL_ALT}" title="{CLOSE_URL_ALT}"></a>
+  <!-- END: BtnCloseTop -->
+    </div><!-- /float_right -->
+  </div>
+  <div id="apice"></div>
+  <div class="admin_table" style="margin-top:-8px;padding:5px;">
+    <div class="news_content">{NEWS_DESC}</div>
+  </div><!-- /admin_table -->    
+    <div id="nav_bar_bottom">
+      <div class="float_left">{NEWS_POSTED}</div>
+      <div class="float_right">
+          <a href="#" onClick="window.print(); return false");><img src="{THEME}/icon_action/print.gif" border="0" alt="{NEWS_PRINT_ALT}" title="{NEWS_PRINT_ALT}" /></a>
+    <!-- BEGIN: BtnPrevBottom -->
+          <a href="{PREV_URL}"><img src="{THEME}/ui_nav/{PREV_IMG}.gif" border="0" alt="{PREV_URL_ALT}" title="{PREV_URL_ALT}"></a>
+    <!-- END: BtnPrevBottom -->
+    <!-- BEGIN: BtnNextBottom -->
+          <a href="{NEXT_URL}"><img src="{THEME}/ui_nav/{NEXT_IMG}.gif" border="0" alt="{NEXT_URL_ALT}" title="{NEXT_URL_ALT}"></a>
+    <!-- END: BtnNextBottom -->
+    <!-- BEGIN: BtnCloseBottom -->
+          <a href="{CLOSE_URL}"><img src="{THEME}/ui_nav/close.gif" border="0" alt="{CLOSE_URL_ALT}" title="{CLOSE_URL_ALT}"></a>
+    <!-- END: BtnCloseBottom -->          
+      </div>
+    </div><!-- /news_data -->
+{JS_CLOSE}
+<!-- END: newsreader -->
+<!-- {FILE "html/footer.xtpl"} -->

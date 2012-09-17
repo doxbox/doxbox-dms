@@ -1,0 +1,113 @@
+## php-scripts.README file for OWL/admin/tools/owl_batch.d/jobs ##
+Author Robert Geleta www.rgeleta.com
+Version: 2011-09-10
+
+Directory: /admin/tools/owl_batch.d/jobs for OWL Intranet batch jobs 
+
+php script coding structure recommendations
+
+	1. At the beginning of the file, start with:
+		#!/usr/bin/php
+		<?php
+		/**
+		 * (name of this file) - (description of file's functions)
+		 *
+		 * javadoc entries for author, copyright, licensing, etc.
+		 */
+		
+	2. Insert edit block for any job specific variable definitions
+	    //
+	    // *******************************************************************
+	    //
+	    // EDIT - START
+	    $batch_debug_sw = true ;
+	    // EDIT - END
+	    //
+	
+	3. Initialize the script file
+		//
+		// *******************************************************************
+		//
+		// INITIALIZE SCRIPT
+		//
+		// Load config file
+		$my_dir_batch_root = dirname(dirname(dirname(__FILE__) ) ) ;
+		require($my_dir_batch_root . DIRECTORY_SEPARATOR . "configs" . DIRECTORY_SEPARATOR . "config-batch.inc.php");
+		//
+		// set error reporting
+		if ($batch_debug_sw)
+		{
+			error_reporting(E_ALL) ;
+		}
+		//
+		// make sure active database is set
+		if ( !isset($batch_db_active) ) // it should have been in configs
+		{
+			$batch_db_active = 0 ;
+		}
+		//
+	    
+	    NOTE: 
+	        It would have been nice to have the error_reporting taken care of in the 
+	        /configs/batch-config-php.inc.php 
+	        file, but that didn't seem to be working.
+	        If you have a suggestion on how to make this work, 
+	        contact me with a solution.  Thanks.
+
+	4. Initialize the log file(s)
+		//
+		// *******************************************************************************************
+		//
+		// INITIALIZE LOGS
+		//
+		// initialize script log
+		$my_name = basename(__FILE__) ;
+		batch_log_msg2($my_name, "000 started") ;
+		//
+		
+		NOTE: 
+			You may also want to make an entry into Owl's active database log file
+	        
+	5. Do your script thing
+		Initialize script specific variables
+		Write script specific process(es)
+		
+	    NOTES: 
+	    1.	You have access to Owl's $default-> class variables
+	    	because they were loaded in step 3
+	    2.	You also have a variable $batch_db_active for your active database index
+	
+	6. Remind the viewer what database you were using
+	    // *******************************************************************
+	    // done
+	    batch_log_msg2($my_name, "800 processed using db[" . $batch_db_active . "]") ;
+	    //
+
+	7. Finalize the log file(s)
+		//
+		// *******************************************************************************************
+		//
+		// FINALIZE LOGS
+		//
+		// finalize script log
+		batch_log_msg2($my_name, "900 exiting") ;
+		echo "\n" ;
+		//
+	    
+	    Notes:
+	    1.	The echo "\n" is a courtesy to put the cursor back to a normal position
+	    2.	You may also want to make an entry into Owl's active database log file
+
+	8. End the script file
+	    It is a best practice to leave off php's trailing ?> 
+
+General Comments
+
+	1.  Scripts have access to two message functions
+	    batch_log_msg2($arg_routine, $arg_msg)
+	        prints unconditionally
+	    batch_debug_msg2($arg_routine, $arg_msg)
+	        prints if the batch_debug_sw is set to true
+	    use them liberally to help document the job log
+
+## end ##

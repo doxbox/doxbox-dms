@@ -1,0 +1,11 @@
+
+## batch-del-db-not-in-fs.README.txt
+
+not complete, work in progress ...
+
+This script is NOT desiged to work with
+DB only stored files ie owl_use_fs = false
+
+This script will NOT work with Postgresql
+
+## end ##
