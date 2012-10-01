@@ -58,15 +58,15 @@
 <!-- BEGIN: Passwords -->
                <tr>
                   <td class="form1">{PREFS_OLD_PASS_LABEL}</td>
-                  <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="20" value="" /></td>
+                  <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="20" value="" autocomplete="off"/></td>
                </tr>
                <tr>
                   <td class="form1">{PREFS_NEW_PASS_LABEL}</td>
-                  <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="20" value="" /></td>
+                  <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="20" value="" autocomplete="off"/></td>
                </tr>
                <tr>
                   <td class="form1">{PREFS_CONF_PASS_LABEL}</td>
-                  <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="" /></td>
+                  <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="" autocomplete="off"/></td>
                </tr>
 <!-- END: Passwords -->
 <!-- BEGIN: Email -->
