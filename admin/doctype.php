@@ -91,15 +91,14 @@ if (isset($myaction))
 if (!isset($doctype))
 {
    $doctype = null;
-   //if (!is_numeric($doctype) and $doctype <> 'add_doctype')
-   //{
-    //$doctype = null;
-   //}
 }
-//else
-//{
-//}
-
+else
+{
+   if (!is_numeric($doctype))
+   {
+      $doctype = null;
+   }
+}
 
 $urlArgs = array();
 
