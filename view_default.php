@@ -246,12 +246,14 @@ while ($sql->next_record())
       $sTrClassHiliteAlt = "mouseover3";
    }
 
-   $fix_path = find_path($sql->f("id"));
-   if (!file_exists($fix_path))
-   {
-      mkdir($fix_path);
-   }
- 
+   /** This code is only used when debugging customer issues, it creates the missing
+    *  Directories based on the database 
+    */
+   // $fix_path = find_path($sql->f("id"));
+   // if (!file_exists($fix_path))
+   // {
+      // mkdir($fix_path);
+   // }
 
   $xtpl->assign('FOLDER_TR_ID', "foldertr" . $sql->f("id"));
   $xtpl->assign('FOLDER_TR_CLASS', $sTrClassHilite);
