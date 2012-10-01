@@ -257,11 +257,22 @@ if(!isset($default->owl_FileDir))
    $default->owl_FileDir  =  $default->owl_db_FileDir[$default->owl_default_db];
 }
 
-if (empty($parent) || !is_numeric($parent))
+if (empty($parent))
 {
    if (isset($default->HomeDir))
    {
       $parent = $default->HomeDir;
+   }
+}
+else if (!is_numeric($parent))
+{
+   if (isset($default->HomeDir))
+   {
+      $parent = $default->HomeDir;
+   }
+   else
+   {
+      $parent = 1;
    }
 }
 
