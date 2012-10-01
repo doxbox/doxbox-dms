@@ -30,15 +30,24 @@ if (!isset($order))
 {
    $order = $default->default_sort_column;
 }
-if (!isset($sortname) or strlen($sortname) > 4)
+if (!isset($sortname))
 {
    $sortname = $default->default_sort_order;
+}
+else 
+{
+   $sortname = strtoupper($sortname);
+   if ($sortname != 'ASC' and $storname != 'DESC')
+   {
+      $sortname = $default->default_sort_order;
+   }
 }
 
 if (!isset($sortver) or strlen($sortver) > 24)
 {
    $sortver = "ASC, minor_revision ASC";
 }
+
 if (!isset($sortcheckedout) or strlen($sortcheckedout) > 4)
 {
    $sortcheckedout = $default->default_sort_order;
