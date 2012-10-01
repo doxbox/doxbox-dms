@@ -158,29 +158,14 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
           if ($sql->f("disabled") == 1)
           {
+              $this->fOwlWebDavLog ("check_auth", "User: $username is Disabled");
               return false;
           }
 
-          //if (  $iHomeDir <>  $iFirstDir)
-          //{
-             //$sql->query("SELECT * from $default->owl_folders_table where id = '$iFirstDir'");
-             //$numrows = $sql->num_rows($sql);
-             //if ($numrows == "1")
-             //{
-                //$iRootDir = $iFirstDir;
-             //}
-             //else
-             //{
-                //$iRootDir = $iHomeDir;
-             //}
-          //}
-          //else
-          //{
-             $iRootDir = $iHomeDir;
-          //}
+          $iRootDir = $iHomeDir;
 
           $sRootFolderName = fid_to_name('1'); 
-          //$this->base = $this->base . ereg_replace('Documents','', find_path($iRootDir)); 
+          
           $this->base = $this->base . ereg_replace($sRootFolderName,'', find_path($iRootDir)); 
           $this->owl_folderid = $iRootDir;
 
