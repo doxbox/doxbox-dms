@@ -473,6 +473,14 @@ if ($sess)
    $ok = verify_session($sess);
    $temporary_ok = $ok["bit"];
    $userid = $ok["userid"];
+
+   /** Someone Tampered with owluser parameter? */
+   /** Point it to the currently signed on userid */
+   if (isset($owluser) and !is_numeric($owluser))
+   {
+     $owluser = $userid;
+   }
+
    $default->owl_current_db = $ok["currentdb"];
    $default->owl_FileDir  =  $default->owl_db_FileDir[$default->owl_current_db];
 
