@@ -462,7 +462,12 @@ function printusers()
          $xtpl->assign('USER_QUOTA_LABEL', $owl_lang->quota .  ": &nbsp; &nbsp; " . $sql->f("quota_current") . " /");
          $xtpl->assign('USER_QUOTA_VALUE', $sql->f("quota_max"));
 
-         $xtpl->assign('USER_MAXSESS_LABEL', $owl_lang->maxsessions . ": &nbsp; &nbsp; &nbsp;" . ($sql->f("maxsessions") + 1) . " /");
+         $sql_active_sess = new Owl_DB;
+         $sql_active_sess->query("SELECT * FROM $default->owl_sessions_table WHERE usid='$id'");
+         $sql_active_sess->next_record();
+         $numrows = $sql_active_sess->num_rows($sql_active_sess);
+
+         $xtpl->assign('USER_MAXSESS_LABEL', $owl_lang->maxsessions . ": &nbsp; &nbsp; &nbsp;" . $numrows . " /");
          $xtpl->assign('USER_MAXSESS_VALUE', $sql->f("maxsessions") + 1);
 
          $xtpl->assign('FLUSH_URL', "index.php?sess=$sess&amp;action=user&amp;owluser=$id&amp;change=0&amp;flush=1");
