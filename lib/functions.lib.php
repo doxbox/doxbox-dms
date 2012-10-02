@@ -4922,7 +4922,7 @@ function fCleanDomTTContent ($sDescription , $bDomPopup = 1)
    else
    {
       $sReturnDesc = fOwl_ereg_replace("%OWLNEWLIINE%", "<br />", $sReturnDesc);
-      $sReturnDesc = htmlentities($sReturnDesc);
+      $sReturnDesc = htmlentities($sReturnDesc, ENT_QUOTES, "UTF-8");
    }
 
    return $sReturnDesc;
