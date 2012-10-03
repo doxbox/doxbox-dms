@@ -3612,7 +3612,8 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
       $bFileDelete    = $aFileAccess["owldelete"];
 
       $bCheckOK = false;
-      if (($checked_out == 0) || ($checked_out == $userid) || owlusergroup($userid) == 0 ||  owlusergroup($userid) == $default->file_admin_group) 
+
+      if (($checked_out == 0) or ($checked_out == $userid) or owlusergroup($userid) == 0 or  owlusergroup($userid) == $default->file_admin_group or fIsAdmin()) 
       { 
          $bCheckOK = true; 
       }
