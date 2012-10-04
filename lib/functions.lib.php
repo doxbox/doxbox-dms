@@ -975,7 +975,7 @@ function notify_users($groupid, $flag, $fileid, $type = "")
 
    $dNow = $sql->now();
 
-   $sql->query("SELECT distinct id, email,language,attachfile from $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id=m.userid where notify = '1' and disabled = '0' and (u.groupid='$groupid' or m.groupid='$groupid') and u.id <> '$userid' and (expire_account = '' or expire_account is NULL  or expire_account > $dNow)");
+   $sql->query("SELECT distinct id, email,language,attachfile from $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id=m.userid where notify = '1' and disabled = '0' and (u.groupid='$groupid' or m.groupid='$groupid') and u.id <> '$userid' and (expire_account = '' or expire_account is NULL  or expire_account > $dNow) and email <> ''");
      
    while ($sql->next_record())
    {
