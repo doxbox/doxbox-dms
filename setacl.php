@@ -37,7 +37,7 @@ require_once($default->owl_fs_root ."/lib/security.lib.php");
 if ($action == "file_acl")
 {
    $sAclType = "SETTING_FILE_ACL";
-   //$xtpl = new XTemplate("templates/$default->sButtonStyle/html/setacl_file.xtpl");
+   
    $xtpl = new XTemplate("html/setacl_file.xtpl", "templates/$default->sButtonStyle");
    $xtpl->assign('THEME', $default->owl_graphics_url . "/" . $default->sButtonStyle);
    $xtpl->assign('ROOT_URL', $default->owl_root_url);
@@ -46,7 +46,7 @@ if ($action == "file_acl")
 else
 {
    $sAclType = "SETTING_FOLDER_ACL";
-   //$xtpl = new XTemplate("templates/$default->sButtonStyle/html/setacl_folder.xtpl");
+   
    $xtpl = new XTemplate("html/setacl_folder.xtpl", "templates/$default->sButtonStyle");
    $xtpl->assign('THEME', $default->owl_graphics_url . "/" . $default->sButtonStyle);
    $xtpl->assign('ROOT_URL', $default->owl_root_url);
@@ -142,7 +142,6 @@ function getMouseY(e) {
 </script>
 <?php
 
-
 //printModifyHeaderXTPL();
 //print("<pre>");
 //print_r($selectedusers);
@@ -223,17 +222,6 @@ var ftooltipContentData = [
 
    $qGetUserMember = new Owl_DB;
 
-   //$groups[] = array(0 => '13', 1 => 'RVC');
-   //$groups = array();
-   //$groups[0][0] = "13";
-   //$groups[0][1] = "RVC";
-
-   //print("<pre>");
-   //print_r($groups);
-   //print("</pre>");
-   //exit;
-
-   
    foreach($groups as $g)
    {
       if ($g[0] == -1)
@@ -246,8 +234,8 @@ var ftooltipContentData = [
          if (!(in_array($g[0], $fselectedgroups)))
          {
             $qSetAcl = "SELECT distinct id,name, username FROM $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id = m.userid where u.groupid = '$g[0]' or m.groupid = '$g[0]'";
-            //$qSetAcl = "SELECT name, username FROM $default->owl_users_table where groupid = '$g[0]'";
             $qGetUserMember->query($qSetAcl);
+
             print("'<table>");
             if ($qGetUserMember->num_rows() == 0)
             {
@@ -262,9 +250,9 @@ var ftooltipContentData = [
       }
       else
       {
-         //$qSetAcl = "SELECT name, username FROM $default->owl_users_table where groupid = '$g[0]'";
          $qSetAcl = "SELECT distinct id,name, username FROM $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id = m.userid where u.groupid = '$g[0]' or m.groupid = '$g[0]'";
          $qGetUserMember->query($qSetAcl);
+
          print("'<table>");
 	 if ($qGetUserMember->num_rows() == 0)
 	 {
@@ -330,33 +318,15 @@ return(gbox.selectedIndex)
 <?php
 }
 
-      //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-      //print("<tr>\n<td align=\"center\" valign=\"top\">");
-      //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"\n");
-      //print("<tr>\n");
-      //print("<td align=\"center\" valign=\"top\">\n");
-      //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\n");
-      //print("<tr>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_available_groups</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">&nbsp;</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_selected_groups</td>\n");
-      ////print("<td class=\"admin3\">&nbsp;</td>\n");
-      //print("</tr>\n");
-      //print("<tr>\n");
-      //print("<td class=\"form1\">\n");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fallgroups[]\" class=\"fpullacl\"");
 	  $xtpl->assign('FOLDER_SECTION_AVAILABLE_GRPS', $owl_lang->acl_available_groups);
 	  $xtpl->assign('FOLDER_SECTION_SELECTED_GRPS', $owl_lang->acl_selected_groups);
 
 
-   //    print (" onchange=\"tooltipContentIndex = getselectedvalue(this); domTT_activate(this, event, 'content', getTooltipContent(), 'lifetime', 5000, 'closeAction', 'destroy', 'styleClass', 'niceTitle', 'x', 50, 'y', 50);\"");
 if ($default->show_users_in_group == '1')
 {
-   //print (" onchange=\"ftooltipContentIndex = fgetselectedvalue(this); domTT_activate(this, event, 'content', fgetTooltipContent(), 'type', 'sticky', 'closeLink', '&nbsp; [x] &nbsp;', 'draggable', true, 'closeAction', 'destroy',  'caption' , fgetTooltipCaption(), 'x', 50, 'y', tempY);\"");
       $xtpl->assign('ON_CHANGE', " onchange=\"ftooltipContentIndex = fgetselectedvalue(this); domTT_activate(this, event, 'content', fgetTooltipContent(), 'type', 'sticky', 'closeLink', '&nbsp; [x] &nbsp;', 'draggable', true, 'closeAction', 'destroy',  'caption' , fgetTooltipCaption(), 'x', 50, 'y', tempY);\"");
 
 }
-      //print(">\n");
       foreach($groups as $g)
       {
          if ($g[0] == -1)
@@ -370,8 +340,6 @@ if ($default->show_users_in_group == '1')
          {
             if (!(in_array($g[0], $fselectedgroups)))
             {
-               //print("<option value=\"$g[0]\"");
-               //print(">$g[1]</option>\n");
                $xtpl->assign('ALL_GROUPS_VALUE', $g[0]);
                $xtpl->assign('ALL_GROUPS_CAPTION', $g[1]);
                $xtpl->assign('ALL_GROUPS_SELECTED', '');
@@ -380,8 +348,6 @@ if ($default->show_users_in_group == '1')
          }
          else
          {
-            //print("<option value=\"$g[0]\"");
-            //print(">$g[1]</option>\n");
             $xtpl->assign('ALL_GROUPS_VALUE', $g[0]);
             $xtpl->assign('ALL_GROUPS_CAPTION', $g[1]);
             $xtpl->assign('ALL_GROUPS_SELECTED', '');
@@ -389,17 +355,6 @@ if ($default->show_users_in_group == '1')
          }
       }
 
-      //print("</select>\n</td>\n");
-
-      //print("<td class=\"form1\" nowrap=\"nowrap\">");
-      //print("&nbsp;&nbsp;<input type=\"button\" onclick=\"move(this.form.elements['fselectedgroups[]'],this.form.elements['fallgroups[]'])\" value=\"<--\"></input>\n");
-      //print("<input type=\"button\" onclick=\"move(this.form.elements['fallgroups[]'],this.form.elements['fselectedgroups[]'])\" value=\"-->\"></input>\n");
-      //print("<br />");
-      //print("<input type=\"button\" onclick=\"selectAllGroups(this.form.elements['fselectedgroups[]'],this.form.elements['fallgroups[]'])\" value=\"<<--\"></input>\n");
-      //print("<input type=\"button\" onclick=\"selectAllGroups(this.form.elements['fallgroups[]'],this.form.elements['fselectedgroups[]'])\" value=\"-->>\"></input>\n");
-      //print("</td>\n");
-      //print("<td class=\"form1\">");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fselectedgroups[]\" class=\"fpullacl\">");
      if (!empty($groups))
       {
          foreach($groups as $g)
@@ -415,9 +370,6 @@ if ($default->show_users_in_group == '1')
                $xtpl->assign('SELECTED_GROUPS_SELECTED', '');
                if ((in_array($g[0], $fselectedgroups)))
                {
-                  //print("<option value=\"$g[0]\"");
-                  //print(">$g[1]</option>\n");
-
                   $xtpl->assign('SELECTED_GROUPS_VALUE', $g[0]);
                   $xtpl->assign('SELECTED_GROUPS_CAPTION', $g[1]);
                   $xtpl->assign('SELECTED_GROUPS_SELECTED', '');
@@ -426,19 +378,6 @@ if ($default->show_users_in_group == '1')
             }
          }
       }
-
-      //print("</select>\n</td>\n");
-      //print("</tr>\n");
-      //print("<tr>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_available_users</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">&nbsp;</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_selected_users</td>\n");
-      //print("</tr>\n");
-      //print("<tr>\n");
-      //print("<td class=\"form1\">\n");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fallusers[]\" class=\"fpullacl\"");
-//
-      //print(">\n");
 
       $xtpl->assign('FOLDER_SECTION_AVAILABLE_USERS', $owl_lang->acl_available_users);
       $xtpl->assign('FOLDER_SECTION_SELECTED_USERS', $owl_lang->acl_selected_users);
@@ -465,9 +404,6 @@ if ($default->show_users_in_group == '1')
             {
                if (!(in_array($sId, $fselectedusers)))
                {
-                  //print("<option value=\"$sId\"");
-                  //print(">" . $sName .  $sEmail . "</option>\n");
-                  //print(">" . $sName .  $sEmail . "<br />");
                   $xtpl->assign('ALL_USERS_VALUE', $sId);
                   $xtpl->assign('ALL_USERS_SELECTED', '');
                   $xtpl->assign('ALL_USERS_CAPTION', $sName .  $sEmail);
@@ -476,8 +412,6 @@ if ($default->show_users_in_group == '1')
             }
             else
             {
-            //   print("<option value=\"$sId\"");
-               //print(">" . $sName . $sEmail . "</option>\n");
                $xtpl->assign('ALL_USERS_VALUE', $sId);
                $xtpl->assign('ALL_USERS_SELECTED', '');
                $xtpl->assign('ALL_USERS_CAPTION', $sName .  $sEmail);
@@ -485,17 +419,7 @@ if ($default->show_users_in_group == '1')
             }
          }
       }
-      //print("</select>\n");
-      //print("</td>\n");
-      //print("<td class=\"form1\" nowrap=\"nowrap\">\n");
-      //print("&nbsp;&nbsp;<input type=\"button\" onclick=\"move(this.form.elements['fselectedusers[]'],this.form.elements['fallusers[]'])\" value=\"<--\"></input>\n");
-      //print("<input type=\"button\" onclick=\"move(this.form.elements['fallusers[]'],this.form.elements['fselectedusers[]'])\" value=\"-->\"></input>\n");
-      //print("<br />");
-      //print("<input type=\"button\" onclick=\"selectAllUsers(this.form.elements['fselectedusers[]'],this.form.elements['fallusers[]'])\" value=\"<<--\"></input>\n");
-      //print("<input type=\"button\" onclick=\"selectAllUsers(this.form.elements['fallusers[]'],this.form.elements['fselectedusers[]'])\" value=\"-->>\"></input>\n");
-      //print("</td>\n");
-      //print("<td class=\"form1\">\n");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fselectedusers[]\" class=\"fpullacl\">\n");
+
       if (!empty($aUserList))
       {
          foreach ($aUserList as $aUsers)
@@ -519,9 +443,6 @@ if ($default->show_users_in_group == '1')
             {
                if ((in_array($sId, $fselectedusers)))
                {
-                  //print("<option value=\"$sId\"");
-                  //print(">" . $sName . $sEmail . "</option>\n");
-
                   $xtpl->assign('SELECTED_USERS_VALUE', $sId);
                   $xtpl->assign('SELECTED_USERS_CAPTION', $sName . $sEmail);
                   $xtpl->assign('SELECTED_USERS_SELECTED', '');
@@ -559,17 +480,14 @@ if ($default->show_users_in_group == '1')
       $owl_lang->acl_folder_email = "(FH) " . $owl_lang->acl_file_email;
       $owl_lang->acl_folder_relsearch = "(FH) " . $owl_lang->acl_file_search;
 
-          foreach($default->acl_folder_types as $aclType)
-          {
+      foreach($default->acl_folder_types as $aclType)
+      {
         $langElement = "acl_folder_" . $aclType;
-         //print("<td class=\"title1\" align=\"center\"><a class=\"ltitle1\" href=\"javascript:fcheckowl$aclType()\">" .$owl_lang->$langElement  . "</a></td>\n");
          $xtpl->assign('FOLDER_TITLE_URL', "javascript:fcheckowl$aclType();");
          $xtpl->assign('FOLDER_TITLE_LABEL', $owl_lang->$langElement);
          $xtpl->parse('main.FolderPermTitle');
-          }
+      }
 
-
-      //print("</tr>\n");
 
       $CountLines = 0;
       if(!empty($fselectedgroups))
@@ -585,31 +503,26 @@ if ($default->show_users_in_group == '1')
             if ($PrintLines == 0)
             {
                $xtpl->assign('TR_COLOR', 'file1');
-               //$sTrClass = "file1";
-               //$sLfList = "lfile1";
             }
             else
             {
                $xtpl->assign('TR_COLOR', 'file2');
-               //$sTrClass = "file2";
-               //$sLfList = "lfile2";
             }
-            //print("<tr>\n");
-            //print("<td class=\"$sTrClass\"><a class=\"title1\" href=\"javascript:checkFG" . $val ."()\">" . group_to_name($val) . "</a></td>\n");
             $xtpl->assign('FOLDER_USER_GRP_URL', "javascript:checkFG" . $val ."()");
             $xtpl->assign('FOLDER_USER_GRP_LABEL', group_to_name($val));
-          foreach($default->acl_folder_types as $aclType)
-          {
-            $xtpl->assign('FOLDER_USER_GRP_NAME', "fgacl_owl" . $aclType . "_" . $val);
-            $xtpl->assign('FOLDER_USER_GRP_VALUE', $val);
-            $xtpl->assign('FOLDER_USER_GRP_CHECKED', fGetFAclChecked($id, $val, "owl" . $aclType));
-            $xtpl->parse('main.FolderPermUsrGrp.FolderPermUsrGrpAcl');
-          }
-          $xtpl->parse('main.FolderPermUsrGrp');
 
-     }
+            foreach($default->acl_folder_types as $aclType)
+            {
+               $xtpl->assign('FOLDER_USER_GRP_NAME', "fgacl_owl" . $aclType . "_" . $val);
+               $xtpl->assign('FOLDER_USER_GRP_VALUE', $val);
+               $xtpl->assign('FOLDER_USER_GRP_CHECKED', fGetFAclChecked($id, $val, "owl" . $aclType));
+               $xtpl->parse('main.FolderPermUsrGrp.FolderPermUsrGrpAcl');
+            }
+            $xtpl->parse('main.FolderPermUsrGrp');
+         }
       }
-     if(!empty($fselectedusers))
+
+      if(!empty($fselectedusers))
       {
          foreach ($fselectedusers as $val)
          {
@@ -617,33 +530,25 @@ if ($default->show_users_in_group == '1')
             $PrintLines = $CountLines % 2;
             if ($PrintLines == 0)
             {
-               //$sTrClass = "file1";
-               //$sLfList = "lfile1";
                $xtpl->assign('TR_COLOR', 'file1');
             }
             else
             {
                $xtpl->assign('TR_COLOR', 'file2');
-               //$sTrClass = "file2";
-               //$sLfList = "lfile2";
             }
-            //print("<tr>\n");
-            //print("<td class=\"$sTrClass\"><a class=\"title1\" href=\"javascript:checkFU" . $val . "()\">" . uid_to_name($val) ."</a></td>\n");
+            
             $xtpl->assign('FOLDER_USER_GRP_URL', "javascript:checkFU" . $val ."()");
             $xtpl->assign('FOLDER_USER_GRP_LABEL', uid_to_name($val));
 
             foreach($default->acl_folder_types as $aclType)
             {
-               //print("<td class=\"$sTrClass\" align=\"center\"><b><input type=\"checkbox\" name=\"facl_owl" . $aclType . "_" . $val . "\" value=\"" . $val . "\" " . fGetFAclChecked($id, $val, "owl$aclType", "users") . "></input></b></td>\n");
                $xtpl->assign('FOLDER_USER_GRP_NAME', "facl_owl" . $aclType . "_" . $val);
                $xtpl->assign('FOLDER_USER_GRP_VALUE', $val);
                $xtpl->assign('FOLDER_USER_GRP_CHECKED', fGetFAclChecked($id, $val, "owl" .$aclType, "users"));
                $xtpl->parse('main.FolderPermUsrGrp.FolderPermUsrGrpAcl');
             }
             $xtpl->parse('main.FolderPermUsrGrp');
-
-           //print("</tr>\n");
-    }
+         }
      }
 
      if ($default->user_can_propagate_acl or fIsAdmin())
@@ -666,8 +571,6 @@ if ($default->show_users_in_group == '1')
         fPrintSetFileAcl($id, "admin");
         $xtpl->parse('main.FileSecurity');
      }
-//     print("</form>\n");
-     //print("</td></tr></table>\n");
    }
 }
 elseif ($action == "file_acl")
@@ -696,26 +599,16 @@ elseif ($action == "file_acl")
          fPrintNavBarXTPL($parent,$owl_lang->acl_adding_file . " ", $id);
       }
 
-      //print("<form action=\"setacl.php\" method=\"post\" name=\"combo_box\">");
 	  $xtpl->assign('FORM', "<form action=\"setacl.php\" method=\"post\" name=\"combo_box\">");
 	  $xtpl->assign('HIDDEN_FIELDS', fGetHiddenFields ($urlArgs2));
 
-      //print fGetHiddenFields ($urlArgs2);
       fPrintSelectFileUserGroups();
-      //print("</form>\n");
 
-      //print("</td>\n");
-      //print("</tr>\n");
-      //print("<tr>\n");
-      //print("<td align=\"left\" valign=\"top\">\n");
       $xtpl->assign('SETACL_FORM', "<form action=\"dbmodify.php\" method=\"post\" name=\"set_acl\">");
       $xtpl->assign('SETACL_HIDDEN', fGetHiddenFields($urlArgs2));
 
-      //print("<form action=\"dbmodify.php\" method=\"post\" name=\"set_acl\">\n");
-      //print fGetHiddenFields ($urlArgs2);
       fPrintSetFileAcl($id);
-      //print("</form>\n");
-      //print("</td></tr></table>\n");
+      
       $xtpl->parse('main.FileSecurity');
    }
    else
@@ -741,17 +634,7 @@ function fPrintSetFileAcl($id, $type = "user")
 {
       global $default, $owl_lang, $groups, $selectedgroups, $aUserList, $selectedusers ;
       global $xtpl;
-      //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-      //print("<tr>\n<td align=\"left\" valign=\"top\">");
-      //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">");
-      //fPrintSectionHeader("$owl_lang->acl_set_file_permissions");
-      //print("</table>");
-      //print("</td></tr></table>");
-      //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-      //print("<tr>\n<td align=\"left\" valign=\"top\">");
-      //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">");
-      //print("<tr>\n");
-      //print("<td class=\"title1\" align=\"center\"><b>$owl_lang->acl_heading_file</b></td>\n");
+
       $xtpl->assign('SET_FILE_PERM', $owl_lang->acl_set_file_permissions);
       $xtpl->assign('HEADING_FILE_PERM', $owl_lang->acl_heading_file);
 
@@ -775,10 +658,7 @@ function fPrintSetFileAcl($id, $type = "user")
             $xtpl->parse('main.FileSecurity.FilePermTitle');
          }
 
-         //print("<td class=\"title1\" align=\"center\"><a class=\"ltitle1\" href=\"javascript:checkowl$aclType()\">" .$owl_lang->$langElement  . "</a></td>\n");
       }
-
-      //print("</tr>\n");
 
       $CountLines = 0;
             $CountLines = 0;
@@ -798,13 +678,11 @@ function fPrintSetFileAcl($id, $type = "user")
             {
               $xtpl->assign('TR_COLOR', 'file2');
             }
-            //print("<tr>\n");
-            //print("<td class=\"$sTrClass\"><a class=\"title1\" href=\"javascript:checkG" . $val ."()\">" . group_to_name($val) . "</a></td>\n");
+
             $xtpl->assign('FILE_USER_GRP_URL', "javascript:checkG" . $val ."()");
             $xtpl->assign('FILE_USER_GRP_LABEL', group_to_name($val));
             foreach($default->acl_file_types as $aclType)
             {
-               //print("<td class=\"$sTrClass\" align=\"center\"><b><input type=\"checkbox\" name=\"gacl_owl" . $aclType . "_" . $val . "\" value=\"" . $val . "\" " . fGetAclChecked($id, $val, "owl" . $aclType) . "></input></b></td>\n");
                $xtpl->assign('FILE_USER_GRP_NAME', "gacl_owl" . $aclType . "_" . $val);
                $xtpl->assign('FILE_USER_GRP_VALUE', $val);
                $xtpl->assign('FILE_USER_GRP_CHECKED', fGetAclChecked($id, $val, "owl" . $aclType));
@@ -825,9 +703,7 @@ function fPrintSetFileAcl($id, $type = "user")
             {
                $xtpl->parse('main.FileSecurity.FilePermUsrGrp');
             }
-
-            //print("</tr>\n");
-     }
+         }
       }
 
       if(!empty($selectedusers))
@@ -838,27 +714,20 @@ function fPrintSetFileAcl($id, $type = "user")
             $PrintLines = $CountLines % 2;
             if ($PrintLines == 0)
             {
-               //$sTrClass = "file1";
                $xtpl->assign('TR_COLOR', 'file1');
-               //$sLfList = "lfile1";
             }
             else
             {
-               //$sTrClass = "file2";
                $xtpl->assign('TR_COLOR', 'file2');
-               //$sLfList = "lfile2";
             }
-            //print("<tr>\n");
-            //print("<td class=\"$sTrClass\"><a class=\"title1\" href=\"javascript:checkU" . $val ."()\">" . uid_to_name($val) ."</a></td>\n");
+
             $xtpl->assign('FILE_USER_GRP_URL', "javascript:checkU" . $val ."()");
             $xtpl->assign('FILE_USER_GRP_LABEL', uid_to_name($val));
             foreach($default->acl_file_types as $aclType)
             {
-               //print("<td class=\"$sTrClass\" align=\"center\"><b><input type=\"checkbox\" name=\"acl_owl" . $aclType . "_" . $val . "\" value=\"" . $val . "\" " . fGetAclChecked($id, $val, "owl$aclType", "users") . "></input></b></td>\n");
                $xtpl->assign('FILE_USER_GRP_NAME', "acl_owl" . $aclType . "_" . $val);
                $xtpl->assign('FILE_USER_GRP_VALUE', $val);
                $xtpl->assign('FILE_USER_GRP_CHECKED', fGetAclChecked($id, $val, "owl$aclType", "users"));
-               //$xtpl->parse('main.FileSecurity.FilePermUsrGrp.FilePermUsrGrpAcl');
                if ($type == "admin")
                {
                   $xtpl->parse('main.FilePermUsrGrp.FilePermUsrGrpAcl');
@@ -876,9 +745,7 @@ function fPrintSetFileAcl($id, $type = "user")
             {
                $xtpl->parse('main.FileSecurity.FilePermUsrGrp');
             }
-
-            //print("</tr>\n");
-     }
+         }
       }
 
       if ($type == "admin")
@@ -900,32 +767,9 @@ function fPrintSelectFileUserGroups($type = "user")
    $xtpl->assign('FILE_SECTION_HEADING', $owl_lang->acl_heading_files);
    $xtpl->assign('FILE_SECTION_AVAILABLE_GRPS', $owl_lang->acl_available_groups);
    $xtpl->assign('FILE_SECTION_SELECTED_GRPS', $owl_lang->acl_selected_groups);
-
-
-      //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-      //print("<tr>\n<td align=\"center\" valign=\"top\">");
-      //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">");
-      //fPrintSectionHeader($owl_lang->acl_heading_files);
-      //print("</table>");
-      //print("</td></tr></table><br />");
-  // 
-   //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-   //print("<tr>\n");
-   //print("<td align=\"center\" valign=\"top\">\n");
-   //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\n");
-   //print("<tr>\n");
-   //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_available_groups</td>\n");
-   //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">&nbsp;</td>\n");
-   //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_selected_groups</td>\n");
-   //print("<td class=\"admin3\">&nbsp;</td>\n");
-   //print("</tr>");
-
-   //print("<tr>\n");
-   //print("<td class=\"form1\">\n");
-
-if ($default->show_users_in_group == '1')
-{
-   ?>
+   if ($default->show_users_in_group == '1')
+   {
+?>
 <script type="text/javascript">
 //Function alerts the index of the selected option within form
 
@@ -947,8 +791,8 @@ var tooltipContentData = [
          if (!(in_array($g[0], $selectedgroups)))
          {
             $qSetAcl = "SELECT distinct id,name, username FROM $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id = m.userid where u.groupid = '$g[0]' or m.groupid = '$g[0]'";
-            //$qSetAcl = "SELECT name, username FROM $default->owl_users_table where groupid = '$g[0]'";
             $qGetUserMember->query($qSetAcl);
+
             print("'<table>");
             if ($qGetUserMember->num_rows() == 0)
             {
@@ -964,8 +808,8 @@ var tooltipContentData = [
       else
       {
          $qSetAcl = "SELECT distinct id,name, username FROM $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id = m.userid where u.groupid = '$g[0]' or m.groupid = '$g[0]'";
-         //$qSetAcl = "SELECT name, username FROM $default->owl_users_table where groupid = '$g[0]'";
          $qGetUserMember->query($qSetAcl);
+
          print("'<table>");
          if ($qGetUserMember->num_rows() == 0)
          {
@@ -1031,14 +875,10 @@ return(gbox.selectedIndex)
 </script>
 <?php
 }
-   //print("<select multiple=\"multiple\" size=\"10\" name=\"allgroups[]\" class=\"fpullacl\"");
-   //print (" onchange=\"tooltipContentIndex = getselectedvalue(this); domTT_activate(this, event, 'content', getTooltipContent(), 'lifetime', 3000, 'closeAction', 'destroy', 'styleClass', 'niceTitle', 'x', 50, 'y', 50, 'type', 'sticky');\"");
 if ($default->show_users_in_group == '1')
 {
-   //print (" onchange=\"tooltipContentIndex = getselectedvalue(this); domTT_activate(this, event, 'content', getTooltipContent(), 'type', 'sticky', 'closeLink', '&nbsp; [x] &nbsp; ', 'draggable', true, 'closeAction', 'destroy', 'caption' , getTooltipCaption(), 'x', 50, 'y', tempY);\"");
   $xtpl->assign('ON_CHANGE', " onchange=\"tooltipContentIndex = getselectedvalue(this); domTT_activate(this, event, 'content', getTooltipContent(), 'type', 'sticky', 'closeLink', '&nbsp; [x] &nbsp; ', 'draggable', true, 'closeAction', 'destroy', 'caption' , getTooltipCaption(), 'x', 50, 'y', tempY);\"");
 }
-   //print(">\n");
 
 
    foreach($groups as $g)
@@ -1054,8 +894,6 @@ if ($default->show_users_in_group == '1')
       {
          if (!(in_array($g[0], $selectedgroups)))
          {
-            //print("<option value=\"$g[0]\"");
-            //print(">$g[1]</option>\n");
             $xtpl->assign('ALL_GROUPS_VALUE', $g[0]);
             $xtpl->assign('ALL_GROUPS_CAPTION', $g[1]);
             $xtpl->assign('ALL_GROUPS_SELECTED', '');
@@ -1071,8 +909,6 @@ if ($default->show_users_in_group == '1')
       }
       else
       {
-         //print("<option value=\"$g[0]\"");
-         //print(">$g[1]</option>\n");
             $xtpl->assign('ALL_GROUPS_VALUE', $g[0]);
             $xtpl->assign('ALL_GROUPS_CAPTION', $g[1]);
             $xtpl->assign('ALL_GROUPS_SELECTED', '');
@@ -1088,17 +924,6 @@ if ($default->show_users_in_group == '1')
 
    }
 
-   //print("</select>\n</td>\n");
-
-   //print("<td class=\"form1\" nowrap=\"nowrap\">\n");
-   //print("&nbsp;&nbsp;<input type=\"button\" onclick=\"move(this.form.elements['selectedgroups[]'],this.form.elements['allgroups[]'])\" value=\"<--\"></input>");
-   //print("<input type=\"button\" onclick=\"move(this.form.elements['allgroups[]'],this.form.elements['selectedgroups[]'])\" value=\"-->\"></input>");
-   //print("<br />");
-   //print("<input type=\"button\" onclick=\"selectAllGroups(this.form.elements['selectedgroups[]'],this.form.elements['allgroups[]'])\" value=\"<<--\"></input>");
-   //print("<input type=\"button\" onclick=\"selectAllGroups(this.form.elements['allgroups[]'],this.form.elements['selectedgroups[]'])\" value=\"-->>\"></input>");
-   //print("</td>");
-   //print("<td class=\"form1\">\n");
-   //print("<select multiple=\"multiple\" size=\"10\" name=\"selectedgroups[]\" class=\"fpullacl\">");
    if (!empty($groups))
    {
       foreach($groups as $g)
@@ -1111,8 +936,6 @@ if ($default->show_users_in_group == '1')
          {
             if ((in_array($g[0], $selectedgroups)))
             {
-               //print("<option value=\"$g[0]\"");
-               //print(">$g[1]</option>\n");S
                $xtpl->assign('SELECTED_GROUPS_VALUE', $g[0]);
                $xtpl->assign('SELECTED_GROUPS_CAPTION', $g[1]);
                $xtpl->assign('SELECTED_GROUPS_SELECTED', '');
@@ -1129,21 +952,9 @@ if ($default->show_users_in_group == '1')
       }
    }
 
-   //print("</select>\n</td>\n\n");
-   //print("<td class=\"form1\" width=\"100%\">&nbsp;</td>");
-
    $xtpl->assign('FILE_SECTION_AVAILABLE_USERS', $owl_lang->acl_available_users);
    $xtpl->assign('FILE_SECTION_SELECTED_USERS', $owl_lang->acl_selected_users);
 
-   //print("</tr>\n");
-   //print("<tr>\n");
-   //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_available_users</td>\n");
-   //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">&nbsp;</td>\n");
-   //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_selected_users</td>\n");
-   //print("</tr>");
-   //print("<tr>\n");
-   //print("<td class=\"form1\">");
-   //print("<select multiple=\"multiple\" size=\"10\" name=\"allusers[]\" class=\"fpullacl\">");
    if (!empty($aUserList))
    {
       foreach ($aUserList as $aUsers)
@@ -1168,9 +979,6 @@ if ($default->show_users_in_group == '1')
          {
             if (!(in_array($sId, $selectedusers)))
             {
-               //print("<option value=\"$sId\"");
-               //print(">" . $sName .  $sEmail . "</option>\n");
-               //print("USERS: " . $sName);
                $xtpl->assign('ALL_USERS_VALUE', $sId);
                $xtpl->assign('ALL_USERS_SELECTED', '');
                $xtpl->assign('ALL_USERS_CAPTION', $sName .  $sEmail);
@@ -1192,17 +1000,10 @@ if ($default->show_users_in_group == '1')
                {
                   $xtpl->parse('main.FileSecurity.SelectedUsers');
                }
-               //else
-               //{
-//exit('here');
-                  //$xtpl->parse('main.FileSecurity.SelectedUsers');
-               //}
             }
          }
          else
          {
-            //print("<option value=\"$sId\"");
-            //print(">" . $sName . $sEmail . "</option>\n");
             $xtpl->assign('ALL_USERS_VALUE', $sId);
             $xtpl->assign('ALL_USERS_SELECTED', '');
             $xtpl->assign('ALL_USERS_CAPTION', $sName .  $sEmail);
@@ -1218,17 +1019,6 @@ if ($default->show_users_in_group == '1')
       }
    }
 
-   //print("</select>\n");
-   //print("</td>\n");
-	   //print("<td class=\"form1\" nowrap=\"nowrap\">\n");
-   //print("&nbsp;&nbsp;<input type=\"button\" onclick=\"move(this.form.elements['selectedusers[]'],this.form.elements['allusers[]'])\" value=\"<--\"></input>\n");
-   //print("<input type=\"button\" onclick=\"move(this.form.elements['allusers[]'],this.form.elements['selectedusers[]'])\" value=\"-->\"></input>\n");
-   //print("<br />");
-   //print("<input type=\"button\" onclick=\"selectAllUsers(this.form.elements['selectedusers[]'],this.form.elements['allusers[]'])\" value=\"<<--\"></input>\n");
-   //print("<input type=\"button\" onclick=\"selectAllUsers(this.form.elements['allusers[]'],this.form.elements['selectedusers[]'])\" value=\"-->>\"></input>\n");
-   //print("</td>\n");
-   //print("<td class=\"form1\">\n");
-   //print("<select multiple=\"multiple\" size=\"10\" name=\"selectedusers[]\" class=\"fpullacl\">\n");
    if (!empty($aUserList))
    {
       foreach ($aUserList as $aUsers)
@@ -1252,8 +1042,6 @@ if ($default->show_users_in_group == '1')
          {
             if ((in_array($sId, $selectedusers)))
             {
-               //print("<option value=\"$sId\"");
-               //print(">" . $sName . $sEmail . "</option>\n");
                $xtpl->assign('SELECTED_USERS_VALUE', $sId);
                $xtpl->assign('SELECTED_USERS_CAPTION', $sName . $sEmail);
                $xtpl->assign('SELECTED_USERS_SELECTED', '');
