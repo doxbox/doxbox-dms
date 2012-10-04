@@ -735,7 +735,7 @@ if ($action == "html_show" || $action == "text_show" || $action == "note_show" |
             $lines2 = file($default->owl_FileDir . DIR_SEP . find_path($parent) . $to_backup . $sToFile);
                                                                                                                                                                                     
             $diff = new Text_Diff($lines1, $lines2);
-            $renderer = &new Text_Diff_Renderer_unified();
+            $renderer = new Text_Diff_Renderer_unified();
             $xtpl->assign('VIEW_CONTENT', "<pre>" . htmlentities($renderer->render($diff), ENT_COMPAT, 'UTF-8') . "</pre>");
 
          }
