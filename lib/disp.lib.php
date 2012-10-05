@@ -72,6 +72,11 @@ function fGetURL ($file, $args)
    {
       $pos = strpos($file, $default->owl_root_url);
    }
+   else
+   {
+      /* the root_url is Zero, remove the leadning / from the PHP_SELF */
+      $file = ltrim($file, '/');
+   }
 
    if ( $pos !== false)
    {
