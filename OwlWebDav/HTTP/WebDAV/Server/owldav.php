@@ -17,6 +17,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
     var $owl_debugfile = "/tmp/WebDAV.DBG";
     var $owl_userid = "";
     var $owl_folderid = "1";
+    var $dav_client = "";
 
     /**
      * Root directory for WebDAV access
@@ -337,50 +338,63 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
     function fileinfo($path) 
     {
        global $userid;
-        //$this->fOwlWebDavLog ("fileinfo", "Path: $path");
+       $this->_fGetDavClient();
 
         // map URI path to filesystem path
-        $fspath = $this->base . $path;
+       $fspath = $this->base . $path;
 
         // create result array
-        $info = array();
-        // TODO remove slash append code when base clase is able to do it itself
-        //$info["path"]  = is_dir($fspath) ? $this->_slashify($path) : $path; 
+       $info = array();
+       // TODO remove slash append code when base clase is able to do it itself
+       //$info["path"]  = is_dir($fspath) ? $this->_slashify($path) : $path; 
 
-        $fixeduppath = str_replace(' ', '%20', $path);
-        $info["path"]  = str_replace('&', '%26', $fixeduppath);
-        $info["props"] = array();
+       if ($this->dav_client == 'MacDarwin' or
+           $this->dav_client == 'Cyberduck')
+       {
+          $fixeduppath = $path;
+       }
+       else
+       {
+          $fixeduppath = str_replace(' ', '%20', $path);
+       }
+
+       $info["path"]  = str_replace('&', '%26', $fixeduppath);
+       $info["props"] = array();
             
-        // no special beautified displayname here ...
-        $info["props"][] = $this->mkprop("displayname", strtoupper($path));
+       // no special beautified displayname here ...
+       $info["props"][] = $this->mkprop("displayname", strtoupper($path));
             
-        // creation and modification time
-        $info["props"][] = $this->mkprop("creationdate",    filectime($fspath));
-        $info["props"][] = $this->mkprop("getlastmodified", filemtime($fspath));
+       // creation and modification time
+       $info["props"][] = $this->mkprop("creationdate",    filectime($fspath));
+       $info["props"][] = $this->mkprop("getlastmodified", filemtime($fspath));
 
-        // type and size (caller already made sure that path exists)
-        if (is_dir($fspath)) {
-              $this->fOwlWebDavLog ("PROPFIND DEBUG", "A: $fspath");
-            // directory (WebDAV collection)
-            $info["props"][] = $this->mkprop("resourcetype", "collection");
-            $info["props"][] = $this->mkprop("getcontenttype", "httpd/unix-directory");             
-        } else {
-              $this->fOwlWebDavLog ("PROPFIND DEBUG", "B: $fspath");
-            // plain file (WebDAV resource)
-            $info["props"][] = $this->mkprop("resourcetype", "");
-            if (is_readable($fspath)) {
-              $this->fOwlWebDavLog ("PROPFIND DEBUG", "C: $fspath");
-                $info["props"][] = $this->mkprop("getcontenttype", $this->_mimetype($fspath));
-            } else {
-              $this->fOwlWebDavLog ("PROPFIND DEBUG", "D: $fspath");
-                $info["props"][] = $this->mkprop("getcontenttype", "application/x-non-readable");
-            }               
-            $info["props"][] = $this->mkprop("getcontentlength", filesize($fspath));
-        }
-
-       //$this->fOwlWebDavLog ("fileinfo", "Info: " . print_r($info, true));
-        return $info;
-    }
+       // type and size (caller already made sure that path exists)
+       if (is_dir($fspath)) 
+       {
+            $this->fOwlWebDavLog ("fileinfo", "Folder: $fspath");
+           // directory (WebDAV collection)
+           $info["props"][] = $this->mkprop("resourcetype", "collection");
+           $info["props"][] = $this->mkprop("getcontenttype", "httpd/unix-directory");             
+       } 
+       else 
+       {
+           $this->fOwlWebDavLog ("fileinfo", "File: $fspath");
+           // plain file (WebDAV resource)
+           $info["props"][] = $this->mkprop("resourcetype", "");
+           if (is_readable($fspath)) 
+           {
+              $this->fOwlWebDavLog ("fileinfo", "File is Readable");
+              $info["props"][] = $this->mkprop("getcontenttype", $this->_mimetype($fspath));
+           } 
+           else 
+           {
+             $this->fOwlWebDavLog ("fileinfo", "File is NOT Readable");
+             $info["props"][] = $this->mkprop("getcontenttype", "application/x-non-readable");
+           }               
+           $info["props"][] = $this->mkprop("getcontentlength", filesize($fspath));
+       }
+       return $info;
+   }
 
     /**
      * detect if a given program is found in the search PATH
@@ -1778,19 +1792,29 @@ if ($default->restrict_view == 1)
         return $result;
     }
 
-
-    /**
-     * create database tables for property and lock storage
-     *
-     * @param  void
-     * @return bool   true on success
-     */
-    function create_database() 
+   function _fGetDavClient()
     {
-       global $userid;
-        // TODO
-        return false;
-    }
+       $userAgentValue = $_SERVER['HTTP_USER_AGENT'];
+
+       $this->fOwlWebDavLog ("FGetDavClient", "USER AGENT: $userAgentValue");
+       // Mac Finder
+       if (stristr($userAgentValue,"Macintosh") || stristr($userAgentValue,"Darwin"))
+       {
+          $this->dav_client = "MacDarwin";
+       }
+       // Mac Goliath
+       if (stristr($userAgentValue,"Cyberduck"))
+       {
+          $this->dav_client = "Cyberduck";
+       }
+       // Mac Goliath
+       if (stristr($userAgentValue,"Goliath"))
+       {
+          $this->dav_client = "Goliath";
+       }
+       $this->fOwlWebDavLog ("FGetDavClient", "Dav Client: $this->dav_client");
+     }
+
 
     function _fBasename($path, $suffix = '') {
       $path = preg_replace('|^.+[\\/]|', '', $path);
