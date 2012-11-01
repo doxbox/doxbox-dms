@@ -1101,7 +1101,7 @@ $owl_lang->sesstimeout			= "Čas Vaší sešn vypršel, prosím znovu se přihla
 $owl_lang->virus_infected 		= "Soubor obsahuje virus";
 $owl_lang->virus_return_val		= "Antivirus navrátil hodnotu:";
 $owl_lang->watermark_string		= "Důverný";
-$owl_lang->watermark_source		= "Owl verze 1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

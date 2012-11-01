@@ -1095,7 +1095,7 @@ $owl_lang->sessinuse			 = "這個行程已經被另一台主機占用，點閱�
 $owl_lang->sesstimeout			 = "你連接逾時，請重新登入<BR>";
 $owl_lang->virus_infected 		 = "受病毒感染的檔案";
 $owl_lang->watermark_string             = "Confidential";
-$owl_lang->watermark_source             = "Owl Repository 1.10";
+$owl_lang->watermark_source             = "DoxBox " . DOXBOX_VERSION;
 
 $owl_lang->virus_return_val		 = "防毒軟體傳回數值：";
 

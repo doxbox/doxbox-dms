@@ -23,6 +23,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
+*/
 
 
 $owl_lang->sendthisfile 	= "Wyślij ten plik";
@@ -562,7 +563,7 @@ $owl_lang->sesstimeout			= "Twoja sesja wygasła. Zaloguj się ponownie<br />";
 $owl_lang->virus_infected               = "PLIK ZAINFEKOWANY WIRUSEM";
 $owl_lang->virus_return_val             = "Wartość zwracana przez program antywirusowy:";
 $owl_lang->watermark_string		= "Tajne";
-$owl_lang->watermark_source		= "Repozytorium Owl 1.10;
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

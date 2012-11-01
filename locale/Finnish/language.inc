@@ -1096,7 +1096,7 @@ $owl_lang->orphaned			= "&#8211; Ei omistajaa  &#8211;";
 $owl_lang->virus_infected 		= "TIEDOSTOSSA ON VIRUS";
 $owl_lang->virus_return_val		= "Virus ohjelma palautti arvon:";
 $owl_lang->watermark_string             = "Confidential";
-$owl_lang->watermark_source             = "Owl Repository 1.10";
+$owl_lang->watermark_source             = "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

@@ -1107,7 +1107,7 @@ $owl_lang->sesstimeout  = "Sessione scaduta, ricollegarsi...<br />";
 $owl_lang->virus_infected   = "DOCUMENTO INFETTATO DA VIRUS";
 $owl_lang->virus_return_val  = "Virus Program Return value:";
 $owl_lang->watermark_string             = "Confidential";
-$owl_lang->watermark_source             = "DMS Repository 1.10";
+$owl_lang->watermark_source             = "DoxBox " . DOXBOX_VERSION;
 
  
 //******************************************************** 

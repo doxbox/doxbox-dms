@@ -1097,7 +1097,7 @@ $owl_lang->sesstimeout			= "Uw sessie is verlopen; Log opnieuw in a.u.b.<br />";
 $owl_lang->virus_infected 		= "BESTAND MET VIRUS-INFECTIE";
 $owl_lang->virus_return_val		= "Uitkomst virus-programma:";
 $owl_lang->watermark_string		= "Vertrouwelijk";
-$owl_lang->watermark_source		= "Owl bestandsbeheer 1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

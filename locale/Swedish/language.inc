@@ -1110,7 +1110,7 @@ $owl_lang->sesstimeout			= "Du har loggats ut pga inaktivitet, vänligen logga i
 $owl_lang->virus_infected 		= "VIRUSINFEKTERAD FIL";
 $owl_lang->virus_return_val		= "Svar från Virusprogrammet:";
 $owl_lang->watermark_string		= "Konfidentiell";
-$owl_lang->watermark_source		= "Owl Förråd 0.1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

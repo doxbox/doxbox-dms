@@ -1076,7 +1076,7 @@ $owl_lang->sesstimeout                          = "Votre session s'est termin&ea
 $owl_lang->virus_infected               	= "FICHIER INFECTE PAR UN VIRUS";
 $owl_lang->virus_return_val             	= "L'anti-virus retourne la valeur :";
 $owl_lang->watermark_string             	= "Confidential";
-$owl_lang->watermark_source             	= "DoxBox 1.10";
+$owl_lang->watermark_source             	= "DoxBox " . DOXBOX_VERSION;
 
 
 //********************************************************

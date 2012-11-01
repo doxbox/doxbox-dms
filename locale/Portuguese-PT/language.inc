@@ -1108,7 +1108,7 @@ $owl_lang->sesstimeout			= "A sua sess&atilde;o expirou, por favor fa&ccedil;a u
 $owl_lang->virus_infected 		= "ARQUIVO INFECTADO COM VIRUS";
 $owl_lang->virus_return_val		= "O programa anti-virus devolveu o seguinte:";
 $owl_lang->watermark_string		= "Confidencial";
-$owl_lang->watermark_source		= "Reposit&oacute;rio Owl 1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

@@ -26,6 +26,7 @@
  * $Id: owl.lib.php,v 1.98 2006/11/16 16:02:40 b0zz Exp $
  */
 defined( 'OWL_INCLUDE' ) or die( 'Access Denied' );
+define( 'DOXBOX_VERSION' ,'1.11');
 
 define('INIT_USERNAME','USERNAME_EMPTY_GT_THAN_20_TAPERRED_WITH');
 

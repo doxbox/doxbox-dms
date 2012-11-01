@@ -1097,7 +1097,7 @@ $owl_lang->sesstimeout			= "Sesi Anda telah berakhir, silakan log masuk kembali<
 $owl_lang->virus_infected 		= "BERKAS TERINFEKSI VIRUS";
 $owl_lang->virus_return_val		= "Nilai Kembalian Program Virus:"; //Virus Program Return value
 $owl_lang->watermark_string		= "Pribadi";
-$owl_lang->watermark_source		= "Tempat Penyimpanan Owl 1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

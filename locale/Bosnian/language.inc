@@ -1357,7 +1357,7 @@ $owl_lang->owl_file_link                        = "File Link:";
 $owl_lang->alt_hot_link                         = "Display Direct URL";
 $owl_lang->alt_link_folder                      = "Link This Folder";
 $owl_lang->watermark_string     = "Confidential";
-$owl_lang->watermark_source     = "Owl Repository 1.10";
+$owl_lang->watermark_source     = "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // Field Types BEGIN

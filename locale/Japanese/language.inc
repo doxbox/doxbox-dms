@@ -1101,7 +1101,7 @@ $owl_lang->sesstimeout			= "あなたのセッションはタイムアウトし�
 $owl_lang->virus_infected 		= "ウィルスに感染したファイル";
 $owl_lang->virus_return_val		= "ウィルスプログラムからの戻り値:";
 $owl_lang->watermark_string		= "機密";
-$owl_lang->watermark_source		= "DMS 1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

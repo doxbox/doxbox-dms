@@ -1088,7 +1088,7 @@ $owl_lang->sesstimeout          = "La teva sessi&oacute; ha expirat, si us plau 
 $owl_lang->virus_infected 		= "FITXER INFECTAT PER VIRUS";
 $owl_lang->virus_return_val		= "Valor retornat per l'antivirus:";
 $owl_lang->watermark_string             = "Confidential";
-$owl_lang->watermark_source             = "Owl Repository 1.10";
+$owl_lang->watermark_source             = "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

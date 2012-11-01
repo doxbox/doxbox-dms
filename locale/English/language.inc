@@ -1228,7 +1228,7 @@ $owl_lang->sesstimeout			= "Your session has timed out, please re-login<br />";
 $owl_lang->virus_infected 		= "VIRUS INFECTED FILE";
 $owl_lang->virus_return_val		= "Virus Program Return value" . LABEL_TERMINATOR;
 $owl_lang->watermark_string		= "Confidential";
-$owl_lang->watermark_source		= "Ddox Box 1.10";
+$owl_lang->watermark_source		= "DoxBox " . DOXBOX_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END

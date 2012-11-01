@@ -1061,7 +1061,7 @@ $owl_lang->sesstimeout        		= "Zeit&uuml;berschreitung! Bitte melden Sie sic
 $owl_lang->virus_infected 		= "VIRUSINFIZIERTE DATEI";
 $owl_lang->virus_return_val		= "Antivirus Programm Ausgabewert" . LABEL_TERMINATOR;
 $owl_lang->watermark_string             = "Vertraulich";
-$owl_lang->watermark_source             = "Owl Quelle 1.11";
+$owl_lang->watermark_source             = "DoxBox " . OWL_VERSION;
 
 //********************************************************
 // lib/owl.lib.php  END
