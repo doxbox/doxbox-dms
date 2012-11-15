@@ -1630,17 +1630,51 @@ function fGenerateThumbNail($fid)
                    exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $path . "[0]\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
                    $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png";
                 break;
+                case "docx":
+                case "xlsx":
+                   $archive = new PclZip($path);
+                   $aListOfFiles = $archive->listContent();
+                   if ($aListOfFiles == 1 and $default->debug == true)
+                   {
+                     printError("DEBUG: Invalid Document file format");
+                   }
+                   $cListSeparator = '';
+                   $sCoverPageFile = '';
+
+                   while ($aFileDetails = current($aListOfFiles))
+                   {
+                     if( preg_match('/thumbnail\..+/', $aFileDetails["filename"]))
+                     {
+                       $iContentFileIndex .=  $cListSeparator . $aFileDetails["index"];
+                       $cListSeparator = ',';
+                       $sCoverPageFile = $aFileDetails["filename"];
+                       break;
+                     }
+                     next($aListOfFiles);
+                   }
+      
+                   if (!empty($sCoverPageFile))
+                   {
+                      if ($archive->extractByIndex($iContentFileIndex, $tmpDir) == 0 and $default->debug == true)
+                      {
+                         printError("DEBUG: " .$archive->errorInfo(true), "N: $newpath P: $tmpDir");
+                      }
+                      else
+                      {
+                         $path = $tmpDir .DIR_SEP. $sCoverPageFile;
+                         $temp_full_size_png = $path;
+                      }
+                   }
+                break;
                 default:
                    $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png";
                 break;
             }
              exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $path . "\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
-           //exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $path . "\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
          }
 
-     //print("<br />T: $temp_full_size_png <br />");
-         //$temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png"; 
-         if (! file_exists($temp_full_size_png)) 
+
+         if (!file_exists($temp_full_size_png)) 
          {
             $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp-0.png";
          } 
@@ -1655,11 +1689,8 @@ function fGenerateThumbNail($fid)
          }
          $imagewidth = $imagedata[0]; 
 
-     //print("<pre>"); 
-     //print("T: $temp_full_size_png ");
-     //print_r($imagedata);
-     //print("</pre>"); 
-//exit;
+        // We have an Image of some sort, Generate the 3 Thumbnail sizes
+
          if ($imagewidth > 0)
          {
             if ($default->thumbnails_small_width > 0)
