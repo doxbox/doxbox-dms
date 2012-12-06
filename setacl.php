@@ -544,7 +544,7 @@ if ($default->show_users_in_group == '1')
             {
                $xtpl->assign('FOLDER_USER_GRP_NAME', "facl_owl" . $aclType . "_" . $val);
                $xtpl->assign('FOLDER_USER_GRP_VALUE', $val);
-               $xtpl->assign('FOLDER_USER_GRP_CHECKED', fGetFAclChecked($id, $val, "owl" .$aclType, "users"));
+               $xtpl->assign('FOLDER_USER_GRP_CHECKED', fGetFAclChecked($id, $val, "owl" .$aclType, "user"));
                $xtpl->parse('main.FolderPermUsrGrp.FolderPermUsrGrpAcl');
             }
             $xtpl->parse('main.FolderPermUsrGrp');
@@ -727,7 +727,7 @@ function fPrintSetFileAcl($id, $type = "user")
             {
                $xtpl->assign('FILE_USER_GRP_NAME', "acl_owl" . $aclType . "_" . $val);
                $xtpl->assign('FILE_USER_GRP_VALUE', $val);
-               $xtpl->assign('FILE_USER_GRP_CHECKED', fGetAclChecked($id, $val, "owl$aclType", "users"));
+               $xtpl->assign('FILE_USER_GRP_CHECKED', fGetAclChecked($id, $val, "owl$aclType", "user"));
                if ($type == "admin")
                {
                   $xtpl->parse('main.FilePermUsrGrp.FilePermUsrGrpAcl');
