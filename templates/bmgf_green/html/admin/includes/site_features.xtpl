@@ -955,6 +955,44 @@ LEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 
    </tr>
    </table>
 </div>
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+   <tr>
+      <td width="1%" align="left"><a id="dl_toggle" href="#" onclick="if (imgDLState == 0 ) { document.dl_image.src = '{THEME}/ui_nav/minimize.png';} else {document.dl_image.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="dl_image" border="0"></a></td>
+      <td class="admin4" width="99%">{DL_COUNT_HEADING}</td>
+   </tr>
+</table>
+
+<div id="dl_slide" style='display:none'>
+   <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
+     <tr>
+         <td class="form1">{DL_COUNT_ENABLE}</td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_COUNT_ENABLE}','content','{DL_COUNT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="dl_count" value="1"{DL_COUNT_CHECKED} /></td>
+      </tr>
+     <tr>
+         <td class="form1">{DL_BLOCK_LABEL}</td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_BLOCK_LABEL}','content','{DL_BLOCK_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="dl_block" value="1"{DL_BLOCK_CHECKED} /></td>
+      </tr>
+   <tr>
+      <td class="form1"><label for="dl_count_trigger">{DL_COUNT_TRIGGER_LABEL}</label></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_COUNT_TRIGGER_LABEL}','content','{DL_COUNT_TRIGGER_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_count_trigger" type="text" name="dl_count_trigger" size="20" value="{DL_COUNT_TRIGGER_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="dl_size_trigger">{DL_SIZE_TRIGGER_LABEL}</label></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_SIZE_TRIGGER_LABEL}','content','{DL_SIZE_TRIGGER_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_size_trigger" type="text" name="dl_size_trigger" size="20" value="{DL_SIZE_TRIGGER_VALUE}" /></td>
+   </tr>
+   <tr>
+      <td class="form1"><label for="dl_len">{DL_LEN_LABEL}</label></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_LEN_LABEL}','content','{DL_LEN_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_len" type="text" name="dl_len" size="20" value="{DL_LEN_VALUE}" /></td>
+   </tr>
+   <tr>
+   <tr>
+      <td class="form1"><label for="dl_notification_list">{DL_NOTIFICATION_LIST_LABEL}</label></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_NOTIFICATION_LIST_LABEL}','content','{NOTIFICATION_LIST_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput_large" id="dl_notification_list" type="text" name="dl_notification_list" size="190" value="{DL_NOTIFICATION_LIST_VALUE}" /></td>
+   </tr>
+   </table>
+</div>
+
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
 <td class="form2" width="100%" colspan="2">

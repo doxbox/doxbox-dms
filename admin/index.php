@@ -539,6 +539,35 @@ function printusers()
             $xtpl->assign('USER_PREF_ACCESS_SELECTED', ' checked="checked"');
          }
 
+
+         $aUserAccess[0] = $owl_lang->user_access_webdav_label;
+         $aUserAccess[1] = $owl_lang->user_access_interface_label;
+         $aUserAccess[2] = $owl_lang->user_access_both_label;
+
+         $xtpl->assign('USER_DL_COUNT_EXCLUDED_LABEL', $owl_lang->user_dl_count_excluded_label);
+         $xtpl->assign('USER_DL_COUNT_EXCLUDED_EXTENDED', $owl_lang->user_dl_count_excluded_extended);
+         $xtpl->assign('USER_DL_COUNT_EXCLUDED_CHECKED', '');
+         if ($sql->f('dl_count_excluded') == 1)
+         {
+            $xtpl->assign('USER_DL_COUNT_EXCLUDED_CHECKED', ' checked="checked"');
+         }
+
+         $xtpl->assign('USER_ACCESS_LABEL', $owl_lang->user_access_label);
+         $xtpl->assign('USER_ACCESS_HELP_TEXT',  $owl_lang->user_access_extended);
+         $i = 0;
+         foreach($aUserAccess as $g)
+         {
+            $xtpl->assign('USER_ACCESS_VALUE', $i);
+            $xtpl->assign('USER_ACCESS_CAPTION', $g);
+            $xtpl->assign('USER_ACCESS_SELECTED', '');
+            if ($i == $sql->f("user_access"))
+            {
+               $xtpl->assign('USER_ACCESS_SELECTED', " checked=\"checked\"");
+            }
+            $i++;
+            $xtpl->parse('main.User.UserAccess');
+         }
+
          if ($id != 1)
          {
             $urlArgs['old_disabled']      = $sql->f("disabled");
@@ -2848,6 +2877,40 @@ function printusers()
       $xtpl->assign('PPTTOTEXT_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('PPTTOTEXT_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('PPTTOTEXT_TOOLPATH_VALUE', $default->ppttotext_path);
+/** DOWNLOAD COUNT FEATURE */
+
+      $xtpl->assign('DL_COUNT_HEADING', $owl_lang->maximum_download_title);
+      $xtpl->assign('DL_COUNT_ENABLE', $owl_lang->maximum_download_feature);
+      $xtpl->assign('DL_COUNT_HELP_TEXT', $owl_lang->maximum_download_feature_extended);
+
+      $xtpl->assign('DL_COUNT_CHECKED', '');
+      if ($default->use_download_count == 1)
+      {
+         $xtpl->assign('DL_COUNT_CHECKED', ' checked="checked"');
+      }
+
+      $xtpl->assign('DL_BLOCK_LABEL', $owl_lang->maximum_download_block);
+      $xtpl->assign('DL_BLOCK_HELP_TEXT', $owl_lang->maximum_download_block_extended);
+
+      $xtpl->assign('DL_BLOCK_CHECKED', '');
+      if ($default->download_block_user == 1)
+      {
+         $xtpl->assign('DL_BLOCK_CHECKED', ' checked="checked"');
+      }
+
+      $xtpl->assign('DL_COUNT_TRIGGER_LABEL', $owl_lang->maximum_download_trigger);
+      $xtpl->assign('DL_COUNT_TRIGGER_HELP_TEXT', $owl_lang->maximum_download_trigger_extended);
+      $xtpl->assign('DL_COUNT_TRIGGER_VALUE', $default->download_count_trigger);
+
+      $xtpl->assign('DL_SIZE_TRIGGER_LABEL', $owl_lang->maximum_download_size_trigger);
+      $xtpl->assign('DL_SIZE_TRIGGER_HELP_TEXT', $owl_lang->maximum_download_size_trigger_extended);
+      $xtpl->assign('DL_SIZE_TRIGGER_VALUE', $default->download_size_trigger);
+
+      $xtpl->assign('DL_NOTIFICATION_LIST_LABEL', $owl_lang->maximum_download_notify);
+      $xtpl->assign('DL_NOTIFICATION_LIST_VALUE', implode(',', $default->download_notify_list));
+
+      $xtpl->assign('DL_LEN_LABEL', $owl_lang->maximum_download_len);
+      $xtpl->assign('DL_LEN_VALUE', $default->download_sess_length);
 
 
       $xtpl->assign('BTN_CHANGE', $owl_lang->change);

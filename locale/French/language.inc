@@ -1634,4 +1634,34 @@ $owl_lang->report7_title_file_size = "File Size";
 $owl_lang->report7_title_file_count = "File Count";
 $owl_lang->report7_title_file_path = "File path";
 
+// *********************************
+// Maximumn Download Count Feature
+// *********************************
+$owl_lang->maximum_download_title = "DOWNLOAD COUNT FEATURE";
+$owl_lang->maximum_download_feature = "Enable Download Count Feature" . LABEL_TERMINATOR;
+$owl_lang->maximum_download_feature_extended = "Feature that Tracks the number of downloaded files and the total number of Bytes downloated, and blocks the user if Tresholds are reached.  This feature is to prevent Download abuse";
+$owl_lang->maximum_download_trigger = "Max # File Download Trigger" . LABEL_TERMINATOR;
+$owl_lang->maximum_download_trigger_extended = "Maximun number of downloads in a set number of seconds";
+$owl_lang->maximum_download_size_trigger = "Max Size in bytes Download Trigger" . LABEL_TERMINATOR;
+$owl_lang->maximum_download_size_trigger_extended = "Total Size in bytes a user can download before he will be blocked from downloading any files";
+$owl_lang->maximum_download_block = "Block User when Limits Reached" . LABEL_TERMINATOR;
+$owl_lang->maximum_download_block_extended = "Account gets Disabled when the either of the threshold gets Reached, except users that are marked excluded from this feature in their Profile";
+$owl_lang->maximum_download_len = "Session Length in Minutes" . LABEL_TERMINATOR;
+$owl_lang->maximum_download_notify = "Comma separated Notification List" . LABEL_TERMINATOR;
+
+$owl_lang->maximum_download = "Your account has been Disabled. Contact your Administrator. ";
+
+$owl_lang->user_dl_count_excluded_label = "User Excluded From Download Count Feature" . LABEL_TERMINATOR;;
+$owl_lang->user_dl_count_excluded_extended = "Exclude this user from the Download Count Feature";
+
+$owl_lang->user_access_webdav_label     = "Web Dav";
+$owl_lang->user_access_interface_label  = "Web Interface";
+$owl_lang->user_access_both_label       = "Both";
+$owl_lang->user_access_label            = "User Interface Access" . LABEL_TERMINATOR;;
+$owl_lang->user_access_extended         = "Type of Acccess This user is granted";
+$owl_lang->user_access_msg            = "Web Interface Access Denied";
+
+$owl_lang->user_dl_count_subject        = "Download Threshold Notification";
+$owl_lang->user_dl_count_disabled       = "User Account was DISABLED";
+
 ?>

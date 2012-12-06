@@ -183,6 +183,8 @@ if ($action == "user")
    $attachfile = fIntializeCheckBox($attachfile);
   
    $disabled = fIntializeCheckBox($disabled);
+   $user_access = fIntializeCheckBox($user_access);
+   $dl_count_excluded = fIntializeCheckBox($dl_count_excluded);
 
    // if the user was disabled by the admin LOG Who dnne it
 
@@ -264,7 +266,7 @@ if ($action == "user")
       }
    } 
 
- $sql->query("UPDATE $default->owl_users_table SET groupid='$groupid',username='$edit_loginname',name='$name',password='$pass',quota_current = '$quota_current', quota_max='$quota', email='$email',notify='$notify',attachfile='$attachfile',disabled='$disabled',noprefaccess='$noprefaccess',language='$newlanguage',maxsessions='$maxsessions',useradmin='$useradmin', newsadmin='$newsadmin', comment_notify = '$comment_notify', buttonstyle = '$newbuttons', homedir = '$homedir', firstdir = '$firstdir' , email_tool = '$email_tool' , change_paswd_at_login = '$change_paswd_at_login', expire_account = '$expire_account', user_auth='$user_auth', logintonewrec='$logintonewrec', groupadmin='$groupadmin', user_offset='$user_offset', viewreports='$viewreports', viewlogs='$viewlogs', user_default_view='$user_default_view', user_major_revision='$user_major_revision', user_minor_revision='$user_minor_revision', user_default_revision = '$user_default_revision', pdf_watermarks = '$pdf_watermarks' where id = '$id'");
+ $sql->query("UPDATE $default->owl_users_table SET groupid='$groupid',username='$edit_loginname',name='$name',password='$pass',quota_current = '$quota_current', quota_max='$quota', email='$email',notify='$notify',attachfile='$attachfile',disabled='$disabled',noprefaccess='$noprefaccess',language='$newlanguage',maxsessions='$maxsessions',useradmin='$useradmin', newsadmin='$newsadmin', comment_notify = '$comment_notify', buttonstyle = '$newbuttons', homedir = '$homedir', firstdir = '$firstdir' , email_tool = '$email_tool' , change_paswd_at_login = '$change_paswd_at_login', expire_account = '$expire_account', user_auth='$user_auth', logintonewrec='$logintonewrec', groupadmin='$groupadmin', user_offset='$user_offset', viewreports='$viewreports', viewlogs='$viewlogs', user_default_view='$user_default_view', user_major_revision='$user_major_revision', user_minor_revision='$user_minor_revision', user_default_revision = '$user_default_revision', pdf_watermarks = '$pdf_watermarks', user_access='$user_access', dl_count_excluded='$dl_count_excluded'  where id = '$id'");
 
 
    $sql->query("SELECT user_id FROM $default->owl_user_prefs WHERE user_id = '$id'");
@@ -482,6 +484,8 @@ if ($action == "add")
       $notify = fIntializeCheckBox($notify);
       $attachfile = fIntializeCheckBox($attachfile);
       $disabled = fIntializeCheckBox($disabled);
+      $user_access = fIntializeCheckBox($user_access);
+      $dl_count_excluded = fIntializeCheckBox($dl_count_excluded);
       $noprefaccess = fIntializeCheckBox($noprefaccess);
       $newsadmin = fIntializeCheckBox($newsadmin);
       $viewlogs = fIntializeCheckBox($viewlogs);
@@ -538,7 +542,7 @@ if ($action == "add")
       }
 
 
-      $sql->query("INSERT INTO $default->owl_users_table (groupid,username,name,password,quota_max,quota_current,email,notify,attachfile,disabled,noprefaccess,language,maxsessions,curlogin,lastlogin,useradmin, newsadmin, comment_notify, buttonstyle, homedir,firstdir, email_tool,change_paswd_at_login, expire_account, user_auth, logintonewrec, groupadmin, user_offset,passwd_last_changed, viewlogs, viewreports, user_default_view, user_major_revision, user_minor_revision, user_default_revision,pdf_watermarks) VALUES ('$groupid', '$edit_loginname', '$name', '" . $pass . "', '$quota', '0', '$email', '$notify','$attachfile', '$disabled', '$noprefaccess', '$newlanguage', '$maxsessions', $dNow, $dNow, '$useradmin', '$newsadmin', '$comment_notify', '$default->system_ButtonStyle', '$homedir', '$firstdir','$email_tool', '$change_paswd_at_login', '$expire_account', '$user_auth' , '$logintonewrec', '$groupadmin', '$user_offset', $dNow ,'$viewlogs', '$viewreports', '$user_default_view', '$user_major_revision', '$user_minor_revision', '$user_default_revision', '$pdf_watermarks')"); 
+      $sql->query("INSERT INTO $default->owl_users_table (groupid,username,name,password,quota_max,quota_current,email,notify,attachfile,disabled,noprefaccess,language,maxsessions,curlogin,lastlogin,useradmin, newsadmin, comment_notify, buttonstyle, homedir,firstdir, email_tool,change_paswd_at_login, expire_account, user_auth, logintonewrec, groupadmin, user_offset,passwd_last_changed, viewlogs, viewreports, user_default_view, user_major_revision, user_minor_revision, user_default_revision,pdf_watermarks, user_access, dl_count_excluded) VALUES ('$groupid', '$edit_loginname', '$name', '" . $pass . "', '$quota', '0', '$email', '$notify','$attachfile', '$disabled', '$noprefaccess', '$newlanguage', '$maxsessions', $dNow, $dNow, '$useradmin', '$newsadmin', '$comment_notify', '$default->system_ButtonStyle', '$homedir', '$firstdir','$email_tool', '$change_paswd_at_login', '$expire_account', '$user_auth' , '$logintonewrec', '$groupadmin', '$user_offset', $dNow ,'$viewlogs', '$viewreports', '$user_default_view', '$user_major_revision', '$user_minor_revision', '$user_default_revision', '$pdf_watermarks', '$user_access', '$dl_count_excluded')");
       $iNewID = $sql->insert_id($default->owl_users_table, 'id');
 
 
@@ -708,8 +712,8 @@ if ($action == "edprefs")
    $use_smtp_ssl =fIntializeCheckBox($use_smtp_ssl);
    $smtp_max_size =fIntializeCheckBox($smtp_max_size);
    $machine_time_zone =fIntializeCheckBox($machine_time_zone);
-
-
+   $dl_count = fIntializeCheckBox($dl_count);
+   $dl_block = fIntializeCheckBox($dl_block);
 
    if ($lookAtHD != "false")
    {
@@ -1162,6 +1166,12 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", info_panel_wide ='$info_panel_wide'";
    $qPrefsQuery .= ", track_favorites ='$track_favorites'";
    $qPrefsQuery .= ", show_user_info ='$show_user_info'";
+   $qPrefsQuery .= ", dl_count = '$dl_count'";
+   $qPrefsQuery .= ", dl_block = '$dl_block'";
+   $qPrefsQuery .= ", dl_count_trigger = '$dl_count_trigger'";
+   $qPrefsQuery .= ", dl_size_trigger = '$dl_size_trigger'";
+   $qPrefsQuery .= ", dl_notification_list = '$dl_notification_list'";
+   $qPrefsQuery .= ", dl_len = '$dl_len'";
    $qPrefsQuery .= ", motd ='$motd'";
 
 //exit('SQL: ' . $qPrefsQuery);

@@ -163,6 +163,12 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
               return false;
           }
 
+          if ($sql->f("user_access") == 1)
+          {
+              $this->fOwlWebDavLog ("check_auth", "User: $username is Doesn't have access to WebDav");
+              return false;
+          }
+
           $iRootDir = $iHomeDir;
 
           $sRootFolderName = fid_to_name('1'); 

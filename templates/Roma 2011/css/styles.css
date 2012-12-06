@@ -699,6 +699,17 @@ z-index:100;
 #loginname:focus {
 background-color:#fff8bc;
 }
+.finput_large
+{
+width:400px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+background-color: #FFFFFF;
+border:1px solid #7F9DB9;
+padding:5px 10px;
+font-size:10px;
+}
 .finput1,
 .search_panel .sinput1 {
 width:200px;

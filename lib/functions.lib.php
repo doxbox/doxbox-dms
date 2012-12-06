@@ -1885,8 +1885,16 @@ function verify_login($username, $password)
       }
       else
       {
-         $verified["bit"] = 1;
+         if ($sql->f("user_access") < 1)
+         {
+            $verified["bit"] = 4;
+         }
+         else
+         {
+            $verified["bit"] = 1;
+         }
       }
+
       $verified["user"] = $sql->f("username");
       $verified["uid"] = $sql->f("id");
       $verified["group"] = $sql->f("groupid");
@@ -3866,6 +3874,25 @@ function getprefs ()
    $default->show_user_info = $sql->f("show_user_info");
    $default->owl_motd = $sql->f("motd");
 
+/** Download Count feature */
+
+   $default->use_download_count = $sql->f('dl_count');
+   $default->download_block_user = $sql->f('dl_block');
+   $default->download_count_trigger = $sql->f('dl_count_trigger');
+   $default->download_size_trigger = $sql->f('dl_size_trigger');
+   $default->download_notify_list = array();
+   $default->download_notify_list = explode(',' , $sql->f('dl_notification_list'));
+   $default->download_sess_length = $sql->f('dl_len');
+
+
+   $sql->query("SELECT username from $default->owl_users_table where dl_count_excluded = '1'");
+   $default->download_exclusion = array();
+   while ($sql->next_record())
+   {
+      $default->download_exclusion[] = $sql->f("username");
+   }
+
+
    $default->owl_maintenance_mode = $sql->f("owl_maintenance_mode");
    // 0 = Old Standard Owl Authentication
    // 1 = .htaccess authentication (username must also exists as the Owl users Table)
@@ -5680,6 +5707,10 @@ function fGetMailBodyText($iTypeFlag, $iFileId = -1, $tempsess = 0, $type = "0")
        $aBody['SUBJECT'] =   $owl_lang->self_reg_subj;
        $sFile = "self_reg";
        break;
+      case DOWNLD_COUNT:
+       $aBody['SUBJECT'] =   $owl_lang->user_dl_count_subject;
+       $sFile = "download_thershold";
+       break;
       case MAIL_FILE:
        $sFile = "mail_file";
        break;
@@ -5742,7 +5773,6 @@ function fGetMailBodyText($iTypeFlag, $iFileId = -1, $tempsess = 0, $type = "0")
       fclose($handle);
    }
    
-   //$sBody = iconv("UTF8", "ISO-8859-1", $sBody);
    $aBody['TXT'] = $sBody;
    $sBody = "";
    
@@ -5780,7 +5810,7 @@ function fGetMailBodyText($iTypeFlag, $iFileId = -1, $tempsess = 0, $type = "0")
       }
       fclose($handle);
    }
-   //$sBody = iconv("UTF8", "ISO-8859-1", $sBody);
+   
    $aBody['HTML'] = $sBody;
    return $aBody;
 }

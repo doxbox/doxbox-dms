@@ -1,0 +1,20 @@
+# Repository Name: %REPO_NAME%
+# Current User: %CURRENT_USER%
+# Current User ID: %CURRENT_USER_ID%
+# User Dld Count:  %DL_COUNT%
+# System Dld Count: %SYS_DL_COUNT%
+# User Size Count:  %SIZE_COUNT%
+# System Size Count: %SYS_SIZE_COUNT%
+
+USER: %CURRENT_USER% (id: %CURRENT_USER_ID%) has reached Download thresholds for one session
+
+%USER_DISABLED% 
+
+Download Count: %DL_COUNT% / %SYS_DL_COUNT%
+Download Size: %SIZE_COUNT% / %SYS_SIZE_COUNT%
+
+Last Downloaded files are: 
+
+%FILE_LIST%
+
+Repository: %REPO_NAME%

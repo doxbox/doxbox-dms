@@ -601,8 +601,23 @@ if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3)) or ($
          }
          else
          {
-            owl_syslog(LOGIN_FAILED, $verified["uid"], 0, 0, $owl_lang->log_login_det . $verified["user"] , "LOGIN");
-            header("Location: index.php?login=1&failure=1" . $sUrlMod);
+            if ($verified["bit"] == 4)
+            {
+               if ($default->auth == 0)
+               {
+                  owl_syslog(LOGIN_FAILED, $verified["uid"], 0, 0, $owl_lang->log_login_det . $verified["user"] . " " . 'Web Interface access denied', "LOGIN");
+                  header("Location: index.php?login=1&failure=10" . $sUrlMod);
+               }
+               else
+               {
+                  printError("Web Interface access denied");
+               }
+            }
+            else
+            {
+               owl_syslog(LOGIN_FAILED, $verified["uid"], 0, 0, $owl_lang->log_login_det . $verified["user"] , "LOGIN");
+               header("Location: index.php?login=1&failure=1" . $sUrlMod);
+            }
          }
       }
    }
@@ -662,6 +677,14 @@ if (($login == 1) or ($failure > 0))
       case 9: 
          $sql->query("DELETE FROM $default->owl_sessions_table WHERE sessid = '$sess'");
          $message = "SYSTEM IS MAINTENANCE MODE TRY AGAIN LATER\n";
+         $severity = 'msg_error';
+         break;
+      case 10:
+         $message = $owl_lang->user_access_msg;
+         $severity = 'msg_error';
+         break;
+      case 11:
+         $message = sprintf($owl_lang->maximum_download, $default->download_sess_length );
          $severity = 'msg_error';
          break;
       default:

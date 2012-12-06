@@ -148,6 +148,22 @@
       <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="disabled" value="1" {USER_DISABLE_SELECTED} /></td>
    </tr>
 <!-- END: Disabled -->
+   <tr>
+      <td class="form1">{USER_PREF_ACCESS_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="noprefaccess" value="1" {USER_PREF_ACCESS_SELECTED} /></td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_ACCESS_LABEL}</td>
+      <td class="form1" width="100%">
+<!-- BEGIN: UserAccess -->
+         <input  type="radio" value="{USER_ACCESS_VALUE}" name="user_access" {USER_ACCESS_SELECTED} />{USER_ACCESS_CAPTION}
+<!-- END: UserAccess -->
+      </td>
+   </tr>
+   <tr>
+      <td class="form1">{USER_DL_COUNT_EXCLUDED_LABEL}</td>
+      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="dl_count_excluded" value="1" {USER_DL_COUNT_EXCLUDED_CHECKED} /></td>
+   </tr>
 <!-- BEGIN: RegularUserOnly -->
 <!-- BEGIN: Disabled -->
    <tr>
@@ -162,10 +178,6 @@
    <tr>
       <td class="form1">{USER_PDF_WATERMARK_LABEL}</td>
       <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="pdf_watermarks" value="1" {USER_PDF_WATERMARK_SELECTED} /></td>
-   </tr>
-   <tr>
-      <td class="form1">{USER_PREF_ACCESS_LABEL}</td>
-      <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="noprefaccess" value="1" {USER_PREF_ACCESS_SELECTED} /></td>
    </tr>
    <tr>
       <td class="form1">{USER_VIEW_LOG_LABEL}</td>

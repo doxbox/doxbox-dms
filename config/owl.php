@@ -75,7 +75,7 @@ define('DIR_SEP', DIRECTORY_SEPARATOR);
 // *** Site URL Root
 // owl_root_url should just contain the portion of the url from the 
 // website root (omit the http://servername portion of the url)
-$default->owl_root_url		= "/Projects/owl-intranet/owl-1.10";
+$default->owl_root_url		= "/Projects/owl-intranet/doxbox";
 // use this line for modified definition and comment prior line
 //  
 // use $default->owl_root_url to build subdirectory location names
@@ -320,6 +320,8 @@ $default->owl_wordidx  			= $default->owl_table_prefix . "wordidx";
 
 // Table with search words in owl_wordidx table and the documents they occur in 
 $default->owl_searchidx 		= $default->owl_table_prefix . "searchidx";
+// Table to track the users Download count
+$default->owl_user_downloads            = $default->owl_table_prefix . "user_downloads";
 
 
 // Custom document types and associated fields
@@ -446,7 +448,7 @@ $default->owl_default_db = 0;
 $default->owl_db_id[0]           = "0";
 
 // DATABASE[0] - Display Name
-$default->owl_db_display_name[0]   = "owl Ver. 1.10";
+$default->owl_db_display_name[0]   = "owl Ver. 1.11";
 
 // DATABASE[0] - Filesystem storage Location
 // WARNING: CHANGE THIS LOCATION
@@ -466,8 +468,7 @@ $default->owl_db_user[0]           = "root";
 $default->owl_db_pass[0]           = "";
 $default->owl_db_host[0]           = "localhost";
 
-$default->owl_db_name[0]           = "owl_110";
-$default->owl_db_name[0]           = "owl_support";
+$default->owl_db_name[0]           = "owl_development";
 
 
 // DATABASE[0] - SECURITY - LDAP Info
@@ -627,7 +628,7 @@ $default->file_hash_algorithm[3] = "MHASH_RIPEMD160";
 // **********************************************************************
 // *** OWL STATIC - GENERAL DISPLAY OPTIONS - Footer Display Information
 // This is to display the version information in the footer
-$default->version = "DoxBox 1.10 (2011-Dec-01)";
+$default->version = "DoxBox 1.11 (2012-Sep-22)";
 $default->site_title = "Document Management System ";
 $default->phpversion = "5.3.3";
 
@@ -670,7 +671,7 @@ $default->popup_lifetime = 3000;
 // HEBREW:        $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]אבגדהוזחטיכלמנסעפצקרשתךףץם()@#$\{}+,&;";
 // RUSSIAN:       $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]()@#$\{}+,&;ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁёйцукенгшщзхъфывапролджэячсмитьбю";
 // DEFAULT:       $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÐðÏïÑñÒòÓóÔôÕõÖö×÷ØøÙùÚúÛûÜüÝýßÞþÿ()@#$\{}+,&;";
-$default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÐðÏïÑñÒòÓóÔôÕõÖö×÷ØøÙùÚúÛûÜüÝýßÞþÿ()@#$\{}+,&;";
+$default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÐðÏïÑñÒòÓóÔôÕõÖö×÷ØøÙùÚúÛûÜüÝýßÞþÿ()@#$\{}+,&;§";
 
 // **********************************************************************
 // *** OWL STATIC - FILE UPLOAD - INDEX ON ADD ARCHIVE
@@ -862,6 +863,8 @@ $default->thumbnail_image_type[] = "ai";
 $default->thumbnail_image_type[] = "pdf";
 $default->thumbnail_image_type[] = "psd";
 $default->thumbnail_image_type[] = "epub";
+$default->thumbnail_image_type[] = "docx";
+$default->thumbnail_image_type[] = "xlsx";
 
 // **********************************************************************
 // *** OWL STATIC - FILE AND FOLDER DOWNLOAD 
@@ -1250,26 +1253,14 @@ $default->max_syslog_reported_rows = 5000;
 // with Flowplayer Flash Video Player
 // *************************************************
 $default->aVideoFiles = array("flv", "mov");
-$default->video_base_url = "http://www.example.com/owl-1.10";
-$default->video_base_url = "http://bozzit.homelinux.com/Projects/owl-intranet/owl-1.10";
+$default->video_base_url = "http://www.example.com/doxbox";
+$default->video_base_url = "http://bozzit.homelinux.com/Projects/owl-intranet/doxbox";
 
 // If this parameter is set to 1
 // On file Play / View a Playlist is displayed of ALL the Video
 // Files in the same directory as the file being viewed / played
 $default->VideoPlayList = 1;
 // *************************************************
-
-// *************************************************
-// This allows the Admin to be notified, when a user downloads
-// More than download_count_trigger OR download_size_trigger
-// during one SESSION
-// *************************************************
-$default->use_download_count = 0;
-$default->download_count_trigger = 50;
-$default->download_size_trigger  = 1024 * 1024 * 150; // 150 MB
-$default->download_notify_list  = array();
-$default->download_notify_list[]  = 'security_manager1@yourdomain.com';
-$default->download_notify_list[]  = 'security_manager2@yourdomain.com';
 
 $default->wysiwyg_permited_html_tags = '<br><b><h1><h2><h3><h4><font><color><br /><p><strong><em><span>';
 $default->default_permited_html_tags = '<br><b><h1><h2><br />';

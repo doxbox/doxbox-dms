@@ -7,6 +7,7 @@ var imgNewsState_1 = 0;
 var imgRevState_0 = 0;
 var imgRevState_1 = 0;
 
+var imgDLState = 0;
 var imgHDState = 0;
 var imgBFState = 0;
 var imgCBState = 0;
@@ -554,6 +555,32 @@ if (document.getElementById('tools_slide'))
         }
 
         TOOLSSlide.toggle();
+    });
+
+}
+
+if (document.getElementById('dl_slide'))
+{
+    var DLSlide = new Fx.Slide('dl_slide');
+
+    DLSlide.open = true;
+    DLSlide.toggle();
+
+
+    $('dl_toggle').addEvent('click', function(){
+        if (imgDLState == 0)
+        {
+           document.getElementById('dl_slide').style.display = 'block';
+           DLSlide.open = false;
+           imgDLState = 1;
+        }
+        else
+        {
+           imgDLState = 0;
+           DLSlide.open = true;
+        }
+
+        DLSlide.toggle();
     });
 
 }

@@ -44,7 +44,6 @@ if ($sess == "0" and $default->anon_ro == 1 and empty($dlfileid))
 {
    header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=4&dlfileid=$dlfileid&parent=$parent&currentdb=$default->owl_current_db");
    exit;
-   //printError($owl_lang->err_login);
 }
 
 if (empty($parent) || !is_numeric($parent))
@@ -404,6 +403,9 @@ if ((check_auth($id, "file_download", $userid) == 1) or $bDownloadAllowed or fCh
       $fsize = filesize($path);
    }
 
+
+   if ( $default->use_download_count == 1)
+   {
 // **********************************
 // Hahn Download Count + MB Count
 // **********************************
@@ -421,10 +423,38 @@ else
    $iDlSize = $fsize;
 }
 
-$iNewCount = $sql->f('dl_count') + 1;
+if ($default->download_sess_length > 0)
+{
+   // GET START DATE  (NOW - 5 Minutes)
+   // GET END DATE = now
+
+   $reminder = $default->download_sess_length * 60; // * 60 seconds (to convert to seconds) 
+
+   $dEndDate = date('Y-m-d H:i:s');
+   $dStartDate =  date('Y-m-d H:i:s', strtotime("-$reminder seconds",strtotime($dEndDate)));
+
+   $sql->query("SELECT id FROM $default->owl_user_downloads  WHERE dnld_time > '$dStartDate' AND dnld_time < '$dEndDate'");
+   $iNewCount = $sql->num_rows();
+
+   // cleanup Old Download records
+   $sql->query("DELETE FROM $default->owl_user_downloads  WHERE dnld_time < '$dStartDate'");
+   $sql->query("INSERT INTO $default->owl_user_downloads  (user_id, file_id, dnld_size, dnld_time) VALUES ('$userid', '$id', '$iDlSize', " . $sql->now() . ")");
+}
+else
+{
+   $iNewCount = $sql->f('dl_count') + 1;
+}
+
 $iNewSize = $sql->f('dl_byte_count') + $iDlSize;
 
 $sql->query("UPDATE $default->owl_sessions_table set dl_count='$iNewCount', dl_byte_count='$iNewSize' WHERE sessid = '$sess'");
+
+$sUsername = uid_to_uname($userid);
+
+if (in_array($sUsername, $default->download_exclusion))
+{
+   $default->use_download_count = 0;
+}
 
 if (($iNewCount >= $default->download_count_trigger  or
      $iNewSize  >= $default->download_size_trigger)   and
@@ -453,6 +483,11 @@ if (($iNewCount >= $default->download_count_trigger  or
          $mail->SMTPSecure = "ssl";
       }
 
+      $aBody = fGetMailBodyText(DOWNLD_COUNT);
+
+      $aBody['HTML'] = fOwl_ereg_replace("\%CURRENT_USER_ID\%", $userid, $aBody['HTML'] );
+      $aBody['TXT'] = fOwl_ereg_replace("\%CURRENT_USER_ID\%", $userid, $aBody['TXT'] );
+
       //$mail->CharSet = "$owl_lang->charset"; // set the email charset to the language file charset 
       $mail->CharSet = "UTF-8"; // set the email charset to the language file charset 
       $mail->Host = "$default->owl_email_server"; // specify main and backup server
@@ -460,26 +495,63 @@ if (($iNewCount >= $default->download_count_trigger  or
       $mail->FromName = "$default->owl_email_fromname";
       $mail->WordWrap = 50; // set word wrap to 50 characters
       $mail->IsHTML(true); // set email format to HTML
-      $mail->Subject = $default->owl_email_subject . " Download Threshold Notification";
+      $mail->Subject = $aBody['SUBJECT'];
 
       foreach($default->download_notify_list as $sEmail)
       {
          $mail->AddAddress($sEmail);
       }
 
-      $mail->Body = "USER:  " . uid_to_uname($userid) . " (id: $userid) has reached Download thresholds for one session<br />";
-      $mail->Body .= "<br />Download Count:  $iNewCount / $default->download_count_trigger";
-      $mail->Body .= "<br />Download Size:   " . gen_filesize($iNewSize) . " / " . gen_filesize($default->download_size_trigger);
-      $mail->Body .= "<br />Sess ID:   " . $sess;
+      if ($default->download_block_user == 1)
+      {
+         $aBody['HTML'] = fOwl_ereg_replace("\%USER_DISABLED\%", $owl_lang->user_dl_count_disabled, $aBody['HTML'] );
+         $aBody['TXT'] = fOwl_ereg_replace("\%USER_DISABLED\%", $owl_lang->user_dl_count_disabled, $aBody['TXT'] );
+         $sql->query("UPDATE  $default->owl_users_table set disabled = '1' WHERE id  = '$userid'");
+      }
 
-      $mail->altBody = "USER:  " . uid_to_uname($userid) . " (id: $userid) has reached Download thresholds for one session\n";
-      $mail->altBody .= "\nDownload Count:  $iNewCount / $default->download_count_trigger";      $mail->altBody .= "\nDownload Size:   " . gen_filesize($iNewSize) . "  / " . gen_filesize($default->download_size_trigger);
-      $mail->altBody .= "\nSess ID:   " . $sess;
+      $aBody['HTML'] = fOwl_ereg_replace("\%DL_COUNT\%", $iNewCount, $aBody['HTML'] );
+      $aBody['TXT'] = fOwl_ereg_replace("\%DL_COUNT\%", $iNewCount, $aBody['TXT'] );
 
-      if (!$mail->Send())
+      $aBody['HTML'] = fOwl_ereg_replace("\%SYS_DL_COUNT\%", $default->download_count_trigger, $aBody['HTML'] );
+      $aBody['TXT'] = fOwl_ereg_replace("\%SYS_DL_COUNT\%", $default->download_count_trigger, $aBody['TXT'] );
+
+      $aBody['HTML'] = fOwl_ereg_replace("\%DL_COUNT\%", $iNewCount, $aBody['HTML'] );
+      $aBody['TXT'] = fOwl_ereg_replace("\%DL_COUNT\%", $iNewCount, $aBody['TXT'] );
+
+      $aBody['HTML'] = fOwl_ereg_replace("\%SIZE_COUNT\%", gen_filesize($iNewSize), $aBody['HTML'] );
+      $aBody['TXT'] = fOwl_ereg_replace("\%SYS_DL_COUNT\%", gen_filesize($default->download_size_trigger), $aBody['TXT'] );
+
+      $sql->query("SELECT file_id FROM $default->owl_user_downloads  where user_id = '$userid'");
+
+      $sFileList = '';
+
+      while ($sql->next_record())
+      {
+         $iParent = owlfileparent($sql->f('file_id'));
+         $sLocation = find_path($iParent);
+         $sName = flid_to_filename($sql->f('file_id'));
+         $sFileList = '%NL%' . $sLocation . "/" . $sName;
+      }
+
+      $aBody['HTML'] = fOwl_ereg_replace("\%FILE_LIST\%", fOwl_ereg_replace("\%NL\%", '<br />', $sFileList), $aBody['HTML'] );
+      $aBody['TXT'] = fOwl_ereg_replace("\%FILE_LIST\%", fOwl_ereg_replace("\%NL\%", "\n", $sFileList), $aBody['TXT'] );
+
+      $mail->altBody = $aBody['TXT'];
+      $mail->Body = $aBody['HTML'];
+
+      if (!$mail->Send() and $default->debug == true)
       {
          printError($owl_lang->err_email, $mail->ErrorInfo);
       }
+      else
+      {
+         if ($default->download_block_user == 1)
+         {
+              header("Location: " . $default->owl_root_url . "/index.php?failure=11&sess=$sess"); 
+              exit;
+         }
+      }
+   }
 }
 
 
