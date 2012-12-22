@@ -311,6 +311,17 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                }
             }
         }
+        /* Hide backup Directory Turned On So Hide it except for Administrators  and File Admins */
+        if ($default->hide_backup == 1 and !_fIsAdmin())
+        {
+           $this->fOwlWebDavLog ("HIDE BACKUP FOLDER", "$fullpath");
+           if (is_dir($fullpath) and $filename == $default->version_control_backup_dir_name)
+           {
+              $this->fOwlWebDavLog ("HIDE BACKUP FOLDER", "FOLDER SKIPPED Path: $fullpath - $filename");
+              continue;
+           }
+        }
+
             //if ($filename == 'Act2Win') // FOLDER
             //if ($filename == 'Bozz IT Letter.dot') // FILE
             //{
@@ -1752,7 +1763,7 @@ if ($default->restrict_view == 1)
        if ($this->owl_debug)
         {
              $file = fopen($this->owl_debugfile, 'a+');
-             fwrite($file, "[$sFunction]: $sMessage\n");
+             fwrite($file, "[" .date("Y-m-d H:i:s"). "][$sFunction]: $sMessage\n");
              fclose($file);
         }
     }
@@ -1829,6 +1840,34 @@ if ($default->restrict_view == 1)
       }
       return $path;
     }
+
+    function _fIsAdmin ()
+    {
+       global $default;
+
+       $this->fOwlWebDavLog ("_fIsAdmin", "Check Current User for Admin Access Privilege");
+
+       $groupid = owlusergroup($this->owl_userid);
+
+       if ($groupid == 0)
+       {
+          return true;
+       }
+
+       $sql = new Owl_DB;
+       $sql->query("SELECT userid,groupid from $default->owl_users_grpmem_table where userid = '$this->owl_userid' and groupid = '0'");
+
+       if ($sql->num_rows($sql) == 0)
+       {
+          return false;
+       }
+       else
+       {
+          return true;
+       }
+       return false;
+    }
+
 
 }
 
