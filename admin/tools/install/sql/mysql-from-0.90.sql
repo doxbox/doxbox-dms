@@ -102,4 +102,8 @@ alter TABLE active_sessions add column dl_byte_count int(11);
 
 alter table prefs add column `ppttotext_path` varchar(80) default NULL;
 alter table prefs add column `docRel` int(4) default NULL;
+alter table files add column `name_search` varchar(255) NOT NULL;
+alter table files add column `filename_search` varchar(255) NOT NULL;
+alter table files add column `description_search` varchar(255) NOT NULL;
+alter table files add column `metadata_search` varchar(255) NOT NULL;
 
