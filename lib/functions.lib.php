@@ -6685,7 +6685,7 @@ function radius_authenticate($usr, $pswd)
 {
    global $default;
 
-   require_once($default->owl_fs_root ."/script/radius/radius.class.php");
+   require_once($default->owl_fs_root ."/scripts/radius/radius.class.php");
 
    if(empty($usr) or empty($pswd)) 
    {
@@ -6702,6 +6702,11 @@ function radius_authenticate($usr, $pswd)
    }
 
    $radius = new Radius($default->owl_db_radiusserver["$db"], $default->owl_db_radiussecret["$db"], 1);
+
+   if ($default->owl_debug)
+   {
+      $radius->SetDebugMode(TRUE);
+   }
 
    if ($radius->AccessRequest($usr, $pswd, 2)) 
    {
