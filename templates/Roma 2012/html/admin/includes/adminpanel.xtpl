@@ -102,8 +102,8 @@
 <!-- END: BackupOnDiv -->
                  <div id="recycle" url="{BUTTON_RECYCLE_URL}"></div>
                  <div id="userimport" url="{BUTTON_IMPORT_USERS_URL}"></div>
-                 <div id="initialload" url="{BUTTON_PURGE_HIST_URL}"></div>
-                 <div id="purgehist" url="{BUTTON_IMPORT_USERS_URL}"></div>
+                 <div id="initialload" url="{BUTTON_INITIAL_LOAD_URL}"></div>
+                 <div id="purgehist" url="{BUTTON_PURGE_HIST_URL}"></div>
                  <div id="{BUTTON_ADMIN_DIVID}" url="{BUTTON_ADMIN_MAINT_URL}">{BUTTON_ADMIN_MAINT_TITLE}</div>
                  <div id="usertable" url="{BUTTON_ADMIN_USER_TABLE_URL}"></div>
 </div>
