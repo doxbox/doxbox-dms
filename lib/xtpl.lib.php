@@ -3512,6 +3512,7 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
          $aFileMenuString["file_name"] = ".|$filename|$filename|$owl_lang->menu_url_action||1\n";
          $xtpl->assign('FILE_FILENAME', $filename);
          $xtpl->assign('FILE_MENU_ACTION', $filename);
+         $xtpl->assign('FILE_MENU_TARGET', '_blank');
          $xtpl->assign('FILE_MENU_ACTION_ALT', $owl_lang->menu_url_action);
       }
       else
@@ -3521,15 +3522,17 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
          $urlArgs2['id'] = $fid;
          $urlArgs2['parent'] = $backup_parent;
 
-   if ($iApproved == 0)
-   {
-     $xtpl->assign('FILE_FILENAME', $filename);
-     $xtpl->assign('FILE_MENU_ACTION', '#');
-     $xtpl->assign('FILE_MENU_ACTION_ALT', '');
-     $xtpl->parse('main.' . $XTPLTag . '.File.filename.Menu');
-     return;
-   }
-		 // 0 = View File Details
+         $xtpl->assign('FILE_MENU_TARGET', '_self');
+         if ($iApproved == 0)
+         {
+           $xtpl->assign('FILE_FILENAME', $filename);
+                 $xtpl->assign('FILE_MENU_ACTION', '#');
+           $xtpl->assign('FILE_MENU_ACTION_ALT', '');
+           $xtpl->parse('main.' . $XTPLTag . '.File.filename.Menu');
+           return;
+         }
+
+	 // 0 = View File Details
          // 1 = Download File
          // 2 = Modify File Properties
          // 3 = View File
@@ -3599,6 +3602,7 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
       }
 
       $isBackup = fid_to_name($backup_parent);
+
       // check to see if the file is checked out
       // to display a the lock or unlock Icon.
    

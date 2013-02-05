@@ -310,7 +310,7 @@
 <!-- END: major_minor_revision -->
 <!-- BEGIN: filename -->
                <td class="{FILE_TD_CLASS}">
-<div class="layerMenuAnchor"><a href="{FILE_MENU_ACTION}" alt="{FILE_MENU_ACTION_ALT}">{FILE_FILENAME}</a>&nbsp;<img src="{ROOT_URL}/scripts/phplayersmenu/menuimages/forward-arrow.png" />
+<div class="layerMenuAnchor"><a href="{FILE_MENU_ACTION}" alt="{FILE_MENU_ACTION_ALT}" target="{FILE_MENU_TARGET}">{FILE_FILENAME}</a>&nbsp;<img src="{ROOT_URL}/scripts/phplayersmenu/menuimages/forward-arrow.png" />
 <!-- BEGIN: Menu -->
   <ul class="jqLayerMenu">
 <!-- BEGIN: Download -->
