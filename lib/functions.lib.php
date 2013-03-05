@@ -490,7 +490,7 @@ function notify_file_owner($iFileId, $comment)
 
 function notify_monitored_folders ($parent, $filename)
 {
-   global $default, $userid;
+   global $default, $userid, $owl_lang, $language;
    //global $owl_lang;
 
    $sql = new Owl_DB;
@@ -523,12 +523,14 @@ function notify_monitored_folders ($parent, $filename)
          $newpath = $path; 
          // $newfilename = ereg_replace(" ","%20",$sql->f("filename"));
          $newfilename = $sql->f("filename");
-         $DefUserLang = $getuser->f("language");
-         if(empty($DefUserLang))
-         {         
-            $DefUserLang = $default->owl_lang; 
+
+         $language = $getuser->f("language");
+         if(empty($language))
+         {
+            $language = $default->owl_lang;
          }
-         require("$default->owl_fs_root/locale/$DefUserLang/language.inc");
+
+         require("$default->owl_fs_root/locale/$language/language.inc");
 
          $r = preg_split("(\;|\,)", $getuser->f("email"));
          reset ($r);
@@ -663,7 +665,7 @@ function notify_monitored_folders ($parent, $filename)
 // --------------------------------
 function notify_monitored ($fid, $type)
 {
-   global $default, $userid;
+   global $default, $userid, $owl_lang, $language;
    //global $owl_lang;
 
    $sql = new Owl_DB;
@@ -687,13 +689,14 @@ function notify_monitored ($fid, $type)
          $filename = $sql->f("filename"); 
          $newpath = $path;
          $newfilename = $sql->f("filename"); 
-         $DefUserLang = $getuser->f("language");
-         if(empty($DefUserLang))
+
+         $language = $getuser->f("language");
+         if(empty($language))
          {
-            $DefUserLang = $default->owl_lang;
+            $language = $default->owl_lang;
          }
 
-         require("$default->owl_fs_root/locale/$DefUserLang/language.inc");
+         require("$default->owl_fs_root/locale/$language/language.inc");
 
          $r = preg_split("(\;|\,)", $getuser->f("email"));
          reset ($r);
@@ -840,11 +843,14 @@ function notify_reviewer ($iUserId, $iFileId , $usermessage, $doc_action = "", $
    $sql->query("SELECT email,language,attachfile from $default->owl_users_table where id = '$iUserId'");
    $sql->next_record();
 
-   $DefUserLang = $sql->f("language");
-   if(empty($DefUserLang))
+   $language = $sql->f("language");
+
+   if(empty($language))
    {
-      $DefUserLang = $default->owl_lang;
+      $language = $default->owl_lang;
    }
+
+   require("$default->owl_fs_root/locale/$language/language.inc");
 
    if ($default->generate_notify_link_session == '1')
    {
@@ -857,8 +863,6 @@ function notify_reviewer ($iUserId, $iFileId , $usermessage, $doc_action = "", $
 
 
    $email = $sql->f("email");
-
-   require("$default->owl_fs_root/locale/$DefUserLang/language.inc");
 
    switch ($doc_action)
    {
@@ -958,7 +962,7 @@ function notify_reviewer ($iUserId, $iFileId , $usermessage, $doc_action = "", $
 
 function notify_users($groupid, $flag, $fileid, $type = "")
 {
-   global $default, $userid;
+   global $default, $userid, $owl_lang, $language;
 
    $sql = new Owl_DB; 
 
@@ -983,13 +987,14 @@ function notify_users($groupid, $flag, $fileid, $type = "")
       {
          $newpath = $path; 
          $newfilename = $filename;
-         $DefUserLang = $sql->f("language");
-         if(empty($DefUserLang))
+
+         $language = $sql->f("language");
+         if(empty($language))
          {
-            $DefUserLang = $default->owl_lang;
+            $language = $default->owl_lang;
          }
 
-         require("$default->owl_fs_root/locale/$DefUserLang/language.inc");
+         require("$default->owl_fs_root/locale/$language/language.inc");
 
          $r = preg_split("(\;|\,)", $sql->f("email"));
          reset ($r);
