@@ -341,10 +341,12 @@ function fIndexAFile($new_name, $newpath, $id)
         case 'pdf':
         {
            if( !file_exists($default->pdftotext_path) )
-		   {
+	   {
              break;
-		   }
-           //$command = escapeshellarg($default->pdftotext_path) . '  "' . $newpath . '" "' .  $default->owl_tmpdir . DIR_SEP . $new_name . '.text"';
+	   }
+
+           // Set the Local to UTF-8 to ensure escapeshellargs doesn't strip Special chars such as: Ö
+           setlocale(LC_CTYPE, "en_US.UTF-8");
            $command = escapeshellcmd($default->pdftotext_path) . '  ' . escapeshellarg($newpath) . ' ' .  escapeshellarg($default->owl_tmpdir . DIR_SEP . $new_name . '.text');
 
            $last_line = system($command, $retval);
