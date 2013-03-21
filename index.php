@@ -321,7 +321,7 @@ if($default->auth == 1 and isset($_SERVER['PHP_AUTH_USER']))
    $_POST['loginname'] = $_SERVER['PHP_AUTH_USER'];
 }
 
-if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3)) or ($default->auth == 1 and isset($_POST['loginname']) and $_GET['login'] <> "logout"))
+if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3 or $default->auth == 4)) or ($default->auth == 1 and isset($_POST['loginname']) and $_GET['login'] <> "logout"))
 {
 //exit("");
    $verified["bit"] = 0;

@@ -1873,7 +1873,7 @@ function verify_login($username, $password)
    $verified = array();
    $verified['group'] = '';
    $verified['uid'] = '';
-   $verified['bit'] = '';
+   $verified['bit'] = '0';
    $verified['user'] = '';
    $maxsessions = '';
 
@@ -6674,12 +6674,14 @@ function fGetMOTD()
 
 function fOwlWebDavLog ($sFunction, $sMessage)
 {
- //       if ($default->owl_debug)
-   //      {
-             $file = fopen("/tmp/WebDAV.DBG", 'a+');
-             fwrite($file, "[$sFunction]: $sMessage\n");
-             fclose($file);
-    //     }
+   global $default;
+
+   if ($default->owl_debug)
+   {
+      $file = fopen("/tmp/DoxBox.DBG", 'a+');
+      fwrite($file, "[$sFunction]: $sMessage\n");
+      fclose($file);
+   }
 }
 
 //
@@ -6713,7 +6715,7 @@ function radius_authenticate($usr, $pswd)
       $radius->SetDebugMode(TRUE);
    }
 
-   if ($radius->AccessRequest($usr, $pswd, 2)) 
+   if ($radius->AccessRequest($usr, $pswd, 5)) 
    {
         // Authentication accepted.
       return(0);

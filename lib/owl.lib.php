@@ -724,20 +724,11 @@ if (!$sess && $loginname)
       {
          $userid = $default->anon_user;
       } 
-      else
-      {
-         $verified = verify_login($loginname, $password);
-         $sFailiure = '';
-         if (!empty($verified['bit']))
-         {
-            $sFailiure = "&failure=" . $verified['bit'];
-         }
-         header("Location: " . $default->owl_root_url . "/index.php?login=1$sFailiure");
-      } 
    } 
    else
    {
       header("Location: " . $default->owl_root_url . "/index.php?login=1");
+      exit;
    } 
 } 
 
