@@ -3889,6 +3889,7 @@ function getprefs ()
    $default->download_notify_list = explode(',' , $sql->f('dl_notification_list'));
    $default->download_sess_length = $sql->f('dl_len');
 
+   $default->owl_maintenance_mode = $sql->f("owl_maintenance_mode");
 
    $sql->query("SELECT username from $default->owl_users_table where dl_count_excluded = '1'");
    $default->download_exclusion = array();
@@ -3898,7 +3899,6 @@ function getprefs ()
    }
 
 
-   $default->owl_maintenance_mode = $sql->f("owl_maintenance_mode");
    // 0 = Old Standard Owl Authentication
    // 1 = .htaccess authentication (username must also exists as the Owl users Table)
    // 2 = pop3 authentication (username must also exists as the Owl users Table)

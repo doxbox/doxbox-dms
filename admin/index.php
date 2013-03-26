@@ -116,19 +116,19 @@ if (fIsUserAdmin($userid) and $owluser== 1)
 
 if (isset($maint) and is_numeric($maint))
 {
-   if ($maint == "1" and $default->owl_maintenance_mode == "0")
+   if ($maint == 1 and $default->owl_maintenance_mode == 0)
    {
       $sql = new Owl_DB;
       $qUpdateQuery = "UPDATE  $default->owl_prefs_table SET owl_maintenance_mode =  '1'";
       $sql->query("$qUpdateQuery");
-      $default->owl_maintenance_mode = "1";
+      $default->owl_maintenance_mode = 1;
    }
-   else if ($maint == "0" and $default->owl_maintenance_mode == "1")
+   else if ($maint == 0 and $default->owl_maintenance_mode == 1)
    {
       $sql = new Owl_DB;
       $qUpdateQuery = "UPDATE  $default->owl_prefs_table SET owl_maintenance_mode =  '0'";
       $sql->query("$qUpdateQuery");
-      $default->owl_maintenance_mode = "0";
+      $default->owl_maintenance_mode = 0;
    }
 }   
 //sun2earth

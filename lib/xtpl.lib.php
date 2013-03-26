@@ -1939,7 +1939,7 @@ function fPrintAdminPanelXTPL($action)
    $xtpl->assign('BUTTON_PURGE_HIST_TITLE', $owl_lang->alt_btn_cln_history . ' ' . $default->purge_historical_documents_days);
    $xtpl->assign('BUTTON_PURGE_HIST_CONFIRM', $owl_lang->confirm_cln_history . ' ' . $default->purge_historical_documents_days);
 
-   if($default->owl_maintenance_mode == "0")
+   if($default->owl_maintenance_mode == 0)
    {
       $xtpl->assign('BUTTON_ADMIN_DIVID', 'maintmode');
       $xtpl->assign('BUTTON_ADMIN_CONF_MAINT', $owl_lang->confirm_maint_mode);

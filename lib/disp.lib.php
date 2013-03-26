@@ -2475,5 +2475,4 @@ function fGetBrowserLanguage()
    }
    return $sOwlLang; 
 }
-$default->owl_maintenance_mode = NULL;
 ?>
