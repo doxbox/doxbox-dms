@@ -57,6 +57,7 @@ include_once($default->owl_fs_root . "/lib/userheader.inc");
 
 $sql = new Owl_DB;
 
+$doctype = $_REQUEST['doctype'];
 
 if(isset($btn_add_doctype_x))
 {
@@ -92,16 +93,8 @@ if (!isset($doctype))
 {
    $doctype = null;
 }
-else
-{
-   if (!is_numeric($doctype))
-   {
-      $doctype = null;
-   }
-}
 
 $urlArgs = array();
-
 
 // *******************************************
 // Delete a Document Type From the Database
