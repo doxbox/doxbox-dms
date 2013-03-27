@@ -668,6 +668,8 @@ $default->popup_lifetime = 3000;
 // BOZZ: Don't know if this was caused by the editor you are 
 // BOZZ: using but the contents of the variable are now incorrect... 
 // BOZZ: the Accented charcters are all replaced by control chars
+// REFERENCE for Asian Character set ranges http://www.localizingjapan.com/blog/2012/01/
+// KANJI:        $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:][\x3400-\x4DB5\x4E00-\x9FCB\xF900-\xFA6A]()@#$\{}+,&;";
 // HEBREW:        $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]אבגדהוזחטיכלמנסעפצקרשתךףץם()@#$\{}+,&;";
 // RUSSIAN:       $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]()@#$\{}+,&;ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁёйцукенгшщзхъфывапролджэячсмитьбю";
 // DEFAULT:       $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÐðÏïÑñÒòÓóÔôÕõÖö×÷ØøÙùÚúÛûÜüÝýßÞþÿ()@#$\{}+,&;";
