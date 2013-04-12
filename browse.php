@@ -486,7 +486,7 @@ else
          case 'updatorid':
          case 'creatorid':
                $order_clause = "u.name $sort";
-               $sLeftJoin =  " f LEFT OUTER JOIN $default->owl_users_table u ON $order = u.id";
+               $sLeftJoin =  " LEFT OUTER JOIN $default->owl_users_table u ON $order = u.id";
             break;
          default:
                $order_clause = "$order $sort";
@@ -518,7 +518,7 @@ else
    }
 
    // Query TO retreive the Files in the current Folder
-   $FileQuery = "select * from $default->owl_files_table $sLeftJoin where parent = '$parent' order by $order_clause $sLimit";
+   $FileQuery = "select f.* from $default->owl_files_table f $sLeftJoin where parent = '$parent' order by $order_clause $sLimit";
    $MenuFileQuery = "select * from $default->owl_files_table where parent = '$parent' $sApproved order by $order_clause $sLimit";
 }
 //print("<br />FQ: $FileQuery");
