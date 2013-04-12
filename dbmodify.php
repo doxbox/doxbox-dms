@@ -1402,13 +1402,13 @@ if ($action == "file_upload" or $action == "jupload")
                           {
                              $sFieldValues .= "|";
                           }
-                          $sFieldValues .= ${$sFieldName};
+                          $sFieldValues .= $_POST[$sFieldName];
                           $i++;
                        }
                        $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$id', '" . $sql_custom->f("field_name") ."', '" . $sFieldValues ."');");
                     break;
                  default:
-                       $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$id', '" . $sql_custom->f("field_name") ."', '" . ${$sql_custom->f("field_name")} ."');");
+                       $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$id', '" . $sql_custom->f("field_name") ."', '" . $_POST[$sql_custom->f("field_name")] ."');");
                     break;
            }
          }
@@ -2112,9 +2112,9 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
                              {
                                 $sFieldValues .= "|";
                              }
-                             if (isset(${$sFieldName}))
+                             if (isset($_POST[$sFieldName]))
                              {
-                                $sFieldValues .= ${$sFieldName};
+                                $sFieldValues .= $_POST[$sFieldName];
                              }
                              $i++;
                           }
@@ -2122,9 +2122,9 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
                        break;
                     default:
                           $sFieldValues = '';
-                          if (isset(${$sql_custom->f("field_name")}))
+                          if (isset($_POST[$sql_custom->f("field_name")]))
                           { 
-                             $sFieldValues .= ${$sql_custom->f("field_name")};
+                             $sFieldValues .= $_POST[$sql_custom->f("field_name")];
                           }
                           $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$id', '" . $sql_custom->f("field_name") ."', '" . $sFieldValues ."');"); 
                        break;
@@ -2645,16 +2645,16 @@ if ($action == "file_modify")
                                 {
                                    $sFieldValues .= "|";
                                 }
-                                $sFieldValues .= ${$sFieldName};
+                                $sFieldValues .= $_POST[$sFieldName];
                                 $i++;
                              }
                              $result = $sql->query("UPDATE $default->owl_docfieldvalues_table set field_value = '" . $sFieldValues . "' WHERE file_id = '$id' and field_name = '" . $sql_custom->f("field_name") ."';");
                           break;
                       case "radio":
-		       $result = $sql->query("UPDATE $default->owl_docfieldvalues_table set field_value = '" . ${$sql_custom->f("field_name")} . "' WHERE file_id = '$id' and field_name = '" . $sql_custom->f("field_name") ."';");
+		       $result = $sql->query("UPDATE $default->owl_docfieldvalues_table set field_value = '" . $_POST[$sql_custom->f("field_name")] . "' WHERE file_id = '$id' and field_name = '" . $sql_custom->f("field_name") ."';");
                           break;
                        default:
-                             $result = $sql->query("UPDATE $default->owl_docfieldvalues_table set field_value = '" . ${$sql_custom->f("field_name")} . "' WHERE file_id = '$id' and field_name = '" . $sql_custom->f("field_name") ."';");
+                             $result = $sql->query("UPDATE $default->owl_docfieldvalues_table set field_value = '" . $_POST[$sql_custom->f("field_name")] . "' WHERE file_id = '$id' and field_name = '" . $sql_custom->f("field_name") ."';");
                           break;
                   }
                }
