@@ -911,7 +911,6 @@ if ($action == "file_update")
             // If pdftotext was set and exists
             // Create a search index for this text file.
             fIndexAFile($userfile['name'], $userfile['tmp_name'], $id);
-
             if ($default->owl_compressed_database && file_exists($default->gzip_path))
             {
                system(escapeshellarg($default->gzip_path) . " " . escapeshellarg($userfile['tmp_name']));
@@ -931,7 +930,8 @@ if ($action == "file_update")
 
             if ($id !== null && $filedata)
             {
-               $sql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$id', '$filedata','$compressed')");
+               $filedatasql = new Owl_DB;
+               $filedatasql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$id', '$filedata', '$compressed')", 'latin1');
             } 
             owl_syslog(FILE_UPDATED, $userid, $userfile["name"], $parent, $backup_name, "FILE", $userfile['size']); 
          } 
@@ -974,7 +974,8 @@ if ($action == "file_update")
 
             if ($filedata)
             {
-               $sql->query("UPDATE $default->owl_files_data_table set data = '$filedata' where id ='$id'");
+               $filedatasql = new Owl_DB;
+               $filedatasql->query("UPDATE $default->owl_files_data_table set data = '$filedata' where id ='$id'", 'latin1');
             }
          }
             owl_syslog(FILE_UPDATED, $userid, $userfile["name"], $parent, $backup_name, "FILE", $userfile['size']); 
@@ -1505,7 +1506,8 @@ if ($action == "file_upload" or $action == "jupload")
             unlink($tmpfile);
             if ($searchid !== null && $filedata)
             {
-               $sql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$searchid', '$filedata', '0')");
+               $filedatasql = new Owl_DB;
+               $filedatasql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$searchid', '$filedata', '0')", 'latin1');
             } 
          } 
          $id = $searchid;
@@ -2050,14 +2052,14 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
             {
                $fd = fopen($userfile['tmp_name'], 'rb');
             }
-            //$filedata = fread($fd, $fsize);
             $filedata = fEncryptFiledata(fread($fd, $fsize));
             fclose($fd);
             unlink($userfile['tmp_name']);
 
             if ($id !== null && $filedata)
             {
-               $sql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$id', '$filedata','$compressed')");
+               $filedatasql = new Owl_DB;
+               $filedatasql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$id', '$filedata', '$compressed')", 'latin1');
             }
             owl_syslog(FILE_UPDATED, $userid, $userfile["name"], $parent, $backup_name, "FILE", $userfile['size']);
          }
@@ -2183,7 +2185,8 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
    
                if ($id !== null && $filedata)
                {
-                  $sql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$id', '$filedata', '$compressed')");
+                  $filedatasql = new Owl_DB;
+                  $filedatasql->query("INSERT INTO $default->owl_files_data_table (id, data, compressed) values ('$id', '$filedata', '$compressed')", 'latin1');
                } 
             } 
 
@@ -2493,7 +2496,8 @@ if ($action == "file_modify")
          {
             //$filedata = $note_content;
             $filedata = fEncryptFiledata($note_content);
-            $sql->query("UPDATE $default->owl_files_data_table set data = '$filedata' WHERE id = '$id'");
+            $filedatasql = new Owl_DB;
+            $filedatasql->query("UPDATE $default->owl_files_data_table set data = '$filedata' WHERE id = '$id'", 'latin1');
          } 
          $sql->query("UPDATE $default->owl_files_table SET name='$title', filename='$new_filename', security='$security', metadata='$metadata', description='$description',groupid='$groupid', creatorid ='$file_owner' , updatorid = '$userid', smodified = $smodified, f_size = '$note_size' , password = '$newpassword', major_revision = '$major_revision', minor_revision = '$minor_revision', expires = '$expires', name_search='" . fReplaceSpecial($title) . "', filename_search='" . fReplaceSpecial($new_filename) . "', description_search='" . fReplaceSpecial($description) . "', metadata_search='" . fReplaceSpecial($metadata) .   "'  WHERE id = '$id'");
          if (fisAdmin())

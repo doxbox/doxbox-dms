@@ -99,7 +99,7 @@ class DB_Sql {
   }
 
   /* public: perform a query */
-  function query($Query_String) {
+  function query($Query_String, $collation = 'utf8') {
     /* No empty queries, please, since PHP4 chokes on them. */
     if ($Query_String == "")
       /* The empty query string is passed on from the constructor,
@@ -120,8 +120,8 @@ class DB_Sql {
     if ($this->Debug)
       printf("Debug: query = %s<br>\n", $Query_String);
 
-    @mysql_query("SET NAMES 'utf8';", $this->Link_ID);
-    @mysql_query("SET CHARACTER SET 'utf8';", $this->Link_ID);
+    @mysql_query("SET NAMES '$collation';", $this->Link_ID);
+    @mysql_query("SET CHARACTER SET '$collation';", $this->Link_ID);
 
     // @mysql_query('SET NAMES "UTF8"');
     // @mysql_query("SET collation_connection='utf8_general_ci'");
@@ -130,7 +130,6 @@ class DB_Sql {
     // @mysql_query("SET character_set_connection='utf8'");
     // @mysql_query("SET character_set_results='utf8'");
     // @mysql_query("SET character_set_server='utf8'");
-
 
     $this->Query_ID = @mysql_query($Query_String,$this->Link_ID);
     $this->Row   = 0;
