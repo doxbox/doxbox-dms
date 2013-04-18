@@ -49,7 +49,7 @@
 <!-- BEGIN: GroupMember -->
            <tr>
               <td align="center"><input class="fcheckbox1" type="checkbox" name="{USER_MEMB_GROUP_NAME}" value="{USER_MEMB_GROUP_VALUE}" {USER_MEMB_GROUP_CHECKED} /></td>
-              <td align="center"><input class="fcheckbox1" type="checkbox" name="{USER_MEMB_ADMINGROUP_NAME}" value="{USER_MEMB_ADMINGROUP_VAULE}" {USER_MEMB_ADMINGROUP_CHECKED} /></td>
+              <td align="center"><input class="fcheckbox1" type="checkbox" name="{USER_MEMB_ADMINGROUP_NAME}" value="{USER_MEMB_ADMINGROUP_VALUE}" {USER_MEMB_ADMINGROUP_CHECKED} /></td>
               <td>{USER_MEMB_GROUP_CAPTION}</td>
            </tr>
 <!-- END: GroupMember -->
