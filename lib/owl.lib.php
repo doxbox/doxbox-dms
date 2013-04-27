@@ -277,18 +277,6 @@ else if (!is_numeric($parent))
    }
 }
 
-if (!isset($expand) or !is_numeric($expand))
-{
-   if (isset($default->expand))
-   {
-      $expand = $default->expand;
-   }
-   else
-   {
-      $expand = '1';
-   }
-}
-
 if (empty($curview) || !is_numeric($curview))
 {
    $curview = 0;
@@ -336,6 +324,18 @@ if (empty($sql))
 }
 
 getuserprefs();
+
+if (!isset($expand) or !is_numeric($expand))
+{
+   if (isset($default->expand))
+   {
+      $expand = $default->expand;
+   }
+   else
+   {
+      $expand = '1';
+   }
+}
 
 if ($default->force_ssl == "1")
 {
