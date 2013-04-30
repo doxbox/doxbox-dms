@@ -366,7 +366,7 @@ while ($sql->next_record())
             $sPopupDescription = $owl_lang->no_description;
          }
 
-         $sPopupCode = " onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', " . $default->popup_lifetime . ", 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true));" . '"';
+         $sPopupCode = " onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', " . $default->popup_lifetime . ", 'fade', 'both', 'delay', 10, 'maxWidth', '400', 'direction', 'north', 'statusText', ' ', 'trail', true));" . '"';
       }
       else
       {
@@ -1194,7 +1194,7 @@ while ($sql->next_record())
 
       $sTitle = $sBoldBegin . $sql->f("name") . $sBoldEnd . "</a>";
       
-      $xtpl->assign('FILE_NAME', "<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', " . $default->popup_lifetime . ", 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true));\"  title=\"$sAltString: " . $sql->f("filename") . '">' . $sTitle);
+      $xtpl->assign('FILE_NAME', "<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', " . $default->popup_lifetime . ", 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true));\"  title=\"$sAltString: " . $sql->f("filename") . '">' . $sTitle);
       $xtpl->parse('main.DataBlock.File.Name');
    }
 

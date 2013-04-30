@@ -26,51 +26,51 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{EMAIL_USE_SMTP_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_USE_SMTP_LABEL}','content','{EMAIL_USE_SMTP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_smtp" value="1"{EMAIL_USE_SMTP_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_USE_SMTP_LABEL}','content','{EMAIL_USE_SMTP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_smtp" value="1"{EMAIL_USE_SMTP_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{EMAIL_USE_SMTP_AUTH_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_USE_SMTP_AUTH_LABEL}','content','{EMAIL_USE_SMTP_AUTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_smtp_auth" value="1"{EMAIL_USE_SMTP_AUTH_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_USE_SMTP_AUTH_LABEL}','content','{EMAIL_USE_SMTP_AUTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_smtp_auth" value="1"{EMAIL_USE_SMTP_AUTH_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{EMAIL_USE_SMTP_SSL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_USE_SMTP_SSL_LABEL}','content','{EMAIL_USE_SMTP_SSL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_smtp_ssl" value="1"{EMAIL_USE_SMTP_SSL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_USE_SMTP_SSL_LABEL}','content','{EMAIL_USE_SMTP_SSL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_smtp_ssl" value="1"{EMAIL_USE_SMTP_SSL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1"><label for="smtp_port">{EMAIL_SMTP_PORT_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_PORT_LABEL}','content','{EMAIL_SMTP_PORT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_port" type="text" name="smtp_port" size="6" value="{EMAIL_SMTP_PORT_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_PORT_LABEL}','content','{EMAIL_SMTP_PORT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_port" type="text" name="smtp_port" size="6" value="{EMAIL_SMTP_PORT_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="smtp_max_size">{EMAIL_SMTP_MAX_SIZE_LABEL}</label></td>
-         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_MAX_SIZE_LABEL}','content','{EMAIL_SMTP_MAX_SIZE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_max_size" type="text" name="smtp_max_size" size="15" value="{EMAIL_SMTP_MAX_SIZE_VALUE}" /></td>
+         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_MAX_SIZE_LABEL}','content','{EMAIL_SMTP_MAX_SIZE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_max_size" type="text" name="smtp_max_size" size="15" value="{EMAIL_SMTP_MAX_SIZE_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="email_server">{EMAIL_SMTP_SERVER_LABEL}</label></td>
-         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_SERVER_LABEL}','content','{EMAIL_SMTP_SERVERE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_server" type="text" name="email_server" size="40" value="{EMAIL_SMTP_SERVER_VALUE}" /></td>
+         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_SERVER_LABEL}','content','{EMAIL_SMTP_SERVERE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_server" type="text" name="email_server" size="40" value="{EMAIL_SMTP_SERVER_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="email_from">{EMAIL_SMTP_EMAIL_FROM_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_EMAIL_FROM_LABEL}','content','{EMAIL_SMTP_EMAIL_FROM_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_from" type="text" name="email_from" size="40" value="{EMAIL_SMTP_EMAIL_FROM_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_EMAIL_FROM_LABEL}','content','{EMAIL_SMTP_EMAIL_FROM_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_from" type="text" name="email_from" size="40" value="{EMAIL_SMTP_EMAIL_FROM_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="smtp_auth_login">{EMAIL_SMTP_AUTH_LOGIN_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_AUTH_LOGIN_LABEL}','content','{EMAIL_SMTP_AUTH_LOGIN_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_auth_login" type="text" name="smtp_auth_login" size="40" value="{EMAIL_SMTP_AUTH_LOGIN_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_AUTH_LOGIN_LABEL}','content','{EMAIL_SMTP_AUTH_LOGIN_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_auth_login" type="text" name="smtp_auth_login" size="40" value="{EMAIL_SMTP_AUTH_LOGIN_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="smtp_passwd">{EMAIL_SMTP_AUTH_PASSWD_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_AUTH_PASSWD_LABEL}','content','{EMAIL_SMTP_AUTH_PASSWD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_passwd" type="text" name="smtp_passwd" size="40" value="{EMAIL_SMTP_AUTH_PASSWD_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_AUTH_PASSWD_LABEL}','content','{EMAIL_SMTP_AUTH_PASSWD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="smtp_passwd" type="text" name="smtp_passwd" size="40" value="{EMAIL_SMTP_AUTH_PASSWD_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="email_fromname">{EMAIL_SMTP_FROM_NAME_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_FROM_NAME_LABEL}','content','{EMAIL_SMTP_FROM_NAME_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_fromname" type="text" name="email_fromname" size="40" value="{EMAIL_SMTP_FROM_NAME_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_FROM_NAME_LABEL}','content','{EMAIL_SMTP_FROM_NAME_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_fromname" type="text" name="email_fromname" size="40" value="{EMAIL_SMTP_FROM_NAME_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="email_replyto">{EMAIL_SMTP_REPLY_TO_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_REPLY_TO_LABEL}','content','{EMAIL_SMTP_REPLY_TO_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_replyto" type="text" name="email_replyto" size="40" value="{EMAIL_SMTP_REPLY_TO_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_REPLY_TO_LABEL}','content','{EMAIL_SMTP_REPLY_TO_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_replyto" type="text" name="email_replyto" size="40" value="{EMAIL_SMTP_REPLY_TO_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="email_subject">{EMAIL_SMTP_SUBJ_PREFIX_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_SUBJ_PREFIX_LABEL}','content','{EMAIL_SMTP_SUBJ_PREFIX_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_subject" type="text" name="email_subject" size="60" value="{EMAIL_SMTP_SUBJ_PREFIX_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{EMAIL_SMTP_SUBJ_PREFIX_LABEL}','content','{EMAIL_SMTP_SUBJ_PREFIX_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="email_subject" type="text" name="email_subject" size="60" value="{EMAIL_SMTP_SUBJ_PREFIX_VALUE}" /></td>
       </tr>
    </table>
             </div>
@@ -82,12 +82,12 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{LOOKHD_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_LABEL}','content','{LOOKHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="lookAtHD" value="false" {LOOKHD_CHECKED} onclick="javascript:this.form.submit()"  /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_LABEL}','content','{LOOKHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="lookAtHD" value="false" {LOOKHD_CHECKED} onclick="javascript:this.form.submit()"  /></td>
       </tr>
 <!-- BEGIN: LookAtHdOptions -->
       <tr>
          <td class="form1">{LOOKHD_DEL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_DEL_LABEL}','content','{LOOKHD_DEL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="lookAtHD_del" value="1" {LOOKHD_DEL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_DEL_LABEL}','content','{LOOKHD_DEL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="lookAtHD_del" value="1" {LOOKHD_DEL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{LOOKHD_FILE_GROUP_OWNER_LABEL}</td>
@@ -111,11 +111,11 @@
       </tr>
       <tr>
          <td class="form1"><label for="def_file_title">{LOOKHD_FILE_TITLE_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_FILE_TITLE_LABEL}','content','{LOOKHD_FILE_TITLE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="def_file_title" type="text" name="def_file_title" size="40" value="{LOOKHD_FILE_TITLE_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_FILE_TITLE_LABEL}','content','{LOOKHD_FILE_TITLE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="def_file_title" type="text" name="def_file_title" size="40" value="{LOOKHD_FILE_TITLE_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="def_file_meta">{LOOKHD_FILE_META_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_FILE_META_LABEL}','content','{LOOKHD_FILE_META_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="def_file_meta" type="text" name="def_file_meta" size="40" value="{LOOKHD_FILE_META_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOOKHD_FILE_META_LABEL}','content','{LOOKHD_FILE_META_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="def_file_meta" type="text" name="def_file_meta" size="40" value="{LOOKHD_FILE_META_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{LOOKHD_FOLDER_GROUP_OWNER_LABEL}</td>
@@ -146,11 +146,11 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{BF_INFO_PANEL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_INFO_PANEL_LABEL}','content','{BF_INFO_PANEL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="info_panel_wide" value="1" {BF_INFO_PANEL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_INFO_PANEL_LABEL}','content','{BF_INFO_PANEL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="info_panel_wide" value="1" {BF_INFO_PANEL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_STATBAR_LOCATION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_STATBAR_LOCATION_LABEL}','content','{BF_STATBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_STATBAR_LOCATION_LABEL}','content','{BF_STATBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: StatBarOptions -->
             <input  type="radio" value="{BF_STATBAR_LOCATION_VALUE}" name="status_bar_location" {BF_STATBAR_LOCATION_CHECKED} />{BF_STATBAR_LOCATION_CAPTION}
 <!-- END: StatBarOptions -->
@@ -158,7 +158,7 @@
       </tr>
       <tr>
          <td class="form1">{BF_PREFBAR_LOCATION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_PREFBAR_LOCATION_LABEL}','content','{BF_PREFBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_PREFBAR_LOCATION_LABEL}','content','{BF_PREFBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: PrefBarOptions -->
             <input  type="radio" value="{BF_PREFBAR_LOCATION_VALUE}" name="pref_bar" {BF_PREFBAR_LOCATION_CHECKED} />{BF_PREFBAR_LOCATION_CAPTION}
 <!-- END: PrefBarOptions -->
@@ -166,7 +166,7 @@
       </tr>
       <tr>
          <td class="form1">{BF_SEARCHBAR_LOCATION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_SEARCHBAR_LOCATION_LABEL}','content','{BF_SEARCHBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_SEARCHBAR_LOCATION_LABEL}','content','{BF_SEARCHBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: SearchBarOptions -->
             <input  type="radio" value="{BF_SEARCHBAR_LOCATION_VALUE}" name="search_bar" {BF_SEARCHBAR_LOCATION_CHECKED} />{BF_SEARCHBAR_LOCATION_CAPTION}
 <!-- END: SearchBarOptions -->
@@ -174,7 +174,7 @@
       </tr>
       <tr>
          <td class="form1">{BF_BULKBAR_LOCATION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_BULKBAR_LOCATION_LABEL}','content','{BF_BULKBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_BULKBAR_LOCATION_LABEL}','content','{BF_BULKBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: BulkBarOptions -->
             <input  type="radio" value="{BF_BULKBAR_LOCATION_VALUE}" name="bulk_buttons" {BF_BULKBAR_LOCATION_CHECKED} />{BF_BULKBAR_LOCATION_CAPTION}
 <!-- END: BulkBarOptions -->
@@ -182,7 +182,7 @@
       </tr>
       <tr>
          <td class="form1">{BF_ACTIONBAR_LOCATION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_ACTIONBAR_LOCATION_LABEL}','content','{BF_ACTIONBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_ACTIONBAR_LOCATION_LABEL}','content','{BF_ACTIONBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: ActionBarOptions -->
             <input  type="radio" value="{BF_ACTIONBAR_LOCATION_VALUE}" name="action_buttons" {BF_ACTIONBAR_LOCATION_CHECKED} />{BF_ACTIONBAR_LOCATION_CAPTION}
 <!-- END: ActionBarOptions -->
@@ -190,7 +190,7 @@
       </tr>
       <tr>
          <td class="form1">{BF_FOLDERBAR_LOCATION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FOLDERBAR_LOCATION_LABEL}','content','{BF_FOLDERBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FOLDERBAR_LOCATION_LABEL}','content','{BF_FOLDERBAR_LOCATION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: FolderBarOptions -->
             <input  type="radio" value="{BF_FOLDERBAR_LOCATION_VALUE}" name="folder_tools" {BF_FOLDERBAR_LOCATION_CHECKED} />{BF_FOLDERBAR_LOCATION_CAPTION}
 <!-- END: FolderBarOptions -->
@@ -198,59 +198,59 @@
       </tr>
       <tr>
          <td class="form1">{BF_PASSWD_OVERRIDE_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_PASSWD_OVERRIDE_LABEL}','content','{BF_PASSWD_OVERRIDE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="password_override" value="1" {BF_PASSWD_OVERRIDE_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_PASSWD_OVERRIDE_LABEL}','content','{BF_PASSWD_OVERRIDE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="password_override" value="1" {BF_PASSWD_OVERRIDE_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_HIDE_FLD_DOC_COUNT_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_HIDE_FLD_DOC_COUNT_LABEL}','content','{BF_HIDE_FLD_DOC_COUNT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="hide_folder_doc_count" value="1" {BF_HIDE_FLD_DOC_COUNT_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_HIDE_FLD_DOC_COUNT_LABEL}','content','{BF_HIDE_FLD_DOC_COUNT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="hide_folder_doc_count" value="1" {BF_HIDE_FLD_DOC_COUNT_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_HIDE_FLD_SIZE_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_HIDE_FLD_SIZE_LABEL}','content','{BF_HIDE_FLD_SIZE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="hide_folder_size" value="1" {BF_HIDE_FLD_SIZE_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_HIDE_FLD_SIZE_LABEL}','content','{BF_HIDE_FLD_SIZE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="hide_folder_size" value="1" {BF_HIDE_FLD_SIZE_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_USE_ZIP_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_USE_ZIP_LABEL}','content','{BF_USE_ZIP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_zip" value="1" {BF_USE_ZIP_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_USE_ZIP_LABEL}','content','{BF_USE_ZIP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_zip" value="1" {BF_USE_ZIP_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_FORCE_SSL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FORCE_SSL_LABEL}','content','{BF_FORCE_SSL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="force_ssl" value="1" {BF_FORCE_SSL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FORCE_SSL_LABEL}','content','{BF_FORCE_SSL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="force_ssl" value="1" {BF_FORCE_SSL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_ALLOW_DIFF_NAME_UPD_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_ALLOW_DIFF_NAME_UPD_LABEL}','content','{BF_ALLOW_DIFF_NAME_UPD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="allow_different_filename_update" value="1" {BF_ALLOW_DIFF_NAME_UPD_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_ALLOW_DIFF_NAME_UPD_LABEL}','content','{BF_ALLOW_DIFF_NAME_UPD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="allow_different_filename_update" value="1" {BF_ALLOW_DIFF_NAME_UPD_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_USE_WYSIWYG_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_USE_WYSIWYG_LABEL}','content','{BF_USE_WYSIWYG_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_wysiwyg_for_textarea" value="1" {BF_USE_WYSIWYG_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_USE_WYSIWYG_LABEL}','content','{BF_USE_WYSIWYG_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="use_wysiwyg_for_textarea" value="1" {BF_USE_WYSIWYG_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_OLD_ACTION_ICONS_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_OLD_ACTION_ICONS_LABEL}','content','{BF_OLD_ACTION_ICONS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="old_action_icons" value="1" {BF_OLD_ACTION_ICONS_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_OLD_ACTION_ICONS_LABEL}','content','{BF_OLD_ACTION_ICONS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="old_action_icons" value="1" {BF_OLD_ACTION_ICONS_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_SEARCH_RESULT_FOLDERS_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_SEARCH_RESULT_FOLDERS_LABEL}','content','{BF_SEARCH_RESULT_FOLDERS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="search_result_folders" value="1" {BF_SEARCH_RESULT_FOLDERS_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_SEARCH_RESULT_FOLDERS_LABEL}','content','{BF_SEARCH_RESULT_FOLDERS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="search_result_folders" value="1" {BF_SEARCH_RESULT_FOLDERS_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_SHOW_USER_INFO_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_SHOW_USER_INFO_LABEL}','content','{BF_SHOW_USER_INFO_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="show_user_info" value="1" {BF_SHOW_USER_INFO_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_SHOW_USER_INFO_LABEL}','content','{BF_SHOW_USER_INFO_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="show_user_info" value="1" {BF_SHOW_USER_INFO_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_FILE_DESC_REQ_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FILE_DESC_REQ_LABEL}','content','{BF_FILE_DESC_REQ_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="filedescreq" value="1" {BF_FILE_DESC_REQ_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FILE_DESC_REQ_LABEL}','content','{BF_FILE_DESC_REQ_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="filedescreq" value="1" {BF_FILE_DESC_REQ_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_FLD_DESC_REQ_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FLD_DESC_REQ_LABEL}','content','{BF_FLD_DESC_REQ_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="folderdescreq" value="1" {BF_FLD_DESC_REQ_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FLD_DESC_REQ_LABEL}','content','{BF_FLD_DESC_REQ_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="folderdescreq" value="1" {BF_FLD_DESC_REQ_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_FLD_DESC_POPUP_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FLD_DESC_POPUP_LABEL}','content','{BF_FLD_DESC_POPUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="show_folder_desc_as_popup" value="1"  {BF_FLD_DESC_POPUP_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_FLD_DESC_POPUP_LABEL}','content','{BF_FLD_DESC_POPUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="show_folder_desc_as_popup" value="1"  {BF_FLD_DESC_POPUP_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BF_TRACK_FAV_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_TRACK_FAV_LABEL}','content','{BF_TRACK_FAV_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="track_favorites" value="1" {BF_TRACK_FAV_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BF_TRACK_FAV_LABEL}','content','{BF_TRACK_FAV_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="track_favorites" value="1" {BF_TRACK_FAV_CHECKED} /></td>
       </tr>
    </table>
             </div>
@@ -259,7 +259,7 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{BC_EXPAND_LABEL}</td>
-         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BC_EXPAND_LABEL}','content','{BC_EXPAND_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="owl_expand" value="1" {BC_EXPAND_CHECKED} /></td>
+         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{BC_EXPAND_LABEL}','content','{BC_EXPAND_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="owl_expand" value="1" {BC_EXPAND_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{BC_EXPAND_VIEW_LABE}</td>
@@ -413,40 +413,40 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{THUMB_ENABLED_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_ENABLED_LABEL}','content','{THUMB_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="thumbnails" value="1" {THUMB_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_ENABLED_LABEL}','content','{THUMB_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="thumbnails" value="1" {THUMB_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
       </tr>
 <!-- BEGIN: ThumbOptions -->
       <tr>
          <td class="form1"><label for="pdf_thumb_path"><img src="{THEME}/ui_icons/{THUMB_PDF_TOOLPATH_IMG}" alt="{THUMB_PDF_TOOLPATH_ALT}" title="{THUMB_PDF_TOOLPATH_ALT}" border="0" />{THUMB_PDF_TOOLPATH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_PDF_TOOLPATH_LABEL}','content','{THUMB_PDF_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdf_thumb_path" type="text" name="pdf_thumb_path" size="60" value="{THUMB_PDF_TOOLPATH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_PDF_TOOLPATH_LABEL}','content','{THUMB_PDF_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdf_thumb_path" type="text" name="pdf_thumb_path" size="60" value="{THUMB_PDF_TOOLPATH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnails_tool_path"><img src="{THEME}/ui_icons/{THUMB_TOOLPATH_IMG}" alt="{THUMB_TOOLPATH_ALT}" title="{THUMB_TOOLPATH_ALT}" border="0" />Path to ImageMagick convert Tool:</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_TOOLPATH_LABEL}','content','{THUMB_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_tool_path" type="text" name="thumbnails_tool_path" size="60" value="{THUMB_TOOLPATH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_TOOLPATH_LABEL}','content','{THUMB_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_tool_path" type="text" name="thumbnails_tool_path" size="60" value="{THUMB_TOOLPATH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnails_video_tool_path"><img src="{THEME}/ui_icons/{THUMB_VID_TOOLPATH_IMG}" alt="{THUMB_VID_TOOLPATH_ALT}" title="{THUMB_VID_TOOLPATH_ALT}" border="0" />{THUMB_VID_TOOLPATH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_VID_TOOLPATH_LABEL}','content','{THUMB_VID_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_video_tool_path" type="text" name="thumbnails_video_tool_path" size="60" value="{THUMB_VID_TOOLPATH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_VID_TOOLPATH_LABEL}','content','{THUMB_VID_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_video_tool_path" type="text" name="thumbnails_video_tool_path" size="60" value="{THUMB_VID_TOOLPATH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnails_video_tool_opt">{THUMB_VID_TOOLOPT_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_VID_TOOLOPT_LABEL}','content','{THUMB_VID_TOOLOPT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_video_tool_opt" type="text" name="thumbnails_video_tool_opt" size="60" value="{THUMB_VID_TOOLOPT_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_VID_TOOLOPT_LABEL}','content','{THUMB_VID_TOOLOPT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_video_tool_opt" type="text" name="thumbnails_video_tool_opt" size="60" value="{THUMB_VID_TOOLOPT_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnails_small_width">{THUMB_SMALL_WIDTH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_SMALL_WIDTH_LABEL}','content','{THUMB_SMALL_WIDTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_small_width" type="text" name="thumbnails_small_width" size="10" value="{THUMB_SMALL_WIDTH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_SMALL_WIDTH_LABEL}','content','{THUMB_SMALL_WIDTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_small_width" type="text" name="thumbnails_small_width" size="10" value="{THUMB_SMALL_WIDTH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnails_med_width">{THUMB_MED_WIDTH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_MED_WIDTH_LABEL}','content','{THUMB_MED_WIDTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_med_width" type="text" name="thumbnails_med_width" size="10" value="{THUMB_MED_WIDTH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_MED_WIDTH_LABEL}','content','{THUMB_MED_WIDTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_med_width" type="text" name="thumbnails_med_width" size="10" value="{THUMB_MED_WIDTH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnails_large_width">{THUMB_LARGE_WIDTH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_LARGE_WIDTH_LABEL}','content','{THUMB_LARGE_WIDTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_large_width" type="text" name="thumbnails_large_width" size="10" value="{THUMB_LARGE_WIDTH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_LARGE_WIDTH_LABEL}','content','{THUMB_LARGE_WIDTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnails_large_width" type="text" name="thumbnails_large_width" size="10" value="{THUMB_LARGE_WIDTH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="thumbnail_view_columns">{THUMB_COLUMNS_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_COLUMNS_LABEL}','content','{THUMB_COLUMNS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnail_view_columns" type="text" name="thumbnail_view_columns" size="10" value="{THUMB_COLUMNS_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{THUMB_COLUMNS_LABEL}','content','{THUMB_COLUMNS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="thumbnail_view_columns" type="text" name="thumbnail_view_columns" size="10" value="{THUMB_COLUMNS_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{THUMB_VIEW_COLUMNS_LABEL}</td>
@@ -487,20 +487,20 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{WATERMARKING_ENABLED_LABEL}</td>
-         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARKING_ENABLED_LABEL}','content','{WATERMARKING_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="pdf_watermarks" value="1" {WATERMARKING_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
+         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARKING_ENABLED_LABEL}','content','{WATERMARKING_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="pdf_watermarks" value="1" {WATERMARKING_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
       </tr>
 <!-- BEGIN: WaterMarkOptions -->
       <tr>
          <td class="form1"><label for="pdf_watermark_path"><img src="{THEME}/ui_icons/{WATERMARK_TOOLPATH_IMG}" alt="{WATERMARK_TOOLPATH_ALT}" title="{WATERMARK_TOOLPATH_ALT}" border="0" />{WATERMARK_TOOLPATH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARK_TOOLPATH_LABEL}','content','{WATERMARK_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdf_watermark_path" type="text" name="pdf_watermark_path" size="60" value="{WATERMARK_TOOLPATH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARK_TOOLPATH_LABEL}','content','{WATERMARK_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdf_watermark_path" type="text" name="pdf_watermark_path" size="60" value="{WATERMARK_TOOLPATH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="pdf_custom_watermark_filepath"><img src="{THEME}/ui_icons/{WATERMARK_CUST_FILEPATH_IMG}" alt="{WATERMARK_CUST_FILEPATH_ALT}" title="{WATERMARK_CUST_FILEPATH_ALT}" border="0" />{WATERMARK_CUST_FILEPATH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARK_CUST_FILEPATH_LABEL}','content','{WATERMARK_CUST_FILEPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdf_custom_watermark_filepath" type="text" name="pdf_custom_watermark_filepath" size="60" value="{WATERMARK_CUST_FILEPATH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARK_CUST_FILEPATH_LABEL}','content','{WATERMARK_CUST_FILEPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdf_custom_watermark_filepath" type="text" name="pdf_custom_watermark_filepath" size="60" value="{WATERMARK_CUST_FILEPATH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{WATERMARK_TOOL_VER_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARK_TOOL_VER_LABEL}','content','{WATERMARK_TOOL_VER__HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="pdf_pdftk_tool_greater_than_1_40" value="1" {WATERMARK_TOOL_VER_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WATERMARK_TOOL_VER_LABEL}','content','{WATERMARK_TOOL_VER__HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="pdf_pdftk_tool_greater_than_1_40" value="1" {WATERMARK_TOOL_VER_CHECKED} /></td>
       </tr>
 <!-- END: WaterMarkOptions -->
    </table>
@@ -510,31 +510,31 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{OTHER_ALLOW_CUST_POPUP_LABEL}</td>
-         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ALLOW_CUST_POPUP_LABEL}','content','{OTHER_ALLOW_CUST_POPUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="allow_custpopup" value="1" {OTHER_ALLOW_CUST_POPUP_CHECKED} /></td>
+         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ALLOW_CUST_POPUP_LABEL}','content','{OTHER_ALLOW_CUST_POPUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="allow_custpopup" value="1" {OTHER_ALLOW_CUST_POPUP_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_ALLOW_POPUP_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ALLOW_POPUP_LABEL}','content','{OTHER_ALLOW_POPUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="allow_popup" value="1" {OTHER_ALLOW_POPUP_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ALLOW_POPUP_LABEL}','content','{OTHER_ALLOW_POPUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="allow_popup" value="1" {OTHER_ALLOW_POPUP_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_VER_CONTROL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_VER_CONTROL_LABEL}','content','{OTHER_VER_CONTROL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="version_control" value="1" {OTHER_VER_CONTROL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_VER_CONTROL_LABEL}','content','{OTHER_VER_CONTROL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="version_control" value="1" {OTHER_VER_CONTROL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_INDEXING_SELECTABLE_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_INDEXING_SELECTABLE_LABEL}','content','{OTHER_INDEXING_SELECTABLE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="make_file_indexing_user_selectable" value="1" {OTHER_INDEXING_SELECTABLE_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_INDEXING_SELECTABLE_LABEL}','content','{OTHER_INDEXING_SELECTABLE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="make_file_indexing_user_selectable" value="1" {OTHER_INDEXING_SELECTABLE_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_INDEXING_OFF_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_INDEXING_OFF_LABEL}','content','{OTHER_INDEXING_OFF_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="turn_file_index_off" value="1" {OTHER_INDEXING_OFF_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_INDEXING_OFF_LABEL}','content','{OTHER_INDEXING_OFF_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="turn_file_index_off" value="1" {OTHER_INDEXING_OFF_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_FILE_REL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_FILE_REL_LABEL}','content','{OTHER_FILE_REL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="docRel" value="1" {OTHER_FILE_REL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_FILE_REL_LABEL}','content','{OTHER_FILE_REL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="docRel" value="1" {OTHER_FILE_REL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_DEF_REVISION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_DEF_REVISION_LABEL}','content','{OTHER_DEF_REVISION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_DEF_REVISION_LABEL}','content','{OTHER_DEF_REVISION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
             <select class="fpull1" name="default_revision" size="1">
 <!-- BEGIN: Revisions -->
                <option value="{OTHER_DEF_REVISION_VALUE}" {OTHER_DEF_REVISION_SELECTED}>{OTHER_DEF_REVISION_CAPTION}</option>
@@ -544,15 +544,15 @@
       </tr>
       <tr>
          <td class="form1"><label for="major_revision">{OTHER_MAJ_REVISION_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MAJ_REVISION_LABEL}','content','{OTHER_MAJ_REVISION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="major_revision" type="text" name="major_revision" size="5" value="{OTHER_MAJ_REVISION_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MAJ_REVISION_LABEL}','content','{OTHER_MAJ_REVISION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="major_revision" type="text" name="major_revision" size="5" value="{OTHER_MAJ_REVISION_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="minor_revision">{OTHER_MIN_REVISION_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_REVISION_LABEL}','content','{OTHER_MIN_REVISION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="minor_revision" type="text" name="minor_revision" size="5" value="{OTHER_MIN_REVISION_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_REVISION_LABEL}','content','{OTHER_MIN_REVISION_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="minor_revision" type="text" name="minor_revision" size="5" value="{OTHER_MIN_REVISION_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_GMT_OFFSET_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_GMT_OFFSET_LABEL}','content','{OTHER_GMT_OFFSET_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_GMT_OFFSET_LABEL}','content','{OTHER_GMT_OFFSET_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
             <select class="fpull1" name="machine_time_zone" size="1">
 <!-- BEGIN: GmtOffset -->
                <option value="{OTHER_GMT_OFFSET_VALUE}" {OTHER_GMT_OFFSET_SELECTED}>{OTHER_GMT_OFFSET_CAPTION}</option>
@@ -562,87 +562,87 @@
       </tr>
       <tr>
          <td class="form1">{OTHER_RESTRICT_VIEW_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_RESTRICT_VIEW_LABEL}','content','{OTHER_RESTRICT_VIEW_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="restrict_view" value="1" {OTHER_RESTRICT_VIEW_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_RESTRICT_VIEW_LABEL}','content','{OTHER_RESTRICT_VIEW_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="restrict_view" value="1" {OTHER_RESTRICT_VIEW_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_HIDE_BACKUP_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_HIDE_BACKUP_LABEL}','content','{OTHER_HIDE_BACKUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="hide_backup" value="1" {OTHER_HIDE_BACKUP_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_HIDE_BACKUP_LABEL}','content','{OTHER_HIDE_BACKUP_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="hide_backup" value="1" {OTHER_HIDE_BACKUP_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_FORGOT_PASS_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_FORGOT_PASS_LABEL}','content','{OTHER_FORGOT_PASS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="forgot_pass" value="1" {OTHER_FORGOT_PASS_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_FORGOT_PASS_LABEL}','content','{OTHER_FORGOT_PASS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="forgot_pass" value="1" {OTHER_FORGOT_PASS_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1"><label for="min_pass_length">{OTHER_MIN_PASS_LENGTH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_PASS_LENGTH_LABEL}','content','{OTHER_MIN_PASS_LENGTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_pass_length" type="text" name="min_pass_length" size="3" value="{OTHER_MIN_PASS_LENGTH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_PASS_LENGTH_LABEL}','content','{OTHER_MIN_PASS_LENGTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_pass_length" type="text" name="min_pass_length" size="3" value="{OTHER_MIN_PASS_LENGTH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="min_username_length">{OTHER_MIN_USER_LENGTH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_USER_LENGTH_LABEL}','content','{OTHER_MIN_USER_LENGTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_username_length" type="text" name="min_username_length" size="3" value="{OTHER_MIN_USER_LENGTH_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_USER_LENGTH_LABEL}','content','{OTHER_MIN_USER_LENGTH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_username_length" type="text" name="min_username_length" size="3" value="{OTHER_MIN_USER_LENGTH_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="min_pass_numeric">{OTHER_MIN_PASS_NUMERIC_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_PASS_NUMERIC_LABEL}','content','{OTHER_MIN_PASS_NUMERIC_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_pass_numeric" type="text" name="min_pass_numeric" size="3" value="{OTHER_MIN_PASS_NUMERIC_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_PASS_NUMERIC_LABEL}','content','{OTHER_MIN_PASS_NUMERIC_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_pass_numeric" type="text" name="min_pass_numeric" size="3" value="{OTHER_MIN_PASS_NUMERIC_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="min_pass_special">{OTHER_MIN_PASS_SPECIAL_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_PASS_SPECIAL_LABEL}','content','{OTHER_MIN_PASS_SPECIAL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_pass_special" type="text" name="min_pass_special" size="3" value="{OTHER_MIN_PASS_SPECIAL_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MIN_PASS_SPECIAL_LABEL}','content','{OTHER_MIN_PASS_SPECIAL_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="min_pass_special" type="text" name="min_pass_special" size="3" value="{OTHER_MIN_PASS_SPECIAL_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_ENABLE_LOCKOUT_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ENABLE_LOCKOUT_LABEL}','content','{OTHER_ENABLE_LOCKOUT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="enable_lock_account" value="1" {OTHER_ENABLE_LOCKOUT_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ENABLE_LOCKOUT_LABEL}','content','{OTHER_ENABLE_LOCKOUT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="enable_lock_account" value="1" {OTHER_ENABLE_LOCKOUT_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1"><label for="lock_account_bad_password">{OTHER_PASS_LOCKOUT_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_PASS_LOCKOUT_LABEL}','content','{OTHER_PASS_LOCKOUT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="lock_account_bad_password" type="text" name="lock_account_bad_password" size="3" value="{OTHER_PASS_LOCKOUT_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_PASS_LOCKOUT_LABEL}','content','{OTHER_PASS_LOCKOUT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="lock_account_bad_password" type="text" name="lock_account_bad_password" size="3" value="{OTHER_PASS_LOCKOUT_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="track_user_passwords">{OTHER_PASS_TRACK_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_PASS_TRACK_LABEL}','content','{OTHER_PASS_TRACK_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="track_user_passwords" type="text" name="track_user_passwords" size="3" value="{OTHER_PASS_TRACK_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_PASS_TRACK_LABEL}','content','{OTHER_PASS_TRACK_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="track_user_passwords" type="text" name="track_user_passwords" size="3" value="{OTHER_PASS_TRACK_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="change_password_every">{OTHER_PASS_CHANGE_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_PASS_CHANGE_LABEL}','content','{OTHER_PASS_CHANGE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="change_password_every" type="text" name="change_password_every" size="3" value="{OTHER_PASS_CHANGE_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_PASS_CHANGE_LABEL}','content','{OTHER_PASS_CHANGE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="change_password_every" type="text" name="change_password_every" size="3" value="{OTHER_PASS_CHANGE_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="rec_per_page">{OTHER_REC_PER_PAGE_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_REC_PER_PAGE_LABEL}','content','{OTHER_REC_PER_PAGE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="rec_per_page" type="text" name="rec_per_page" size="3" value="{OTHER_REC_PER_PAGE_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_REC_PER_PAGE_LABEL}','content','{OTHER_REC_PER_PAGE_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="rec_per_page" type="text" name="rec_per_page" size="3" value="{OTHER_REC_PER_PAGE_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="doc_id_prefix">{OTHER_DOC_ID_PREFIX_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_DOC_ID_PREFIX_LABEL}','content','{OTHER_DOC_ID_PREFIX_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="doc_id_prefix" type="text" name="doc_id_prefix" size="10" value="{OTHER_DOC_ID_PREFIX_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_DOC_ID_PREFIX_LABEL}','content','{OTHER_DOC_ID_PREFIX_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="doc_id_prefix" type="text" name="doc_id_prefix" size="10" value="{OTHER_DOC_ID_PREFIX_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="doc_id_num_digits">{OTHER_DOC_ID_DIGITS_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_DOC_ID_DIGITS_LABEL}','content','{OTHER_DOC_ID_DIGITS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="doc_id_num_digits" type="text" name="doc_id_num_digits" size="2" value="{OTHER_DOC_ID_DIGITS_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_DOC_ID_DIGITS_LABEL}','content','{OTHER_DOC_ID_DIGITS_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="doc_id_num_digits" type="text" name="doc_id_num_digits" size="2" value="{OTHER_DOC_ID_DIGITS_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_VIEW_NEW_WINDOW_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_VIEW_NEW_WINDOW_LABEL}','content','{OTHER_VIEW_NEW_WINDOW_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="view_doc_in_new_window" value="1" {OTHER_VIEW_NEW_WINDOW_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_VIEW_NEW_WINDOW_LABEL}','content','{OTHER_VIEW_NEW_WINDOW_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="view_doc_in_new_window" value="1" {OTHER_VIEW_NEW_WINDOW_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_ADMIN_TO_BROWSE_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ADMIN_TO_BROWSE_LABEL}','content','{OTHER_ADMIN_TO_BROWSE_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="admin_login_to_browse_page" value="1" {OTHER_ADMIN_TO_BROWSE_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ADMIN_TO_BROWSE_LABEL}','content','{OTHER_ADMIN_TO_BROWSE_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="admin_login_to_browse_page" value="1" {OTHER_ADMIN_TO_BROWSE_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_SAVE_KEYWORDS_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_SAVE_KEYWORDS_LABEL}','content','{OTHER_SAVE_KEYWORDS_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="save_keywords_to_db" value="1" {OTHER_SAVE_KEYWORDS_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_SAVE_KEYWORDS_LABEL}','content','{OTHER_SAVE_KEYWORDS_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="save_keywords_to_db" value="1" {OTHER_SAVE_KEYWORDS_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1"><label for="max_filesize">{OTHER_MAX_FILESIZE_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MAX_FILESIZE_LABEL}','content','{OTHER_MAX_FILESIZE_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="max_filesize" type="text" name="max_filesize" size="15" value="{OTHER_MAX_FILESIZE_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_MAX_FILESIZE_LABEL}','content','{OTHER_MAX_FILESIZE_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="max_filesize" type="text" name="max_filesize" size="15" value="{OTHER_MAX_FILESIZE_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="owl_timeout">{OTHER_TIMEOUT_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_TIMEOUT_LABEL}','content','{OTHER_TIMEOUT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="owl_timeout" type="text" name="owl_timeout" size="10" value="{OTHER_TIMEOUT_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_TIMEOUT_LABEL}','content','{OTHER_TIMEOUT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="owl_timeout" type="text" name="owl_timeout" size="10" value="{OTHER_TIMEOUT_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="owl_tmpdir">{OTHER_TMPDIR_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_TMPDIR_LABEL}','content','{OTHER_TMPDIR_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="owl_tmpdir" type="text" name="owl_tmpdir" size="60" value="{OTHER_TMPDIR_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_TMPDIR_LABEL}','content','{OTHER_TMPDIR_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="owl_tmpdir" type="text" name="owl_tmpdir" size="60" value="{OTHER_TMPDIR_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{OTHER_ANON_RO_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ANON_RO_LABEL}','content','{OTHER_ANON_RO_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ANON_RO_LABEL}','content','{OTHER_ANON_RO_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
 <!-- BEGIN: AnonRo -->
 <input  type="radio" value="{OTHER_ANON_RO_VALUE}" name="anon_ro" {OTHER_ANON_RO_SELECTED} />{OTHER_ANON_RO_CAPTION}
 <!-- END: AnonRo -->
@@ -650,7 +650,7 @@
       </tr>
       <tr>
          <td class="form1">{OTHER_ANON_USER_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ANON_USER_LABEL}','content','{OTHER_ANON_USER_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_ANON_USER_LABEL}','content','{OTHER_ANON_USER_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
             <select class="fpull1" name="def_anon_user" size="1">
 <!-- BEGIN: AnonUser -->
                <option value="{OTHER_ANON_USER_VALUE}" {OTHER_ANON_USER_CHECKED}>{OTHER_ANON_USER_CAPTION}</option>
@@ -660,7 +660,7 @@
       </tr>
       <tr>
          <td class="form1">{OTHER_FILE_ADMIN_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_FILE_ADMIN_LABEL}','content','{OTHER_FILE_ADMIN_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))">
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{OTHER_FILE_ADMIN_LABEL}','content','{OTHER_FILE_ADMIN_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))">
             <select class="fpull1" name="file_admin_group" size="1">
 <!-- BEGIN: FileAdmin -->
                <option value="{OTHER_FILE_ADMIN_VALUE}" {OTHER_FILE_ADMIN_CHECKED}>{OTHER_FILE_ADMIN_CAPTION}</option>
@@ -675,16 +675,16 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{TRASH_ENABLED_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TRASH_ENABLED_LABEL}','content','{TRASH_ENABLED_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="collect_trash" value="1"  onclick="javascript:this.form.submit()" {TRASH_ENABLED_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TRASH_ENABLED_LABEL}','content','{TRASH_ENABLED_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="collect_trash" value="1"  onclick="javascript:this.form.submit()" {TRASH_ENABLED_CHECKED} /></td>
       </tr>
 <!-- BEGIN: TrashOptions -->
       <tr>
          <td class="form1"><label for="trash_can_location">{TRASH_LOCATION_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TRASH_LOCATION_LABEL}','content','{TRASH_LOCATION_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="trash_can_location" type="text" name="trash_can_location" size="80" value="{TRASH_LOCATION_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TRASH_LOCATION_LABEL}','content','{TRASH_LOCATION_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="trash_can_location" type="text" name="trash_can_location" size="80" value="{TRASH_LOCATION_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1"><label for="restore_file_prefix">{TRASH_RESTORE_PREFIX_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TRASH_RESTORE_PREFIX_LABEL}','content','{TRASH_RESTORE_PREFIX_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="restore_file_prefix" type="text" name="restore_file_prefix" size="40" value="{TRASH_RESTORE_PREFIX_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TRASH_RESTORE_PREFIX_LABEL}','content','{TRASH_RESTORE_PREFIX_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="restore_file_prefix" type="text" name="restore_file_prefix" size="40" value="{TRASH_RESTORE_PREFIX_VALUE}" /></td>
       </tr>
 <!-- END: TrashOptions -->
    </table>
@@ -694,20 +694,20 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{REVIEW_ENABLED_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_ENABLED_LABEL}','content','{REVIEW_ENABLED_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="peer_review" value="1" {REVIEW_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_ENABLED_LABEL}','content','{REVIEW_ENABLED_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="peer_review" value="1" {REVIEW_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
       </tr>
 <!-- BEGIN: PeerReviewOptions -->
       <tr>
          <td class="form1">{REVIEW_OPTIONAL_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_OPTIONAL_LABEL}','content','{REVIEW_OPTIONAL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="peer_opt" value="1" {REVIEW_OPTIONAL_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_OPTIONAL_LABEL}','content','{REVIEW_OPTIONAL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="peer_opt" value="1" {REVIEW_OPTIONAL_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{REVIEW_OLD_VERSION_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_OLD_VERSION_LABEL}','content','{REVIEW_OLD_VERSION_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="leave_old_file_accessible" value="1" {REVIEW_OLD_VERSION_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_OLD_VERSION_LABEL}','content','{REVIEW_OLD_VERSION_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="leave_old_file_accessible" value="1" {REVIEW_OLD_VERSION_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{REVIEW_AUTO_CHECKOUT_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_AUTO_CHECKOUT_LABEL}','content','{REVIEW_AUTO_CHECKOUT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="auto_checkout_checking" value="1" {REVIEW_AUTO_CHECKOUT_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{REVIEW_AUTO_CHECKOUT_LABEL}','content','{REVIEW_AUTO_CHECKOUT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="auto_checkout_checking" value="1" {REVIEW_AUTO_CHECKOUT_CHECKED} /></td>
       </tr>
 <!-- END: PeerReviewOptions -->
    </table>
@@ -717,20 +717,20 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{LOG_ENABLED_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_ENABLED_LABEL}','content','{LOG_ENABLED_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="logging" value="1" {LOG_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_ENABLED_LABEL}','content','{LOG_ENABLED_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="logging" value="1" {LOG_ENABLED_CHECKED} onclick="javascript:this.form.submit()"  /></td>
       </tr>
 <!-- BEGIN: LoggingOptions -->
       <tr>
          <td class="form1">{LOG_FILE_ACT_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_FILE_ACT_LABEL}','content','{LOG_FILE_ACT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="log_file" value="1" {LOG_FILE_ACT_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_FILE_ACT_LABEL}','content','{LOG_FILE_ACT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="log_file" value="1" {LOG_FILE_ACT_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{LOG_LOGIN_ACT_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_LOGIN_ACT_LABEL}','content','{LOG_LOGIN_ACT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="log_login" value="1" {LOG_LOGIN_ACT_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_LOGIN_ACT_LABEL}','content','{LOG_LOGIN_ACT_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="log_login" value="1" {LOG_LOGIN_ACT_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1"><label for="log_rec_per_page">{LOG_REC_PER_PAGE_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_REC_PER_PAGE_LABEL}','content','{LOG_REC_PER_PAGE_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="log_rec_per_page" type="text" name="log_rec_per_page" size="5" value="{LOG_REC_PER_PAGE_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{LOG_REC_PER_PAGE_LABEL}','content','{LOG_REC_PER_PAGE_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="log_rec_per_page" type="text" name="log_rec_per_page" size="5" value="{LOG_REC_PER_PAGE_VALUE}" /></td>
       </tr>
 <!-- END: LoggingOptions -->
    </table>
@@ -740,41 +740,41 @@
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{SELFREG_ENABLED_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_ENABLED_LABEL}','content','{SELFREG_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg" value="1" {SELFREG_ENABLED_CHECKED} onclick="javascript:this.form.submit()" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_ENABLED_LABEL}','content','{SELFREG_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg" value="1" {SELFREG_ENABLED_CHECKED} onclick="javascript:this.form.submit()" /></td>
       </tr>
 <!-- BEGIN: SelfRegOptions -->
       <tr>
          <td class="form1"><label for="self_reg_quota">{SELFREG_QUOTA_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_QUOTA_LABEL}','content','{SELFREG_QUOTA_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="self_reg_quota" type="text" name="self_reg_quota" size="10" value="{SELFREG_QUOTA_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_QUOTA_LABEL}','content','{SELFREG_QUOTA_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="self_reg_quota" type="text" name="self_reg_quota" size="10" value="{SELFREG_QUOTA_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{SELFREG_NOTIFY_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_NOTIFY_LABEL}','content','{SELFREG_NOTIFY_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_notify" value="1" {SELFREG_NOTIFY_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_NOTIFY_LABEL}','content','{SELFREG_NOTIFY_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_notify" value="1" {SELFREG_NOTIFY_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{SELFREG_ATTACHFILE_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_ATTACHFILE_LABEL}','content','{SELFREG_ATTACHFILE_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_attachfile" value="1" {SELFREG_ATTACHFILE_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_ATTACHFILE_LABEL}','content','{SELFREG_ATTACHFILE_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_attachfile" value="1" {SELFREG_ATTACHFILE_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{SELFREG_DISABLEUSER_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_DISABLEUSER_LABEL}','content','{SELFREG_DISABLEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_disabled" value="1" {SELFREG_DISABLEUSER_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_DISABLEUSER_LABEL}','content','{SELFREG_DISABLEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_disabled" value="1" {SELFREG_DISABLEUSER_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{SELFREG_NOPREFACCESS_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_NOPREFACCESS_LABEL}','content','{SELFREG_NOPREFACCESS_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_noprefacces" value="1" {SELFREG_NOPREFACCESS_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_NOPREFACCESS_LABEL}','content','{SELFREG_NOPREFACCESS_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_reg_noprefacces" value="1" {SELFREG_NOPREFACCESS_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1"><label for="self_reg_maxsessions">{SELFREG_MAXSESS_LABEL}</label></td>
-         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_MAXSESS_LABEL}','content','{SELFREG_MAXSESS_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="self_reg_maxsessions" type="text" name="self_reg_maxsessions" size="10" value="{SELFREG_MAXSESS_VALUE}" /></td>
+         <td class="form1" width="100%"  onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_MAXSESS_LABEL}','content','{SELFREG_MAXSESS_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="self_reg_maxsessions" type="text" name="self_reg_maxsessions" size="10" value="{SELFREG_MAXSESS_VALUE}" /></td>
       </tr>
       <tr>
          <td class="form1">{SELFREG_CREATE_HOMEDIR_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_CREATE_HOMEDIR_LABEL}','content','{SELFREG_CREATE_HOMEDIR_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_create_homedir" value="1" {SELFREG_CREATE_HOMEDIR_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_CREATE_HOMEDIR_LABEL}','content','{SELFREG_CREATE_HOMEDIR_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_create_homedir" value="1" {SELFREG_CREATE_HOMEDIR_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">{SELFREG_CAPTCHA_LABEL}</td>
          <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{SELFREG_CAPTCHA_LABEL}','content','{SELFREG_CAPTCHA_
-LEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_captcha" value="1" {SELFREG_CAPTCHA_CHECKED} /></td>
+LEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="self_captcha" value="1" {SELFREG_CAPTCHA_CHECKED} /></td>
       </tr>
       <tr>
          <td class="form1">Primary Group:</td>
@@ -814,12 +814,12 @@ LEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td class="form1">{PERSISTLOGIN_ENABLED_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PERSISTLOGIN_ENABLED_LABEL}','content','{PERSISTLOGIN_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="remember_me" value="1" {PERSISTLOGIN_ENABLED_CHECKED} onclick="javascript:this.form.submit()" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PERSISTLOGIN_ENABLED_LABEL}','content','{PERSISTLOGIN_ENABLED_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="remember_me" value="1" {PERSISTLOGIN_ENABLED_CHECKED} onclick="javascript:this.form.submit()" /></td>
       </tr>
 <!-- BEGIN: PersistenLoginOptions -->
       <tr>
          <td class="form1"><label for="cookie_timeout">{PERSISTLOGIN_COOKIE_TIMEOUT_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PERSISTLOGIN_COOKIE_TIMEOUT_LABEL}','content','{PERSISTLOGIN_COOKIE_TIMEOUT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="cookie_timeout" type="text" name="cookie_timeout" size="5" value="{PERSISTLOGIN_COOKIE_TIMEOUT_VALUE}" /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PERSISTLOGIN_COOKIE_TIMEOUT_LABEL}','content','{PERSISTLOGIN_COOKIE_TIMEOUT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="cookie_timeout" type="text" name="cookie_timeout" size="5" value="{PERSISTLOGIN_COOKIE_TIMEOUT_VALUE}" /></td>
       </tr>
 <!-- END: PersistenLoginOptions -->
    </table>
@@ -829,43 +829,43 @@ LEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
    <tr>
       <td class="form1"><label for="virus_path"><img src="{THEME}/ui_icons/{VIRUS_TOOLPATH_IMG}" alt="{VIRUS_TOOLPATH_ALT}" title="{VIRUS_TOOLPATH_ALT}" border="0" />{VIRUS_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{VIRUS_TOOLPATH_LABEL}','content','{VIRUS_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="virus_path" type="text" name="virus_path" size="60" value="{VIRUS_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{VIRUS_TOOLPATH_LABEL}','content','{VIRUS_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="virus_path" type="text" name="virus_path" size="60" value="{VIRUS_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="dbdump_path"><img src="{THEME}/ui_icons/{DBDUMP_TOOLPATH_IMG}" alt="{DBDUMP_TOOLPATH_ALT}" title="{DBDUMP_TOOLPATH_ALT}" border="0" />{DBDUMP_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DBDUMP_TOOLPATH_LABEL}','content','{DBDUMP_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dbdump_path" type="text" name="dbdump_path" size="60" value="{DBDUMP_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DBDUMP_TOOLPATH_LABEL}','content','{DBDUMP_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="dbdump_path" type="text" name="dbdump_path" size="60" value="{DBDUMP_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="gzip_path"><img src="{THEME}/ui_icons/{GZIP_TOOLPATH_IMG}" alt="{GZIP_TOOLPATH_ALT}" title="{GZIP_TOOLPATH_ALT}" border="0" />{GZIP_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{GZIP_TOOLPATH_LABEL}','content','{GZIP_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="gzip_path" type="text" name="gzip_path" size="60" value="{GZIP_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{GZIP_TOOLPATH_LABEL}','content','{GZIP_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="gzip_path" type="text" name="gzip_path" size="60" value="{GZIP_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="tar_path"><img src="{THEME}/ui_icons/{TAR_TOOLPATH_IMG}" alt="{TAR_TOOLPATH_ALT}" title="{TAR_TOOLPATH_ALT}" border="0" />{TAR_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TAR_TOOLPATH_LABEL}','content','{TAR_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="tar_path" type="text" name="tar_path" size="60" value="{TAR_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{TAR_TOOLPATH_LABEL}','content','{TAR_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="tar_path" type="text" name="tar_path" size="60" value="{TAR_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="unzip_path"><img src="{THEME}/ui_icons/{UNZIP_TOOLPATH_IMG}" alt="{UNZIP_TOOLPATH_ALT}" title="{UNZIP_TOOLPATH_ALT}" border="0" />{UNZIP_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{UNZIP_TOOLPATH_LABEL}','content','{UNZIP_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="unzip_path" type="text" name="unzip_path" size="60" value="{UNZIP_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{UNZIP_TOOLPATH_LABEL}','content','{UNZIP_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="unzip_path" type="text" name="unzip_path" size="60" value="{UNZIP_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="pod2html_path"><img src="{THEME}/ui_icons/{POD2HTML_TOOLPATH_IMG}" alt="{POD2HTML_TOOLPATH_ALT}" title="{POD2HTML_TOOLPATH_ALT}" border="0" />{POD2HTML_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{POD2HTML_TOOLPATH_LABEL}','content','{POD2HTML_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="pod2html_path" type="text" name="pod2html_path" size="60" value="{POD2HTML_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{POD2HTML_TOOLPATH_LABEL}','content','{POD2HTML_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="pod2html_path" type="text" name="pod2html_path" size="60" value="{POD2HTML_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="rtftotext_path"><img src="{THEME}/ui_icons/{RTFTOTEXT_TOOLPATH_IMG}" alt="{RTFTOTEXT_TOOLPATH_ALT}" title="{RTFTOTEXT_TOOLPATH_ALT}" border="0" />{RTFTOTEXT_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{RTFTOTEXT_TOOLPATH_LABEL}','content','{RTFTOTEXT_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="rtftotext_path" type="text" name="rtftotext_path" size="60" value="{RTFTOTEXT_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{RTFTOTEXT_TOOLPATH_LABEL}','content','{RTFTOTEXT_TOOLPATH_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="rtftotext_path" type="text" name="rtftotext_path" size="60" value="{RTFTOTEXT_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="pdftotext_path"><img src="{THEME}/ui_icons/{PDFTOTEXT_TOOLPATH_IMG}" alt="{PDFTOTEXT_TOOLPATH_ALT}" title="{PDFTOTEXT_TOOLPATH_ALT}" border="0" />{PDFTOTEXT_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PDFTOTEXT_TOOLPATH_LABEL}','content','{PDFTOTEXT_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdftotext_path" type="text" name="pdftotext_path" size="60" value="{PDFTOTEXT_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PDFTOTEXT_TOOLPATH_LABEL}','content','{PDFTOTEXT_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="pdftotext_path" type="text" name="pdftotext_path" size="60" value="{PDFTOTEXT_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="wordtotext_path"><img src="{THEME}/ui_icons/{WORDTOTEXT_TOOLPATH_IMG}" alt="{WORDTOTEXT_TOOLPATH_ALT}" title="{WORDTOTEXT_TOOLPATH_ALT}" border="0" />{WORDTOTEXT_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WORDTOTEXT_TOOLPATH_LABEL}','content','{WORDTOTEXT_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="wordtotext_path" type="text" name="wordtotext_path" size="60" value="{WORDTOTEXT_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{WORDTOTEXT_TOOLPATH_LABEL}','content','{WORDTOTEXT_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="wordtotext_path" type="text" name="wordtotext_path" size="60" value="{WORDTOTEXT_TOOLPATH_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="ppttotext_path"><img src="{THEME}/ui_icons/{PPTTOTEXT_TOOLPATH_IMG}" alt="{PPTTOTEXT_TOOLPATH_ALT}" title="{PPTTOTEXT_TOOLPATH_ALT}" border="0" />{PPTTOTEXT_TOOLPATH_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PPTTOTEXT_TOOLPATH_LABEL}','content','{PPTTOTEXT_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="ppttotext_path" type="text" name="ppttotext_path" size="60" value="{PPTTOTEXT_TOOLPATH_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{PPTTOTEXT_TOOLPATH_LABEL}','content','{PPTTOTEXT_TOOLPATHD_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="ppttotext_path" type="text" name="ppttotext_path" size="60" value="{PPTTOTEXT_TOOLPATH_VALUE}" /></td>
    </tr>
    </table>
             </div>
@@ -874,28 +874,28 @@ LEUSER_LABEL_HELP_TEXT}', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
      <tr>
          <td class="form1">{DL_COUNT_ENABLE}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_COUNT_ENABLE}','content','{DL_COUNT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="dl_count" value="1"{DL_COUNT_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_COUNT_ENABLE}','content','{DL_COUNT_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="dl_count" value="1"{DL_COUNT_CHECKED} /></td>
       </tr>
      <tr>
          <td class="form1">{DL_BLOCK_LABEL}</td>
-         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_BLOCK_LABEL}','content','{DL_BLOCK_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="dl_block" value="1"{DL_BLOCK_CHECKED} /></td>
+         <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_BLOCK_LABEL}','content','{DL_BLOCK_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="fcheckbox1" type="checkbox" name="dl_block" value="1"{DL_BLOCK_CHECKED} /></td>
       </tr>
    <tr>
       <td class="form1"><label for="dl_count_trigger">{DL_COUNT_TRIGGER_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_COUNT_TRIGGER_LABEL}','content','{DL_COUNT_TRIGGER_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_count_trigger" type="text" name="dl_count_trigger" size="20" value="{DL_COUNT_TRIGGER_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_COUNT_TRIGGER_LABEL}','content','{DL_COUNT_TRIGGER_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_count_trigger" type="text" name="dl_count_trigger" size="20" value="{DL_COUNT_TRIGGER_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="dl_size_trigger">{DL_SIZE_TRIGGER_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_SIZE_TRIGGER_LABEL}','content','{DL_SIZE_TRIGGER_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_size_trigger" type="text" name="dl_size_trigger" size="20" value="{DL_SIZE_TRIGGER_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_SIZE_TRIGGER_LABEL}','content','{DL_SIZE_TRIGGER_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_size_trigger" type="text" name="dl_size_trigger" size="20" value="{DL_SIZE_TRIGGER_VALUE}" /></td>
    </tr>
    <tr>
       <td class="form1"><label for="dl_len">{DL_LEN_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_LEN_LABEL}','content','{DL_LEN_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_len" type="text" name="dl_len" size="20" value="{DL_LEN_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_LEN_LABEL}','content','{DL_LEN_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput1" id="dl_len" type="text" name="dl_len" size="20" value="{DL_LEN_VALUE}" /></td>
    </tr>
    <tr>
    <tr>
       <td class="form1"><label for="dl_notification_list">{DL_NOTIFICATION_LIST_LABEL}</label></td>
-      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_NOTIFICATION_LIST_LABEL}','content','{NOTIFICATION_LIST_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))"><input class="finput_large" id="dl_notification_list" type="text" name="dl_notification_list" size="190" value="{DL_NOTIFICATION_LIST_VALUE}" /></td>
+      <td class="form1" width="100%" onmouseover="return makeTrue(domTT_activate(this,event,'caption','{DL_NOTIFICATION_LIST_LABEL}','content','{NOTIFICATION_LIST_HELP_TEXT}','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))"><input class="finput_large" id="dl_notification_list" type="text" name="dl_notification_list" size="190" value="{DL_NOTIFICATION_LIST_VALUE}" /></td>
    </tr>
    </table>
             </div>
