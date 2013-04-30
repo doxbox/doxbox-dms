@@ -124,21 +124,11 @@ function fGetHiddenFields ($args)
 
 function fPrintFormDoctypeRadio($rowtitle, $fieldname, $value, $option_text , $sReadonly = "", $iFileId = "")
 {
-//sun2earth begin
    global $owl_lang, $default;
-//sun2earth end
 
-   //if ($default->debug_pre_xtemplate_html)
-   //{
-      print("<tr>\n");
-      print("<td class=\"form1\">$rowtitle</td>\n");
-   //}
+   print("<tr>\n");
+   print("<td class=\"form1\">$rowtitle</td>\n");
 
-   //if ($xtpl)
-   //{
-      //$xtpl->assign('DOC_TYPE_RADIO_LABEL', $rowtitle);
-   //}
-//sun2earth begin
    $sExtendedHelpVar = "owl_" . $fieldname . "_extended";   
    if (!empty($owl_lang->{$sExtendedHelpVar}))
    {
@@ -149,20 +139,14 @@ function fPrintFormDoctypeRadio($rowtitle, $fieldname, $value, $option_text , $s
        $extended_help="";
    }
    $checked = "";
-   //if ($default->debug_pre_xtemplate_html)
-   //{
-      print("<td class=\"form1\" width=\"100%\"" . $extended_help . ">");
-   //}
 
-   //if ($xtpl)
-   //{
-      //$xtpl->assign('DOC_TYPE_RADIO_EXTENDED', $extended_help);
-      //$xtpl->assign('DOC_TYPE_RADIO_READONLY', $sReadonly);
-   //}
+   print("<td class=\"form1\" width=\"100%\"" . $extended_help . ">");
+
    if ($value == "0")
    {
          $checked = "checked=\"checked\"";
    }
+
    foreach ($option_text as $caption)
    {
       if ($caption == $value) 
@@ -170,30 +154,12 @@ function fPrintFormDoctypeRadio($rowtitle, $fieldname, $value, $option_text , $s
          $checked = "checked=\"checked\"";
       }
       
-      //if ($xtpl)
-      //{
-         //$xtpl->assign('DOC_TYPE_RADIO_CHECKED', $checked);
-         //$xtpl->assign('DOC_TYPE_RADIO_NAME', $fieldname . $iFileId);
-         //$xtpl->assign('DOC_TYPE_RADIO_VALUE', $caption);
-         //$xtpl->assign('DOC_TYPE_RADIO_VALUE_LABEL', $caption);
-         ////$xtpl->parse('main.DataBlock.File.DocFields.Row.Radio.Input');
-      //}
-      //if ($default->debug_pre_xtemplate_html)
-      //{
-         print("<input $sReadonly type=\"radio\" value=\"$caption\" name=\"$fieldname" . $iFileId ."\" $checked />$caption\n");
-	  //}
+      print("<input $sReadonly type=\"radio\" value=\"$caption\" name=\"$fieldname" . $iFileId ."\" $checked />$caption\n");
+
       $checked = "";
    }
 
-   //if ($default->debug_pre_xtemplate_html)
-   //{
-      print("</td>\n</tr>\n");
-   //}
-
-   //if ($xtpl)
-   //{
-      //$xtpl->parse('main.DataBlock.File.DocFields.Row.Radio');
-   //}
+  print("</td>\n</tr>\n");
 }
 
 function fPrintSectionHeader($title, $class = 'admin2', $sSlider = '')

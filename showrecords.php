@@ -162,7 +162,6 @@ if ($type == "n")
 
       $qSqlQuery = "('1'='0' ";
  
-      //print("DEBUG: QUERY: $qQuery <br />");
       $sql->query($qQuery);
 
       while ($sql->next_record())
@@ -170,7 +169,7 @@ if ($type == "n")
          
          $bIsInBrokenTree = false;
          fIsInBrokenTree($sql->f('parent'));
-//print("<br />PARE: " . $sql->f('parent') );
+
          if ($bIsInBrokenTree == false)
          {
             continue;
@@ -182,13 +181,14 @@ if ($type == "n")
       $qSqlQuery .= ")";
 
       $qFileQuery = "SELECT * FROM $default->owl_files_table where $qSqlQuery order by $order_clause ";
-      //print("DEBUG: QUERY: $qFileQuery");
 
-} elseif ($type == "m")
+} 
+elseif ($type == "m")
 {
    $qFileQuery = "SELECT * FROM $default->owl_files_table where creatorid = '$userid' order by $order_clause ";
 
-} elseif ($type == "g")
+} 
+elseif ($type == "g")
 {
    $sqlmemgroup = new Owl_DB;
    $sqlmemgroup->query("select * from $default->owl_users_grpmem_table where groupid is not null and userid = '" . $userid . "'");
@@ -229,8 +229,6 @@ if ($type == "n")
       }
       $qQuery .= ")";
 
-      //print("DEBUG: Q: $qQuery <br />");
-
       $qSqlQuery = "('1'='0' ";
       $glue = "";
  
@@ -255,7 +253,6 @@ if ($type == "n")
 
    $qFolderQuery = "SELECT * FROM $default->owl_folders_table where  $qSqlQuery";
 
-   //print("DEBUG: Q: $qFolderQuery <br />");
 include_once($default->owl_fs_root ."/lib/header.inc");
 include_once($default->owl_fs_root ."/lib/userheader.inc");
 
@@ -444,7 +441,6 @@ if ($default->show_search == 1 or $default->show_search == 3 or (fIsAdmin() and 
 
       $xtpl->assign('TITLE_ACTIONS', $owl_lang->actions);
       $xtpl->parse('main.DataBlock.Title.Actions');
-      //print("<td class=\"title1\">$owl_lang->actions</td>\n");
    }
   
    if ($default->owl_version_control == 1)
@@ -458,9 +454,7 @@ if ($default->show_search == 1 or $default->show_search == 3 or (fIsAdmin() and 
    {
       $xtpl->assign('PEER_STATUS_TITLE', $owl_lang->peer_satus);
       $xtpl->parse('main.DataBlock.Title.peerreview');
-    //  print("\t<td class=\"title1\" align=\"center\">$owl_lang->peer_satus</td>");
    }
-   //print("</tr>\n");
 
 $sql = new Owl_DB;
 
@@ -522,20 +516,17 @@ if ($type == "t" or $type == "br")
 
          $xtpl->assign('FOLDER_TD_CLASS', $sTrClass);
       
-         //print("\t\t\t\t<tr class=\"$sTrClassHilite\" onMouseOver=\"this.className='$sTrClassHiliteAlt'\" onMouseOut=\"this.className='$sTrClassHilite'\">");
 
       //*******************************************************************************************************
 
    if(($default->expand_disp_status and $expand == 1) or ($default->collapse_disp_status and $expand == 0))
    {
-      //print("<td class=\"$sTrClass\">&nbsp;<br /></td>");
       $xtpl->parse('main.DataBlock.Folder.Status');
    }
 
    if ($default->thumbnails == 1)
    {
       $xtpl->parse('main.DataBlock.Folder.Thumb');
-//print("<td class=\"$sTrClass\">&nbsp;</td>\n");
    }
 
    $urlArgs2 = $urlArgs;
@@ -576,14 +567,12 @@ if ($type == "t" or $type == "br")
       $xtpl->assign('FOLDER_DOCTYPE_URL', $url);
       $xtpl->assign('FOLDER_DOCTYPE_TITLE', $sAltString);
       $xtpl->parse('main.DataBlock.Folder.DocType');
-      //print("<td class=\"$sTrClass\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/img/icon_filetype/folder_closed.gif\" border=\"0\" alt=\"\" /><br /></td>");
    }
 
 
    if(($default->expand_disp_doc_num and $expand == 1) or ($default->collapse_disp_doc_num and $expand == 0))
    {
       $xtpl->parse('main.DataBlock.Folder.id');
-      //print("<td class=\"$sTrClass\">&nbsp;<br /></td>");
    }
    if(($default->expand_disp_title and $expand == 1) or ($default->collapse_disp_status and $expand == 0))
    {
@@ -670,14 +659,12 @@ if ($type == "t" or $type == "br")
          if (($default->expand_disp_version and $expand == 1) or ($default->collapse_disp_version and $expand == 0))
          {
             $xtpl->parse('main.DataBlock.Folder.major_minor_revision');
-            //print("\t\t\t\t<td class=\"$sTrClass\">&nbsp;</td>\n");
          }
 
        if (($default->expand_disp_file and $expand == 1) or ($default->collapse_disp_file and $expand == 0))
          {
             if(!$default->old_action_icons)
             {
-               //$xtpl->assign('FOLDER_MENU', $mid->getMenu('vermenuf' .$sql->f("id")));
                fSetupFolderActionMenusXTPL($sql->f("id"), $sql->f("name"));
                $xtpl->parse('main.DataBlock.Folder.filename');
             }
@@ -690,7 +677,6 @@ if ($type == "t" or $type == "br")
 
          if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
          {
-            //print("\t\t\t\t<td class=\"$sTrClass\">&nbsp;</td>\n");
             if ($default->hide_folder_size)
             {
                $xtpl->assign('FOLDER_SIZE', '&nbsp;');
@@ -715,7 +701,6 @@ if ($type == "t" or $type == "br")
 
          if (($default->expand_disp_posted and $expand == 1) or ($default->collapse_disp_posted and $expand == 0))
          {
-            //print("<td class=\"$sTrClass\" align=\"left\">" . flid_to_creator($sql->f("id")) . "</td>\n");
             $xtpl->assign('FOLDER_CREATOR', $sLinkToUser);
             $xtpl->parse('main.DataBlock.Folder.creatorid');
 
@@ -742,7 +727,6 @@ if ($type == "t" or $type == "br")
       {
          if (($default->expand_disp_file and $expand == 1) or ($default->collapse_disp_file and $expand == 0))
          {
-            //print("\t\t\t\t<td class=\"$sTrClass\">&nbsp;</td>\n");
             if(!$default->old_action_icons)
             {
                //$xtpl->assign('FOLDER_MENU', $mid->getMenu('vermenuf' .$sql->f("id")));
@@ -758,7 +742,6 @@ if ($type == "t" or $type == "br")
          }
          if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
          {
-            //print("\t\t\t\t<td class=\"$sTrClass\">&nbsp;</td>\n");
             if ($default->hide_folder_size)
             {
                $xtpl->assign('FOLDER_SIZE', '&nbsp;');
@@ -783,7 +766,6 @@ if ($type == "t" or $type == "br")
          }
          if (($default->expand_disp_modified and $expand == 1) or ($default->collapse_disp_modified and $expand == 0))
          {
-            //print("\t\t\t\t<td class=\"$sTrClass\">&nbsp;</td>\n");
             if ($sql->f("smodified"))
             {
                $xtpl->assign('FOLDER_MODIFIED', date($owl_lang->localized_date_format, strtotime($sql->f("smodified")) + $default->time_offset));
@@ -920,9 +902,6 @@ if ($type == "t" or $type == "br")
                   $urlArgs2['action'] = 'folder_monitor';
                   $url = fGetURL ('dbmodify.php', $urlArgs2);
    
-//{
-                  //print("<a href=\"$url\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/monitor.gif\" border=\"0\" alt=\"$owl_lang->alt_monitor_folder\" title=\"$owl_lang->alt_monitor_folder\" /></a>");
-//}
                   $xtpl->assign('FOLDER_ACTION_MON', "<a href=\"$url\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/monitor.gif\" border=\"0\" alt=\"$owl_lang->alt_monitor_folder\" title=\"$owl_lang->alt_monitor_folder\" /></a>");
                } 
                else
@@ -1088,11 +1067,9 @@ while ($qGetFile->next_record())
    $xtpl->assign('FILE_TD_CLASS', $sTrClass);
 
 
-   //print("\t\t\t\t<tr class=\"$sTrClassHilite\" onMouseOver=\"this.className='$sTrClassHiliteAlt'\" onMouseOut=\"this.className='$sTrClassHilite'\">");
 
    if(($default->expand_disp_status and $expand == 1) or ($default->collapse_disp_status and $expand == 0))
    {
-      //print("<td class=\"$sTrClass\" align=\"left\">");
       if ($bHasComments)
       {
          if ($bPrintNewComment)
@@ -1104,10 +1081,6 @@ while ($qGetFile->next_record())
             $iImage = "comment";
          }
 
-         //if ($bPrintNewComment)
-         //{
-            //print("<b class=\"hilite\">");
-         //}
          
          $urlArgs2 = $urlArgs;
          $urlArgs2['id']     = $qGetFile->f("id");
@@ -1115,11 +1088,6 @@ while ($qGetFile->next_record())
          $urlArgs2['action'] = 'file_comment';
          $url = fGetURL ('modify.php', $urlArgs2);
    
-         //print("<a class=\"$sLfList\" href=\"$url\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/comment.gif\" border=\"0\" alt=\"$owl_lang->alt_comments\" title=\"$owl_lang->alt_comments\" /></a><font color=\"darkblue\">&nbsp;($iTotalComments)</font>");
-         //if ($bPrintNewComment)
-         //{
-            //print("</B>");
-         //}
          $xtpl->assign('FILE_STATUS_COMMENT_IMG', "<a class=\"$sLfList\" href=\"$url\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/$iImage.gif\" border=\"0\" alt=\"$iTotalComments --- $owl_lang->alt_comments\" title=\"$iTotalComments --- $owl_lang->alt_comments\" /></a>");
 
       } 
@@ -1134,25 +1102,20 @@ while ($qGetFile->next_record())
          if ($bPrintNew)
          {
             $xtpl->assign('FILE_STATUS_NEW', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_icons/new.gif\" border=\"0\" alt=\"$owl_lang->alt_new\" title=\"$owl_lang->alt_new\" />");
-            //print("<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_icons/new.gif\" border=\"0\" alt=\"$owl_lang->alt_new\" />");
          } 
          if ($bPrintUpdated)
          {
-            //print("<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_icons/updated.gif\" border=\"0\" alt=\"$owl_lang->alt_updated\" />");
             $xtpl->assign('FILE_STATUS_UPDATED', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_icons/updated.gif\" border=\"0\" alt=\"$owl_lang->alt_updated\" title=\"$owl_lang->alt_updated\" />");
          } 
          if ($bWasIndexed)
          {
             $xtpl->assign('FILE_STATUS_INDEXED', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_icons/indexed.png\" border=\"0\" alt=\"$owl_lang->alt_indexed\" title=\"$owl_lang->alt_indexed\" />");
-            //print("&nbsp;<a class=\"curl1\">*</a>");
          }
       } 
       $xtpl->parse('main.DataBlock.File.Status');
-      //print("<br /></td>");
    }
    if ($default->thumbnails == 1)
    {
-      //print("<td class=\"$sTrClass\">");
 	  $sThumbUrl = $default->thumbnails_url . '/' . $default->owl_current_db . "_" . $iRealFileID . "_small.png";
       $sThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_small.png";
 
@@ -1161,48 +1124,28 @@ while ($qGetFile->next_record())
 
       if (file_exists($sThumbLoc))
       {
-         if (file_exists($sMedThumbLoc))
-         {
-           //$sJScript = " onmouseover=\"showtrail('$sMedThumbUrl',5);\" onmouseout=\"hidetrail();\"";
-           $sJScript = "";
-         }
-         else
-         {
-           $sJScript = "";
-         }
-         $xtpl->assign('FILE_THUMBNAIL', "<img src=\"$sThumbUrl\" border=\"1\" $sJScript alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
-
-         //print("<img src=\"$sThumbUrl\" border=\"1\" $sJScript alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
+         $xtpl->assign('FILE_THUMBNAIL', "<img src=\"$sThumbUrl\" border=\"1\" alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
       }
       else
       {
          $xtpl->assign('FILE_THUMBNAIL', "&nbsp;");
-         //print("&nbsp;\n");
       }
-      //print("</td>\n");
       $xtpl->parse('main.DataBlock.File.Thumb');
    }
 
    if (($default->expand_disp_doc_num and $expand == 1) or ($default->collapse_disp_doc_num and $expand == 0))
    {
       $sZeroFilledId = str_pad($qGetFile->f("id"),$default->doc_id_num_digits, "0", STR_PAD_LEFT);
-      //print("<td class=\"$sTrClass\" align=\"left\">". $default->doc_id_prefix . $sZeroFilledId ."</td>");
       $xtpl->assign('FILE_ID_VALUE', $sBoldBegin . $default->doc_id_prefix . $sZeroFilledId . $sBoldEnd);
       $xtpl->parse('main.DataBlock.File.id');
    }
 
    if (($default->expand_disp_doc_type and $expand == 1) or ($default->collapse_disp_doc_type and $expand == 0))
    {
-      //print("<td class=\"$sTrClass\" align=\"left\">");
-      //$choped = explode("\.", $qGetFile->f("filename"));
-      //$pos = count($choped);
       $ext = fFindFileExtension($qGetFile->f('filename'));
       
-      //if ( $pos > 1 )
       if (!empty($ext))
       {
-         //$ext = strtolower($choped[$pos-1]);
-
          if ($iRealFileID == $qGetFile->f('id'))
          {
             $sDispIcon = $ext;
@@ -1217,21 +1160,11 @@ while ($qGetFile->next_record())
          $sDispIcon = "NoExtension";
       }
    
-      //if (($ext == "gz") && ($pos > 2))
-      //{
-         //$exttar = strtolower($choped[$pos-2]);
-         //if (strtolower($choped[$pos-2]) == "tar")
-            //$ext = "tar.gz";
-      //} 
-
    $urlArgs2 = $urlArgs;
    $urlArgs2['sess']   = $sess;
    $urlArgs2['id']     = $qGetFile->f("id");
    $urlArgs2['parent'] = $parent;
-             // 0 = View File Details
-   // 1 = Download File
-   // 2 = Modify File Properties
-   // 3 = View File
+
    if ($default->file_action_click_title_column == 0)
    {
       $urlArgs2['action'] = 'file_details';
@@ -1267,7 +1200,6 @@ while ($qGetFile->next_record())
 
       if ($qGetFile->f("url") == "1")
       {
-         //$xtpl->assign('FILE_DOCTYPE', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_filetype/url.gif\" border=\"0\" alt=\"\" />");
          $xtpl->assign('FILE_DOCTYPE_IMG', 'url');
          $xtpl->assign('FILE_DOCTYPE_URL_OPEN', '');
          $xtpl->assign('FILE_DOCTYPE_URL_CLOSE', '');;
@@ -1298,7 +1230,6 @@ while ($qGetFile->next_record())
    
    if (($default->expand_disp_title and $expand == 1) or ($default->collapse_disp_title and $expand == 0))
    {
-      //print("<td class=\"$sTrClass\" align=\"left\">");
       $sPopupDescription = fCleanDomTTContent($qGetFile->f("description"));
 
       if ($sPopupDescription == "") 
@@ -1314,13 +1245,6 @@ while ($qGetFile->next_record())
       $urlArgs2['action'] = 'file_details';
       $url = fGetURL ('view.php', $urlArgs2);
    
-      //print("\n<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true));" . '"');
-
-      //print(">\n");
-      //print("\n");
-   
-      //print $qGetFile->f("name") . "</a>";
-      //print("</td>\n");
       $sTitle = $sBoldBegin . $qGetFile->f("name") . $sBoldEnd . "</a>";
       $xtpl->assign('FILE_NAME', "<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', " . $default->popup_lifetime . ", 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true));  title=\"$sAltString: " . $qGetFile->f("filename") ."\"" . '">' . $sTitle);
       $xtpl->parse('main.DataBlock.File.Name');
@@ -1332,7 +1256,6 @@ while ($qGetFile->next_record())
    {
       if (($default->expand_disp_version and $expand == 1) or ($default->collapse_disp_version and $expand == 0))
       {
-         //print("\n<td class=\"$sTrClass\" align=\"left\">" . $qGetFile->f("major_revision") . "." . $qGetFile->f("minor_revision") . "</td>");
          $xtpl->assign('FILE_VERSION', $sBoldBegin . $qGetFile->f("major_revision") . "." . $qGetFile->f("minor_revision") . $sBoldEnd);
          $xtpl->parse('main.DataBlock.File.major_minor_revision');
       }
@@ -1346,11 +1269,9 @@ while ($qGetFile->next_record())
          {
              $xtpl->assign('FILE_FILENAME', "<a class=\"$sLfList\" href=\"" . $qGetFile->f("filename") . "\" target=\"new\" title=\"$owl_lang->title_browse_site : " . $qGetFile->f("filename") . "\">" . $qGetFile->f("filename") . "</a>");
 
-            //print("\n<td class=\"$sTrClass\" align=\"left\"><a class=\"$sLfList\" href=\"" . $qGetFile->f("filename") . "\" target=\"new\" title=\"$owl_lang->title_browse_site : " . $qGetFile->f("filename") . "\">" . $qGetFile->f("filename") . " </a></td>\n");
          }
          if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
          {
-            //print("<td class=\"$sTrClass\" align=\"right\">&nbsp;</td>\n");
             $xtpl->assign('FILE_SIZE', "&nbsp;");
          }
       } 
@@ -1358,12 +1279,10 @@ while ($qGetFile->next_record())
       {
          if (($default->expand_disp_file and $expand == 1) or ($default->collapse_disp_file and $expand == 0))
          {
-            //print("\n<td class=\"$sTrClass\" align=\"left\">" . $qGetFile->f("filename") . "</td>\n");
             $xtpl->assign('FILE_FILENAME', $qGetFile->f("filename"));
          }
          if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
          {
-            //print("<td class=\"$sTrClass\" align=\"right\">&nbsp;</td>\n");
             $xtpl->assign('FILE_SIZE', "&nbsp;");
          }
       } 
@@ -1372,7 +1291,6 @@ while ($qGetFile->next_record())
    {
       if (($default->expand_disp_file and $expand == 1) or ($default->collapse_disp_file and $expand == 0))
       {
-         //print("\n<td class=\"$sTrClass\" align=\"left\">");
          if (check_auth($qGetFile->f("id"), "file_download", $userid))
          {
             if($default->old_action_icons)
@@ -1381,35 +1299,21 @@ while ($qGetFile->next_record())
                $urlArgs2['id']     = $qGetFile->f("id");
                $urlArgs2['parent'] = $qGetFile->f("parent");
                $url = fGetURL ('download.php', $urlArgs2);
-               //print("\n<a class=\"$sLfList\" href=\"$url\" title=\"$owl_lang->title_download_view\">" . $qGetFile->f("filename") . "</a>");
                $xtpl->assign('FILE_FILENAME', "<a class=\"$sLfList\" href=\"" . $url  . "\" title=\"$owl_lang->title_download_view>" . $qGetFile->f("filename") . "</a>");
             }
             else
             {
-               //if (empty($mid))
-               //{
-                  //$xtpl->assign('FILE_FILENAME', $qGetFile->f("filename"));
-                  //print($qGetFile->f("filename"));
-               //}
-               //else
-               //{
-                 // $mid->printMenu('vermenu' .$qGetFile->f("id"));
-                  //$xtpl->assign('FILE_FILENAME', $mid->getMenu('vermenu' .$qGetFile->f("id")));
-                  fSetupFileActionMenusXTPL($qGetFile->f("id"), $qGetFile->f("filename"), $qGetFile->f("creatorid"), $qGetFile->f("approved"), $qGetFile->f("checked_out"), $qGetFile->f("url"), $qGetFile->f("parent"), $qGetFile->f("infected"));
-               //}
+               fSetupFileActionMenusXTPL($qGetFile->f("id"), $qGetFile->f("filename"), $qGetFile->f("creatorid"), $qGetFile->f("approved"), $qGetFile->f("checked_out"), $qGetFile->f("url"), $qGetFile->f("parent"), $qGetFile->f("infected"));
             }
          }
          else
          {
             $xtpl->assign('FILE_FILENAME', $qGetFile->f("filename"));
-            //print($qGetFile->f("filename"));
          }
-         //print("</td>\n");
          $xtpl->parse('main.DataBlock.File.filename');
       }
       if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
       {
-         //print("<td class=\"$sTrClass\" align=\"right\">" . gen_filesize($qGetFile->f("f_size")) . "</td>");
          $xtpl->assign('FILE_SIZE', gen_filesize($qGetFile->f("f_size")));
          $xtpl->parse('main.DataBlock.File.f_size');
       }
@@ -1427,14 +1331,10 @@ while ($qGetFile->next_record())
       }
 
 
-   //if ($expand == 1)
-   //{
       if (($default->expand_disp_posted and $expand == 1) or ($default->collapse_disp_posted and $expand == 0))
       {
          $xtpl->assign('FILE_CREATOR', $sLinkToUser);
          $xtpl->parse('main.DataBlock.File.creatorid');
-
-         //print("\t\t\t\t<td class=\"$sTrClass\" align=\"left\"><a class=\"$sLfList\" href=\"prefs.php?owluser=" . $qGetFile->f("creatorid") . "&amp;sess=$sess&amp;expand=$expand&amp;parent=" . $qGetFile->f("parent") . "&amp;order=$order&amp;sortname=$sortname\">" . fid_to_creator($qGetFile->f("id")) . "</a></td>\n");
       }
          if (($default->expand_disp_updated and $expand == 1) or ($default->collapse_disp_updated and $expand == 0))
          {
@@ -1444,21 +1344,18 @@ while ($qGetFile->next_record())
 
       if (($default->expand_disp_modified and $expand == 1) or ($default->collapse_disp_modified and $expand == 0))
       {
-         //print("<td class=\"$sTrClass\" align=\"left\">" . date($owl_lang->localized_date_format, strtotime($qGetFile->f("smodified")) + $default->time_offset) . "</td>\n");
          $xtpl->assign('FILE_MODIFIED', $sBoldBegin . date($owl_lang->localized_date_format, strtotime($qGetFile->f("smodified")) + $default->time_offset) . $sBoldEnd);
          $xtpl->parse('main.DataBlock.File.smodified');
       }
 
          if ($type == "wa")
          {
-            //print("\t\t\t\t<td class=\"$sTrClass\" align=\"left\">");
             $urlArgs2 = $urlArgs;
             $urlArgs2['binary'] = 1;
             $urlArgs2['id'] = $qGetFile->f("id");
             $urlArgs2['parent'] = $parent;
 
             $sUrl = fGetURL ('download.php', $urlArgs2);
-            //print("<a href=\"$sUrl\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/bin.gif\" border=\"0\" alt=\"$owl_lang->alt_get_file\" title=\"$owl_lang->alt_get_file\" /></a>");
 
             $xtpl->assign('PEER_DOWNLOAD_URL', $sUrl);
             $xtpl->assign('PEER_DOWNLOAD_ALT', $owl_lang->alt_get_file);
@@ -1468,7 +1365,6 @@ while ($qGetFile->next_record())
             $urlArgs2['action'] = "approvedoc";
             $urlArgs2['parent'] = $parent;
             $sUrl = fGetURL ('peerreview.php', $urlArgs2);
-            //print("&nbsp;<a href=\"$sUrl\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/approve.gif\" border=\"0\" alt=\"$owl_lang->alt_approve_file\" title=\"$owl_lang->alt_approve_file\" /></a>");
 
             $xtpl->assign('PEER_APPROVED_URL', $sUrl);
             $xtpl->assign('PEER_APPROVED_ALT', $owl_lang->alt_approve_file);
@@ -1482,9 +1378,6 @@ while ($qGetFile->next_record())
             $xtpl->assign('PEER_REJECTED_URL', $sUrl);
             $xtpl->assign('PEER_REJECTED_ALT', $owl_lang->alt_reject_file);
 
-            //print("&nbsp;<a href=\"$sUrl\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/reject.gif\" border=\"0\" alt=\"$owl_lang->alt_reject_file\" title=\"$owl_lang->alt_reject_file\" /></a>");
-
-            //print("</td>\n");
             $xtpl->parse('main.DataBlock.File.PeerAction.WaitApproval');
             $xtpl->parse('main.DataBlock.File.PeerAction');
          }
@@ -1494,8 +1387,6 @@ while ($qGetFile->next_record())
             $qGetDocReviewer->query("SELECT * from $default->owl_peerreview_table where file_id = '" . $qGetFile->f("id") . "' and status <> '1'");
             $iReviewersLeft = $qGetDocReviewer->num_rows();
             
-            //print("\t\t\t\t<td class=\"$sTrClass\" align=\"left\">");
-
             $urlArgs2 = $urlArgs;
             $urlArgs2['action'] = 'reminder';
             $urlArgs2['id'] = $qGetFile->f("id");
@@ -1534,17 +1425,13 @@ while ($qGetFile->next_record())
                $urlArgs2['type'] = $type;
                $urlArgs2['parent'] = $qGetFile->f("parent");
                $sUrl = fGetURL ('peerreview.php', $urlArgs2);
-               //print("&nbsp;<a href=\"$sUrl\"><img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_action/publish.gif\" border=\"0\" alt=\"$owl_lang->alt_publish_file\" title=\"$owl_lang->alt_publish_file\" /></a>");
+               
                $xtpl->assign('PEER_PUB_URL', $sUrl);
                $xtpl->assign('PEER_PUB_ALT', $owl_lang->alt_publish_file);
                $xtpl->parse('main.DataBlock.File.PeerAction.PendApproval.Publish');
             }
             $xtpl->parse('main.DataBlock.File.PeerAction.PendApproval');
             $xtpl->parse('main.DataBlock.File.PeerAction');
-
-            //print("</td>\n")
-      //}
-   //} 
       }
       else
       {
@@ -1561,14 +1448,11 @@ if ($default->owl_version_control == 1)
       {
          if (($holder = uid_to_name($qGetFile->f("checked_out"))) == "Owl")
          {
-            //print("\t<td class=\"$sTrClass\" align=\"center\">-</td>");
             $xtpl->assign('FILE_CHECKEDOUT', $sBoldBegin . '-' . $sBoldEnd);
          } 
          else
          {
            $xtpl->assign('FILE_CHECKEDOUT', $sLinkToUser);
-
-            //print("\t<td class=\"$sTrClass\" align=\"left\"><a class=\"$sLfList\" href=\"prefs.php?owluser=" . $qGetFile->f("checked_out") . "&amp;sess=$sess&amp;expand=$expand&amp;parent=" . $qGetFile->f("parent") . "&amp;order=$order&amp;sortname=$sortname\">$holder</a></td>");
          } 
          $xtpl->parse('main.DataBlock.File.checked_out');
       }
@@ -1579,28 +1463,21 @@ if ($default->owl_version_control == 1)
       $qGetDocReviewer = new Owl_DB;
       $qGetDocReviewer->query("SELECT * from $default->owl_peerreview_table where file_id = '" . $qGetFile->f("id") . "' ");
 
-      //print ("<td class=\"$sTrClass\">");
-      //print ("<table>\n");
       while($qGetDocReviewer->next_record())
       {
-        ////print("<tr>\n");
         $xtpl->assign('PEER_STATUS_REVIEWER',  uid_to_name($qGetDocReviewer->f("reviewer_id")));
-        //print("<td nowrap=\"nowrap\">" . uid_to_name($qGetDocReviewer->f("reviewer_id")) . ":&nbsp;</td>\n");
 
         switch ($qGetDocReviewer->f("status"))
         {
            case 1:
               $xtpl->assign('PEER_STATUS_CLASS',  'capproved');
               $xtpl->assign('PEER_STATUS_LABEL',  $owl_lang->peer_satus_approved);
-              //$sStatus = "<div class=\"capproved\">$owl_lang->peer_satus_approved</div>";
               break;
            case 2:
-              //$sStatus = "<div class=\"crejected\">$owl_lang->peer_satus_rejected</div>";
               $xtpl->assign('PEER_STATUS_CLASS',  'crejected');
               $xtpl->assign('PEER_STATUS_LABEL',  $owl_lang->peer_satus_rejected);
               break;
            default:
-              //$sStatus = "<div class=\"cpending\">$owl_lang->peer_satus_pending</div>";
               $xtpl->assign('PEER_STATUS_CLASS',  'cpending');
               $xtpl->assign('PEER_STATUS_LABEL',  $owl_lang->peer_satus_pending);
               break;
