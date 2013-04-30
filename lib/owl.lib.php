@@ -325,18 +325,6 @@ if (empty($sql))
 
 getuserprefs();
 
-if (!isset($expand) or !is_numeric($expand))
-{
-   if (isset($default->expand))
-   {
-      $expand = $default->expand;
-   }
-   else
-   {
-      $expand = '1';
-   }
-}
-
 if ($default->force_ssl == "1")
 {
    if($_SERVER['SERVER_PORT'] !== "443" || $_SERVER['HTTPS'] !== "on")
@@ -486,8 +474,19 @@ if ($sess)
    $default->owl_FileDir  =  $default->owl_db_FileDir[$default->owl_current_db];
 
    getuserprefs();
-   gethtmlprefs();
 
+   if (!isset($expand) or !is_numeric($expand))
+   {
+      if (isset($default->expand))
+      {
+         $expand = $default->expand;
+      }
+      else
+      {
+         $expand = '1';
+      }
+   }
+   gethtmlprefs();
 
    $usergroupid = $ok["groupid"];
 
