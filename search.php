@@ -953,8 +953,7 @@ $xtpl->assign('SEARCH_SCORE', $owl_lang->search_score);
                   $urlArgs2['parent'] = $aFolderMatchSearch[$fkey]['id'];
                   $url = fGetURL ('browse.php', $urlArgs2);
                   $xtpl->assign('FOLDER_PATH_URL', $url);
-                  $xtpl->assign('FOLDER_DESC_LABEL', $owl_lang->description);
-                  $xtpl->assign('FOLDER_DESC_VALUE', $sPopupDescription);
+                  $xtpl->assign('FOLDER_DESC_VALUE', sprintf($default->domtt_popup , $owl_lang->description, $sPopupDescription, $default->popup_lifetime));
 
                   $name = find_path($aFolderMatchSearch[$fkey]['id'], true);
 
@@ -1028,8 +1027,7 @@ $xtpl->assign('SEARCH_SCORE', $owl_lang->search_score);
          $url = fGetURL ('browse.php', $urlArgs2);
 
          $xtpl->assign('FOLDER_NAME_URL', $url);
-         $xtpl->assign('FOLDER_NAME_DESC_LABEL', $owl_lang->description);
-         $xtpl->assign('FOLDER_NAME_DESC_VALUE', $sPopupDescription);
+         $xtpl->assign('FOLDER_NAME_DESC_VALUE', sprintf($default->domtt_popup , $owl_lang->description, $sPopupDescription, $default->popup_lifetime));
          $xtpl->assign('FOLDER_NAME', $aFolderMatchSearch[$fkey]['name']);
 
 
@@ -1218,8 +1216,7 @@ $xtpl->assign('SEARCH_SCORE', $owl_lang->search_score);
                   $urlArgs2['fileid'] = $files[$key]['id'];
                   $url = fGetURL ('browse.php', $urlArgs2);
                   $xtpl->assign('FILE_PATH_URL', $url);
-                  $xtpl->assign('FILE_DESC_LABEL', $owl_lang->description);
-                  $xtpl->assign('FILE_DESC_VALUE', $sPopupDescription);
+                  $xtpl->assign('FILE_DESC_VALUE', sprintf($default->domtt_popup , $owl_lang->description, $sPopupDescription, $default->popup_lifetime));
                   $xtpl->assign('FILE_HIT', $hit);
                   $xtpl->assign('FILE_PATH', $name);
                   $xtpl->parse('main.Search.File.FldPath');

@@ -553,7 +553,7 @@ function printusers()
          }
 
          $xtpl->assign('USER_ACCESS_LABEL', $owl_lang->user_access_label);
-         $xtpl->assign('USER_ACCESS_HELP_TEXT',  $owl_lang->user_access_extended);
+         $xtpl->assign('USER_ACCESS_HELP_TEXT',  sprintf($default->domtt_popup , $owl_lang->user_access_label, addslashes($owl_lang->user_access_extended), $default->popup_lifetime));
          $i = 0;
          foreach($aUserAccess as $g)
          {
@@ -1629,7 +1629,7 @@ function printusers()
       $xtpl->assign('EMAIL_HEADING', $owl_lang->owl_title_email);
 
       $xtpl->assign('EMAIL_USE_SMTP_LABEL', $owl_lang->owl_email_smtp);
-      $xtpl->assign('EMAIL_USE_SMTP_HELP_TEXT', addslashes($owl_lang->owl_use_smtp_extended));
+      $xtpl->assign('EMAIL_USE_SMTP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_smtp, addslashes($owl_lang->owl_use_smtp_extended), $default->popup_lifetime));
 
       $xtpl->assign('EMAIL_USE_SMTP_CHECKED', '');
       if ($default->use_smtp == 1)
@@ -1638,7 +1638,7 @@ function printusers()
       }
 
       $xtpl->assign('EMAIL_USE_SMTP_AUTH_LABEL', $owl_lang->owl_email_smtp_auth);
-      $xtpl->assign('EMAIL_USE_SMTP_AUTH_HELP_TEXT', addslashes($owl_lang->owl_use_smtp_auth_extended));
+      $xtpl->assign('EMAIL_USE_SMTP_AUTH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_smtp_auth, addslashes($owl_lang->owl_use_smtp_auth_extended), $default->popup_lifetime));
 
       $xtpl->assign('EMAIL_USE_SMTP_AUTH_CHECKED', '');
       if ($default->use_smtp_auth == 1)
@@ -1647,7 +1647,7 @@ function printusers()
       }
 
       $xtpl->assign('EMAIL_USE_SMTP_SSL_LABEL', $owl_lang->owl_use_smtp_ssl);
-      $xtpl->assign('EMAIL_USE_SMTP_SSL_HELP_TEXT', addslashes($owl_lang->owl_use_smtp_ssl_extended));
+      $xtpl->assign('EMAIL_USE_SMTP_SSL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_use_smtp_ssl, addslashes($owl_lang->owl_use_smtp_ssl_extended), $default->popup_lifetime));
 
       $xtpl->assign('EMAIL_USE_SMTP_SSL_CHECKED', '');
       if ($default->use_smtp_ssl == 1)
@@ -1657,39 +1657,40 @@ function printusers()
 
       $xtpl->assign('EMAIL_SMTP_PORT_LABEL', $owl_lang->owl_smtp_port);
       $xtpl->assign('EMAIL_SMTP_PORT_VALUE', $default->smtp_port);
-      $xtpl->assign('EMAIL_SMTP_PORT_HELP_TEXT', addslashes($owl_lang->owl_smtp_port_extended));
+      $xtpl->assign('EMAIL_SMTP_PORT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_smtp_port, addslashes($owl_lang->owl_smtp_port_extended), $default->popup_lifetime
+));
 
       $xtpl->assign('EMAIL_SMTP_MAX_SIZE_LABEL', $owl_lang->owl_smtp_max_attachemnt_size);
       $xtpl->assign('EMAIL_SMTP_MAX_SIZE_VALUE', $default->smtp_max_size);
-      $xtpl->assign('EMAIL_SMTP_MAX_SIZE_HELP_TEXT', addslashes($owl_lang->owl_smtp_max_size_extended));
+      $xtpl->assign('EMAIL_SMTP_MAX_SIZE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_smtp_max_attachemnt_size, addslashes($owl_lang->owl_smtp_max_size_extended), $default->popup_lifetime));
 
       $xtpl->assign('EMAIL_SMTP_SERVER_LABEL', $owl_lang->owl_email_server);
       $xtpl->assign('EMAIL_SMTP_SERVER_VALUE', $default->owl_email_server);
-      $xtpl->assign('EMAIL_SMTP_SERVER_HELP_TEXT', addslashes($owl_lang->owl_email_server_extended));
+      $xtpl->assign('EMAIL_SMTP_SERVER_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_server, addslashes($owl_lang->owl_email_server_extended), $default->popup_lifetime));
 
       $xtpl->assign('EMAIL_SMTP_EMAIL_FROM_LABEL', $owl_lang->owl_email_from);
       $xtpl->assign('EMAIL_SMTP_EMAIL_FROM_VALUE', $default->owl_email_from);
-      $xtpl->assign('EMAIL_SMTP_EMAIL_FROM_HELP_TEXT', addslashes($owl_lang->owl_email_from_extended));
+      $xtpl->assign('EMAIL_SMTP_EMAIL_FROM_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_from, addslashes($owl_lang->owl_email_from_extended), $default->popup_lifetime));
 
       $xtpl->assign('EMAIL_SMTP_AUTH_LOGIN_LABEL', $owl_lang->owl_email_smtp_auth_login);
       $xtpl->assign('EMAIL_SMTP_AUTH_LOGIN_VALUE', $default->smtp_auth_login);
-      $xtpl->assign('EMAIL_SMTP_AUTH_LOGIN_HELP_TEXT', addslashes($owl_lang->owl_smtp_auth_login_extended));
+      $xtpl->assign('EMAIL_SMTP_AUTH_LOGIN_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_smtp_auth_login, addslashes($owl_lang->owl_smtp_auth_login_extended), $default->popup_lifetime));
       
       $xtpl->assign('EMAIL_SMTP_AUTH_PASSWD_LABEL', $owl_lang->owl_email_smtp_auth_passwd);
       $xtpl->assign('EMAIL_SMTP_AUTH_PASSWD_VALUE', $default->smtp_passwd);
-      $xtpl->assign('EMAIL_SMTP_AUTH_PASSWD_HELP_TEXT', addslashes($owl_lang->owl_smtp_passwd_extended));
+      $xtpl->assign('EMAIL_SMTP_AUTH_PASSWD_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_smtp_auth_passwd, addslashes($owl_lang->owl_smtp_passwd_extended), $default->popup_lifetime));
       
       $xtpl->assign('EMAIL_SMTP_FROM_NAME_LABEL', $owl_lang->owl_email_fromname);
       $xtpl->assign('EMAIL_SMTP_FROM_NAME_VALUE', $default->owl_email_fromname);
-      $xtpl->assign('EMAIL_SMTP_FROM_NAME_HELP_TEXT', addslashes($owl_lang->owl_email_fromname_extended));
+      $xtpl->assign('EMAIL_SMTP_FROM_NAME_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_fromname, addslashes($owl_lang->owl_email_fromname_extended), $default->popup_lifetime));
       
       $xtpl->assign('EMAIL_SMTP_REPLY_TO_LABEL', $owl_lang->owl_email_replyto);
       $xtpl->assign('EMAIL_SMTP_REPLY_TO_VALUE', $default->owl_email_replyto);
-      $xtpl->assign('EMAIL_SMTP_REPLY_TO_HELP_TEXT', addslashes($owl_lang->owl_email_replyto_extended));
+      $xtpl->assign('EMAIL_SMTP_REPLY_TO_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_replyto, addslashes($owl_lang->owl_email_replyto_extended), $default->popup_lifetime));
       
       $xtpl->assign('EMAIL_SMTP_SUBJ_PREFIX_LABEL', $owl_lang->owl_email_subject_pref);
       $xtpl->assign('EMAIL_SMTP_SUBJ_PREFIX_VALUE', $default->owl_email_subject);
-      $xtpl->assign('EMAIL_SMTP_SUBJ_PREFIX_HELP_TEXT', addslashes($owl_lang->owl_email_subject_extended));
+      $xtpl->assign('EMAIL_SMTP_SUBJ_PREFIX_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_email_subject_pref, addslashes($owl_lang->owl_email_subject_extended), $default->popup_lifetime));
       
       if ($default->owl_use_fs)
       {
@@ -1697,7 +1698,7 @@ function printusers()
 
          $xtpl->assign('LOOKHD_CHECKED', '');
          $xtpl->assign('LOOKHD_LABEL', $owl_lang->owl_lookAtHD);
-         $xtpl->assign('LOOKHD_HELP_TEXT', addslashes($owl_lang->owl_lookAtHD_extended));
+         $xtpl->assign('LOOKHD_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_lookAtHD, addslashes($owl_lang->owl_lookAtHD_extended), $default->popup_lifetime));
          if ($default->owl_LookAtHD == "false")
          {
             $xtpl->assign('LOOKHD_CHECKED', ' checked="checked"');
@@ -1714,7 +1715,7 @@ function printusers()
          else
          {
             $xtpl->assign('LOOKHD_DEL_LABEL', $owl_lang->owl_lookAtHDDel);
-            $xtpl->assign('LOOKHD_DEL_HELP_TEXT', addslashes($owl_lang->owl_lookAtHD_del_extended));
+            $xtpl->assign('LOOKHD_DEL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_lookAtHDDel, addslashes($owl_lang->owl_lookAtHD_del_extended), $default->popup_lifetime));
             $xtpl->assign('LOOKHD_DEL_SELECTED', '');
             if ($default->owl_lookAtHD_del == 1)
             {
@@ -1749,11 +1750,11 @@ function printusers()
 
             $xtpl->assign('LOOKHD_FILE_TITLE_LABEL', $owl_lang->owl_def_file_title);
             $xtpl->assign('LOOKHD_FILE_TITLE_VALUE', $default->owl_def_file_title);
-            $xtpl->assign('LOOKHD_FILE_TITLE_HELP_TEXT', addslashes($owl_lang->owl_def_file_title_extended));
+            $xtpl->assign('LOOKHD_FILE_TITLE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_def_file_title, addslashes($owl_lang->owl_def_file_title_extended), $default->popup_lifetime));
       
             $xtpl->assign('LOOKHD_FILE_META_LABEL', $owl_lang->owl_def_file_meta);
             $xtpl->assign('LOOKHD_FILE_META_VALUE', $default->owl_def_file_meta);
-            $xtpl->assign('LOOKHD_FILE_META_HELP_TEXT', addslashes($owl_lang->owl_def_file_meta_extended));
+            $xtpl->assign('LOOKHD_FILE_META_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_def_file_meta, addslashes($owl_lang->owl_def_file_meta_extended), $default->popup_lifetime));
             $xtpl->assign('LOOKHD_FOLDER_GROUP_OWNER_LABEL', $owl_lang->owl_def_fold_group_owner);
             foreach($groups as $g)
             {
@@ -1808,7 +1809,8 @@ function printusers()
     $xtpl->assign('BROWSER_FEATURES_HEADING', $owl_lang->owl_title_browser);
 
    $xtpl->assign('BF_INFO_PANEL_LABEL', $owl_lang->info_panel_width);
-   $xtpl->assign('BF_INFO_PANEL_HELP_TEXT', addslashes($owl_lang->owl_info_panel_wide_extended));
+   $xtpl->assign('BF_INFO_PANEL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->info_panel_width, addslashes($owl_lang->owl_info_panel_wide_extended), $default->popup_lifetime));
+
    $xtpl->assign('BF_INFO_PANEL_CHECKED', '');
    if ($default->display_file_info_panel_wide == 1)
    {
@@ -1821,7 +1823,7 @@ function printusers()
    $status_bar[3] = $owl_lang->status_bar_both;
 
    $xtpl->assign('BF_STATBAR_LOCATION_LABEL', $owl_lang->show_panel_title);
-   $xtpl->assign('BF_STATBAR_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_status_bar_location_extended));
+   $xtpl->assign('BF_STATBAR_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_panel_title, addslashes($owl_lang->owl_status_bar_location_extended), $default->popup_lifetime));
    foreach ($status_bar as $iValue => $sCaption)
    {
       $xtpl->assign('BF_STATBAR_LOCATION_VALUE', $iValue);
@@ -1834,7 +1836,7 @@ function printusers()
       $xtpl->parse('main.SiteFeatures.StatBarOptions');
    }
    $xtpl->assign('BF_PREFBAR_LOCATION_LABEL', $owl_lang->show_pref_title);
-   $xtpl->assign('BF_PREFBAR_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_pref_bar_extended));
+   $xtpl->assign('BF_PREFBAR_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_pref_title, addslashes($owl_lang->owl_pref_bar_extended), $default->popup_lifetime));
    foreach ($status_bar as $iValue => $sCaption)
    {
       $xtpl->assign('BF_PREFBAR_LOCATION_VALUE', $iValue);
@@ -1848,7 +1850,7 @@ function printusers()
    }
    
    $xtpl->assign('BF_SEARCHBAR_LOCATION_LABEL', $owl_lang->show_search_title);
-   $xtpl->assign('BF_SEARCHBAR_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_search_bar_extended));
+   $xtpl->assign('BF_SEARCHBAR_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_search_title, addslashes($owl_lang->owl_search_bar_extended), $default->popup_lifetime));
    foreach ($status_bar as $iValue => $sCaption)
    {
       $xtpl->assign('BF_SEARCHBAR_LOCATION_VALUE', $iValue);
@@ -1862,7 +1864,7 @@ function printusers()
    }
    
    $xtpl->assign('BF_BULKBAR_LOCATION_LABEL', $owl_lang->show_bulk_title);
-   $xtpl->assign('BF_BULKBAR_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_bulk_buttons_extended));
+   $xtpl->assign('BF_BULKBAR_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_bulk_title, addslashes($owl_lang->owl_bulk_buttons_extended), $default->popup_lifetime));
    foreach ($status_bar as $iValue => $sCaption)
    {
       $xtpl->assign('BF_BULKBAR_LOCATION_VALUE', $iValue);
@@ -1876,7 +1878,7 @@ function printusers()
    }
    
    $xtpl->assign('BF_ACTIONBAR_LOCATION_LABEL', $owl_lang->show_action_title);
-   $xtpl->assign('BF_ACTIONBAR_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_action_buttons_extended));
+   $xtpl->assign('BF_ACTIONBAR_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_action_title, addslashes($owl_lang->owl_action_buttons_extended), $default->popup_lifetime)); 
    foreach ($status_bar as $iValue => $sCaption)
    {
       $xtpl->assign('BF_ACTIONBAR_LOCATION_VALUE', $iValue);
@@ -1890,7 +1892,7 @@ function printusers()
    }
    
    $xtpl->assign('BF_FOLDERBAR_LOCATION_LABEL', $owl_lang->show_folder_title);
-   $xtpl->assign('BF_FOLDERBAR_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_folder_tools_extended));
+   $xtpl->assign('BF_FOLDERBAR_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_folder_title, addslashes($owl_lang->owl_folder_tools_extended), $default->popup_lifetime));
    foreach ($status_bar as $iValue => $sCaption)
    {
       $xtpl->assign('BF_FOLDERBAR_LOCATION_VALUE', $iValue);
@@ -1904,7 +1906,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_PASSWD_OVERRIDE_LABEL', $owl_lang->display_password_override);
-   $xtpl->assign('BF_PASSWD_OVERRIDE_HELP_TEXT', addslashes($owl_lang->owl_password_override_extended));
+   $xtpl->assign('BF_PASSWD_OVERRIDE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->display_password_override, addslashes($owl_lang->owl_password_override_extended), $default->popup_lifetime));
    $xtpl->assign('BF_PASSWD_OVERRIDE_CHECKED', '');
    if ($default->display_password_override == 1)
    {
@@ -1912,7 +1914,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_HIDE_FLD_DOC_COUNT_LABEL', $owl_lang->hide_folder_doc_count);
-   $xtpl->assign('BF_HIDE_FLD_DOC_COUNT_HELP_TEXT', addslashes($owl_lang->owl_hide_folder_doc_count_extended));
+   $xtpl->assign('BF_HIDE_FLD_DOC_COUNT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->hide_folder_doc_count, addslashes($owl_lang->owl_hide_folder_doc_count_extended), $default->popup_lifetime));
    $xtpl->assign('BF_HIDE_FLD_DOC_COUNT_CHECKED', '');
    if ($default->hide_folder_doc_count == 1)
    {
@@ -1920,7 +1922,8 @@ function printusers()
    }
 
    $xtpl->assign('BF_HIDE_FLD_SIZE_LABEL', $owl_lang->hide_folder_size);
-   $xtpl->assign('BF_HIDE_FLD_SIZE_HELP_TEXT', addslashes($owl_lang->owl_hide_folder_size_extended));
+   $xtpl->assign('BF_HIDE_FLD_SIZE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->hide_folder_size, addslashes($owl_lang->owl_hide_folder_size_extended), $default->popup_lifetime));
+
    $xtpl->assign('BF_HIDE_FLD_SIZE_CHECKED', '');
    if ($default->hide_folder_size == 1)
    {
@@ -1928,7 +1931,8 @@ function printusers()
    }
    
    $xtpl->assign('BF_USE_ZIP_LABEL', $owl_lang->download_folder_zip);
-   $xtpl->assign('BF_USE_ZIP_HELP_TEXT', addslashes($owl_lang->owl_use_zip_extended));
+   $xtpl->assign('BF_USE_ZIP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->download_folder_zip, addslashes($owl_lang->owl_use_zip_extended), $default->popup_lifetime));
+
    $xtpl->assign('BF_USE_ZIP_CHECKED', '');
    if ($default->use_zip_for_folder_download == 1)
    {
@@ -1936,7 +1940,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_FORCE_SSL_LABEL', $owl_lang->owl_force_browser_to_ssl);
-   $xtpl->assign('BF_FORCE_SSL_HELP_TEXT', addslashes($owl_lang->owl_force_ssl_extended));
+   $xtpl->assign('BF_FORCE_SSL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_force_browser_to_ssl, addslashes($owl_lang->owl_force_ssl_extended), $default->popup_lifetime));
    $xtpl->assign('BF_FORCE_SSL_CHECKED', '');
    if ($default->force_ssl == 1)
    {
@@ -1944,7 +1948,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_ALLOW_DIFF_NAME_UPD_LABEL', $owl_lang->owl_file_update_different_name);
-   $xtpl->assign('BF_ALLOW_DIFF_NAME_UPD_HELP_TEXT', addslashes($owl_lang->owl_allow_different_filename_update_extended));
+   $xtpl->assign('BF_ALLOW_DIFF_NAME_UPD_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_file_update_different_name, addslashes($owl_lang->owl_allow_different_filename_update_extended), $default->popup_lifetime));
    $xtpl->assign('BF_ALLOW_DIFF_NAME_UPD_CHECKED', '');
    if ($default->allow_different_filename_update == 1)
    {
@@ -1952,7 +1956,7 @@ function printusers()
    }
    
    $xtpl->assign('BF_USE_WYSIWYG_LABEL', $owl_lang->owl_use_wysiwyg_editor);
-   $xtpl->assign('BF_USE_WYSIWYG_HELP_TEXT', addslashes($owl_lang->owl_use_wysiwyg_for_textarea_extended));
+   $xtpl->assign('BF_USE_WYSIWYG_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_use_wysiwyg_editor, addslashes($owl_lang->owl_use_wysiwyg_for_textarea_extended), $default->popup_lifetime));
    $xtpl->assign('BF_USE_WYSIWYG_CHECKED', '');
    if ($default->use_wysiwyg_for_textarea == 1)
    {
@@ -1960,7 +1964,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_OLD_ACTION_ICONS_LABEL', $owl_lang->old_action_icons);
-   $xtpl->assign('BF_OLD_ACTION_ICONS_HELP_TEXT', addslashes($owl_lang->owl_old_action_icons_extended));
+   $xtpl->assign('BF_OLD_ACTION_ICONS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->old_action_icons, addslashes($owl_lang->owl_old_action_icons_extended), $default->popup_lifetime));
    $xtpl->assign('BF_OLD_ACTION_ICONS_CHECKED', '');
    if ($default->old_action_icons == 1)
    {
@@ -1968,7 +1972,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_SEARCH_RESULT_FOLDERS_LABEL', $owl_lang->search_result_folders);
-   $xtpl->assign('BF_SEARCH_RESULT_FOLDERS_HELP_TEXT', addslashes($owl_lang->owl_search_result_folders_extended));
+   $xtpl->assign('BF_SEARCH_RESULT_FOLDERS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->search_result_folders, addslashes($owl_lang->owl_search_result_folders_extended), $default->popup_lifetime));
    $xtpl->assign('BF_SEARCH_RESULT_FOLDERS_CHECKED', '');
    if ($default->search_result_folders == 1)
    {
@@ -1976,7 +1980,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_SHOW_USER_INFO_LABEL', $owl_lang->show_user_info);
-   $xtpl->assign('BF_SHOW_USER_INFO_HELP_TEXT', addslashes($owl_lang->owl_show_user_info_extended));
+   $xtpl->assign('BF_SHOW_USER_INFO_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->show_user_info, addslashes($owl_lang->owl_show_user_info_extended), $default->popup_lifetime));
    $xtpl->assign('BF_SHOW_USER_INFO_CHECKED', '');
    if ($default->show_user_info == 1)
    {
@@ -1984,7 +1988,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_FILE_DESC_REQ_LABEL', $owl_lang->file_desc_required);
-   $xtpl->assign('BF_FILE_DESC_REQ_HELP_TEXT', addslashes($owl_lang->owl_filedescreq_extended));
+   $xtpl->assign('BF_FILE_DESC_REQ_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->file_desc_required, addslashes($owl_lang->owl_filedescreq_extended), $default->popup_lifetime));
    $xtpl->assign('BF_FILE_DESC_REQ_CHECKED', '');
    if ($default->file_desc_req == 1)
    {
@@ -1992,7 +1996,7 @@ function printusers()
    }
    
    $xtpl->assign('BF_FLD_DESC_REQ_LABEL', $owl_lang->folder_desc_required);
-   $xtpl->assign('BF_FLD_DESC_REQ_HELP_TEXT', addslashes($owl_lang->owl_folderdescreq_extended));
+   $xtpl->assign('BF_FLD_DESC_REQ_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->folder_desc_required, addslashes($owl_lang->owl_folderdescreq_extended), $default->popup_lifetime));
    $xtpl->assign('BF_FLD_DESC_REQ_CHECKED', '');
    if ($default->folder_desc_req == 1)
    {
@@ -2000,7 +2004,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_FLD_DESC_POPUP_LABEL', $owl_lang->owl_show_folder_desc_popup);
-   $xtpl->assign('BF_FLD_DESC_POPUP_HELP_TEXT', addslashes($owl_lang->owl_show_folder_desc_as_popup_extended));
+   $xtpl->assign('BF_FLD_DESC_POPUP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_show_folder_desc_popup, addslashes($owl_lang->owl_show_folder_desc_as_popup_extended), $default->popup_lifetime));
    $xtpl->assign('BF_FLD_DESC_POPUP_CHECKED', '');
    if ($default->show_folder_desc_as_popup == 1)
    {
@@ -2008,7 +2012,7 @@ function printusers()
    }
 
    $xtpl->assign('BF_TRACK_FAV_LABEL', $owl_lang->allow_track_favorite);
-   $xtpl->assign('BF_TRACK_FAV_HELP_TEXT', addslashes($owl_lang->owl_track_favorites_extended));
+   $xtpl->assign('BF_TRACK_FAV_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->allow_track_favorite, addslashes($owl_lang->owl_track_favorites_extended), $default->popup_lifetime));
    $xtpl->assign('BF_TRACK_FAV_CHECKED', '');
    if ($default->allow_track_favorites == 1)
    {
@@ -2021,7 +2025,7 @@ function printusers()
    $xtpl->assign('BROWSER_CUSTOM_HEADING', $owl_lang->owl_title_custom);
 
    $xtpl->assign('BC_EXPAND_LABEL', $owl_lang->owl_owl_expand);
-   $xtpl->assign('BC_EXPAND_HELP_TEXT', addslashes($owl_lang->owl_owl_expand_extended));
+   $xtpl->assign('BC_EXPAND_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_owl_expand, addslashes($owl_lang->owl_owl_expand_extended), $default->popup_lifetime));
    $xtpl->assign('BC_EXPAND_CHECKED', '');
    if ($default->expand == 1)
    {
@@ -2109,7 +2113,7 @@ function printusers()
     $xtpl->assign('THUMBNAIL_HEADING', $owl_lang->thumb_title);
 
    $xtpl->assign('THUMB_ENABLED_LABEL', $owl_lang->thumb_enable_thumbnails);   
-   $xtpl->assign('THUMB_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_extended));   
+   $xtpl->assign('THUMB_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_enable_thumbnails, addslashes($owl_lang->owl_thumbnails_extended), $default->popup_lifetime));
    $xtpl->assign('THUMB_ENABLED_CHECKED', '');
    if ($default->thumbnails == 1)
    {
@@ -2121,7 +2125,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->pdf_thumb_path);
       $xtpl->assign('THUMB_PDF_TOOLPATH_LABEL', $owl_lang->pdf_thumb_path);   
-      $xtpl->assign('THUMB_PDF_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_pdf_thumb_path_extended));   
+      $xtpl->assign('THUMB_PDF_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pdf_thumb_path, addslashes($owl_lang->owl_pdf_thumb_path_extended), $default->popup_lifetime));
       $xtpl->assign('THUMB_PDF_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('THUMB_PDF_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('THUMB_PDF_TOOLPATH_VALUE', $default->pdf_thumb_path);
@@ -2129,7 +2133,8 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->thumbnails_tool_path);
       $xtpl->assign('THUMB_TOOLPATH_LABEL', $owl_lang->thumb_gen_thumb_tool_path);   
-      $xtpl->assign('THUMB_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_tool_path_extended));   
+      $xtpl->assign('THUMB_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_gen_thumb_tool_path, addslashes($owl_lang->owl_thumbnails_tool_path_extended), $default->popup_lifetime));
+
       $xtpl->assign('THUMB_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('THUMB_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('THUMB_TOOLPATH_VALUE', $default->thumbnails_tool_path);
@@ -2137,29 +2142,29 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->thumbnails_video_tool_path);
       $xtpl->assign('THUMB_VID_TOOLPATH_LABEL', $owl_lang->thumb_gen_thumb_vid_tool_path);   
-      $xtpl->assign('THUMB_VID_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_video_tool_path_extended));   
+      $xtpl->assign('THUMB_VID_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_gen_thumb_vid_tool_path, addslashes($owl_lang->owl_thumbnails_video_tool_path_extended), $default->popup_lifetime));
       $xtpl->assign('THUMB_VID_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('THUMB_VID_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('THUMB_VID_TOOLPATH_VALUE', $default->thumbnails_video_tool_path);
       
       $xtpl->assign('THUMB_VID_TOOLOPT_LABEL', $owl_lang->thumb_gen_thumb_vid_tool_parms);   
-      $xtpl->assign('THUMB_VID_TOOLOPT_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_video_tool_opt_extended));   
+      $xtpl->assign('THUMB_VID_TOOLOPT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_gen_thumb_vid_tool_parms, addslashes($owl_lang->owl_thumbnails_video_tool_opt_extended), $default->popup_lifetime));
       $xtpl->assign('THUMB_VID_TOOLOPT_VALUE', $default->thumbnails_video_tool_opt);
       
       $xtpl->assign('THUMB_SMALL_WIDTH_LABEL', $owl_lang->thumb_small_width);   
-      $xtpl->assign('THUMB_SMALL_WIDTH_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_small_width_extended));   
+      $xtpl->assign('THUMB_SMALL_WIDTH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_small_width, addslashes($owl_lang->owl_thumbnails_small_width_extended), $default->popup_lifetime));
       $xtpl->assign('THUMB_SMALL_WIDTH_VALUE', $default->thumbnails_small_width);
       
       $xtpl->assign('THUMB_MED_WIDTH_LABEL', $owl_lang->thumb_med_width);   
-      $xtpl->assign('THUMB_MED_WIDTH_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_med_width_extended));   
+      $xtpl->assign('THUMB_MED_WIDTH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_med_width, addslashes($owl_lang->owl_thumbnails_med_width_extended), $default->popup_lifetime)); 
       $xtpl->assign('THUMB_MED_WIDTH_VALUE', $default->thumbnails_med_width);
       
       $xtpl->assign('THUMB_LARGE_WIDTH_LABEL', $owl_lang->thumb_large_width);   
-      $xtpl->assign('THUMB_LARGE_WIDTH_HELP_TEXT', addslashes($owl_lang->owl_thumbnails_large_width_extended));   
+      $xtpl->assign('THUMB_LARGE_WIDTH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_large_width, addslashes($owl_lang->owl_thumbnails_large_width_extended), $default->popup_lifetime));
       $xtpl->assign('THUMB_LARGE_WIDTH_VALUE', $default->thumbnails_large_width);
       
       $xtpl->assign('THUMB_COLUMNS_LABEL', $owl_lang->thumb_number_colums);   
-      $xtpl->assign('THUMB_COLUMNS_HELP_TEXT', addslashes($owl_lang->owl_thumbnail_view_columns_extended));   
+      $xtpl->assign('THUMB_COLUMNS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_number_colums, addslashes($owl_lang->owl_thumbnail_view_columns_extended), $default->popup_lifetime));
       $xtpl->assign('THUMB_COLUMNS_VALUE', $default->thumbnail_view_columns);
       
       $xtpl->assign('THUMB_VIEW_COLUMNS_LABEL', $owl_lang->thumb_title_thumb_view);   
@@ -2215,7 +2220,7 @@ function printusers()
     $xtpl->assign('WATERMARK_HEADING', $owl_lang->owl_header_watermarking);
 
    $xtpl->assign('WATERMARKING_ENABLED_LABEL', $owl_lang->owl_enable_watermarking);
-   $xtpl->assign('WATERMARKING_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_pdf_watermarks_extended));
+   $xtpl->assign('WATERMARKING_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_enable_watermarking, addslashes($owl_lang->owl_pdf_watermarks_extended), $default->popup_lifetime));
    $xtpl->assign('WATERMARKING_ENABLED_CHECKED', '');
 
    if ($default->pdf_watermarks == 1)
@@ -2228,7 +2233,8 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->pdf_watermark_path);
       $xtpl->assign('WATERMARK_TOOLPATH_LABEL', $owl_lang->owl_path_to_pdftk);
-      $xtpl->assign('WATERMARK_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_pdf_watermark_path_extended));
+      $xtpl->assign('WATERMARK_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_path_to_pdftk, addslashes($owl_lang->owl_pdf_watermark_path_extended), 
+$default->popup_lifetime));
       $xtpl->assign('WATERMARK_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('WATERMARK_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('WATERMARK_TOOLPATH_VALUE', $default->pdf_watermark_path);
@@ -2236,13 +2242,13 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->pdf_custom_watermark_filepath);
       $xtpl->assign('WATERMARK_CUST_FILEPATH_LABEL', $owl_lang->owl_path_to_pdftk_bg_file);
-      $xtpl->assign('WATERMARK_CUST_FILEPATH_HELP_TEXT', addslashes($owl_lang->owl_pdf_custom_watermark_filepath_extended));
+      $xtpl->assign('WATERMARK_CUST_FILEPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_path_to_pdftk_bg_file, addslashes($owl_lang->owl_pdf_custom_watermark_filepath_extended), $default->popup_lifetime));
       $xtpl->assign('WATERMARK_CUST_FILEPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('WATERMARK_CUST_FILEPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('WATERMARK_CUST_FILEPATH_VALUE', $default->pdf_custom_watermark_filepath);
       
       $xtpl->assign('WATERMARK_TOOL_VER_LABEL', $owl_lang->owl_pdftk_greater_than_1_40);
-      $xtpl->assign('WATERMARK_TOOL_VER_HELP_TEXT', addslashes($owl_lang->owl_pdf_pdftk_tool_greater_than_1_40_extended));
+      $xtpl->assign('WATERMARK_TOOL_VER_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_pdftk_greater_than_1_40, addslashes($owl_lang->owl_pdf_pdftk_tool_greater_than_1_40_extended), $default->popup_lifetime));
       $xtpl->assign('WATERMARK_TOOL_VER_CHECKED', '');
          if ($default->pdf_pdftk_tool_greater_than_1_40 == 1)
          {
@@ -2263,7 +2269,7 @@ function printusers()
    $xtpl->assign('OTHER_SETTINGS_HEADING', $owl_lang->owl_title_other);
 
    $xtpl->assign('OTHER_ALLOW_CUST_POPUP_LABEL', $owl_lang->cust_popup);
-   $xtpl->assign('OTHER_ALLOW_CUST_POPUP_HELP_TEXT', addslashes($owl_lang->owl_allow_custpopup_extended));
+   $xtpl->assign('OTHER_ALLOW_CUST_POPUP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->cust_popup, addslashes($owl_lang->owl_allow_custpopup_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_ALLOW_CUST_POPUP_CHECKED', '');
 
    if ($default->allow_custfieldspopup == 1)
@@ -2272,7 +2278,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_ALLOW_POPUP_LABEL', $owl_lang->use_popup);
-   $xtpl->assign('OTHER_ALLOW_POPUP_HELP_TEXT', addslashes($owl_lang->owl_allow_popup_extended));
+   $xtpl->assign('OTHER_ALLOW_POPUP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->use_popup, addslashes($owl_lang->owl_allow_popup_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_ALLOW_POPUP_CHECKED', '');
    if ($default->allow_popup == 1)
    {
@@ -2280,7 +2286,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_VER_CONTROL_LABEL', $owl_lang->owl_version_control);
-   $xtpl->assign('OTHER_VER_CONTROL_HELP_TEXT', addslashes($owl_lang->owl_version_control_extended));
+   $xtpl->assign('OTHER_VER_CONTROL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_version_control, addslashes($owl_lang->owl_version_control_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_VER_CONTROL_CHECKED', '');
    if ($default->owl_version_control == 1)
    {
@@ -2288,7 +2294,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_INDEXING_SELECTABLE_LABEL', $owl_lang->owl_indexing_user_selectable);
-   $xtpl->assign('OTHER_INDEXING_SELECTABLE_HELP_TEXT', addslashes($owl_lang->owl_make_file_indexing_user_selectable_extended));
+   $xtpl->assign('OTHER_INDEXING_SELECTABLE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_indexing_user_selectable, addslashes($owl_lang->owl_make_file_indexing_user_selectable_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_INDEXING_SELECTABLE_CHECKED', '');
    if ($default->make_file_indexing_user_selectable == 1)
    {
@@ -2296,7 +2302,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_INDEXING_OFF_LABEL', $owl_lang->owl_indexing_off);
-   $xtpl->assign('OTHER_INDEXING_OFF_HELP_TEXT', addslashes($owl_lang->owl_turn_file_index_off_extended));
+   $xtpl->assign('OTHER_INDEXING_OFF_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_indexing_off, addslashes($owl_lang->owl_turn_file_index_off_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_INDEXING_OFF_CHECKED', '');
    if ($default->turn_file_index_off == 1)
    {
@@ -2307,7 +2313,7 @@ function printusers()
 // BEGIN ADD Filipe Lima (filipe.aclima@gmail.com) - March 2009
 //****************************************************************************************************
    $xtpl->assign('OTHER_FILE_REL_LABEL', $owl_lang->docRel_activateFunction);
-   $xtpl->assign('OTHER_FILE_REL_HELP_TEXT', addslashes($owl_lang->owl_docRel_extended));
+   $xtpl->assign('OTHER_FILE_REL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->docRel_activateFunction, addslashes($owl_lang->owl_docRel_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_FILE_REL_CHECKED', '');
    if ($default->docRel == 1)
    {
@@ -2325,7 +2331,7 @@ function printusers()
    $aRevisionType[2][1] = $owl_lang->verminor;
 
    $xtpl->assign('OTHER_DEF_REVISION_LABEL', $owl_lang->owl_user_default_revision);
-   $xtpl->assign('OTHER_DEF_REVISION_HELP_TEXT',  addslashes($owl_lang->owl_default_revision_extended));
+   $xtpl->assign('OTHER_DEF_REVISION_HELP_TEXT',  sprintf($default->domtt_popup , $owl_lang->owl_user_default_revision, addslashes($owl_lang->owl_default_revision_extended), $default->popup_lifetime));
    foreach($aRevisionType as $g)
    {
       $xtpl->assign('OTHER_DEF_REVISION_VALUE', $g[0]);
@@ -2339,29 +2345,29 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_GMT_OFFSET_LABEL', $owl_lang->owl_machine_timezone);
-   $xtpl->assign('OTHER_GMT_OFFSET_HELP_TEXT',  addslashes($owl_lang->owl_machine_time_zone_extended));
-      foreach($owl_lang->time_offsets as $g)
+   $xtpl->assign('OTHER_GMT_OFFSET_HELP_TEXT',  sprintf($default->domtt_popup , $owl_lang->owl_machine_timezone, addslashes($owl_lang->owl_machine_time_zone_extended), $default->popup_lifetime));
+   foreach($owl_lang->time_offsets as $g)
+   {
+      $xtpl->assign('OTHER_GMT_OFFSET_VALUE', $g[0]);
+      $xtpl->assign('OTHER_GMT_OFFSET_CAPTION', $g[1]);
+      $xtpl->assign('OTHER_GMT_OFFSET_SELECTED', '');
+      if ($g[0] == $default->machine_time_zone)
       {
-         $xtpl->assign('OTHER_GMT_OFFSET_VALUE', $g[0]);
-         $xtpl->assign('OTHER_GMT_OFFSET_CAPTION', $g[1]);
-         $xtpl->assign('OTHER_GMT_OFFSET_SELECTED', '');
-         if ($g[0] == $default->machine_time_zone)
-         {
-            $xtpl->assign('OTHER_GMT_OFFSET_SELECTED', " selected=\"selected\"");
-         }
-         $xtpl->parse('main.SiteFeatures.GmtOffset');
+         $xtpl->assign('OTHER_GMT_OFFSET_SELECTED', " selected=\"selected\"");
       }
+      $xtpl->parse('main.SiteFeatures.GmtOffset');
+   }
 
    $xtpl->assign('OTHER_MAJ_REVISION_LABEL', $owl_lang->vermajor_initial);
    $xtpl->assign('OTHER_MAJ_REVISION_VALUE', $default->major_revision);
-   $xtpl->assign('OTHER_MAJ_REVISION_HELP_TEXT', addslashes($owl_lang->owl_major_revision_extended));
+   $xtpl->assign('OTHER_MAJ_REVISION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->vermajor_initial, addslashes($owl_lang->owl_major_revision_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_MIN_REVISION_LABEL', $owl_lang->verminor_initial);
    $xtpl->assign('OTHER_MIN_REVISION_VALUE', $default->minor_revision);
-   $xtpl->assign('OTHER_MIN_REVISION_HELP_TEXT', addslashes($owl_lang->owl_minor_revision_extended));
+   $xtpl->assign('OTHER_MIN_REVISION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->verminor_initial, addslashes($owl_lang->owl_minor_revision_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_RESTRICT_VIEW_LABEL', $owl_lang->owl_restrict_view);
-   $xtpl->assign('OTHER_RESTRICT_VIEW_HELP_TEXT', addslashes($owl_lang->owl_restrict_view_extended));
+   $xtpl->assign('OTHER_RESTRICT_VIEW_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_restrict_view, addslashes($owl_lang->owl_restrict_view_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_RESTRICT_VIEW_CHECKED', '');
    if ($default->restrict_view == 1)
    {
@@ -2369,7 +2375,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_HIDE_BACKUP_LABEL', $owl_lang->owl_hidebackup);
-   $xtpl->assign('OTHER_HIDE_BACKUP_HELP_TEXT', addslashes($owl_lang->owl_hide_backup_extended));
+   $xtpl->assign('OTHER_HIDE_BACKUP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_hidebackup, addslashes($owl_lang->owl_hide_backup_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_HIDE_BACKUP_CHECKED', '');
    if ($default->hide_backup == 1)
    {
@@ -2377,7 +2383,7 @@ function printusers()
    }
    
    $xtpl->assign('OTHER_FORGOT_PASS_LABEL', $owl_lang->owl_fogotpass);
-   $xtpl->assign('OTHER_FORGOT_PASS_HELP_TEXT', addslashes($owl_lang->owl_forgot_pass_extended));
+   $xtpl->assign('OTHER_FORGOT_PASS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_fogotpass, addslashes($owl_lang->owl_forgot_pass_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_FORGOT_PASS_CHECKED', '');
    if ($default->forgot_pass == 1)
    {
@@ -2386,22 +2392,22 @@ function printusers()
    
    $xtpl->assign('OTHER_MIN_PASS_LENGTH_LABEL', $owl_lang->pass_min_passwd_length);
    $xtpl->assign('OTHER_MIN_PASS_LENGTH_VALUE', $default->min_pass_length);
-   $xtpl->assign('OTHER_MIN_PASS_LENGTH_HELP_TEXT', addslashes($owl_lang->owl_min_pass_length_extended));
+   $xtpl->assign('OTHER_MIN_PASS_LENGTH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_min_passwd_length, addslashes($owl_lang->owl_min_pass_length_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_MIN_USER_LENGTH_LABEL', $owl_lang->pass_min_username_length);
    $xtpl->assign('OTHER_MIN_USER_LENGTH_VALUE', $default->min_username_length);
-   $xtpl->assign('OTHER_MIN_USER_LENGTH_HELP_TEXT', addslashes($owl_lang->owl_min_username_length_extended));
+   $xtpl->assign('OTHER_MIN_USER_LENGTH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->min_username_length, addslashes($owl_lang->owl_min_username_length_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_MIN_PASS_NUMERIC_LABEL', $owl_lang->pass_min_passwd_numeric);
    $xtpl->assign('OTHER_MIN_PASS_NUMERIC_VALUE', $default->min_pass_numeric);
-   $xtpl->assign('OTHER_MIN_PASS_NUMERIC_HELP_TEXT', addslashes($owl_lang->owl_min_pass_numeric_extended));
+   $xtpl->assign('OTHER_MIN_PASS_NUMERIC_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_min_passwd_numeric, addslashes($owl_lang->owl_min_pass_numeric_extended), $default->popup_lifetime));
    
    $xtpl->assign('OTHER_MIN_PASS_SPECIAL_LABEL', $owl_lang->pass_min_passwd_special);
    $xtpl->assign('OTHER_MIN_PASS_SPECIAL_VALUE', $default->min_pass_special);
-   $xtpl->assign('OTHER_MIN_PASS_SPECIAL_HELP_TEXT', addslashes($owl_lang->owl_min_pass_special_extended));
+   $xtpl->assign('OTHER_MIN_PASS_SPECIAL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_min_passwd_special, addslashes($owl_lang->owl_min_pass_special_extended), $default->popup_lifetime));
    
    $xtpl->assign('OTHER_ENABLE_LOCKOUT_LABEL', $owl_lang->pass_enable_account_lockout);
-   $xtpl->assign('OTHER_ENABLE_LOCKOUT_HELP_TEXT', addslashes($owl_lang->owl_enable_lock_account_extended));
+   $xtpl->assign('OTHER_ENABLE_LOCKOUT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_enable_account_lockout, addslashes($owl_lang->owl_enable_lock_account_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_ENABLE_LOCKOUT_CHECKED', '');
    if ($default->enable_lock_account == 1)
    {
@@ -2411,30 +2417,30 @@ function printusers()
    
    $xtpl->assign('OTHER_PASS_LOCKOUT_LABEL', $owl_lang->pass_account_lockout);
    $xtpl->assign('OTHER_PASS_LOCKOUT_VALUE', $default->lock_account_bad_password);
-   $xtpl->assign('OTHER_PASS_LOCKOUT_HELP_TEXT', addslashes($owl_lang->owl_lock_account_bad_password_extended));
+   $xtpl->assign('OTHER_PASS_LOCKOUT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_account_lockout, addslashes($owl_lang->owl_lock_account_bad_password_extended), $default->popup_lifetime));
    
    $xtpl->assign('OTHER_PASS_TRACK_LABEL', $owl_lang->pass_track_old_passwords);
    $xtpl->assign('OTHER_PASS_TRACK_VALUE', $default->track_user_passwords);
-   $xtpl->assign('OTHER_PASS_TRACK_HELP_TEXT', addslashes($owl_lang->owl_track_user_passwords_extended));
+   $xtpl->assign('OTHER_PASS_TRACK_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_track_old_passwords, addslashes($owl_lang->owl_track_user_passwords_extended), $default->popup_lifetime));
    
    $xtpl->assign('OTHER_PASS_CHANGE_LABEL', $owl_lang->pass_change_every);
    $xtpl->assign('OTHER_PASS_CHANGE_VALUE', $default->change_password_every);
-   $xtpl->assign('OTHER_PASS_CHANGE_HELP_TEXT', addslashes($owl_lang->owl_change_password_every_extended));
+   $xtpl->assign('OTHER_PASS_CHANGE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pass_change_every, addslashes($owl_lang->owl_change_password_every_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_REC_PER_PAGE_LABEL', $owl_lang->recs_per_page);
    $xtpl->assign('OTHER_REC_PER_PAGE_VALUE', $default->records_per_page);
-   $xtpl->assign('OTHER_REC_PER_PAGE_HELP_TEXT', addslashes($owl_lang->owl_rec_per_page_extended));
+   $xtpl->assign('OTHER_REC_PER_PAGE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->recs_per_page, addslashes($owl_lang->owl_rec_per_page_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_DOC_ID_PREFIX_LABEL', $owl_lang->doc_id_prefix);
    $xtpl->assign('OTHER_DOC_ID_PREFIX_VALUE', $default->doc_id_prefix);
-   $xtpl->assign('OTHER_DOC_ID_PREFIX_HELP_TEXT', addslashes($owl_lang->owl_doc_id_prefix_extended));
+   $xtpl->assign('OTHER_DOC_ID_PREFIX_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->doc_id_prefix, addslashes($owl_lang->owl_doc_id_prefix_extended), $default->popup_lifetime));
    
    $xtpl->assign('OTHER_DOC_ID_DIGITS_LABEL', $owl_lang->doc_id_num_digits);
    $xtpl->assign('OTHER_DOC_ID_DIGITS_VALUE', $default->doc_id_num_digits);
-   $xtpl->assign('OTHER_DOC_ID_DIGITS_HELP_TEXT', addslashes($owl_lang->owl_doc_id_num_digits_extended));
+   $xtpl->assign('OTHER_DOC_ID_DIGITS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->doc_id_num_digits, addslashes($owl_lang->owl_doc_id_num_digits_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_VIEW_NEW_WINDOW_LABEL', $owl_lang->view_doc_in_new_window);
-   $xtpl->assign('OTHER_VIEW_NEW_WINDOW_HELP_TEXT', addslashes($owl_lang->owl_view_doc_in_new_window_extended));
+   $xtpl->assign('OTHER_VIEW_NEW_WINDOW_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->view_doc_in_new_window, addslashes($owl_lang->owl_view_doc_in_new_window_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_VIEW_NEW_WINDOW_CHECKED', '');
    if ($default->view_doc_in_new_window == 1)
    {
@@ -2442,7 +2448,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_ADMIN_TO_BROWSE_LABEL', $owl_lang->admin_login_to_browse_page);
-   $xtpl->assign('OTHER_ADMIN_TO_BROWSE_HELP_TEXT', addslashes($owl_lang->owl_admin_login_to_browse_page_extended));
+   $xtpl->assign('OTHER_ADMIN_TO_BROWSE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->admin_login_to_browse_page, addslashes($owl_lang->owl_admin_login_to_browse_page_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_ADMIN_TO_BROWSE_CHECKED', '');
    if ($default->admin_login_to_browse_page == 1)
    {
@@ -2450,7 +2456,7 @@ function printusers()
    }
 
    $xtpl->assign('OTHER_SAVE_KEYWORDS_LABEL', $owl_lang->save_keywords_to_db);
-   $xtpl->assign('OTHER_SAVE_KEYWORDS_HELP_TEXT', addslashes($owl_lang->owl_save_keywords_to_db_extended));
+   $xtpl->assign('OTHER_SAVE_KEYWORDS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->save_keywords_to_db, addslashes($owl_lang->owl_save_keywords_to_db_extended), $default->popup_lifetime));
    $xtpl->assign('OTHER_SAVE_KEYWORDS_CHECKED', '');
    if ($default->save_keywords_to_db == 1)
    {
@@ -2459,15 +2465,15 @@ function printusers()
 
    $xtpl->assign('OTHER_MAX_FILESIZE_LABEL', $owl_lang->owl_max_filesize);
    $xtpl->assign('OTHER_MAX_FILESIZE_VALUE', $default->max_filesize);
-   $xtpl->assign('OTHER_MAX_FILESIZE_HELP_TEXT', addslashes($owl_lang->owl_max_filesize_extended));
+   $xtpl->assign('OTHER_MAX_FILESIZE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_max_filesize, addslashes($owl_lang->owl_max_filesize_extended), $default->popup_lifetime));
 
    $xtpl->assign('OTHER_TIMEOUT_LABEL', $owl_lang->owl_owl_timeout);
    $xtpl->assign('OTHER_TIMEOUT_VALUE', $default->owl_timeout);
-   $xtpl->assign('OTHER_TIMEOUT_HELP_TEXT', addslashes($owl_lang->owl_owl_timeout_extended));
+   $xtpl->assign('OTHER_TIMEOUT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_owl_timeout, addslashes($owl_lang->owl_owl_timeout_extended), $default->popup_lifetime));
    
    $xtpl->assign('OTHER_TMPDIR_LABEL', $owl_lang->owl_default_tmpdir);
    $xtpl->assign('OTHER_TMPDIR_VALUE', $default->owl_tmpdir);
-   $xtpl->assign('OTHER_TMPDIR_HELP_TEXT', addslashes($owl_lang->owl_owl_tmpdir_extended));
+   $xtpl->assign('OTHER_TMPDIR_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_default_tmpdir, addslashes($owl_lang->owl_owl_tmpdir_extended), $default->popup_lifetime));
    
 
    $anon[0] = $owl_lang->owl_anon_full;
@@ -2475,7 +2481,7 @@ function printusers()
    $anon[2] = $owl_lang->owl_anon_download;
 
    $xtpl->assign('OTHER_ANON_RO_LABEL', $owl_lang->anonymous_access);
-   $xtpl->assign('OTHER_ANON_RO_HELP_TEXT',  addslashes($owl_lang->owl_anon_ro_extended));
+   $xtpl->assign('OTHER_ANON_RO_HELP_TEXT',  sprintf($default->domtt_popup , $owl_lang->anonymous_access, addslashes($owl_lang->owl_anon_ro_extended), $default->popup_lifetime));
    $i = 0;
    foreach($anon as $g)
    {
@@ -2491,34 +2497,34 @@ function printusers()
    }
 
 
-            $xtpl->assign('OTHER_ANON_USER_LABEL', $owl_lang->anonymous_account);
-            $xtpl->assign('OTHER_ANON_USER_HELP_TEXT', $owl_lang->owl_def_anon_user_extended);
-            foreach($users as $g)
-            {
-               $xtpl->assign('OTHER_ANON_USER_VALUE', $g[0]);
-               $xtpl->assign('OTHER_ANON_USER_CHECKED', '');
-               $xtpl->assign('OTHER_ANON_USER_CAPTION', $g['1']);
-               if ($g[0] == $default->anon_user)
-               {
-                  $xtpl->assign('OTHER_ANON_USER_CHECKED', ' selected="selected"');
-               }
-               $xtpl->parse('main.SiteFeatures.AnonUser');
-            }
-      
-            $xtpl->assign('OTHER_FILE_ADMIN_LABEL', $owl_lang->file_admin_group);
-            $xtpl->assign('OTHER_FILE_ADMIN_HELP_TEXT', $owl_lang->owl_file_admin_group_extended);
-            foreach($groups as $g)
-            {
-               $xtpl->assign('OTHER_FILE_ADMIN_VALUE', $g[0]);
-               $xtpl->assign('OTHER_FILE_ADMIN_CHECKED', '');
-               $xtpl->assign('OTHER_FILE_ADMIN_CAPTION', $g['1']);
-               if ($g[0] == $default->anon_user)
-               {
-                  $xtpl->assign('OTHER_FILE_ADMIN_CHECKED', ' selected="selected"');
-               }
-               $xtpl->parse('main.SiteFeatures.FileAdmin');
-            }
-      
+   $xtpl->assign('OTHER_ANON_USER_LABEL', $owl_lang->anonymous_account);
+   $xtpl->assign('OTHER_ANON_USER_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->anonymous_account, addslashes($owl_lang->owl_def_anon_user_extended), $default->popup_lifetime));
+   foreach($users as $g)
+   {
+      $xtpl->assign('OTHER_ANON_USER_VALUE', $g[0]);
+      $xtpl->assign('OTHER_ANON_USER_CHECKED', '');
+      $xtpl->assign('OTHER_ANON_USER_CAPTION', $g['1']);
+      if ($g[0] == $default->anon_user)
+      {
+         $xtpl->assign('OTHER_ANON_USER_CHECKED', ' selected="selected"');
+      }
+      $xtpl->parse('main.SiteFeatures.AnonUser');
+   }
+ 
+   $xtpl->assign('OTHER_FILE_ADMIN_LABEL', $owl_lang->file_admin_group);
+   $xtpl->assign('OTHER_FILE_ADMIN_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->file_admin_group, addslashes($owl_lang->owl_file_admin_group_extended), $default->popup_lifetime));
+   foreach($groups as $g)
+   {
+      $xtpl->assign('OTHER_FILE_ADMIN_VALUE', $g[0]);
+      $xtpl->assign('OTHER_FILE_ADMIN_CHECKED', '');
+      $xtpl->assign('OTHER_FILE_ADMIN_CAPTION', $g['1']);
+      if ($g[0] == $default->anon_user)
+      {
+         $xtpl->assign('OTHER_FILE_ADMIN_CHECKED', ' selected="selected"');
+      }
+      $xtpl->parse('main.SiteFeatures.FileAdmin');
+   }
+ 
 
    // *****************
    // TRASH CAN OPTIONS
@@ -2528,7 +2534,7 @@ function printusers()
          $xtpl->assign('TRASH_SETTINGS_HEADING', $owl_lang->recycle_title);
          
          $xtpl->assign('TRASH_ENABLED_LABEL', $owl_lang->recycle_enabled);
-         $xtpl->assign('TRASH_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_collect_trash_extended));
+         $xtpl->assign('TRASH_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->recycle_enabled, addslashes($owl_lang->owl_collect_trash_extended), $default->popup_lifetime));
          $xtpl->assign('TRASH_ENABLED_CHECKED', '');
          if ($default->collect_trash == 1)
          {
@@ -2539,11 +2545,11 @@ function printusers()
          {
             $xtpl->assign('TRASH_LOCATION_LABEL', $owl_lang->recycle_location);
             $xtpl->assign('TRASH_LOCATION_VALUE', $default->trash_can_location);
-            $xtpl->assign('TRASH_LOCATION_HELP_TEXT', addslashes($owl_lang->owl_trash_can_location_extended));
+            $xtpl->assign('TRASH_LOCATION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->recycle_location, addslashes($owl_lang->owl_trash_can_location_extended), $default->popup_lifetime));
 
             $xtpl->assign('TRASH_RESTORE_PREFIX_LABEL', $owl_lang->restore_file_prefix);
             $xtpl->assign('TRASH_RESTORE_PREFIX_VALUE', $default->restore_file_prefix);
-            $xtpl->assign('TRASH_RESTORE_PREFIX_HELP_TEXT', addslashes($owl_lang->owl_restore_file_prefix_extended));
+            $xtpl->assign('TRASH_RESTORE_PREFIX_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->restore_file_prefix, addslashes($owl_lang->owl_restore_file_prefix_extended), $default->popup_lifetime));
             $xtpl->parse('main.SiteFeatures.TrashOptions');
          } 
          else
@@ -2561,7 +2567,7 @@ function printusers()
       $xtpl->assign('REVIEW_SETTINGS_HEADING', $owl_lang->owl_title_peer_review);
 
       $xtpl->assign('REVIEW_ENABLED_LABEL', $owl_lang->owl_peer_review);
-      $xtpl->assign('REVIEW_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_peer_review_extended));
+      $xtpl->assign('REVIEW_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_peer_review, addslashes($owl_lang->owl_peer_review_extended), $default->popup_lifetime));
       $xtpl->assign('REVIEW_ENABLED_CHECKED', '');
       if ($default->document_peer_review == 1)
       {
@@ -2571,7 +2577,7 @@ function printusers()
       if ($default->document_peer_review == 1)
       {
          $xtpl->assign('REVIEW_OPTIONAL_LABEL', $owl_lang->owl_peer_review_opt);
-         $xtpl->assign('REVIEW_OPTIONAL_HELP_TEXT', addslashes($owl_lang->owl_peer_opt_extended));
+         $xtpl->assign('REVIEW_OPTIONAL_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_peer_review_opt, addslashes($owl_lang->owl_peer_opt_extended), $default->popup_lifetime));
          $xtpl->assign('REVIEW_OPTIONAL_CHECKED', '');
          if ($default->document_peer_review_optional == 1)
          {
@@ -2579,7 +2585,7 @@ function printusers()
          }
 
          $xtpl->assign('REVIEW_OLD_VERSION_LABEL', $owl_lang->owl_previous_ver_downloadable);
-         $xtpl->assign('REVIEW_OLD_VERSION_HELP_TEXT', addslashes($owl_lang->owl_leave_old_file_accessible_extended));
+         $xtpl->assign('REVIEW_OLD_VERSION_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_previous_ver_downloadable, addslashes($owl_lang->owl_leave_old_file_accessible_extended), $default->popup_lifetime));
          $xtpl->assign('REVIEW_OLD_VERSION_CHECKED', '');
          if ($default->peer_review_leave_old_file_accessible == 1)
          {
@@ -2587,7 +2593,7 @@ function printusers()
          }
          
          $xtpl->assign('REVIEW_AUTO_CHECKOUT_LABEL', $owl_lang->owl_auto_checkin_checkout);
-         $xtpl->assign('REVIEW_AUTO_CHECKOUT_HELP_TEXT', addslashes($owl_lang->owl_auto_checkout_checking_extended));
+         $xtpl->assign('REVIEW_AUTO_CHECKOUT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_auto_checkin_checkout, addslashes($owl_lang->owl_auto_checkout_checking_extended), $default->popup_lifetime));
          $xtpl->assign('REVIEW_AUTO_CHECKOUT_CHECKED', '');
          if ($default->auto_checkout_checking == 1)
          {
@@ -2609,7 +2615,7 @@ function printusers()
       $xtpl->assign('LOG_SETTINGS_HEADING', $owl_lang->owl_title_logging);
 
       $xtpl->assign('LOG_ENABLED_LABEL', $owl_lang->owl_logging);
-      $xtpl->assign('LOG_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_logging_extended));
+      $xtpl->assign('LOG_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_logging, addslashes($owl_lang->owl_logging_extended), $default->popup_lifetime));
       $xtpl->assign('LOG_ENABLED_CHECKED', '');
       if ($default->logging == 1)
       {
@@ -2619,7 +2625,7 @@ function printusers()
       if ($default->logging == 1)
       {
          $xtpl->assign('LOG_FILE_ACT_LABEL', $owl_lang->owl_log_file);
-         $xtpl->assign('LOG_FILE_ACT_HELP_TEXT', addslashes($owl_lang->owl_log_file_extended));
+         $xtpl->assign('LOG_FILE_ACT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_log_file, addslashes($owl_lang->owl_log_file_extended), $default->popup_lifetime));
          $xtpl->assign('LOG_FILE_ACT_CHECKED', '');
          if ($default->log_file == 1)
          {
@@ -2627,7 +2633,7 @@ function printusers()
          }
          
          $xtpl->assign('LOG_LOGIN_ACT_LABEL', $owl_lang->owl_log_login_act);
-         $xtpl->assign('LOG_LOGIN_ACT_HELP_TEXT', addslashes($owl_lang->owl_log_login_extended));
+         $xtpl->assign('LOG_LOGIN_ACT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_log_login_act, addslashes($owl_lang->owl_log_login_extended), $default->popup_lifetime));
          $xtpl->assign('LOG_LOGIN_ACT_CHECKED', '');
          if ($default->log_login == 1)
          {
@@ -2636,7 +2642,7 @@ function printusers()
          
          $xtpl->assign('LOG_REC_PER_PAGE_LABEL', $owl_lang->owl_log_rec_page);
          $xtpl->assign('LOG_REC_PER_PAGE_VALUE', $default->log_rec_per_page);
-         $xtpl->assign('LOG_REC_PER_PAGE_HELP_TEXT', addslashes($owl_lang->owl_log_rec_per_page_extended));
+         $xtpl->assign('LOG_REC_PER_PAGE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_log_rec_page, addslashes($owl_lang->owl_log_rec_per_page_extended), $default->popup_lifetime));
 
          $xtpl->parse('main.SiteFeatures.LoggingOptions');
       } 
@@ -2655,7 +2661,7 @@ function printusers()
          
       $maxsess = $default->self_reg_maxsessions + 1;
       $xtpl->assign('SELFREG_ENABLED_LABEL', $owl_lang->owl_self_reg);
-      $xtpl->assign('SELFREG_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_self_reg_extended));
+      $xtpl->assign('SELFREG_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_self_reg, addslashes($owl_lang->owl_self_reg_extended), $default->popup_lifetime));
       $xtpl->assign('SELFREG_ENABLED_CHECKED', '');
       if ($default->self_reg == 1)
       {
@@ -2666,10 +2672,10 @@ function printusers()
       {
          $xtpl->assign('SELFREG_QUOTA_LABEL', $owl_lang->quota);
          $xtpl->assign('SELFREG_QUOTA_VALUE', $default->self_reg_quota);
-         $xtpl->assign('SELFREG_QUOTA_HELP_TEXT', addslashes($owl_lang->owl_self_reg_quota_extended));
+         $xtpl->assign('SELFREG_QUOTA_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->quota, addslashes($owl_lang->owl_self_reg_quota_extended), $default->popup_lifetime));
          
          $xtpl->assign('SELFREG_NOTIFY_LABEL', $owl_lang->notification);
-         $xtpl->assign('SELFREG_NOTIFY_HELP_TEXT', addslashes($owl_lang->owl_self_reg_notify_extended));
+         $xtpl->assign('SELFREG_NOTIFY_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->notification, addslashes($owl_lang->owl_self_reg_notify_extended), $default->popup_lifetime));
          $xtpl->assign('SELFREG_NOTIFY_CHECKED', '');
          if ($default->self_reg_notify == 1)
          {
@@ -2677,7 +2683,7 @@ function printusers()
          }
          
          $xtpl->assign('SELFREG_ATTACHFILE_LABEL', $owl_lang->attach_file);
-         $xtpl->assign('SELFREG_ATTACHFILE_HELP_TEXT', addslashes($owl_lang->owl_self_reg_attachfile_extended));
+         $xtpl->assign('SELFREG_ATTACHFILE_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->attach_file, addslashes($owl_lang->owl_self_reg_attachfile_extended), $default->popup_lifetime));
          $xtpl->assign('SELFREG_ATTACHFILE_CHECKED', '');
          if ($default->self_reg_attachfile == 1)
          {
@@ -2685,7 +2691,7 @@ function printusers()
          }
          
          $xtpl->assign('SELFREG_DISABLEUSER_LABEL', $owl_lang->disableuser);
-         $xtpl->assign('SELFREG_DISABLEUSER_HELP_TEXT', addslashes($owl_lang->owl_self_reg_disabled_extended));
+         $xtpl->assign('SELFREG_DISABLEUSER_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->disableuser, addslashes($owl_lang->owl_self_reg_disabled_extended), $default->popup_lifetime));
          $xtpl->assign('SELFREG_DISABLEUSER_CHECKED', '');
          if ($default->self_reg_disabled == 1)
          {
@@ -2693,7 +2699,7 @@ function printusers()
          }
          
          $xtpl->assign('SELFREG_NOPREFACCESS_LABEL', $owl_lang->noprefaccess);
-         $xtpl->assign('SELFREG_NOPREFACCESS_HELP_TEXT', addslashes($owl_lang->owl_self_reg_noprefacces_extended));
+         $xtpl->assign('SELFREG_NOPREFACCESS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->noprefaccess, addslashes($owl_lang->owl_self_reg_noprefacces_extended), $default->popup_lifetime));
          $xtpl->assign('SELFREG_NOPREFACCESS_CHECKED', '');
          if ($default->self_reg_noprefacces == 1)
          {
@@ -2702,10 +2708,10 @@ function printusers()
          
          $xtpl->assign('SELFREG_MAXSESS_LABEL', $owl_lang->maxsessions);
          $xtpl->assign('SELFREG_MAXSESS_VALUE', $maxsess);
-         $xtpl->assign('SELFREG_MAXSESS_HELP_TEXT', addslashes($owl_lang->owl_self_reg_maxsessions_extended));
+         $xtpl->assign('SELFREG_MAXSESS_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->maxsessions, addslashes($owl_lang->owl_self_reg_maxsessions_extended), $default->popup_lifetime));
 
          $xtpl->assign('SELFREG_CREATE_HOMEDIR_LABEL', $owl_lang->create_user_homedir);
-         $xtpl->assign('SELFREG_CREATE_HOMEDIR_HELP_TEXT', addslashes($owl_lang->owl_self_create_homedir_extended));
+         $xtpl->assign('SELFREG_CREATE_HOMEDIR_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->create_user_homedir, addslashes($owl_lang->owl_self_create_homedir_extended), $default->popup_lifetime));
          $xtpl->assign('SELFREG_CREATE_HOMEDIR_CHECKED', '');
          if ($default->self_create_homedir == 1)
          {
@@ -2713,7 +2719,7 @@ function printusers()
          }
 
          $xtpl->assign('SELFREG_CAPTCHA_LABEL', $owl_lang->use_captcha);
-         $xtpl->assign('SELFREG_CAPTCHA_HELP_TEXT', addslashes($owl_lang->owl_self_captcha_extended));
+         $xtpl->assign('SELFREG_CAPTCHA_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->use_captcha, addslashes($owl_lang->owl_self_captcha_extended), $default->popup_lifetime));
          $xtpl->assign('SELFREG_CAPTCHA_CHECKED', '');
          if ($default->registration_using_captcha == 1)
          {
@@ -2721,7 +2727,7 @@ function printusers()
          }
          
          $xtpl->assign('SELFREG_GROUP_LABEL', $owl_lang->group);
-         $xtpl->assign('SELFREG_GROUP_HELP_TEXT', $owl_lang->owl_self_reg_group_extended);
+         $xtpl->assign('SELFREG_GROUP_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->group, addslashes($owl_lang->owl_self_reg_group_extended), $default->popup_lifetime));
          foreach($groups as $g)
          {
                $xtpl->assign('SELFREG_GROUP_VALUE', $g[0]);
@@ -2771,7 +2777,7 @@ function printusers()
       $xtpl->assign('PERSISTLOGIN_SETTINGS_HEADING', $owl_lang->remember_me_title);
 
       $xtpl->assign('PERSISTLOGIN_ENABLED_LABEL', $owl_lang->remember_me);
-      $xtpl->assign('PERSISTLOGIN_ENABLED_HELP_TEXT', addslashes($owl_lang->owl_self_reg_extended));
+      $xtpl->assign('PERSISTLOGIN_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->remember_me, addslashes($owl_lang->owl_self_reg_extended), $default->popup_lifetime));
       $xtpl->assign('PERSISTLOGIN_ENABLED_CHECKED', '');
 
       if ($default->remember_me == 1)
@@ -2783,7 +2789,7 @@ function printusers()
       {
          $xtpl->assign('PERSISTLOGIN_COOKIE_TIMEOUT_LABEL', $owl_lang->remember_timeout);
          $xtpl->assign('PERSISTLOGIN_COOKIE_TIMEOUT_VALUE', $default->cookie_timeout);
-         $xtpl->assign('PERSISTLOGIN_COOKIE_TIMEOUT_HELP_TEXT', addslashes($owl_lang->owl_cookie_timeout_extended));
+         $xtpl->assign('PERSISTLOGIN_COOKIE_TIMEOUT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->remember_timeout, addslashes($owl_lang->owl_cookie_timeout_extended), $default->popup_lifetime));
 
          $xtpl->parse('main.SiteFeatures.PersistenLoginOptions');
       }
@@ -2801,7 +2807,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->virus_path);
       $xtpl->assign('VIRUS_TOOLPATH_LABEL', $owl_lang->virus_path);
-      $xtpl->assign('VIRUS_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_virus_path_extended));
+      $xtpl->assign('VIRUS_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->virus_path, addslashes($owl_lang->owl_virus_path_extended), $default->popup_lifetime));
       $xtpl->assign('VIRUS_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('VIRUS_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('VIRUS_TOOLPATH_VALUE', $default->virus_path);
@@ -2809,7 +2815,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->dbdump_path);
       $xtpl->assign('DBDUMP_TOOLPATH_LABEL', $owl_lang->owl_dbdump_path);
-      $xtpl->assign('DBDUMP_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_dbdump_path_extended));
+      $xtpl->assign('DBDUMP_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_dbdump_path, addslashes($owl_lang->owl_dbdump_path_extended), $default->popup_lifetime));
       $xtpl->assign('DBDUMP_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('DBDUMP_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('DBDUMP_TOOLPATH_VALUE', $default->dbdump_path);
@@ -2817,7 +2823,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->gzip_path);
       $xtpl->assign('GZIP_TOOLPATH_LABEL', $owl_lang->owl_gzip_path);
-      $xtpl->assign('GZIP_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_gzip_path_extended));
+      $xtpl->assign('GZIP_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_gzip_path, addslashes($owl_lang->owl_gzip_path_extended), $default->popup_lifetime));
       $xtpl->assign('GZIP_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('GZIP_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('GZIP_TOOLPATH_VALUE', $default->gzip_path);
@@ -2825,7 +2831,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->tar_path);
       $xtpl->assign('TAR_TOOLPATH_LABEL', $owl_lang->owl_tar_path);
-      $xtpl->assign('TAR_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_tar_path_extended));
+      $xtpl->assign('TAR_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_tar_path, addslashes($owl_lang->owl_tar_path_extended), $default->popup_lifetime));
       $xtpl->assign('TAR_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('TAR_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('TAR_TOOLPATH_VALUE', $default->tar_path);
@@ -2833,7 +2839,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->unzip_path);
       $xtpl->assign('UNZIP_TOOLPATH_LABEL', $owl_lang->owl_unzip_path);
-      $xtpl->assign('UNZIP_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_unzip_path_extended));
+      $xtpl->assign('UNZIP_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_unzip_path, addslashes($owl_lang->owl_unzip_path_extended), $default->popup_lifetime));
       $xtpl->assign('UNZIP_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('UNZIP_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('UNZIP_TOOLPATH_VALUE', $default->unzip_path);
@@ -2841,7 +2847,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->pod2html_path);
       $xtpl->assign('POD2HTML_TOOLPATH_LABEL', $owl_lang->owl_pod2html_path);
-      $xtpl->assign('POD2HTML_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_pod2html_path_extended));
+      $xtpl->assign('POD2HTML_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_pod2html_path, addslashes($owl_lang->owl_pod2html_path_extended), $default->popup_lifetime));
       $xtpl->assign('POD2HTML_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('POD2HTML_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('POD2HTML_TOOLPATH_VALUE', $default->pod2html_path);
@@ -2849,7 +2855,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->rtftotext_path);
       $xtpl->assign('RTFTOTEXT_TOOLPATH_LABEL', $owl_lang->rtftotext_path);
-      $xtpl->assign('RTFTOTEXT_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_rtftotext_path_extended));
+      $xtpl->assign('RTFTOTEXT_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->rtftotext_path, addslashes($owl_lang->owl_rtftotext_path_extended), $default->popup_lifetime));
       $xtpl->assign('RTFTOTEXT_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('RTFTOTEXT_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('RTFTOTEXT_TOOLPATH_VALUE', $default->rtftotext_path);
@@ -2857,7 +2863,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->pdftotext_path);
       $xtpl->assign('PDFTOTEXT_TOOLPATH_LABEL', $owl_lang->owl_pdftotext_path);
-      $xtpl->assign('PDFTOTEXT_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_pdftotext_path_extended));
+      $xtpl->assign('PDFTOTEXT_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_pdftotext_path, addslashes($owl_lang->owl_pdftotext_path_extended), $default->popup_lifetime));
       $xtpl->assign('PDFTOTEXT_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('PDFTOTEXT_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('PDFTOTEXT_TOOLPATH_VALUE', $default->pdftotext_path);
@@ -2865,7 +2871,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->wordtotext_path);
       $xtpl->assign('WORDTOTEXT_TOOLPATH_LABEL', $owl_lang->owl_wordtotext_path);
-      $xtpl->assign('WORDTOTEXT_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_wordtotext_path_extended));
+      $xtpl->assign('WORDTOTEXT_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_wordtotext_path, addslashes($owl_lang->owl_wordtotext_path_extended), $default->popup_lifetime));
       $xtpl->assign('WORDTOTEXT_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('WORDTOTEXT_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('WORDTOTEXT_TOOLPATH_VALUE', $default->wordtotext_path);
@@ -2873,7 +2879,7 @@ function printusers()
       $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->ppttotext_path);
       $xtpl->assign('PPTTOTEXT_TOOLPATH_LABEL', $owl_lang->owl_ppttotext_path);
-      $xtpl->assign('PPTTOTEXT_TOOLPATH_HELP_TEXT', addslashes($owl_lang->owl_ppttotext_path_extended));
+      $xtpl->assign('PPTTOTEXT_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->owl_ppttotext_path, addslashes($owl_lang->owl_ppttotext_path_extended), $default->popup_lifetime));
       $xtpl->assign('PPTTOTEXT_TOOLPATH_ALT', $aStatusImage['alt_tag']);
       $xtpl->assign('PPTTOTEXT_TOOLPATH_IMG', $aStatusImage['image']);
       $xtpl->assign('PPTTOTEXT_TOOLPATH_VALUE', $default->ppttotext_path);
@@ -2881,7 +2887,7 @@ function printusers()
 
       $xtpl->assign('DL_COUNT_HEADING', $owl_lang->maximum_download_title);
       $xtpl->assign('DL_COUNT_ENABLE', $owl_lang->maximum_download_feature);
-      $xtpl->assign('DL_COUNT_HELP_TEXT', $owl_lang->maximum_download_feature_extended);
+      $xtpl->assign('DL_COUNT_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->maximum_download_feature, addslashes($owl_lang->maximum_download_feature_extended), $default->popup_lifetime));
 
       $xtpl->assign('DL_COUNT_CHECKED', '');
       if ($default->use_download_count == 1)
@@ -2890,7 +2896,7 @@ function printusers()
       }
 
       $xtpl->assign('DL_BLOCK_LABEL', $owl_lang->maximum_download_block);
-      $xtpl->assign('DL_BLOCK_HELP_TEXT', $owl_lang->maximum_download_block_extended);
+      $xtpl->assign('DL_BLOCK_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->maximum_download_block, addslashes($owl_lang->maximum_download_block_extended), $default->popup_lifetime));
 
       $xtpl->assign('DL_BLOCK_CHECKED', '');
       if ($default->download_block_user == 1)
@@ -2899,11 +2905,11 @@ function printusers()
       }
 
       $xtpl->assign('DL_COUNT_TRIGGER_LABEL', $owl_lang->maximum_download_trigger);
-      $xtpl->assign('DL_COUNT_TRIGGER_HELP_TEXT', $owl_lang->maximum_download_trigger_extended);
+      $xtpl->assign('DL_COUNT_TRIGGER_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->maximum_download_trigger, addslashes($owl_lang->maximum_download_trigger_extended), $default->popup_lifetime));
       $xtpl->assign('DL_COUNT_TRIGGER_VALUE', $default->download_count_trigger);
 
       $xtpl->assign('DL_SIZE_TRIGGER_LABEL', $owl_lang->maximum_download_size_trigger);
-      $xtpl->assign('DL_SIZE_TRIGGER_HELP_TEXT', $owl_lang->maximum_download_size_trigger_extended);
+      $xtpl->assign('DL_SIZE_TRIGGER_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->maximum_download_size_trigger, addslashes($owl_lang->maximum_download_size_trigger_extended), $default->popup_lifetime));
       $xtpl->assign('DL_SIZE_TRIGGER_VALUE', $default->download_size_trigger);
 
       $xtpl->assign('DL_NOTIFICATION_LIST_LABEL', $owl_lang->maximum_download_notify);

@@ -132,7 +132,7 @@ function fPrintFormDoctypeRadio($rowtitle, $fieldname, $value, $option_text , $s
    $sExtendedHelpVar = "owl_" . $fieldname . "_extended";   
    if (!empty($owl_lang->{$sExtendedHelpVar}))
    {
-       $extended_help=" onmouseover=\"return makeTrue(domTT_activate(this,event,'caption','" . addslashes($rowtitle) . "','content','". $owl_lang->{$sExtendedHelpVar} . "','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))\";";
+       $extended_help=" onmouseover=\" " . sprintf($default->domtt_popup , addslashes($rowtitle), $owl_lang->{$sExtendedHelpVar}, $default->popup_lifetime) . '"';
    }
    else
    {
@@ -198,7 +198,7 @@ function fPrintFormCheckBox($rowtitle, $fieldname, $value, $checked = "", $submi
    $sExtendedHelpVar = "owl_" . $fieldname . "_extended";   
    if (!empty($owl_lang->{$sExtendedHelpVar}))
    {
-       $extended_help=" onmouseover=\"return makeTrue(domTT_activate(this,event,'caption','" . addslashes($rowtitle) . "','content','". $owl_lang->{$sExtendedHelpVar} . "','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))\";";
+       $extended_help=" onmouseover=\"" . sprintf($default->domtt_popup , addslashes($rowtitle), $owl_lang->{$sExtendedHelpVar}, $default->popup_lifetime) . '"';
    }
    else
    {
@@ -220,7 +220,7 @@ function fPrintFormTextArea($rowtitle, $fieldname, $currentvalue = "" , $row = 1
    $sExtendedHelpVar = "owl_" . $fieldname . "_extended";   
    if (!empty($owl_lang->{$sExtendedHelpVar}))
    {
-       $extended_help=" onmouseover=\"return makeTrue(domTT_activate(this,event,'caption','" . addslashes($rowtitle) . "','content','". $owl_lang->{$sExtendedHelpVar} . "','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))\";";
+       $extended_help=" onmouseover=\"" . sprintf($default->domtt_popup , addslashes($rowtitle), $owl_lang->{$sExtendedHelpVar}, $default->popup_lifetime) . '"';
    }
    else
    {
@@ -253,7 +253,7 @@ function fPrintFormTextLine($rowtitle, $name, $size = "24", $value = "", $bytes 
    $sExtendedHelpVar = "owl_" . $name . "_extended";   
    if (!empty($owl_lang->{$sExtendedHelpVar}))
    {
-       $extended_help=" onmouseover=\"return makeTrue(domTT_activate(this,event,'caption','" . addslashes($rowtitle) . "','content','". $owl_lang->{$sExtendedHelpVar} . "','lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true))\";";
+       $extended_help=" onmouseover=\"" . sprintf($default->domtt_popup , addslashes($rowtitle), $owl_lang->{$sExtendedHelpVar}, $default->popup_lifetime) . '"';
    }
    else
    {
@@ -296,7 +296,7 @@ function fPrintFormSelectBox($rowtitle, $fieldname, $values, $currentvalue = "No
    $sExtendedHelpVar = "owl_" . $fieldname . "_extended";   
    if (!empty($owl_lang->{$sExtendedHelpVar}))
    {
-       $extended_help=" onmouseover=\"return makeTrue(domTT_activate(this,event,'caption','" . addslashes($rowtitle) . "','content','". $owl_lang->{$sExtendedHelpVar} . "','lifetime', 3000, 'fade', 'both', 'delay', 10, 'statusText', ' ', 'trail', true))\";";
+       $extended_help=" onmouseover=\"" . sprintf($default->domtt_popup , addslashes($rowtitle), $owl_lang->{$sExtendedHelpVar}, $default->popup_lifetime) . '"';
    }
    else
    {

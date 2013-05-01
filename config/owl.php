@@ -1267,4 +1267,8 @@ $default->VideoPlayList = 1;
 $default->wysiwyg_permited_html_tags = '<br><b><h1><h2><h3><h4><font><color><br /><p><strong><em><span>';
 $default->default_permited_html_tags = '<br><b><h1><h2><br />';
 
+// **********************************************************************
+// *** Popup on mouse over Centralized Configuration
+// **********************************************************************
+$default->domtt_popup =   "return makeTrue(domTT_activate(this, event, 'caption', '%s', 'content', '%s', 'lifetime', %s, 'fade', 'both', 'delay', 10, 'maxWidth', '400', 'direction', 'north', 'statusText', ' ', 'trail', true));";
 ?>

@@ -75,7 +75,7 @@
                </td>
 <!-- END: Score -->
 <!-- BEGIN: FldPath -->
-               <td class="{FOLDER_TD_CLASS}"><a class="{FOLDER_AHREF_CLASS}" href="{FOLDER_PATH_URL}" onmouseover="return makeTrue(domTT_activate(this, event, 'caption', '{FOLDER_DESC_LABEL}', 'content', '{FOLDER_DESC_VALUE}', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true));">{FOLDER_HIT}. {FOLDER_PATH}</a></td>
+               <td class="{FOLDER_TD_CLASS}"><a class="{FOLDER_AHREF_CLASS}" href="{FOLDER_PATH_URL}" onmouseover="{FOLDER_DESC_VALUE}">{FOLDER_HIT}. {FOLDER_PATH}</a></td>
 <!-- END: FldPath -->
 <!-- BEGIN: DocNum -->
                <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
@@ -90,7 +90,7 @@
                <td class="{FOLDER_TD_CLASS}"><img src="{THEME}/icon_filetype/folder_closed.gif" border="0" alt=""></img></td>
 <!-- END: DocType -->
 <!-- BEGIN: filename -->
-               <td class="{FOLDER_TD_CLASS}"><a class="{FOLDER_AHREF_CLASS}" href="{FOLDER_NAME_URL}" onmouseover="return makeTrue(domTT_activate(this, event, 'caption', '{FOLDER_NAME_DESC_LABEL}', 'content', '{FOLDER_NAME_DESC_VALUE}', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true));">{FOLDER_NAME}</a>{FOLDER_NAME_COUNT}</td>
+               <td class="{FOLDER_TD_CLASS}"><a class="{FOLDER_AHREF_CLASS}" href="{FOLDER_NAME_URL}" onmouseover="{FOLDER_NAME_DESC_VALUE}">{FOLDER_NAME}</a>{FOLDER_NAME_COUNT}</td>
 <!-- END: filename -->
 <!-- BEGIN: f_size -->
                <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
@@ -146,7 +146,7 @@
                </td>
 <!-- END: Score -->
 <!-- BEGIN: FldPath -->
-               <td class="{FILE_TD_CLASS}"><a class="{FILE_AHREF_CLASS}" href="{FILE_PATH_URL}" onmouseover="return makeTrue(domTT_activate(this, event, 'caption', '{FILE_DESC_LABEL}', 'content', '{FILE_DESC_VALUE}', 'lifetime', 3000, 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true));">{FILE_HIT}. {FILE_PATH}</a></td>
+               <td class="{FILE_TD_CLASS}"><a class="{FILE_AHREF_CLASS}" href="{FILE_PATH_URL}" onmouseover="{FILE_DESC_VALUE}">{FILE_HIT}. {FILE_PATH}</a></td>
 <!-- END: FldPath -->
 <!-- BEGIN: DocNum -->
                <td class="{FILE_TD_CLASS}">{FILE_DOC_NUMBER}</td>

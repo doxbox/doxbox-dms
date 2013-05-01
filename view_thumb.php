@@ -635,7 +635,7 @@ while ($sql->next_record())
       $urlArgs2['action'] = 'file_details';
       $url = fGetURL ('view.php', $urlArgs2);
     
-      $aRenderLine['name'][$RowCount] =  "\n<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . "return makeTrue(domTT_activate(this, event, 'caption', '" . $owl_lang->description . "', 'content', '" . $sPopupDescription . "', 'lifetime', " . $default->popup_lifetime . ", 'fade', 'both', 'delay', 10, 'direction', 'north', 'maxWidth', '400', 'statusText', ' ', 'trail', true));" . '"';
+      $aRenderLine['name'][$RowCount] =  "\n<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . sprintf($default->domtt_popup , $owl_lang->description, $sPopupDescription, $default->popup_lifetime) . '"';
  
       $aRenderLine['name'][$RowCount] .= ">\n\n";
  
