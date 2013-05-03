@@ -304,8 +304,6 @@ if (check_auth($parent, "folder_create", $userid, false, false) == 1 or  check_a
       }
 }
 
-//
-// get all the files in those folders that the user can read
 $xtpl->assign('SEARCH_FOR_FOLDERS', $owl_lang->search_for_folders);
 //
 // get all the folders that the user can read
@@ -380,167 +378,138 @@ while($sql->next_record())
       }
    }
 }
+
+
 $xtpl->assign('SEARCH_FOR_FILES', $owl_lang->search_for_files);
+//
+// get all the files in those folders that the user can read
 
 $iCount=0;
 
-   #Clean up the keywords a bit (remove all commas and duplicate spaces)
-   $sqlquery = "";
-   $glue = "";
-   if ($withindocs == "1")
-   {
-      $keywords = mb_strtolower(fReplaceSpecial($query));
-   }
-   else
-   { 
-      $keywords = $query;
-   }
-   $keywords = str_replace(', ', ' ', $keywords);
-   $keywords = str_replace(',', ' ', $keywords);
-   $keywords = str_replace('  ', ' ', $keywords);
-   $keywords = stripslashes($keywords);
-   $keywords = str_replace('\\\\', '\\', $keywords);
+#Clean up the keywords a bit (remove all commas and duplicate spaces)
+$sqlquery = "";
+$glue = "";
+if ($withindocs == "1")
+{
+   $keywords = mb_strtolower(fReplaceSpecial($query));
+}
+else
+{ 
+   $keywords = $query;
+}
+$keywords = str_replace(', ', ' ', $keywords);
+$keywords = str_replace(',', ' ', $keywords);
+$keywords = str_replace('  ', ' ', $keywords);
+$keywords = stripslashes($keywords);
+$keywords = str_replace('\\\\', '\\', $keywords);
 
-   #Replace asterisks with % signs for MySQL wildcards
-   $keywords = str_replace("*", "%", $keywords);
+#Replace asterisks with % signs for MySQL wildcards
+$keywords = str_replace("*", "%", $keywords);
 
-   switch ($boolean)
-   {
-      case "exact" :
-         $cBeginSqlWildCard = '';
-         $cEndSqlWildCard = '';
-         break;
-      case "startwith" :
-         $cBeginSqlWildCard = '';
-         $cEndSqlWildCard = '%';
-         break;
-      case "endwith" :
-         $cBeginSqlWildCard = '%';
-         $cEndSqlWildCard = '';
-         break;
-      default:
-         $cBeginSqlWildCard = '%';
-         $cEndSqlWildCard = '%';
+switch ($boolean)
+{
+   case "exact" :
+      $cBeginSqlWildCard = '';
+      $cEndSqlWildCard = '';
       break;
-   }
+   case "startwith" :
+      $cBeginSqlWildCard = '';
+      $cEndSqlWildCard = '%';
+      break;
+   case "endwith" :
+      $cBeginSqlWildCard = '%';
+      $cEndSqlWildCard = '';
+      break;
+   default:
+      $cBeginSqlWildCard = '%';
+      $cEndSqlWildCard = '%';
+   break;
+}
 
+#Tack the search terms onto the query
+if ($withindocs == "1")
+{
+   $keywordid = "";
+   $sqlquery .= " AND (";
+   $aWordQuery = array();
 
-   #Tack the search terms onto the query
-   if ($withindocs == "1")
+   if($boolean == "phrase")
    {
-      $keywordid = "";
-      $sqlquery .= " AND (";
-      $aWordQuery = array();
+      #Match the entire term
+      $keywords = strtolower($keywords);
 
-      if($boolean == "phrase")
+      $sql->query("SELECT * from $default->owl_wordidx where word like '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."'");
+      if ($sql->num_rows() > 0)
       {
-         #Match the entire term
-         //$sql = new Owl_DB;
-            $keywords = strtolower($keywords);
-
-            $sql->query("SELECT * from $default->owl_wordidx where word like '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."'");
-            if ($sql->num_rows() > 0)
-            {
-               while($sql->next_record())
-               {
-                  $keywordid .= " OR wordid = '" . $sql->f("wordid") . "'";
-               }
-            }
-            else
-            {
-               $keywordid = " OR wordid = '-1' ";
-            }
-
-            $aWordQuery[$tok] = substr($keywordid, 4);
-
-            if(is_numeric($keywords))
-            {
-               $sCheckForFileId = "f.id = '$keywords' OR ";
-            }
-            else
-            {
-               $sCheckForFileId = "";
-            }
-            $sqlquery .= "$sCheckForFileId name_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' $keywordid";
+         while($sql->next_record())
+         {
+            $keywordid .= " OR wordid = '" . $sql->f("wordid") . "'";
+         }
       }
       else
       {
-         #Match any or all words
-         $keywordid = '';
-         $tok = strtok($keywords, " ");
-         $aWordQuery = array();
-         $keywordid = " wordid = '-1' ";
-         $sOpperator = "";
-         while($tok !== false)
-         {
-               $tok = fReplaceSpecial($tok);
-
-               if($boolean == "all")
-               {
-                  $sql->query("SELECT * from $default->owl_wordidx where word like '" . "$tok" ."'");
-                  $sOpperator = "OR";
-               }
-               else
-               {
-                  $sql->query("SELECT * from $default->owl_wordidx where word like '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."'"); 
-                  $sOpperator = "OR";
-               }
-
-               if ($sql->num_rows() > 0)
-               {
-                  while($sql->next_record())
-                  {
-                     $keywordid .= " $sOpperator wordid = '" . $sql->f("wordid") . "'";
-                  }
-               }
-               else
-               {
-                  if($boolean == "all")
-                  {
-                     $aWordQuery = array();
-                     $keywordid = " wordid = '-1' ";
-                     $aWordQuery[$tok] = $keywordid;
-                     break;                  
-                  }                  
-                  else
-                  {
-                     $keywordid = " wordid = '-1' ";
-                  }
-               }
-
-               $aWordQuery[$tok] = $keywordid;
-
-               if(is_numeric($keywords))
-               {
-                  $sCheckForFileId = "f.id = '$keywords' OR ";
-               }
-               else
-               {
-                  $sCheckForFileId = "";
-               }
-               $tok = strtok(" ");
-         }
-
-         $glue = "";
-         foreach ($aWordQuery as $tok => $keywordid)
-         {
-            $sqlquery .= "$glue ($sCheckForFileId name_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' ) ";
-            $glue = ($boolean == "all") ? " AND" : " OR";
-         }
-            $sqlquery .= $glue . "($keywordid)";
-            //$sqlquery .= " $keywordid)";
+         $keywordid = " OR wordid = '-1' ";
       }
-      $sqlquery .= ")";
-   }       
+
+      $aWordQuery[$tok] = substr($keywordid, 4);
+
+      if(is_numeric($keywords))
+      {
+         $sCheckForFileId = "f.id = '$keywords' OR ";
+      }
+      else
+      {
+         $sCheckForFileId = "";
+      }
+      $sqlquery .= "$sCheckForFileId name_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' $keywordid";
+   }
    else
    {
-      $sqlquery2 = '';
-      $sqlquery .= " AND ((";
-      if($boolean == "phrase")
+      #Match any or all words
+      $keywordid = '';
+      $tok = strtok($keywords, " ");
+      $aWordQuery = array();
+      $keywordid = " wordid = '-1' ";
+      $sOpperator = "";
+      while($tok !== false)
       {
-         $glue3 = "  ";
-         #Match the entire term
-         $sql = new Owl_DB;
+         $tok = fReplaceSpecial($tok);
+
+         if($boolean == "all")
+         {
+            $sql->query("SELECT * from $default->owl_wordidx where word like '" . "$tok" ."'");
+            $sOpperator = "OR";
+         }
+         else
+         {
+            $sql->query("SELECT * from $default->owl_wordidx where word like '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."'"); 
+            $sOpperator = "OR";
+         }
+
+         if ($sql->num_rows() > 0)
+         {
+            while($sql->next_record())
+            {
+               $keywordid .= " $sOpperator wordid = '" . $sql->f("wordid") . "'";
+            }
+         }
+         else
+         {
+            if($boolean == "all")
+            {
+               $aWordQuery = array();
+               $keywordid = " wordid = '-1' ";
+               $aWordQuery[$tok] = $keywordid;
+               break;                  
+            }                  
+            else
+            {
+               $keywordid = " wordid = '-1' ";
+            }
+         }
+
+         $aWordQuery[$tok] = $keywordid;
+
          if(is_numeric($keywords))
          {
             $sCheckForFileId = "f.id = '$keywords' OR ";
@@ -549,162 +518,191 @@ $iCount=0;
          {
             $sCheckForFileId = "";
          }
-         $sqlquery .= "$sCheckForFileId  name_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' )";
+         $tok = strtok(" ");
+      }
 
-            $sql_two->query("select field_name from $default->owl_docfields_table");
-            $iQueryTwo = $sql_two->num_rows();
-            if ( $iQueryTwo > 0)
-            {
-               $sqlquery2 .= " OR (";
-               while($sql_two->next_record())
-               {
-                  $sqlquery2 .= "$glue3 (field_name='". $sql_two->f("field_name") ."' and field_value LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."')";
-                  $glue3 = " OR ";
-               }
-               $sqlquery2 .= ")";
-            }
+      $glue = "";
+      foreach ($aWordQuery as $tok => $keywordid)
+      {
+         $sqlquery .= "$glue ($sCheckForFileId name_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' ) ";
+         $glue = ($boolean == "all") ? " AND" : " OR";
+      }
+      $sqlquery .= $glue . "($keywordid)";
+   }
+   $sqlquery .= ")";
+}       
+else // END Withing Docs = 1
+{
+   $sqlquery2 = '';
+   $sqlquery .= " AND ((";
+   if($boolean == "phrase")
+   {
+      $glue3 = "  ";
+      #Match the entire term
+      $sql = new Owl_DB;
+      if(is_numeric($keywords))
+      {
+         $sCheckForFileId = "f.id = '$keywords' OR ";
       }
       else
       {
-         #Match any or all words
-         $tok = strtok($keywords, " ");
-
-         while($tok !== false)
-         {
-            $glue3 = "";
-            $sql_two->query("select field_name from $default->owl_docfields_table");
-            $iQueryTwo = $sql_two->num_rows();
-            if ( $iQueryTwo > 0)
-            {
-               $sqlquery2 .= " OR (";
-
-               while($sql_two->next_record())
-               {
-                  $sqlquery2 .= "$glue3 (field_name='". $sql_two->f("field_name") ."' and field_value LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."')";
-                  //$glue3 = ($boolean == "all") ? " AND" : " OR";
-                  $glue3 = " OR ";
-               }
-               $sqlquery2 .= ")";
-            }
-            if(is_numeric($keywords))
-            {
-               $sCheckForFileId = "f.id = '$keywords' OR ";
-            }
-            else
-            {
-               $sCheckForFileId = "";
-            }
-
-            $cleantok = fReplaceSpecial($tok);
-
-            //$sqlquery .= "$glue ($sCheckForFileId name_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."')";
-            $sqlquery .= "$glue ($sCheckForFileId 
-name LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
-OR name LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
-OR name_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
-OR name_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
-OR metadata LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
-OR metadata LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
-OR metadata_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
-OR metadata_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
-OR description LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
-OR description LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
-OR description_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
-OR description_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
-OR filename_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."'
-OR filename_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."'
-OR filename LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."'
-OR filename LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."')";
-
-            $glue = ($boolean == "all") ? " AND" : " OR";
-
-            $tok = strtok(" ");
-            
-         }
-      $sqlquery2 .= ")";
+         $sCheckForFileId = "";
       }
-      $sqlquery .= ")";
-   } 
+      $sqlquery .= "$sCheckForFileId  name_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR metadata_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR description_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' OR filename_search LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."' )";
 
-   if ($withindocs == "1")
-   {
-     $sql->query("SELECT distinct  f.id as fid, f_size, smodified, parent, name, name_search  metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' $sqlquery ");
+      $sql_two->query("select field_name from $default->owl_docfields_table");
+      $iQueryTwo = $sql_two->num_rows();
+      if ( $iQueryTwo > 0)
+      {
+         $sqlquery2 .= " OR (";
+         while($sql_two->next_record())
+         {
+            $sqlquery2 .= "$glue3 (field_name='". $sql_two->f("field_name") ."' and field_value LIKE '" . $cBeginSqlWildCard . $keywords . $cEndSqlWildCard ."')";
+            $glue3 = " OR ";
+         }
+         $sqlquery2 .= ")";
+      }
    }
    else
    {
-     $sSearchQuery = "SELECT f_size, smodified, f.id as fid, parent, name, name_search, metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid  FROM $default->owl_files_table f left outer join $default->owl_docfieldvalues_table d on f.id=file_id where approved = '1' $sqlquery $sqlquery2";
-     $sql->query($sSearchQuery);
-     $sqlquery2 = "";
-   }
-   
-   $oldid = '';
-   while($sql->next_record()) 
-   {
-      $id = $sql->f("fid");
-      //$id = $sql->f("id");
-      if ($oldid == $id) 
+      #Match any or all words
+      $tok = strtok($keywords, " ");
+
+      while($tok !== false)
       {
-         $files[$id]['score'] += 1;
-         continue;
-      }
-      if (in_array($sql->f("parent"), $folders))
-      {
-         if(check_auth($id, "file_download", $userid, false, false) == 1) 
+         $glue3 = "";
+         $sql_two->query("select field_name from $default->owl_docfields_table");
+         $iQueryTwo = $sql_two->num_rows();
+         if ( $iQueryTwo > 0)
          {
-            // added by rsa@newtec.be (Ruben Samaey)
-            // perform a query to fetch all comments attached to the current file the user is authorized to download
-            // all comments found are concattenated in $comment
-            $comment = "";
-            $sql_two->query("SELECT comments FROM $default->owl_comment_table where fid = '$id'");
-            while($sql_two->next_record())  
+            $sqlquery2 .= " OR (";
+
+            while($sql_two->next_record())
             {
-               $comment .= " ";
-               $comment .= $sql_two->f("comments");
+               $sqlquery2 .= "$glue3 (field_name='". $sql_two->f("field_name") ."' and field_value LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."')";
+               //$glue3 = ($boolean == "all") ? " AND" : " OR";
+               $glue3 = " OR ";
             }
-            //end add by rsa@newtec.be
-            $searchable_custom_fields = "";
-             
-            $sql_two->query("select * from $default->owl_docfieldvalues_table v left join $default->owl_docfields_table d on v.field_name = d.field_name where file_id = '$id' and searchable = 1;");
-            while($sql_two->next_record())  
-            {
-               $searchable_custom_fields .= " ";
-               $searchable_custom_fields .= $sql_two->f("field_value");
-            }
-   
-            $files[$id]['id'] = $id;
-            $files[$id]['up_id'] = $sql->f("updatorid");
-            $files[$id]['n'] = $sql->f("name");
-            $files[$id]['n_s'] = $sql->f("name_search");
-            $files[$id]['m'] = explode(" ", $sql->f("metadata"));
-            $files[$id]['m_s'] = explode(" ", $sql->f("metadata_search"));
-            $files[$id]['d'] = explode(" ", $sql->f("description"));
-            $files[$id]['d_s'] = explode(" ", $sql->f("description_search"));
-            $files[$id]['f'] = $sql->f("filename");
-            $files[$id]['f_s'] = $sql->f("filename_search");
-            $files[$id]['c'] = $sql->f("checked_out");
-            $files[$id]['u'] = $sql->f("url");
-            $files[$id]['p'] = $sql->f("parent");
-            $files[$id]['x'] = $sql->f("description");
-            $files[$id]['s'] = $sql->f("f_size");
-            $files[$id]['doctype'] = $sql->f("doctype");
-            $files[$id]['creator'] = $sql->f("creatorid");
-            $files[$id]['date'] = $sql->f("smodified");
-   //added by rsa@newtec.be
-            $files[$id]['comments'] = explode(" ",$comment);
-   //end add by rsa
-            $files[$id]['custom'] = explode(" ",$searchable_custom_fields);
-   
-           $iCount++;
-           $PrintDot = $iCount % 50;
-           if ($PrintDot == 0)
-           {
-              //print(".");
-           }
-           $files[$id]['score'] = 0;
-           $oldid = $id;
+            $sqlquery2 .= ")";
          }
+         if(is_numeric($keywords))
+         {
+            $sCheckForFileId = "f.id = '$keywords' OR ";
+         }
+         else
+         {
+            $sCheckForFileId = "";
+         }
+
+         $cleantok = fReplaceSpecial($tok);
+
+         $sqlquery .= "$glue ($sCheckForFileId 
+                      name LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
+                      OR name LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
+                      OR name_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
+                      OR name_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
+                      OR metadata LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
+                      OR metadata LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
+                      OR metadata_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
+                      OR metadata_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
+                      OR description LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
+                      OR description LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
+                      OR description_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."' 
+                      OR description_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."' 
+                      OR filename_search LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."'
+                      OR filename_search LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."'
+                      OR filename LIKE '" . $cBeginSqlWildCard . "$tok" . $cEndSqlWildCard ."'
+                      OR filename LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."')";
+
+         $glue = ($boolean == "all") ? " AND" : " OR";
+
+         $tok = strtok(" ");
+         
+      }
+      $sqlquery2 .= ")";
+   }
+   $sqlquery .= ")";
+} 
+
+if ($withindocs == "1")
+{
+  $sql->query("SELECT distinct  f.id as fid, f_size, smodified, parent, name, name_search  metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' $sqlquery ");
+
+}
+else
+{
+  $sSearchQuery = "SELECT f_size, smodified, f.id as fid, parent, name, name_search, metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid  FROM $default->owl_files_table f left outer join $default->owl_docfieldvalues_table d on f.id=file_id where approved = '1' $sqlquery $sqlquery2";
+  $sql->query($sSearchQuery);
+  $sqlquery2 = "";
+}
+
+/* We are done bulding the query for Finding Files now lets have a look a the results */ 
+$oldid = '';
+while($sql->next_record()) 
+{
+   $id = $sql->f("fid");
+   if ($oldid == $id) 
+   {
+      $files[$id]['score'] += 1;
+      continue;
+   } 
+   /** IF this file is Not in the User Accesible Folders list then Skip it */
+   if (in_array($sql->f("parent"), $folders))
+   {
+      if(check_auth($id, "file_download", $userid, false, false) == 1) 
+      {
+         // perform a query to fetch all comments attached to the current file the user is authorized to download
+         // all comments found are concattenated in $comment
+         $comment = "";
+         $sql_two->query("SELECT comments FROM $default->owl_comment_table where fid = '$id'");
+         while($sql_two->next_record())  
+         {
+            $comment .= " ";
+            $comment .= $sql_two->f("comments");
+         }
+
+         $searchable_custom_fields = "";
+          
+         $sql_two->query("select * from $default->owl_docfieldvalues_table v left join $default->owl_docfields_table d on v.field_name = d.field_name where file_id = '$id' and searchable = 1;");
+         while($sql_two->next_record())  
+         {
+            $searchable_custom_fields .= " ";
+            $searchable_custom_fields .= $sql_two->f("field_value");
+         }
+ 
+         $files[$id]['id'] = $id;
+         $files[$id]['up_id'] = $sql->f("updatorid");
+         $files[$id]['n'] = $sql->f("name");
+         $files[$id]['n_s'] = $sql->f("name_search");
+         $files[$id]['m'] = explode(" ", $sql->f("metadata"));
+         $files[$id]['m_s'] = explode(" ", $sql->f("metadata_search"));
+         $files[$id]['d'] = explode(" ", $sql->f("description"));
+         $files[$id]['d_s'] = explode(" ", $sql->f("description_search"));
+         $files[$id]['f'] = $sql->f("filename");
+         $files[$id]['f_s'] = $sql->f("filename_search");
+         $files[$id]['c'] = $sql->f("checked_out");
+         $files[$id]['u'] = $sql->f("url");
+         $files[$id]['p'] = $sql->f("parent");
+         $files[$id]['x'] = $sql->f("description");
+         $files[$id]['s'] = $sql->f("f_size");
+         $files[$id]['doctype'] = $sql->f("doctype");
+         $files[$id]['creator'] = $sql->f("creatorid");
+         $files[$id]['date'] = $sql->f("smodified");
+         $files[$id]['comments'] = explode(" ",$comment);
+         $files[$id]['custom'] = explode(" ",$searchable_custom_fields);
+ 
+        $iCount++;
+        $PrintDot = $iCount % 50;
+        if ($PrintDot == 0)
+        {
+           print(".");
+        }
+        $files[$id]['score'] = 0;
+        $oldid = $id;
       }
    }
+}
+
 $xtpl->assign('SEARCH_SCORE', $owl_lang->search_score);
 //
 // right now we have the array $files with all possible files that the user has read access to
