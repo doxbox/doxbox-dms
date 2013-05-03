@@ -384,17 +384,6 @@ $xtpl->assign('SEARCH_FOR_FILES', $owl_lang->search_for_files);
 
 $iCount=0;
 
-$iLevel = 0;
-foreach($folders as $item) 
-{
-   $sql->query("SELECT id from $default->owl_files_table where parent = '$item'");
-   if ($sql->num_rows() == 0 and $iLevel > 0)
-   {
-      continue;
-   }
-
-   $iLevel++;
-   // BEGIN NEW STUFF
    #Clean up the keywords a bit (remove all commas and duplicate spaces)
    $sqlquery = "";
    $glue = "";
@@ -639,19 +628,11 @@ OR filename LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."')";
 
    if ($withindocs == "1")
    {
-     $sql->query("SELECT distinct  f.id as fid, f_size, smodified, parent, name, name_search  metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' and parent = '$item' $sqlquery ");
-
-     //print("<br /><div style=\"white-space: normal\">SELECT distinct  f.id as fid, f_size, smodified, parent, name, metadata, description, filename, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' and parent = '$item' $sqlquery</div> ");
-
-     //$sql->query("SELECT distinct  f.id as fid, f_size, smodified, parent, name, metadata, description, filename, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' and parent = '$item' $sqlquery group by fid");
-     //print("<br />DEBUG: SELECT distinct f_size, smodified, f.id as fid, parent, name, metadata, description, filename, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' and parent = '$item' $sqlquery group by fid");
-
+     $sql->query("SELECT distinct  f.id as fid, f_size, smodified, parent, name, name_search  metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid FROM $default->owl_files_table f left outer join $default->owl_searchidx on owlfileid=f.id where approved = '1' $sqlquery ");
    }
    else
    {
-     $sSearchQuery = "SELECT f_size, smodified, f.id as fid, parent, name, name_search, metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid  FROM $default->owl_files_table f left outer join $default->owl_docfieldvalues_table d on f.id=file_id where approved = '1' and parent = '$item' $sqlquery $sqlquery2";
-     //print("<br /> DEBUG: $sSearchQuery");
-     //print("<br /> DEBUG: $sqlquery2");
+     $sSearchQuery = "SELECT f_size, smodified, f.id as fid, parent, name, name_search, metadata, metadata_search, description, description_search, filename, filename_search, checked_out, url, doctype, updatorid, creatorid  FROM $default->owl_files_table f left outer join $default->owl_docfieldvalues_table d on f.id=file_id where approved = '1' $sqlquery $sqlquery2";
      $sql->query($sSearchQuery);
      $sqlquery2 = "";
    }
@@ -666,62 +647,64 @@ OR filename LIKE '" . $cBeginSqlWildCard . "$cleantok" . $cEndSqlWildCard ."')";
          $files[$id]['score'] += 1;
          continue;
       }
-      if(check_auth($id, "file_download", $userid, false, false) == 1) 
+      if (in_array($sql->f("parent"), $folders))
       {
-         // added by rsa@newtec.be (Ruben Samaey)
-         // perform a query to fetch all comments attached to the current file the user is authorized to download
-         // all comments found are concattenated in $comment
-         $comment = "";
-         $sql_two->query("SELECT comments FROM $default->owl_comment_table where fid = '$id'");
-         while($sql_two->next_record())  
+         if(check_auth($id, "file_download", $userid, false, false) == 1) 
          {
-            $comment .= " ";
-            $comment .= $sql_two->f("comments");
+            // added by rsa@newtec.be (Ruben Samaey)
+            // perform a query to fetch all comments attached to the current file the user is authorized to download
+            // all comments found are concattenated in $comment
+            $comment = "";
+            $sql_two->query("SELECT comments FROM $default->owl_comment_table where fid = '$id'");
+            while($sql_two->next_record())  
+            {
+               $comment .= " ";
+               $comment .= $sql_two->f("comments");
+            }
+            //end add by rsa@newtec.be
+            $searchable_custom_fields = "";
+             
+            $sql_two->query("select * from $default->owl_docfieldvalues_table v left join $default->owl_docfields_table d on v.field_name = d.field_name where file_id = '$id' and searchable = 1;");
+            while($sql_two->next_record())  
+            {
+               $searchable_custom_fields .= " ";
+               $searchable_custom_fields .= $sql_two->f("field_value");
+            }
+   
+            $files[$id]['id'] = $id;
+            $files[$id]['up_id'] = $sql->f("updatorid");
+            $files[$id]['n'] = $sql->f("name");
+            $files[$id]['n_s'] = $sql->f("name_search");
+            $files[$id]['m'] = explode(" ", $sql->f("metadata"));
+            $files[$id]['m_s'] = explode(" ", $sql->f("metadata_search"));
+            $files[$id]['d'] = explode(" ", $sql->f("description"));
+            $files[$id]['d_s'] = explode(" ", $sql->f("description_search"));
+            $files[$id]['f'] = $sql->f("filename");
+            $files[$id]['f_s'] = $sql->f("filename_search");
+            $files[$id]['c'] = $sql->f("checked_out");
+            $files[$id]['u'] = $sql->f("url");
+            $files[$id]['p'] = $sql->f("parent");
+            $files[$id]['x'] = $sql->f("description");
+            $files[$id]['s'] = $sql->f("f_size");
+            $files[$id]['doctype'] = $sql->f("doctype");
+            $files[$id]['creator'] = $sql->f("creatorid");
+            $files[$id]['date'] = $sql->f("smodified");
+   //added by rsa@newtec.be
+            $files[$id]['comments'] = explode(" ",$comment);
+   //end add by rsa
+            $files[$id]['custom'] = explode(" ",$searchable_custom_fields);
+   
+           $iCount++;
+           $PrintDot = $iCount % 50;
+           if ($PrintDot == 0)
+           {
+              //print(".");
+           }
+           $files[$id]['score'] = 0;
+           $oldid = $id;
          }
-         //end add by rsa@newtec.be
-         $searchable_custom_fields = "";
-          
-         $sql_two->query("select * from $default->owl_docfieldvalues_table v left join $default->owl_docfields_table d on v.field_name = d.field_name where file_id = '$id' and searchable = 1;");
-         while($sql_two->next_record())  
-         {
-            $searchable_custom_fields .= " ";
-            $searchable_custom_fields .= $sql_two->f("field_value");
-         }
-
-         $files[$id]['id'] = $id;
-         $files[$id]['up_id'] = $sql->f("updatorid");
-         $files[$id]['n'] = $sql->f("name");
-         $files[$id]['n_s'] = $sql->f("name_search");
-         $files[$id]['m'] = explode(" ", $sql->f("metadata"));
-         $files[$id]['m_s'] = explode(" ", $sql->f("metadata_search"));
-         $files[$id]['d'] = explode(" ", $sql->f("description"));
-         $files[$id]['d_s'] = explode(" ", $sql->f("description_search"));
-         $files[$id]['f'] = $sql->f("filename");
-         $files[$id]['f_s'] = $sql->f("filename_search");
-         $files[$id]['c'] = $sql->f("checked_out");
-         $files[$id]['u'] = $sql->f("url");
-         $files[$id]['p'] = $sql->f("parent");
-         $files[$id]['x'] = $sql->f("description");
-         $files[$id]['s'] = $sql->f("f_size");
-         $files[$id]['doctype'] = $sql->f("doctype");
-         $files[$id]['creator'] = $sql->f("creatorid");
-         $files[$id]['date'] = $sql->f("smodified");
-//added by rsa@newtec.be
-         $files[$id]['comments'] = explode(" ",$comment);
-//end add by rsa
-         $files[$id]['custom'] = explode(" ",$searchable_custom_fields);
-
-        $iCount++;
-        $PrintDot = $iCount % 50;
-        if ($PrintDot == 0)
-        {
-           //print(".");
-        }
-        $files[$id]['score'] = 0;
-        $oldid = $id;
       }
    }
-}
 $xtpl->assign('SEARCH_SCORE', $owl_lang->search_score);
 //
 // right now we have the array $files with all possible files that the user has read access to
