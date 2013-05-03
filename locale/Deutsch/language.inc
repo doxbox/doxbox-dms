@@ -1310,7 +1310,6 @@ $owl_lang->report_users_inactive_title  = "Benutzer Inaktiv Seit";
 // THUMBNAILS BEGIN
 //********************************************************
 
-$owl_lang->pdf_thumb_path                 = "Path to PDF Thumbnail Generation Tool" . LABEL_TERMINATOR;
 $owl_lang->thumb_enable_thumbnails        = "Thumbnail Ansicht/Erstellung aktivieren" . LABEL_TERMINATOR;
 $owl_lang->thumb_gen_thumb_tool_path      = "Pfad zum ImageMagick Tool" . LABEL_TERMINATOR;
 $owl_lang->thumb_gen_thumb_vid_tool_parms = "Mplayer Parameter" . LABEL_TERMINATOR;
@@ -1376,7 +1375,6 @@ $owl_lang->owl_show_user_info_extended                     = "Extended Help";
 $owl_lang->owl_folderdescreq_extended                      = "Extended Help";
 $owl_lang->owl_show_folder_desc_as_popup_extended          = "Extended Help";
 $owl_lang->owl_owl_expand_extended                         = "Extended Help";
-$owl_lang->owl_pdf_thumb_path_extended                     = "Extended Help";
 $owl_lang->owl_thumbnails_tool_path_extended               = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_path_extended         = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_opt_extended          = "Extended Help";

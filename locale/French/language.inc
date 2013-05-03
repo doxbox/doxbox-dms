@@ -1328,7 +1328,6 @@ $owl_lang->report_users_inactive_title      = "Utilisateur(s) inactif depuis";
 // THUMBNAILS BEGIN
 //********************************************************
 
-$owl_lang->pdf_thumb_path                  = "Path to PDF Thumbnail Generation Tool:";
 $owl_lang->alt_no_thumb                    = "Pas de vignette disponible";
 $owl_lang->alt_thumb_small                 = "Petite vignette";
 $owl_lang->thumb_enable_thumbnails         = "Activer l'affichage/cr&eacute;ation des vignettes:";
@@ -1394,7 +1393,6 @@ $owl_lang->owl_show_user_info_extended          = "Extended Help";
 $owl_lang->owl_folderdescreq_extended          = "Extended Help";
 $owl_lang->owl_show_folder_desc_as_popup_extended          = "Extended Help";
 $owl_lang->owl_owl_expand_extended          = "Extended Help";
-$owl_lang->owl_pdf_thumb_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_tool_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_opt_extended          = "Extended Help";

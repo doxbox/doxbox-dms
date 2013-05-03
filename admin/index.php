@@ -2123,14 +2123,6 @@ function printusers()
    if ($default->thumbnails == 1)
    {
       $aStatusImage = array();
-      $aStatusImage = fXtplStatusImage($default->pdf_thumb_path);
-      $xtpl->assign('THUMB_PDF_TOOLPATH_LABEL', $owl_lang->pdf_thumb_path);   
-      $xtpl->assign('THUMB_PDF_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->pdf_thumb_path, addslashes($owl_lang->owl_pdf_thumb_path_extended), $default->popup_lifetime));
-      $xtpl->assign('THUMB_PDF_TOOLPATH_ALT', $aStatusImage['alt_tag']);
-      $xtpl->assign('THUMB_PDF_TOOLPATH_IMG', $aStatusImage['image']);
-      $xtpl->assign('THUMB_PDF_TOOLPATH_VALUE', $default->pdf_thumb_path);
-
-      $aStatusImage = array();
       $aStatusImage = fXtplStatusImage($default->thumbnails_tool_path);
       $xtpl->assign('THUMB_TOOLPATH_LABEL', $owl_lang->thumb_gen_thumb_tool_path);   
       $xtpl->assign('THUMB_TOOLPATH_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->thumb_gen_thumb_tool_path, addslashes($owl_lang->owl_thumbnails_tool_path_extended), $default->popup_lifetime));

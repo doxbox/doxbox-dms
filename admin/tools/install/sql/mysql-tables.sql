@@ -909,7 +909,6 @@ CREATE TABLE `prefs` (
   `collapse_search_disp_updated` int(4) DEFAULT NULL,
   `thumb_disp_updated` int(4) DEFAULT NULL,
   `default_revision` int(4) DEFAULT NULL,
-  `pdf_thumb_path` varchar(512) DEFAULT NULL,
   `pdf_watermark_path` varchar(512) DEFAULT NULL,
   `pdf_custom_watermark_filepath` varchar(512) DEFAULT NULL,
   `pdf_watermarks` int(4) DEFAULT NULL,
@@ -936,7 +935,7 @@ CREATE TABLE `prefs` (
   `dl_notification_list` varchar(512) NOT NULL,
   `dl_len` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -945,7 +944,7 @@ CREATE TABLE `prefs` (
 
 LOCK TABLES `prefs` WRITE;
 /*!40000 ALTER TABLE `prefs` DISABLE KEYS */;
-INSERT INTO `prefs` VALUES (1,'dms-system@exmaple.com','DMS','dms-admin@example.com','localhost','[DMS] : AUTOMATED MAIL','false',0,0,0,1,'','',0,0,1,0,'/tmp',9000,1,1,0,1,'/usr/bin/mysqldump','/bin/gzip','/bin/tar','/usr/bin/unzip','/usr/bin/perl','/usr/bin/pdftotext','/usr/bin/antiword','/usr/bin/catppt',0,0,1,1,1,25,0,1,0,0,0,0,0,-1,0,2,2,2,1,1,'/var/www/html/Projects/owl-intranet/owl-1.10/TrashCan',1,1,1,1,10,0,0,'',1,1,1,1,1,'',1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,'Restored-',1,0,'3',3,1,0,1,1,1,'',1,1,1,0,0,1,1,1,1,1,1,1,1,1,'/usr/bin/convert','/usr/local/bin/mplayer','-vo png -ss 0:05 -frames 2 -nosound -really-quiet',1,100,200,400,4,'/usr/bin/unrtf',0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,1,2,'/usr/bin/pdftoppm','/usr/bin/pdftk','',1,1,-5,0,0,0,0,0,0,'25',0,1,1,0,'5242880','Welcome to BETA 2',0,0,1,25,1024,'security@example.net',20);
+INSERT INTO `prefs` VALUES (1,'dms-system@exmaple.com','DMS','dms-admin@example.com','localhost','[DMS] : AUTOMATED MAIL','false',0,0,0,1,'','',0,0,1,0,'/tmp',9000,1,1,0,1,'/usr/bin/mysqldump','/bin/gzip','/bin/tar','/usr/bin/unzip','/usr/bin/perl','/usr/bin/pdftotext','/usr/bin/antiword','/usr/bin/catppt',0,0,1,1,1,25,0,1,0,0,0,0,0,-1,0,2,2,2,1,1,'/var/www/html/Projects/owl-intranet/owl-1.10/TrashCan',1,1,1,1,10,0,0,'',1,1,1,1,1,'',1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,'Restored-',1,0,'3',3,1,0,1,1,1,'',1,1,1,0,0,1,1,1,1,1,1,1,1,1,'/usr/bin/convert','/usr/local/bin/mplayer','-vo png -ss 0:05 -frames 2 -nosound -really-quiet',1,100,200,400,4,'/usr/bin/unrtf',0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,1,2,'/usr/bin/pdftk','',1,1,-5,0,0,0,0,0,0,'25',0,1,1,0,'5242880','Welcome to DoxBox',0,0,1,25,1024,'security@example.net',20);
 /*!40000 ALTER TABLE `prefs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1025,7 +1024,7 @@ CREATE TABLE `users` (
   `lastnews` int(4) NOT NULL DEFAULT '0',
   `newsadmin` int(4) NOT NULL DEFAULT '0',
   `comment_notify` int(4) NOT NULL DEFAULT '0',
-  `buttonstyle` varchar(255) DEFAULT NULL,
+  `buttonstyle` varchar(255) NOT NULL DEFAULT 'Roma 2011',
   `homedir` int(4) DEFAULT NULL,
   `firstdir` int(4) DEFAULT NULL,
   `email_tool` int(4) DEFAULT NULL,
@@ -1049,7 +1048,7 @@ CREATE TABLE `users` (
   `user_access` int(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `groupid` (`groupid`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1058,13 +1057,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'0','admin','Administrator','21232f297a57a5a743894a0e4a801fc3',0,28203,'dms-admin@example.com',0,0,0,0,'English',0,'2012-12-05 20:36:08','2012-12-06 10:13:11',8,0,1,'rsdx_blue1',1,1,1,0,0,'2011-07-04 09:29:08','','0',0,0,'-5',0,0,0,1,0,1,0,0,0,0);
-INSERT INTO `users` VALUES (2,'1','guest','Anonymous','21232f297a57a5a743894a0e4a801fc3',0,0,'',0,0,1,0,'English',19,'2004-11-10 05:02:42','2005-10-23 08:22:16',0,0,0,'Roma 2011',1,1,0,0,0,'2005-10-23 08:22:16','','0',0,0,'-12',0,0,0,0,0,1,2,0,0,0);
-INSERT INTO `users` VALUES (3,'3','user1','user1','21232f297a57a5a743894a0e4a801fc3',0,0,'',0,0,0,0,'English',0,'2012-10-30 20:38:04','2012-10-30 20:38:28',26,0,0,'Roma 2011',1,1,0,0,0,'2012-10-30 20:38:04','','0',0,0,'-5',0,0,0,0,0,1,0,0,0,0);
+INSERT INTO `users` VALUES (1,'0','admin','Administrator','21232f297a57a5a743894a0e4a801fc3',0,96791110,'dms-admin@example.com',0,0,0,0,'English',0,'2013-03-20 08:32:03','2013-03-20 09:31:30',8,0,1,'Roma 2011',1,1,1,0,0,'2011-07-04 09:29:08','','0',0,0,'-5',0,0,0,1,0,1,0,0,0,2),(2,'1','guest','Anonymous','21232f297a57a5a743894a0e4a801fc3',0,0,'',0,0,1,0,'English',19,'2004-11-10 05:02:42','2005-10-23 08:22:16',0,0,0,'Roma 2011',1,1,0,0,0,'2005-10-23 08:22:16','','0',0,0,'-12',0,0,0,0,0,1,2,0,0,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 -- Table structure for table `ut_entities`
 --
 

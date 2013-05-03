@@ -766,10 +766,6 @@ if ($_SERVER['HTTP_HOST'] == 'foss.bozzit.com')
       <td> <H3>CSS / HTML (Killo)</H3> </td>
    </tr>
    <tr>
-      <td>use convert instead of pdftoppm to generate pdf thumnails</td>
-      <td>&nbsp;</td>
-   </tr>
-   <tr>
       <td>FINISH html_head.xtpl + Cleanup [head][/head] move all scripts to the header replace with jquery / css?</td>
       <td>&nbsp;</td>
    </tr>

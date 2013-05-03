@@ -1355,7 +1355,6 @@ $owl_lang->report_users_inactive_title      = "Uživatel(é) nečinný od";
 // THUMBNAILS BEGIN
 //********************************************************
 
-$owl_lang->pdf_thumb_path                  = "Path to PDF Thumbnail Generation Tool:";
 $owl_lang->thumb_enable_thumbnails         = "Umožnit podrobný náhled/generování:";
 $owl_lang->thumb_gen_thumb_tool_path       = "Cesta k ImageMagick měnícímu nástroji:";
 $owl_lang->thumb_gen_thumb_vid_tool_parms  = "Parametry Mplayeru:";
@@ -1421,7 +1420,6 @@ $owl_lang->owl_show_user_info_extended          = "Extended Help";
 $owl_lang->owl_folderdescreq_extended          = "Extended Help";
 $owl_lang->owl_show_folder_desc_as_popup_extended          = "Extended Help";
 $owl_lang->owl_owl_expand_extended          = "Extended Help";
-$owl_lang->owl_pdf_thumb_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_tool_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_opt_extended          = "Extended Help";

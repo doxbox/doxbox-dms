@@ -1139,7 +1139,6 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", thumb_disp_action='$thumb_disp_action'";
    $qPrefsQuery .= ", thumb_disp_held='$thumb_disp_held'"; 
    $qPrefsQuery .= ", thumbnails_tool_path='$thumbnails_tool_path'";
-   $qPrefsQuery .= ", pdf_thumb_path='$pdf_thumb_path'";
    $qPrefsQuery .= ", thumbnails_video_tool_path='$thumbnails_video_tool_path'";
    $qPrefsQuery .= ", thumbnails_video_tool_opt='$thumbnails_video_tool_opt'";
    $qPrefsQuery .= ", thumbnails_small_width='$thumbnails_small_width'";

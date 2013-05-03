@@ -454,10 +454,6 @@
       </tr>
 <!-- BEGIN: ThumbOptions -->
       <tr>
-         <td class="form1"><label for="pdf_thumb_path"><img src="{THEME}/ui_icons/{THUMB_PDF_TOOLPATH_IMG}" alt="{THUMB_PDF_TOOLPATH_ALT}" title="{THUMB_PDF_TOOLPATH_ALT}" border="0"></img>{THUMB_PDF_TOOLPATH_LABEL}</label></td>
-         <td class="form1" width="100%" onmouseover="{THUMB_PDF_TOOLPATH_HELP_TEXT}"><input class="finput1" id="pdf_thumb_path" type="text" name="pdf_thumb_path" size="60" value="{THUMB_PDF_TOOLPATH_VALUE}" /></td>
-      </tr>
-      <tr>
          <td class="form1"><label for="thumbnails_tool_path"><img src="{THEME}/ui_icons/{THUMB_TOOLPATH_IMG}" alt="{THUMB_TOOLPATH_ALT}" title="{THUMB_TOOLPATH_ALT}" border="0"></img>Path to ImageMagick convert Tool:</label></td>
          <td class="form1" width="100%" onmouseover="{THUMB_TOOLPATH_HELP_TEXT}"><input class="finput1" id="thumbnails_tool_path" type="text" name="thumbnails_tool_path" size="60" value="{THUMB_TOOLPATH_VALUE}" /></td>
       </tr>

@@ -1361,7 +1361,6 @@ $owl_lang->report_users_inactive_title       = "User(s) Inactive Since";
  
 $owl_lang->alt_no_thumb                     = "Nessuna miniatura disponibile";
 $owl_lang->alt_thumb_small                  = "Miniatura piccola";
-$owl_lang->pdf_thumb_path                  = "Percorso per lo strumento di creazione miniature pdf:";
 $owl_lang->thumb_enable_thumbnails          = "Abilita miniature:";
 $owl_lang->thumb_gen_thumb_tool_path        = "Percorso per lo strumento di conversione ImageMagick:";
 $owl_lang->thumb_gen_thumb_vid_tool_parms   = "Mplayer parametri:";
@@ -1425,7 +1424,6 @@ $owl_lang->owl_show_user_info_extended          = "Extended Help";
 $owl_lang->owl_folderdescreq_extended          = "Extended Help";
 $owl_lang->owl_show_folder_desc_as_popup_extended          = "Extended Help";
 $owl_lang->owl_owl_expand_extended          = "Extended Help";
-$owl_lang->owl_pdf_thumb_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_tool_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_path_extended          = "Extended Help";
 $owl_lang->owl_thumbnails_video_tool_opt_extended          = "Extended Help";

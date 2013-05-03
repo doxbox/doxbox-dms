@@ -1465,7 +1465,6 @@ $owl_lang->report_users_inactive_title      = "User(s) Inactive Since";
 // THUMBNAILS BEGIN
 //********************************************************
 
-$owl_lang->pdf_thumb_path                  = "Path to PDF Thumbnail Generation Tool" . LABEL_TERMINATOR;
 $owl_lang->thumb_enable_thumbnails         = "Enable Thumbnail View/Generation" . LABEL_TERMINATOR;
 $owl_lang->thumb_gen_thumb_tool_path       = "Path to ImageMagick convert Tool" . LABEL_TERMINATOR;
 $owl_lang->thumb_gen_thumb_vid_tool_parms  = "Mplayer Parameters" . LABEL_TERMINATOR;
@@ -1542,7 +1541,6 @@ $owl_lang->owl_owl_timeout_extended          = "(to be supplied)";
 $owl_lang->owl_owl_tmpdir_extended          = "(to be supplied)";
 $owl_lang->owl_password_override_extended       = "If this is set then users that don't have access to the file can use a password to download";
 $owl_lang->owl_pdf_custom_watermark_filepath_extended          = "(to be supplied)";
-$owl_lang->owl_pdf_thumb_path_extended          = "(to be supplied)";
 $owl_lang->owl_pdf_watermark_path_extended          = "(to be supplied)";
 $owl_lang->owl_pdf_watermarks_extended          = "(to be supplied)";
 $owl_lang->owl_peer_opt_extended          = "(to be supplied)";

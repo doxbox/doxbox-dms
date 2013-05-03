@@ -924,7 +924,6 @@ CREATE TABLE `prefs` (
   `collapse_search_disp_updated` int(4) DEFAULT NULL,
   `thumb_disp_updated` int(4) DEFAULT NULL,
   `default_revision` int(4) DEFAULT NULL,
-  `pdf_thumb_path` varchar(512) DEFAULT NULL,
   `pdf_watermark_path` varchar(512) DEFAULT NULL,
   `pdf_custom_watermark_filepath` varchar(512) DEFAULT NULL,
   `pdf_watermarks` int(4) DEFAULT NULL,
@@ -954,7 +953,7 @@ CREATE TABLE `prefs` (
 
 LOCK TABLES `prefs` WRITE;
 /*!40000 ALTER TABLE `prefs` DISABLE KEYS */;
-INSERT INTO `prefs` VALUES (1,'owl@yourdomain.com','OWL','owl@yourdomain.com','localhost','[OWL] : AUTOMATED MAIL','false',0,0,0,1,'','',0,0,1,0,'/tmp',9000,1,1,0,1,'/usr/bin/mysqldump','/bin/gzip','/bin/tar','/usr/bin/unzip','/usr/bin/perl','/usr/bin/pdftotext','/usr/bin/antiword','/usr/bin/catppt',0,0,1,1,1,25,0,1,0,0,0,0,0,-1,0,2,2,2,1,1,'/var/www/html/Projects/owl-intranet/owl-1.10/TrashCan',1,1,1,1,10,0,0,'',1,1,1,1,1,'',1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,'Restored-',1,0,'3',3,1,0,1,1,1,'',1,1,1,0,0,1,1,1,1,1,1,1,1,1,'/usr/bin/convert','/usr/local/bin/mplayer','-vo png -ss 0:05 -frames 2 -nosound -really-quiet',1,100,200,400,4,'/usr/bin/unrtf',0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,1,2,'/usr/bin/pdftoppm','/usr/bin/pdftk','',1,1,-5,0,0,0,0,0,0,'25',0,1,1,0,'5242880','Welcome to BETA 2',0);
+INSERT INTO `prefs` VALUES (1,'owl@yourdomain.com','OWL','owl@yourdomain.com','localhost','[OWL] : AUTOMATED MAIL','false',0,0,0,1,'','',0,0,1,0,'/tmp',9000,1,1,0,1,'/usr/bin/mysqldump','/bin/gzip','/bin/tar','/usr/bin/unzip','/usr/bin/perl','/usr/bin/pdftotext','/usr/bin/antiword','/usr/bin/catppt',0,0,1,1,1,25,0,1,0,0,0,0,0,-1,0,2,2,2,1,1,'/var/www/html/Projects/owl-intranet/owl-1.10/TrashCan',1,1,1,1,10,0,0,'',1,1,1,1,1,'',1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,'Restored-',1,0,'3',3,1,0,1,1,1,'',1,1,1,0,0,1,1,1,1,1,1,1,1,1,'/usr/bin/convert','/usr/local/bin/mplayer','-vo png -ss 0:05 -frames 2 -nosound -really-quiet',1,100,200,400,4,'/usr/bin/unrtf',0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,1,2,'/usr/bin/pdftk','',1,1,-5,0,0,0,0,0,0,'25',0,1,1,0,'5242880','Welcome to BETA 2',0);
 /*!40000 ALTER TABLE `prefs` ENABLE KEYS */;
 UNLOCK TABLES;
 

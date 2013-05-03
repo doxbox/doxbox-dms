@@ -1567,39 +1567,11 @@ function fGenerateThumbNail($fid)
          }
       }
 
-         if ($sFileExtension == "pdf" and file_exists($default->pdf_thumb_path))
+         if ($sFileExtension == "pdf" and file_exists($default->thumbnails_tool_path))
          {
 
-//************************************************************************
-// TODD: 
-//
-// COULD get rid of pdftoppm and user convert instead....
-//
-// convert "netdrive.pdf[0]"  -shave 1x1 -bordercolor black -border 1 netdrive.png
-//
-//************************************************************************
-
-               exec(escapeshellcmd($default->pdf_thumb_path) . " -f 1 -l 1 \"".$path."\" \"". $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "\"");
-               if (file_exists($tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-1.ppm"))
-               {
-                  exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-1.ppm\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
-               }
-               else if (file_exists($tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-01.ppm"))
-               {
-                  exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-01.ppm\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
-               }
-               else if (file_exists($tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-001.ppm"))
-               {
-                  exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-001.ppm\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
-               }
-               else if (file_exists($tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-0001.ppm"))
-               {
-                  exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-0001.ppm\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
-               }
-               else
-               {
-                  exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "-000001.ppm\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
-               }
+               exec(escapeshellcmd($default->thumbnails_tool_path) . " -shave 1x1 -bordercolor black -border 1 \"".$path."[0]\" \"". $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png\"");
+               $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png";
          }
          else if ($sFileExtension == "doc" and file_exists($default->wordtotext_path))
          {
@@ -1692,6 +1664,7 @@ function fGenerateThumbNail($fid)
          {
             $imagedata = @GetImageSize($temp_full_size_png); 
          }
+
          $imagewidth = $imagedata[0]; 
 
         // We have an Image of some sort, Generate the 3 Thumbnail sizes

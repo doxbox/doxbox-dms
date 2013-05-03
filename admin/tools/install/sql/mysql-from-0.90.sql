@@ -19,7 +19,6 @@ alter table prefs add column motd text;
 alter table prefs add column smtp_ssl int(4);
 alter table prefs add column smtp_port int(4);
 alter table prefs add column smtp_max_size int(4);
-alter TABLE prefs add column pdf_thumb_path varchar(255);
 alter table owl_log add column filesize bigint(20);
 
 alter TABLE users add column pdf_watermarks int(4);

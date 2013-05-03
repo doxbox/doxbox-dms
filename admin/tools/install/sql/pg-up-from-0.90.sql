@@ -41,7 +41,6 @@ alter table prefs add column different_filename_update int4;
 alter table prefs add column smtp_ssl int4;
 alter table prefs add column smtp_port int4;
 alter table prefs add column smtp_max_size int4;
-alter TABLE prefs add column pdf_thumb_path varchar(255);
 
 alter table owl_log add column filesize bigint;
 alter table prefs add column default_revision  int4;
