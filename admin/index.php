@@ -1473,6 +1473,32 @@ function printusers()
       
       $xtpl->assign('USER_PREF_ACCESS_LABEL', $owl_lang->noprefaccess);
       $xtpl->assign('USER_PREF_ACCESS_SELECTED', '');
+
+
+      $aUserAccess[0] = $owl_lang->user_access_webdav_label;
+      $aUserAccess[1] = $owl_lang->user_access_interface_label;
+      $aUserAccess[2] = $owl_lang->user_access_both_label;
+
+      $xtpl->assign('USER_ACCESS_LABEL', $owl_lang->user_access_label);
+      $xtpl->assign('USER_ACCESS_HELP_TEXT',  sprintf($default->domtt_popup , $owl_lang->user_access_label, addslashes($owl_lang->user_access_extended), $default->popup_lifetime));
+      $i = 0;
+      foreach($aUserAccess as $g)
+      {
+         $xtpl->assign('USER_ACCESS_VALUE', $i);
+         $xtpl->assign('USER_ACCESS_CAPTION', $g);
+         $xtpl->assign('USER_ACCESS_SELECTED', '');
+         if ($i == 1)
+         {
+            $xtpl->assign('USER_ACCESS_SELECTED', " checked=\"checked\"");
+         }
+         $i++;
+         $xtpl->parse('main.User.UserAccess');
+      }
+
+      $xtpl->assign('USER_DL_COUNT_EXCLUDED_LABEL', $owl_lang->user_dl_count_excluded_label);
+      $xtpl->assign('USER_DL_COUNT_EXCLUDED_EXTENDED', $owl_lang->user_dl_count_excluded_extended);
+      $xtpl->assign('USER_DL_COUNT_EXCLUDED_CHECKED', '');
+
       if (!fIsUserAdmin($userid))
       {
          $xtpl->assign('USER_USER_ADMIN_LABEL', $owl_lang->user_admin);
