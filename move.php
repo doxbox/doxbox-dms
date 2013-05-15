@@ -581,6 +581,8 @@ function showFoldersIn($fid, $folder)
 
          if (!$result && $default->owl_use_fs) unlink($newpath);
 
+         fCopyFileAcl($id, $newid);
+
          owl_syslog(FILE_COPIED, $userid, flid_to_filename($newid), $parent, $owl_lang->log_file_to . fid_to_name($newFolder), "FILE");
       } 
       else if ($action == "cp_folder")
