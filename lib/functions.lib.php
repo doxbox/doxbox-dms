@@ -3419,19 +3419,22 @@ function printError($message, $submessage = "", $type = "ERROR")
  
    if (file_exists("templates/$default->sButtonStyle/html/printerror.xtpl"))
    { 
-      //$xtpl = new XTemplate("templates/$default->sButtonStyle/html/printerror.xtpl");
       $xtpl = new XTemplate("html/printerror.xtpl", "templates/$default->sButtonStyle");
    }
    else
    {
-      //$xtpl = new XTemplate("../templates/$default->sButtonStyle/html/admin/printerror.xtpl");
       $xtpl = new XTemplate("html/admin/printerror.xtpl", "../templates/$default->sButtonStyle");
    }
    $xtpl->assign_file('ROOT_FS', $default->owl_fs_root . "/");
    $xtpl->assign('THEME', $default->owl_graphics_url . "/" . $default->sButtonStyle);
    $xtpl->assign('ROOT_URL', $default->owl_root_url);
+
    include_once("$default->owl_fs_root/lib/header.inc");
    include_once("$default->owl_fs_root/lib/userheader.inc");
+
+   fSetLogo_MOTD();
+   fSetPopupHelp();
+
    if (isset($parent))
    {
       if (check_auth($parent, "folder_view", $userid) != "1")
