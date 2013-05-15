@@ -34,11 +34,9 @@ require_once($default->owl_fs_root . "/lib/xtpl.lib.php");
 require_once($default->owl_fs_root ."/lib/owl.lib.php");
 require_once($default->owl_fs_root ."/lib/security.lib.php");
 
-//$xtpl = new XTemplate("templates/$default->sButtonStyle/html/move.xtpl");
 $xtpl = new XTemplate("html/move.xtpl", "templates/$default->sButtonStyle");
 $xtpl->assign('THEME', $default->owl_graphics_url . "/" . $default->sButtonStyle);
 $xtpl->assign('ROOT_URL', $default->owl_root_url);
-
 
 if ($sess == "0" && $default->anon_ro > 1)
 {
@@ -852,16 +850,15 @@ if (isset($moreFolder))
    $xtpl->assign('FOLDER_BTN_CANCEL', $owl_lang->cancel_button);
    $xtpl->assign('FOLDER_BTN_CANCEL_ALT', $owl_lang->alt_cancel);
 
-       if ($default->show_prefs == 2 or $default->show_prefs == 3)
-       {
-          fPrintPrefsXTPL("Bottom");
-       }
+   if ($default->show_prefs == 2 or $default->show_prefs == 3)
+   {
+      fPrintPrefsXTPL("Bottom");
+   }
 
-      $xtpl->parse('main.MoveFolder');
-	  fSetElapseTime();
-      fSetOwlVersion();
-	  $xtpl->parse('main.Footer');
-      $xtpl->parse('main');
-      $xtpl->out('main');
-
+   $xtpl->parse('main.MoveFolder');
+   fSetElapseTime();
+   fSetOwlVersion();
+   $xtpl->parse('main.Footer');
+   $xtpl->parse('main');
+   $xtpl->out('main');
 ?>
