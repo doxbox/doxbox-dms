@@ -81,6 +81,12 @@
          <td class="form1"><label for="email">{EMAIL_LABEL}</label></td>
          <td class="form1" width="100%"><input class="finput1" id="email" type="text" name="email" size="40" value="{EMAIL_VALUE}" /></td>
       </tr>
+<!-- BEGIN: Captcha -->
+      <tr>
+         <td class="form1"><label for="private_key">{CAPTCHA_LABEL}</label></td>
+         <td class="form1" width="100%"><input class="finput1" id="private_key" type="text" name="private_key" size="5" value="" /></td>
+      </tr>
+<!-- END: Captcha -->
       <tr>
          <td class="form1">&nbsp;</td>
          <td class="form2" width="100%">
@@ -111,15 +117,15 @@
 <!-- END: PasswdRestrict -->
                   <tr>
                      <td class="form1">{CHGPASS_OLD_PASS}</td>
-                     <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="" value=""></td>
+                     <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="" value="" autocomplete="off" /></td>
                   </tr>
                   <tr>
                      <td class="form1">{CHGPASS_NEW_PASS}</td>
-                     <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value=""></td>
+                     <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="" autocomplete="off" /></td>
                   </tr>
                   <tr>
                      <td class="form1">{CHGPASS_CONF_PASS}</td>
-                     <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value=""></td>
+                     <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="" autocomplete="off" /></td>
                   </tr>
                   <tr>
                      <td class="form1">&nbsp;</td>

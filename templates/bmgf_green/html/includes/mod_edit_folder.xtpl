@@ -56,11 +56,11 @@
 <!-- BEGIN:  PassWordOveride -->
                 <tr>
                    <td class="form1"><label for="newpassword">{FOLDER_NEWPASS_LABEL}</label></td>
-                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FOLDER_NEWPASS_VALUE}"></td>
+                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FOLDER_NEWPASS_VALUE}" autocomplete="off" /></td>
                 </tr>
                 <tr>
                    <td class="form1"><label for="modify_url">{FOLDER_CONFIRM_LABEL}</label></td>
-                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FOLDER_CONFIRM_VALUE}"></td>
+                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FOLDER_CONFIRM_VALUE}" autocomplete="off" /></td>
                 </tr>
 <!-- END:  PassWordOveride -->
 

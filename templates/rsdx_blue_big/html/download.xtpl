@@ -12,7 +12,7 @@
             <table class="table_inside" cellspacing="0" cellpadding="0" border="0">
                <tr>
                   <td class="form1"><label for="docpassowrd">{DOC_PASSWORD_LABEL}</label></td>
-                  <td class="form1" width="100%"><input class="finput1" id="docpassword" type="password" name="docpassword" size="" value=""></td>
+                  <td class="form1" width="100%"><input class="finput1" id="docpassword" type="password" name="docpassword" size="" value=""autocomplete="off" /></td>
                </tr>
                <tr>
                   <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>

@@ -1,4 +1,7 @@
 <!-- BEGIN: EditFiles -->
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
 {FORM}
 {HIDDEN_FIELDS}
 <div class="table_container">
@@ -93,11 +96,11 @@
 <!-- BEGIN:  PassWordOveride -->
                 <tr>
                    <td class="form1"><label for="newpassword">{FILE_NEWPASS_LABEL}</label></td>
-                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FILE_NEWPASS_VALUE}"></td>
+                   <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="{FILE_NEWPASS_VALUE}" autocomplete="off" /></td>
                 </tr>
                 <tr>
                    <td class="form1"><label for="modify_url">{FILE_CONFIRM_LABEL}</label></td>
-                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FILE_CONFIRM_VALUE}"></td>
+                   <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="{FILE_CONFIRM_VALUE}" autocomplete="off" /></td>
                 </tr>
 <!-- END:  PassWordOveride -->
                 <tr>
@@ -255,6 +258,12 @@ function isFormOK(formToValidate) {
 </script>
 
 <script type="text/javascript">
-AjaxGethtml('scripts/Ajax/Owl/getdoctype.php?sess={OWL_SESS}&doctype={DOCTYPE_ID}&fileid={FILE_ID}&readonly={DOCTYPE_RO}', 'DocTypeFields');
+jQuery.ajax({
+      url: 'scripts/Ajax/Owl/getdoctype.php?sess={OWL_SESS}&doctype={DOCTYPE_ID}&fileid={FILE_ID}&readonly={DOCTYPE_RO}',
+      cache: false,
+      success: function(html){
+                     jQuery("#DocTypeFields").html(html);
+               }
+   });
 </script>
 <!-- END: EditFiles -->

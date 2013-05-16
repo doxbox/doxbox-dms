@@ -101,11 +101,11 @@
 <!-- BEGIN: DefaultAuth -->
    <tr>
       <td class="form1">{USER_EDIT_PASSWD_LABEL}</td>
-      <td class="form1" width="100%"><input class="finput1" id="edit_password" type="password" name="edit_password" size="20" value="{USER_EDIT_PASSWD_VALUE}" onfocus="document.admin.edit_password.value=''" /></td>
+      <td class="form1" width="100%"><input class="finput1" id="edit_password" type="password" name="edit_password" size="20" value="{USER_EDIT_PASSWD_VALUE}" onfocus="document.admin.edit_password.value=''" autocomplete="off" /></td>
    </tr>
    <tr>
       <td class="form1">{USER_CONF_PASSWD_LABEL}</td>
-      <td class="form1" width="100%"><input class="finput1" id="edit_confpassword" type="password" name="edit_confpassword" size="20" value="{USER_CONF_PASSWD_VALUE}" /></td>
+      <td class="form1" width="100%"><input class="finput1" id="edit_confpassword" type="password" name="edit_confpassword" size="20" value="{USER_CONF_PASSWD_VALUE}" autocomplete="off" /></td>
    </tr>
 <!-- END: DefaultAuth -->
    <tr>

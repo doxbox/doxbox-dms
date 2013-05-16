@@ -117,15 +117,15 @@
 <!-- END: PasswdRestrict -->
                   <tr>
                      <td class="form1">{CHGPASS_OLD_PASS}</td>
-                     <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="" value=""></td>
+                     <td class="form1" width="100%"><input class="finput1" id="oldpassword" type="password" name="oldpassword" size="" value="" autocomplete="off" /></td>
                   </tr>
                   <tr>
                      <td class="form1">{CHGPASS_NEW_PASS}</td>
-                     <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value=""></td>
+                     <td class="form1" width="100%"><input class="finput1" id="newpassword" type="password" name="newpassword" size="" value="" autocomplete="off" /></td>
                   </tr>
                   <tr>
                      <td class="form1">{CHGPASS_CONF_PASS}</td>
-                     <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value=""></td>
+                     <td class="form1" width="100%"><input class="finput1" id="confpassword" type="password" name="confpassword" size="" value="" autocomplete="off" /></td>
                   </tr>
                   <tr>
                      <td class="form1">&nbsp;</td>
