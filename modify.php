@@ -1726,6 +1726,8 @@ if ($action == "bulk_email")
       $sName = $aUsers["name"];
       $sEmail = $aUsers["email"];
 
+      $xtpl->assign('FILE_MAILTO_VALUE', $sEmail);
+
       if ($sName == "")
       {
 	     $xtpl->assign('FILE_MAILTO_CAPTION', $sUsername . " &#8211; (" . $sEmail . ")");

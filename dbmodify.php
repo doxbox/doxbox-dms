@@ -4140,7 +4140,7 @@ if ($action == "bulk_email")
 
    $sql = new Owl_DB;
    $mail = new phpmailer();
-      $mail->SetLanguage($owl_lang->lang_code, "scripts/phpmailer/language/");
+   $mail->SetLanguage($owl_lang->lang_code, "scripts/phpmailer/language/");
 
    if ($default->use_smtp)
    {
@@ -4177,26 +4177,24 @@ if ($action == "bulk_email")
       }
       $mail->CharSet = "$owl_lang->charset"; // set the email charset to the language file charset
    }
-   //else
-   //{
-      if (is_array($pick_mailto))
+
+   if (is_array($pick_mailto))
+   {
+      foreach ($pick_mailto as $sEmailAddress)
       {
-         foreach ($pick_mailto as $sEmailAddress)
-         {
-            $getuser = new Owl_DB;
-            $getuser->query("SELECT id, email,language,attachfile FROM $default->owl_users_table WHERE email = '$sEmailAddress'");
-            $getuser->next_record();
-            $DefUserLang = $getuser->f("language");
-            require("$default->owl_fs_root/locale/$DefUserLang/language.inc");
-            $mail->CharSet = "$owl_lang->charset"; // set the email charset to the language file charset
-            $mail->AddAddress($sEmailAddress);
-         }
+         $getuser = new Owl_DB;
+         $getuser->query("SELECT id, email,language,attachfile FROM $default->owl_users_table WHERE email = '$sEmailAddress'");
+         $getuser->next_record();
+         $DefUserLang = $getuser->f("language");
+         require("$default->owl_fs_root/locale/$DefUserLang/language.inc");
+         $mail->CharSet = "$owl_lang->charset"; // set the email charset to the language file charset
+         $mail->AddAddress($sEmailAddress);
       }
-      else
-      {
-         $mail->AddAddress($pick_mailto);
-      }
-   //}
+   }
+   else
+   {
+      $mail->AddAddress($pick_mailto);
+   }
 
    if ($replyto == "")
    {
