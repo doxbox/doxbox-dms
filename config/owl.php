@@ -50,6 +50,7 @@
  */
 $dStartTime = time();
 $default = new stdClass();
+$owl_lang = new stdClass();
 // **********************************************************************
 // ***                      PHP CONFIGURATION                         ***   
 // **********************************************************************
@@ -75,7 +76,7 @@ define('DIR_SEP', DIRECTORY_SEPARATOR);
 // *** Site URL Root
 // owl_root_url should just contain the portion of the url from the 
 // website root (omit the http://servername portion of the url)
-$default->owl_root_url		= "/Projects/owl-intranet/doxbox";
+$default->owl_root_url		= "/doxbox";
 // use this line for modified definition and comment prior line
 //  
 // use $default->owl_root_url to build subdirectory location names
@@ -547,7 +548,7 @@ $default->owl_use_fs            = true;		// This stores uploaded files to the Ha
 // *** MySQL Only *** Compress documents in database
 // Prerequisite: valid only when using $default->owl_use_fs = false 
 // set this parameter to 1 to compress document data before storing to the database
-$default->owl_compressed_database = 0;
+$default->owl_compressed_database = 1;
 // use this line for modified definition and comment line above
 
 // *** MySQL Only *** Encrypt documents in database
@@ -1258,7 +1259,6 @@ $default->max_syslog_reported_rows = 5000;
 // *************************************************
 $default->aVideoFiles = array("flv", "mov");
 $default->video_base_url = "http://www.example.com/doxbox";
-$default->video_base_url = "http://bozzit.homelinux.com/Projects/owl-intranet/doxbox";
 
 // If this parameter is set to 1
 // On file Play / View a Playlist is displayed of ALL the Video
