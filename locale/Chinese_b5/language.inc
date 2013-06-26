@@ -1083,6 +1083,7 @@ $owl_lang->notif_salutation		 = "親愛的";
 $owl_lang->notif_subject_comment	 = "新增一個 DMS 檔案備註說明";
 $owl_lang->notif_subject_monitor	 = "一個您正在監控中的 DMS 檔案或資料夾已被更新";
 $owl_lang->notif_subject_new 		 = "新檔案";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		 = "一個檔案更新了";
 $owl_lang->notif_subject_file_deleted    = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account        = "A NEW ACCOUNT WAS CREATED FOR YOU";

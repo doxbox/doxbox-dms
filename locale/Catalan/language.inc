@@ -1075,6 +1075,7 @@ $owl_lang->notif_salutation             = "Benvolgut";
 $owl_lang->notif_subject_comment        = "S'han afegit Comentaris a un fitxer de la Intranet";
 $owl_lang->notif_subject_monitor    = "El fitxer que est&agrave; monitoritzant-se ha estat actualitzat";
 $owl_lang->notif_subject_new        = "Nou fitxer en Intranet";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd        = "Ha estat actualitzat un fitxer a la Intranet";
 $owl_lang->notif_subject_file_deleted           = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account               = "A NEW OWL ACCOUNT WAS CREATED FOR YOU";

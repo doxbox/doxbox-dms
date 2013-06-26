@@ -1063,6 +1063,7 @@ $owl_lang->notif_salutation                     = "Cher";
 $owl_lang->notif_subject_comment                = "Un fichier DMS -- Commentaire Ajout&eacute;";
 $owl_lang->notif_subject_monitor                = "Un fichier surveill&eacute; a &eacute;t&eacute; modifi&eacute;";
 $owl_lang->notif_subject_new                    = "Ajout d'un nouveau fichier sur le serveur";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd                    = "Mise &agrave; jour d'un fichier sur le serveur";
 $owl_lang->notif_subject_file_deleted           = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account               = "A NEW DMS ACCOUNT WAS CREATED FOR YOU";

@@ -1084,6 +1084,7 @@ $owl_lang->notif_salutation		= "Geachte ";
 $owl_lang->notif_subject_comment	= "Opmerking toegevoegd bij bestand";
 $owl_lang->notif_subject_monitor	= "Een bestand of map die u MONITORT is bijgewerkt";
 $owl_lang->notif_subject_new 		= "Nieuw bestand";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "Bestand is bijgewerkt";
 $owl_lang->notif_subject_file_deleted   = "Bestand verwijderd";
 $owl_lang->notif_subj_new_account       = "ER IS EEN NIEUW ACCOUNT AANGEMAAKT VOOR U";

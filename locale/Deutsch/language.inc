@@ -1048,6 +1048,7 @@ $owl_lang->notif_salutation            	= "Sehr geehrte(r)";
 $owl_lang->notif_subject_comment       	= "Neuer Kommentar";
 $owl_lang->notif_subject_monitor 	= "Beobachtete(s) Datei/Verzeichnis aktualisiert";
 $owl_lang->notif_subject_new     	= "Neue Datei";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd  	 	= "Datei aktualisiert";
 $owl_lang->notif_subject_file_deleted   = "DATEI WURDE AUS DEM URSPRUNGSORT GEL&Ouml;SCHT";
 $owl_lang->notif_subj_new_account       = "EIN NEUES INTRANET-KONTO WURDE F&Uuml;R SIE ANGELEGT";

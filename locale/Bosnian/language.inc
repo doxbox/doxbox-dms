@@ -1043,6 +1043,7 @@ $owl_lang->notif_salutation		= "Postovani/a";
 $owl_lang->notif_subject_comment	= "OWL Intranet Fajl -- Komentar Dodan";
 $owl_lang->notif_subject_monitor	= "OWL Intranet Fajl ili FOLDER koji NADGLEDATE je nadogradjen";
 $owl_lang->notif_subject_new 		= "Novi OWL Intranet Fajl";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "OWL Intranet Fajl je nadogradjen";
 $owl_lang->notif_user			= "Kreirao/Nadogradio:";
 $owl_lang->onlyyou			= "Samo vi mozete citati / preuzimati / pisati";

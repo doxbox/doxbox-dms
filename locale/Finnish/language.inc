@@ -1038,6 +1038,7 @@ $owl_lang->file_size_gigabyte		= "g";
 $owl_lang->file_size_kilobyte		= "k";
 $owl_lang->file_size_megabyte		= "m";
 $owl_lang->notif_subject_new 		= "Uusi tiedosto DMS intranetiss&auml;";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "Tiedosto DMS intranetissa p&auml;vitetty";
 $owl_lang->notif_subject_file_deleted   = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account       = "A NEW DMS ACCOUNT WAS CREATED FOR YOU";

@@ -1097,6 +1097,7 @@ $owl_lang->notif_salutation		= "Bäste";
 $owl_lang->notif_subject_comment	= "En OWL Intranet-fil -- Kommentar tillagd";
 $owl_lang->notif_subject_monitor	= "En OWL Intranet-fil eller katalog som du BEVAKAR har uppdaterats";
 $owl_lang->notif_subject_new 		= "Ny OWL Intranet-fil";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "En OWL Intranet-fil har uppdaterats";
 $owl_lang->notif_subject_file_deleted   = "FIL RADERAD FRÅN FÖRRÅD";
 $owl_lang->notif_subj_new_account       = "ETT NYTT OWL-KONTO HAR SKAPATS ÅT DIG";

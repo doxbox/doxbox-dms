@@ -1084,6 +1084,7 @@ $owl_lang->notif_salutation		= "Assalamu 'alaikum warahmatullahi wabarakatuh";
 $owl_lang->notif_subject_comment	= "Sebuah Berkas Intranet OWL -- Komentar Ditambahkan";
 $owl_lang->notif_subject_monitor	= "Sebuah Berkas atau Map Intranet OWL yang Anda AWASI telah dimutakhirkan";
 $owl_lang->notif_subject_new 		= "Berkas Intranet OWL Baru";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "Sebuah Berkas Intranet OWL telah dimutakhirkan";
 $owl_lang->notif_subject_file_deleted   = "BERKAS TELAH DIHAPUS DARI TEMPAT PENYIMPANAN";
 $owl_lang->notif_subj_new_account       = "SEBUAH AKUN OWL BARU TELAH DIBUAT UNTUK ANDA";

@@ -43,6 +43,7 @@ define ("REJECT_APPROVED", "9");
 define ("ADMIN_PASSWORD", "10");
 define ("APPROVED", "11");
 define ("SELF_REG_USER", "12");
+define ("NEW_NOTE", "13");
 
 define ("LOGIN", "1");
 define ("LOGIN_FAILED", "2");

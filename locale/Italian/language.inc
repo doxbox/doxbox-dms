@@ -1094,6 +1094,7 @@ $owl_lang->notif_salutation  = "Salve";
 $owl_lang->notif_subject_comment  = "Un Documento in DMS &egrave; stato ";
 $owl_lang->notif_subject_monitor  = "Un Documento o Cartella in DMS che stai monitorando &egrave; stato modificato";
 $owl_lang->notif_subject_new   = "Nuovo Documento in DMS ";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd   = "Un Documento in DMS &egrave; stato modificato";
 $owl_lang->notif_subject_file_deleted           = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account               = "UN NUOVO ACCOUNT E' STATO CREATO PER LEI SU DMS";

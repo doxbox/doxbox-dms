@@ -550,6 +550,7 @@ $owl_lang->notif_salutation		= "Szanowny/a";
 $owl_lang->notif_subject_comment	= "Komentarz do pliku został dodany";
 $owl_lang->notif_subject_monitor	= "Plik lub katalog, który monitorujesz został zmieniony";
 $owl_lang->notif_subject_new 		= "Nowy plik";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "Plik został zmieniony";
 $owl_lang->notif_subject_file_deleted = "Plik został usunnięty";
 $owl_lang->notif_subj_new_account = "Zostało utworzone nowe konto OWL";

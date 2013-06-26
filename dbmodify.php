@@ -1515,7 +1515,11 @@ if ($action == "file_upload" or $action == "jupload")
          {
             $sql->query("UPDATE $default->owl_users_table set quota_current = '$new_quota' WHERE id = '$userid'");
          }
+
          $iDocApproved = 1;
+         notify_users($groupid, NEW_NOTE, $id, $type);
+         notify_monitored_folders ($parent, $new_name);
+         owl_syslog(FILE_UPLOAD, $userid, $new_name, $parent, $owl_lang->log_detail, "FILE", $note_size);
       } 
       else
 //************************************************************

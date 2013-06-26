@@ -1088,6 +1088,7 @@ $owl_lang->notif_subject_comment	= "Archivo de Intranet OWL -- Comentario Agrega
 $owl_lang->notif_subject_monitor	= "El archivo o carpeta de Intranet OWL que esta MONITORIZANDO ha sido actualizado";
 $owl_lang->notif_subject_new 		= "Nuevo Archivo de Intranet OWL";
 $owl_lang->notif_subject_upd 		= "El archivo de Intranet OWL ha sido actualizado";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_file_deleted   = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account       = "A NEW OWL ACCOUNT WAS CREATED FOR YOU";
 $owl_lang->notif_user			= "Creado/Actualizado por:";

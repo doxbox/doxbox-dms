@@ -1215,6 +1215,7 @@ $owl_lang->notif_salutation		= "Dear";
 $owl_lang->notif_subject_comment	= "A DMS File -- Comment Added";
 $owl_lang->notif_subject_monitor	= "A DMS File or Folder you are MONITORING was updated";
 $owl_lang->notif_subject_new 		= "New DMS File";
+$owl_lang->notif_subject_new_note 	= "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "A DMS File was updated";
 $owl_lang->notif_subject_file_deleted   = "FILE DELETED FROM REPOSITORY";
 $owl_lang->notif_subj_new_account       = "A NEW ACCOUNT WAS CREATED FOR YOU";

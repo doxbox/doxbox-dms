@@ -1095,6 +1095,7 @@ $owl_lang->notif_salutation		= "Estimado";
 $owl_lang->notif_subject_comment	= "Foi adicionado um coment&aacute;rio de arquivo no reposit&oacute;rio Owl";
 $owl_lang->notif_subject_monitor	= "Foi actualizado um arquivo ou pasta do reposit&oacute;rio Owl";
 $owl_lang->notif_subject_new 		= "Novo arquivo no reposit&oacute;rio Owl";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "Foi actualizado um arquivo do reposit&oacute;rio Owl";
 $owl_lang->notif_subject_file_deleted   = "ARQUIVO APAGADO DO REPOSIT&Oacute;RIO";
 $owl_lang->notif_subj_new_account       = "Uma nova conta Owl foi criada para si";

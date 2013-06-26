@@ -1088,6 +1088,7 @@ $owl_lang->notif_salutation		= "Vážený";
 $owl_lang->notif_subject_comment	= "OWL soubor -- komentář přidán";
 $owl_lang->notif_subject_monitor	= "OWL soubor nebo složka, které jsou POZOROVÁNY byly aktualizovány";
 $owl_lang->notif_subject_new 		= "Nový OWL soubor";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "OWL soubor byl aktualizován";
 $owl_lang->notif_subject_file_deleted   = "SOUBOR BYL SMAZÁN Z ARCHIVU";
 $owl_lang->notif_subj_new_account       = "NOVÝ OWL ÚČET BYL VYTVOŘEN";

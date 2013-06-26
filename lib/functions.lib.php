@@ -5695,6 +5695,10 @@ function fGetMailBodyText($iTypeFlag, $iFileId = -1, $tempsess = 0, $type = "0")
       case MAIL_FILE:
        $sFile = "mail_file";
        break;
+      case NEW_NOTE:
+       $aBody['SUBJECT'] =  $owl_lang->notif_subject_new_note;
+       $sFile = "new_note";
+       break;
    }
 
    $sHtmlFilePath = "$default->owl_fs_root/locale/$language/emailtemplates/$sFile.html";

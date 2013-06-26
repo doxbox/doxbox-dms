@@ -1088,6 +1088,7 @@ $owl_lang->notif_salutation		= "Dear";
 $owl_lang->notif_subject_comment	= "OWL イントラネット　ファイル -- コメントか追加されました";
 $owl_lang->notif_subject_monitor	= "OWL イントラネット　監視中のファイルまたはフォルダが更新されました";
 $owl_lang->notif_subject_new 		= "新規WL イントラネット　ファイル";
+$owl_lang->notif_subject_new_note       = "New DMS Note Added";
 $owl_lang->notif_subject_upd 		= "OWL イントラネット　ファイルが更新されました";
 $owl_lang->notif_subject_file_deleted   = "リポジトリからファイルを削除しました";
 $owl_lang->notif_subj_new_account       = "新しいアカウントを作成しました";
