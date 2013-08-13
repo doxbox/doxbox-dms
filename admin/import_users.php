@@ -38,7 +38,6 @@ if (!fIsAdmin(true))
     exit;
 } 
 
-//$xtpl = new XTemplate("../templates/$default->sButtonStyle/html/admin/import_users.xtpl");
 $xtpl = new XTemplate("html/admin/import_users.xtpl", "../templates/$default->sButtonStyle");
 $xtpl->assign('THEME', $default->owl_graphics_url . "/" . $default->sButtonStyle);
 $xtpl->assign('ROOT_URL', $default->owl_root_url);
@@ -55,54 +54,24 @@ if (!empty($_FILES))
    $userfile = uploadCompat("userfile");
 }
 
-//print("<center>");
-//print("<table class=\"border1\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"$default->table_expand_width\"><tr><td align=\"left\" valign=\"top\" width=\"100%\">\n");
-//fPrintButtonSpace(12, 1);
-//print("<br />\n");
-//print("<table class=\"border2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\"><tr><td align=\"left\" valign=\"top\" width=\"100%\">\n");
-
 if ($default->show_prefs == 1 or $default->show_prefs == 3)
 {
-   //fPrintPrefs("infobar1", "top");
    fPrintPrefsXTPL('Top');
 }
-
-//fPrintButtonSpace(12, 1);
-//print("<br />\n");
 
 fPrintAdminPanelXTPL("importusers");
 
 $xtpl->assign('FORM', '<form enctype="multipart/form-data" action="' . $_SERVER["PHP_SELF"] . '" method="post">');
 $urlArgs['sess']      = $sess;
 
-//print("<form enctype=\"multipart/form-data\" action=\"" . $_SERVER["PHP_SELF"] ."\" method=\"post\">\n");
-//print("<input type=\"hidden\" name=\"sess\" value=\"$sess\"></input>");
-//print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-//fPrintSectionHeader($owl_lang->header_csv_import, "admin2");
 $xtpl->assign('IMPUSER_PAGE_TITLE', $owl_lang->header_csv_import);
-//print("<tr>\n");
-//print("<td align=\"left\" valign=\"top\">\n");
-//print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-//print("<tr>\n");
 $xtpl->assign('IMPUSER_SEND_FILE', $owl_lang->sendcsvfile);
-//print("<td class=\"form1\">$owl_lang->sendcsvfile:</td>\n");
-//print("<td class=\"form1\" width=\"100%\"><input class=\"finput1\" type=\"file\" name=\"userfile\" size=\"24\" maxlength=\"512\"></input></td>\n");
-//print("</tr>\n");
-//print("<td class=\"form1\">");
-//fPrintButtonSpace(1, 1);
-//print("</td>\n");
-//print("<td class=\"form2\" width=\"100%\">");
-//fPrintSubmitButton($owl_lang->sendfile, $owl_lang->alt_sendfile, "submit", "send_file_x");
-//fPrintSubmitButton($owl_lang->btn_reset, $owl_lang->alt_reset_form, "reset");
 
 $xtpl->assign('IMPUSER_BTN_SEND_VALUE', $owl_lang->sendfile);
 $xtpl->assign('IMPUSER_BTN_SEND_ALT', $owl_lang->alt_sendfile);
 
 $xtpl->assign('IMPUSER_BTN_RESET_VALUE', $owl_lang->btn_reset);
 $xtpl->assign('IMPUSER_BTN_RESET_ALT', $owl_lang->alt_reset_form);
-
-//print("</td>\n");
-//print("</tr>\n");
 
 if (!empty($userfile))
 {
@@ -141,7 +110,6 @@ if (!empty($userfile))
    
       $num = count ($data);
    
-      //print "<p> $num fields in line $row: <br>\n";
       $row++;
       $bSkipUser = false;
       $xtpl->assign('IMPUSER_MSG', '&nbsp;');
@@ -175,11 +143,6 @@ if (!empty($userfile))
                   $xtpl->assign('IMPUSER_VALUE', $data[$c] . ' => ' . $owl_lang->import_inserted); 
                   $xtpl->parse('main.userimport.Row');
  
-                  //print("<tr>\n");
-                  //print("<td class=\"$sTrClass\">$owl_lang->group_create</td>\n");
-                  //print("<td class=\"$sTrClass\" width=\"100%\">$data[$c]</td>\n");
-                  //print("</tr>\n");
-
                   $data[$c] = $qSQL->insert_id($default->owl_groups_table, 'id');
                   $CountLines++;
                   $PrintLines = $CountLines % 2;
@@ -228,8 +191,6 @@ if (!empty($userfile))
        }
        $query .= ")";
    
-       //print("<tr>\n");
-       //print("<td class=\"$sTrClass\">$owl_lang->user_created_skipped</td>\n");
        $xtpl->assign('IMPUSER_LABEL', $owl_lang->user_created_skipped);
        if (!$bSkipUser)
        {
@@ -237,37 +198,24 @@ if (!empty($userfile))
           $iUserID = $qSQL->insert_id();
           $qSQL->query("INSERT INTO $default->owl_users_grpmem_table (userid,groupid) VALUES ('$iUserID', '$iSaveGroupid')");
 
-          //print("<td class=\"$sTrClass\" width=\"100%\">$sUserName ($sFullName) $owl_lang->import_inserted</td>\n");
           $xtpl->assign('IMPUSER_VALUE', "$sUserName ($sFullName)" . ' => ' . $owl_lang->import_inserted); 
           $xtpl->parse('main.userimport.Row');
        }
        else
        {
-          //print("<td class=\"$sTrClass\" width=\"100%\">$sUserName ($sFullName) $owl_lang->import_skipped $sMessage</td>\n");
           $xtpl->assign('IMPUSER_VALUE', "$sUserName ($sFullName)" . ' => ' . $owl_lang->import_skipped); 
           $xtpl->assign('IMPUSER_MSG', $sMessage); 
           $xtpl->parse('main.userimport.Row');
        }
-       //print("</tr>\n");
-    
    }
    fclose ($handle);
    unlink($userfile["tmp_name"]);
 }
-//print("</table>\n");
-//print("</td></tr></table>\n");
-//print("</form>\n");
 
-//fPrintButtonSpace(12, 1);
 if ($default->show_prefs == 2 or $default->show_prefs == 3)
 {
    fPrintPrefsXTPL('Bottom');
-   //fPrintPrefs("infobar2");
 }
-//print("</td></tr></table>\n");
-//print("</center>");
-
-//include($default->owl_fs_root .  "/lib/footer.inc");
 
 fSetElapseTime();
 fSetOwlVersion();
@@ -276,6 +224,5 @@ $xtpl->parse('main.userimport');
 $xtpl->parse('main.Footer');
 $xtpl->parse('main');
 $xtpl->out('main');
-
 
 ?>
