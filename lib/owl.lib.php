@@ -256,7 +256,14 @@ else
 
 if(!isset($default->owl_FileDir))
 {
-   $default->owl_FileDir  =  $default->owl_db_FileDir[$default->owl_default_db];
+   if (isset($default->owl_current_db))
+   {
+      $default->owl_FileDir  =  $default->owl_db_FileDir[$default->owl_current_db];
+   }
+   else
+   {
+      $default->owl_FileDir  =  $default->owl_db_FileDir[$default->owl_default_db];
+   }
 }
 
 if (empty($parent))
