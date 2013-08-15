@@ -458,7 +458,9 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (0,'Administrators'),(1,'Anonymous'),(2,'File Admin'),(3,'Users');
+INSERT INTO `groups` VALUES (0,'Administrators');
+UPDATE `groups`  set id = '0';
+INSERT INTO `groups` VALUES (1,'Anonymous'),(2,'File Admin'),(3,'Users');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
