@@ -629,7 +629,7 @@ $default->file_hash_algorithm[3] = "MHASH_RIPEMD160";
 // **********************************************************************
 // *** OWL STATIC - GENERAL DISPLAY OPTIONS - Footer Display Information
 // This is to display the version information in the footer
-$default->version = "DoxBox 1.11 (2012-Sep-22)";
+$default->version = "DoxBox 1.12 (2013-Aug-15)";
 $default->site_title = "Document Management System ";
 $default->phpversion = "5.3.3";
 
