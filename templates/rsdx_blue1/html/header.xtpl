@@ -14,6 +14,40 @@
    <!-- BEGIN: PrefsBarTop -->
                   <table cellspacing="0" cellpadding="0" border="0" width="100%">
                      <tr>
+   <!-- BEGIN: Online -->
+                        <td class="infobar1">
+                        <ul id="onlineusers">
+                         <li>
+                                <a class="drop" href="#">&nbsp;{ONLINE_TOTALUSERS} User(s) Online&nbsp;</a>  
+                                <div class="dropdown">  
+                                <div class="col_1">  
+                                   <h3>{USERNAME_LABEL}</h3>
+                                   <ul>
+   <!-- BEGIN: User -->
+                                      <li>{ONLINE_USERNAME}</li>
+   <!-- END: User -->
+                                   </ul>
+                                </div>  
+                                <div class="col_1">  
+                                   <h3>{FULLNAME_LABEL}</h3>
+                                   <ul>
+   <!-- BEGIN: FullName -->
+                                      <li>{ONLINE_FULLNAME}</li>
+   <!-- END: FullName -->
+                                   </ul>
+                                </div>  
+                                <div class="col_1">  
+                                   <h3>{GROUP_LABEL}</h3>
+                                   <ul>
+   <!-- BEGIN: GroupName -->
+                                      <li>{ONLINE_GROUP}</li>
+   <!-- END: GroupName -->
+                                   </ul>
+                                </div>  
+                            </li>  
+                        </ul>
+                        </td>
+   <!-- END: Online -->
                         <td class="infobar1" width="100%">
                            <b>{USERNAME_LABEL}</b>&nbsp;{USERNAME}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />
                            <b>{FULLNAME_LABEL}</b>&nbsp;{FULLNAME}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />

@@ -11,7 +11,20 @@
         <strong>{LASTLOG_LABEL}</strong> {LASTLOG}
         <strong>{CURRENTDB_LABEL}</strong> {CURRENTDB}
       </div>
-      
+<!-- BEGIN: Online -->
+    <div id="userinfo">
+      <ul class="nav">
+        <li class="li_father" style="padding: 0px;"><span class="fake_link">{ONLINE_TOTALUSERS} User(s) Online</span>
+          <ul style="width: 350px">
+              <h3>{USERNAME_LABEL}</h3>
+  <!-- BEGIN: User -->
+              <li>{ONLINE_FULLNAME} ({ONLINE_USERNAME})&nbsp:&nbsp;<b>{GROUP_LABEL}: </b> {ONLINE_GROUP}</li>
+   <!-- END: User -->
+          </ul>
+        </li>
+      </ul>
+    </div>
+<!-- END: Online -->
       <div id="up_menu">
         <ul class="nav">
   <!-- BEGIN: AdminMenu -->      

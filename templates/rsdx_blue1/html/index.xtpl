@@ -53,7 +53,7 @@
               <tr>
                  <td>&nbsp;<br /></td>
                  <td class="text1"><label for="password">{PASSWORD_LABEL}</label><br /></td>
-                 <td class="text2"><input id="password" class="input_password" type="password" name="password" size="20" maxlength="255" tabindex="2" /></td>
+                 <td class="text2"><input id="password" class="input_password" type="password" name="password" size="20" maxlength="255" tabindex="2" autocomplete="off" /></td>
                  <td>&nbsp;<br /></td>
               </tr>
               <tr>

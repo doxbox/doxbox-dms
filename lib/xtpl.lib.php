@@ -61,12 +61,55 @@ function fPrintPrefsXTPL ($location)
 
    if (isset($userid) and $userid > 0)
    {
+      $cOnline = new Owl_DB;
+
+      $tLastUsed = time();
+      $aOnlineUsers = array();
+      $iTotalUsersOnline = 0;
+
+      $sSQL = "SELECT username, u.name as fullname, g.name AS primarygroup, email, lastused FROM $default->owl_users_table u  
+                      JOIN $default->owl_groups_table g ON u.groupid=g.id 
+           LEFT OUTER JOIN $default->owl_sessions_table a ON u.id=a.usid
+                      WHERE lastused is not null AND lastused <= $tLastUsed AND disabled = '0' GROUP BY username";
+
+      $cOnline->query($sSQL);
+
+
+      while($cOnline->next_record())
+      {
+         $aOnlineUsers[] = array('username' => $cOnline->f('username'),
+                                 'fullname' => $cOnline->f('fullname'),
+                                 'primarygroup' => $cOnline->f('primarygroup'),
+                                 'email' => $cOnline->f('email') );
+         $iTotalUsersOnline++;
+      }
+
+      $xtpl->assign('ONLINE_TOTALUSERS', $iTotalUsersOnline);
+      $xtpl->assign('GROUP_LABEL', $owl_lang->group);
+
       $xtpl->assign('USERNAME_LABEL', $owl_lang->user);
       $xtpl->assign('USERNAME', uid_to_uname($userid));
       
       $xtpl->assign('FULLNAME_LABEL', $owl_lang->full_name);
       $xtpl->assign('FULLNAME', uid_to_name($userid));
 
+      foreach ($aOnlineUsers as $aUser)
+      {
+         $xtpl->assign('ONLINE_USERNAME', $aUser['username']);
+         $xtpl->assign('ONLINE_FULLNAME', $aUser['fullname']);
+         $xtpl->assign('ONLINE_GROUP', $aUser['primarygroup']);
+         $xtpl->assign('ONLINE_EMAIL', $aUser['email']);
+         $xtpl->parse('main.PrefsBar' . $location . '.Online.User');
+         $xtpl->parse('main.PrefsBar' . $location . '.Online.FullName');
+         $xtpl->parse('main.PrefsBar' . $location . '.Online.GroupName');
+      }  
+
+      if ($default->show_online_users == 1)
+      {
+         $xtpl->parse('main.PrefsBar' . $location . '.Online');
+      }
+
+      
       $xtpl->assign('LASTLOG_LABEL', $owl_lang->last_logged);
       $xtpl->assign('LASTLOG', date($owl_lang->localized_date_format , strtotime($lastlogin) + $default->time_offset));
     

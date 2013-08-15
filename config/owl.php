@@ -1273,4 +1273,10 @@ $default->default_permited_html_tags = '<br><b><h1><h2><br />';
 // *** Popup on mouse over Centralized Configuration
 // **********************************************************************
 $default->domtt_popup =   "return makeTrue(domTT_activate(this, event, 'caption', '%s', 'content', '%s', 'lifetime', %s, 'fade', 'both', 'delay', 10, 'maxWidth', '400', 'direction', 'north', 'statusText', ' ', 'trail', true));";
+
+// **********************************************************************
+// *** Show Online users
+// **********************************************************************
+$default->show_online_users = 1;
+
 ?>

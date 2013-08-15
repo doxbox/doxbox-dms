@@ -14,6 +14,40 @@
    <!-- BEGIN: PrefsBarTop -->
                   <table cellspacing="0" cellpadding="0" border="0" width="100%">
                      <tr>
+   <!-- BEGIN: Online -->
+                        <td class="infobar1">
+                        <ul id="onlineusers">
+                         <li>
+                                <a class="drop" href="#">&nbsp;{ONLINE_TOTALUSERS} User(s) Online&nbsp;</a>  
+                                <div class="dropdown">  
+                                <div class="col_1">  
+                                   <h3>{USERNAME_LABEL}</h3>
+                                   <ul>
+   <!-- BEGIN: User -->
+                                      <li>{ONLINE_USERNAME}</li>
+   <!-- END: User -->
+                                   </ul>
+                                </div>  
+                                <div class="col_1">  
+                                   <h3>{FULLNAME_LABEL}</h3>
+                                   <ul>
+   <!-- BEGIN: FullName -->
+                                      <li>{ONLINE_FULLNAME}</li>
+   <!-- END: FullName -->
+                                   </ul>
+                                </div>  
+                                <div class="col_1">  
+                                   <h3>{GROUP_LABEL}</h3>
+                                   <ul>
+   <!-- BEGIN: GroupName -->
+                                      <li>{ONLINE_GROUP}</li>
+   <!-- END: GroupName -->
+                                   </ul>
+                                </div>  
+                            </li>  
+                        </ul>
+                        </td>
+   <!-- END: Online -->
                         <td class="infobar1" width="100%">
                            <b>{USERNAME_LABEL}</b>&nbsp;{USERNAME}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />
                            <b>{FULLNAME_LABEL}</b>&nbsp;{FULLNAME}<img src="{THEME}/ui_misc/x_clear.gif" height="1" width="12" alt="" />
@@ -479,7 +513,7 @@
 <!-- END: Download -->
                   <td><input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
                   <td><input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
-                  <td><input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('Really Delete all selected files');" /></td>
+                  <td><input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" /></td>
 <!-- BEGIN: Checkout -->
                   <td><input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
 <!-- END: Checkout -->
