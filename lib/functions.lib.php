@@ -1570,7 +1570,7 @@ function fGenerateThumbNail($fid)
          if ($sFileExtension == "pdf" and file_exists($default->thumbnails_tool_path))
          {
 
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -shave 1x1 -bordercolor black -border 1 \"".$path."[0]\" \"". $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png\"");
+               exec(escapeshellcmd($default->thumbnails_tool_path) . " -background white -flatten -alpha off -shave 1x1 -bordercolor black -border 1 \"".$path."[0]\" \"". $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png\"");
                $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png";
          }
          else if ($sFileExtension == "doc" and file_exists($default->wordtotext_path))
