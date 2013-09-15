@@ -7,7 +7,14 @@ alter table other_userprefs add column  `user_address` varchar(255) NOT NULL;
 alter table other_userprefs add column  `user_note` text NOT NULL;
 
 alter table prefs add column `docRel` int(4) default NULL;
-alter table prefs add column `ppttotext_path` varchar(80) default NULL;
+alter table prefs add column `dl_count` int(11) NOT NULL;
+alter table prefs add column `dl_block` int(11) NOT NULL;
+alter table prefs add column `dl_count_trigger` int(11) NOT NULL;
+alter table prefs add column `dl_size_trigger` int(11) NOT NULL;
+alter table prefs add column `dl_notification_list` varchar(512) NOT NULL;
+alter table prefs add column `ppttotext_path` varchar(512) NOT NULL;
+alter table prefs add column `dl_len` int(11) NOT NULL;
+
 update users set buttonstyle = 'Roma 2011';
 update html set owl_logo = 'doxbox_Logo.png';
 
@@ -44,3 +51,16 @@ CREATE TABLE `docRel` (
   PRIMARY KEY (`docRel_id`)
 );
 
+ALTER TABLE  `users` ADD  `dl_count_excluded` INT(4) NOT NULL;
+ALTER TABLE  `users` ADD  `user_access` INT(4) NOT NULL DEFAULT '1';
+
+update users set user_access = '1';
+
+CREATE TABLE `user_downloads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `file_id` int(11) NOT NULL,
+  `dnld_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `dnld_size` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+);
