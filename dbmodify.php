@@ -4119,6 +4119,10 @@ if ($action == "user")
       printError($owl_lang->err_email_required);
    } 
 
+   $logintonewrec = fIntializeCheckBox($logintonewrec);
+   $user_default_view = fIntializeCheckBox($user_default_view);
+   $comment_notify = fIntializeCheckBox($comment_notify);
+
    $sql->query("UPDATE $default->owl_users_table SET name='$name', buttonstyle='$newbuttons', email='$email', notify='$notify', attachfile='$attachfile', language='$newlanguage', comment_notify = '$comment_notify', logintonewrec='$logintonewrec',user_default_view='$user_default_view', user_major_revision='$user_major_revision', user_minor_revision='$user_minor_revision' WHERE id = '$id'");
    
    $sql->query("SELECT user_id FROM $default->owl_user_prefs WHERE user_id = '$id'");
