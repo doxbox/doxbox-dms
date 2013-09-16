@@ -541,7 +541,7 @@ if (($iNewCount >= $default->download_count_trigger  or
 
       if (!$mail->Send() and $default->debug == true)
       {
-         printError($owl_lang->err_email, $mail->ErrorInfo);
+         printError("DEBUG: " . $owl_lang->err_email, $mail->ErrorInfo);
       }
       else
       {
