@@ -1206,46 +1206,42 @@ function fInsertUnzipedFiles($path, $cParent, $FolderPolicy, $FilePolicy, $descr
                   else
                   {
                      $bUpdate = false;
-                     $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved) values ('$ctitle', '$file', '$TheFileSize', '$iCreatorID', '$iCreatorID', '$cParent', '$TheFileTime' , '$description', '$metadata', '$FilePolicy', '$groupid', '$TheFileTime', '0','$major_revision','$minor_revision', '0', '$doctype', '$iDocApproved')");
+                     $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved, name_search, filename_search, description_search, metadata_search) values ('$ctitle', '$file', '$TheFileSize', '$iCreatorID', '$iCreatorID', '$cParent', '$TheFileTime' , '$description', '$metadata', '$FilePolicy', '$groupid', '$TheFileTime', '0','$major_revision','$minor_revision', '0', '$doctype', '$iDocApproved', '" . $sql->make_arg_safe(fReplaceSpecial($ctitle)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($file)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($description)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($metadata)) . "')");
+
                      $searchid = $sql->insert_id($default->owl_files_table, 'id');
-//print("<pre>");
-//print_r($_POST);
-//print("</pre>");
-//exit;
 
-         $sql_custom->query("SELECT * FROM $default->owl_docfields_table  WHERE doc_type_id = '$doctype'");
-         while ($sql_custom->next_record())
-         {
-             $mDocFieldValue = '';
-             switch ($sql_custom->f("field_type"))
-             {
-                case "seperator":
-                   break;
-                case "mcheckbox":
-                      $aMultipleCheckBox = split("\|",  $sql_custom->f("field_values"));
-                       $i = 0;
-                       $sFieldValues = "";
-                       foreach ($aMultipleCheckBox as $sValues)
-                       {
-                          $sFieldName = $sql_custom->f("field_name") . "_".$i;
-
-
-                          if ($i > 0)
-                          {
-                             $sFieldValues .= "|";
-                          }
-                          $sFieldValues .= $_POST[$sFieldName];
-                          $i++;
-                       }
-                       $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$searchid', '" . $sql_custom->f("field_name") ."', '" . $sFieldValues ."');");
-                    break;
-                 default:
-                       $mDocFieldValue = $_POST[$sql_custom->f("field_name")];
-                       $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$searchid', '" . $sql_custom->f("field_name") ."', '" . $mDocFieldValue ."');");
-                    break;
-           }
-         }
-
+                     $sql_custom->query("SELECT * FROM $default->owl_docfields_table  WHERE doc_type_id = '$doctype'");
+                     while ($sql_custom->next_record())
+                     {
+                         $mDocFieldValue = '';
+                         switch ($sql_custom->f("field_type"))
+                         {
+                            case "seperator":
+                               break;
+                            case "mcheckbox":
+                                  $aMultipleCheckBox = split("\|",  $sql_custom->f("field_values"));
+                                   $i = 0;
+                                   $sFieldValues = "";
+                                   foreach ($aMultipleCheckBox as $sValues)
+                                   {
+                                      $sFieldName = $sql_custom->f("field_name") . "_".$i;
+            
+            
+                                      if ($i > 0)
+                                      {
+                                         $sFieldValues .= "|";
+                                      }
+                                      $sFieldValues .= $_POST[$sFieldName];
+                                      $i++;
+                                   }
+                                   $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$searchid', '" . $sql_custom->f("field_name") ."', '" . $sFieldValues ."');");
+                                break;
+                             default:
+                                   $mDocFieldValue = $_POST[$sql_custom->f("field_name")];
+                                   $result = $sql->query("INSERT INTO $default->owl_docfieldvalues_table (file_id, field_name, field_value) values ('$searchid', '" . $sql_custom->f("field_name") ."', '" . $mDocFieldValue ."');");
+                                break;
+                        }
+                     }
                   }
                  
                   if ($default->calculate_file_hash == 1)
@@ -4413,8 +4409,7 @@ function fCopyFolder ($Folderid, $destparent)
             $iExpires = $GetFiles->f("expires");
          }
          // INSERT Files
-		 $PutFiles->query("INSERT into $default->owl_files_table (name,filename,f_size,creatorid,parent,created, description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved, expires, linkedto) values ('" . $GetFiles->f("name") . "' , '" . $GetFiles->f("filename") . "' , '" . $GetFiles->f("f_size") . "' , '" . $GetFiles->f("creatorid") . "' , '$newParent', '" . $GetFiles->f("created") . "' , '" . $GetFiles->f("description") . "' , '" . $GetFiles->f("metadata") . "' , '" . $GetFiles->f("security") . "' , '" . $GetFiles->f("groupid") . "' , '" . $GetFiles->f("smodified") . "' , '" . $GetFiles->f("checked_out") . "' , '" . $GetFiles->f("major_revision") . "' , '" . $GetFiles->f("minor_revision") . "' , '" . $GetFiles->f("url") . "' , '" . $GetFiles->f("doctype") . "' , '1', '" . $iExpires . "', '" . $iLinkedTo . "')");
-
+         $PutFiles->query("INSERT into $default->owl_files_table (name,filename,f_size,creatorid,parent,created, description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved, expires, linkedto,  name_search, filename_search, description_search, metadata_search) values ('" . $GetFiles->f("name") . "' , '" . $GetFiles->f("filename") . "' , '" . $GetFiles->f("f_size") . "' , '" . $GetFiles->f("creatorid") . "' , '$newParent', '" . $GetFiles->f("created") . "' , '" . $GetFiles->f("description") . "' , '" . $GetFiles->f("metadata") . "' , '" . $GetFiles->f("security") . "' , '" . $GetFiles->f("groupid") . "' , '" . $GetFiles->f("smodified") . "' , '" . $GetFiles->f("checked_out") . "' , '" . $GetFiles->f("major_revision") . "' , '" . $GetFiles->f("minor_revision") . "' , '" . $GetFiles->f("url") . "' , '" . $GetFiles->f("doctype") . "' , '1', '" . $iExpires . "', '" . $iLinkedTo . "','" . $GetFiles->f("name_search") . "','" . $GetFiles->f("filename_search") . "','" . $GetFiles->f("description_search") . "','" . $GetFiles->f("metadata_search") . "')");
 
          $newFile = $PutFiles->insert_id($default->owl_files_table, 'id');
 

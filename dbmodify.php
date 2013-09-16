@@ -605,6 +605,12 @@ if ($action == "file_update")
             $backup_size = $sql->f("f_size");
             $backup_creatorid = $sql->f("creatorid"); 
             $backup_updatorid = $sql->f("updatorid"); 
+
+            $backup_name_search = $sql->f("name_search");
+            $backup_filename_search = $sql->f("filename_search");
+            $backup_description_search = $sql->f("description_search");
+            $backup_metadata_search = $sql->f("metadata_search");
+
             if (empty($backup_updatorid))
             {
                $backup_updatorid = "0";  // unkown
@@ -1993,7 +1999,7 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
       if ($default->owl_use_fs)
          {
             // insert entry for backup file
-            $result = $sql->query("insert into $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved, name_search, filename_search, description_search, metadata_search) values ('$backup_name','   $version_name','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dcreatedate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$backup_linkedto', '1', '" . fReplaceSpecial($backup_name) . "', '" . fReplaceSpecial($version_name) . "', '" . fReplaceSpecial($backup_description) . "', '" . fReplaceSpecial($backup_metadata) . "')") or unlink($backuppath);
+            $result = $sql->query("insert into $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved, name_search, filename_search, description_search, metadata_search) values ('$backup_name','   $version_name','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dcreatedate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$backup_linkedto', '1', '" . fReplaceSpecial($backup_name) . "', '" . fReplaceSpecial($version_name) . "', '" . fReplaceSpecial($backup_description) . "', '" . fReplaceSpecial($backup_metadata) . "','" . $backup_name_search . "','" . $backup_filename_search . "','" . $backup_description_search . "','" . $backup_metadata_search . "')") or unlink($backuppath);
             if (!$result && $default->owl_use_fs) unlink($newpath);
 
             $idbackup = $sql->insert_id($default->owl_files_table, 'id');
