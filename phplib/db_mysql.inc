@@ -117,9 +117,6 @@ class DB_Sql {
       $this->free();
     }
 
-    if ($this->Debug)
-      printf("Debug: query = %s<br>\n", $Query_String);
-
     @mysql_query("SET NAMES '$collation';", $this->Link_ID);
     @mysql_query("SET CHARACTER SET '$collation';", $this->Link_ID);
 
@@ -131,7 +128,25 @@ class DB_Sql {
     // @mysql_query("SET character_set_results='utf8'");
     // @mysql_query("SET character_set_server='utf8'");
 
+    $time = microtime();
+    $time = explode(' ', $time);
+    $dQueryStartTime = $time[1] + $time[0];
+    
     $this->Query_ID = @mysql_query($Query_String,$this->Link_ID);
+
+    $time = microtime();
+    $time = explode(' ', $time);
+    $dQueryFinishTime = $time[1] + $time[0];
+    $dQueryTotalTime = round(($dQueryFinishTime - $dQueryStartTime), 4);
+
+    /* if the query took longer than 2 Seconds flag it red so its more obvious */
+    if ($dQueryTotalTile > 2)
+    {
+       $sColor = 'red';
+    }
+    if ($this->Debug)
+      printf("Debug: query = %s &nbsp; <font color=\"$sColor\">Executed in ($dQueryTotalTime sec)</font><br />\n", $Query_String);
+
     $this->Row   = 0;
     $this->Errno = mysql_errno();
     $this->Error = mysql_error();
