@@ -66,7 +66,7 @@ function delFile($id, $action, $historical = 0)
                // the trash can
                if ($default->collect_trash == 1)
                {
-                  $sTrashDir = explode('/', $path);
+                  $sTrashDir = explode(DIR_SEP, $path);
 
                   $sCreatePath = $default->trash_can_location . DIR_SEP . $default->owl_current_db;
                   if (!file_exists($sCreatePath))
@@ -83,8 +83,6 @@ function delFile($id, $action, $historical = 0)
                   } 
                   if (substr(php_uname(), 0, 7) != "Windows")
                   {
-                     //$sTrashSource = escapeshellcmd($default->owl_FileDir . "/" . $path . "/" . $filename);
-                     //$sTrashDest = escapeshellcmd($default->trash_can_location . "/" . $default->owl_current_db . "/" . $path . "/" . $filename);
                      $sTrashSource = $default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $filename;
                      $sTrashDest = $default->trash_can_location . DIR_SEP . $default->owl_current_db . DIR_SEP . $path . DIR_SEP . $filename;
                      $cmd = "mv " . "\"" . $sTrashSource . "\" \"" . $sTrashDest . "\" 2>&1";
@@ -99,7 +97,7 @@ function delFile($id, $action, $historical = 0)
                   } 
                   else
                   {
-                     copy("$default->owl_FileDir/$path/$filename", "$default->trash_can_location/$default->owl_current_db/$path/$filename");
+                     copy($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $filename, $default->trash_can_location . DIR_SEP . $default->owl_current_db . DIR_SEP . $path . DIR_SEP . $filename);
                      unlink($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $filename);
                   } 
                } 
@@ -115,7 +113,6 @@ function delFile($id, $action, $historical = 0)
                $handle = opendir($default->thumbnails_location);
                while(false !== ($file = readdir($handle)))
                {
-                  //print("F: $file Sub:" . substr($file, 0, 3) . "<br />");
                   list($sThumbFileDb, $sThumbFileId, $sThumbFileName) = explode("_", $file);
                                                                                                                                                                           
                   $sDelFileCheck = $sThumbFileDb . "_". $sThumbFileId;
@@ -132,13 +129,9 @@ function delFile($id, $action, $historical = 0)
                notify_monitored($id, owlfiletype($id));
                notify_monitored_folders ($parent, flid_to_filename($id));
             }
-//****************************************************************************************************
-// BEGIN ADD Filipe Lima (filipe.aclima@gmail.com) - March 2009
-//****************************************************************************************************
+            // Cleanup any related file markers from the DB
             $sql->query("DELETE FROM $default->docRel_table WHERE file_id='$id'");
-//****************************************************************************************************
-// END ADD Filipe Lima (filipe.aclima@gmail.com) - March 2009
-//****************************************************************************************************
+            // Clean up the file from the DB
             $sql->query("DELETE FROM $default->owl_files_table WHERE id = '$id'"); 
             // Clean up all monitored files with that id
             $sql->query("DELETE FROM $default->owl_monitored_file_table WHERE fid = '$id'"); 
@@ -176,7 +169,7 @@ function delFile($id, $action, $historical = 0)
                   $filename = $sql->f("filename"); 
                   $major_revision = $sql->f("major_revision");
                   $minor_revision = $sql->f("minor_revision");
-                  //if (preg_match('/'.$firstpart.'_\d+-\d+'.$file_extension.'/', $filename))
+                  
                   if ($filename == $firstpart.'_'.$major_revision.'-'.$minor_revision.".".$file_extension)
                   {
                      owl_syslog(FILE_DELETED, $userid, $filename, $parent, $path, "FILE");
@@ -232,12 +225,14 @@ function delFile($id, $action, $historical = 0)
                   {
                      owl_syslog(FILE_CHANGED, $userid, $filename, $parent, $firstpart.'_'.$major_revision.'-'.$minor_revision.$file_extension, "FILE");
                   }
-                  //$sql->query("DELETE FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\_%" . $file_extension . "' AND parent = '$backup_parent') OR (filename = '$filename'AND parent = '$parent')");
                } 
             }
          } 
          else
          {
+            // Cleanup any related file markers from the DB
+            $sql->query("DELETE FROM $default->docRel_table WHERE file_id='$id'");
+            // Clean up the file from the DB
             $sql->query("DELETE FROM $default->owl_files_table WHERE id = '$id'");
             // Clean up all monitored files with that id
             $sql->query("DELETE FROM $default->owl_monitored_file_table WHERE fid = '$id'");
@@ -255,7 +250,6 @@ function delFile($id, $action, $historical = 0)
             fDeleteFileIndexID($id);
             owl_syslog(FILE_DELETED, $userid, $filename, $parent, $owl_lang->log_detail, "FILE");
          } 
-
          sleep(.5);
       } 
 
@@ -263,6 +257,7 @@ function delFile($id, $action, $historical = 0)
       {
          $parent = owlfolderparent($parent);
       }
+
       if ($historical == 0)
       {
          displayBrowsePage($parent);

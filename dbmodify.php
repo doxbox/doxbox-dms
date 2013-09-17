@@ -3721,7 +3721,7 @@ if ($action == "folder_delete")
          if ($default->collect_trash == 1)
          {
             $path = find_path($id);
-            $sTrashDir = explode('/', $path);
+            $sTrashDir = explode(DIR_SEP, $path);
             $sCreatePath = $default->trash_can_location . DIR_SEP . $default->owl_current_db;
             if (!file_exists($sCreatePath))
             {
