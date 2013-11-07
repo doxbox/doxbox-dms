@@ -230,6 +230,9 @@
 <!-- BEGIN: major_minor_revision -->
                <td class="{FILE_TD_CLASS}">{FILE_VERSION}</td>
 <!-- END: major_minor_revision -->
+<!-- BEGIN: simplefilename -->
+               <td class="{FILE_TD_CLASS}">{FILE_FILENAME}</td>
+<!-- END: simplefilename -->
 <!-- BEGIN: filename -->
                <td class="{FILE_TD_CLASS}">{FILE_FILENAME}</td>
 <!-- END: filename -->

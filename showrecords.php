@@ -256,33 +256,6 @@ elseif ($type == "g")
 include_once($default->owl_fs_root ."/lib/header.inc");
 include_once($default->owl_fs_root ."/lib/userheader.inc");
 
-if(!$default->old_action_icons)
-{
-   //$mid = new LayersMenu();
-   //$mid->setDirroot($default->owl_fs_root . "/scripts/phplayersmenu/");
-   //$mid->setImgwww($default->owl_root_url . '/scripts/phplayersmenu/menuimages/');
-                                                                                                                                                                          
-   if (substr(php_uname(), 0, 7) != "Windows")
-   {
-      //$mid->setIcondir($default->owl_fs_root . "/graphics/$default->sButtonStyle/icon_action/");
-      //$mid->setIcondir($default->owl_fs_root . "/templates/$default->sButtonStyle/icon_action/");
-   }
-   else
-   {
-      //$mid->setIcondir(ereg_replace("([A-Z]\:|[a-z]\:)", "", ereg_replace("[\\]", "/",$default->owl_fs_root)) . "/graphics/$default->sButtonStyle/icon_action/");
-      //$mid->setIcondir(ereg_replace("([A-Z]\:|[a-z]\:)", "", ereg_replace("[\\]", "/",$default->owl_fs_root)) . "/templates/$default->sButtonStyle/icon_action/");
-   }
-   //$mid->setIconwww($default->owl_graphics_url . "/$default->sButtonStyle/icon_action/");
-   //$mid->setIconsize(17, 20);
-
-   //fSetupFileActionMenus($qFileQuery);
-   if (!empty($qSqlQuery))
-   {
-      //fSetupFolderActionMenus($qFolderQuery);
-   }
-   //$mid->printHeader();
-}
-
 if ($expand == 1)
 {
    $xtpl->assign('VIEW_WIDTH', $default->table_expand_width);
@@ -436,9 +409,8 @@ if ($default->show_search == 1 or $default->show_search == 3 or (fIsAdmin() and 
    {
       show_linkXTPL("smodified", "sortmod", $sortmod, $order, $sess, $expand, $parent, $owl_lang->modified, $filter);
    }
-   if($type == "wa" or $type == "pa") 
+   if($type == "wa" or $type == "pa" or $default->old_action_icons) 
    {
-
       $xtpl->assign('TITLE_ACTIONS', $owl_lang->actions);
       $xtpl->parse('main.DataBlock.Title.Actions');
    }
@@ -989,7 +961,6 @@ while ($qGetFile->next_record())
       $sBoldEnd = '';
    }
 
-   // Tiian change 2003-07-31
    $sDirectoryPath = get_dirpath($qGetFile->f("parent"));
    $pos = strpos($sDirectoryPath, "$default->version_control_backup_dir_name");
    if (is_integer($pos) && $pos)
@@ -1263,7 +1234,7 @@ while ($qGetFile->next_record())
 
    if ($qGetFile->f("url") == "1")
    {
-      if ($bFileDownload == 1)
+      if (check_auth($qGetFile->f("id"), "file_download", $userid))
       {
          if (($default->expand_disp_file and $expand == 1) or ($default->collapse_disp_file and $expand == 0))
          {
@@ -1286,6 +1257,8 @@ while ($qGetFile->next_record())
             $xtpl->assign('FILE_SIZE', "&nbsp;");
          }
       } 
+      $xtpl->parse('main.DataBlock.File.simplefilename');
+      $xtpl->parse('main.DataBlock.File.f_size');
    }
    else
    {
@@ -1299,18 +1272,20 @@ while ($qGetFile->next_record())
                $urlArgs2['id']     = $qGetFile->f("id");
                $urlArgs2['parent'] = $qGetFile->f("parent");
                $url = fGetURL ('download.php', $urlArgs2);
-               $xtpl->assign('FILE_FILENAME', "<a class=\"$sLfList\" href=\"" . $url  . "\" title=\"$owl_lang->title_download_view>" . $qGetFile->f("filename") . "</a>");
+               $xtpl->assign('FILE_FILENAME', "<a class=\"$sLfList\" href=\"" . $url  . "\" title=\"$owl_lang->title_download_view\">" . $qGetFile->f("filename") . "</a>");
+               $xtpl->parse('main.DataBlock.File.simplefilename');
             }
             else
             {
                fSetupFileActionMenusXTPL($qGetFile->f("id"), $qGetFile->f("filename"), $qGetFile->f("creatorid"), $qGetFile->f("approved"), $qGetFile->f("checked_out"), $qGetFile->f("url"), $qGetFile->f("parent"), $qGetFile->f("infected"));
+               $xtpl->parse('main.DataBlock.File.filename');
             }
          }
          else
          {
             $xtpl->assign('FILE_FILENAME', $qGetFile->f("filename"));
+            $xtpl->parse('main.DataBlock.File.filename');
          }
-         $xtpl->parse('main.DataBlock.File.filename');
       }
       if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
       {
@@ -1437,12 +1412,12 @@ while ($qGetFile->next_record())
       {
          if($default->old_action_icons)
          {
-            print("\t\t\t\t<td class=\"$sTrClass\" align=\"left\">");
-            printFileIcons($qGetFile->f("id"), $qGetFile->f("filename"), $qGetFile->f("checked_out"), $qGetFile->f("url"), $default->owl_version_control, $ext, $parent, $is_backup_folder);
-            print("</td>\n");
+            fPrintFileIconsXtpl($qGetFile->f("id"), $qGetFile->f("filename"), $qGetFile->f("checked_out"), $qGetFile->f("url"), $default->owl_version_control, $ext, $parent, $is_backup_folder);
+            $xtpl->parse('main.DataBlock.File.Action');
          }
       }
-if ($default->owl_version_control == 1)
+
+   if ($default->owl_version_control == 1)
    {
       if (($default->expand_disp_held and $expand == 1) or ($default->collapse_disp_held and $expand == 0))
       {
@@ -1486,7 +1461,7 @@ if ($default->owl_version_control == 1)
      $xtpl->parse('main.DataBlock.File.PeerStatus');
    }
    $xtpl->parse('main.DataBlock.File');
-}  //removed March 11 2011 
+}  
 
 
    $xtpl->parse('main.DataBlock.Title');

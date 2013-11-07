@@ -263,6 +263,9 @@
 <!-- BEGIN: major_minor_revision -->
                <td class="{FILE_TD_CLASS}">{FILE_VERSION}</td>
 <!-- END: major_minor_revision -->
+<!-- BEGIN: simplefilename -->
+               <td class="{FILE_TD_CLASS}">{FILE_FILENAME}</td>
+<!-- END: simplefilename -->
 <!-- BEGIN: filename -->
                <td class="{FILE_TD_CLASS}">
 <div class="layerMenuAnchor"><a href="{FILE_MENU_ACTION}" alt="{FILE_MENU_ACTION_ALT}">{FILE_FILENAME}</a>&nbsp;<img src="{THEME}/ui_misc/forward-arrow.png" />
