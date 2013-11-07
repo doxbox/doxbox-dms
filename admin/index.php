@@ -820,11 +820,7 @@ function printusers()
             $xtpl->assign('BTN_DEL_GROUP', $owl_lang->deletegroup);
             $xtpl->assign('BTN_DEL_GROUP_ALT', $owl_lang->alt_del_group);
             $xtpl->parse('main.EditGroup.DelGroup');
-            //fPrintSubmitButton($owl_lang->deletegroup, $owl_lang->alt_del_group, "submit", "bdeletegroup_x");
          } 
-         //fPrintSubmitButton($owl_lang->btn_reset, $owl_lang->alt_reset_form, "reset");
-         //print("</td>\n");
-         //print("</tr>\n");
       } 
 
    $sql->query("SELECT userid FROM $default->owl_users_grpmem_table WHERE groupid = '$id'");
@@ -845,184 +841,8 @@ function printusers()
 
    $sql->query("SELECT username,name,id FROM $default->owl_users_table $sWhereClause order by name");
 
-//sun2earth old group administration begin
-/*
-
-   fPrintSectionHeader("ADD MEMBERS TO THIS GROUP");
-   print("<tr>\n");
-   print("<td class=\"form1\">$owl_lang->users:</td>\n");
-   print("<td class=\"form1\" width=\"100%\">");
-   print("<select multiple=\"multiple\" class=\"fpull1\" name=\"aAddOwlUser[]\" size=\"10\">\n");
-
-   while ($sql->next_record())
-   {
-      $uid = $sql->f("id");
-      $username = $sql->f("username");
-      $name = $sql->f("name");
-
-            print("\t\t\t\t\t\t\t\t<option value=\"" . $uid . "\" >" . $name . "&nbsp;(". $username . ")</option>\n");
-   }
-
-   print("</select>");
-      print("</td>\n");
-      //print("<tr>\n");
-   //fPrintSectionHeader("ADD MEMBER GROUP(S) TO THIS GROUP");
-   //print("<tr>\n");
-   //print("<td class=\"form1\">$owl_lang->groups:</td>\n");
-   //print("<td class=\"form1\" width=\"100%\">");
-      //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\">\n");
-      //print("<tr>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_available_groups</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">&nbsp;</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_selected_groups</td>\n");
-      //print("</tr>\n");
-      //print("<tr>\n");
-      //print("<td class=\"form1\">\n");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fallgroups[]\" class=\"fpullacl\">\n");
-      //foreach($groups as $g)
-      //{
-         //if ($g[0] == -1)
-         //{
-            //continue;
-         //}
-         //// if the group has sub groups then don't show it as a group, we are trying to avoid groups of groups inside of groups
-//
-         //$sql->query("SELECT * FROM $default->owl_group_grpmem_table where groupid = '$g[0]'");
-         //if ($sql->num_rows() > 0)
-         //{
-            //continue;
-         //}
-         //if (!empty($fselectedgroups))
-         //{
-            //if (!(in_array($g[0], $fselectedgroups)))
-            //{
-               //print("<option value=\"$g[0]\"");
-               //print(">$g[1]</option>\n");
-            //}
-         //}
-         //else
-         //{
-            //print("<option value=\"$g[0]\"");
-            //print(">$g[1]</option>\n");
-         //}
-      //}
-      //print("</select>\n</td>\n");
-//
-      //print("<td class=\"form1\" nowrap=\"nowrap\">");
-      //print("&nbsp;&nbsp;<input type=\"button\" onclick=\"move(this.form.elements['fselectedgroups[]'],this.form.elements['fallgroups[]'])\" value=\"<--\"></input>\n");
-      //print("<input type=\"button\" onclick=\"move(this.form.elements['fallgroups[]'],this.form.elements['fselectedgroups[]'])\" value=\"-->\"></input>\n");
-      //print("<br />");
-      //print("<input type=\"button\" onclick=\"selectAllGroups(this.form.elements['fselectedgroups[]'],this.form.elements['fallgroups[]'])\" value=\"<<--\"></input>\n");
-      //print("<input type=\"button\" onclick=\"selectAllGroups(this.form.elements['fallgroups[]'],this.form.elements['fselectedgroups[]'])\" value=\"-->>\"></input>\n");
-      //print("</td>\n");
-      //print("<td class=\"form1\">");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fselectedgroups[]\" class=\"fpullacl\">");
-      //if (!empty($groups))
-      //{
-         //foreach($groups as $g)
-         //{
-            //if ($g[0] == -1)
-            //{
-               //continue;
-            //}
-            //if (!empty($fselectedgroups))
-            //{
-               //if ((in_array($g[0], $fselectedgroups)))
-               //{
-                  //print("<option value=\"$g[0]\"");
-                  //print(">$g[1]</option>\n");
-               //}
-            //}
-         //}
-      //}
-      //print("</select>\n</td>\n");
-      //print("</tr>\n");
-      //print("</table>\n");
-      //print("</td>\n");
-      print("<tr>\n");
-      print("<td class=\"title1\">&nbsp;&nbsp;$owl_lang->del_selected</td>\n");
-      print("<td class=\"title1\" width=\"100%\" colspan=\"2\">$owl_lang->username</td></tr>");
-      fPrintSectionHeader($owl_lang->users_in_primary_group);
-      $sql->query("SELECT username,name,id,maxsessions,groupid FROM $default->owl_users_table WHERE groupid='$id' order by name");
-      while ($sql->next_record())
-      {
-         $uid = $sql->f("id");
-         $username = $sql->f("username");
-         $name = $sql->f("name");
-         $maxsess = $sql->f("maxsessions") + 1;
-         $numrows = 0;
-                                                                                                                                                                                      
-         if ($name == "")
-         {
-            $sDisplayName = $username;
-         }
-         else
-         {
-            $sDisplayName = $name;
-         }
-         print("<tr>\n");
-         print("<td class=\"form1\">&nbsp;</td>\n");
-         print("<td class=\"form1\" width=\"100%\" colspan=\"2\"><a class=\"lfile1\" href=\"index.php?sess=$sess&amp;action=users&amp;owluser=" . $uid . "\">" . $sDisplayName . "</a></td></tr>");
-      }
-                                                                                                                                                                                      
-      fPrintSectionHeader($owl_lang->owl_group_user);
-      $sql->query("SELECT distinct username,name,id,maxsessions,u.groupid FROM $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id=m.userid WHERE m.groupid='$id' order by name");
-      while ($sql->next_record())
-      {
-         $uid = $sql->f("id");
-         $username = $sql->f("username");
-         $name = $sql->f("name");
-         $maxsess = $sql->f("maxsessions") + 1;
-         $numrows = 0;
-
-         if ($name == "")
-         {
-            $sDisplayName = $username;
-         }
-         else
-         {
-            $sDisplayName = $name;
-         }
-         print("<tr>\n");
-         print("<td class=\"form1\"><input class=\"fcheckbox1\" type=\"checkbox\" name=\"aRemoveMember[]\" value=\"$uid\"></input></td>\n");
-         print("<td class=\"form1\" width=\"100%\" colspan=\"2\"><a class=\"lfile1\" href=\"index.php?sess=$sess&amp;action=users&amp;owluser=" . $uid . "\">" . $sDisplayName . "</a></td>\n");
-         print("</tr>\n");
-      } 
-      fPrintSectionHeader($owl_lang->users_group_admin);
-      $sql->query("SELECT distinct username,name,id,maxsessions,u.groupid FROM $default->owl_users_table u left join $default->owl_users_grpmem_table m on u.id=m.userid WHERE (u.groupadmin='1' and u.groupid='$id')  OR m.groupadmin = '$id' order by name");
-      while ($sql->next_record())
-      {
-         $uid = $sql->f("id");
-         $username = $sql->f("username");
-         $name = $sql->f("name");
-         $maxsess = $sql->f("maxsessions") + 1;
-         $numrows = 0;
-
-         if ($name == "")
-         {
-            $sDisplayName = $username;
-         }
-         else
-         {
-            $sDisplayName = $name;
-         }
-         print("<tr>\n");
-         print("<td class=\"form1\"><input class=\"fcheckbox1\" type=\"checkbox\" name=\"aRemoveGroupAdmin[]\" value=\"$uid\"></input></td>\n");
-         print("<td class=\"form1\" width=\"100%\" colspan=\"2\"><a class=\"lfile1\" href=\"index.php?sess=$sess&amp;action=users&amp;owluser=" . $uid . "\">" . $sDisplayName . "</a></td>\n");
-         print("</tr>\n");
-      } 
-      print("<tr>\n");
-      print("<td class=\"title1\" align=\"center\">");
-      print("&nbsp;&nbsp;<a href=\"#\" onclick=\"CheckAll();\">");
-      print("<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_icons/tg_check.gif\" alt=\"$owl_lang->alt_toggle_check_box\" title=\"$owl_lang->alt_toggle_check_box\" border=\"0\"></img></a>");
-      print("</td><td class=\"title1\" width=\"100%\" colspan=\"2\">&nbsp;</td></tr>");
-*/
-
-
-
-//sun2earth end old group administration
-//sun2earth begin
 // Loads the users, mainusers and adminusers from the DB
+
       $qSetUsers = "SELECT DISTINCT id,username,name,email from $default->owl_users_table,$default->owl_users_grpmem_table WHERE $default->owl_users_grpmem_table.userid=$default->owl_users_table.id AND $default->owl_users_grpmem_table.groupid='$id'"; $sql = new Owl_DB;
       $sql->query($qSetUsers);
       while ($sql->next_record())
@@ -1048,22 +868,11 @@ function printusers()
 
 
 // Section for members of a group
-          $xtpl->assign('HEADING_MEMBER_GROUP', $owl_lang->owl_group_user . " (".count($fselectedusers)."/".count($aUserList) . ")");
-	  //fPrintSectionHeader($owl_lang->owl_group_user . " (".count($fselectedusers)."/".count($aUserList) . ")");
-	  //print("<tr><td>");
-	  //fPrintButtonSpace(12, 1);
-	  //print("</td></tr>\n");
-	  //print("\n<table cellspacing=\"0\" align=\"center\" colspan=\"3\" cellpadding=\"0\" border=\"0\">\n");
-      //print("<tr>\n");
+
+      $xtpl->assign('HEADING_MEMBER_GROUP', $owl_lang->owl_group_user . " (".count($fselectedusers)."/".count($aUserList) . ")");
       $xtpl->assign('TITLE_AVAILABLE', $owl_lang->acl_available_users);
       $xtpl->assign('TITLE_SELECTED', $owl_lang->acl_selected_users);
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_available_users</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">&nbsp;</td>\n");
-      //print("<td class=\"admin3\" align=\"center\" nowrap=\"nowrap\">$owl_lang->acl_selected_users</td>\n");
-      //print("</tr>\n");
-      //print("<tr>\n");
-      //print("<td class=\"form2\">\n");
-      //print("<select multiple=\"multiple\" size=\"10\" name=\"fallusers[]\" class=\"fpullacl\">\n");
+
       if (!empty($aUserList))
       {
          foreach ($aUserList as $aUsers)
@@ -1579,21 +1388,16 @@ function printusers()
       {
          $xtpl->assign('STATUS_MSG', $owl_lang->saved);
          $xtpl->parse('main.edhtml.StatusMsg');
-         //fPrintSectionHeader($owl_lang->saved, "admin3");
       }
-      //fPrintSectionHeader($owl_lang->html_title);
       $xtpl->assign('EDHTML_TITLE', $owl_lang->html_title);
       $urlArgs= array();
       $urlArgs['sess']      = $sess;
       $urlArgs['type']      = 'html';
       $urlArgs['action']      = 'edhtml';
-      //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"action\" value=\"edhtml\"></input></td></tr>");
-      //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"type\" value=\"html\"></input></td></tr>");
-      //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"sess\" value=\"$sess\"></input></td></tr>");
    
       $xtpl->assign('EDHTML_EXPAND_TITLE', $owl_lang->ht_expand_width);
       $xtpl->assign('EDHTML_EXPAND_VALUE', $default->table_expand_width);
-      //fPrintFormTextLine($owl_lang->ht_expand_width, "expand_width", 10, $default->table_expand_width);
+
       $xtpl->assign('EDHTML_COLLAPSE_TITLE', $owl_lang->ht_collapse_width);
       $xtpl->assign('EDHTML_COLLAPSE_VALUE', $default->table_collapse_width);
       
@@ -3176,7 +2980,6 @@ function fPrintHomeDir ( $currentparent, $level , $homedir, $stoplevel = "---")
          printusers();
          printgroups();
          $xtpl->assign('HEADING_TITLE', $owl_lang->edit_group);
-         //fPrintSectionHeader($owl_lang->edit_group);
          printgroup($group);
       }
 
