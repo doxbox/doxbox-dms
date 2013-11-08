@@ -560,33 +560,6 @@ else
    //$FolderQuery = "SELECT * from $default->owl_folders_table where parent = '$parent' $whereclause order by name $sortname $sLimit";
 }
 
-
-
-if(!$default->old_action_icons)
-{
-   //$mid = new LayersMenu();
-   //$mid->setDirroot($default->owl_fs_root . "/scripts/phplayersmenu/");
-   //$mid->setImgwww($default->owl_root_url . '/scripts/phplayersmenu/menuimages/');
-
-   if (substr(php_uname(), 0, 7) != "Windows")
-   {
-      //$mid->setIcondir($default->owl_fs_root . "/templates/$default->sButtonStyle/icon_action/");
-   }
-   else
-   {
-      //$mid->setIcondir(ereg_replace("([A-Z]\:|[a-z]\:)", "", ereg_replace("[\\\]", "/",$default->owl_fs_root)) . "/templates/$default->sButtonStyle/icon_action/");
-   }
-   //$mid->setIconwww($default->owl_graphics_url . "/$default->sButtonStyle/icon_action/");
-   //$mid->setIconsize(17, 20);
- 
-   //fSetupFolderActionMenus($FolderQuery);
-   //fSetupFileActionMenus($MenuFileQuery);
-
-   //$mid->printHeader();
-
-}
-
-
 //FOR_FOLDERS
 
 if ($expand == 1)
@@ -752,15 +725,6 @@ print('</script>');
    } 
 } 
 
-
-//if(!$default->old_action_icons)
-//{
-   //$mid->printFooter();
-//}
-
-
-//$xtpl->parse('main.PrefsBarTop');
-//$xtpl->parse('main.PrefsBarBottom');
 fSetElapseTime();
 fSetOwlVersion();
 $xtpl->parse('main.Footer');

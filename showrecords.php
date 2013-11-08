@@ -701,7 +701,6 @@ if ($type == "t" or $type == "br")
          {
             if(!$default->old_action_icons)
             {
-               //$xtpl->assign('FOLDER_MENU', $mid->getMenu('vermenuf' .$sql->f("id")));
                fSetupFolderActionMenusXTPL($sql->f("id"), $sql->f("name"));
                $xtpl->parse('main.DataBlock.Folder.filename');
             }

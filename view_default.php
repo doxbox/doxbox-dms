@@ -462,7 +462,6 @@ while ($sql->next_record())
          {
             if(!$default->old_action_icons)
             {
-               //$xtpl->assign('FOLDER_MENU', $mid->getMenu('vermenuf' .$sql->f("id")));
                fSetupFolderActionMenusXTPL($sql->f("id"), $sql->f("name"));
                $xtpl->parse('main.DataBlock.Folder.filename');
             }
@@ -523,7 +522,6 @@ while ($sql->next_record())
          {
             if(!$default->old_action_icons)
             {
-               //$xtpl->assign('FOLDER_MENU', $mid->getMenu('vermenuf' .$sql->f("id")));
                fSetupFolderActionMenusXTPL($sql->f("id"), $sql->f("name"));
                $xtpl->parse('main.DataBlock.Folder.filename');
             }
@@ -762,7 +760,6 @@ if ($default->owl_LookAtHD != "false")
 } 
 
 
-//$midf->printFooter();
 //*************************************
 // BEGIN Print Files
 //*************************************
