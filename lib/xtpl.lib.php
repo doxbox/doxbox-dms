@@ -3480,7 +3480,7 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
    //print("N: $iNumrows <br />");
    $sSelf = basename($_SERVER["PHP_SELF"]);
 
-   if ($iApproved == 0 and $default->peer_review_leave_old_file_accessible == true and  $sSelf == "browse.php")
+   if ($iApproved == 0 and $default->peer_review_leave_old_file_accessible == 1 and  $sSelf == "browse.php")
    {
       if ($iNumrows == 0)
       {
