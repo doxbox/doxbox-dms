@@ -821,7 +821,7 @@ while ($sql->next_record())
          {
             $backup_parent = $parent;
          }
-         $sQuery = "SELECT * FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\_%" . $file_extension . "' OR filename = '$filename') AND (parent = '$backup_parent' OR parent = '$parent') ORDER BY major_revision desc, minor_revision desc";
+         $sQuery = "SELECT * FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\_%" . $file_extension . "') AND (parent = '$backup_parent' OR parent = '$parent') ORDER BY major_revision desc, minor_revision desc";
          $CheckOlderVersion->query($sQuery);
       }
       else

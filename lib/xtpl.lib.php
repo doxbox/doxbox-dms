@@ -3458,7 +3458,7 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
          {
             $backup_parent = $parent;
          }
-         $CheckOlderVersion->query("SELECT * FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\_%" . $file_extension . "' OR filename = '$filename') AND (parent = '$backup_parent' OR parent = '$parent') ORDER BY major_revision desc, minor_revision desc");
+         $CheckOlderVersion->query("SELECT * FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\_%" . $file_extension . "') AND (parent = '$backup_parent' OR parent = '$parent') ORDER BY major_revision desc, minor_revision desc");
       }
       else
       {
@@ -3474,7 +3474,6 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
       }
       $iNumrows = $CheckOlderVersion->num_rows();
       $CheckOlderVersion->next_record();
-      //$CheckOlderVersion->next_record();
       $fid = $CheckOlderVersion->f("id");
    }
 
