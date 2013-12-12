@@ -459,7 +459,7 @@ function printusers()
          $xtpl->parse('main.User.FirstDir');
          fPrintHomeDirXtpl("1", "--|", $sql->f("firstdir"), '---','main.User.FirstDir', 'FIRSTDIR');
 
-         $xtpl->assign('USER_QUOTA_LABEL', $owl_lang->quota .  ": &nbsp; &nbsp; " . $sql->f("quota_current") . " /");
+         $xtpl->assign('USER_QUOTA_LABEL', $owl_lang->quota .  ": &nbsp; &nbsp; " . gen_filesize($sql->f("quota_current")) . " / " . gen_filesize($sql->f("quota_max")));
          $xtpl->assign('USER_QUOTA_VALUE', $sql->f("quota_max"));
 
          $sql_active_sess = new Owl_DB;
