@@ -2009,12 +2009,12 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
             $sql->query("UPDATE $default->owl_files_table SET f_size='$doc_size', smodified=$smodified, $versionchange='$new_version_num',description='$newdesc', updatorid='$userid', description_search='" . fReplaceSpecial($newdesc) . "'  WHERE linkedto='$iUpdateID'") or unlink($newpath);
 
             $sql->query("UPDATE $default->owl_searchidx SET owlfileid='$idbackup'  WHERE owlfileid='$iUpdateID'");
-//fOwlWebDavLog ("JUPLOAD", "AFTER FILE INSERT");
+
             fIndexAFile($backup_filename, $newpath, $iUpdateID);
-//fOwlWebDavLog ("JUPLOAD", "INDEXED FILE");
+
 
             fCopyFileAcl($iUpdateID, $idbackup);
-//fOwlWebDavLog ("JUPLOAD", "COPY FILE ACL");
+
 
             owl_syslog(FILE_UPDATED, $userid, $userfile["name"], $parent, $version_name, "FILE", $userfile['size']);
          }
