@@ -292,7 +292,7 @@ while ($sql->next_record())
                $xtpl->assign('STATUS_CLASS', 'crejected');
                break;
          }
-         $xtpl->parse('main.ViewFileLog.FilePeerStatus');
+         $xtpl->parse('main.ViewFileLog.FileVersions.FilePeerStatus');
       }
    
       $xtpl->assign('FILE_DATE_MODIFIED', date($owl_lang->localized_date_format, strtotime($sql->f("smodified")) + $default->time_offset));
