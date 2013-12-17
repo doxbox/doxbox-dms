@@ -26,28 +26,6 @@
 
 defined( 'OWL_INCLUDE' ) or die( 'Access Denied' );
 
-define( 'creatorid', '0');
-define( 'ownergroup', '1');
-define( 'description', '2');
-define( 'metadata', '3');
-define( 'title', '4');
-define( 'security', '5');
-define( 'userid', '6');
-define( 'groupid', '7');
-define( 'owlread', '8');
-define( 'owlviewlog', '9');
-define( 'owldelete', '10');
-define( 'owlcopy', '11');
-define( 'owlmove', '12');
-define( 'owlproperties', '13');
-define( 'owlupdate', '14');
-define( 'owlcomment', '15');
-define( 'owlcheckin', '16');
-define( 'owlemail', '17');
-define( 'owlrelsearch', '18');
-define( 'owlsetacl', '19');
-define( 'owlmonitor', '20');
-
 function GetFromHD($GetWhat, $ThePath) 
 {
    global $default;

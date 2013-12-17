@@ -75,12 +75,6 @@ $xtpl->assign('IMPUSER_BTN_RESET_ALT', $owl_lang->alt_reset_form);
 
 if (!empty($userfile))
 {
-   define( 'GROUPID', '0');
-   define( 'USERNAME', '1');
-   define( 'FULLNAME', '2');
-   define( 'PASSWORD', '3');
-   define( 'MAXSESSION', '12');
-    
    $handle = fopen ($userfile["tmp_name"],"r");
    $qSQL = new OWL_db;
    $dNowDate = $qSQL->now();

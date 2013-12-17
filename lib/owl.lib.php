@@ -26,59 +26,8 @@
  * $Id: owl.lib.php,v 1.98 2006/11/16 16:02:40 b0zz Exp $
  */
 defined( 'OWL_INCLUDE' ) or die( 'Access Denied' );
-define( 'DOXBOX_VERSION' ,'1.12');
 
-define('INIT_USERNAME','USERNAME_EMPTY_GT_THAN_20_TAPERRED_WITH');
-
-define ("NEW_FILE", "0");
-define ("UPDATED_FILE", "1");
-define ("NEW_COMMENT", "2");
-define ("DELETED_FILE", "3");
-define ("NEW_PASSWORD", "4");
-define ("NEW_APPROVED", "5");
-define ("REMINDER_APPROVED", "6");
-define ("FINAL_APPROVED", "7");
-define ("FINAL_AUTO_APPROVED", "8");
-define ("REJECT_APPROVED", "9");
-define ("ADMIN_PASSWORD", "10");
-define ("APPROVED", "11");
-define ("SELF_REG_USER", "12");
-define ("NEW_NOTE", "13");
-
-define ("LOGIN", "1");
-define ("LOGIN_FAILED", "2");
-define ("LOGOUT", "3");
-define ("FILE_DELETED", "4");
-define ("FILE_UPLOAD", "5");
-define ("FILE_UPDATED", "6");
-define ("FILE_DOWNLOADED", "7");
-define ("FILE_CHANGED", "8");
-define ("FILE_LOCKED", "9");
-define ("FILE_UNLOCKED", "10");
-define ("FILE_EMAILED", "11");
-define ("FILE_MOVED", "12");
-define ("FOLDER_CREATED", "13");
-define ("FOLDER_DELETED", "14");
-define ("FOLDER_MODIFIED", "15");
-define ("FOLDER_MOVED", "16");
-define ("FORGOT_PASS", "17");
-define ("USER_REG", "18");
-define ("FILE_VIEWED", "19");
-define ("FILE_VIRUS", "20");
-define ("FILE_COPIED", "21");
-define ("FOLDER_COPIED", "22");
-define ("FILE_LINKED", "23");
-define ("USER_ADMIN", "24");
-define ("TRASH_CAN", "25");
-define ("FILE_ACL", "26");
-define ("FOLDER_ACL", "27");
-define ("FOLDER_DISTRIBUTE", "28");
-define ("FOLDER_LINKED", "29");
-define ("FILE_REVIEW", "30");
-define ("FILE_APPROVED", "31");
-define ("FILE_REJECTED", "32");
-define ("FILE_PUBLISHED", "33");
-
+require_once($default->owl_fs_root ."/lib/constants.php");
 require_once($default->owl_fs_root ."/lib/pclzip/pclzip.lib.php");
 require_once($default->owl_fs_root ."/lib/indexing.lib.php");
 require_once($default->owl_fs_root ."/lib/security.lib.php");

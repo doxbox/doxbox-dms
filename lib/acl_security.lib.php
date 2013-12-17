@@ -26,9 +26,6 @@
 
 defined( 'OWL_INCLUDE' ) or die( 'Access Denied' );
 
-define('EVERYONE', '0');
-define('PERMIT', '1');
-define('DENY', '0');
 //
 // This function is simple...it returns either a 1 or 0
 // If the authentication is good, it returns 1
