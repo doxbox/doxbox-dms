@@ -3806,7 +3806,6 @@ function getprefs ()
    $default->thumb_disp_action =  $sql->f("thumb_disp_action");
    $default->thumb_disp_held =  $sql->f("thumb_disp_held");
    $default->thumbnails_tool_path = $sql->f("thumbnails_tool_path");
-   $default->pdf_thumb_path = $sql->f("pdf_thumb_path");
 
    $default->pdf_pdftk_tool_greater_than_1_40 = $sql->f("pdf_pdftk_tool_greater_than_1_40");
    $default->pdf_watermark_path = $sql->f("pdf_watermark_path");
