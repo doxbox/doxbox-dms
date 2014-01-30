@@ -1469,7 +1469,7 @@ function fGenerateThumbNail($fid)
                        $sCoverPageFileExtension == "png" 
                       )
                    {
-                      exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $sCoverPageFile ."\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
+                      exec(escapeshellarg($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $sCoverPageFile ."\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
                    }
                    else if ($sCoverPageFileExtension == "xml" or $sCoverPageFileExtension == "xhtml" or $sCoverPageFileExtension == "html")
                    {
@@ -1508,7 +1508,7 @@ function fGenerateThumbNail($fid)
                          }
                          else
                          {
-                                  exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $sCoverPageImage ."\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
+                                  exec(escapeshellarg($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $sCoverPageImage ."\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
                          }
                       }
                    }
@@ -1545,7 +1545,7 @@ function fGenerateThumbNail($fid)
                 }
                 else
                 {
-                      exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $sImageFile ."\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
+                      exec(escapeshellarg($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $sImageFile ."\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
                }
             }
          }
@@ -1554,7 +1554,7 @@ function fGenerateThumbNail($fid)
          if ($sFileExtension == "pdf" and file_exists($default->thumbnails_tool_path))
          {
 
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -background white -flatten -alpha off -shave 1x1 -bordercolor black -border 1 \"".$path."[0]\" \"". $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png\"");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -background white -flatten -alpha off -shave 1x1 -bordercolor black -border 1 \"".$path."[0]\" \"". $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png\"");
                $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".png";
          }
          else if ($sFileExtension == "doc" and file_exists($default->wordtotext_path))
@@ -1575,7 +1575,7 @@ function fGenerateThumbNail($fid)
                fclose($fp);
             }
             // USE imagemagik convert tool to generate a  thumbnail
-             exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".ps\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
+             exec(escapeshellarg($default->thumbnails_tool_path) . " \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . ".ps\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
          }
          else
          {
@@ -1588,7 +1588,7 @@ function fGenerateThumbNail($fid)
                    $temp_full_size_png = $path;
                 break;
                 case "psd":
-                   exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $path . "[0]\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
+                   exec(escapeshellarg($default->thumbnails_tool_path) . " \"" . $path . "[0]\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
                    $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png";
                 break;
                 case "docx":
@@ -1631,7 +1631,7 @@ function fGenerateThumbNail($fid)
                    $temp_full_size_png = $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png";
                 break;
             }
-             exec(escapeshellcmd($default->thumbnails_tool_path) . " \"" . $path . "\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
+             exec(escapeshellarg($default->thumbnails_tool_path) . " \"" . $path . "\" \"" . $tmpDir .DIR_SEP. $default->owl_current_db . "_" . $fid . "_tmp.png\"");
          }
 
 
@@ -1658,19 +1658,19 @@ function fGenerateThumbNail($fid)
             if ($default->thumbnails_small_width > 0)
             {
                $iPercentShrinkSmall = 100 *  $default->thumbnails_small_width / $imagewidth;
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -strip -resize " . $iPercentShrinkSmall ."% \"" . $temp_full_size_png . "\" \"" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_small.png\"");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -strip -resize " . $iPercentShrinkSmall ."% \"" . $temp_full_size_png . "\" \"" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_small.png\"");
             }
 
             if ($default->thumbnails_med_width > 0)
             {
                $iPercentShrinkMed =  100 *  $default->thumbnails_med_width / $imagewidth;
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -strip -resize " . $iPercentShrinkMed ."% \"" . $temp_full_size_png . "\" \"" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_med.png\"");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -strip -resize " . $iPercentShrinkMed ."% \"" . $temp_full_size_png . "\" \"" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_med.png\"");
             }
 
             if ($default->thumbnails_large_width > 0)
             {
                $iPercentShrinkLarge = 100 *  $default->thumbnails_large_width / $imagewidth;
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -strip -resize " . $iPercentShrinkLarge ."% \"" . $temp_full_size_png . "\" \"" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_large.png\"");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -strip -resize " . $iPercentShrinkLarge ."% \"" . $temp_full_size_png . "\" \"" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_large.png\"");
             }
          }
       }
@@ -1696,9 +1696,9 @@ function fGenerateThumbNail($fid)
                $iPercentShrinkSmall = 100 *  $default->thumbnails_small_width / $imagewidth;
                $iPercentShrinkMed =  100 *  $default->thumbnails_med_width / $imagewidth;
                $iPercentShrinkLarge = 100 *  $default->thumbnails_large_width / $imagewidth;
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -resize " . $iPercentShrinkSmall ."% '" . $tmpDir . "/00000002.png' '" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_small.png'");
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -resize " . $iPercentShrinkMed ."% '" . $tmpDir . "/00000002.png' '" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_med.png'");
-               exec(escapeshellcmd($default->thumbnails_tool_path) . " -resize " . $iPercentShrinkLarge ."% '" . $tmpDir . "/00000002.png' '" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_large.png'");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -resize " . $iPercentShrinkSmall ."% '" . $tmpDir . "/00000002.png' '" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_small.png'");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -resize " . $iPercentShrinkMed ."% '" . $tmpDir . "/00000002.png' '" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_med.png'");
+               exec(escapeshellarg($default->thumbnails_tool_path) . " -resize " . $iPercentShrinkLarge ."% '" . $tmpDir . "/00000002.png' '" . $default->thumbnails_location .DIR_SEP. $default->owl_current_db . "_" . $fid . "_large.png'");
             }
          }
       }
