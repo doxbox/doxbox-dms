@@ -675,7 +675,7 @@ class HTTP_WebDAV_Server
         header('Content-Type: text/xml; charset="utf-8"');
         
         // ... and payload
-        echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+        echo "<?xml version=\"1.0\" encoding=\"utf-8\"?" . ">\n";
         echo "<D:multistatus xmlns:D=\"DAV:\">\n";
             
         foreach ($files["files"] as $file) {
@@ -819,7 +819,7 @@ class HTTP_WebDAV_Server
             $this->http_status("207 Multi-Status");
             header('Content-Type: text/xml; charset="utf-8"');
             
-            echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+            echo "<?xml version=\"1.0\" encoding=\"utf-8\"?" . ">\n";
 
             echo "<D:multistatus xmlns:D=\"DAV:\">\n";
             echo " <D:response>\n";
@@ -1403,7 +1403,7 @@ class HTTP_WebDAV_Server
             
             header('Content-Type: text/xml; charset="utf-8"');
             header("Lock-Token: <$options[locktoken]>");
-            echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+            echo "<?xml version=\"1.0\" encoding=\"utf-8\"?" . ">\n";
             echo "<D:prop xmlns:D=\"DAV:\">\n";
             echo " <D:lockdiscovery>\n";
             echo "  <D:activelock>\n";
