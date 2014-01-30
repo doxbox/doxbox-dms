@@ -3,12 +3,12 @@
   <div id="motd">
   <a name="top"></a>
 <!-- BEGIN: PrefsBarTop -->  
+<!-- BEGIN: Online -->
     <div id="userinfo">
       <strong>{USERNAME_LABEL}</strong> {FULLNAME} ({USERNAME})
       <strong>{LASTLOG_LABEL}</strong> {LASTLOG}
       <strong>{CURRENTDB_LABEL}</strong> {CURRENTDB}
     </div>
-<!-- BEGIN: Online -->
     <div id="userinfo">
       <ul class="nav">
         <li class="li_father" style="padding: 0px;"><span class="fake_link">{ONLINE_TOTALUSERS} User(s) Online</span>
