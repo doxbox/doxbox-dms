@@ -1953,7 +1953,7 @@ function verify_session($sess)
    // Sanitize the sessions for tampering
    $sess = fOwl_ereg_replace(" ", "", $sess);
 
-   if (! ereg("^[a-fA-F0-9]", $sess))
+   if (! preg_match("/^[a-fA-F0-9]/", $sess))
    {
       $sess="1";
    }

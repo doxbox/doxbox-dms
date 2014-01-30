@@ -55,7 +55,7 @@ function check_auth($id, $action, $checkuserid, $report = false, $recursive = tr
 	//$foldercreator = owlfoldercreator($id);
 
     $bCheckFolder = false;
-    list($type, $sub) = split("_", $action);
+    list($type, $sub) = explode("_", $action);
     if ($type == "folder")
     {
        $bCheckFolder = true;
