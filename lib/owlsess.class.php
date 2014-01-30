@@ -60,7 +60,7 @@ class Owl_Session
             $current = time() +60*60*24*$default->cookie_timeout; 
          }
 
-         if (empty($_POST[currentdb]))
+         if (empty($_POST['currentdb']))
          {
             $iCurrentDB = "0";
          }
