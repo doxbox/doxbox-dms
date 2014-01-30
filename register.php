@@ -105,7 +105,7 @@ if ($default->registration_using_captcha)
 	);
 
    global $captcha;
-   $captcha =& new hn_captcha($CAPTCHA_INIT);
+   $captcha = new hn_captcha($CAPTCHA_INIT);
 }
 
 require_once($default->owl_fs_root ."/lib/security.lib.php");
