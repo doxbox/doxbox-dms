@@ -107,7 +107,6 @@ function delFile($id, $action, $historical = 0)
                } 
             } 
             owl_syslog(FILE_DELETED, $userid, $filename, $parent, $owl_lang->log_detail, "FILE");
-
             if (file_exists($default->thumbnails_location))
             {
                $handle = opendir($default->thumbnails_location);
@@ -1985,37 +1984,50 @@ function verify_session($sess)
             } 
             else
             { 
-               if ($default->remember_me)
+               if (class_exists('DmsAPI'))
                {
-                  setcookie ("owl_sessid", "");
+                  $verified["bit"] = 5;
                }
-               if ($parent == "" || $fileid == "")
-               {                    
-			      header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=5&currentdb=$default->owl_current_db");
-               }                 
-               else              
-               {                 
-			      header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=5&fileid=$fileid&parent=$parent&currentdb=$default->owl_current_db");
-               }              
-	       exit;
+               else
+               {
+                  if ($default->remember_me)
+                  {
+                     setcookie ("owl_sessid", "");
+                  }
+                  if ($parent == "" || $fileid == "")
+                  {                    
+		     header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=5&currentdb=$default->owl_current_db");
+                  }                 
+                  else              
+                  {                 
+		     header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=5&fileid=$fileid&parent=$parent&currentdb=$default->owl_current_db");
+                  }              
+	          exit;
+               }
             } 
          } 
          else
          {
-            if ($default->remember_me)
+            if (class_exists('DmsAPI'))
             {
-               setcookie ("owl_sessid", "");
-            }
-			if ($parent == "" || $fileid == "")
-            {
-               header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=7&currentdb=$default->owl_current_db");
+               $verified["bit"] = 7;
             }
             else
-            {                  
-               header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=7&fileid=$fileid&parent=$parent&currentd
-b=$default->owl_current_db");
+            {
+               if ($default->remember_me)
+               {
+                  setcookie ("owl_sessid", "");
+               }
+	       if ($parent == "" || $fileid == "")
+               {
+                  header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=7&currentdb=$default->owl_current_db");
+               }
+               else
+               {                  
+                  header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=7&fileid=$fileid&parent=$parent&currentdb=$default->owl_current_db");
+               }
+               exit;
             }
-            exit;
          } 
       } 
    } 
@@ -2086,6 +2098,7 @@ function delTree($fid)
       } 
    } 
 } 
+
 function find_path($parent, $bDisplayOnly = false)
 {
    global $default;
@@ -2827,6 +2840,8 @@ function owlfileparent($fileid)
 
    $sql = $cCommonDBConnection;
 
+   $fileparent = -1;
+
    if (empty($sql))
    {
       $sql = new Owl_DB;
@@ -3395,9 +3410,37 @@ function printError($message, $submessage = "", $type = "ERROR")
    global $owl_lang;
    global $xtpl;
 
-   if (!class_exists('XTemplate')) 
+   /**
+   * This means that We are probably running the API
+   * So print the Error in the Requested Format
+   */
+   if (class_exists('DmsAPI')) 
    {
-      print("$type: $message \n $submessage");
+      /** Find the Class Variable */
+      foreach ($GLOBALS as $mGlobal)
+      {
+         if (is_object($mGlobal))
+         {
+            if (is_subclass_of($mGlobal, 'DmsAPI'))
+            {
+               $oDMS = $mGlobal;
+            }
+         }
+      }
+
+      if ($oDMS->GetResponseType() == 'XML')
+      {
+         print('<?xml version="1.0" encoding="UTF-8" ?' . '>' .
+                "\n<dms_response><code>0000</code><msg>$message</msg><submsg>$submessage</submsg></dms_response>");
+      }
+      else
+      {
+         $aError = array();
+         $aError['code'] = '0000';
+         $aError['msg'] = $message;
+         $aError['submsg'] = $submessage;
+         print(json_encode($aError));
+      }
       exit;
    }
  
@@ -3916,10 +3959,41 @@ function fCalculateQuota($size, $current_user, $type)
    }
    if (($new_quota > $quota_max) and fIsQuotaEnabled($current_user))
    {
-      printError("<b class=hilite>" . uid_to_name($current_user) ."</b>: $owl_lang->err_quota" . gen_filesize($size) . "$owl_lang->err_quota_needed" . gen_filesize($quota_max - $quota_current) . "$owl_lang->err_quota_avail");
-      if (($quota_max - $quota_current) <= 0)
+      if (class_exists('DmsAPI')) 
       {
-         printError("$owl_lang->err_quota_exceed");
+         /** Find the Class Variable */
+         foreach ($GLOBALS as $mGlobal)
+         {
+            if (is_object($mGlobal))
+            {
+               if (is_subclass_of($mGlobal, 'DmsAPI'))
+               {
+                  $oDMS = $mGlobal;
+               }
+            }
+         }
+
+         if ($oDMS->GetResponseType() == 'XML')
+          {
+             print('<?xml version="1.0" encoding="UTF-8" ?' . '>' .
+                    "\n<dms_response><code>0080</code><user_id>$current_user</user_id><quota_current>$quota_current</quota_current><quota_max>$quota_max</quota_max><quota_needed>$size</quota_needed><msg>$owl_lang->err_quota_exceed</msg></dms_response>");
+          }
+          else
+          {
+             $aError = array();
+             $aError['code'] = 0080;
+             $aError['msg'] = $owl_lang->err_quota_exceed;
+             print(json_encode($aError));
+          }
+          exit;
+      } 
+      else
+      {
+         printError("<b class=hilite>" . uid_to_name($current_user) ."</b>: $owl_lang->err_quota" . gen_filesize($size) . "$owl_lang->err_quota_needed" . gen_filesize($quota_max - $quota_current) . "$owl_lang->err_quota_avail");
+         if (($quota_max - $quota_current) <= 0)
+         {
+            printError("$owl_lang->err_quota_exceed");
+         }
       }
    }
    return $new_quota;
