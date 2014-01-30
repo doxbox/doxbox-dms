@@ -588,7 +588,7 @@ $owl_lang->err_old_pass_ver_failed    = "Nykyinen salasanasi v&auml;&auml;rin<br
 $owl_lang->err_new_confirm_different  = "Uusi salasanasi ja salasanan vahvistus eiv&auml;t vastaa toisiaan<br />";
 $owl_lang->err_pass_restriction_1     = "Salasana pit&auml;&auml; olla v&auml;hint&auml;&auml;n '%s' merkki&auml; pitk&auml; <br />";
 $owl_lang->err_pass_restriction_2     = "sis&auml;lt&auml;&auml; v&auml;hint&auml;&auml;n '%s' numeroa [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "ja v&auml;hint&auml;&auml;n '%s' erikoismerkki&auml; [ ~!@#$&37;^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "ja v&auml;hint&auml;&auml;n '%s' erikoismerkki&auml; [ ~!@#$%%^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
 $owl_lang->err_cant_reuse_passwords   = "Et voi k&auml;ytt&auml;&auml; aikaisemmin k&auml;ytt&auml;m&auml;&auml;si salasanaa";
 $owl_lang->pass_change_email_1        = "Salasanaasi ei vaihdettu koska et k&auml;yt&auml; Owl j&auml;rjestelm&auml;n omaa k&auml;ytt&auml;j&auml;tunnistusta";
 $owl_lang->pass_change_email_2        = "K&auml;ytt&auml;j&auml;tunnistusmallisi on: ";

@@ -590,7 +590,7 @@ $owl_lang->err_new_confirm_different  = "Kata Sandi Baru dan Kata Sandi Konfirma
 $owl_lang->err_old_pass_ver_failed    = "Kata Sandi Lama Anda salah<br />";
 $owl_lang->err_pass_restriction_1     = "Kata sandi Anda minimal harus memiliki panjang &ldquo;%s&rdquo; karakter <br />";
 $owl_lang->err_pass_restriction_2     = "mengandung setidaknya  &ldquo;%s&rdquo; angka [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "dan sedikitnya &ldquo;%s&rdquo; karakter spesial [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "dan sedikitnya &ldquo;%s&rdquo; karakter spesial [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Anda memilih nama pengguna dengan panjang &ldquo;%s&rdquo; is %d karakter, sedangkan nama pengguna yang diperbolehkan minimal harus terdiri dari %d karakter.";
 $owl_lang->pass_change_email_1        = "Kata Sandi Anda tidak di-reset karena Anda tidak menggunakan Otentikasi Owl"; //Your Password was not Reset as you are not using Owl Authentication
 $owl_lang->pass_change_email_2        = "Tipe Otentikasi Anda ialah: ";

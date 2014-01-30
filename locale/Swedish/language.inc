@@ -599,7 +599,7 @@ $owl_lang->err_new_confirm_different  = "Nytt lösenord och Beräfta lösenord s
 $owl_lang->err_old_pass_ver_failed    = "Gammalt lösenord är felaktigt <br />";
 $owl_lang->err_pass_restriction_1     = "Lösenord måste bestå av minst &ldquo;%s&rdquo; tecken <br />";
 $owl_lang->err_pass_restriction_2     = "innehålla minst &ldquo;%s&rdquo; siffror [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "och minst &ldquo;%s&rdquo; specialtecken [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "och minst &ldquo;%s&rdquo; specialtecken [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Valt användarnamn  &ldquo;%s&rdquo; består av %d tecken, och måste bestå av minst  %d tecken.";
 $owl_lang->pass_change_email_1        = "Ditt lösenord återställdes inte eftersom du inte använder Owl Verifiering";
 $owl_lang->pass_change_email_2        = "Din verifieringstyp är: ";

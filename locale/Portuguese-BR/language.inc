@@ -583,7 +583,7 @@ $owl_lang->err_new_confirm_different  = "Sua nova senha e a senha de confirmaç�
 $owl_lang->err_old_pass_ver_failed    = "Sua antiga senha está incorreta<br />";
 $owl_lang->err_pass_restriction_1     = "Sua senha precisa ter pelo menos  &ldquo;%s&rdquo; caracteres de tamanho <br />";
 $owl_lang->err_pass_restriction_2     = "conter pelo menos &ldquo;%s&rdquo; números [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "e pelo menos &ldquo;%s&rdquo; special character [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "e pelo menos &ldquo;%s&rdquo; special character [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Você escolheu um nome de usuário &ldquo;%s&rdquo; que tem %d caracteres de tamanho e precisa ser de pelo menos  %d caracteres de tamanho.";
 $owl_lang->pass_change_email_1        = "Sua senha não foi inicializada por que você não está usando autenticação OWL.";
 $owl_lang->pass_change_email_2        = "Sua autenticação é do tipo: ";

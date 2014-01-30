@@ -561,7 +561,7 @@ $owl_lang->err_new_confirm_different  = "Vasa Nova i Potvrdna sifra se ne slazu 
 $owl_lang->err_old_pass_ver_failed    = "Vasa stara sifra nije ispravna <br />";
 $owl_lang->err_pass_restriction_1     = "Vasa sifra mora biti namjanje '%s' karakter(a) duga, <br />";
 $owl_lang->err_pass_restriction_2     = "da sadrzi najmanje '%s' numerickih znakova [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "i bar '%s' specijalnih znakova [ ~!@#$&37;^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "i bar '%s' specijalnih znakova [ ~!@#$%%^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Vase odabrano korisnicko ime '%s' je %d karaktera dugo, a treba da bude bar %d znakova.";
 $owl_lang->pass_change_email_1        = "Vasa sifra nije resetovana jer ne koristite OWL INTRANET sigurnosnu provjeru";
 $owl_lang->pass_change_email_2        = "Vasa sigurnosna provjera je : ";

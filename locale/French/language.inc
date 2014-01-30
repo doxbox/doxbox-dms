@@ -566,7 +566,7 @@ $owl_lang->err_new_confirm_different  		= "Le mot de passe et sa confirmation ne
 $owl_lang->err_old_pass_ver_failed    		= "Votre ancien Mot de passe est incorrect <br />";
 $owl_lang->err_pass_restriction_1     		= "Votre Mot de Passe doit contenir un minimum de '%s' caract&egrave;res <br />";
 $owl_lang->err_pass_restriction_2     		= ", contenir au moins '%s' chiffres [0-9] <br />";
-$owl_lang->err_pass_restriction_3     		= "et au moins '%s' caract&egrave;res sp&eacute;ciaux [ ~!@#$&37;^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     		= "et au moins '%s' caract&egrave;res sp&eacute;ciaux [ ~!@#$%%^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough 	= "Votre nom d'utilisateur '%s' est de %d caract&egrave;res, et doit &ecirc;tre d'au moins %d caract&egrave;res.";
 $owl_lang->full_name     			= "Nom ";
 $owl_lang->pass_change_email_1        		= "Votre Mot de Passe n'a pas &eacute;t&eacute; r&eacute;initialis&eacute; car vous n'utilisez pas l'authentification DMS";

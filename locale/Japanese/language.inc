@@ -595,7 +595,7 @@ $owl_lang->err_new_confirm_different  = "パスワードと確認が一致しま
 $owl_lang->err_old_pass_ver_failed    = "あなたの古いパスワードが間違っています <br />";
 $owl_lang->err_pass_restriction_1     = "パスワードには &ldquo;%s&rdquo; 文字以上必要です <br />";
 $owl_lang->err_pass_restriction_2     = "最低 &ldquo;%s&rdquo; の数字 [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "と最低 &ldquo;%s&rdquo; の特殊文字 [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]を含まなければなりません<br />";
+$owl_lang->err_pass_restriction_3     = "と最低 &ldquo;%s&rdquo; の特殊文字 [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]を含まなければなりません<br />";
 $owl_lang->err_username_not_long_enough = "あなたのユーザ名は &ldquo;%s&rdquo;  %d 文字数で、最低 %d 文字数でなければなりません。";
 $owl_lang->pass_change_email_1        = "Your Password was not Reset as you are not using DMS Authentication";
 $owl_lang->pass_change_email_2        = "あなたの認証タイプは: ";

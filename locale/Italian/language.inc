@@ -598,7 +598,7 @@ $owl_lang->err_new_confirm_different   = "La nuova password e la password di con
 $owl_lang->err_old_pass_ver_failed     = "La tua vecchia password non &egrave; corretta <br />";
 $owl_lang->err_pass_restriction_1      = "La tua password deve essere lunga almeno '%s' caratteri<br />";
 $owl_lang->err_pass_restriction_2      = "contenere almeno '%s' carattere numerico [0-9] <br />";
-$owl_lang->err_pass_restriction_3      = "ed almeno '%s' carattere speciale [ ~!@#$&37;^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3      = "ed almeno '%s' carattere speciale [ ~!@#$%%^&*()-=+_|{}][\";:<>.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Your chosen username '%s' is %d chars long, and has to be at least %d characters long.";
 $owl_lang->pass_change_email_1         = "La tua Password non &egrave; stata cambiata perch&egrave; non stai utilizzando la DMS Authentication";
 $owl_lang->pass_change_email_2         = "Il tuo tipo di Autenticazione &egrave;: ";

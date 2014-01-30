@@ -599,7 +599,7 @@ $owl_lang->err_new_confirm_different  = "Your New and Confirm Password do not ma
 $owl_lang->err_old_pass_ver_failed    = "Your Old Password is incorrect <br />";
 $owl_lang->err_pass_restriction_1     = "Your password needs to be at least &ldquo;%s&rdquo; characters long <br />";
 $owl_lang->err_pass_restriction_2     = "contain at least &ldquo;%s&rdquo; numeric [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "and at least &ldquo;%s&rdquo; special character [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "and at least &ldquo;%s&rdquo; special character [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Your chosen username &ldquo;%s&rdquo; is %d chars long, and has to be at least %d characters long.";
 $owl_lang->pass_change_email_1        = "Your Password was not Reset as you are not using DMS Authentication";
 $owl_lang->pass_change_email_2        = "Your Authentication type is" . LABEL_TERMINATOR;

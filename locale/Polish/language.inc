@@ -57,7 +57,7 @@ $owl_lang->err_new_confirm_different    = "Twoje nowe hasło i potwierdzenie has
 $owl_lang->err_old_pass_ver_failed      = "Twoje stare hasło jest niepoprawne <br />";
 $owl_lang->err_pass_restriction_1       = "Twoje hasło powinno mieć przynajmniej &ldquo;%s&rdquo; znaków <br />";
 $owl_lang->err_pass_restriction_2       = "zawierać minimum &ldquo;%s&rdquo; cyfr [0-9] <br />";
-$owl_lang->err_pass_restriction_3       = "oraz przynajmniej &ldquo;%s&rdquo; znaków specjalnych [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3       = "oraz przynajmniej &ldquo;%s&rdquo; znaków specjalnych [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Wybrana nazwa użytkownika &ldquo;%s&rdquo; jest długości %d, a powinna być długości %d znaków.";
 $owl_lang->full_name		        = "Pełna nazwa:";
 $owl_lang->pass_change_email_1          = "Hasło nie zostało ustawione w czasie potwierdzania tożsamości";

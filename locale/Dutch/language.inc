@@ -590,7 +590,7 @@ $owl_lang->err_new_confirm_different  = "Nieuw Wachtwoord en Bevestig Wachtwoord
 $owl_lang->err_old_pass_ver_failed    = "Uw oude wachtwoord in onjuis <br />";
 $owl_lang->err_pass_restriction_1     = "Uw wachtwoord moet ten minste &ldquo;%s&rdquo; tekens lang zijn <br />";
 $owl_lang->err_pass_restriction_2     = "moet ten minste &ldquo;%s&rdquo; numerieke [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "en ten minste &ldquo;%s&rdquo; speciale tekens [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ] bevatten.<br />";
+$owl_lang->err_pass_restriction_3     = "en ten minste &ldquo;%s&rdquo; speciale tekens [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ] bevatten.<br />";
 $owl_lang->err_username_not_long_enough = "De door u gekozen gebruikersnaam &ldquo;%s&rdquo; is %d tekens lang, en moet ten minste %d tekens lang zijn.";
 $owl_lang->pass_change_email_1        = "Uw wachtwoord is niet opnieuw ingesteld, omdat u geen gebruik maakt van Owl-wachtwoordcontrole";
 $owl_lang->pass_change_email_2        = "Uw wachtwoordcontrole type is: ";

@@ -586,7 +586,7 @@ $owl_lang->err_new_confirm_different  = "El password nou i el de confimaci&oacut
 $owl_lang->err_old_pass_ver_failed    = "El teu password antic &eacute;s incorrecte <br />";
 $owl_lang->err_pass_restriction_1     = "El teu password ha de tenir almenys &ldquo;%s&rdquo; caracters <br />";
 $owl_lang->err_pass_restriction_2     = "cont&eacute; almenys &ldquo;%s&rdquo; caracters num&egrave;rics [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "i almenys &ldquo;%s&rdquo; caracters especials [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "i almenys &ldquo;%s&rdquo; caracters especials [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "El nom d'usuari escollit &ldquo;%s&rdquo; t&eacute; %d caracters, i n'ha de tenir almenys %d.";
 $owl_lang->pass_change_email_1        = "Your Password was not Reset as you are not using Owl Authentication";
 $owl_lang->pass_change_email_2        = "El tipus d'autentificaci&oacute; &eacute;s: ";

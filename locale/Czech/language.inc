@@ -593,7 +593,7 @@ $owl_lang->err_new_confirm_different  = "Vaše nové a potvrzené hesla se nesho
 $owl_lang->err_old_pass_ver_failed    = "Vaše staré heslo nebylo zadáno správně<br />";
 $owl_lang->err_pass_restriction_1     = "Vaše heslo potřebuje být přinejmenším &ldquo;%s&rdquo; znaků dlouhé <br />";
 $owl_lang->err_pass_restriction_2     = "Musí obsahovat přinejmenším &ldquo;%s&rdquo; čísla [0-9] <br />";
-$owl_lang->err_pass_restriction_3     = "a přinejmenším &ldquo;%s&rdquo; speciálních znaků [ ~!@#$&37;^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
+$owl_lang->err_pass_restriction_3     = "a přinejmenším &ldquo;%s&rdquo; speciálních znaků [ ~!@#$%%^&amp;*()-=+_|{}][\";:&lt;&gt;.,?/\\ ]<br />";
 $owl_lang->err_username_not_long_enough = "Vámy vybraný uživatel &ldquo;%s&rdquo; je %d znaků dlouhý ale musí být přinejmenším %d znaků dlouhý.";
 $owl_lang->pass_change_email_1        = "Vaše heslo nebylo resetováno dokud nepoužíváte OWL ověření pravosti";
 $owl_lang->pass_change_email_2        = "Váš ověření je: ";

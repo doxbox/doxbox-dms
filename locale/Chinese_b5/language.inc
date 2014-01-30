@@ -587,7 +587,7 @@ $owl_lang->err_new_confirm_different   = "您的新密碼與重複輸入的密�
 $owl_lang->err_old_pass_ver_failed     = "您的舊密碼有誤 <br />";
 $owl_lang->err_pass_restriction_1      = "您的密碼至少必須有 '%s' 個字元 <br />";
 $owl_lang->err_pass_restriction_2      = "包含至少 '%s' 個數字 [0-9] <br />";
-$owl_lang->err_pass_restriction_3      = "且至少要包含 '%s' 個特殊字元 [ ~!@#$&37;^&*()-=+_|{}][\";:<>.,?/\\ ]";
+$owl_lang->err_pass_restriction_3      = "且至少要包含 '%s' 個特殊字元 [ ~!@#$%%^&*()-=+_|{}][\";:<>.,?/\\ ]";
 $owl_lang->err_username_not_long_enough_1  = "您的帳號";
 $owl_lang->err_username_not_long_enough_2  = "至少必須";
 $owl_lang->err_username_not_long_enough_2  = "至少必須";
