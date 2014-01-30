@@ -162,7 +162,7 @@ function delFile($id, $action, $historical = 0)
                $file_extension = $aFirstpExtension[1];
 
                $Quota = new Owl_DB;
-               $sql->query("SELECT * FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\\_%" . $file_extension . "' AND parent = '$backup_parent') OR (filename = '$filename'AND parent = '$parent') order by major_revision desc, minor_revision desc");
+               $sql->query("SELECT * FROM $default->owl_files_table WHERE (filename LIKE '" . $firstpart . "\\\_%" . $file_extension . "' AND parent = '$backup_parent') OR (filename = '$filename' AND parent = '$parent') order by major_revision desc, minor_revision desc");
                while ($sql->next_record())
                {
                   $path = find_path($sql->f("parent"));
