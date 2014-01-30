@@ -1151,8 +1151,8 @@ $owl_lang->news_read			= "Luettu";
 // DEBUG MESSAGES BEGIN
 //********************************************************
 
-$owl_lang->debug_tmp_not_exists		= "DEBUG: DMS:in v&auml;li&auml;aikaishakemisto: $default->owl_tmpdir puuttuu.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: DMS:in v&auml;li&auml;aikaishakemisto: $default->owl_tmpdir Web serveri ei voi kirjoittaa.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: DMS:in v&auml;li&auml;aikaishakemisto: %s puuttuu.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: DMS:in v&auml;li&auml;aikaishakemisto: %s Web serveri ei voi kirjoittaa.";
 $owl_lang->debug_doc_not_exists		= "DEBUG: DMS Documents hakemisto: " .$default->owl_FileDir . "/" . fid_to_name(1) ." puuttuu.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: DMS Documents hakemisto: " .$default->owl_FileDir . "/" . fid_to_name(1) ." Web serveri ei voi kirjoittaa.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: Web serverill&auml; ei ole luku oikeutta: <br />'$default->owl_FileDir/%s'. <br />korjaa oikeudet ja yrit&auml; uudelleen";

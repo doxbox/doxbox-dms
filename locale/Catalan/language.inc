@@ -1146,8 +1146,8 @@ $owl_lang->news_title                   = "Administraci&oacute; de not&iacute;ci
 $owl_lang->debug_doc_not_exists		= "DEBUG: El directori de documets OWL: " .$default->owl_FileDir . "/" . fid_to_name(1) ." no existeix.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: El directori de documents OWL: " .$default->owl_FileDir . "/" . fid_to_name(1) ." no t&eacute; acc&eacute;s d'escriptura al servidor Web.";
 $owl_lang->debug_file_not_exist		= "DEBUG: El fitxer '$default->owl_FileDir/%s' no existeix.<br /> OR<br />La ruta especificada per \$default->owl_FileDir en config/owl.php &eacute;s err&ograve;nia.";
-$owl_lang->debug_tmp_not_exists		= "DEBUG: El directori temporal OWL: $default->owl_tmpdir no existeix.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: El directori temporal OWL: $default->owl_tmpdir no t&eacute; acc&eacute;s d'escriptura al servidor Web.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: El directori temporal OWL: %s no existeix.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: El directori temporal OWL: %s no t&eacute; acc&eacute;s d'escriptura al servidor Web.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: El servidor WEB no t&eacute; acc&eacute;s de lectura: <br />'$default->owl_FileDir/%s'. <br />Si us plau revisa els permisos i prova un altre cop";
 
 //********************************************************

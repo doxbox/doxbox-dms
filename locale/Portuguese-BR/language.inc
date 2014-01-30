@@ -1147,8 +1147,8 @@ $owl_lang->news_title			= "Administração de notícias";
 $owl_lang->debug_doc_not_exists		= "DEBUG: O diretório de documentos OWL: " .$default->owl_fs_root . "/" . fid_to_name(1) ." não existe.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: O diretório de documentos OWL: " .$default->owl_fs_root . "/" . fid_to_name(1) ." não é gravável pelo servidor web.";
 $owl_lang->debug_file_not_exist		= "DEBUG: O arquivo requerido &ldquo;$default->owl_fs_root/%s &rdquo; não existe.<br /> OU<br />O caminho especificado por \$default->owl_fs_root em config/owl.php está errado.";
-$owl_lang->debug_tmp_not_exists		= "DEBUG: O diretório temporário OWL: $default->owl_tmpdir não existe.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: O diretório temporário OWL: $default->owl_tmpdir não é gravável pelo servidor web.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: O diretório temporário OWL: %s não existe.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: O diretório temporário OWL: %s não é gravável pelo servidor web.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: O servidor web não tem acesso de leitura a: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Por favor, corrija as permissões e tente novamente";
 
 //********************************************************

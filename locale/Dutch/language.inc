@@ -1155,8 +1155,8 @@ $owl_lang->news_title			= "Nieuwsberichten Beheer";
 $owl_lang->debug_doc_not_exists		= "DEBUG: De OWL Bestandsmap: " .$default->owl_fs_root . "/" . fid_to_name(1) ." bestaat niet.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: De OWL Bestandsmap: " .$default->owl_fs_root . "/" . fid_to_name(1) ." kan niet worden beschreven door de Web Server.";
 $owl_lang->debug_file_not_exist		= "DEBUG: Het bestand &ldquo;$default->owl_fs_root/%s &rdquo; bestaat niet<br /> OF<br />De locatie \$default->owl_fs_root in config/owl.php is onjuist.";
-$owl_lang->debug_tmp_not_exists		= "DEBUG: De OWL tijdelijke map: $default->owl_tmpdir bestaat niet.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: De OWL tijdelijke map: $default->owl_tmpdir an niet worden beschreven door de Web Server.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: De OWL tijdelijke map: %s bestaat niet.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: De OWL tijdelijke map: %s an niet worden beschreven door de Web Server.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: De webserver heeft geen toegang tot: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Herstel a.u.b. de permissies en probeer opnieuw.";
 
 //********************************************************

@@ -1135,8 +1135,8 @@ $owl_lang->news_title                   = "Administration des news";
 $owl_lang->debug_doc_not_exists         = "DEBUG : Le dossier documents de DMS : " .$default->owl_FileDir . "/" . fid_to_name(1) ." n'existe pas.";
 $owl_lang->debug_doc_not_writeable      = "DEBUG : Le dossier documents de DMS : " .$default->owl_FileDir . "/" . fid_to_name(1) ." n'est pas autoris&eacute; en &eacute;criture sur ce serveur.";
 $owl_lang->debug_file_not_exist         = "DEBUG : Le fichier requis '$default->owl_FileDir/%s ' n'existe pas.<br /> OR<br />Le chemin sp&eacute;cifi&eacute; par \$default->owl_FileDir in config/owl.php est mauvais.";
-$owl_lang->debug_tmp_not_exists         = "DEBUG : Le dossier TEMP de DMS : $default->owl_tmpdir n'existe pas.";
-$owl_lang->debug_tmp_not_writeable      = "DEBUG : Le dossier TEMP de DMS : $default->owl_tmpdir n'est pas libre en &eacute;criture.";
+$owl_lang->debug_tmp_not_exists         = "DEBUG : Le dossier TEMP de DMS : %s n'existe pas.";
+$owl_lang->debug_tmp_not_writeable      = "DEBUG : Le dossier TEMP de DMS : %s n'est pas libre en &eacute;criture.";
 $owl_lang->debug_webserver_no_access    = "DEBUG : Le serveur web n'a pas les droits en lecture pour : <br />'$default->owl_FileDir/%s '. <br />SVP, r&eacute;gler le droit Correspondant et r&eacute;essayez";
 
 //********************************************************

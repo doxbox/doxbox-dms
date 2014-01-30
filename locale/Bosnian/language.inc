@@ -1107,8 +1107,8 @@ $owl_lang->news_title			= "Administracija Novosti";
 // DEBUG MESSAGES BEGIN
 //********************************************************
 
-$owl_lang->debug_tmp_not_exists		= "DEBUG: OWL privremeni direktorij : $default->owl_tmpdir ne postoji.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: U OWL privremeni direktorij: $default->owl_tmpdir server nema pravo zapisivanja.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: OWL privremeni direktorij : %s ne postoji.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: U OWL privremeni direktorij: %s server nema pravo zapisivanja.";
 $owl_lang->debug_doc_not_exists		= "DEBUG: OWL Documents direktorij: " .$default->owl_FileDir . "/" . fid_to_name(1) ." ne postoji.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: U OWL Documents direktorij: " .$default->owl_FileDir . "/" . fid_to_name(1) ." server nema pravo zapisivanja.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: Server nema pravo CITANJA u: <br />'$default->owl_FileDir/%'. <br />Popravite dozvole i pokusajte ponovo";

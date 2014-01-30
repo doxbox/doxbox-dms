@@ -1160,8 +1160,8 @@ $owl_lang->news_title			= "Administrátorské zprávy";
 $owl_lang->debug_doc_not_exists		= "ODLAZENÍ: OWL dokumentový adresář: " .$default->owl_fs_root . "/" . fid_to_name(1) ." neexistuje.";
 $owl_lang->debug_doc_not_writeable	= "ODLAZENÍ: OWL dokumentový adresář: " .$default->owl_fs_root . "/" . fid_to_name(1) ." není povolen zápis webovým serverem.";
 $owl_lang->debug_file_not_exist		= "ODLAZENÍ: Požadovaný soubor &ldquo;$default->owl_fs_root/%s &rdquo; neexistuje.<br /> NEBO<br />Cesta specifikovná \$default->owl_fs_root in config/owl.php je špatně.";
-$owl_lang->debug_tmp_not_exists		= "ODLAZENÍ: OWL dočasný adresář: $default->owl_tmpdir neexistuje.";
-$owl_lang->debug_tmp_not_writeable	= "ODLAZENÍ: OWL dočasný adresář: $default->owl_tmpdir není povolen zápis webovým serverem.";
+$owl_lang->debug_tmp_not_exists		= "ODLAZENÍ: OWL dočasný adresář: %s neexistuje.";
+$owl_lang->debug_tmp_not_writeable	= "ODLAZENÍ: OWL dočasný adresář: %s není povolen zápis webovým serverem.";
 $owl_lang->debug_webserver_no_access	= "ODLAZENÍ: Webserver nemá právo čtení: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Prosím povolte čtení a zkuste znovu";
 
 //********************************************************

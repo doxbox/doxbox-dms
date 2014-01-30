@@ -1166,8 +1166,8 @@ $owl_lang->news_title			= "Administra&ccedil;&atilde;o de not&iacute;cias";
 $owl_lang->debug_doc_not_exists		= "DEBUG: O direct&oacute;rio de documentos Owl: " .$default->owl_fs_root . "/" . fid_to_name(1) ." n&atilde;o existe.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: O direct&oacute;rio de documentos Owl: " .$default->owl_fs_root . "/" . fid_to_name(1) ." n&atilde;o tem permiss&otilde;es de escrita para o Servidor Web.";
 $owl_lang->debug_file_not_exist		= "DEBUG: O arquivo obrigat&oacute;rio &ldquo;$default->owl_fs_root/%s &rdquo; n&atilde;o existe.<br /> OU<br />O caminho especificado por \$default->owl_fs_root em config/owl.php est&aacute; errado.";
-$owl_lang->debug_tmp_not_exists		= "DEBUG: O direct&oacute;rio tempor&aacute;rio do Owl: $default->owl_tmpdir n&atilde;o existe.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: O direct&oacute;rio tempor&aacute;rio do Owl: $default->owl_tmpdir n&atilde;o tem permiss&otilde;es de escrita para o Servidor Web.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: O direct&oacute;rio tempor&aacute;rio do Owl: %s n&atilde;o existe.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: O direct&oacute;rio tempor&aacute;rio do Owl: %s n&atilde;o tem permiss&otilde;es de escrita para o Servidor Web.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: O Servidor Web n&atilde;o tem permiss&otilde;es de leitura para: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Por favor altere as permiss&otilde;es e tente novamente";
 
 //********************************************************

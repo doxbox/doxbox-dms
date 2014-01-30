@@ -1166,8 +1166,8 @@ $owl_lang->news_title  = "Gestione Notizie";
 $owl_lang->debug_doc_not_exists  = "DEBUG: The DMS Documents Directory: " .$default->owl_fs_root . "/" . fid_to_name(1) ." does not exists.";
 $owl_lang->debug_doc_not_writeable  = "DEBUG: The DMS Documents Directory: " .$default->owl_fs_root . "/" . fid_to_name(1) ." is not writeable by the Web Server.";
 $owl_lang->debug_file_not_exist  = "DEBUG: The required file '$default->owl_fs_root/%s' does not exists.<br /> OR<br />The path specified by \$default->owl_fs_root in config/owl.php is wrong.";
-$owl_lang->debug_tmp_not_exists  = "DEBUG: The DMS temporary Directory: $default->owl_tmpdir does not exists.";
-$owl_lang->debug_tmp_not_writeable  = "DEBUG: The DMS temporary Directory: $default->owl_tmpdir is not writeable by the Web Server.";
+$owl_lang->debug_tmp_not_exists  = "DEBUG: The DMS temporary Directory: %s does not exists.";
+$owl_lang->debug_tmp_not_writeable  = "DEBUG: The DMS temporary Directory: %s is not writeable by the Web Server.";
 $owl_lang->debug_webserver_no_access  = "DEBUG: il web server non ha accesso in lettura a: <br />'$default->owl_fs_root/%s'. <br />Aggiorna i permessi d'accesso e prova ancora";
  
 //******************************************************** 

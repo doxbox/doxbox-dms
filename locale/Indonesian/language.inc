@@ -1155,8 +1155,8 @@ $owl_lang->news_title			= "Administrasi Berita";
 $owl_lang->debug_doc_not_exists		= "DEBUG: Direktori Documents OWL: " .$default->owl_fs_root . "/" . fid_to_name(1) ." tidak ada.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: Direktori Documents OWL: " .$default->owl_fs_root . "/" . fid_to_name(1) ." tidak dapat ditulisi oleh Server Web.";
 $owl_lang->debug_file_not_exist		= "DEBUG: Berkas ynag dibutuhkan: &ldquo;$default->owl_fs_root/%s &rdquo; tidak ada.<br /> ATAU<br />jalur yang ditentukan \$default->owl_fs_root dalam config/owl.php salah.";
-$owl_lang->debug_tmp_not_exists		= "DEBUG: Direktori sementara OWL: $default->owl_tmpdir tidak ada.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: Direktori sementara OWL: $default->owl_tmpdir tidak dapat ditulisi oleh Server Web.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: Direktori sementara OWL: %s tidak ada.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: Direktori sementara OWL: %s tidak dapat ditulisi oleh Server Web.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: Server web tidak memiliki hak akses baca ke: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Mohon perbaiki hak izin dan coba lagi";
 
 //********************************************************

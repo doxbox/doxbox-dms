@@ -1119,8 +1119,8 @@ $owl_lang->news_title                  	= "Mitteilungen";
 $owl_lang->debug_doc_not_exists        	= "DEBUG: Das Owl Verzeichnis: " .$default->owl_FileDir . "/" . fid_to_name(1) ." existiert nicht.";
 $owl_lang->debug_doc_not_writeable     	= "DEBUG: Das Owl Verzeichnis: " .$default->owl_FileDir . "/" . fid_to_name(1) ." kann vom Web Server nicht beschrieben werden.";
 $owl_lang->debug_file_not_exist		= "DEBUG: Die ben&ouml;tigte Datei '$default->owl_FileDir/%s' existiert nicht.<br /> ODER<br />Der durch \$default->owl_FileDir in config/owl.php beschriebene Pfad ist falsch.";
-$owl_lang->debug_tmp_not_exists        	= "DEBUG: Das tempor&auml;re Verzeichnis: $default->owl_tmpdir existiert nicht.";
-$owl_lang->debug_tmp_not_writeable     	= "DEBUG: Das tempor&auml;re Verzeichnis: $default->owl_tmpdir kann vom Web Server nicht beschrieben werden.";
+$owl_lang->debug_tmp_not_exists        	= "DEBUG: Das tempor&auml;re Verzeichnis: %s existiert nicht.";
+$owl_lang->debug_tmp_not_writeable     	= "DEBUG: Das tempor&auml;re Verzeichnis: %s kann vom Web Server nicht beschrieben werden.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: Der Webserver hat keine Leseberechtigung f&uuml;r: <br />'$default->owl_FileDir/%s'. <br />Bitte korrigieren Sie die Berechtigungen und versuchen Sie es erneut.";
 
 //********************************************************

@@ -3309,14 +3309,14 @@ function checkrequirements()
    {
       if (!file_exists($default->owl_tmpdir))
       {
-         print("<center><h3>$owl_lang->debug_tmp_not_exists</h3></center>");
+         print("<center><h3>" . sprintf($owl_lang->debug_tmp_not_exists, $default->owl_tmpdir) . "</h3></center>");
          $status =  1;
       } 
       else
       {
          if (!is_writable($default->owl_tmpdir))
          {
-            print("<center><h3>$owl_lang->debug_tmp_not_writeable</h3></center>");
+            print("<center><h3>" . sprintf($owl_lang->debug_tmp_not_writeable, $default->owl_tmpdir) . "</h3></center>");
             print("</h3>");
             $status =  1;
          } 
@@ -6102,11 +6102,11 @@ function fGetFileFromDatbase($id)
          {
             if (!file_exists($default->owl_tmpdir))
             {
-               printError("$owl_lang->debug_tmp_not_exists");
+               printError(sprintf($owl_lang->debug_tmp_not_exists, $default->owl_tmpdir));
             }
             if (!is_writable($default->owl_tmpdir))
             {
-               printError("$owl_lang->debug_tmp_not_writeable");
+               printError(sprintf($owl_lang->debug_tmp_not_writeable, $default->owl_tmpdir));
             }
          }
          if (file_exists($tmpfile)) unlink($tmpfile);
@@ -6141,11 +6141,11 @@ function fGetFileFromDatbase($id)
          {
             if (!file_exists($default->owl_tmpdir))
             {
-               printError("$owl_lang->debug_tmp_not_exists");
+               printError(sprintf($owl_lang->debug_tmp_not_exists, $default->owl_tmpdir));
             }
             if (!is_writable($default->owl_tmpdir))
             {
-               printError("$owl_lang->debug_tmp_not_writeable");
+               printError(sprintf($owl_lang->debug_tmp_not_writeable, $default->owl_tmpdir));
             }
          }
          if (file_exists($tmpfile)) unlink($tmpfile);

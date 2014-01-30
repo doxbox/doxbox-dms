@@ -1168,8 +1168,8 @@ $owl_lang->news_title			= "Nyhetsadministration";
 $owl_lang->debug_doc_not_exists		= "DEBUG: OWLs dokumentkatalog: " .$default->owl_fs_root . "/" . fid_to_name(1) ." existerar inte.";
 $owl_lang->debug_doc_not_writeable	= "DEBUG: OWLs dokumentkatalog: " .$default->owl_fs_root . "/" . fid_to_name(1) ." är inte skrivbar för webbservern.";
 $owl_lang->debug_file_not_exist		= "DEBUG: Den obligatoriska filen &ldquo;$default->owl_fs_root/%s &rdquo; existerar inte.<br /> OR<br />Sökvägen angiven av \$default->owl_fs_root i config/owl.php är felaktig.";
-$owl_lang->debug_tmp_not_exists		= "DEBUG: OWLs tempkatalog: $default->owl_tmpdir existerar inte.";
-$owl_lang->debug_tmp_not_writeable	= "DEBUG: OWLs tempkatalog: $default->owl_tmpdir är inte skrivbar för webbservern.";
+$owl_lang->debug_tmp_not_exists		= "DEBUG: OWLs tempkatalog: %s existerar inte.";
+$owl_lang->debug_tmp_not_writeable	= "DEBUG: OWLs tempkatalog: %s är inte skrivbar för webbservern.";
 $owl_lang->debug_webserver_no_access	= "DEBUG: Webbservern har inte läsrättigheter till: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Ändra behörigheterna och försök igen";
 
 //********************************************************

@@ -1158,8 +1158,8 @@ $owl_lang->news_title			= "Administraci&oacute;n de Noticias";
 $owl_lang->debug_doc_not_exists		= "DEPURAR: El Directorio de Documentos OWL: " .$default->owl_fs_root . "/" . fid_to_name(1) ." no existe.";
 $owl_lang->debug_doc_not_writeable	= "DEPURAR: El Directorio de Documentos OWL: " .$default->owl_fs_root . "/" . fid_to_name(1) ." no tiene permisos de escritura para el Servidor Web.";
 $owl_lang->debug_file_not_exist		= "DEPURAR: El archivo requerido &ldquo;$default->owl_fs_root/%s &rdquo; no existe.<br /> OR<br />La ruta espeficada por \$default->owl_fs_root in config/owl.php es incorrecta.";
-$owl_lang->debug_tmp_not_exists		= "DEPURAR: El Directorio Temporal de OWL: $default->owl_tmpdir no existe.";
-$owl_lang->debug_tmp_not_writeable	= "DEPURAR: El Directorio Temporal de OWL: $default->owl_tmpdir no tiene permisos de escritura para el Servidor Web.";
+$owl_lang->debug_tmp_not_exists		= "DEPURAR: El Directorio Temporal de OWL: %s no existe.";
+$owl_lang->debug_tmp_not_writeable	= "DEPURAR: El Directorio Temporal de OWL: %s no tiene permisos de escritura para el Servidor Web.";
 $owl_lang->debug_webserver_no_access	= "DEPURAR: El Servidor Web no tiene acceso de lectura a: <br />&ldquo;$default->owl_fs_root/%s &rdquo;. <br />Porfavor revise los permisos e intente nuevamente";
 
 //********************************************************

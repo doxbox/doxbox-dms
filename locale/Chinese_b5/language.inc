@@ -1155,8 +1155,8 @@ $owl_lang->news_title			 = "發佈公告";
 $owl_lang->debug_doc_not_exists		 = "偵錯： DMS 檔案目錄" .$default->owl_fs_root . "/" . fid_to_name(1) ." 不存在。";
 $owl_lang->debug_doc_not_writeable	 = "偵錯： DMS 檔案目錄" .$default->owl_fs_root . "/" . fid_to_name(1) ." 無法寫入。";
 $owl_lang->debug_file_not_exist		 = "偵錯：點選的檔案 '$default->owl_fs_root/%s' 不存在，<br /> 或是<br /> 設定檔案 config/owl.php 中 \$default->owl_fs_root 指定的路徑有誤。";
-$owl_lang->debug_tmp_not_exists		 = "偵錯: 此臨時目錄: $default->owl_tmpdir 不存在.";
-$owl_lang->debug_tmp_not_writeable	 = "偵錯: DMS 臨時目錄: $default->owl_tmpdir 不可寫入.";
+$owl_lang->debug_tmp_not_exists		 = "偵錯: 此臨時目錄: %s 不存在.";
+$owl_lang->debug_tmp_not_writeable	 = "偵錯: DMS 臨時目錄: %s 不可寫入.";
 $owl_lang->debug_webserver_no_access	 = "偵錯：網頁伺服器無法讀取：<br />'$default->owl_fs_root/%s'. <br />請修正權限後重試";
 
 //********************************************************
