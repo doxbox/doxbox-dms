@@ -242,17 +242,17 @@ function fPrintChangPass()
    {
       if ($default->min_pass_length > 0)
       {
-         $sPasswordRestritions .= $owl_lang->err_pass_restriction_1;
+         $sPasswordRestritions .= sprintf($owl_lang->err_pass_restriction_1, $default->min_pass_length);
       }
       if ($default->min_pass_numeric > 0)
       {
-         $sPasswordRestritions .= $owl_lang->err_pass_restriction_2;
+         $sPasswordRestritions .= sprintf($owl_lang->err_pass_restriction_2, $default->min_pass_numeric);
       }
       if ($default->min_pass_special > 0)
       {
-         $sPasswordRestritions .= $owl_lang->err_pass_restriction_3;
+         $sPasswordRestritions .= sprintf($owl_lang->err_pass_restriction_3, $default->min_pass_special);
       }
-      
+
       $xtpl->assign('HEADING_PASSWD_CHANGE', $owl_lang->change_pass_title);
       $xtpl->parse('main.Register.ChangePass.PasswdRestrict');
    }
@@ -511,9 +511,9 @@ elseif ($myaction == "verpasschange")
    }
    if (!fbValidPassword($newpassword))
    {
-      $sMsg .= $owl_lang->err_pass_restriction_1;
-      $sMsg .= $owl_lang->err_pass_restriction_2;
-      $sMsg .= $owl_lang->err_pass_restriction_3;
+      $sMsg .= sprintf($owl_lang->err_pass_restriction_1, $default->min_pass_length);
+      $sMsg .= sprintf($owl_lang->err_pass_restriction_2, $default->min_pass_numeric);
+      $sMsg .= sprintf($owl_lang->err_pass_restriction_3, $default->min_pass_special);
       $bError = true;
    }
    if (fbCheckForPasswdReuse($newpassword, $uid) == true)

@@ -4093,9 +4093,10 @@ if ($action == "user")
       {
          if (!fbValidPassword($newpassword))
          {
-            $sMsg .= $owl_lang->err_pass_restriction_1;
-            $sMsg .= $owl_lang->err_pass_restriction_2;
-            $sMsg .= $owl_lang->err_pass_restriction_3;
+            $sMsg .= sprintf($owl_lang->err_pass_restriction_1, $default->min_pass_length);
+            $sMsg .= sprintf($owl_lang->err_pass_restriction_2, $default->min_pass_numeric);
+            $sMsg .= sprintf($owl_lang->err_pass_restriction_3, $default->min_pass_special);
+
             printError($sMsg);
          }
 
@@ -4115,7 +4116,7 @@ if ($action == "user")
    {
       if ($oldpassword <> '')
       {
-         printError($owl_lang->err_pass_restriction_1);
+         printError(sprintf($owl_lang->err_pass_restriction_1, $default->min_pass_length));
       }
    }
 
