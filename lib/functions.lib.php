@@ -899,14 +899,7 @@ function notify_reviewer ($iUserId, $iFileId , $usermessage, $doc_action = "", $
          $aBody['HTML'] = fOwl_ereg_replace("\%USER_MESSAGE\%", $usermessage, $aBody['HTML'] );
          $aBody['TXT'] = fOwl_ereg_replace("\%USER_MESSAGE\%", $usermessage, $aBody['TXT'] );
 
-
          owl_syslog(FILE_REVIEW, $userid, flid_to_filename($iFileId), owlfileparent($iFileId), uid_to_name($iUserId) . ": " .$usermessage, "FILE", flid_to_filesize($iFileId));
-
-   //define ("FILE_REVIEW", "30");
-   //define ("FILE_APPROVED", "31");
-   //define ("FILE_REJECTED", "32");
-
-
          break;
    } 
 
