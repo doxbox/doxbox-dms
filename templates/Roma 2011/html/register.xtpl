@@ -24,6 +24,7 @@
       <tr>
          <td class="admin3" width="100%" colspan="2">{REGISTER_ERROR}<br /></td>
       </tr>
+   </table>
 <!-- End: ErrorMsg -->
 
 <!-- BEGIN: Forgot -->
@@ -112,7 +113,11 @@
                <tbody>
 <!-- BEGIN: PasswdRestrict -->
                   <tr>
-                     <td class="form1" colspan="2">{PASSWD_RESTRICTIONS}</td>
+                     <td class="form1" colspan="2" style="text-align: left">
+                        <div class="{SEVERITY}" style="float: left; margin: 10px">
+                           <div id="info_message"><span class="status_icon"></span>{PASSWD_RESTRICTIONS}</div>
+                        </div>
+                     </td>
                   </tr>
 <!-- END: PasswdRestrict -->
                   <tr>

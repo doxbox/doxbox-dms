@@ -520,7 +520,7 @@ elseif ($myaction == "verpasschange")
    }
    if (fbCheckForPasswdReuse($newpassword, $uid) == true)
    {
-      $sMsg .= "$owl_lang->err_cant_reuse_passwords";
+      $sMsg .= $owl_lang->err_cant_reuse_passwords;
       $bError = true;
    }
 
@@ -528,9 +528,10 @@ elseif ($myaction == "verpasschange")
    {
       fPrintHeader();
       
-      $xtpl->assign('REGISTER_ERROR', $sMsg);
+      $xtpl->assign('SEVERITY', 'msg_error');
+      $xtpl->assign('PASSWD_RESTRICTIONS', $sMsg);
 
-      $xtpl->parse('main.Register.ErrorMsg');
+      $xtpl->parse('main.Register.PasswdRestrict');
       fPrintChangPass();
    }
    else
