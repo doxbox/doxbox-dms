@@ -198,7 +198,6 @@ function printuser($name = "", $username = "", $email = "")
    if ($default->registration_using_captcha)
    {
       $xtpl->assign('CAPTCHA_LABEL', $owl_lang->captcha_typein . " " .$captcha->display_captcha() );
-      //fPrintFormTextLine( "$owl_lang->captcha_typein: " .$captcha->display_captcha() , "private_key", "5", "");
       $xtpl->parse('main.Register.Form.Captcha');
    }
 
