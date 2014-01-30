@@ -32,7 +32,10 @@ $out = ob_get_clean();
 require_once($default->owl_fs_root ."/lib/disp.lib.php");
 require_once($default->owl_fs_root . "/lib/xtpl.lib.php");
 
-$c = $_GET['c'];
+if (isset($_GET['c']) and is_numeric($_GET['c']))
+{
+   $c = $_GET['c'];
+}
 
 if (!empty($c) and is_numeric($c))
 {
