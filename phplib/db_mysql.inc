@@ -140,12 +140,14 @@ class DB_Sql {
     $dQueryTotalTime = round(($dQueryFinishTime - $dQueryStartTime), 4);
 
     /* if the query took longer than 2 Seconds flag it red so its more obvious */
-    if ($dQueryTotalTile > 2)
+    if ($dQueryTotalTime > 2)
     {
        $sColor = 'red';
     }
     if ($this->Debug)
+    {
       printf("Debug: query = %s &nbsp; <font color=\"$sColor\">Executed in ($dQueryTotalTime sec)</font><br />\n", $Query_String);
+    }
 
     $this->Row   = 0;
     $this->Errno = mysql_errno();
