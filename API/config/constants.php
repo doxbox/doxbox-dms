@@ -43,6 +43,7 @@ define('DELETE_FILE_NOT_EXISTS',     '0100');
 
 define('DWNL_FILE_PERM_DENIED',      '0110');
 define('DWNL_FILE_MISSING',          '0111');
+define('DWNL_FILE_ZIP_CREATE_FAILED','0112');
 
 define('UNKOWN_ERROR',               '9980');
 define('DATABASE_ERROR',             '9990');

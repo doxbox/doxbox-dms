@@ -675,7 +675,7 @@ class DmsAPI
             if ($v_list == 0)
             {
                $aError = array();
-               $aError['code'] = 'CUST0006B';
+               $aError['code'] = DWNL_FILE_ZIP_CREATE_FAILED;
                $aError['msg'] = 'An Error Occured while Creating your Zip File.';
                $aError['zip_err'] = $archive->errorInfo(true);
 
