@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                    </ul>
+                    </li>
+                    <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-22243157"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-22243157" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/DmsAPI.html">DmsAPI</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>DmsAPI</h1>
+                    <p><em>REST API to interact with DoxBox DMS</em></p>
+                    
+
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/DmsAPI.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_VerifyCredential" class="">VerifyCredential()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_Logout" class="">Logout()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_DeleteFile" class="">DeleteFile()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_PostDeleteFileProcessing" class="">PostDeleteFileProcessing()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_CreateFolder" class="">CreateFolder()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_PostFolderCreateProcessing" class="">PostFolderCreateProcessing()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_DownloadFile" class="">DownloadFile()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_UpdateFile" class="">UpdateFile()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_PostUpdateFileProcessing" class="">PostUpdateFileProcessing()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_UploadFile" class="">UploadFile()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_PostUploadFileProcessing" class="">PostUploadFileProcessing()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_AddGroup" class="">AddGroup()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_AddUser" class="">AddUser()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_Response" class="">Response()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_SetResponseType" class="">SetResponseType()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_GetResponseType" class="">GetResponseType()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_Version" class="">Version()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/DmsAPI.html#method_fGetDBConnect" class="">fGetDBConnect()</a><br />
+                                                                    <a href="../classes/DmsAPI.html#method_VerifySession" class="">VerifySession()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/api.class.php.html"><div class="path-wrapper">api.class.php</div></a></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\DmsAPI</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                todo
+                            </th>
+                            <td>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct()</pre>
+                <p><em>Class Construct to Initialize Variables for access to the Doxox Database
+and global Variable $default</em></p>
+                
+
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerifyCredential" name="method_VerifyCredential" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerifyCredential()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerifyCredential(string <span class="argument">$sUsername</span>, string <span class="argument">$sPassword</span>, string <span class="argument">$sUserAPIKey</span>, string <span class="argument">$fConfig</span>) : string</pre>
+                <p><em>This Method Authenticates a user to the doxbox DMS. DoxBox User and Password Authentication
+is the only authentication method that is supported at this time.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sUsername</td>
+                                <td><p>Username to authenticate.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sPassword</td>
+                                <td><p>MD5 Hash of the Users Password.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sUserAPIKey</td>
+                                <td><p>API Key generated using ./genapikey.php  <IP ADDRESS>.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$fConfig</td>
+                                <td><p>Optional location of the api config file that contains the
+                             Authorized API Keys. <br />
+                             Default Location: ./config/api.config.php.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError      On error Contains an error number and associated error message.</p>
+<pre><code>  Array
+  (
+     [code] =&gt; 0010
+     [msg] =&gt; You API KEY is Missing Access Denied
+  )</code></pre></dd>
+                                                    <dt>array</dt>
+                            <dd><p>$aSession   Containing a valild Session ID to be used in subsequent Methods.</p>
+<pre><code>  Array
+  (
+     [sessid] =&gt; 3f0265c2f54dc5802fb557af55e3287b
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML</p>
+<pre><code>            string, depending on ResponseType Requested by the Server. Then Sent back
+            to the client to be parsed and appropiate action taken by the client.</code></pre>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_Logout" name="method_Logout" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">Logout()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">Logout(string <span class="argument">$sSessID</span>) : string</pre>
+                <p><em>Allows the Client API to Destroy the DoxBox Session</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid SessionID to destroy in order to logout the user from DoxBox DMS</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError      On error Contains an error number and associated error message.</p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+                string, depending on ResponseType Requested by the Server. Then Sent back
+                to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_DeleteFile" name="method_DeleteFile" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">DeleteFile()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">DeleteFile(string <span class="argument">$sSessID</span>, string <span class="argument">$iFileID</span>) : string</pre>
+                <p><em>Deletes a single File from the DoxBox DMS</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$iFileID</td>
+                                <td><p>Unique DoxBox DMS File ID to delete</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError      On error Contains an error number and associated error message.</p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+                string, depending on ResponseType Requested by the Server. Then Sent back
+                to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_PostDeleteFileProcessing" name="method_PostDeleteFileProcessing" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">PostDeleteFileProcessing()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">PostDeleteFileProcessing() : </pre>
+                <p><em>Post Delete Processing Function
+This Method is put in place to allow
+a User Extending this class to add Post Delete
+processing without overriding the DeleteFile Method</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_CreateFolder" name="method_CreateFolder" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">CreateFolder()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">CreateFolder(string <span class="argument">$sSessID</span>, int <span class="argument">$iParentID</span>, string <span class="argument">$sFolderName</span>, int <span class="argument">$iOwnerUserID</span>, int <span class="argument">$iOwnerGroupID</span>) : string</pre>
+                <p><em>Create a folder in the Target Parent Folder</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iParentID</td>
+                                <td><p>ID of the Parent Folder where to create the folder</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sFolderName</td>
+                                <td><p>Name of Folder to be created created</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iOwnerUserID</td>
+                                <td><b>OPTIONAL</b> DoxBox User ID that should be the Owner of this Folder</td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iOwnerGroupID</td>
+                                <td><b>OPTIONAL</b> DoxBox Group ID that should be the Owner of this Folder</td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError        <p>On error Contains an error number and associated error message.<br />
+On Success [new_folder_id] => new_folder_id is returned</p></p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+                string, depending on ResponseType Requested by the Server. Then Sent back
+                to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_PostFolderCreateProcessing" name="method_PostFolderCreateProcessing" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">PostFolderCreateProcessing()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">PostFolderCreateProcessing() : </pre>
+                <p><em>Post Folder Create Processing Function
+This Method is put in place to allow
+a User Extending this class to add Post Folder Create
+processing without overriding the DeleteFile Method</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_DownloadFile" name="method_DownloadFile" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">DownloadFile()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">DownloadFile(string <span class="argument">$sSessID</span>, int <span class="argument">$iFileID</span>, array <span class="argument">$aCustomHeaders</span>, bool <span class="argument">$bCompressed</span>) : string</pre>
+                <p><em>Download a single File from the DoxBox DMS</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iFileID</td>
+                                <td><p>Unique File ID of the file to download</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$aCustomHeaders</td>
+                                <td><p><b>OPTIONAL</b> Allows for MetaData to be passed back with
+                                the File see sampleclient.php for an example</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>bool</td>
+                                <td>$bCompressed</td>
+                                <td><p><b>OPTIONAL</b> Tells thee Method to return the file ZIPPED or Not.
+                                <b>Default</b>: False</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError      On error Contains an error number and associated error message.</p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+                string, depending on ResponseType Requested by the Server. Then Sent back
+                to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_UpdateFile" name="method_UpdateFile" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">UpdateFile()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">UpdateFile(string <span class="argument">$sSessID</span>, int <span class="argument">$iFileID</span>, string <span class="argument">$sVersionChange</span>) : string</pre>
+                <p><em>Update a single File to the DoxBox DMS. Currently not Supported if you have version
+control turned off.  Alternative is to Delete the file via the DeleteFile Method First.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iFileID</td>
+                                <td><p>DoxBox File ID to be Updated</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sVersionChange</td>
+                                <td><b>OPTIONAL</b> is this a Major or a Minor Revision Update for this file.
+                                <b>Default</b>: minor</td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError         <p>On error Contains an error number and associated error message. On Success also returns [backup_file_id]</p></p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+               string, depending on ResponseType Requested by the Server. Then Sent back
+               to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                                                            <p>Implement File Update For Version Control Turned Off</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_PostUpdateFileProcessing" name="method_PostUpdateFileProcessing" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">PostUpdateFileProcessing()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">PostUpdateFileProcessing() : </pre>
+                <p><em>Post Update Processing Function
+This Method is put in place to allow
+a User Extending this class to add Post File Update
+processing without overriding the UpdateFile Method</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_UploadFile" name="method_UploadFile" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">UploadFile()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">UploadFile(string <span class="argument">$sSessID</span>, int <span class="argument">$iParentID</span>) : string</pre>
+                <p><em>Upload a single File to the DoxBox DMS</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iParentID</td>
+                                <td><p>DoxBox DMS Folder ID where the File should be Uploaded</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError        <p>On error Contains an error number and associated error message.<br />On</p>
+<pre><code>                           Success [new_file_id] =&gt; new_file_id is returned&lt;/p&gt;
+  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+                string, depending on ResponseType Requested by the Server. Then Sent back
+                to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_PostUploadFileProcessing" name="method_PostUploadFileProcessing" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">PostUploadFileProcessing()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">PostUploadFileProcessing() : </pre>
+                <p><em>Post Upload File Processing Function
+This Method is put in place to allow
+a User Extending this class to add Post File Upload
+processing without overriding the UploadFile Method</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_AddGroup" name="method_AddGroup" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">AddGroup()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">AddGroup(string <span class="argument">$sSessID</span>, string <span class="argument">$sGroupName</span>) : bool</pre>
+                <p><em>Create a New Group</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sGroupName</td>
+                                <td><p>DoxBox Group Name</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    bool
+                                            &mdash; <p>error on fail   Success message + group_id</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_AddUser" name="method_AddUser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">AddUser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">AddUser(string <span class="argument">$sSessID</span>, string <span class="argument">$sUsername</span>, string <span class="argument">$sPassword</span>, string <span class="argument">$iGroupID</span>, string <span class="argument">$sFullName</span>, int <span class="argument">$iHomeDirID</span>, bool <span class="argument">$bGroupAdmin</span>, int <span class="argument">$sQuotaMax</span>) : string</pre>
+                <p><em>Create a New DoxBox DMS user</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Valid Session ID String</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sUsername</td>
+                                <td><p>DoxBox Username</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sPassword</td>
+                                <td><p>DoxBox Password</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$iGroupID</td>
+                                <td><p>DoxBox Group this User will belong to</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sFullName</td>
+                                <td><b>OPTIONAL</b> User's Full Name</td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$iHomeDirID</td>
+                                <td><b>OPTIONAL</b> User's Home and First Directory ID. Default: 1 (Documents Folder)</td>
+                            </tr>
+                                                    <tr>
+                                <td>bool</td>
+                                <td>$bGroupAdmin</td>
+                                <td><b>OPTIONAL</b> Is this user a Group Administrator. Default: 0 (False)</td>
+                            </tr>
+                                                    <tr>
+                                <td>int</td>
+                                <td>$sQuotaMax</td>
+                                <td><b>OPTIONAL</b> User's Max Quota in bytes. Default: 0 (No Quota)</td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError        <p>On error Contains an error number and associated error message.<br />On
+Success [new_file_id] => new_file_id is returned</p></p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The thrown array is parsed by the 'Response' Method into a JSON or XML
+                string, depending on ResponseType Requested by the Server. Then Sent back
+                to the client to be parsed and appropiate action taken by the client.</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_Response" name="method_Response" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">Response()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">Response(array <span class="argument">$aArrayToConvert</span>) : string</pre>
+                <p><em>Returns converted PHP Array to Either JSON or XMP
+Depending what the Response Type is set to Default JSON.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$aArrayToConvert</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>JSON String OR XML Data</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_SetResponseType" name="method_SetResponseType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">SetResponseType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">SetResponseType(string <span class="argument">$sResponseType</span>) : </pre>
+                <p><em>Set the Class API Reponse Type to Either JSON or XML</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sResponseType</td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_GetResponseType" name="method_GetResponseType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">GetResponseType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">GetResponseType() : string</pre>
+                <p><em>Get the Currently set Class API Reponse Type</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>$sResponseType</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_Version" name="method_Version" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">Version()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">Version() : string</pre>
+                <p><em>Function to Display The current Version of the API</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>XML Response With The Version Number and current Class Support Restrictions</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_fGetDBConnect" name="method_fGetDBConnect" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">fGetDBConnect()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">fGetDBConnect() : object</pre>
+                <p><em>Gets a connection to the Database</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt></dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    object
+                                            &mdash; <p>$cDbConnection  AdoDB Database Connect Object</p>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerifySession" name="method_VerifySession" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">VerifySession()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerifySession(string <span class="argument">$sSessID</span>) : array</pre>
+                <p><em>Verifies that the session used is still valid</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$sSessID</td>
+                                <td><p>Session ID String to Validate</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>array</dt>
+                            <dd><p>$aError      On error Contains an error number and associated error message.</p>
+<pre><code>  Array
+  (
+     [code] =&gt; ####
+     [msg] =&gt; &lt;string&gt;
+  )</code></pre></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Verified Session info on success</p>
+<pre><code>  Array
+  (
+     [bit] =&gt; 1
+     [userid] =&gt; 1
+     [currentdb] =&gt; 0
+     [groupid] =&gt; 0
+  )</code></pre>
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">api.class.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/api.class.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on February 10th, 2014 at 14:00.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
