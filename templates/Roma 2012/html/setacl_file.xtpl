@@ -120,7 +120,7 @@
 		         <tr class="{TR_COLOR}">
 		            <td><a class="title1" href="{FILE_USER_GRP_URL}">{FILE_USER_GRP_LABEL}</a></td>
 <!-- BEGIN: FilePermUsrGrpAcl -->
-		            <td align="center"><b><input type="checkbox" name="{FILE_USER_GRP_NAME}" value="{FILE_USER_GRP_VALUE}" {FILE_USER_GRP_CHECKED}/ /></b></td>
+		            <td align="center"><b><input type="checkbox" name="{FILE_USER_GRP_NAME}" value="{FILE_USER_GRP_VALUE}" {FILE_USER_GRP_CHECKED} /></b></td>
 <!-- END: FilePermUsrGrpAcl -->
 		         </tr>
 <!-- END: FilePermUsrGrp -->

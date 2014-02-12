@@ -196,7 +196,7 @@
 		         <tr>
 		            <td class="{TR_COLOR}"><a class="title1" href="{FOLDER_USER_GRP_URL}">{FOLDER_USER_GRP_LABEL}</a></td>
 <!-- BEGIN: FolderPermUsrGrpAcl -->
-		            <td class="file2" align="center"><b><input type="checkbox" name="{FOLDER_USER_GRP_NAME}" value="{FOLDER_USER_GRP_VALUE}" {FOLDER_USER_GRP_CHECKED}/ /></b></td>
+		            <td class="file2" align="center"><b><input type="checkbox" name="{FOLDER_USER_GRP_NAME}" value="{FOLDER_USER_GRP_VALUE}" {FOLDER_USER_GRP_CHECKED} /></b></td>
 <!-- END: FolderPermUsrGrpAcl -->
 		         </tr>
 <!-- END: FolderPermUsrGrp -->
