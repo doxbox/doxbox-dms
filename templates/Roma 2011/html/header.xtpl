@@ -467,13 +467,13 @@
         <li class="navbar2"><a href="#"><img src="{THEME}/img/icons/folder_up_dis.png" border="0" name="folder_up"/></a></li>
         <!-- END: UpDisabled -->
         <!-- BEGIN: Up -->
-        <li class="navbar2"><a href="{FOLDERTOOLS_FOLDER_UP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('folder_up','','{THEME}/img/icons/folder_up_hover.png',1)"><img src="{THEME}/img/icons/folder_up.png" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up" /></a></li>
+        <li class="navbar2"><a href="{FOLDERTOOLS_FOLDER_UP_URL}"><img class="hover_swap" src="{THEME}/img/icons/folder_up.png" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up" /></a></li>
         <!-- END: Up -->
-        <li class="navbar2"><a href="{FOLDERTOOLS_HOME_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('home','','{THEME}/img/icons/house_hover.png',1)"><img src="{THEME}/img/icons/house.png" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home" /></a></li>
+        <li class="navbar2"><a href="{FOLDERTOOLS_HOME_DIR_URL}"><img class="hover_swap" src="{THEME}/img/icons/house.png" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home" /></a></li>
         <!-- BEGIN: InitialDir -->
-        <li class="navbar2"><a href="{FOLDERTOOLS_INITIAL_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('set_initial','','{THEME}/img/icons/house_link_hover.png',1)"><img src="{THEME}/img/icons/house_link.png" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial" /></a></li>
+        <li class="navbar2"><a href="{FOLDERTOOLS_INITIAL_DIR_URL}"><img class="hover_swap" src="{THEME}/img/icons/house_link.png" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial" /></a></li>
         <!-- END: InitialDir -->
-        <li class="navbar2 sitemap"><a href="{FOLDERTOOLS_SITEMAP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('sitemap','','{THEME}/img/icons/sitemap_hover.png',1)"><img src="{THEME}/img/icons/sitemap.png" alt="{FOLDERTOOLS_SITEMAP_ALT}" title="{FOLDERTOOLS_SITEMAP_ALT}" border="0" name="sitemap" /></a></li>
+        <li class="navbar2 sitemap"><a href="{FOLDERTOOLS_SITEMAP_URL}"><img class="hover_swap" src="{THEME}/img/icons/sitemap.png" alt="{FOLDERTOOLS_SITEMAP_ALT}" title="{FOLDERTOOLS_SITEMAP_ALT}" border="0" name="sitemap" /></a></li>
       </ul>
       <ul class="paginator">  
         <!-- BEGIN: Pagination -->

@@ -94,7 +94,7 @@
       <td class="form1"><label for="maxsessions">{USER_MAXSESS_LABEL}</label></td>
       <td class="form1" width="100%"><input class="finput1" id="maxsessions" type="text" name="maxsessions" size="20" value="{USER_MAXSESS_VALUE}" />
 <!-- BEGIN: FlushActiveSessions -->
-&nbsp;&nbsp;&nbsp;<a href="{FLUSH_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('admin_flush','','{THEME}/ui_icons/sessions_hover.png',1)"><img src="{THEME}/ui_icons/sessions.png" alt="{FLUSH_ALT}" title="{FLUSH_ALT}" border="0" name="admin_flush" /></a>
+&nbsp;&nbsp;&nbsp;<a href="{FLUSH_URL}"><img class="hover_swap" src="{THEME}/ui_icons/sessions.png" alt="{FLUSH_ALT}" title="{FLUSH_ALT}" border="0" name="admin_flush" /></a>
 <!-- END: FlushActiveSessions -->
       </td>
    </tr>

@@ -476,5 +476,17 @@ jQuery('input.fbuttonup1').on({
          jQuery(this).addClass('fbuttonup1');
       }
    });
+
+// Image Swap on Hover effect
+
+   jQuery('img.hover_swap').on({
+      mouseenter: function () {
+         jQuery(this).prop('src', jQuery(this).prop('src').replace(/\.png/, '_hover.png' ));
+      },
+      mouseleave: function () {
+         jQuery(this).prop('src', jQuery(this).prop('src').replace(/_hover/, '' ));
+      }
+   }); 
+
   
 }) // end of document.ready
