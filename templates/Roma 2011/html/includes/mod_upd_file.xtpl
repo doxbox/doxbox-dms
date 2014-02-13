@@ -70,10 +70,10 @@
                <tr>
                   <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
                   <td class="right_text" width="100%">
-                     <input  class="fbuttonup1" name="send_file_x" type="submit" value="{FILE_BTN_UPD_FILE}" alt="{FILE_BTN_UPD_FILE_ALT}" title="{FILE_BTN_UPD_FILE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                     <input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" name="send_file_x" type="submit" value="{FILE_BTN_UPD_FILE}" alt="{FILE_BTN_UPD_FILE_ALT}" title="{FILE_BTN_UPD_FILE_ALT}" />
+                     <input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" />
 <!-- BEGIN:  CancelBtn -->
-                     <input  class="fbuttonup1" type="submit" value="{FILE_BTN_CANCEL}" alt="{FILE_BTN_CANCEL_ALT}" title="{FILE_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" type="submit" value="{FILE_BTN_CANCEL}" alt="{FILE_BTN_CANCEL_ALT}" title="{FILE_BTN_CANCEL_ALT}" />
 <!-- END:  CancelBtn --> 
                   </td>
                </tr>

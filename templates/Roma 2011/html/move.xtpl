@@ -42,7 +42,7 @@
                   <td class="form2">
 {FORMCANCEL}
 {HIDDEN}
-                        <input  class="fbuttonup1" name="myaction_x" type="submit" value="{FOLDER_BTN_CANCEL}" alt="{FOLDER_BTN_CANCEL_ALT}" title="{FOLDER_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                        <input  class="fbuttonup1" name="myaction_x" type="submit" value="{FOLDER_BTN_CANCEL}" alt="{FOLDER_BTN_CANCEL_ALT}" title="{FOLDER_BTN_CANCEL_ALT}" />
                      </form>
                   </td>
                </tr>

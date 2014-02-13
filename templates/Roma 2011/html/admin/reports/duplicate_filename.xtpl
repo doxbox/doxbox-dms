@@ -22,6 +22,6 @@
 <!-- END: Files -->
 <tr>
 <td colspan="5">&nbsp;</td>
-<td><input  class="fbuttonup1" name="bdelete" type="submit" value="{DELETE_LABEL}" alt="{DELETE_ALT}" title="{DELETE_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{DELETE_CONFIRM}');" /></td>
+<td><input  class="fbuttonup1" name="bdelete" type="submit" value="{DELETE_LABEL}" alt="{DELETE_ALT}" title="{DELETE_ALT}" onclick="return confirm('{DELETE_CONFIRM}');" /></td>
 </tr>
 <!-- END: Report7 -->

@@ -33,8 +33,8 @@
                </tr>
                <tr>
                   <td class="form2" width="100%" colspan="2">
-                  <input  class="fbuttonup1" name="btn_add_doctype_x" type="submit" value="{DOCTYPE_BTN_CREATE_VALUE}" alt="{DOCTYPE_BTN_CREATE_ALT}" title="{DOCTYPE_BTN_CREATE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                  <input  class="fbuttonup1" name="myaction" type="submit" value="{DOCTYPE_BTN_CANCEL_VALUE}" alt="{DOCTYPE_BTN_CANCEL_ALT}" title="{DOCTYPE_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                  <input  class="fbuttonup1" name="btn_add_doctype_x" type="submit" value="{DOCTYPE_BTN_CREATE_VALUE}" alt="{DOCTYPE_BTN_CREATE_ALT}" title="{DOCTYPE_BTN_CREATE_ALT}" />
+                  <input  class="fbuttonup1" name="myaction" type="submit" value="{DOCTYPE_BTN_CANCEL_VALUE}" alt="{DOCTYPE_BTN_CANCEL_ALT}" title="{DOCTYPE_BTN_CANCEL_ALT}" /></td>
                </tr>
    <!-- END: New -->
    <!-- BEGIN: NewField -->
@@ -96,14 +96,14 @@
                   <td class="form2" width="100%" colspan="2">
 
       <!-- BEGIN: AddField -->
-                     <input  class="fbuttonup1" name="btn_add_field_x" type="submit" value="{DOCTYPE_BTN_ADDFIELD_VALUE}" alt="{DOCTYPE_BTN_ADDFIELD_ALT}" title="{DOCTYPE_BTN_ADDFIELD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                     <input  class="fbuttonup1" name="btn_del_doctype_x" type="submit" value="{DOCTYPE_BTN_DELDOCTYP_VALUE}" alt="{DOCTYPE_BTN_DELDOCTYP_ALT}" title="{DOCTYPE_BTN_DELDOCTYP_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" name="btn_add_field_x" type="submit" value="{DOCTYPE_BTN_ADDFIELD_VALUE}" alt="{DOCTYPE_BTN_ADDFIELD_ALT}" title="{DOCTYPE_BTN_ADDFIELD_ALT}"  />
+                     <input  class="fbuttonup1" name="btn_del_doctype_x" type="submit" value="{DOCTYPE_BTN_DELDOCTYP_VALUE}" alt="{DOCTYPE_BTN_DELDOCTYP_ALT}" title="{DOCTYPE_BTN_DELDOCTYP_ALT}" />
 
       <!-- END: AddField -->
    <!-- BEGIN: EditField -->
-                     <input  class="fbuttonup1" name="btn_upd_field_x" type="submit" value="{DOCTYPE_BTN_EDITFIELD_VALUE}" alt="{DOCTYPE_BTN_EDITFIELD_ALT}" title="{DOCTYPE_BTN_EDITFIELD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" name="btn_upd_field_x" type="submit" value="{DOCTYPE_BTN_EDITFIELD_VALUE}" alt="{DOCTYPE_BTN_EDITFIELD_ALT}" title="{DOCTYPE_BTN_EDITFIELD_ALT}" />
    <!-- END: EditField -->
-                     <input  class="fbuttonup1" type="reset" value="Reset" alt="{DOCTYPE_BTN_RESET_VALUE}" title="{DOCTYPE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                     <input  class="fbuttonup1" type="reset" value="Reset" alt="{DOCTYPE_BTN_RESET_VALUE}" title="{DOCTYPE_BTN_RESET_ALT}" /></td>
                </tr>
       <!-- END: NewField -->
             </table>

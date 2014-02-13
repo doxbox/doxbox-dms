@@ -38,9 +38,9 @@
                <td class="form2" width="100%">
                   <label for="mailto">{RECYCLE_EMAILTO_LABEL}</label>
                   <input class="finput1" id="mailto" type="text" name="mailto" size="24" maxlength="255" value="" />
-                  <input class="fbuttonup1" name="bemailaction_x" type="submit" value="{RECYCLE_EMAILTO_BTN_LABEL}" title="{RECYCLE_EMAILTO_BTN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                  <input class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{RECYCLE_DEL_BTN_LABEL}" title="RECYCLE_DEL_BTN_ALT}" onclick='return confirm("{RECYCLE_DEL_BTN_CONF}?");' onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                  <input class="fbuttonup1" name="bemptyaction_x" type="submit" value="{RECYCLE_EMPTY_BTN_LABEL}" title="{RECYCLE_EMPTY_BTN_ALT}" onclick='return confirm("{RECYCLE_DEL_BTN_CONF}?");' onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input class="fbuttonup1" name="bemailaction_x" type="submit" value="{RECYCLE_EMAILTO_BTN_LABEL}" title="{RECYCLE_EMAILTO_BTN_ALT}" />
+                  <input class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{RECYCLE_DEL_BTN_LABEL}" title="RECYCLE_DEL_BTN_ALT}" onclick='return confirm("{RECYCLE_DEL_BTN_CONF}?");' />
+                  <input class="fbuttonup1" name="bemptyaction_x" type="submit" value="{RECYCLE_EMPTY_BTN_LABEL}" title="{RECYCLE_EMPTY_BTN_ALT}" onclick='return confirm("{RECYCLE_DEL_BTN_CONF}?");' />
                </td>
             </tr>
             <tr class="nostyle_table">
@@ -50,7 +50,7 @@
                <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
                <td class="form2" width="1%">&nbsp;</td>
                <td class="form2" width="100%">
-                  <input class="fbuttonup1" name="brestoreaction_x" type="submit" value="{RECYCLE_RESTORE_BTN_LABEL}" title="{RECYCLE_RESTORE_BTN_ALT}" onclick='return confirm("{RECYCLE_RESTORE_BTN_CONF} ?");' onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />&nbsp;&nbsp;
+                  <input class="fbuttonup1" name="brestoreaction_x" type="submit" value="{RECYCLE_RESTORE_BTN_LABEL}" title="{RECYCLE_RESTORE_BTN_ALT}" onclick='return confirm("{RECYCLE_RESTORE_BTN_CONF} ?");' />&nbsp;&nbsp;
                   <select class="fpull1" name="folder_id">
 <!-- BEGIN: RestLocation -->
                      <option value="{RECYCLE_DEST_VALUE}">{RECYCLE_DEST_SPACER}{RECYCLE_DEST_CAPTION}</option>

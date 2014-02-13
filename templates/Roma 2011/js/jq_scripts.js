@@ -462,5 +462,19 @@ jQuery(document).ready(function() {
       jQuery('#menu_container_toggler').find('a').removeClass('slide_down').addClass('slide_up'); 
     }
   });
+
+// Button Hover effect
+
+jQuery('input.fbuttonup1').on({
+
+      mouseenter: function () {
+         jQuery(this).removeClass('fbuttonup1');
+         jQuery(this).addClass(fGetDownClass(this));
+      },
+      mouseleave: function () {
+         jQuery(this).removeClass(fGetDownClass(this));
+         jQuery(this).addClass('fbuttonup1');
+      }
+   });
   
 }) // end of document.ready

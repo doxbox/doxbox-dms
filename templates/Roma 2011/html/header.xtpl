@@ -378,7 +378,7 @@
       <form action="{ROOT_URL}/search.php" method="post">
         {SEARCH_HIDDEN}
         <input class="sinput1" type="text" name="query" size="24" maxlength="255" value="{SEARCH_VALUE}" />
-        <input name="search_{SEARCH_ID}" class="fbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+        <input name="search_{SEARCH_ID}" class="fbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" />
         <span>
         <select class="spull1" name="boolean" size="1">
         <!-- BEGIN: SelectBox -->
@@ -409,9 +409,9 @@
           <option value="{SELECT_BOX.FAVORITE_SELECTBOX_VALUE}"{SELECT_BOX.FAVORITE_SELECTBOX_SELECTED}>{SELECT_BOX.FAVORITE_SELECTBOX_LABEL}</option>
         <!-- END: SelectBox -->
         </select>
-        <input name="go_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_GO}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-        <input name="del_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_DELETE}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-        <input name="add_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_ADD}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+        <input name="go_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_GO}" />
+        <input name="del_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_DELETE}" />
+        <input name="add_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_ADD}" />
         {FAVORITE_LABEL} <input name="fav_label_{FAVORITE_ID}" class="finput1" type="text" value="" />                
       </form>
     </div><!-- /tools_panels -->
@@ -423,16 +423,16 @@
 <form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
 {BULKBUTTONS_HIDDEN}
       <!-- BEGIN: Download -->
-      <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" />
       <!-- END: Download -->
-      <input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-      <input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-      <input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" />
+      <input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" />
+      <input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" />
+      <input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" />
       <!-- BEGIN: Checkout -->
-      <input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+      <input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" />
       <!-- END: Checkout -->
       <!-- BEGIN: JUpload -->
-      <input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/>
+      <input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/>
       <!-- END: JUpload -->      
       <!-- END: BulkButtonsTop -->      
     </div><!-- /tools_panels -->        
@@ -453,8 +453,8 @@
           {SHOWREC_HIDDEN}
           <label for="filter">{SHOWREC_NUM_DAY_LABEL}</label>
           <input class="finput1" id="filter" type="text" name="filter" size="10" value="{SHOWREC_NUM_DAY_VALUE}" />
-          <input  class="fbuttonup1" name="submit" type="submit" value="{SHOWREC_SUBMIT_VALUE}" alt="{SHOWREC_SUBMIT_ALT}" title="{SHOWREC_SUBMIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-          <input  class="fbuttonup1" type="reset" value="{SHOWREC_RESET_VALUE}" alt="{SHOWREC_RESET_ALT}" title="{SHOWREC_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          <input  class="fbuttonup1" name="submit" type="submit" value="{SHOWREC_SUBMIT_VALUE}" alt="{SHOWREC_SUBMIT_ALT}" title="{SHOWREC_SUBMIT_ALT}" />
+          <input  class="fbuttonup1" type="reset" value="{SHOWREC_RESET_VALUE}" alt="{SHOWREC_RESET_ALT}" title="{SHOWREC_RESET_ALT}" />
         </form>
       </div><!-- /showrec -->
     </div><!-- /showrec_cont -->

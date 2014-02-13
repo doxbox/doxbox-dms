@@ -54,8 +54,8 @@
       <tr>
          <td class="form1">&nbsp;</td>
          <td class="form2" width="100%">
-            <input  class="fbuttonup1" name="getpasswd_btn_x" type="submit" value="{BTN_SENDPASS}" alt="{BTN_SENDPASS_ALT}" title="{BTN_SENDPASS_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-            <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" name="getpasswd_btn_x" type="submit" value="{BTN_SENDPASS}" alt="{BTN_SENDPASS_ALT}" title="{BTN_SENDPASS_ALT}" />
+            <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="BTN_RESET_ALT}" />
          </td>
       </tr>
    </table>
@@ -91,8 +91,8 @@
       <tr>
          <td class="form1">&nbsp;</td>
          <td class="form2" width="100%">
-            <input  class="fbuttonup1" name="register_btn_x" type="submit" value="{BTN_REGISTER}" alt="{BTN_REGISTER_ALT}" title="{BTN_REGISTER_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-            <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" name="register_btn_x" type="submit" value="{BTN_REGISTER}" alt="{BTN_REGISTER_ALT}" title="{BTN_REGISTER_ALT}" />
+            <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="BTN_RESET_ALT}" />
          </td>
       </tr>
    </table>
@@ -135,8 +135,8 @@
                   <tr>
                      <td class="form1">&nbsp;</td>
                      <td class="form2" width="100%">
-                        <input class="fbuttonup1" name="getpasswd_btn_x" type="submit" value="{BTN_CHANGEPASS}" alt="{BTN_CHANGEPASS}" title="{BTN_CHANGEPASS}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
-                        <input class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
+                        <input class="fbuttonup1" name="getpasswd_btn_x" type="submit" value="{BTN_CHANGEPASS}" alt="{BTN_CHANGEPASS}" title="{BTN_CHANGEPASS}" /> 
+                        <input class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                      </td>
                   </tr>
                </tbody>

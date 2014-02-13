@@ -20,8 +20,8 @@
                   <tr>
                      <td class="form2"><img src="{THEME}/ui_misc/x_clear.gif" alt="" height="1" width="1"></td>
                      <td class="form2" width="100%" colspan="2">
-                        <input class="fbuttonup1" name="send_file_x" value="{IMPUSER_BTN_SEND_VALUE}" alt="{IMPUSER_BTN_SEND_ALT}" title="{IMPUSER_BTN_SEND_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" type="submit" />
-                        <input class="fbuttonup1" value="{IMPUSER_BTN_RESET_VALUE}" alt="{IMPUSER_BTN_RESET_ALT}" title="{IMPUSER_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" type="reset" />
+                        <input class="fbuttonup1" name="send_file_x" value="{IMPUSER_BTN_SEND_VALUE}" alt="{IMPUSER_BTN_SEND_ALT}" title="{IMPUSER_BTN_SEND_ALT}" type="submit" />
+                        <input class="fbuttonup1" value="{IMPUSER_BTN_RESET_VALUE}" alt="{IMPUSER_BTN_RESET_ALT}" title="{IMPUSER_BTN_RESET_ALT}" type="reset" />
                      </td>
                   </tr>
 <!-- BEGIN: Row -->

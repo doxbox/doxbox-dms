@@ -60,8 +60,8 @@
                </tr>
                <tr>
                   <td class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td><td class="form2 right_text" width="100%">
-                     <input  class="fbuttonup1" type="submit" value="{FOLDER_BTN_MOD}" alt="{FOLDER_BTN_MOD_ALT}" title="{FOLDER_BTN_MOD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                     <input  class="fbuttonup1" type="reset" value="{FOLDER_BTN_RESET}" alt="FOLDER_BTN_RESET_ALT}" title="FOLDER_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" type="submit" value="{FOLDER_BTN_MOD}" alt="{FOLDER_BTN_MOD_ALT}" title="{FOLDER_BTN_MOD_ALT}" />
+                     <input  class="fbuttonup1" type="reset" value="{FOLDER_BTN_RESET}" alt="FOLDER_BTN_RESET_ALT}" title="FOLDER_BTN_RESET_ALT}" />
                  </td>
                </tr>
             </table>

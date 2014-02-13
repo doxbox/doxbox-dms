@@ -54,13 +54,13 @@
             <tr>
                <td class="form2" width="100%" colspan="2">
 <!-- BEGIN: AddNewsBTN -->
-                  <input class="fbuttonup1" name="btn_add_news_x" type="submit" value="{NEWS_BTN_ADD_VALUE}" alt="{NEWS_BTN_ADD_ALT}" title="{NEWS_BTN_ADD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
+                  <input class="fbuttonup1" name="btn_add_news_x" type="submit" value="{NEWS_BTN_ADD_VALUE}" alt="{NEWS_BTN_ADD_ALT}" title="{NEWS_BTN_ADD_ALT}" /> 
 <!-- END: AddNewsBTN -->
 <!-- BEGIN: EditNewsBTN -->
-                  <input  class="fbuttonup1" name="btn_ed_news_x" type="submit" value="{NEWS_BTN_CHANGE_VALUE}" alt="{NEWS_BTN_CHANGE_ALT}" title="{NEWS_BTN_CHANGE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                  <input  class="fbuttonup1" name="btn_cancel_news_x" type="submit" value="{NEWS_BTN_CANCEL_VALUE}" alt="{NEWS_BTN_CANCEL_ALT}" title="{NEWS_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                  <input  class="fbuttonup1" name="btn_ed_news_x" type="submit" value="{NEWS_BTN_CHANGE_VALUE}" alt="{NEWS_BTN_CHANGE_ALT}" title="{NEWS_BTN_CHANGE_ALT}" />
+                  <input  class="fbuttonup1" name="btn_cancel_news_x" type="submit" value="{NEWS_BTN_CANCEL_VALUE}" alt="{NEWS_BTN_CANCEL_ALT}" title="{NEWS_BTN_CANCEL_ALT}" />
 <!-- END: EditNewsBTN -->
-                  <input  class="fbuttonup1" type="reset" value="{NEWS_BTN_RESET_VALUE}" alt="{NEWS_BTN_RESET_ALT} Form Values" title="{NEWS_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                  <input  class="fbuttonup1" type="reset" value="{NEWS_BTN_RESET_VALUE}" alt="{NEWS_BTN_RESET_ALT} Form Values" title="{NEWS_BTN_RESET_ALT}" /></td>
             </tr>
          </table>
       </td>

@@ -70,7 +70,7 @@
   
         <!-- BEGIN: Submit form button -->
         <div id="submit_form" class="input_field">
-          <input id="submit_form_button" class="fbuttonup1" tabindex="3" type="submit" value="{BTN_LOGIN_VALUE}" alt="{BTN_LOGIN_ALT}" title="{BTN_LOGIN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          <input id="submit_form_button" class="fbuttonup1" tabindex="3" type="submit" value="{BTN_LOGIN_VALUE}" alt="{BTN_LOGIN_ALT}" title="{BTN_LOGIN_ALT}" />
           <div class="clearbox"></div>
         </div>
         <!-- END: Submit form button -->      
