@@ -4081,13 +4081,19 @@ function owl_syslog($action, $userid, $filename, $logparent, $detail, $type, $fi
       {
          $log = 1;
       } 
+
+      if ($userid == "" )
+      {
+        $userid = $default->anon_user;
+      }
+
       if ($log == 1)
       {
          if (empty($logparent))
          {
             $logparent = 0;
          }
-         $sql->query("INSERT into $default->owl_log_table (userid, filename, action, parent, details, logdate, ip, agent, type, filesize) values ('$userid', '" . addslashes(stripslashes($filename)) . "', '$action', '$logparent', '" . addslashes(stripslashes($detail)). "', '$logdate', '$ip', '$agent', '$type', '$filesize')");
+         $sql->query("INSERT into $default->owl_log_table (userid, filename, action, parent, details, logdate, ip, agent, type, filesize) values ('$userid', '" . $sql->make_arg_safe($filename) . "', '$action', '$logparent', '" . $sql->make_arg_safe($detail). "', '$logdate', '$ip', '$agent', '$type', '$filesize')");
       } 
    } 
 } 

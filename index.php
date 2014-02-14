@@ -615,7 +615,15 @@ if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3 or $def
             }
             else
             {
-               owl_syslog(LOGIN_FAILED, $verified["uid"], 0, 0, $owl_lang->log_login_det . $verified["user"] , "LOGIN");
+               if (trim($verified["uid"]) == '')
+               {
+                  $sUsername = sprintf("Unknown (%s)", $loginname);
+               }
+               else
+               {
+                  $sUsername = $verified['user'];
+               }
+               owl_syslog(LOGIN_FAILED, $verified["uid"], 0, 0, $owl_lang->log_login_det . $sUsername , "LOGIN");
                header("Location: index.php?login=1&failure=1" . $sUrlMod);
             }
          }
