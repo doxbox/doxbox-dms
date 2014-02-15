@@ -728,7 +728,6 @@ $owl_lang->btn_cln_history              = "Purger l'historique";
 $owl_lang->btn_doctype_admin		= "Types de<br />documents";
 $owl_lang->btn_html_prefs		= "Pr&eacute;f&eacute;rences<br />HTML";
 $owl_lang->btn_initial_load		= "Chargement<br />initial";
-$owl_lang->btn_log_viewer               = "Logs du syst&egrave;me ";
 $owl_lang->btn_log_viewer		= "Visualiser les logs";
 $owl_lang->btn_news_admin		= "Administration<br />des news";
 $owl_lang->btn_admin_user_group      = "User/Group Administartor";

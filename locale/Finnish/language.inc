@@ -62,7 +62,6 @@ $owl_lang->lang_code = "fi";
 // Error Messages BEGIN
 //********************************************************
 
-$owl_lang->err_please_select_bulk	= "Valitse valintaruudulla v&auml;hint&auml;&auml;n yksi Tiedosto tai kansio";
 $owl_lang->err_select_reviewer		= "Valitse v&auml;hint&auml;&auml;n yksi k&auml;ytt&auml;j&auml; tarkistamaan asiakirjasi";
 $owl_lang->err_adding_comments		= "Sinulle ei ole annettu oikeuksia lis&auml;t&auml; kommentteja t&auml;h&auml;n tiedostoon";
 $owl_lang->err_comment_empty		= "Kommentti ei voi olla tyhj&auml;";
@@ -184,7 +183,6 @@ $owl_lang->btn_admin_user_group          = "K&auml;ytt&auml;j&auml;/Ryhm&auml; Y
 $owl_lang->alt_btn_admin_user_group      = "Adminstartor for Users and Groups";
 $owl_lang->alt_btn_admin_news          = "Administartor for System News";
 $owl_lang->btn_trash_admin          = "Roskakori";
-$owl_lang->btn_add_news          = "Add News";
 $owl_lang->btn_add_news          = "Lis&auml;&auml; uutinen";
 $owl_lang->btn_clickhere          = "Paina t&auml;t&auml;";
 $owl_lang->btn_edit_group          = "Muokkaa ryhm&auml;&auml;";
@@ -738,8 +736,6 @@ $owl_lang->btn_html_prefs		= "HTML<br />Asetukset";
 $owl_lang->alt_btn_html_prefs		= "Muokkaa sivuston HTML asetuksia";
 $owl_lang->btn_site_features		= "Sivuston<br />Ominaisuudet";
 $owl_lang->alt_btn_site_features	= "Muokkaa sivuston ominaisuuksia ja asetuksia";
-$owl_lang->btn_log_viewer		= "Lokin<br />Selaus";
-$owl_lang->alt_btn_log_viewer		= "Owl J&auml;rjestelm&auml;lokin selain";
 $owl_lang->btn_statistics_viewer	= "Tilasto / Raportti <br />Selain";
 $owl_lang->alt_btn_statistics_viewer	= "Owl Tilasto selain";
 $owl_lang->btn_news_admin		= "Uutisten<br />Yll&auml;pito";

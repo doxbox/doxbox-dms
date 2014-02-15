@@ -718,7 +718,6 @@ $owl_lang->alt_btn_backup		= "Backup SQL BDD";
 $owl_lang->alt_btn_doctype_admin	= "Administrador de tipus de document";
 $owl_lang->alt_btn_html_prefs		= "Editar prefer&egrave;ncies del lloc HTML";
 $owl_lang->alt_btn_initial_load		= "Carrega la base SQL de la carpeta Documents";
-$owl_lang->alt_btn_log_viewer		= "Mostrar successos";
 $owl_lang->alt_btn_news_admin		= "Administraci&oacute; de not&iacute;cies";
 $owl_lang->alt_btn_site_features	= "Editar caracter&iacute;stiques i configuracions del lloc";
 $owl_lang->alt_btn_statistics_viewer	= "Visor d'estad&iacute;stiques";

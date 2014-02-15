@@ -87,7 +87,6 @@ $owl_lang->err_folder_create 		= "フォルダーの作成エラー";
 $owl_lang->err_folder_exist		= "このフォルダーは既に存在します";
 $owl_lang->err_folderexists  		= "名前の変更がキャンセルされました<br />同じ名前のフォルダーが既に存在します";
 $owl_lang->err_general 			= "エラーが発生しました";
-$owl_lang->err_please_select_bulk	= "チェックボックスで少なくとも１つのファイルかフォルダーを選択して下さい";
 $owl_lang->err_select_reviewer		= "文書を検閲する人を少なくとも一人選んでください";
 $owl_lang->err_update_file_lock     	= "このファイルを更新することができません、他の人が保留中です";
 // NEW CHANGE
@@ -396,7 +395,6 @@ $log_file_actions[25]           = "ごみ箱";
 $log_file_actions[26]           = "ファイルACL";
 $log_file_actions[27]           = "フォルダACL";
 $log_file_actions[28]           = "フォルダ配布";
-$log_file_actions[28]           = "FOLDER DISTRIBUTE";
 $log_file_actions[29]           = "FOLDER LINKED";
 $log_file_actions[30]           = "FILE REVIEW";
 $log_file_actions[31]           = "FILE APPROVED";
@@ -728,7 +726,6 @@ $owl_lang->admin_login_to_browse_page	= "Admin goes to Browse Page on Logon";
 $owl_lang->alt_btn_backup		= "バックアップ SQL データベース";
 $owl_lang->alt_btn_doctype_admin	= "ドキュメントタイプ管理者";
 $owl_lang->alt_btn_html_prefs		= "サイトHTML お好みの編集";
-$owl_lang->alt_btn_log_viewer		= "DMS システムログビュワー";
 $owl_lang->alt_btn_news_admin		= "DMS ニュース管理者";
 $owl_lang->alt_btn_site_features	= "サイト機能と設定を編集";
 $owl_lang->alt_btn_statistics_viewer	= "DMS 統計ビュワー";
@@ -736,7 +733,6 @@ $owl_lang->alt_btn_users_groups		= "ユーザとグループの管理";
 $owl_lang->btn_backup			= "バックアップ<br />データベース";
 $owl_lang->btn_doctype_admin		= "ドキュメント<br />タイプ";
 $owl_lang->btn_html_prefs		= "HTML<br />お好み";
-$owl_lang->btn_log_viewer		= "ログ<br />ビュワー";
 $owl_lang->btn_news_admin		= "ニュース<br />管理";
 $owl_lang->btn_site_features		= "サイト<br />機能";
 $owl_lang->btn_statistics_viewer	= "統計 / 報告 <br />ビュワー";
@@ -1504,9 +1500,6 @@ $owl_lang->owl_def_file_meta_extended           = "Extended Help";
 
 $owl_lang->group_set_selected      = "Set Selected";
 $owl_lang->alt_group_set_selected  = "Sets the selected users";
-
-$owl_lang->btn_jupload                          = "Jupload";
-$owl_lang->alt_btn_jupload                      = "Add Multiple files using jupload";
 
 $owl_lang->owl_use_smtp_ssl                     = "SMTP SSL:";
 $owl_lang->owl_smtp_port                        = "SMTP Port Number:";
