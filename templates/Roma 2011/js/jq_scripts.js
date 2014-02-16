@@ -43,10 +43,6 @@ function centerPopup(){
 	var windowHeight = document.documentElement.clientHeight;
 	var popupHeight = jQuery("#popupHelp").height();
 	var popupWidth = jQuery("#popupHelp").width();
-//console.log("Wind W: " + windowWidth);
-//console.log("Wind H: " + windowHeight);
-//console.log("Pop W: " + popupWidth);
-//console.log("Pop H: " + popupHeight);
 
         if (popupHeight > windowHeight)
         {
@@ -200,7 +196,7 @@ jQuery(document).ready(function() {
   		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/Roma 2011/img/ajax-loader.gif" title="ajaxloader" /></div>');
   		  here = jQuery(this).parents('.wrap_thumb').find('.monitor');
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').css({opacity: 0});
-  		  var altezzaSmall = jQuery(this).outerHeight();
+  		  var altezzaSmall = jQuery(this).outerHeight(true);
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').height(13);
   		  var windowWidth = jQuery(window).width();
   		  var halfWindow = windowWidth/2;
@@ -278,20 +274,21 @@ jQuery(document).ready(function() {
   		var offset = jQuery(this).offset();
       var menu = jQuery(this).find('.jqLayerMenu');
       var windowHeight = jQuery(window).height();
+
       if (offset.left < halfWindow) {
-        var left = jQuery(this).find('a').outerWidth();
+        var left = jQuery(this).find('a').outerWidth(true);
         jQuery(this).find('a:first-child').addClass('HoverDx');                        
-        menu.css({left: left, top: '-6px'});
+        menu.css({left: left, top: '-1px', left: jQuery(this).find('a:first-child').width() + 9 });
       } else {
-        var left = menu.outerWidth();
+        var left = menu.outerWidth(true);
         jQuery(this).find('a:first-child').addClass('HoverSx');        
-        menu.css({left: -left+1, top: '-6px'});
+        menu.css({left: -left+1, top: '-1px'});
       }
       menu.css({display:'block'});
       var offset = menu.offset();
       var wOffset = jQuery(window).scrollTop();       
       menu.css({display:'none'});
-      var menuHeight =  menu.outerHeight();
+      var menuHeight =  menu.outerHeight(true);
       var ySize = (offset.top+menuHeight)-wOffset;                        
       if ( ySize > windowHeight) {
         newYpos = ySize - windowHeight; 
@@ -323,8 +320,6 @@ jQuery(document).ready(function() {
       jQuery(this).parents().find('.layerMenuAnchor').removeClass('zindex_fix');
       jQuery(this).parents().find('.med_thumbnail').removeClass('zindex_fix');
       jQuery(this).addClass('zindex_fix');
-      //console.log(jQuery('.wrap_thumb').css('z-index'));
-      //console.log(jQuery('.wrap_thumb img').attr('src'));
     });
   // IE z-index bug fix for thumbnails  
     jQuery('.img_thumb').mouseover(function() {
