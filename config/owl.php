@@ -688,8 +688,8 @@ $default->list_of_valid_chars_in_file_names = "-A-Za-z0-9._[:space:]ÀàÁáÂâ
 // Run admin/tools/bigindex.php instead.
 $default->index_files_on_archive_add = 1;
 
-
-$default->charset = "UTF-8";
+$default->db_charset = "utf8"; // Charset used to connect to the Database
+$default->charset = "UTF-8"; // Charset used in html header to display the page if NOT set in the local/<LANGUAGE>/language.inc file
 
 // **********************************************************************
 // *** OWL STATIC - FILE UPLOAD - FILTERS FOR LOOK AT HD FEATURE 

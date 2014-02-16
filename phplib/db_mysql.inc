@@ -10,7 +10,7 @@
  */ 
 
 class DB_Sql {
-  
+
   /* public: connection parameters */
   var $Host     = "";
   var $Database = "";
@@ -40,7 +40,6 @@ class DB_Sql {
   var $Link_ID  = 0;
   var $Query_ID = 0;
   
-
 
   /* public: constructor */
   function DB_Sql($query = "") {
@@ -99,7 +98,14 @@ class DB_Sql {
   }
 
   /* public: perform a query */
-  function query($Query_String, $collation = 'utf8') {
+  function query($Query_String, $collation = null) {
+
+     /* if collation is no specified use the default as set in the owl.php file */
+     if (is_null($collation))
+     {
+        $collation = $GLOBALS['default']->db_charset;
+     }
+
     /* No empty queries, please, since PHP4 chokes on them. */
     if ($Query_String == "")
       /* The empty query string is passed on from the constructor,
@@ -117,14 +123,19 @@ class DB_Sql {
       $this->free();
     }
 
+    if ($this->Debug)
+    {
+      printf("Debug: Changing to Charset %s ---- Current Charset = %s <br />\n", $collation, mysql_client_encoding($this->Link_ID));
+    }
+
     @mysql_query("SET NAMES '$collation';", $this->Link_ID);
     @mysql_query("SET CHARACTER SET '$collation';", $this->Link_ID);
 
     // @mysql_query('SET NAMES "UTF8"');
     // @mysql_query("SET collation_connection='utf8_general_ci'");
     // @mysql_query("SET collation_server='utf8_general_ci'");
-    // @mysql_query("SET character_set_client='utf8'");
-    // @mysql_query("SET character_set_connection='utf8'");
+    // @mysql_query("SET character_set_connection='$collation'");
+    // @mysql_query("SET character_set_client='$collation'");
     // @mysql_query("SET character_set_results='utf8'");
     // @mysql_query("SET character_set_server='utf8'");
 
