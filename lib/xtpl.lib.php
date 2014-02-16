@@ -104,10 +104,6 @@ function fPrintPrefsXTPL ($location)
          $xtpl->parse('main.PrefsBar' . $location . '.Online.GroupName');
       }  
 
-      if ($default->show_online_users == 1)
-      {
-         $xtpl->parse('main.PrefsBar' . $location . '.Online');
-      }
 
       
       $xtpl->assign('LASTLOG_LABEL', $owl_lang->last_logged);
@@ -115,11 +111,15 @@ function fPrintPrefsXTPL ($location)
     
       $xtpl->assign('USERS_TOOLS_MENU', $owl_lang->user_tool_menu_label);
       $xtpl->assign('ADMINS_TOOLS_MENU', $owl_lang->admins_tool_menu_label);
-
       if (count($default->owl_db_display_name) > 1)
       {
          $xtpl->assign('CURRENTDB_LABEL', $owl_lang->current_db);
          $xtpl->assign('CURRENTDB', $default->owl_db_display_name[$default->owl_current_db] );
+      }
+
+      if ($default->show_online_users == 1)
+      {
+         $xtpl->parse('main.PrefsBar' . $location . '.Online');
       }
    }
 
