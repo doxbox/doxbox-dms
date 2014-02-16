@@ -168,6 +168,11 @@ function fPrintLoginPage($message = "", $severity)
    {
       $urlArgs['folderid']    = $folderid;
    }
+   if (isset($currendb) and is_numeric($currendb) or
+       isset($_POST['currentdb']) and is_numeric($_POST['currentdb']))
+   {
+      $urlArgs['currendb']    = $currendb;
+   }
 
    $xtpl->assign('HIDDEN_FIELDS', fGetHiddenFields ($urlArgs));
    $xtpl->assign('SITE_TITLE', $default->site_title);

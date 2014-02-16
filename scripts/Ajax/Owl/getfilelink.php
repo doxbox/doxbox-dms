@@ -39,7 +39,8 @@ if (isset($sess) and (!$sess == 0))
 // We should probably generate a session?
 // What session should we genereate here?
 //
-   print ($default->owl_notify_link . "browse.php?sess=0&parent=" . $sql->f("parent") . "&expand=1&fileid=" . $sql->f("id"));
-   print ("<br />" . $default->owl_notify_link . "download.php?sess=0&parent=" . $sql->f("parent") . "&expand=1&dlfileid=" . $sql->f("id"));
+   //print ($default->owl_notify_link . "browse.php?sess=0&parent=" . $sql->f("parent") . "&expand=1&fileid=" . $sql->f("id") . "&currentdb=" . $default->currentdb);
+   print ($default->owl_notify_link . "browse.php?sess=0&parent=" . $sql->f("parent") . "&expand=1&fileid=" . $sql->f("id") . '&amp;currentdb=' . $default->owl_current_db);
+   print ("<br />" . $default->owl_notify_link . "download.php?sess=0&parent=" . $sql->f("parent") . "&expand=1&dlfileid=" . $sql->f("id") . '&amp;currentdb=' . $default->owl_current_db);
 }
 ?>
