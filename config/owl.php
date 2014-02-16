@@ -449,7 +449,7 @@ $default->owl_default_db = 0;
 $default->owl_db_id[0]           = "0";
 
 // DATABASE[0] - Display Name
-$default->owl_db_display_name[0]   = "owl Ver. 1.11";
+$default->owl_db_display_name[0]   = "owl Ver. 1.12";
 
 // DATABASE[0] - Filesystem storage Location
 // WARNING: CHANGE THIS LOCATION
@@ -464,9 +464,10 @@ $default->owl_db_FileDir[0]        =  $default->owl_fs_root;
 $default->peer_auto_publish[0] 	   = "false";
 
 // DATABASE[0] - SECURITY - Connect String Information
-$default->owl_db_user[0]           = "root";
-//$default->owl_db_user[0]           = "postgres";
-$default->owl_db_pass[0]           = "";
+// Be sure to escape ' with \ if your username or password contains '
+$default->owl_db_user[0]           = 'root';
+$default->owl_db_pass[0]           = '';
+
 $default->owl_db_host[0]           = "localhost";
 
 $default->owl_db_name[0]           = "owl_development";
