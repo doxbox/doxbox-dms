@@ -4315,13 +4315,21 @@ function fFindFileFirstpartExtension ($filename, $sDelimiter = ".")
    {
       // pre-append a "." separator in the name for each
       // subsequent part of the the name of the file.
+      $firstpart = '';
       if ($extensioncounter != 0)
       {
          $firstpart = $firstpart . $sDelimiter;
       }
       $firstpart = $firstpart . $filesearch[$extensioncounter];
       $extensioncounter++;
+
+      // if we hit the end of the array 
+      if (!array_key_exists(($extensioncounter + 1), $filesearch))
+      {
+         break;
+      }
    }
+
    if ($extensioncounter == 0)
    {
       $firstpart = $filename;
