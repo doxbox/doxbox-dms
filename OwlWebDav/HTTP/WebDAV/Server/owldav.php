@@ -312,7 +312,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
             }
         }
         /* Hide backup Directory Turned On So Hide it except for Administrators  and File Admins */
-        if ($default->hide_backup == 1 and !_fIsAdmin())
+        if ($default->hide_backup == 1 and !$this->_fIsAdmin())
         {
            $this->fOwlWebDavLog ("HIDE BACKUP FOLDER", "$fullpath");
            if (is_dir($fullpath) and $filename == $default->version_control_backup_dir_name)
