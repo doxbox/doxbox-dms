@@ -1834,7 +1834,7 @@ if ($default->restrict_view == 1)
 
 
     function _fBasename($path, $suffix = '') {
-      $path = preg_replace('|^.+[\\/]|', '', $path);
+      $path = preg_replace('|^.+[\\/]|', '', rtrim($path, '/'));
       if ($suffix) {
         $path = preg_replace('|'. preg_quote($suffix) .'$|', '', $path);
       }
