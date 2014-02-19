@@ -934,7 +934,9 @@ if ($default->restrict_view == 1)
 
               $smodified = $sql->now();
 
-              $bInfected = fVirusCheck($fspath, $sFilename);
+              // this call needs to be moved to POST PUT
+              // AND if the file is infected Updated it at that time
+              //$bInfected = fVirusCheck($fspath, $sFilename);
 
 
               $sql->query("INSERT into $default->owl_files_table (name,filename,f_size,creatorid, updatorid,parent,created, description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved, expires, infected) values ('$sFilename', '$sFilename', '" . $options['content_length'] . "', '$this->owl_userid', '$this->owl_userid', '$this->owl_folderid', $smodified,'WEBDAV CREATED', '', '', '" . $groupid . "',$smodified,'0','$default->major_revision','$default->minor_revision','0','0','1', '', '$bInfected')");
