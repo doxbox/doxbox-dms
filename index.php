@@ -461,12 +461,18 @@ if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3 or $def
         $mail->Body .= $owl_lang->admin_login_from . " " . $ip . " (" .  fGetHostByAddress($ip) . ")<br /><br />";
         $mail->Body .= "</body></html>";
 
-        if (!$mail->Send())
+        if (!$mail->Send() and $default->debug == true)
         {
-           printError("$owl_lang->err_email", $mail->ErrorInfo);
+           $message = 'DEBUG: ' . $owl_lang->err_email . ': ' .$mail->ErrorInfo;
+           include_once($default->owl_fs_root . "/lib/header.inc");
+           include_once($default->owl_fs_root . "/lib/login_header.inc");
+           fPrintLoginPage($message, 'msg_error');
+           include_once($default->owl_fs_root . "/lib/login_footer.inc");
+           $xtpl->parse('main');
+           $xtpl->out('main');
+           exit;
         }
      }  
-
 
       $sql->query("SELECT curlogin, logintonewrec FROM $default->owl_users_table WHERE id = '" . $verified["uid"] . "'");
       $sql->next_record();
@@ -601,7 +607,13 @@ if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3 or $def
             }
             else
             {
-               printError("$owl_lang->toomanysessions");
+               include_once($default->owl_fs_root . "/lib/header.inc");
+               include_once($default->owl_fs_root . "/lib/login_header.inc");
+               fPrintLoginPage($owl_lang->toomanysessions, 'msg_error');
+               include_once($default->owl_fs_root . "/lib/login_footer.inc");
+               $xtpl->parse('main');
+               $xtpl->out('main');
+               exit;
             }
          }
          else
@@ -615,7 +627,13 @@ if (($_POST['loginname'] and ($default->auth == 0 or $default->auth == 3 or $def
                }
                else
                {
-                  printError("Web Interface access denied");
+                  include_once($default->owl_fs_root . "/lib/header.inc");
+                  include_once($default->owl_fs_root . "/lib/login_header.inc");
+                  fPrintLoginPage($owl_lang->user_access_msg, 'msg_error');
+                  include_once($default->owl_fs_root . "/lib/login_footer.inc");
+                  $xtpl->parse('main');
+                  $xtpl->out('main');
+                  exit;
                }
             }
             else
