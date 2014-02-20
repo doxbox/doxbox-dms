@@ -519,7 +519,7 @@ class DmsAPI
             throw new Exception($this->Response($aError));
          }
 
-         mkdir($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $name, $default->directory_mask);
+         @mkdir($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $name, $default->directory_mask);
 
          if (!is_dir("$default->owl_FileDir/$path/$name"))
          {
