@@ -809,7 +809,9 @@ class DmsAPI
          /**
           * Cleanup the Incoming Filename using owl's list of permited characters
           */
-         $new_name = trim(fOwl_ereg_replace("[^$default->list_of_valid_chars_in_file_names]", "", fOwl_ereg_replace("%20|^-", "_", $_FILES['file_contents']['name'])));
+         $aNewName = $this->fGetNewFileName();
+         $new_name = $aNewName['new_name'];
+
          $newpath = $default->owl_FileDir . DIR_SEP . find_path($iParentID) . DIR_SEP . $new_name;
 
          if ($default->owl_version_control == 1)
@@ -1185,7 +1187,8 @@ class DmsAPI
          /**
           * Cleanup the Incoming Filename using owl's list of permited characters
           */
-         $new_name = trim(fOwl_ereg_replace("[^$default->list_of_valid_chars_in_file_names]", "", fOwl_ereg_replace("%20|^-", "_", $_FILES['file_contents']['name'])));
+         $aNewName = $this->fGetNewFileName();
+         $new_name = $new_name = $aNewName['new_name'];
 
          /**
           * If We are going to store this file to the File system we need to make sure the destination doesn't 
@@ -1274,9 +1277,7 @@ class DmsAPI
 
          $cDB = $this->fGetDBConnect();
 
-         $aFirstpExtension = fFindFileFirstpartExtension ($new_name);
-
-         $title = fOwl_ereg_replace("_", " ", $aFirstpExtension[0]);
+         $title = $aNewName['new_title'];
 
          $dDateCreated = $cDB->DBTimeStamp(time());
 
@@ -1386,7 +1387,7 @@ class DmsAPI
             fSetDefaultFileAcl($id);
             fSetInheritedAcl($iParentID, $id, "FILE");
 
-            notify_users($aVerified['groupid'], NEW_FILE, $id, $type);
+            notify_users($aVerified['groupid'], NEW_FILE, $id);
             notify_monitored_folders ($iParentID, $new_name);
 
             owl_syslog(FILE_UPLOAD, $aVerified['userid'], $new_name, $iParentID, $owl_lang->log_detail, "FILE", $fsize);
@@ -1699,6 +1700,27 @@ class DmsAPI
    * by new Classes that Extend this one
    ************************************
    */
+
+   /**
+     * Manipulate the filename and the File Title before they are written to 
+     * the filesystem and before they are written to the Database
+     *
+     * @return array <p>Array Containing 2 keys new_name and new_title</P>
+     */
+
+   public function fGetNewFileName()
+   {
+      global $default;
+
+      $aNewName = array();
+      $aNewName['new_name'] = trim(fOwl_ereg_replace("[^$default->list_of_valid_chars_in_file_names]", "", fOwl_ereg_replace("%20|^-", "_", $_FILES['file_contents']['name'])));
+
+      $aFirstpExtension = fFindFileFirstpartExtension ($aNewName['new_name']);
+
+      $aNewName['new_title'] = fOwl_ereg_replace("_", " ", $aFirstpExtension[0]);
+
+      return $aNewName;
+   }
 
    /**
     * Gets a connection to the Database
