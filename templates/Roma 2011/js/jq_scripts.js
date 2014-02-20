@@ -209,36 +209,43 @@ jQuery(document).ready(function() {
     		  jQuery(this).parents('.wrap_thumb').find('.monitor').animate({opacity:1,left:-50},200);        
         }
    		  //preload med-size thumb img
-        jQuery.imgpreload(imgURL,function() { 
-          var altezzaMed = jQuery(this).attr('height');
-          var lunghezza = jQuery(this).attr('width');
-          if (offset.left < halfWindow) {
-            jQuery(here).animate({
-                                 height: altezzaMed,
-                                 width: lunghezza,
-                                 top: -((altezzaMed - altezzaSmall)/2),
-                                 right: - (lunghezza+25)
-                                 },200, function() {
-                                                    jQuery(here).find('img').attr({ 
-                                                                              src: imgURL
-                                                                             });                             
-                                                   });
-          } else {
-            jQuery(here).animate({
-                                 height: altezzaMed,
-                                 width: lunghezza,
-                                 top: -((altezzaMed - altezzaSmall)/2),
-                                 left: - (lunghezza+25)
-                                 },200, function() {
-                                                    jQuery(here).find('img').attr({ 
-                                                                              src: imgURL
-                                                                             });                             
-                                                   });          
-          }
-          
-        });		  
-  		},
-  		//rollout function
+       jQuery.imgpreload(imgURL, {
+                each: function()
+                {
+                   // Was the image Loaded?
+                   if (jQuery(this).data('loaded'))
+                   {
+                      var MedImgHeight = jQuery(this).data('dimensions').height;
+                      var MedImgWidth = jQuery(this).data('dimensions').width;
+
+                      if (offset.left < halfWindow)
+                      {
+                         jQuery(here).animate({
+                                               height: MedImgHeight,
+                                               width: MedImgWidth,
+                                               top: -((MedImgHeight - altezzaSmall)/2),
+                                               right: - (MedImgWidth+25)
+                                               },200, function() {
+                                                                 jQuery(here).find('img').attr({
+                                                                                                src: imgURL
+                                                                                                });
+                                                                 });
+                                               } else {
+                                               jQuery(here).animate({
+                                                                    height: MedImgHeight,
+                                                                    width: MedImgWidth,
+                                                                    top: -((MedImgHeight - altezzaSmall)/2),
+                                                                    left: - (MedImgWidth+25)
+                                                                    },200, function() {
+                                                                                      jQuery(here).find('img').attr({
+                                                                                                                    src: imgURL
+                                                                                                                   });
+                                                                                     });
+                                              }
+                   }
+                }
+        });
+      }, //rollout function
       function() {
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').animate({opacity:0,top:-200}, 200, function(){jQuery(this).remove()});	
     });
@@ -412,7 +419,7 @@ jQuery(document).ready(function() {
                         {
                              setTimeout(function()
                              {
-                                 $(".ui-datepicker").css("z-index", 11);
+                                 jQuery(".ui-datepicker").css("z-index", 11);
                              }, 10); 
                         }
                 });
@@ -430,7 +437,7 @@ jQuery(document).ready(function() {
                         {
                              setTimeout(function()
                              {
-                                 $(".ui-datepicker").css("z-index", 11);
+                                 jQuery(".ui-datepicker").css("z-index", 11);
                              }, 10); 
                         }
                 });
