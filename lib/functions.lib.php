@@ -1677,9 +1677,10 @@ function fGenerateThumbNail($fid)
       {
 
          exec("cd '$tmpDir' ; " . escapeshellcmd($default->thumbnails_video_tool_path) . " $default->thumbnails_video_tool_opt '$path' > /dev/null 2>&1");
-         if (file_exists($tmpDir . "/00000002.png"))
-         {
 
+         $temp_full_size_png = $tmpDir . "/00000002.png";
+         if (file_exists($temp_full_size_png))
+         {
             if ($default->debug == true)
             {
                $imagedata = GetImageSize($temp_full_size_png);
@@ -1701,7 +1702,6 @@ function fGenerateThumbNail($fid)
             }
          }
       }
-      //print("cd $tmpDir ; $default->thumbnails_video_tool_path $default->thumbnails_video_tool_opt $path > /dev/null 2>&1");
       myDelete($tmpDir);
    }
 }
@@ -1710,8 +1710,6 @@ function fVirusCheck($filename, $name, $iLookAtHD = false)
 {
    global $default, $userid, $parent, $owl_lang;
    
-   //print("DEBUG: Calling Virus Function <br />");
-
    if (trim($default->virus_path) <> "")
    {
       $command = escapeshellcmd($default->virus_path) . " \"" . $filename . "\"";
