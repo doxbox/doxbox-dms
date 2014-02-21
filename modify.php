@@ -609,18 +609,11 @@ if ($action == "file_upload" or $action == "zip_upload")
          {
             $docRel = new Owl_DB;
             $docRel->query("SELECT id FROM $default->owl_files_table ORDER BY id");
-            $i = 0;
+
             while ($docRel->next_record())
             {
-                    $label = $default->doc_id_prefix;
-                    for ($j = 1; $j < $default->doc_id_num_digits; $j++)
-                    {
-                        $label .= "0";
-                    }
-                    $label .= $docRel->f("id");
                $docsRel[$i][0] = $docRel->f("id");
-               $docsRel[$i][1] = $label;
-               $i++;
+               $docsRel[$i][1] = $default->doc_id_prefix . str_pad($docRel->f("id"),$default->doc_id_num_digits, "0", STR_PAD_LEFT);
             }
 
             $rows = array();
@@ -1146,7 +1139,6 @@ if ($action == "file_modify")
          } 
          $xtpl->parse('main.EditFiles.SaveKeywordsList.Options');
          $xtpl->parse('main.EditFiles.SaveKeywordsList');
-         //fPrintFormSelectBox("&nbsp;", "keywordpick[]", $keywords, $sql->f("metadata") , 5, true);
       }
 //****************************************************************************************************
 // BEGIN ADD Filipe Lima (filipe.aclima@gmail.com) - March 2009
@@ -1154,20 +1146,13 @@ if ($action == "file_modify")
       if ($default->docRel == 1)
       {
             $docRel = new Owl_DB;
-            //$docRel->query("SELECT id FROM $default->owl_files_table ORDER BY id");
+
             $docRel->query("SELECT id FROM $default->owl_files_table WHERE id NOT LIKE $id ORDER BY id");
-            $i = 0;
+
             while ($docRel->next_record())
             {
-                    $label = $default->doc_id_prefix;
-                    for ($j = 1; $j < $default->doc_id_num_digits; $j++)
-                    {
-                        $label .= "0";
-                    }
-                    $label .= $docRel->f("id");
                $docsRel[$i][0] = $docRel->f("id");
-               $docsRel[$i][1] = $label;
-               $i++;
+               $docsRel[$i][1] = $default->doc_id_prefix . str_pad($docRel->f("id"),$default->doc_id_num_digits, "0", STR_PAD_LEFT);
             }
 
             if (isset($id))
