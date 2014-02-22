@@ -92,22 +92,22 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
         // set root directory, defaults to webserver document root if not set
         if ($base) 
-		{
-		    if (realpath($base))
-			{
-               $this->base = realpath($base); // TODO throw if not a directory
-               $this->fOwlWebDavLog ("ServerRequest", "NEWBASE: $this->base");
-			}
-			else
-			{
+	{
+	   if (realpath($base))
+	   {
+              $this->base = realpath($base); // TODO throw if not a directory
+              $this->fOwlWebDavLog ("ServerRequest", "NEWBASE: $this->base");
+	   }
+	   else
+	   {
               $this->fOwlWebDavLog ("ServerRequest", "BAD Directory: $this->base");
               return "403 Forbidden - [OWL] Permissions Denied";
-			}
+	   }
 
         } 
-		else if (!$this->base) 
-		{
-            $this->base = $this->_SERVER['DOCUMENT_ROOT'];
+	else if (!$this->base) 
+	{
+           $this->base = $this->_SERVER['DOCUMENT_ROOT'];
         }
                 
         // establish connection to property/locking db
@@ -197,7 +197,6 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
     {
 	    global $userid, $default;
 
-        //$this->fOwlWebDavLog ("PROPFIND", print_r(&$options, true) . print_r(&$files, true));
         $this->fOwlWebDavLog ("PROPFIND", "======== Function Called =======");
 
         // get absolute fs path to requested resource
@@ -232,16 +231,15 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 // ***********************************************
 // Find the OWL Folder ID to check Security
 // ***********************************************
-//
+
            $this->owl_folderid = $this->_fGetFolderID($options["path"], $this->owl_folderid);
-//print($this->owl_folderid);
+
 // ***********************************************
 // Check if the folder is accessible by the user
 // ***********************************************
 //
            If (check_auth($this->owl_folderid, "folder_view", $this->owl_userid, false, false) == 0)
            {
-//print("<br />NO ACCESS");
               $this->fOwlWebDavLog ("PROPFIND", "403 Forbidden - [OWL] Permissions Denied");
               return "403 Forbidden - [OWL] Permissions Denied";
            }
@@ -277,17 +275,17 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
             // try to open directory
             $handle = @opendir($fspath);
                 
-            if ($handle) {
-              //$this->fOwlWebDavLog ("OPENDIR", "OK: $fspath");
+            if ($handle) 
+            {
                 // ok, now get all its contents
-                while ($filename = readdir($handle)) {
-                    if ($filename != "." && $filename != "..") {
+                while ($filename = readdir($handle)) 
+                {
+                    if ($filename != "." && $filename != "..") 
+                    {
 
 // RESTRICTED VIEW BOZZ FILE
         if ($default->restrict_view == 1)
         {
-
-
            $fullpath = $fspath."/".$filename;
 
             $iFolderID = '';
@@ -297,7 +295,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                $iFolderID = $this->_fGetFolderID($fullpath . "/junk" , $this->owl_folderid);
                if (check_auth($iFolderID, "folder_view", $userid, false, false) == 0)
                {
-                  $this->fOwlWebDavLog ("RESTRICTED VIEW", "FOLDER SKIPPED Path: $fullpath");
+                  $this->fOwlWebDavLog ("PROPFIND", "RESTRICTED VIEW FOLDER SKIPPED Path: $fullpath");
                   continue;
                }
             }
@@ -306,7 +304,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                $iFileID = $this->_fGetFileID($filename, $this->owl_folderid);
                if (check_auth($iFileID, "file_download", $userid, false, false) == 0)
                {
-                  $this->fOwlWebDavLog ("RESTRICTED VIEW", "FILE SKIPPED Path: $fullpath");
+                  $this->fOwlWebDavLog ("PROPFIND", "RESTRICTED VIEW FILE SKIPPED Path: $fullpath");
                   continue;
                }
             }
@@ -314,10 +312,10 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         /* Hide backup Directory Turned On So Hide it except for Administrators  and File Admins */
         if ($default->hide_backup == 1 and !$this->_fIsAdmin())
         {
-           $this->fOwlWebDavLog ("HIDE BACKUP FOLDER", "$fullpath");
+           $this->fOwlWebDavLog ("PROPFIND", "HIDE BACKUP FOLDER: $fullpath");
            if (is_dir($fullpath) and $filename == $default->version_control_backup_dir_name)
            {
-              $this->fOwlWebDavLog ("HIDE BACKUP FOLDER", "FOLDER SKIPPED Path: $fullpath - $filename");
+              $this->fOwlWebDavLog ("PROPFIND", "HIDDING BACKUP FOLDER: $fullpath - $filename");
               continue;
            }
         }
@@ -460,7 +458,6 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
     function _fGetFileID($sFileName, $iParentID)
     {
-
        global $userid;
 
        $sFileName = $this->_unslashify($sFileName);
@@ -475,20 +472,21 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
        {
           $sql->next_record();
 
+          $this->fOwlWebDavLog ("_fGetFileID", "FILEID: " . $sql->f('id'));
           return $sql->f('id');
        }
        else
        {
+          $this->fOwlWebDavLog ("_fGetFileID", "FILEID: NOTFOUND");
           return 0;
        }
-
     }
         
     function _fGetFolderID($sFolderName, $iParentID)
     {
        global $default;
        global $userid;
-       $this->fOwlWebDavLog ("_fGETFOLDERID", "FolderName: $sFolderName FolderID: $iParentID");
+       $this->fOwlWebDavLog ("_fGETFOLDERID", "FolderName: $sFolderName ParentID: $iParentID");
 
        $aFolders = array();
 
@@ -519,7 +517,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
          $iParentID = '1';
       }
 
-       $this->fOwlWebDavLog ("_fGETFOLDERID", "RETURNED ID: " . $iParentID);
+       $this->fOwlWebDavLog ("_fGETFOLDERID", "FOLDER ID: " . $iParentID);
        return $iParentID;
 
     }
@@ -604,13 +602,8 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         global $default;
         global $userid;
 
-        //$options["path"] = ereg_replace('Documents','', find_path($this->owl_folderid)); 
-
         $this->fOwlWebDavLog ("GET", "Options: " . print_r($options,true));
         // get absolute fs path to requested resource
-
-
-        //$options["path"] = '/PeerLOG/scanline/';
 
         $fspath = $this->base . $this->_unslashify($options["path"]);
 
@@ -622,7 +615,6 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
            return false;
         }
      
-
         // is this a collection?
         $this->owl_folderid = $this->_fGetFolderID($options["path"], $this->owl_folderid);
 
@@ -725,21 +717,13 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         echo "<hr>";
 
         while ($filename = readdir($handle)) 
-		{
+	{
 
-            // BOZZ RESTRICTED VIEW
-            // ADD a test here to check if this document should be viewed or not
-            //if ($filename == 'SPACEMAN.TTF')
-            //{
-               //continue;
-            //}
-            //if ($filename != ".") 
-			//{
+           // BOZZ RESTRICTED VIEW
+           $fullpath = $fspath."/".$filename;
 
-            $fullpath = $fspath."/".$filename;
-
-if ($default->restrict_view == 1)
-{
+           if ($default->restrict_view == 1)
+           {
             $iFolderID = '';
             if (is_dir($fullpath))
             {
@@ -758,7 +742,7 @@ if ($default->restrict_view == 1)
                   continue;
                }
             }
-}
+           }
 
             if ($filename != "." && $filename != "..") 
             {
@@ -849,6 +833,13 @@ if ($default->restrict_view == 1)
            $this->fOwlWebDavLog ("POSTPUT", "Calculate FILE HASH");
            $aFileHashes = fCalculateFileHash($fspath);
            $sql->query("INSERT INTO $default->owl_file_hash_table (file_id, hash1, hash2, hash3, signature) VALUES ('$id', '" . $aFileHashes[0] . "', '" . $aFileHashes[1] ."', '" . $aFileHashes[2] . "', 'NOT IMPLEMENTED')");
+        }
+
+        $this->fOwlWebDavLog ("POSTPUT", "Virus detection");
+        if (fVirusCheck($fspath, $sFilename, true) == 1)
+        {
+           $sql->query("UPDATE $default->owl_files_table SET infected='1' WHERE id='$id'");
+           $this->fOwlWebDavLog ("POSTPUT", "Virus Found Marked File as infected");
         }
 
         $aSetACL[] = $id;
@@ -947,10 +938,10 @@ if ($default->restrict_view == 1)
               $id = $sql->insert_id($default->owl_files_table, 'id');
               $options["fileid"] = $id;
 
-              fSetDefaultFileAcl($id);
               $this->fOwlWebDavLog ("PUT", "SET DEFAULT FILE ACL");
-              fSetInheritedAcl($this->owl_folderid, $id, "FILE");
+              fSetDefaultFileAcl($id);
               $this->fOwlWebDavLog ("PUT", "SET INHERITED FILE ACL");
+              fSetInheritedAcl($this->owl_folderid, $id, "FILE");
 
               $fp = fopen($fspath, "w");
 // ISSUE HERE IS THAT THE FILE IS NOT WRITTEN HERE IT IS STILL IN THE STEAM....
@@ -1386,7 +1377,7 @@ if ($default->restrict_view == 1)
             return "415 Unsupported media type";
         }
 
-        $this->fOwlWebDavLog ("COPY", "1 HERE");
+        $this->fOwlWebDavLog ("COPY", "1");
 
         // no copying to different WebDAV Servers yet
         // Treat it as a local request
@@ -1407,16 +1398,16 @@ if ($default->restrict_view == 1)
         }
 
         $source = $this->base .$options["path"];
-        $this->fOwlWebDavLog ("COPY", "2 HERE: $source");
+        $this->fOwlWebDavLog ("COPY", "2: $source");
         if (!file_exists($source)) return "404 Not found";
 
-        $this->fOwlWebDavLog ("COPY", "2a HERE");
+        $this->fOwlWebDavLog ("COPY", "2a");
         $dest         = $this->base . $options["dest"];
         $new          = !file_exists($dest);
         $existing_col = false;
 
         if (!$new) {
-        $this->fOwlWebDavLog ("COPY", "2b HERE");
+        $this->fOwlWebDavLog ("COPY", "2b");
             if ($del && is_dir($dest)) {
                 if (!$options["overwrite"]) {
                     return "412 precondition failed";
@@ -1430,12 +1421,12 @@ if ($default->restrict_view == 1)
                 }
             }
         }
-        $this->fOwlWebDavLog ("COPY", "3 HERE");
+        $this->fOwlWebDavLog ("COPY", "3");
 
         if (!$new) {
-        $this->fOwlWebDavLog ("COPY", "3a HERE");
+        $this->fOwlWebDavLog ("COPY", "3a");
             if ($options["overwrite"]) {
-        $this->fOwlWebDavLog ("COPY", "3aa HERE");
+        $this->fOwlWebDavLog ("COPY", "3b");
                 $stat = $this->DELETE(array("path" => $options["dest"]));
                 if (($stat{0} != "2") && (substr($stat, 0, 3) != "404")) {
                     return $stat; 
@@ -1445,32 +1436,27 @@ if ($default->restrict_view == 1)
             }
         }
 
-        $this->fOwlWebDavLog ("COPY", "4 HERE");
+        $this->fOwlWebDavLog ("COPY", "4");
         if (is_dir($source) && ($options["depth"] != "infinity")) {
-        $this->fOwlWebDavLog ("COPY", "4a HERE");
+        $this->fOwlWebDavLog ("COPY", "4a");
             // RFC 2518 Section 9.2, last paragraph
             return "400 Bad request";
         }
 
-        $this->fOwlWebDavLog ("COPY", "5 HERE");
+        $this->fOwlWebDavLog ("COPY", "5");
         if ($del) {
-        $this->fOwlWebDavLog ("COPY", "5a HERE");
+        $this->fOwlWebDavLog ("COPY", "5a");
             if (is_dir($source)) 
 	    {
                 $isSourceAFolder = true;
-                $this->fOwlWebDavLog ("COPY", "5b HERE: $query");
+                $this->fOwlWebDavLog ("COPY", "5b: $query");
                 $iSourceFolderID = $this->_fGetFolderID($options["path"], $this->owl_folderid);
-                $this->fOwlWebDavLog ("BOZZ", "SOURCE FOLDER ID: $iSourceFolderID");
+                $this->fOwlWebDavLog ("COPY", "5c SOURCE FOLDER ID: $iSourceFolderID");
             }
             if (!rename($source, $dest)) {
                 return "500 Internal server error";
             }
             $destpath = $this->_unslashify($options["dest"]);
-            //$query = "UPDATE {$this->db_prefix}properties 
-                             //SET path = '".$destpath."'
-                           //WHERE path = '".$options["path"]."'";
-            //$this->fOwlWebDavLog ("COPY", "5c HERE: $query");
-            //mysql_query($query);
         } else {
             if (is_dir($source)) {
                 $files = System::find($source);
@@ -1512,46 +1498,42 @@ if ($default->restrict_view == 1)
                                 //WHERE path = '".$options['path']."'";
         }
 
-        $this->fOwlWebDavLog ("COPY", "6 HERE");
+        $this->fOwlWebDavLog ("COPY", "6");
 // FOLDER RENAME CODE
 // BEGIN 
  
-        $this->fOwlWebDavLog ("BOZZ", print_r($options, true));
-        $this->fOwlWebDavLog ("BOZZ", "ID IN: ". $this->owl_folderid);
+        $this->fOwlWebDavLog ("COPY", print_r($options, true));
+        $this->fOwlWebDavLog ("COPY", "ID IN: ". $this->owl_folderid);
         $iFolderID = $this->_fGetFolderID($options["path"], $this->owl_folderid);
-        $this->fOwlWebDavLog ("BOZZ", "ID OUT: ". $iFolderID);
+        $this->fOwlWebDavLog ("COPY", "ID OUT: ". $iFolderID);
 
         $sFilename = $this->_fBasename($options["path"]);
         $sDestFilename = $this->_fBasename($options["dest"]);
-        $this->fOwlWebDavLog ("BOZZ", "THIS A FILE: ". $iFolderID);
+        $this->fOwlWebDavLog ("COPY", "THIS A FILE: ". $iFolderID);
 	$iFileID = $this->_fGetFileID($sFilename, $iFolderID);
-        $this->fOwlWebDavLog ("BOZZ", "FILE ID: ". $iFileID);
+        $this->fOwlWebDavLog ("COPY", "FILE ID: ". $iFileID);
 
 
         if ($iFileID > 0)
-		{
+	{
            $this->fOwlWebDavLog ("COPY", "THIS IS A FILE");
            $this->fOwlWebDavLog ("COPY", "SOURCE: " . $iFileID . " - " . $sFilename);
            $dest = $this->_fGetFolderID(dirname($options["dest"]), $this->owl_folderid);
 		   $sql = new Owl_DB;
            $sql->query("UPDATE $default->owl_files_table set filename='" . $sDestFilename . "', parent = '$dest' WHERE id='$iFileID'");
            $this->fOwlWebDavLog ("COPY", "FILE RENAMED: " . $source . " Dest: " . $dest);
-		}
-		else
-		{
+	}
+	else
+	{
                    $source = $this->_fGetFolderID($options["path"], $this->owl_folderid);
                    $dest = $this->_fGetFolderID(dirname($options["dest"]), $this->owl_folderid);
 	           $sFilename = fid_to_name($source);
 
-                   //$isSourceAFolder = $this->_fisThisAFolder($options["path"], $this->owl_folderid);
-          
 		   if ($isSourceAFolder) 
 		   {
                       $this->fOwlWebDavLog ("COPY", "THIS IS A FOLDER: " . $sFilename);
 		      $sql = new Owl_DB;
                       $sql->query("UPDATE $default->owl_folders_table set name='" . $this->_fBasename($options["dest"]) . "', parent = '$dest' WHERE id='$iSourceFolderID'");
-                      $abc = "UPDATE $default->owl_folders_table set name='" . $this->_fBasename($options["dest"]) . "', parent = '$dest' WHERE id='$iSourceFolderID'";
-                      $this->fOwlWebDavLog ("BOZZ", "QUERY: " . $sabc);
 		   }
 		   else
 		   {
@@ -1561,7 +1543,7 @@ if ($default->restrict_view == 1)
 
    
            $this->fOwlWebDavLog ("COPY", "FOLDER RENAMED: " . $iFolderID . " Dest: " . $dest . "\n$abc");
-		}
+	}
 // END 
 
         return ($new && !$existing_col) ? "201 Created" : "204 No Content";         
@@ -1758,7 +1740,6 @@ if ($default->restrict_view == 1)
                  // UNLOCK the file
                  $sql->query("UPDATE $default->owl_files_table set checked_out='0' WHERE id='$iFileID'");
                  $this->fOwlWebDavLog ("UNLOCK", "[OWL] File UnLocked $iFileID");
-                 //owl_syslog(FILE_LOCKED, $userid, flid_to_filename($id), $parent, $owl_lang->log_detail, "FILE");
               }
            }
 
@@ -1830,7 +1811,7 @@ if ($default->restrict_view == 1)
     {
        $userAgentValue = $_SERVER['HTTP_USER_AGENT'];
 
-       $this->fOwlWebDavLog ("FGetDavClient", "USER AGENT: $userAgentValue");
+       $this->fOwlWebDavLog ("_fGetDavClient", "USER AGENT: $userAgentValue");
        // Mac Finder
        if (stristr($userAgentValue,"Macintosh") || stristr($userAgentValue,"Darwin"))
        {
@@ -1851,7 +1832,7 @@ if ($default->restrict_view == 1)
        {
           $this->dav_client = "Microsoft-WebDAV";
        }
-       $this->fOwlWebDavLog ("FGetDavClient", "Dav Client: $this->dav_client");
+       $this->fOwlWebDavLog ("_fGetDavClient", "Dav Client: $this->dav_client");
      }
 
 
