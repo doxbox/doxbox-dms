@@ -804,20 +804,17 @@ if ($default->restrict_view == 1)
         global $default;
         global $userid;
 
-
         $this->fOwlWebDavLog ("POSTPUT", "Options: " . print_r($options, true));
-        //$this->fOwlWebDavLog ("POSTPUT", "default: " . print_r($default, true));
-        $sql = new Owl_DB;
 
+        $sql = new Owl_DB;
 
         $fspath = $this->base . $options["path"];
         $id = $options["fileid"];
         $groupid = owlusergroup($this->owl_userid);
 
-
         $sFilename = $this->_fBasename($fspath);
 
-       if(strtolower($sFilename) == '.ds_store')
+        if(strtolower($sFilename) == '.ds_store')
         {
            // Ignore the .DS_Store
            return true;
@@ -830,11 +827,8 @@ if ($default->restrict_view == 1)
            return true;
         }
 
-
-
         fIndexAFile($sFilename, $fspath, $id);
         $this->fOwlWebDavLog ("POSTPUT", "Indexed FILE: $sFilename PATH: $fspath");
-
 
         if ($default->thumbnails == 1)
         {
@@ -889,12 +883,12 @@ if ($default->restrict_view == 1)
         global $userid;
 
         $this->fOwlWebDavLog ("PUT", "======== Function Called =======");
-        //$this->fOwlWebDavLog ("PUT", print_r($default, true));
+
         $index_file = 1;
 
         $fspath = $this->base . $options["path"];
 
-        $this->fOwlWebDavLog ("BOZZ", "PATH: $fspath");
+        $this->fOwlWebDavLog ("PUT", "FILE DEST PATH: $fspath");
 
         if (!@is_dir(dirname($fspath))) {
             return "409 Conflict";
@@ -902,10 +896,17 @@ if ($default->restrict_view == 1)
 
         $options["new"] = ! file_exists($fspath);
 
-
+        // Windows WebDav Client
+        // Appears to create an empty file, then Update it
+        // With the Actual file when Uploading  a New File
+        if ($options['content_length'] == 0)
+        {
+           $this->fOwlWebDavLog ("PUT", "IGNORE 0 Length Files");
+           return "200 Ingore zero len files";
+        }
         
         $sFilename = $this->_fBasename($fspath);
-        $this->fOwlWebDavLog ("BOZZ", "FILENAME: $sFilename");
+        $this->fOwlWebDavLog ("PUT", "FILENAME: $sFilename");
 
         if(strtolower($sFilename) == '.ds_store')
         {
@@ -1386,9 +1387,23 @@ if ($default->restrict_view == 1)
         }
 
         $this->fOwlWebDavLog ("COPY", "1 HERE");
+
         // no copying to different WebDAV Servers yet
-        if (isset($options["dest_url"])) {
-            return "502 bad gateway";
+        // Treat it as a local request
+        if (isset($options["dest_url"]))
+        {
+            $this->fOwlWebDavLog ("COPY", "1b");
+            $aDest = array();
+            $aDest = preg_split('/index.php/', $options["dest_url"]);
+
+            if (array_key_exists('1', $aDest))
+            {
+               $options["dest"] = $aDest['1'];
+            }
+            else
+            {
+               return "502 bad gateway";
+            }
         }
 
         $source = $this->base .$options["path"];
@@ -1830,6 +1845,11 @@ if ($default->restrict_view == 1)
        if (stristr($userAgentValue,"Goliath"))
        {
           $this->dav_client = "Goliath";
+       }
+       // MS Windows Dav Client
+       if (stristr($userAgentValue,"Microsoft-WebDAV"))
+       {
+          $this->dav_client = "Microsoft-WebDAV";
        }
        $this->fOwlWebDavLog ("FGetDavClient", "Dav Client: $this->dav_client");
      }
