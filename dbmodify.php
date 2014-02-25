@@ -25,7 +25,6 @@
  * $Id: dbmodify.php,v 1.57 2006/09/15 15:08:52 b0zz Exp $
  */
 
-
 // Functions to read XML post data from ubr_upload
 
 function startElement($parser, $name, $attrs) {
@@ -149,7 +148,6 @@ if ($sess == "0" && $default->anon_ro > 0)
 {
    header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=4&fileid=$fileid&parent=$parent&currentdb=$default->owl_current_db");
    exit;
-   //printError($owl_lang->err_login);
 }
 
 if (!isset($type))

@@ -55,17 +55,14 @@
 
 if (file_exists("./templates/$default->sButtonStyle/html/html_head.xtpl"))
 {
-   //$xtpl_head = new XTemplate("templates/$default->sButtonStyle/html/html_head.xtpl");
    $xtpl_head = new XTemplate("html/html_head.xtpl", "templates/$default->sButtonStyle");
 }
 else if (file_exists("../templates/$default->sButtonStyle/html/html_head.xtpl"))
 {
-   //$xtpl_head = new XTemplate("../templates/$default->sButtonStyle/html/html_head.xtpl");
    $xtpl_head = new XTemplate("html/html_head.xtpl", "../templates/$default->sButtonStyle");
 }
 else 
 {
-   //$xtpl_head = new XTemplate($default->owl_fs_root ."/templates/$default->sButtonStyle/html/html_head.xtpl");
    $xtpl_head = new XTemplate("html/html_head.xtpl", $default->owl_fs_root ."/templates/$default->sButtonStyle");
 }
 
@@ -201,10 +198,8 @@ if (isset($groups) and is_array($groups))
       if($iFirst > 0)
       {
 $sFboxJS .= ", ";
-         //print(", ");
       }
       $sFboxJS .= "'" . addslashes($g[1]) . "'";
-//print("'" . addslashes($g[1]) . "'");
       $iFirst++;
    }
 }
@@ -219,14 +214,12 @@ foreach($groups as $g)
             if($iFirst > 0)
             {
 $sFboxJS .= ", ";
-             //  print(", ");
             }
 $sFboxJS .= "$g[0]";
-            //print("$g[0]");
             $iFirst++;
          }
 }
-//print(");");
+
 $sFboxJS .= '); 
 
          fbox.length = 0;
@@ -498,13 +491,6 @@ $xtpl_head->assign('PLEASE_SELECT_BULK', $owl_lang->err_please_select_bulk);
 // If we are not in browse.php don't load the layers menu js
 if (("browse.php" == basename($_SERVER["PHP_SELF"]) or "showrecords.php" == basename($_SERVER["PHP_SELF"])) and !$default->old_action_icons)
 {
-// <script language="javascript" src="<?php print $default->owl_root_url? >/scripts/zoomimage/zoomimage.js" type="text/javascript"></script>
-
-//<script type="text/javascript">
-//<!--
-//<?php //require_once "$default->owl_fs_root/scripts/phplayersmenu/libjs/layersmenu-browser_detection.js"; ? >
-//// -->
-// </script>
 
 $sPHPLayers = '
 <script type="text/javascript" src="' . $default->owl_root_url . '/scripts/phplayersmenu/libjs/layersmenu-browser_detection.js"></script>
@@ -519,46 +505,7 @@ $sPHPLayers = '
 <script type="text/javascript" src="' . $default->owl_root_url . '/scripts/phplayersmenu/libjs/layersmenu-browser_detection.js"></script>
 <script type="text/javascript" src="' . $default->owl_root_url . '/scripts/phplayersmenu/libjs/layersmenu-library.js"></script>
 <script type="text/javascript" src="' . $default->owl_root_url . '/scripts/phplayersmenu/libjs/layerstreemenu-cookies.js"></script>';
-//<script type="text/javascript">
-//<!--
-//<?php require_once "$default->owl_fs_root/scripts/phplayersmenu/libjs/layersmenu-browser_detection.js"; ? >
-// -->
-// </script>
-// <script type="text/javascript" src="<?php print $default->owl_root_url? >/scripts/phplayersmenu/libjs/layersmenu-library.js"></script>
-// <script type="text/javascript" src="<?php print $default->owl_root_url? >/scripts/phplayersmenu/libjs/layerstreemenu-cookies.js"></script>
-// <?php
 }
-
-//$xtpl_head->assign('PHP_LAYERS_MENU', $sPHPLayers);
-
-// ATTEMPT TO log the user out automatically when the browser is closed.
-// This only worked with FireFOX as the onUload is called by IE on all
-// page refresh  You can turn on for Mozzilla
-if  (isset($sess) and $sess <> "0" and "logout.php" != basename($_SERVER["PHP_SELF"]))
-{
-// DONT forget to add the closing php tag in the below echo $sess
-//<body onUnload="javascript:window.open('logout.php?sess=<?php echo $sess; ', '', 'status=no,directories=no,scrollbars=no,title=no,menubar=no,resizable=no,toolbar=no,location=no,width=1,height=1')">
-   if(isset($default->body_background))
-   {
-      //print("<body background=\"$default->body_background\">\n");
-   }
-   else
-   {
-      //print("<body>\n");
-   }
-}
-else
-{
-   if(isset($default->body_background))
-   {
-      //print("<body background=\"$default->body_background\">\n");
-   }
-   else
-   {
-      //print("<body>\n");
-   }
-}
-
 
 $xtpl_head->parse('html_header');
 $xtpl_head->out('html_header');
