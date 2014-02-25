@@ -285,21 +285,31 @@ jQuery(document).ready(function() {
       if (offset.left < halfWindow) {
         var left = jQuery(this).find('a').outerWidth(true);
         jQuery(this).find('a:first-child').addClass('HoverDx');                        
-        menu.css({left: left, top: '-1px', left: jQuery(this).find('a:first-child').width() + 9 });
+        menu.css({left: left, top: '-5px', left: jQuery(this).find('a:first-child').width() + 9 });
       } else {
         var left = menu.outerWidth(true);
         jQuery(this).find('a:first-child').addClass('HoverSx');        
-        menu.css({left: -left+1, top: '-1px'});
+        menu.css({left: -left+1, top: '-5px'});
       }
       menu.css({display:'block'});
       var offset = menu.offset();
       var wOffset = jQuery(window).scrollTop();       
       menu.css({display:'none'});
-      var menuHeight =  menu.outerHeight(true);
+   
+      if (jQuery.browser.msie && jQuery.browser.version < 9)
+      {
+        var menuHeight =  menu.outerHeight();
+      }
+      else
+      {
+        var menuHeight =  menu.outerHeight(true);
+      }
+
       var ySize = (offset.top+menuHeight)-wOffset;                        
-      if ( ySize > windowHeight) {
-        newYpos = ySize - windowHeight; 
-        menu.css({top:-newYpos-10}); 
+      if ( ySize > windowHeight) 
+      {
+         newYpos = ySize - windowHeight; 
+         menu.css({top:-newYpos-10}); 
       }
       menu.fadeIn(100);
     },
@@ -467,16 +477,14 @@ jQuery(document).ready(function() {
 
 // Button Hover effect
 
-jQuery('input.fbuttonup1').on({
-
-      mouseenter: function () {
+jQuery(document.body).on('mouseenter', 'input.fbuttonup1', function() {
          jQuery(this).removeClass('fbuttonup1');
          jQuery(this).addClass(fGetDownClass(this));
-      },
-      mouseleave: function () {
+      })
+
+jQuery(document.body).on('mouseleave', 'input[class^=fbuttondown]', function() {
          jQuery(this).removeClass(fGetDownClass(this));
          jQuery(this).addClass('fbuttonup1');
-      }
    });
 
 // Image Swap on Hover effect
@@ -489,6 +497,4 @@ jQuery('input.fbuttonup1').on({
          jQuery(this).prop('src', jQuery(this).prop('src').replace(/_hover/, '' ));
       }
    }); 
-
-  
 }) // end of document.ready

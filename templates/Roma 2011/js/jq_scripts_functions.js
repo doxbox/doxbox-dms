@@ -11,7 +11,7 @@ function fGetDownClass (oInput)
    {
       downclass = 'fbuttondown_green';
    }
-   else if (sInputType == 'submit')
+   else if (sInputType == 'submit' || sInputType == 'button')
    {
       if (jQuery(oInput).prop('name').indexOf('del') >= 0 || 
           jQuery(oInput).prop('name').indexOf('empty') >= 0)

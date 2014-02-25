@@ -745,6 +745,11 @@ min-width: 300px;
 #my_file_element {
 width:410px;
 }
+
+div.file_list_class {
+padding-bottom: 10px;
+}
+
 .width410px {
 width:410px;
 }

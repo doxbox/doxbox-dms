@@ -71,11 +71,12 @@ function MultiSelector( list_target, max ){
 			element.onchange = function(){
 
 				// New file input
+
 				var new_element = document.createElement( 'input' );
 				new_element.type = 'file';
 				new_element.size = '80';
-				new_element.className = 'finput1';
-                new_element.accessKey = '1';
+				new_element.className = 'finput1 width410px';
+                                new_element.accessKey = '1';
 
 				// Add new element
 				this.parentNode.insertBefore( new_element, this );
@@ -116,11 +117,14 @@ function MultiSelector( list_target, max ){
 
 		// Row div
 		var new_row = document.createElement( 'div' );
+		new_row.className  = 'file_list_class';
 
 		// Delete button
 		var new_row_button = document.createElement( 'input' );
 		new_row_button.type = 'button';
-		new_row_button.value = 'Delete';
+		new_row_button.name = 'deletefile';
+		new_row_button.className  = 'fbuttonup1';
+		new_row_button.value = 'Remove';
 
 		// References
 		new_row.element = element;
@@ -146,8 +150,9 @@ function MultiSelector( list_target, max ){
 			return false;
 		};
 
-		// Set row value
-		new_row.innerHTML = element.value;
+		// Set row value to just the filename
+                var mystring = element.value.replace(/\//g, '\\');
+		new_row.innerHTML = mystring.split('\\').pop() + '&nbsp;';
 
 		// Add button
 		new_row.appendChild( new_row_button );
