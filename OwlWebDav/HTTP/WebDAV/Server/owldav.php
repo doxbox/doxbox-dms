@@ -1509,7 +1509,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
         $sFilename = $this->_fBasename($options["path"]);
         $sDestFilename = $this->_fBasename($options["dest"]);
-        $this->fOwlWebDavLog ("COPY", "THIS A FILE: ". $iFolderID);
+        $this->fOwlWebDavLog ("COPY", "IS THIS A FILE?: " . $sFilename . " Parent: " . $iFolderID);
 	$iFileID = $this->_fGetFileID($sFilename, $iFolderID);
         $this->fOwlWebDavLog ("COPY", "FILE ID: ". $iFileID);
 
@@ -1836,10 +1836,12 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
      }
 
 
-    function _fBasename($path, $suffix = '') {
-      $path = preg_replace('|^.+[\\/]|', '', rtrim($path, '/'));
-      if ($suffix) {
-        $path = preg_replace('|'. preg_quote($suffix) .'$|', '', $path);
+    function _fBasename($path, $suffix = '') 
+    {
+      $path = preg_replace('#^.+[\\/]#', '', trim($path, '/'));
+      if ($suffix) 
+      {
+        $path = preg_replace('/|/'. preg_quote($suffix) .'$|', '', $path);
       }
       return $path;
     }
