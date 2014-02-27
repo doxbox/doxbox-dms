@@ -1,6 +1,6 @@
 <?php
 
-define('API_VERSION', '1.08');
+define('API_VERSION', '1.09');
 
 define('OWL_ERROR',                  '0000');  // Owl printError Function returned message
 define('SUCCESS',                    '0001');
