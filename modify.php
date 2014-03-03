@@ -42,15 +42,14 @@ if ($default->owl_maintenance_mode == 1)
    }
 }
 
+session_start();
 
-//$xtpl = new XTemplate("templates/$default->sButtonStyle/html/modify.xtpl");
 $xtpl = new XTemplate("html/modify.xtpl", "templates/$default->sButtonStyle");
 $xtpl->assign('THEME', $default->owl_graphics_url . "/" . $default->sButtonStyle);
 $xtpl->assign('ROOT_URL', $default->owl_root_url);
 
 include_once($default->owl_fs_root ."/lib/header.inc");
 include_once($default->owl_fs_root ."/lib/userheader.inc");
-
 
 $filenamefield = "userfile";
 if ($default->use_ubr_progress_bar == 1)
@@ -83,6 +82,22 @@ $urlArgs['order']     = $order;
 $urlArgs['sortorder'] = $sortorder;
 $urlArgs['curview']     = $curview;
 // V4B RNG End
+
+/**
+ * If we are on php 5.4 or Higher check if the PHP 
+ * has session.upload_progress enabled to display File
+ * Upload  Progress
+ */
+
+if (version_compare(phpversion(), "5.4.0", ">="))
+{
+   // Only need the progress bar for files and Zip File Upload
+   if (ini_get('session.upload_progress.enabled') == 1 and $type == '' and !strpos(php_sapi_name(), 'fcgi'))
+   {
+      /** Load the supporting elements needed to display the Progress bar */
+      $xtpl->parse('main.PhpProgressBar');
+   }
+}
 
 
 fSetLogo_MOTD();
@@ -219,23 +234,24 @@ if ($action == "file_update" or $action == "edit_inline")
 
       printModifyHeaderXTPL();
 
-
       $urlArgs2 = $urlArgs;
       $urlArgs2['action'] = 'file_update';
       $urlArgs2['groupid'] = $sql->f("groupid");
       $urlArgs2['linkedto'] = $sql->f("linkedto");
+      $urlArgs2[ini_get('session.upload_progress.name')]   = 'upload';
+
       if ($action == "edit_inline")
       {
          $urlArgs2['inline'] = "1";
-          $sql->query("UPDATE $default->owl_files_table set checked_out='$userid' WHERE id='$id'");
-           owl_syslog(FILE_LOCKED, $userid, flid_to_filename($id), $parent, $owl_lang->log_detail, "FILE");
+         $sql->query("UPDATE $default->owl_files_table set checked_out='$userid' WHERE id='$id'");
+         owl_syslog(FILE_LOCKED, $userid, flid_to_filename($id), $parent, $owl_lang->log_detail, "FILE");
       }
       else
       {
          $urlArgs2['MAX_FILE_SIZE VALUE'] = $default->max_filesize;
       }
-      $urlArgs2['id']     = $id;
 
+      $urlArgs2['id']     = $id;
 
       fPrintNavBarXTPL($parent, $owl_lang->updating . ":&nbsp;", $id);
       if ($default->use_ubr_progress_bar == 1)
@@ -446,6 +462,7 @@ if ($action == "file_upload" or $action == "zip_upload")
       $urlArgs2['action'] = $action;
       $urlArgs2['id']     = $id;
       $urlArgs2['type']   = $type;
+      $urlArgs2[ini_get('session.upload_progress.name')]   = 'upload';
 
       if (! $default->owl_version_control == 1)
       {

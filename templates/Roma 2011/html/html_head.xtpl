@@ -11,6 +11,9 @@
 <link rel="bookmark" href="{ROOT_URL}/templates/favicon.ico" />
 
 <link rel="stylesheet" type="text/css" media="screen" title="style1" href="{DEFAULT_STYLES_CSS}" />
+<!-- BEGIN:  PhpProgressBarCSS -->
+<link rel="stylesheet" type="text/css" media="screen" title="style1" href="{THEME}/css/progress_styles.css" />
+<!-- END:  PhpProgressBarCSS -->
 
 <link rel="stylesheet" type="text/css" media="screen" title="style1" href="{THEME}/css/domtt.css" />
 
@@ -39,6 +42,18 @@
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.localscroll-min.js"></script>
 <script type="text/javascript" src="{THEME}/js/jq_scripts_functions.js"></script>
+<!-- BEGIN:  PhpProgressBarJS -->
+<script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.form.min.js"></script>
+<script type="text/javascript">
+// LOCALIZATION Strings
+var PROGRESSBAR_UPLOAD_START = '{PROGRESSBAR_UPLOAD_START}';
+var PROGRESSBAR_UPLOADING = '{PROGRESSBAR_UPLOADING}';
+var PROGRESSBAR_UPLOAD_CANCEL = '{PROGRESSBAR_UPLOAD_CANCEL}';
+var PROGRESSBAR_POST_UPLOAD = '{PROGRESSBAR_POST_UPLOAD}';
+var ERROR_SELECT_FILE = '{ERROR_SELECT_FILE}';
+</script>
+<script type="text/javascript" src="{THEME}/js/jq_phpprogress.js"></script>
+<!-- END:  PhpProgressBarJS -->
 <script type="text/javascript" src="{THEME}/js/jq_scripts.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/Ajax/getdhtml.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/multifile/multifile.js"></script>

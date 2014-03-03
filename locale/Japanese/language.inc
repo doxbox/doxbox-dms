@@ -1,7 +1,7 @@
 <?php
 
 /*
- * File: English/language.inc
+ * File: Japanese/language.inc
  *
  * Author: Steve Bourgeois <owl@bozzit.com>
  *
@@ -560,6 +560,11 @@ $owl_lang->archive_extract_current  = "現在のフォルダを展開します�
 $owl_lang->archive_extract_overwrite  = "存在するファイルを上書(更新)しますか?";
 $owl_lang->optional_file_index  = "Index file?:";  
 
+$owl_lang->progressbar_upload_start  = "Upload Starting...";
+$owl_lang->progressbar_uploading     = "Uploading";
+$owl_lang->progressbar_upload_cancel = "Canceling Upload...";
+$owl_lang->progressbar_post_upload   = "Post Upload Processing...";
+$owl_lang->error_select_file         = "Please Select a File For Upload";
 
 //********************************************************
 // modify.php  END

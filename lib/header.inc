@@ -507,6 +507,22 @@ $sPHPLayers = '
 <script type="text/javascript" src="' . $default->owl_root_url . '/scripts/phplayersmenu/libjs/layerstreemenu-cookies.js"></script>';
 }
 
+if (version_compare(phpversion(), "5.4.0", ">="))
+{
+   if (ini_get('session.upload_progress.enabled') == 1 and !strpos(php_sapi_name(), 'fcgi'))
+   {
+      /** Load the supporting elements needed to display the Progress bar */
+      $xtpl_head->assign('PROGRESSBAR_UPLOAD_START', $owl_lang->progressbar_upload_start);
+      $xtpl_head->assign('PROGRESSBAR_UPLOADING', $owl_lang->progressbar_uploading);
+      $xtpl_head->assign('PROGRESSBAR_UPLOAD_CANCEL', $owl_lang->progressbar_upload_cancel);
+      $xtpl_head->assign('PROGRESSBAR_POST_UPLOAD', $owl_lang->progressbar_post_upload);
+      $xtpl_head->assign('ERROR_SELECT_FILE', $owl_lang->error_select_file);
+
+      $xtpl_head->parse('html_header.PhpProgressBarCSS');
+      $xtpl_head->parse('html_header.PhpProgressBarJS');
+   }
+}
+
 $xtpl_head->parse('html_header');
 $xtpl_head->out('html_header');
 

@@ -528,7 +528,7 @@ $owl_lang->ownership            		= "Propri&eacute;taire";
 $owl_lang->permissions          		= "Permissions";
 $owl_lang->pick_select          		= "&#8212; S&eacute;lectionnez un Utilisateur &#8212;";
 $owl_lang->policy               		= "Droits";
-$owl_lang->post_comment					= "Ajouter un commentaire";
+$owl_lang->post_comment				= "Ajouter un commentaire";
 $owl_lang->prop_permissions     		= "Propager les Permissions aux sous-r&eacute;pertoires ?";
 $owl_lang->prop_perms_files     		= "Droits &agrave; donner aux fichiers propag&eacute;s :";
 $owl_lang->sendfile             		= "Envoi fichier";
@@ -547,7 +547,11 @@ $owl_lang->archive_extract_current  		= "Extract to Current Folder?";
 $owl_lang->archive_extract_overwrite  		= "Overwrite Existing Files (Update)?";
 $owl_lang->optional_file_index  		= "Index file?:";
 
-
+$owl_lang->progressbar_upload_start             = "Upload Starting...";
+$owl_lang->progressbar_uploading                = "Uploading";
+$owl_lang->progressbar_upload_cancel            = "Canceling Upload...";
+$owl_lang->progressbar_post_upload              = "Post Upload Processing...";
+$owl_lang->error_select_file                    = "Please Select a File For Upload";
 
 //********************************************************
 // modify.php  END

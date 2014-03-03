@@ -557,6 +557,12 @@ $owl_lang->vertype           	= "Tipe Revisi";
 $owl_lang->document_text        = "Content";  
 $owl_lang->save_keyword         = "Simpan Kata Kunci?";
 
+$owl_lang->progressbar_upload_start  = "Upload Starting...";
+$owl_lang->progressbar_uploading     = "Uploading";
+$owl_lang->progressbar_upload_cancel = "Canceling Upload...";
+$owl_lang->progressbar_post_upload   = "Post Upload Processing...";
+$owl_lang->error_select_file         = "Please Select a File For Upload";
+
 
 //********************************************************
 // modify.php  END

@@ -1,5 +1,9 @@
 {FILE "html/header.xtpl"}
 
+<!-- BEGIN: PhpProgressBar -->
+{FILE "html/includes/php_progressbar.xtpl"}
+<!-- END: PhpProgressBar -->
+
 {FILE "html/includes/mod_create_folder.xtpl"}
 {FILE "html/includes/mod_edit_folder.xtpl"}
 

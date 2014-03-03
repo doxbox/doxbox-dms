@@ -538,6 +538,12 @@ $owl_lang->archive_extract_current      = "Ins aktuelle Verzeichnis entpacken?";
 $owl_lang->archive_extract_overwrite    = "&uuml;berschreiben vorhandener Dateien (Update)?";
 $owl_lang->optional_file_index          = "Datei indizieren?" . LABEL_TERMINATOR;
 
+$owl_lang->progressbar_upload_start     = "Upload Starting...";
+$owl_lang->progressbar_uploading        = "Uploading";
+$owl_lang->progressbar_upload_cancel    = "Canceling Upload...";
+$owl_lang->progressbar_post_upload      = "Post Upload Processing...";
+$owl_lang->error_select_file            = "Please Select a File For Upload";
+
 //********************************************************
 // modify.php  END
 //********************************************************

@@ -477,7 +477,7 @@ function displayBrowsePage($parent)
    // If we are hidding the backup directory
    // then change the directory to return to
    // the parent of this backup  directory
-   
+
    if(fid_to_name($parent) == "$default->version_control_backup_dir_name" && $default->hide_backup == 1) 
    {
       $sql = new Owl_DB;
@@ -496,7 +496,21 @@ function displayBrowsePage($parent)
    }
    else
    {
-      header("Location: browse.php?sess=$sess$sAddPageToUrl&parent=$parent&expand=$expand&order=$order&$sortorder=$sortname&curview=$curview");
+      /**
+       *  If this Function was called from dbmodify.php 
+       *  And the PHP 5.4 Progress Bar is enabled.
+       *  Return Special Headers to let the Java Script 
+       *  Know where to redirect after the upload and 
+       *  the post Proecesing is completed. 
+       */
+      if ($_POST['phpprogressbar'] == 1)
+      {
+         header("doxbox-redirect: browse.php?sess=$sess$sAddPageToUrl&parent=$parent&expand=$expand&order=$order&$sortorder=$sortname&curview=$curview");
+      }
+      else
+      {
+         header("Location: browse.php?sess=$sess$sAddPageToUrl&parent=$parent&expand=$expand&order=$order&$sortorder=$sortname&curview=$curview");
+      }
    }
 
 }

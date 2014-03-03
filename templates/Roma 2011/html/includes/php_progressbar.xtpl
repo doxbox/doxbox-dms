@@ -1,0 +1,11 @@
+<div id="bg-overlay" style="display: none;">
+   <div id="error-container" style="display: none;">
+      <a id="close-error" class="close" href="#"></a>
+      <div id="error"> </div>
+   </div>
+   <div id="progress-container" style="display: none;">
+      <progress max="1" value="0" id="progress"></progress>
+      <p id="progress-txt">Uploading...</p>
+      <input class="fbuttonup1" type="submit" name="cancel-upload" id="cancel-upload" value="cancel" />
+   </div>
+</div>
