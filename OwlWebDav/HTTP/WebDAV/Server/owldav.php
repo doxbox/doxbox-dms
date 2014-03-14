@@ -778,7 +778,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
     }
 
     /**
-     * PUT method handler
+     * POSTPUT method handler
      * 
      * @param  array  parameter passing array
      * @return bool   true on success
@@ -797,6 +797,11 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         $groupid = owlusergroup($this->owl_userid);
 
         $sFilename = $this->_fBasename($fspath);
+
+        //if (filesize($fspath) == 0)
+        //{
+           //return true;
+        //}
 
         if(strtolower($sFilename) == '.ds_store')
         {
@@ -890,11 +895,11 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         // Windows WebDav Client
         // Appears to create an empty file, then Update it
         // With the Actual file when Uploading  a New File
-        if ($options['content_length'] == 0)
-        {
-           $this->fOwlWebDavLog ("PUT", "IGNORE 0 Length Files");
-           return "200 Ingore zero len files";
-        }
+        //if ($options['content_length'] == 0)
+        //{
+           //$this->fOwlWebDavLog ("PUT", "0 Length Files");
+           //return "200 Ingore zero len files";
+        //}
         
         $sFilename = $this->_fBasename($fspath);
         $this->fOwlWebDavLog ("PUT", "FILENAME: $sFilename");
@@ -907,8 +912,8 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
         if($sFilename[0] == '.' && $sFilename[1] == '_')
         {
-           $sFilename = substr($sFilename, 2);
            //Ignore the ._filename
+           $sFilename = substr($sFilename, 2);
            return "204 No Content";
         }
 
@@ -926,11 +931,6 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
               $smodified = $sql->now();
 
-              // this call needs to be moved to POST PUT
-              // AND if the file is infected Updated it at that time
-              //$bInfected = fVirusCheck($fspath, $sFilename);
-
-
               $sql->query("INSERT into $default->owl_files_table (name,filename,f_size,creatorid, updatorid,parent,created, description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved, expires, infected) values ('$sFilename', '$sFilename', '" . $options['content_length'] . "', '$this->owl_userid', '$this->owl_userid', '$this->owl_folderid', $smodified,'WEBDAV CREATED', '', '', '" . $groupid . "',$smodified,'0','$default->major_revision','$default->minor_revision','0','0','1', '', '$bInfected')");
 
               $this->fOwlWebDavLog ("PUT", "NEW FILE");
@@ -944,11 +944,8 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
               fSetInheritedAcl($this->owl_folderid, $id, "FILE");
 
               $fp = fopen($fspath, "w");
-// ISSUE HERE IS THAT THE FILE IS NOT WRITTEN HERE IT IS STILL IN THE STEAM....
-// NEED SOME KIND OF POST PUT PROCESSING
-//
+
               return $fp;
-          //    return "201 Created";
            }
            else
            {
@@ -960,14 +957,14 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         {
            if (check_auth($iFileID, "file_update", $this->owl_userid) == 1)
            {
-	      if ($default->owl_version_control == 1)
+              $sql = new Owl_DB;
+              $sql->query("SELECT * FROM $default->owl_files_table WHERE id='$iFileID'");
+              $sql->next_record();
+
+	      if ($default->owl_version_control == 1 and $options['content_length'] > 0 and $sql->f("f_size") > 0)
               {
-                 $sql = new Owl_DB;
 
                  $this->fOwlWebDavLog ("PUT VERSION CONTROL", "[BEGIN] Options: " . print_r($options,true));
-
-                 $sql->query("SELECT * FROM $default->owl_files_table WHERE id='$iFileID'");
-                 $sql->next_record();
 
                  // save state information
                  //if ($sql->f("checked_out") > 0 and $sql->f("checked_out") <>  $userid)
@@ -991,9 +988,6 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                  $backup_filename = $sql->f("filename");
                  $backup_name = $sql->f("name");
 
-                 // Tiian 2004-02-18
-                 // this stuff prevent errors when title contains apostrophes
-                 //$backup_name = ereg_replace("[\\]'", "'", $backup_name);
                  $backup_name = stripslashes($backup_name);
                  $backup_name = fOwl_ereg_replace("'", "\\'" , fOwl_ereg_replace("[<>]", "", $backup_name));
      
@@ -1005,12 +999,11 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                     $backup_updatorid = "0";  // unkown
                  }
 
-                 // $backup_modified = $sql->f("modified");
                  $backup_smodified = $sql->f("smodified");
-                 //$dCreateDate = date("Y-m-d H:i:s");
+
                  $dCreateDate = $sql->now();
                  $backup_description = $sql->f("description");
-                 // This is a hack to deal with ' in the description field
+
                  // on some system the ' is automaticaly changed to \' and that works
                  // on other system it stays as ' I have no idea why
                  // the 2 lines bellow should take care of any case.
@@ -1035,123 +1028,114 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
 
                  $description = stripslashes($description);
                  $description = fOwl_ereg_replace("'", "\\'" , $description);
-                 //$title = ereg_replace("[\\]'", "'", $title);
+                 
                  $title = stripslashes($title);
                  $title = fOwl_ereg_replace("'", "\\'" , fOwl_ereg_replace("[<>]", "", $title));
 
                  $extension = explode(".", $new_name);
-                  // rename the new, backed up (versioned) filename
-                  // $version_name = $extension[0]."_$major_revision-$minor_revision.$extension[1]";
-                  // BUG FIX BEGIN
-                  // 657896 filenames in backup folder not correct - SOLUTION
-                  // by: Gerald McMillen (mrshadow76)
-                  $extensioncounter = 0;
-                  while ($extension[$extensioncounter + 1] != null)
-                  {
-                     // pre-append a "." separator in the name for each
-                     // subsequent part of the the name of the file.
-                     if ($extensioncounter != 0)
-                     {
-                        $version_name = $version_name . ".";
-                     }
-                     $version_name = $version_name . $extension[$extensioncounter];
-                     $extensioncounter++;
-                  }
+                 // rename the new, backed up (versioned) filename
+                 $extensioncounter = 0;
+                 while ($extension[$extensioncounter + 1] != null)
+                 {
+                    // pre-append a "." separator in the name for each
+                    // subsequent part of the the name of the file.
+                    if ($extensioncounter != 0)
+                    {
+                       $version_name = $version_name . ".";
+                    }
+                    $version_name = $version_name . $extension[$extensioncounter];
+                    $extensioncounter++;
+                 }
       
-                  if ($extensioncounter != 0)
-                  {
-                     $version_name = $version_name . "_$major_revision-$minor_revision.$extension[$extensioncounter]";
-                  }
-                  else
-                  {
-                     $version_name = $extension[0] . "_$major_revision-$minor_revision";
-                  }
+                 if ($extensioncounter != 0)
+                 {
+                    $version_name = $version_name . "_$major_revision-$minor_revision.$extension[$extensioncounter]";
+                 }
+                 else
+                 {
+                    $version_name = $extension[0] . "_$major_revision-$minor_revision";
+                 }
+
+                 // BUG FIX END
+                 // specify path for new file in the /backup/ file of each directory.
+                 $backuppath = $default->owl_FileDir . DIR_SEP . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name/$version_name";
+                 // Danilo change
+                 if (!is_dir("$default->owl_FileDir/" . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name"))
+                 {
+                    mkdir("$default->owl_FileDir/" . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name", $default->directory_mask);
+                    // End Danilo change
+                    // is there already a backup directory for current dir?
+                    if (is_dir("$default->owl_FileDir/" . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name"))
+                    {
+                       $sql->query("INSERT into $default->owl_folders_table (name, parent, security, groupid, creatorid, description, linkedto)  values ('$default->version_control_backup_dir_name', '$this->owl_folderid', '" . fCurFolderSecurity($this->owl_folderid) ."', '" . owlfoldergroup($this->owl_folderid) ."', '" . owlfoldercreator($this->owl_folderid) . "', '', '0')");
+     
+                       $newParent = $sql->insert_id($default->owl_folders_table, 'id');
+     
+                       fSetDefaultFolderAcl($newParent);
+                       $this->fOwlWebDavLog ("PUT VERSION CONTROL", "SET DEFAULT FOLDER ACL");
+                       fSetInheritedAcl($this->owl_folderid, $newParent, "FOLDER");
+                       $this->fOwlWebDavLog ("PUT VERSION CONTROL", "SET INHERITED FOLDER ACL");
+                    }
+                    else
+                    {
+                       $this->fOwlWebDavLog ("PUT VERSION CONTROL", "BACKUP: (Folder Creation Failed)");
+                    }
+                 }
+
+                 $this->fOwlWebDavLog ("PUT VERSION CONTROL", "MOVE BACKUP: (Source):" . $newpath . " (Dest): " . $backuppath);
+                 copy($newpath, $backuppath); // copy existing file to backup folder
+
+                 //copy($userfile['tmp_name'], $newpath);
+                 //chmod($newpath, $default->file_mask);
+                 //unlink($userfile['tmp_name']);
 
 
-                  // BUG FIX END
-                  // specify path for new file in the /backup/ file of each directory.
-                  $backuppath = $default->owl_FileDir . DIR_SEP . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name/$version_name";
-                  // Danilo change
-                  if (!is_dir("$default->owl_FileDir/" . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name"))
-                  {
-                     mkdir("$default->owl_FileDir/" . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name", $default->directory_mask);
-                     // End Danilo change
-                     // is there already a backup directory for current dir?
-                     if (is_dir("$default->owl_FileDir/" . find_path($this->owl_folderid) . "/$default->version_control_backup_dir_name"))
-                     {
-                        $sql->query("INSERT into $default->owl_folders_table (name, parent, security, groupid, creatorid, description, linkedto)  values ('$default->version_control_backup_dir_name', '$this->owl_folderid', '" . fCurFolderSecurity($this->owl_folderid) ."', '" . owlfoldergroup($this->owl_folderid) ."', '" . owlfoldercreator($this->owl_folderid) . "', '', '0')");
-      
-                        $newParent = $sql->insert_id($default->owl_folders_table, 'id');
-      
-                        fSetDefaultFolderAcl($newParent);
-                        $this->fOwlWebDavLog ("PUT VERSION CONTROL", "SET DEFAULT FOLDER ACL");
-                        fSetInheritedAcl($this->owl_folderid, $newParent, "FOLDER");
-                        $this->fOwlWebDavLog ("PUT VERSION CONTROL", "SET INHERITED FOLDER ACL");
-                     }
-                     else
-                     {
-                        $this->fOwlWebDavLog ("PUT VERSION CONTROL", "BACKUP: (Folder Creation Failed)");
-                     }
-                  }
+                 $sql->query("SELECT id FROM $default->owl_folders_table WHERE name='$default->version_control_backup_dir_name' AND parent='$this->owl_folderid'");
+                 while ($sql->next_record())
+                 {
+                     $backup_parent = $sql->f("id");
+                 }
 
-                  $this->fOwlWebDavLog ("PUT VERSION CONTROL", "MOVE BACKUP: (Source):" . $newpath . " (Dest): " . $backuppath);
-                  copy($newpath, $backuppath); // copy existing file to backup folder
-
-                  //copy($userfile['tmp_name'], $newpath);
-                  //chmod($newpath, $default->file_mask);
-                  //unlink($userfile['tmp_name']);
-
-
-                  $sql->query("SELECT id FROM $default->owl_folders_table WHERE name='$default->version_control_backup_dir_name' AND parent='$this->owl_folderid'");
-                  while ($sql->next_record())
-                  {
-                      $backup_parent = $sql->f("id");
-                  }
-
-                  $versionchange = fIsRevisionMajor($this->owl_userid);
-                  if ($versionchange == 'major_revision')
-                  {
-                     // if someone requested a major revision, must
-                     // make the minor revision go back to 0
-                     // $versionchange = "minor_revision='0', major_revision";
-                     // $new_version_num = $major_revision + 1;
-                     $new_major = $major_revision + 1;
-                     $versionchange = "minor_revision='0', major_revision";
-                     $new_version_num = $new_major;
-                  }
-                  else
-                  {
-                     // simply increment minor revision number
-                     $new_minor = $minor_revision + 1;
-                     $new_major = $major_revision;
-                     $versionchange = "major_revision='$new_major', minor_revision";
-                     $new_version_num = $new_minor;
-                  }
-                  // End Daphne Change
-                  $groupid = owlusergroup($this->owl_userid);
-                  $smodified = $sql->now();
-                  // Begin Daphne Change
+                 $versionchange = fIsRevisionMajor($this->owl_userid);
+                 if ($versionchange == 'major_revision')
+                 {
+                    // if someone requested a major revision, must
+                    // make the minor revision go back to 0
+                    // $versionchange = "minor_revision='0', major_revision";
+                    // $new_version_num = $major_revision + 1;
+                    $new_major = $major_revision + 1;
+                    $versionchange = "minor_revision='0', major_revision";
+                    $new_version_num = $new_major;
+                 }
+                 else
+                 {
+                    // simply increment minor revision number
+                    $new_minor = $minor_revision + 1;
+                    $new_major = $major_revision;
+                    $versionchange = "major_revision='$new_major', minor_revision";
+                    $new_version_num = $new_minor;
+                 }
+                 // End Daphne Change
+                 $groupid = owlusergroup($this->owl_userid);
+                 $smodified = $sql->now();
+                 // Begin Daphne Change
 
                  $this->fOwlWebDavLog ("PUT VERSION CONTROL", "VERSION:" . $new_major  . "." . $new_minor);
-                  $iDocApproved = "1";
-                  // insert entry for backup file
-                  $result = $sql->query("INSERT into $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved) values ('$backup_name','$version_name','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dCreateDate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$backup_linkedto', '1')") or unlink($backuppath);
-                  if (!$result && $default->owl_use_fs) unlink($newpath);
-      
-                  $idbackup = $sql->insert_id($default->owl_files_table, 'id');
+                 $iDocApproved = "1";
+                 // insert entry for backup file
+                 $result = $sql->query("INSERT into $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved) values ('$backup_name','$version_name','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dCreateDate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$backup_linkedto', '1')") or unlink($backuppath);
+                 if (!$result && $default->owl_use_fs) unlink($newpath);
+     
+                 $idbackup = $sql->insert_id($default->owl_files_table, 'id');
 
-                  $sql->query("UPDATE $default->owl_files_table SET f_size='" .$options['content_length'] ."', smodified=$smodified, $versionchange='$new_version_num',description='$newdesc', approved = '$iDocApproved', updatorid='$this->owl_userid'  WHERE id='$iFileID'") or unlink($newpath);
-                  // UPDATE THE VERSION of the linked files as well.
+                 $sql->query("UPDATE $default->owl_files_table SET f_size='" .$options['content_length'] ."', smodified=$smodified, $versionchange='$new_version_num',description='$newdesc', approved = '$iDocApproved', updatorid='$this->owl_userid'  WHERE id='$iFileID'") or unlink($newpath);
+                 // UPDATE THE VERSION of the linked files as well.
 
-                  $sql->query("UPDATE $default->owl_files_table SET f_size='" .$options['content_length'] ."', smodified=$smodified, $versionchange='$new_version_num',description='$newdesc', updatorid='$this->owl_userid'  WHERE linkedto='$iFileID'") or unlink($newpath);
+                 $sql->query("UPDATE $default->owl_files_table SET f_size='" .$options['content_length'] ."', smodified=$smodified, $versionchange='$new_version_num',description='$newdesc', updatorid='$this->owl_userid'  WHERE linkedto='$iFileID'") or unlink($newpath);
 
-                  $sql->query("UPDATE $default->owl_searchidx SET owlfileid='$idbackup'  WHERE owlfileid='$iFileID'");
-                  //fIndexAFile($backup_filename, $newpath, $iFileID);
+                 $sql->query("UPDATE $default->owl_searchidx SET owlfileid='$idbackup'  WHERE owlfileid='$iFileID'");
 
-
-                  fCopyFileAcl($iFileID, $idbackup);
-
-                  //owl_syslog(FILE_UPDATED, $userid, $userfile["name"], $this->owl_folderid, $version_name, "FILE", $options['content_length']);
+                 fCopyFileAcl($iFileID, $idbackup);
 
                  $this->fOwlWebDavLog ("PUT", "FILE UPDATED (version Control)"); 
                  $fp = fopen($fspath, "w");
@@ -1181,9 +1165,7 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
               return "403 Forbidden - [OWL] Permissions Denied";
            }
         }
-
     }
-
 
     /**
      * MKCOL method handler
@@ -1220,15 +1202,11 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
             
 
         // THIS IS A NEW FOLDER???
-        //$this->owl_folderid = $this->_fGetFolderID($options["path"], $this->owl_folderid);
         $this->owl_folderid = $this->_fGetFolderID(dirname($options["path"]), $this->owl_folderid);
 
         if (check_auth($this->owl_folderid, "folder_create", $this->owl_userid) == 1)
         {
            $stat = mkdir($parent."/".$name, 0777);
-          // $sStringEncoding = mb_detect_encoding($name);
-           //$this->fOwlWebDavLog ("STRING", "String: " . $sStringEncoding);
-           //$stat = mkdir($parent."/". iconv($sStringEncoding, 'UTF-8', $name), 0777);
            if (!$stat) 
            {
                rmdir($parent."/".$name);
@@ -1285,14 +1263,13 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                $this->fOwlWebDavLog ("DELETE", "FOLDERID: $this->owl_folderid");
                delTree($this->owl_folderid);
                System::rm("-rf $path");
-			   myDelete($path);
+	       myDelete($path);
             }
             else
             {
                $this->fOwlWebDavLog ("DELETE", "403 Forbidden - [OWL] Folder Delete Permission Denied");
                return "403 Forbidden - [OWL] Folder Delete Permission Denied";
             }
-
         } 
         else 
         {
@@ -1423,57 +1400,68 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
         }
         $this->fOwlWebDavLog ("COPY", "3");
 
-        if (!$new) {
-        $this->fOwlWebDavLog ("COPY", "3a");
-            if ($options["overwrite"]) {
-        $this->fOwlWebDavLog ("COPY", "3b");
-                $stat = $this->DELETE(array("path" => $options["dest"]));
-                if (($stat{0} != "2") && (substr($stat, 0, 3) != "404")) {
-                    return $stat; 
-                }
-            } else {
-                return "412 precondition failed";
-            }
+        if (!$new) 
+        {
+           $this->fOwlWebDavLog ("COPY", "3a");
+           if ($options["overwrite"]) 
+           {
+              $this->fOwlWebDavLog ("COPY", "3b");
+              $stat = $this->DELETE(array("path" => $options["dest"]));
+              if (($stat{0} != "2") && (substr($stat, 0, 3) != "404")) 
+              {
+                 return $stat; 
+              }
+           } 
+           else 
+           {
+              return "412 precondition failed";
+           }
         }
 
         $this->fOwlWebDavLog ("COPY", "4");
-        if (is_dir($source) && ($options["depth"] != "infinity")) {
-        $this->fOwlWebDavLog ("COPY", "4a");
-            // RFC 2518 Section 9.2, last paragraph
-            return "400 Bad request";
+        if (is_dir($source) && ($options["depth"] != "infinity")) 
+        {
+           $this->fOwlWebDavLog ("COPY", "4a");
+           // RFC 2518 Section 9.2, last paragraph
+           return "400 Bad request";
         }
 
         $this->fOwlWebDavLog ("COPY", "5");
-        if ($del) {
-        $this->fOwlWebDavLog ("COPY", "5a");
-            if (is_dir($source)) 
-	    {
-                $isSourceAFolder = true;
-                $this->fOwlWebDavLog ("COPY", "5b: $query");
-                $iSourceFolderID = $this->_fGetFolderID($options["path"], $this->owl_folderid);
-                $this->fOwlWebDavLog ("COPY", "5c SOURCE FOLDER ID: $iSourceFolderID");
-            }
-            if (!rename($source, $dest)) {
-                return "500 Internal server error";
-            }
-            $destpath = $this->_unslashify($options["dest"]);
-        } else {
-            if (is_dir($source)) {
-                $files = System::find($source);
-                $files = array_reverse($files);
-            } else {
-                $files = array($source);
-            }
+        if ($del) 
+        {
+           $this->fOwlWebDavLog ("COPY", "5a");
+           if (is_dir($source)) 
+	   {
+               $isSourceAFolder = true;
+               $this->fOwlWebDavLog ("COPY", "5b: $query");
+               $iSourceFolderID = $this->_fGetFolderID($options["path"], $this->owl_folderid);
+               $this->fOwlWebDavLog ("COPY", "5c SOURCE FOLDER ID: $iSourceFolderID");
+           }
+           if (!rename($source, $dest)) {
+               return "500 Internal server error";
+           }
+           $destpath = $this->_unslashify($options["dest"]);
+        }  
+        else 
+        {
+           if (is_dir($source)) 
+           {
+               $files = System::find($source);
+               $files = array_reverse($files);
+           } else {
+               $files = array($source);
+           }
 
-            if (!is_array($files) || empty($files)) {
-                return "500 Internal server error";
-            }
-                    
-                
-            foreach ($files as $file) {
-                if (is_dir($file)) {
-                    $file = $this->_slashify($file);
-                }
+           if (!is_array($files) || empty($files)) 
+           {
+               return "500 Internal server error";
+           }
+
+           foreach ($files as $file) 
+           {
+              if (is_dir($file)) {
+                  $file = $this->_slashify($file);
+              }
 
                 $destfile = str_replace($source, $dest, $file);
                     
@@ -1490,12 +1478,6 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
                     }
                 }
             }
-
-
-            //$query = "INSERT INTO {$this->db_prefix}properties 
-                               //SELECT *
-                                 //FROM {$this->db_prefix}properties 
-                                //WHERE path = '".$options['path']."'";
         }
 
         $this->fOwlWebDavLog ("COPY", "6");
@@ -1519,8 +1501,8 @@ class HTTP_WebDAV_Server_owl  extends HTTP_WebDAV_Server
            $this->fOwlWebDavLog ("COPY", "THIS IS A FILE");
            $this->fOwlWebDavLog ("COPY", "SOURCE: " . $iFileID . " - " . $sFilename);
            $dest = $this->_fGetFolderID(dirname($options["dest"]), $this->owl_folderid);
-		   $sql = new Owl_DB;
-           $sql->query("UPDATE $default->owl_files_table set filename='" . $sDestFilename . "', parent = '$dest' WHERE id='$iFileID'");
+	   $sql = new Owl_DB;
+           $sql->query("UPDATE $default->owl_files_table set name='" . $sDestFilename . "', filename='" . $sDestFilename . "', parent = '$dest' WHERE id='$iFileID'");
            $this->fOwlWebDavLog ("COPY", "FILE RENAMED: " . $source . " Dest: " . $dest);
 	}
 	else
