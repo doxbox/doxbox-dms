@@ -3,10 +3,6 @@
 {FILE "html/includes/view_password.xtpl"}
 
 <!-- BEGIN: DataBlock -->
-<!-- BEGIN: BulkFormStart -->
-<form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
-{BULKBUTTONS_HIDDEN}
-<!-- END: BulkFormStart -->
          <table class="standard_browse width_driver" cellspacing="0" cellpadding="0" border="0">
             <tr class="browse_titles">
 <!-- BEGIN: Title -->
@@ -421,8 +417,5 @@
 <!-- END: File -->
 
          </table>
-<!-- BEGIN: BulkFormEnd -->
-</form>
-<!-- END: BulkFormEnd -->
 <!-- END: DataBlock -->
 {FILE "html/footer.xtpl"}

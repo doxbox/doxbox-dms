@@ -41,8 +41,8 @@
 
          $xtpl->assign('BULKBUTTONS_HIDDEN', fGetHiddenFields ($urlArgs));
 
-         $xtpl->parse('main.DataBlock.BulkFormStart');
-         $xtpl->parse('main.DataBlock.BulkFormEnd');
+         $xtpl->parse('main.BulkFormStart');
+         $xtpl->parse('main.BulkFormEnd');
          $xtpl->parse('main.DataBlock.Title.Bulk');
       }
    }

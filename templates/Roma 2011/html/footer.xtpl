@@ -64,6 +64,10 @@
 <!-- END: BulkButtonsBottom -->
       </form>  
 <!-- END: Bulk1 -->
+<!-- BEGIN: BulkFormEnd -->
+</form>
+<!-- END: BulkFormEnd -->
+
 
 <!-- BEGIN: SearchPanelBottom -->    
     <div class="tools_panels_bottom search_panel">

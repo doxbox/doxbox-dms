@@ -500,7 +500,10 @@
    </table>
 </div>
    <!-- END: Favorite0 -->
-
+<!-- BEGIN: BulkFormStart -->
+<form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
+{BULKBUTTONS_HIDDEN}
+<!-- END: BulkFormStart -->
 <!-- BEGIN: Bulk0 -->
 <!-- BEGIN: BulkButtonsTop -->
    <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">

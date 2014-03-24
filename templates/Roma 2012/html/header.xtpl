@@ -484,14 +484,16 @@
         </div><!-- /child -->
       </li>
 <!-- END: Favorite0 --> 
-      
+     
+<!-- BEGIN: BulkFormStart -->
+<form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
+{BULKBUTTONS_HIDDEN}
+<!-- END: BulkFormStart --> 
 <!-- BEGIN: Bulk0 -->       
 <!-- BEGIN: BulkButtonsTop -->
       <li>
         <img src="{THEME}/img/toolbar_icons/bulk.png" />
         <div class="child bulk_btns">
-          <form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
-          {BULKBUTTONS_HIDDEN}
           <!-- BEGIN: Download -->
           <div class="separator">
             <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />

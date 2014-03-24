@@ -416,12 +416,13 @@
       </form>
     </div><!-- /tools_panels -->
 <!-- END: Favorite0 -->
-
+<!-- BEGIN: BulkFormStart -->
+<form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
+{BULKBUTTONS_HIDDEN}
+<!-- END: BulkFormStart -->
 <!-- BEGIN: Bulk0 -->       
     <div class="tools_panels">
       <!-- BEGIN: BulkButtonsTop -->
-<form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
-{BULKBUTTONS_HIDDEN}
       <!-- BEGIN: Download -->
       <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" />
       <!-- END: Download -->

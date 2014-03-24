@@ -2,10 +2,6 @@
 {FILE "html/includes/view_thumb.xtpl"}
 {FILE "html/includes/view_password.xtpl"}
 <!-- BEGIN: DataBlock -->
-<!-- BEGIN: BulkFormStart -->
-<form name="FileList" enctype="multipart/form-data" action="dbmodify.php" method="post" onsubmit="return checkform();">
-{BULKBUTTONS_HIDDEN}
-<!-- END: BulkFormStart -->
 <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
    <tr>
       <td align="left" valign="top">
@@ -418,8 +414,5 @@ f" border="0" />{FOLDER_NAME_DESC}</a>
       </td>
    </tr>
 </table>
-<!-- BEGIN: BulkFormEnd -->
-</form>
-<!-- END: BulkFormEnd -->
 <!-- END: DataBlock -->
 {FILE "html/footer.xtpl"}

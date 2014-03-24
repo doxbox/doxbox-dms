@@ -94,7 +94,7 @@
 <!-- END: Download -->
                   <td><input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
                   <td><input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
-                  <td><input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('Really Delete all selected files');" /></td>
+                  <td><input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" /></td>
 <!-- BEGIN: Checkout -->
                   <td><input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
 <!-- END: Checkout -->
@@ -109,6 +109,9 @@
    </table>
 <!-- END: BulkButtonsBottom -->
 <!-- END: Bulk1 -->
+<!-- BEGIN: BulkFormEnd -->
+</form>
+<!-- END: BulkFormEnd -->
 
 <!-- BEGIN: SearchPanelBottom -->
 <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -435,16 +438,16 @@
                   <!-- END: Trash -->
                   <!-- BEGIN: RepView -->
                         <td class="button1"><a class="lbutton1" href="{BUTTON_REPVIEW_URL}" title="{BUTTON_REPVIEW_TITLE}">&nbsp;{BUTTON_REPVIEW_LABEL}&nbsp;</a></td>
-                  <!-- END: Trash -->
+                  <!-- END: RepView -->
                   <!-- BEGIN: LogView -->
                         <td class="button1"><a class="lbutton1" href="{BUTTON_LOGVIEW_URL}" title="{BUTTON_LOGVIEW_TITLE}">&nbsp;{BUTTON_LOGVIEW_LABEL}&nbsp;</a></td>
-                  <!-- END: Trash -->
+                  <!-- END: LogView -->
                   <!-- BEGIN: AdminUserGroup -->
                         <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_USER_GROUP_URL}" title="{BUTTON_ADMIN_USER_GROUP_TITLE}">&nbsp;{BUTTON_ADMIN_USER_GROUP_LABEL}&nbsp;</a></td>
-                  <!-- END: Trash -->
+                  <!-- END: AdmingUserGroup -->
                   <!-- BEGIN: News -->
                         <td class="button1"><a class="lbutton1" href="{BUTTON_ADMIN_NEWS_URL}" title="{BUTTON_ADMIN_NEWS_TITLE}">&nbsp;{BUTTON_ADMIN_NEWS_LABEL}&nbsp;</a></td>
-                  <!-- END: Trash -->
+                  <!-- END: News -->
 <!-- BEGIN: UserToolsMenu -->
                   <!-- BEGIN: Prefs -->
                         <td class="button1"><a class="lbutton1" href="{BUTTON_PREFS_URL}" title="{BUTTON_PREFS_TITLE}">&nbsp;{BUTTON_PREFS_LABEL}&nbsp;</a></td>
