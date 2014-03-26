@@ -145,13 +145,13 @@
         <li><a href="#"><img src="{THEME}/img/icons/folder_up_dis.png" border="0" name="folder_up"/></a></li>
         <!-- END: UpDisabled -->
         <!-- BEGIN: Up -->
-        <li><a href="{FOLDERTOOLS_FOLDER_UP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('folder_up','','{THEME}/img/icons/folder_up_hover.png',1)"><img src="{THEME}/img/icons/folder_up_hover.png" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up" /></a></li>
+        <li><a href="{FOLDERTOOLS_FOLDER_UP_URL}"><img class="hover_swap" src="{THEME}/img/icons/folder_up_hover.png" alt="{FOLDERTOOLS_FOLDER_UP_ALT}" title="{FOLDERTOOLS_FOLDER_UP_ALT}" name="folder_up" /></a></li>
         <!-- END: Up -->
-        <li><a href="{FOLDERTOOLS_HOME_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('home','','{THEME}/img/icons/house_hover.png',1)"><img src="{THEME}/img/icons/house_hover.png" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home" /></a></li>
+        <li><a href="{FOLDERTOOLS_HOME_DIR_URL}"><img class="hover_swap" src="{THEME}/img/icons/house_hover.png" alt="{FOLDERTOOLS_HOME_DIR_ALT}" title="{FOLDERTOOLS_HOME_DIR_ALT}" border="0" name="home" /></a></li>
         <!-- BEGIN: InitialDir -->
-        <li><a href="{FOLDERTOOLS_INITIAL_DIR_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('set_initial','','{THEME}/img/icons/house_link_hover.png',1)"><img src="{THEME}/img/icons/house_link_hover.png" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial" /></a></li>
+        <li><a href="{FOLDERTOOLS_INITIAL_DIR_URL}"><img class="hover_swap" src="{THEME}/img/icons/house_link_hover.png" alt="{FOLDERTOOLS_INITIAL_DIR_ALT}" title="{FOLDERTOOLS_INITIAL_DIR_ALT}" border="0" name="set_initial" /></a></li>
         <!-- END: InitialDir -->
-        <li class="sitemap"><a href="{FOLDERTOOLS_SITEMAP_URL}" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('sitemap','','{THEME}/img/icons/sitemap_hover.png',1)"><img src="{THEME}/img/icons/sitemap_hover.png" alt="{FOLDERTOOLS_SITEMAP_ALT}" title="{FOLDERTOOLS_SITEMAP_ALT}" border="0" name="sitemap" /></a></li>
+        <li class="sitemap"><a href="{FOLDERTOOLS_SITEMAP_URL}"><img class="hover_swap" src="{THEME}/img/icons/sitemap_hover.png" alt="{FOLDERTOOLS_SITEMAP_ALT}" title="{FOLDERTOOLS_SITEMAP_ALT}" border="0" name="sitemap" /></a></li>
       </ul><!-- /folder_tools_top -->
       <ul id="pager">  
         <!-- BEGIN: Pagination -->
@@ -203,7 +203,7 @@
                 <span>{SEARCH_CURRENT_LABEL} <input type="checkbox" name="currentfolder" value="1"{SEARCH_CURRENT_SELECTED} /></span>
               </div><!-- /separator -->
               <div class="separator">                                            
-                <input name="search_{SEARCH_ID}" class="fbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                <input name="search_{SEARCH_ID}" class="fbuttonup1" type="submit" value="{SEARCH_BUTTON_LABEL}" />
               </div><!-- /separator -->                              
             </form>  
           </div><!-- /tools_panels -->
@@ -469,9 +469,9 @@
                 </select>
             </div><!-- /separator -->
             <div class="separator">
-                <input name="go_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_GO}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                <input name="del_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_DELETE}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                <input name="add_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_ADD}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                <input name="go_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_GO}" />
+                <input name="del_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_DELETE}" />
+                <input name="add_favorite_{FAVORITE_ID}" class="fbuttonup1" type="submit" value="{FAVORITE_ADD}" />
              </div><!-- /separator -->
              <div class="separator">
                 <h3>{FAVORITE_LABEL}</h3>                
@@ -496,26 +496,26 @@
         <div class="child bulk_btns">
           <!-- BEGIN: Download -->
           <div class="separator">
-            <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" name="bdlaction_x" type="submit" value="{BULKBUTTONS_DOWNLOAD_LABEL}" alt="{BULKBUTTONS_DOWNLOAD_ALT}" title="{BULKBUTTONS_DOWNLOAD_ALT}" />
           </div><!-- /separator -->
           <!-- END: Download -->
           <div class="separator">
-            <input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" name="bmoveaction_x" type="submit" value="{BULKBUTTONS_MOVE_LABEL}" alt="{BULKBUTTONS_MOVE_ALT}" title="{BULKBUTTONS_MOVE_ALT}" />
           </div><!-- /separator -->
           <div class="separator">
-            <input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" name="bemailaction_x" type="submit" value="{BULKBUTTONS_EMAIL_LABEL}" alt="{BULKBUTTONS_EMAIL_ALT}" title="{BULKBUTTONS_EMAIL_ALT}" />
           </div><!-- /separator -->
           <div class="separator">
-            <input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" />
+            <input  class="fbuttonup1" name="bdeleteaction_x" type="submit" value="{BULKBUTTONS_DELETE_LABEL}" alt="{BULKBUTTONS_DELETE_ALT}" title="{BULKBUTTONS_DELETE_ALT}" onclick="return confirm('{BULKBUTTONS_DELETE_CONFIRM}');" />
           </div><!-- /separator -->
           <!-- BEGIN: Checkout -->
           <div class="separator">
-            <input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+            <input  class="fbuttonup1" name="bcheckout_x" type="submit" value="{BULKBUTTONS_CHECKOUT_LABEL}" alt="{BULKBUTTONS_CHECKOUT_ALT}" title="{BULKBUTTONS_CHECKOUT_ALT}" />
           </div><!-- /separator -->  
           <!-- END: Checkout -->
           <!-- BEGIN: JUpload -->
           <div class="separator">
-            <input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/>
+            <input  class="fbuttonup1" name="bupload" type="button" value="{ACTIONBUTTON_JUPLOAD_LABEL}" alt="{ACTIONBUTTON_JUPLOAD_TITLE}" title="{ACTIONBUTTON_JUPLOAD_TITLE}" onclick="location.href='{ACTIONBUTTON_JUPLOAD_URL}';"/>
           </div><!-- /separator -->  
           <!-- END: JUpload -->      
         </div><!-- /child -->
@@ -576,8 +576,8 @@
           {SHOWREC_HIDDEN}
           <label for="filter">{SHOWREC_NUM_DAY_LABEL}</label>
           <input class="finput1" id="filter" type="text" name="filter" size="10" value="{SHOWREC_NUM_DAY_VALUE}" />
-          <input  class="fbuttonup1" name="submit" type="submit" value="{SHOWREC_SUBMIT_VALUE}" alt="{SHOWREC_SUBMIT_ALT}" title="{SHOWREC_SUBMIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-          <input  class="fbuttonup1" type="reset" value="{SHOWREC_RESET_VALUE}" alt="{SHOWREC_RESET_ALT}" title="{SHOWREC_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+          <input  class="fbuttonup1" name="submit" type="submit" value="{SHOWREC_SUBMIT_VALUE}" alt="{SHOWREC_SUBMIT_ALT}" title="{SHOWREC_SUBMIT_ALT}" />
+          <input  class="fbuttonup1" type="reset" value="{SHOWREC_RESET_VALUE}" alt="{SHOWREC_RESET_ALT}" title="{SHOWREC_RESET_ALT}" />
         </form>
       </div><!-- /showrec -->
     </div><!-- /showrec_cont -->

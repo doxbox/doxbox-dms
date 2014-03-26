@@ -39,8 +39,8 @@
                   <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
                      <tr>
                         <td colspan="2" width="100%">
-                           <input  class="fbuttonup1" name="tables_tupleView" type="submit" value="{BTN_VIEW_LABEL}" alt="{BTN_VIEW_ALT}" title="{BTN_VIEW_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                           <a id="tables_tupleAdd" class="lbutton1" href="{BTN_ADD_URL}" title=""><input class="fbuttonup1" type="button" value="&nbsp;{BTN_ADD_LABEL}&nbsp;" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></a>
+                           <input  class="fbuttonup1" name="tables_tupleView" type="submit" value="{BTN_VIEW_LABEL}" alt="{BTN_VIEW_ALT}" title="{BTN_VIEW_ALT}" />
+                           <a id="tables_tupleAdd" class="lbutton1" href="{BTN_ADD_URL}" title=""><input class="fbuttonup1" type="button" value="&nbsp;{BTN_ADD_LABEL}&nbsp;" /></a>
                         </td>
                      </tr>
                   </table>
@@ -67,8 +67,8 @@
             </tr>
             <tr>
                <td class="form2" width="100%" colspan="2">
-                  <input  class="fbuttonup1" type="submit" value="{BTN_EDIT_LABEL}" alt="{BTN_EDIT_ALT}" title="{BTN_EDIT_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                  <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                  <input  class="fbuttonup1" type="submit" value="{BTN_EDIT_LABEL}" alt="{BTN_EDIT_ALT}" title="{BTN_EDIT_ALT}" />
+                  <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" /></td>
             </tr>
          </table>
 <!-- END: EditTuples -->
@@ -84,8 +84,8 @@
             </tr>
             <tr>
                <td class="form2" width="100%" colspan="2">
-                  <input  class="fbuttonup1" type="submit" value="{BTN_ADD_LABEL}" alt="{BTN_ADD_ALT}" title="{BTN_ADD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                  <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                  <input  class="fbuttonup1" type="submit" value="{BTN_ADD_LABEL}" alt="{BTN_ADD_ALT}" title="{BTN_ADD_ALT}" />
+                  <input  class="fbuttonup1" type="reset" value="{BTN_RESET_LABEL}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" /></td>
             </tr>
          </table>
 <!-- END: AddTuples -->

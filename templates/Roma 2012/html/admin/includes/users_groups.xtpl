@@ -14,8 +14,8 @@
                </tr>
                <tr class="nostyle_table">
                   <td class="nostyle_table right_text" width="100%" colspan="2">
-                    <a class="lbutton1" href="{BTN_NEW_USER_URL}" title="{BTN_NEW_USER_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_USER_LABEL}&nbsp;" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href('{BTN_NEW_USER_URL}');"/>&nbsp;</a>
-                    <input  class="fbuttonup1" name="btn_ed_user_x" type="submit" value="{BTN_EDIT_USER_LABEL}" alt="{BTN_EDIT_USER_TITLE}" title="{BTN_EDIT_USER_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                    <a class="lbutton1" href="{BTN_NEW_USER_URL}" title="{BTN_NEW_USER_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_USER_LABEL}&nbsp;" onclick="location.href('{BTN_NEW_USER_URL}');"/>&nbsp;</a>
+                    <input  class="fbuttonup1" name="btn_ed_user_x" type="submit" value="{BTN_EDIT_USER_LABEL}" alt="{BTN_EDIT_USER_TITLE}" title="{BTN_EDIT_USER_TITLE}" />
                   </td>
                </tr>
 <!-- END: Users -->
@@ -35,8 +35,8 @@
                </tr>
                <tr class="nostyle_table">
                   <td class="nostyle_table right_text" width="100%" colspan="2">
-                    <a class="lbutton1" href="{BTN_NEW_GROUP_URL}" title="{BTN_NEW_GROUP_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_GROUP_LABEL}&nbsp;" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" onclick="location.href('{BTN_NEW_GROUP_URL}');" /></a>
-                    <input  class="fbuttonup1" name="btn_ed_group_x" type="submit" value="{BTN_EDIT_GROUP_LABEL}" alt="{BTN_EDIT_GROUP_TITLE}" title="{BTN_EDIT_GROUP_TITLE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                    <a class="lbutton1" href="{BTN_NEW_GROUP_URL}" title="{BTN_NEW_GROUP_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_GROUP_LABEL}&nbsp;" onclick="location.href('{BTN_NEW_GROUP_URL}');" /></a>
+                    <input  class="fbuttonup1" name="btn_ed_group_x" type="submit" value="{BTN_EDIT_GROUP_LABEL}" alt="{BTN_EDIT_GROUP_TITLE}" title="{BTN_EDIT_GROUP_TITLE}" />
                   </td>
                </tr>
 <!-- END: Groups -->
@@ -50,8 +50,8 @@
                </tr>
                <tr class="nostyle_table">
                   <td class="form2" width="100%" colspan="2">
-                     <input  class="fbuttonup1" type="submit" value="{NEW_GROUP_ADD_BTN}" alt="{NEW_GROUP_ADD_BTN_ALT}" title="{NEW_GROUP_ADD_BTN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                     <input  class="fbuttonup1" type="reset" value="{NEW_GROUP_RESET_BTN}" alt="{NEW_GROUP_RESET_BTN_ALT}" title="{NEW_GROUP_RESET_BTN_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                     <input  class="fbuttonup1" type="submit" value="{NEW_GROUP_ADD_BTN}" alt="{NEW_GROUP_ADD_BTN_ALT}" title="{NEW_GROUP_ADD_BTN_ALT}" />
+                     <input  class="fbuttonup1" type="reset" value="{NEW_GROUP_RESET_BTN}" alt="{NEW_GROUP_RESET_BTN_ALT}" title="{NEW_GROUP_RESET_BTN_ALT}" /></td>
                </tr>
 <!-- END: NewGroup -->
 <!-- BEGIN: EditGroup -->
@@ -69,11 +69,11 @@
                </tr>
                <tr>
                   <td class="form2" width="100%" colspan="2">
-                     <input class="fbuttonup1" type="submit" name="{BTN_CHANGE}" value="{BTN_CHANGE}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input class="fbuttonup1" type="submit" name="{BTN_CHANGE}" value="{BTN_CHANGE}" />
 <!-- BEGIN: DelGroup -->
-                     <input class="fbuttonup1" name="bdeletegroup_x" type="submit" value="{BTN_DEL_GROUP}" alt="{BTN_DEL_GROUP_ALT}" title="{BTN_DEL_GROUP_ALT}" onmouseover="highlightButton('fbuttondown_red', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input class="fbuttonup1" name="bdeletegroup_x" type="submit" value="{BTN_DEL_GROUP}" alt="{BTN_DEL_GROUP_ALT}" title="{BTN_DEL_GROUP_ALT}" />
 <!-- END: DelGroup -->
-                     <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                     <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                   </td>
                </tr>
                <tr>
@@ -119,8 +119,8 @@
                         <tr class="nostyle_table">
                            <td colspan="2" class="form1" ></td>
                            <td class="form2" nowrap="nowrap">
-                              <input onclick="subSelection('users'); selectAll(document.admin.elements['fselectedusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                              <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                              <input onclick="subSelection('users'); selectAll(document.admin.elements['fselectedusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" />
+                              <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                            </td>
                          </tr>
                       </table>
@@ -169,8 +169,8 @@
                         <tr class="nostyle_table">
                            <td colspan="2" class="form1" ></td>
                            <td class="form2" nowrap="nowrap">
-                              <input onclick="subSelection('mainusers'); selectAll(document.admin.elements['fselectedmainusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                              <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                              <input onclick="subSelection('mainusers'); selectAll(document.admin.elements['fselectedmainusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" />
+                              <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                            </td>
                         </tr>
                      </table>
@@ -217,8 +217,8 @@
                      <tr>
                         <td colspan="2" class="form1" ></td>
                         <td class="form2" nowrap="nowrap">
-                           <input onclick="subSelection('adminusers'); selectAll(document.admin.elements['fselectedadminusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                           <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                           <input onclick="subSelection('adminusers'); selectAll(document.admin.elements['fselectedadminusers[]']);" class="fbuttonup1" type="submit" value="{BTN_SET_SELECTED}" alt="{BTN_SET_SELECTED_ALT}" title="{BTN_SET_SELECTED_ALT}" />
+                           <input onclick="reload()" class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                         </td>
                      </tr>
                   </table>

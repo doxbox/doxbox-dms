@@ -105,7 +105,7 @@
                      <table class="nostyle_table">
                         <tbody>
                            <tr>
-                              <td align="left"><input class="fbuttonup1" name="myaction" type="submit" value="{SYSLOG_FILTERBTN_LABEL}" alt="{SYSLOG_FILTERBTN_ALT}" title="{SYSLOG_FILTERBTN_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+                              <td align="left"><input class="fbuttonup1" name="myaction" type="submit" value="{SYSLOG_FILTERBTN_LABEL}" alt="{SYSLOG_FILTERBTN_ALT}" title="{SYSLOG_FILTERBTN_ALT}" /></td>
                               <td class="button1"><img src="{THEME}/img/icon_filetype/pdf.png"/></td>
                               <td class="button1"><a class="lbutton1" href="{SYSLOG_GENPDF_URL}" title="{SYSLOG_GENPDF_ALT}">&nbsp;{SYSLOG_GENPDF_LABEL}&nbsp;</a></td>
                               <td class="button1"><img src="{THEME}/img/icon_filetype/xls.png" /></td>

@@ -264,7 +264,7 @@ jQuery(function() {
             <table class="log_table" cellspacing="0" cellpadding="0" border="0" width="100%">
                <tr>
                  <td align="right"><img src="{THEME}/icon_filetype/pdf.gif" /><a class="lbutton1" href="{GENPDF_URL}" title="{GENPDF_ALT}">&nbsp;{GENPDF_LABEL}&nbsp;</a></td>
-                 <!-- <td class="right_text"><a class="lbutton1" href="{GENPDF_URL}" title="{GENPDF_ALT}"><input class="fbuttonup1" type="submit" value="{GENPDF_LABEL}" alt="{GENPDF_ALT}" title="{GENPDF_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></a></td>-->
+                 <!-- <td class="right_text"><a class="lbutton1" href="{GENPDF_URL}" title="{GENPDF_ALT}"><input class="fbuttonup1" type="submit" value="{GENPDF_LABEL}" alt="{GENPDF_ALT}" title="{GENPDF_ALT}" /></a></td>-->
               </tr>
             </table>
          </td>

@@ -43,10 +43,6 @@ function centerPopup(){
 	var windowHeight = document.documentElement.clientHeight;
 	var popupHeight = jQuery("#popupHelp").height();
 	var popupWidth = jQuery("#popupHelp").width();
-//console.log("Wind W: " + windowWidth);
-//console.log("Wind H: " + windowHeight);
-//console.log("Pop W: " + popupWidth);
-//console.log("Pop H: " + popupHeight);
 
         if (popupHeight > windowHeight)
         {
@@ -86,7 +82,7 @@ jQuery(document).ready(function() {
 
 // LocalScroll assignment
   jQuery('#motd').localScroll();
-  jQuery('#footer').localScroll();   
+  jQuery('#motd_bottom').localScroll();   
 
 // Online Help
 //
@@ -94,7 +90,7 @@ jQuery(document).ready(function() {
 //
 	//LOADING POPUP
 	//Click the button event!
-	jQuery(".help_button").click(function(){
+	jQuery("#help_button, #help_button_btm").click(function(){
 		//centering with css
 		centerPopup();
 		//load popup
@@ -153,7 +149,7 @@ jQuery(document).ready(function() {
   var at_xpos = -(jQuery('#admin_tools_bottom').height())-10;
   var ut_xpos = -(jQuery('#user_tools_bottom').height())-10;
   jQuery('#down_menu .li_father').mouseover(function() {
-    var xpos = -(jQuery(this).find('ul').height())-7;
+    var xpos = -(jQuery(this).find('ul').height())-10;
     jQuery(this).find('ul').css('top',xpos);    
   });  
   
@@ -200,7 +196,7 @@ jQuery(document).ready(function() {
   		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/Roma 2011/img/ajax-loader.gif" title="ajaxloader" /></div>');
   		  here = jQuery(this).parents('.wrap_thumb').find('.monitor');
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').css({opacity: 0});
-  		  var altezzaSmall = jQuery(this).outerHeight();
+  		  var altezzaSmall = jQuery(this).outerHeight(true);
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').height(13);
   		  var windowWidth = jQuery(window).width();
   		  var halfWindow = windowWidth/2;
@@ -213,36 +209,43 @@ jQuery(document).ready(function() {
     		  jQuery(this).parents('.wrap_thumb').find('.monitor').animate({opacity:1,left:-50},200);        
         }
    		  //preload med-size thumb img
-        jQuery.imgpreload(imgURL,function() { 
-          var altezzaMed = jQuery(this).attr('height');
-          var lunghezza = jQuery(this).attr('width');
-          if (offset.left < halfWindow) {
-            jQuery(here).animate({
-                                 height: altezzaMed,
-                                 width: lunghezza,
-                                 top: -((altezzaMed - altezzaSmall)/2),
-                                 right: - (lunghezza+25)
-                                 },200, function() {
-                                                    jQuery(here).find('img').attr({ 
-                                                                              src: imgURL
-                                                                             });                             
-                                                   });
-          } else {
-            jQuery(here).animate({
-                                 height: altezzaMed,
-                                 width: lunghezza,
-                                 top: -((altezzaMed - altezzaSmall)/2),
-                                 left: - (lunghezza+25)
-                                 },200, function() {
-                                                    jQuery(here).find('img').attr({ 
-                                                                              src: imgURL
-                                                                             });                             
-                                                   });          
-          }
-          
-        });		  
-  		},
-  		//rollout function
+       jQuery.imgpreload(imgURL, {
+                each: function()
+                {
+                   // Was the image Loaded?
+                   if (jQuery(this).data('loaded'))
+                   {
+                      var MedImgHeight = jQuery(this).data('dimensions').height;
+                      var MedImgWidth = jQuery(this).data('dimensions').width;
+
+                      if (offset.left < halfWindow)
+                      {
+                         jQuery(here).animate({
+                                               height: MedImgHeight,
+                                               width: MedImgWidth,
+                                               top: -((MedImgHeight - altezzaSmall)/2),
+                                               right: - (MedImgWidth+25)
+                                               },200, function() {
+                                                                 jQuery(here).find('img').attr({
+                                                                                                src: imgURL
+                                                                                                });
+                                                                 });
+                                               } else {
+                                               jQuery(here).animate({
+                                                                    height: MedImgHeight,
+                                                                    width: MedImgWidth,
+                                                                    top: -((MedImgHeight - altezzaSmall)/2),
+                                                                    left: - (MedImgWidth+25)
+                                                                    },200, function() {
+                                                                                      jQuery(here).find('img').attr({
+                                                                                                                    src: imgURL
+                                                                                                                   });
+                                                                                     });
+                                              }
+                   }
+                }
+        });
+      }, //rollout function
       function() {
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').animate({opacity:0,top:-200}, 200, function(){jQuery(this).remove()});	
     });
@@ -278,24 +281,35 @@ jQuery(document).ready(function() {
   		var offset = jQuery(this).offset();
       var menu = jQuery(this).find('.jqLayerMenu');
       var windowHeight = jQuery(window).height();
+
       if (offset.left < halfWindow) {
-        var left = jQuery(this).find('a').outerWidth();
-        jQuery(this).find('a.folder_name').addClass('HoverDx');                        
-        menu.css({left: left, top: '-6px'});
+        var left = jQuery(this).find('a').outerWidth(true);
+        jQuery(this).find('a:first-child').addClass('HoverDx');                        
+        menu.css({left: left, top: '-5px', left: jQuery(this).find('a:first-child').width() + 9 });
       } else {
-        var left = menu.outerWidth();
-        jQuery(this).find('a.folder_name').addClass('HoverSx');        
-        menu.css({left: -left+1, top: '-6px'});
+        var left = menu.outerWidth(true);
+        jQuery(this).find('a:first-child').addClass('HoverSx');        
+        menu.css({left: -left+1, top: '-5px'});
       }
       menu.css({display:'block'});
       var offset = menu.offset();
       var wOffset = jQuery(window).scrollTop();       
       menu.css({display:'none'});
-      var menuHeight =  menu.outerHeight();
+   
+      if (jQuery.browser.msie && jQuery.browser.version < 9)
+      {
+        var menuHeight =  menu.outerHeight();
+      }
+      else
+      {
+        var menuHeight =  menu.outerHeight(true);
+      }
+
       var ySize = (offset.top+menuHeight)-wOffset;                        
-      if ( ySize > windowHeight) {
-        newYpos = ySize - windowHeight; 
-        menu.css({top:-newYpos-10}); 
+      if ( ySize > windowHeight) 
+      {
+         newYpos = ySize - windowHeight; 
+         menu.css({top:-newYpos-10}); 
       }
       menu.fadeIn(100);
     },
@@ -323,8 +337,6 @@ jQuery(document).ready(function() {
       jQuery(this).parents().find('.layerMenuAnchor').removeClass('zindex_fix');
       jQuery(this).parents().find('.med_thumbnail').removeClass('zindex_fix');
       jQuery(this).addClass('zindex_fix');
-      //console.log(jQuery('.wrap_thumb').css('z-index'));
-      //console.log(jQuery('.wrap_thumb img').attr('src'));
     });
   // IE z-index bug fix for thumbnails  
     jQuery('.img_thumb').mouseover(function() {
@@ -378,12 +390,12 @@ jQuery(document).ready(function() {
   
 //Adapt navBars lenght to browse table lenght on PAGE LOAD
   if (jQuery.browser.msie) {
-    //jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-20);
+    jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-20);
     jQuery('#folder_tools_bottom').width(jQuery('.width_driver').width()-20);
     jQuery('#nav_bar').width(jQuery('.width_driver').width()+1);
     jQuery('#nav_bar_bottom').width(jQuery('.width_driver').width()+1);
   } else {
-    //jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-11);
+    jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-11);
     jQuery('#folder_tools_bottom').width(jQuery('.width_driver').width()-11);
     jQuery('#nav_bar').width(jQuery('.width_driver').width()-11);
     jQuery('#nav_bar_bottom').width(jQuery('.width_driver').width()-11);
@@ -392,12 +404,12 @@ jQuery(document).ready(function() {
 //Adapt navBars lenght to browse table lenght on Window RESIZE
   jQuery(window).resize(function() {
     if (jQuery.browser.msie) {
-      //jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-20);
+      jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-20);
       jQuery('#folder_tools_bottom').width(jQuery('.width_driver').width()-20);
       jQuery('#nav_bar').width(jQuery('.width_driver').width()+1);
       jQuery('#nav_bar_bottom').width(jQuery('.width_driver').width()+1);
     } else {
-      //jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-11);
+      jQuery('#folder_tools_top').width(jQuery('.width_driver').width()-11);
       jQuery('#folder_tools_bottom').width(jQuery('.width_driver').width()-11);
       jQuery('#nav_bar').width(jQuery('.width_driver').width()-11);
       jQuery('#nav_bar_bottom').width(jQuery('.width_driver').width()-11);
@@ -417,7 +429,7 @@ jQuery(document).ready(function() {
                         {
                              setTimeout(function()
                              {
-                                 $(".ui-datepicker").css("z-index", 11);
+                                 jQuery(".ui-datepicker").css("z-index", 11);
                              }, 10); 
                         }
                 });
@@ -435,13 +447,12 @@ jQuery(document).ready(function() {
                         {
                              setTimeout(function()
                              {
-                                 $(".ui-datepicker").css("z-index", 11);
+                                 jQuery(".ui-datepicker").css("z-index", 11);
                              }, 10); 
                         }
                 });
 
 // main menu
-/*
   jQuery('#top_mainmenu h3').css('cursor','pointer');
   if (jQuery.cookie('the_uncle_cookie') == 'open' || jQuery.cookie('the_uncle_cookie') == null){
     jQuery.cookie('the_uncle_cookie', 'open', { expires: 365, path: '/' });
@@ -463,23 +474,27 @@ jQuery(document).ready(function() {
       jQuery('#menu_container_toggler').find('a').removeClass('slide_down').addClass('slide_up'); 
     }
   });
-*/  
-  
-// disabilita field type se == "Status_documentale"
-  jQuery('input[name="Status_Documentale"]').live('focus', function() {
-    jQuery(this).attr('disabled', 'disabled');
-  });
-  jQuery('input[name="status_Documentale"]').live('focus', function() {
-    jQuery(this).attr('disabled', 'disabled');
-  });
-  jQuery('input[name="Status_documentale"]').live('focus', function() {
-    jQuery(this).attr('disabled', 'disabled');
-  });
-  jQuery('input[name="status_documentale"]').live('focus', function() {
-    jQuery(this).attr('disabled', 'disabled');
-  });
-  
-    
+
+// Button Hover effect
+
+jQuery(document.body).on('mouseenter', 'input.fbuttonup1', function() {
+         jQuery(this).removeClass('fbuttonup1');
+         jQuery(this).addClass(fGetDownClass(this));
+      })
+
+jQuery(document.body).on('mouseleave', 'input[class^=fbuttondown]', function() {
+         jQuery(this).removeClass(fGetDownClass(this));
+         jQuery(this).addClass('fbuttonup1');
+   });
+
+// Image Swap on Hover effect
+
+   jQuery('img.hover_swap').on({
+      mouseenter: function () {
+         jQuery(this).prop('src', jQuery(this).prop('src').replace(/\.png/, '_hover.png' ));
+      },
+      mouseleave: function () {
+         jQuery(this).prop('src', jQuery(this).prop('src').replace(/_hover/, '' ));
+      }
+   }); 
 }) // end of document.ready
-
-

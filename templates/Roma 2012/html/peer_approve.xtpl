@@ -30,8 +30,8 @@
                   <tr>
                      <td class="form1"></td>
                      <td class="form2" width="100%">
-                        <input class="fbuttonup1" name="send_file_x" type="submit" value="{BTN_SEND_EMAIL}" alt="{BTN_SEND_EMAIL_ALT}" title="{BTN_SEND_EMAIL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)">
-                        <input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                        <input class="fbuttonup1" name="send_file_x" type="submit" value="{BTN_SEND_EMAIL}" alt="{BTN_SEND_EMAIL_ALT}" title="{BTN_SEND_EMAIL_ALT}" />
+                        <input  class="fbuttonup1" type="reset" value="{FILE_BTN_RESET}" alt="{FILE_BTN_RESET_ALT}" title="{FILE_BTN_RESET_ALT}" />
                      </td>
                   </tr>
                </tbody>

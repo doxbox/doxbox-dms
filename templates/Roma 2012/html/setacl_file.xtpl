@@ -85,7 +85,7 @@
 		        </tr>
 		        <tr class="acl_set_selected_tr">
 		           <td colspan="2" class="form1"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
-		           <td class="right_text"><input class="fbuttonup1" type="submit" name="submit_button" value="{SET_SELECTED}" onclick="selectAll(document.combo_box.elements['selectedusers[]']); selectAll(document.combo_box.elements['selectedgroups[]']);" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
+		           <td class="right_text"><input class="fbuttonup1" type="submit" name="submit_button" value="{SET_SELECTED}" onclick="selectAll(document.combo_box.elements['selectedusers[]']); selectAll(document.combo_box.elements['selectedgroups[]']);" /></td>
 		        </tr>
 		     </table>
           </td>
@@ -140,8 +140,8 @@
 		         <tr class="acl_buttons_tr">
 		            <td colspan="13" class="form1" width="100%"><img src="{THEME}/ui_misc/x_clear.gif" height="1" width="1" alt="" /></td>
 		            <td class="form2 right_text" nowrap="nowrap">
-                       <input  class="fbuttonup1" type="submit" value="{BTN_SAVE}" alt="{BTN_SAVE_ALT}" title="{BTN_SAVE_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
-                       <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown_green', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+                       <input  class="fbuttonup1" type="submit" value="{BTN_SAVE}" alt="{BTN_SAVE_ALT}" title="{BTN_SAVE_ALT}" />
+                       <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                     </td>
 		         </tr>
 		      </table>
