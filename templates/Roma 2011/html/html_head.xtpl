@@ -31,7 +31,7 @@
 
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery-ui-1.8.12.custom.min.js"></script>
+<script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery-ui-1.9.2.custom.min.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.jscrollpane.min.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.imgpreload-1.5.js"></script>
