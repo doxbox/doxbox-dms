@@ -513,6 +513,11 @@ if ($action == "add")
          $user_default_revision = "0";      
       }
 
+      if (empty($newbuttons))
+      {
+         $newbuttons = $default->system_ButtonStyle;
+      }
+
       $maxsessions = $maxsessions - 1; // always is stored - 1
       
       $sql = new Owl_DB;
@@ -542,7 +547,7 @@ if ($action == "add")
       }
 
 
-      $sql->query("INSERT INTO $default->owl_users_table (groupid,username,name,password,quota_max,quota_current,email,notify,attachfile,disabled,noprefaccess,language,maxsessions,curlogin,lastlogin,useradmin, newsadmin, comment_notify, buttonstyle, homedir,firstdir, email_tool,change_paswd_at_login, expire_account, user_auth, logintonewrec, groupadmin, user_offset,passwd_last_changed, viewlogs, viewreports, user_default_view, user_major_revision, user_minor_revision, user_default_revision,pdf_watermarks, user_access, dl_count_excluded) VALUES ('$groupid', '$edit_loginname', '$name', '" . $pass . "', '$quota', '0', '$email', '$notify','$attachfile', '$disabled', '$noprefaccess', '$newlanguage', '$maxsessions', $dNow, $dNow, '$useradmin', '$newsadmin', '$comment_notify', '$default->system_ButtonStyle', '$homedir', '$firstdir','$email_tool', '$change_paswd_at_login', '$expire_account', '$user_auth' , '$logintonewrec', '$groupadmin', '$user_offset', $dNow ,'$viewlogs', '$viewreports', '$user_default_view', '$user_major_revision', '$user_minor_revision', '$user_default_revision', '$pdf_watermarks', '$user_access', '$dl_count_excluded')");
+      $sql->query("INSERT INTO $default->owl_users_table (groupid,username,name,password,quota_max,quota_current,email,notify,attachfile,disabled,noprefaccess,language,maxsessions,curlogin,lastlogin,useradmin, newsadmin, comment_notify, buttonstyle, homedir,firstdir, email_tool,change_paswd_at_login, expire_account, user_auth, logintonewrec, groupadmin, user_offset,passwd_last_changed, viewlogs, viewreports, user_default_view, user_major_revision, user_minor_revision, user_default_revision,pdf_watermarks, user_access, dl_count_excluded) VALUES ('$groupid', '$edit_loginname', '$name', '" . $pass . "', '$quota', '0', '$email', '$notify','$attachfile', '$disabled', '$noprefaccess', '$newlanguage', '$maxsessions', $dNow, $dNow, '$useradmin', '$newsadmin', '$comment_notify', '$newbuttons', '$homedir', '$firstdir','$email_tool', '$change_paswd_at_login', '$expire_account', '$user_auth' , '$logintonewrec', '$groupadmin', '$user_offset', $dNow ,'$viewlogs', '$viewreports', '$user_default_view', '$user_major_revision', '$user_minor_revision', '$user_default_revision', '$pdf_watermarks', '$user_access', '$dl_count_excluded')");
       $iNewID = $sql->insert_id($default->owl_users_table, 'id');
 
 
