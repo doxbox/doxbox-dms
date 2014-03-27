@@ -32,7 +32,7 @@ jQuery(document).ready(function(){
          } 
       });
 
-      if (bOneVal == 0)
+      if (bOneVal == 0 && jQuery('input[type=file]').length > 0)
       { 
          event.preventDefault();
          alert(ERROR_SELECT_FILE);
