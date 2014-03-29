@@ -1233,8 +1233,6 @@ padding:2px 5px;
 .layerMenuAnchor a.HoverDx {
 position:relative;
 z-index:300;
-background-color:#EEE;
-border:1px solid #6E6E6E;
 border-right:none;
 -moz-border-radius:3px 0 0 3px;
 -webkit-border-radius:3px 0 0 3px;
@@ -1605,6 +1603,8 @@ background-color: #CCC;
 margin:0 20px;
 padding:0;
 float:right;
+width: 180px;
+height: 26px;
 }
 #pager,
 #folder_tools_top {
