@@ -644,7 +644,6 @@ if ($action == "file_upload" or $action == "zip_upload")
             }
 
             $xtpl->assign('FILE_DOCREL_LIST_LABEL', $owl_lang->docRel_list);
-	        //$xtpl->assign('FILE_DOCREL_MSG_LABEL', $owl_lang->peer_msg_to_reviewer);
 
             $xtpl->parse('main.AddFiles.DocRel');
          }
@@ -1252,22 +1251,20 @@ if ($action == "file_modify")
       {
          if ($default->owl_use_fs)
          {
-
             $iRealFileID = fGetPhysicalFileId($id);
 
             $filename = $default->owl_FileDir . DIR_SEP . find_path(owlfileparent($iRealFileID)) . DIR_SEP . flid_to_filename($iRealFileID);
-
-            $handle = fopen ($filename, "r");
-            $contents = fread ($handle, filesize ($filename));
-            fclose ($handle);
+            $contents = file_get_contents($filename);
          } 
          else
          {
-             $path = fGetFileFromDatbase($id);
+            $path = fGetFileFromDatbase($id);
             $contents = file_get_contents($path);
          } 
          $xtpl->assign('FILE_DESC_LABEL', $owl_lang->description);
          $xtpl->assign('FILE_DESC_VALUE', $sql->f("description"));
+
+         $xtpl->assign('OWL_SESS', $sess);
 
          $xtpl->assign('FILE_NOTE_LABEL', $owl_lang->note_content);
          $xtpl->assign('FILE_NOTE_VALUE', $contents);
@@ -1285,7 +1282,6 @@ if ($action == "file_modify")
 	 }
 	 else
 	 {
- 
             $xtpl->assign('OWL_SESS', $sess);
             $xtpl->assign('DOCTYPE_ID', $sql->f("doctype"));
             $xtpl->assign('FILE_ID', $sql->f("id"));
