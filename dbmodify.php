@@ -1521,6 +1521,10 @@ if ($action == "file_upload" or $action == "jupload")
          }
 
          $iDocApproved = 1;
+
+         fSetDefaultFileAcl($id);
+         fSetInheritedAcl($parent, $id, "FILE");
+
          notify_users($groupid, NEW_NOTE, $id, $type);
          notify_monitored_folders ($parent, $new_name);
          owl_syslog(FILE_UPLOAD, $userid, $new_name, $parent, $owl_lang->log_detail, "FILE", $note_size);
