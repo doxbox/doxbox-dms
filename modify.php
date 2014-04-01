@@ -95,10 +95,12 @@ if (version_compare(phpversion(), "5.4.0", ">="))
    if (ini_get('session.upload_progress.enabled') == 1 and $type == '' and !strpos(php_sapi_name(), 'fcgi'))
    {
       /** Load the supporting elements needed to display the Progress bar */
-      $xtpl->parse('main.PhpProgressBar');
+      if ($action == 'file_upload' or $action == 'file_update' or $action == 'zip_upload')
+      {
+         $xtpl->parse('main.PhpProgressBar');
+      }
    }
 }
-
 
 fSetLogo_MOTD();
 fSetPopupHelp();
@@ -571,11 +573,10 @@ if ($action == "file_upload" or $action == "zip_upload")
          if ($action == "file_upload" and $default->max_number_of_file_uploads > 0 )
          {
             $xtpl->parse('main.AddFiles.FileUploads.MultiAddFile');
-			if ($default->enable_twain_scan_to_pdf)
-			{
+            if ($default->enable_twain_scan_to_pdf)
+            {
                $xtpl->parse('main.AddFiles.FileUploads.Scan');
-			}
-
+            }
          }
 	 else if ($action == "zip_upload")
          {
