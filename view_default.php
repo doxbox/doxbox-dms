@@ -1208,7 +1208,7 @@ while ($sql->next_record())
       }
    } 
 
-   if ($sql->f("url") == "1")
+   if ($sql->f("url") == 1)
    {
       if ($fileid == $sql->f("id"))
       {
@@ -1240,8 +1240,6 @@ while ($sql->next_record())
       } 
       else
       {
-         //if ($bFileDownload == 1)
-         //{
             if (($default->expand_disp_file and $expand == 1) or ($default->collapse_disp_file and $expand == 0))
             {
                if($default->old_action_icons)
@@ -1257,6 +1255,7 @@ while ($sql->next_record())
             }
             if (($default->expand_disp_size and $expand == 1) or ($default->collapse_disp_size and $expand == 0))
             {
+               $xtpl->assign('FILE_SIZE', "<b class=\"hilite\">&nbsp;</b>");
                $xtpl->parse('main.DataBlock.File.f_size');
             }
       } 
