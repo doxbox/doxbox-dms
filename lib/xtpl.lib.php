@@ -3939,7 +3939,7 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
       {
          if (($default->hide_backup == 1 && $self != $default->owl_root_url . "/log.php")  || $isBackup != "$default->version_control_backup_dir_name" || $default->hide_backup != 1)
          {
-            if ($url != "1")
+            if ($url == 0)
             {
                if ($bCheckOK)
                {
@@ -3948,7 +3948,6 @@ function fSetupFileActionMenusXTPL($iFileID, $sFileName, $iCreatorID, $iApproved
                   $urlArgs2['id'] = $fid;
                   $urlArgs2['parent'] = $backup_parent;
                   $sUrl = fGetURL ('modify.php', $urlArgs2);
-                  //$aFileMenuString["file_update"] = "..|$owl_lang->alt_upd_file|$sUrl|$owl_lang->alt_upd_file|update.gif\n";
                   $xtpl->assign('FILE_MENU_UPDATE_ACTION', $sUrl);
                   $xtpl->assign('FILE_MENU_UPDATE_LABEL', $owl_lang->alt_upd_file);
                   $xtpl->assign('FILE_MENU_UPDATE_ALT', $owl_lang->alt_upd_file);
