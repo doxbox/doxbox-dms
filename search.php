@@ -324,6 +324,9 @@ while($sql->next_record())
    $folders[$id] = $id;
 
    $sQuery = explode(" ", $query);
+   $sQuery = str_replace('-','', stripslashes($sQuery));
+   $sQuery = preg_replace( '/\s+/', ' ', $sQuery );
+
    foreach($sQuery as $keyword)
    {
       if($keyword <> "*")
@@ -712,6 +715,9 @@ if (strlen(trim($query))>0)
    //
    // break up our query string
    $query = str_replace('\\\\','\\', stripslashes($query));
+   $query = str_replace('-','', stripslashes($query));
+   $query = preg_replace( '/\s+/', ' ', $query );
+
    $query = explode(" ", $query);
    //
    // the is the meat of the matching
