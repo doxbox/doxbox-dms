@@ -150,7 +150,7 @@ print("<script>
                         showOn: \"button\",
                         dateFormat: 'yy/mm/dd',
                         showButtonPanel: false,
-                        buttonImage: \"templates/Roma 2011/ui_icons/calendar_day.png\",
+                        buttonImage: \"templates/" . $default->sButtonStyle . "/ui_icons/calendar_day.png\",
                         buttonImageOnly: true,
                         onClose: function(date) {
                         },
