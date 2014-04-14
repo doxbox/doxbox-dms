@@ -19,6 +19,7 @@
 
 <link rel="stylesheet" type="text/css" href="{THEME}/css/jquery.lightbox-0.5.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="{THEME}/css/jquery.jscrollpane.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{THEME}/css/redmond/jquery.ui.tooltip.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="{THEME}/css/redmond/jquery-ui-1.8.12.custom.css" media="screen" />
 <link rel="stylesheet" type="text/css" media="screen" href="{LOCALE_ROOT_URL}/help/owl_help.css" /> 
 
@@ -42,6 +43,11 @@
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.scrollTo-min.js"></script>
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.localscroll-min.js"></script>
 <script type="text/javascript" src="{THEME}/js/jq_scripts_functions.js"></script>
+<script type="text/javascript">
+// LOCALIZATION Strings
+var ACL_NO_USERS_AVAILABLE = '{ACL_NO_USERS_AVAILABLE}';
+var ACL_NO_GROUPS_AVAILABLE = '{ACL_NO_GROUPS_AVAILABLE}';
+</script>
 <!-- BEGIN:  PhpProgressBarJS -->
 <script type="text/javascript" src="{ROOT_URL}/scripts/jquery/jquery.form.min.js"></script>
 <script type="text/javascript">

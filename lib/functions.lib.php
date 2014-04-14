@@ -4725,53 +4725,64 @@ function fGetGroups ($uid, $sSettingACL = "", $iObjectID = "")
    }
    else
    {
-      $agroups = array();
-      if (empty($sql))
-      {
-         $sql = new Owl_DB;
-      }
-      $sql->query("SELECT groupid from $default->owl_users_table where id = '$uid'");
-      while ($sql->next_record())
-      {
-          $agroups[] = $sql->f("groupid");
-          $maingroup = $sql->f("groupid");
-      }
-
-      $sql->query("SELECT groupid from $default->owl_users_grpmem_table where (groupid is not NULL AND userid = '$uid' and groupid <> '$maingroup')");
-
-      $sGroupAdminQuery = "";
-      while ($sql->next_record())
-      {
-         $agroups[] = $sql->f("groupid");
-         $sGroupAdminQuery .= " groupadmin <> '" . $sql->f("groupid") . "' AND";
-      }
-      $sGroupAdminQuery .= " 1=1 ";
-
-      $sql->query("SELECT groupadmin from $default->owl_users_grpmem_table where ($sGroupAdminQuery) AND userid = '$uid' and groupadmin is not NULL");
-      while ($sql->next_record())
-      {
-         $agroups[] = $sql->f("groupadmin");
-      }
-
-      $sGroupAdminQuery = "";
-      foreach ($agroups as $usergroup)
-      {
-         $sGroupAdminQuery .= " id = '" . $usergroup . "' OR";
-      }
-      $sGroupAdminQuery .= " 1=0 ";
-
-      $sql->query("SELECT id, name from $default->owl_groups_table where ($sGroupAdminQuery) order by name");
-      //print("SELECT id, name from $default->owl_groups_table where ($sGroupAdminQuery) order by name;");
-      $i = 0;
-      while ($sql->next_record())
-      {
-         $groups[$i][0] = $sql->f("id");
-         $groups[$i][1] = $sql->f("name");
-         $i++;
-      }
+      $groups = fGetGroupsForUser($uid);
    }
    return $groups;
 }
+
+function fGetGroupsForUser($uid)
+{
+   global $default, $cCommonDBConnection;
+
+   $sql = $cCommonDBConnection;
+
+   $agroups = array();
+   if (empty($sql))
+   {
+      $sql = new Owl_DB;
+   }
+   $sql->query("SELECT groupid from $default->owl_users_table where id = '$uid'");
+   while ($sql->next_record())
+   {
+       $agroups[] = $sql->f("groupid");
+       $maingroup = $sql->f("groupid");
+   }
+
+   $sql->query("SELECT groupid from $default->owl_users_grpmem_table where (groupid is not NULL AND userid = '$uid' and groupid <> '$maingroup')");
+
+   $sGroupAdminQuery = "";
+   while ($sql->next_record())
+   {
+      $agroups[] = $sql->f("groupid");
+      $sGroupAdminQuery .= " groupadmin <> '" . $sql->f("groupid") . "' AND";
+   }
+   $sGroupAdminQuery .= " 1=1 ";
+
+   $sql->query("SELECT groupadmin from $default->owl_users_grpmem_table where ($sGroupAdminQuery) AND userid = '$uid' and groupadmin is not NULL");
+   while ($sql->next_record())
+   {
+      $agroups[] = $sql->f("groupadmin");
+   }
+
+   $sGroupAdminQuery = "";
+   foreach ($agroups as $usergroup)
+   {
+      $sGroupAdminQuery .= " id = '" . $usergroup . "' OR";
+   }
+   $sGroupAdminQuery .= " 1=0 ";
+
+   $sql->query("SELECT id, name from $default->owl_groups_table where ($sGroupAdminQuery) order by name");
+
+   $i = 0;
+   while ($sql->next_record())
+   {
+      $groups[$i][0] = $sql->f("id");
+      $groups[$i][1] = $sql->f("name");
+      $i++;
+   }
+   return $groups;
+}
+
 
 function fGetLastLogin()
 {

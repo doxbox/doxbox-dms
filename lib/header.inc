@@ -523,6 +523,13 @@ if (version_compare(phpversion(), "5.4.0", ">="))
    }
 }
 
+/**
+ * Javascript Localization Variables
+ */
+
+$xtpl_head->assign('ACL_NO_USERS_AVAILABLE', $owl_lang->acl_no_users_available);
+$xtpl_head->assign('ACL_NO_GROUPS_AVAILABLE', $owl_lang->acl_no_groups_available);
+
 $xtpl_head->parse('html_header');
 $xtpl_head->out('html_header');
 

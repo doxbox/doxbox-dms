@@ -1327,8 +1327,17 @@ $owl_lang->alt_acl_save_folder         = "Guardar Pol&iacute;tica de Seguridad d
 $owl_lang->btn_acl_save                = "Guardar";
 $owl_lang->acl_set_file_permissions    = "Establecer Permisos de Archivo";
 $owl_lang->acl_set_folder_permissions  = "Establecer Permisos de Carpeta";
+$owl_lang->acl_view_membership         = "View<br />Membership";
+$owl_lang->acl_remove_acl              = "Remove<br /> ACL";
+$owl_lang->acl_membership_header       = "Member of Group(%s)";
+$owl_lang->acl_membership_special_user = " Special User that represents ALL USERS ";
+$owl_lang->acl_no_users_available      = " --- No Users Available ---";
+$owl_lang->acl_no_groups_available     = " --- No Groups Available ---";
+$owl_lang->acl_add_user                = "Add User";
+$owl_lang->acl_add_group               = "Add Group";
+$owl_lang->acl_user                    = "User ACL" . LABEL_TERMINATOR;
+$owl_lang->acl_group                   = "Group ACL" . LABEL_TERMINATOR;
 $owl_lang->alt_set_folder_acl	       = "Establecer Pol&iacute;tica de Seguridad de la Carpeta Actual";
-
 
 //********************************************************
 // setacl.php END

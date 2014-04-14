@@ -1724,3 +1724,16 @@ div.child tab_content {
 margin:0;
 padding:0;
 }
+
+td.table_footer {
+   background-color: #C9C9C9;
+   padding:5px;
+   border:1px solid #6E6E6E;
+   margin:0 20px;
+   margin-top:-1px;
+   height:15px;
+   text-align:right;
+   -moz-border-radius:0 0 5px 5px;
+   -webkit-border-radius:0 0 5px 5px;
+   border-radius:0 0 5px 5px;
+}

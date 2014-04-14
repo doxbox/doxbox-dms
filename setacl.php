@@ -30,9 +30,6 @@ require_once($default->owl_fs_root ."/lib/disp.lib.php");
 require_once($default->owl_fs_root . "/lib/xtpl.lib.php");
 require_once($default->owl_fs_root ."/lib/owl.lib.php");
 require_once($default->owl_fs_root ."/lib/security.lib.php");
-//print("<pre>");
-//print_r($_POST);
-//print("</pre>");
 
 if ($action == "file_acl")
 {
@@ -76,7 +73,6 @@ fSetPopupHelp();
 
 if($edit == 1)
 {
-   //if (($action == "file_acl" and fIsFileCreator($id)) or ($action == "file_acl" and fisAdmin()))
    if ($action == "file_acl" and check_auth($id, "file_acl", $userid) == 1)
    {
       $selectedgroups = array(); 
@@ -141,13 +137,6 @@ function getMouseY(e) {
 
 </script>
 <?php
-
-//printModifyHeaderXTPL();
-//print("<pre>");
-//print_r($selectedusers);
-//print("==== ACTION: $action =========================================================================");
-//print_r($selectedgroups);
-//print("</pre>");
 
 if ($sess == "0" && $default->anon_ro > 0)
 {
@@ -382,6 +371,7 @@ if ($default->show_users_in_group == '1')
       $xtpl->assign('FOLDER_SECTION_AVAILABLE_USERS', $owl_lang->acl_available_users);
       $xtpl->assign('FOLDER_SECTION_SELECTED_USERS', $owl_lang->acl_selected_users);
 
+
       if (!empty($aUserList))
       {
          foreach ($aUserList as $aUsers)
@@ -508,6 +498,9 @@ if ($default->show_users_in_group == '1')
             {
                $xtpl->assign('TR_COLOR', 'file2');
             }
+
+            $xtpl->assign('FILE_USER_GRP_IMG', "group");
+            $xtpl->assign('FILE_USER_GRP_TOOLTIP', "G" . $val);
             $xtpl->assign('FOLDER_USER_GRP_URL', "javascript:checkFG" . $val ."()");
             $xtpl->assign('FOLDER_USER_GRP_LABEL', group_to_name($val));
 
@@ -536,9 +529,16 @@ if ($default->show_users_in_group == '1')
             {
                $xtpl->assign('TR_COLOR', 'file2');
             }
-            
+
+            $xtpl->assign('FILE_USER_GRP_IMG', "user");
+            $xtpl->assign('FILE_USER_GRP_TOOLTIP', "U" . $val);
             $xtpl->assign('FOLDER_USER_GRP_URL', "javascript:checkFU" . $val ."()");
-            $xtpl->assign('FOLDER_USER_GRP_LABEL', uid_to_name($val));
+
+            $xtpl->assign('FOLDER_USER_GRP_LABEL', 'EVERYBODY');
+            if ($val != '0')
+            {
+               $xtpl->assign('FOLDER_USER_GRP_LABEL', uid_to_name($val));
+            }
 
             foreach($default->acl_folder_types as $aclType)
             {
@@ -559,6 +559,10 @@ if ($default->show_users_in_group == '1')
      }
      if (!fIsAdmin())
      {
+        $xtpl->assign('LABEL_ADD_USER', $owl_lang->acl_user);
+        $xtpl->assign('LABEL_ADD_GROUP', $owl_lang->acl_group);
+        $xtpl->assign('BTN_ADD_USER', $owl_lang->acl_add_user);
+        $xtpl->assign('BTN_ADD_GROUP', $owl_lang->acl_add_group);
         $xtpl->assign('BTN_SAVE', $owl_lang->btn_acl_save);
         $xtpl->assign('BTN_SAVE_ALT', $owl_lang->alt_btn_acl_save_file);
         $xtpl->assign('BTN_RESET', $owl_lang->btn_reset);
@@ -638,11 +642,14 @@ function fPrintSetFileAcl($id, $type = "user")
       $xtpl->assign('SET_FILE_PERM', $owl_lang->acl_set_file_permissions);
       $xtpl->assign('HEADING_FILE_PERM', $owl_lang->acl_heading_file);
 
+       $xtpl->assign('ACL_VIEW_MEMBERSHIP', $owl_lang->acl_view_membership);
+       $xtpl->assign('ACL_REMOVE_ACL',  $owl_lang->acl_remove_acl);
 
       $owl_lang->acl_file_properties = $owl_lang->acl_file_modify;
       $owl_lang->acl_file_setacl = $owl_lang->acl_file_set_acl;
       $owl_lang->acl_file_viewlog = $owl_lang->acl_file_view_log;
       $owl_lang->acl_file_relsearch = $owl_lang->acl_file_search;
+
       foreach($default->acl_file_types as $aclType)
       {
          $langElement = "acl_file_" . $aclType;
@@ -661,26 +668,30 @@ function fPrintSetFileAcl($id, $type = "user")
       }
 
       $CountLines = 0;
-            $CountLines = 0;
       if(!empty($selectedgroups))
       {
-         foreach ($selectedgroups as $val)         {            if($val == -1)
-            {               continue;
+         foreach ($selectedgroups as $val)
+         {
+            if($val == -1)
+            {
+               continue;
             }
             $CountLines++;
             $PrintLines = $CountLines % 2;
             if ($PrintLines == 0)
             { 
               $xtpl->assign('TR_COLOR', 'file1');
-
             }
             else
             {
               $xtpl->assign('TR_COLOR', 'file2');
             }
 
+            $xtpl->assign('FILE_USER_GRP_IMG', "group");
+            $xtpl->assign('FILE_USER_GRP_TOOLTIP', "G" . $val);
             $xtpl->assign('FILE_USER_GRP_URL', "javascript:checkG" . $val ."()");
             $xtpl->assign('FILE_USER_GRP_LABEL', group_to_name($val));
+
             foreach($default->acl_file_types as $aclType)
             {
                $xtpl->assign('FILE_USER_GRP_NAME', "gacl_owl" . $aclType . "_" . $val);
@@ -721,8 +732,14 @@ function fPrintSetFileAcl($id, $type = "user")
                $xtpl->assign('TR_COLOR', 'file2');
             }
 
+            $xtpl->assign('FILE_USER_GRP_IMG', "user");
+            $xtpl->assign('FILE_USER_GRP_TOOLTIP', "U" . $val);
             $xtpl->assign('FILE_USER_GRP_URL', "javascript:checkU" . $val ."()");
-            $xtpl->assign('FILE_USER_GRP_LABEL', uid_to_name($val));
+            $xtpl->assign('FILE_USER_GRP_LABEL', 'EVERYBODY');
+            if ($val != '0')
+            {
+               $xtpl->assign('FILE_USER_GRP_LABEL', uid_to_name($val));
+            }
             foreach($default->acl_file_types as $aclType)
             {
                $xtpl->assign('FILE_USER_GRP_NAME', "acl_owl" . $aclType . "_" . $val);
@@ -753,6 +770,11 @@ function fPrintSetFileAcl($id, $type = "user")
          $xtpl->assign('FILE_PROPAGATE_LABEL', $owl_lang->acl_propagate_file);
          $xtpl->parse('main.FilePermPropagate');
       }
+
+      $xtpl->assign('LABEL_ADD_USER', $owl_lang->acl_user);
+      $xtpl->assign('LABEL_ADD_GROUP', $owl_lang->acl_group);
+      $xtpl->assign('BTN_ADD_USER', $owl_lang->acl_add_user);
+      $xtpl->assign('BTN_ADD_GROUP', $owl_lang->acl_add_group);
       $xtpl->assign('BTN_SAVE', $owl_lang->btn_acl_save);
       $xtpl->assign('BTN_SAVE_ALT', $owl_lang->alt_btn_acl_save_file);
       $xtpl->assign('BTN_RESET', $owl_lang->btn_reset);

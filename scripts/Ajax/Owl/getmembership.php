@@ -66,7 +66,7 @@ if (isset($sess) and (!$sess == 0))
          $aMyGroups = fGetGroupsForUser($sID);
          foreach($aMyGroups as $aGroup)
          {
-            print(sprintf('<tr class="file%s"><td style="border-left: 1px solid !important;"><img src="%s/img/fp_icons/group.png" style="padding-right: 5px">%s</td></tr>',  ($CountLines % 2) + 1,  $sTheme, $aGroup['1']));
+            print(sprintf('<tr class="file%s"><td style="border-left: 1px solid !important;"><img src="%s/ui_misc/group.png" style="padding-right: 5px">%s</td></tr>',  ($CountLines % 2) + 1,  $sTheme, $aGroup['1']));
             $CountLines++;
          }
          print($sTableFooter);

@@ -21,3 +21,7 @@ function fGetDownClass (oInput)
    }
    return downclass
 }
+
+function SortSelectOptions(a, b) {
+   return (a.innerHTML > b.innerHTML) ? 1 : -1;
+};

@@ -497,4 +497,332 @@ jQuery(document.body).on('mouseleave', 'input[class^=fbuttondown]', function() {
          jQuery(this).prop('src', jQuery(this).prop('src').replace(/_hover/, '' ));
       }
    }); 
+
+
+
+
+// SET FOLDER ACL
+
+   var fuseraclhtml = '<tr class="file1"> \
+            <td align="center"><a class="title1 viewgroups" href="U%UID%"><img src="templates/Roma 2011/ui_misc/membership.png" /></a></td> \
+            <td align="center"><a class="title1 fdelrow" href="#"><img src="templates/Roma 2011/ui_misc/remove_acl.png" /></a></td> \
+            <td><img src="templates/Roma 2011/ui_misc/user.png" style="padding-right: 5px"/>&nbsp;<a class="title1 togglerow" href="#">%UNAME%</a></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlread_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlwrite_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owldelete_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlcopy_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlmove_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlproperties_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlsetacl_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlmonitor_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlupdate_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlviewlog_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlcomment_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlcheckin_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlemail_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="facl_owlrelsearch_%UID%" value="%UID%" /></b></td> \
+         </tr>';
+
+   var fgroupaclhtml = '<tr class="file1"> \
+            <td align="center"><a class="title1 viewmembers" href="G%GID%"><img src="templates/Roma 2011/ui_misc/membership.png" /></a></td> \
+            <td align="center"><a class="title1 fdelrow" href="#"><img src="templates/Roma 2011/ui_misc/remove_acl.png" /></a></td> \
+            <td><img src="templates/Roma 2011/ui_misc/group.png" style="padding-right: 5px" />&nbsp;<a class="title1 togglerow" href="#">%GNAME%</a></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlread_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlwrite_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owldelete_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlcopy_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlmove_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlproperties_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlsetacl_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlmonitor_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlupdate_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlviewlog_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlcomment_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlcheckin_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlemail_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="fgacl_owlrelsearch_%GID%" value="%GID%" /></b></td> \
+         </tr>';
+
+// SET FOLDER ACL ADD User ACL Row
+
+  jQuery('#fadduseracl').click( function( event )
+  {
+       event.preventDefault();
+
+       if (jQuery('#fuseracl option:selected').val())
+       {
+          var uid = fuseraclhtml.replace(/\%UID\%/g, jQuery('#fuseracl option:selected').val());
+          var finalhtml = uid.replace(/\%UNAME\%/g, jQuery('#fuseracl option:selected').text());
+          jQuery('#fuseracl option:selected').remove();
+
+          if (jQuery('#fuseracl option').length == 0)
+          {
+             jQuery("#fuseracl").append('<option value="">' + ACL_NO_USERS_AVAILABLE + '</option>');
+             jQuery('#fadduseracl').hide();
+          }
+          jQuery('#faddacl_btn').before(finalhtml);
+      }
+      else
+      {
+         return false;
+      }
+   });
+
+// SET FOLDER ACL  ADD Group ACL Row
+
+  jQuery('#faddgroupacl').click( function( event )
+   {
+       event.preventDefault();
+
+       if (jQuery('#fgroupacl option:selected').val())
+       {
+          var gid = fgroupaclhtml.replace(/\%GID\%/g, jQuery('#fgroupacl option:selected').val());
+          var finalhtml = gid.replace(/\%GNAME\%/g, jQuery('#fgroupacl option:selected').text());
+          jQuery('#fgroupacl option:selected').remove();
+
+          if (jQuery('#fgroupacl option').length == 0)
+          {
+             jQuery("#fgroupacl").append('<option value="">' + ACL_NO_GROUPS_AVAILABLE + '</option>');
+             jQuery('#faddgroupacl').hide();
+          }
+          jQuery('#faddacl_btn').before(finalhtml);
+       }
+       else
+       {
+          return false;
+       }
+   });
+
+// SET FOLDER ACL  Delete Row
+
+   jQuery(document).on('click', '.fdelrow', function(event) {
+       event.preventDefault();
+
+       var optionvalue = jQuery(this).closest('tr').find('input[type=checkbox]:first').val();
+       var optioncaption = jQuery(this).closest('tr').find('.togglerow').text();
+
+       if ( jQuery(this).closest('tr').find('input[type=checkbox]:first').prop('name').indexOf('fgacl'))
+       {
+          jQuery('#fuseracl option[value=""]').remove();
+          jQuery("#fuseracl").append('<option value="' + optionvalue + '">' + optioncaption +'</option>');
+       }
+       else
+       {
+          jQuery('#fgroupacl option[value=""]').remove();
+          jQuery("#fgroupacl").append('<option value="' + optionvalue + '">' + optioncaption +'</option>');
+       }
+
+       if (jQuery('#fuseracl option').length > 0)
+       {
+          jQuery('#fuseracl option').sort(SortSelectOptions).appendTo('#fuseracl');
+          jQuery("#fuseracl").val($("#fuseracl option:first").val());
+          jQuery('#fadduseracl').show();
+       }
+
+       if (jQuery('#fgroupacl option').length > 0)
+       {
+          jQuery('#fgroupacl option').sort(SortSelectOptions).appendTo('#fgroupacl');
+          jQuery('#fgroupacl').val(jQuery('#fgroupacl option:first').val());
+          jQuery('#faddgroupacl').show();
+       }
+
+       jQuery(this).closest('tr').remove();
+   });
+
+// SET FILE ACL
+
+   var useraclhtml = '<tr class="file1"> \
+            <td align="center"><a class="title1 viewgroups" href="U%UID%"><img src="templates/Roma 2011/ui_misc/membership.png" /></a></td> \
+            <td align="center"><a class="title1 delrow" href="#"><img src="templates/Roma 2011/ui_misc/remove_acl.png" /></a></td> \
+            <td><img src="templates/Roma 2011/ui_misc/user.png" style="padding-right: 5px"/>&nbsp;<a class="title1 togglerow" href="#">%UNAME%</a></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlread_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlupdate_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlsetacl_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owldelete_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlcopy_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlmove_%UID%" value="%UID%"  /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlproperties_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlviewlog_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlcomment_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlcheckin_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlemail_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlrelsearch_%UID%" value="%UID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="acl_owlmonitor_%UID%" value="%UID%" /></b></td> \
+         </tr>';
+
+   var groupaclhtml = '<tr class="file1"> \
+            <td align="center"><a class="title1 viewmembers" href="G%GID%"><img src="templates/Roma 2011/ui_misc/membership.png" /></a></td> \
+            <td align="center"><a class="title1 delrow" href="#"><img src="templates/Roma 2011/ui_misc/remove_acl.png" /></a></td> \
+            <td><img src="templates/Roma 2011/ui_misc/group.png" style="padding-right: 5px" />&nbsp;<a class="title1 togglerow" href="#">%GNAME%</a></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlread_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlupdate_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlsetacl_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owldelete_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlcopy_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlmove_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlproperties_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlviewlog_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlcomment_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlcheckin_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlemail_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlrelsearch_%GID%" value="%GID%" /></b></td> \
+            <td align="center"><b><input type="checkbox" name="gacl_owlmonitor_%GID%" value="%GID%" /></b></td> \
+         </tr>';
+
+  // change the TR class on hover
+
+   jQuery(document).on({
+      mouseenter: function () {
+         jQuery(this).removeClass('file1');
+         jQuery(this).addClass('file2');
+      },
+      mouseleave: function () {
+         jQuery(this).removeClass('file2');
+         jQuery(this).addClass('file1');
+      }
+   }, 'tr.file1, tr.file2');
+
+  // SET ACL TOGGLE Column checkboxes
+
+  jQuery('.togglecol').click( function( event ) {
+     event.preventDefault();
+
+     var index = jQuery(this).parent().index();
+
+     jQuery('tr.file1').each(function(i, val){
+        // is the checkbox already checked
+        var checked = jQuery(val).children().eq(index).find('input[type=checkbox]').prop('checked');
+
+        jQuery(val).children().eq(index).find('input[type=checkbox]').prop('checked', !checked);
+     });
+  });
+
+// SET ACL  TOGGLE Row Checkboxes
+
+   jQuery(document).on('click', '.togglerow', function(event) {
+       event.preventDefault();
+
+       jQuery(this).closest('tr').find('input[type=checkbox]').each(function(i, val){
+          var checked = jQuery(val).prop('checked');
+          jQuery(val).prop('checked', !checked);
+       });
+   });
+
+// SET FILE ACL  Delete Row
+
+   jQuery(document).on('click', '.delrow', function(event) {
+       event.preventDefault();
+
+       var optionvalue = jQuery(this).closest('tr').find('input[type=checkbox]:first').val();
+       var optioncaption = jQuery(this).closest('tr').find('.togglerow').text();
+
+       if ( jQuery(this).closest('tr').find('input[type=checkbox]:first').prop('name').indexOf('gacl'))
+       {
+          jQuery('#useracl option[value=""]').remove();
+          jQuery('#useracl').append('<option value="' + optionvalue + '">' + optioncaption +'</option>');
+       }
+       else
+       {
+          jQuery('#groupacl option[value=""]').remove();
+          jQuery('#groupacl').append('<option value="' + optionvalue + '">' + optioncaption +'</option>');
+       }
+
+       if (jQuery('#useracl option').length > 0)
+       {
+          jQuery('#useracl option').sort(SortSelectOptions).appendTo('#useracl');
+          jQuery('#useracl').val(jQuery('#useracl option:first').val());
+          jQuery('#adduseracl').show();
+       }
+
+       if (jQuery('#groupacl option').length > 0)
+       {
+          jQuery('#groupacl option').sort(SortSelectOptions).appendTo('#groupacl');
+          jQuery('#groupacl').val(jQuery('#groupacl option:first').val());
+          jQuery('#addgroupacl').show();
+       }
+       jQuery(this).closest('tr').remove();
+   });
+
+
+
+// SET FILE ACL  ADD User ACL Row
+
+  jQuery('#adduseracl').click( function( event )
+  {
+       event.preventDefault();
+
+       if (jQuery('#useracl option:selected').val())
+       {
+          var uid = useraclhtml.replace(/\%UID\%/g, jQuery('#useracl option:selected').val());
+          var finalhtml = uid.replace(/\%UNAME\%/g, jQuery('#useracl option:selected').text());
+          jQuery('#useracl option:selected').remove();
+
+          if (jQuery('#useracl option').length == 0)
+          {
+             jQuery('#useracl').append('<option value="">' + ACL_NO_USERS_AVAILABLE + '</option>');
+             jQuery('#adduseracl').hide();
+          }
+          jQuery('#addacl_btn').before(finalhtml);
+      }
+      else
+      {
+         return false;
+      }
+   });
+
+// SET ACL  ADD Group ACL Row
+
+  jQuery('#addgroupacl').click( function( event )
+   {
+       event.preventDefault();
+
+       if (jQuery('#groupacl option:selected').val())
+       {
+          var gid = groupaclhtml.replace(/\%GID\%/g, jQuery('#groupacl option:selected').val());
+          var finalhtml = gid.replace(/\%GNAME\%/g, jQuery('#groupacl option:selected').text());
+          jQuery('#groupacl option:selected').remove();
+
+          if (jQuery('#groupacl option').length == 0)
+          {
+             jQuery('#groupacl').append('<option value="">' + ACL_NO_GROUPS_AVAILABLE + '</option>');
+             jQuery('#addgroupacl').hide();
+          }
+          jQuery('#addacl_btn').before(finalhtml);
+       }
+       else
+       {
+          return false;
+       }
+   });
+
+   jQuery('input:reset').click( function( event ) {
+      location.reload();
+   });
+
+   jQuery(document).on('click', '.viewmembers, .viewgroups', function(event) {
+      event.preventDefault();
+   });
+
+   jQuery(document).tooltip({
+       items:'.viewmembers, .viewgroups',
+       position: { my: "left+15 top", at: "right center" },
+       content:function(callback) {
+         jQuery.ajax({
+         url: 'scripts/Ajax/Owl/getmembership.php?get=' + jQuery(this).attr('href') + '&sess=' + jQuery('#sess').val(),
+         success: function( data ) {
+           // If the First 6 letters of the resonse is not <table Then there was an issue
+           // display an error.  Maybe the Owl session is timed out?
+           if (data.substring(0,6) == '<table')
+           {
+              callback( data );
+           }
+           else
+           {
+              callback( 'An Error Occured Retreiving Group Information' );
+           }
+         }
+       })
+      }
+   }); // end of document.tooltip
+
 }) // end of document.ready
