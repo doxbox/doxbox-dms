@@ -871,6 +871,7 @@ $owl_lang->owl_ppttotext_path          = "Archivos MS-POWERPOINT<br />&#8211; De
 $owl_lang->quota			= "Cuota 0=Deshabilitado";
 $owl_lang->reallydeluser		= "Este usuario es propietario de %numfiles% Archivo(s) y %numfolders% Carpetas(s). Estos Archivos(s) y Carpetas(s) quedar&aacute;n hu&eacute;rfanos. &iquest;En realidad desea Eliminarlo?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Mostrar Registros por P&aacute;gina (0 = Deshabilitado):";
 $owl_lang->recycle_enabled		= "Habilitar Recolecci&oacute;n en Papelera:";
 $owl_lang->recycle_location		= "Ubicaci&oacute;n de la Papelera:";

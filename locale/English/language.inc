@@ -840,6 +840,7 @@ $owl_lang->owl_version_control		= "Enable Version Control Feature" . LABEL_TERMI
 $owl_lang->quota			= "Quota 0=Disabled";
 $owl_lang->reallydeluser		= "This user is owner of %numfiles% File(s) and %numfolders% Folder(s). These File(s) and Folder(s) will be orphaned. Is it Still Ok to Delete?";
 $owl_lang->reallydeleteuser		= "Really Delete this User?";
+$owl_lang->reallydeletegroup		= "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Display Records Per Page (0 = Disabled)" . LABEL_TERMINATOR;
 $owl_lang->remember_me			= "Show the Remember Me link";
 $owl_lang->remember_me_checkbox		= "Remember me";

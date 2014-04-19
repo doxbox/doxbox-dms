@@ -862,6 +862,7 @@ $owl_lang->owl_ppttotext_path       	= "MS-POWERPOINT Files <br />&#8211; Blank 
 $owl_lang->quota  				= "Quota 0 = Disabilitato";
 $owl_lang->reallydeluser  			= "This user is owner of %numfiles% File(s) and %numfolders% Folder(s). These File(s) and Folder(s) will be orphaned. Is it Still Ok to Delete?";
 $owl_lang->reallydeleteuser             = "Cancellare questo utente?";
+$owl_lang->reallydeletegroup                    = "Really Delete this Group?";
 $owl_lang->recs_per_page  			= "Display Records Per Page (0 = Disabilitato)";
 $owl_lang->recycle_enabled  			= "Abilita Cestino:";
 $owl_lang->recycle_location  			= "Posizione Cestino:";

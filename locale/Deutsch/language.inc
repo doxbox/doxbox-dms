@@ -855,6 +855,7 @@ $owl_lang->pass_track_old_passwords   	= "Anzahl Gespeicherter Alter Passw&ouml;
 $owl_lang->quota              		= "Speicherlimit (0 = kein)";
 $owl_lang->reallydeluser               	= "Dieser Benutzer besitzt %numfiles% Datei(en) und %numfolders% Verzeichnis(se). Alle diese Dateien und Verzeichnisse werden verwaist. M&ouml;chten Sie trotzdem L&ouml;schen?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page               	= "Anzahl Eintr&auml;ge pro Seite (0 = Alles auf einer Seite)" . LABEL_TERMINATOR;
 $owl_lang->recycle_enabled             	= "Papierkorb aktivieren";
 $owl_lang->recycle_location            	= "Papierkorb Verzeichnis" . LABEL_TERMINATOR;

@@ -859,6 +859,7 @@ $owl_lang->owl_wordtotext_path          = "Arquivos MS-WORD <br />&#8211; em bra
 $owl_lang->quota			= "Quota 0=Desabilitado";
 $owl_lang->reallydeluser		= "Este usuário é dono de %numfiles% arquivo(s) e %numfolders% pasta(s). Esse(s) arquivo(s) ou pasta(s) estão sem pai. Prosseguir o a remoção?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Exibir n registro por página (0 = Desabilitado):";
 $owl_lang->recycle_enabled		= "Habilitar Coleta de Lixo:";
 $owl_lang->recycle_location		= "Localização da lata de lixo:";

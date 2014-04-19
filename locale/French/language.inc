@@ -867,6 +867,7 @@ $owl_lang->pass_track_old_passwords   	= "Conserver le nombre de Mot de Passes a
 $owl_lang->quota                        = "Capacit&eacute; 0=D&eacute;sactiv&eacute;";
 $owl_lang->reallydeluser                = "Cet utilisateur poss&egrave;de %numfiles% Fichier(s) et %numfolders% Dossier(s). Ce(s) Fichier(s) et ce(s) Dossier(s) deviendront orphelins. Etes-vous toujours d'accord pour supprimer cet utilisateur ?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page                = "Affiche le nombre d'enregistrement par Page (0= non actif) :";
 $owl_lang->recycle_enabled              = "Activer la corbeille ";
 $owl_lang->recycle_location             = "Emplacement de la Corbeille :";

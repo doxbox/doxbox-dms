@@ -220,6 +220,14 @@ function printusers()
       $xtpl->parse('main.Users.UserOptions');
    } 
 
+   $xtpl->assign('BTN_DEL_USER_LABEL', $owl_lang->deleteuser);
+   $xtpl->assign('BTN_DEL_USER_ALT', $owl_lang->alt_del_user);
+   $xtpl->assign('BTN_DEL_USER_CONFIRM', $owl_lang->reallydeleteuser);
+
+   $xtpl->assign('BTN_DEL_GROUP', $owl_lang->deletegroup);
+   $xtpl->assign('BTN_DEL_GROUP_ALT', $owl_lang->alt_del_group);
+   $xtpl->assign('BTN_DEL_GROUP_CONFIRM', $owl_lang->reallydeletegroup);
+
    $xtpl->assign('BTN_NEW_USER_LABEL', $owl_lang->btn_admin_users);
    $xtpl->assign('BTN_NEW_USER_TITLE', $owl_lang->alt_btn_admin_users);
    $xtpl->assign('BTN_NEW_USER_URL', "index.php?sess=$sess&amp;action=newuser");
@@ -796,25 +804,12 @@ function printusers()
          $urlArgs['action']      = 'group';
          $urlArgs['subaction']      = 'group';
 
-         //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"id\" value=\"" . $sql->f("id") . "\"></input></td></tr>");
-         //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"sess\" value=\"$sess\"></input></td></tr>");
-         //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"action\" value=\"group\"></input></td></tr>");
-         //sun2earth
-         //print("<tr><td colspan=\"2\"><input type=\"hidden\" name=\"subaction\" id=\"subaction\"></input></td></tr>");
-         //sun2earth end
-
-         //print("<tr>\n");
-         //print("<td class=\"form2\" width=\"100%\" colspan=\"2\">\n");
-         //print("<input class=\"fbuttonup1\" type=\"submit\" name=\"$owl_lang->change\" value=\"$owl_lang->change\" onclick=\"selectAll(document.admin.elements['fselectedgroups[]']);\">\n");
-         //print("<input class=\"fbuttonup1\" type=\"submit\" name=\"$owl_lang->change\" value=\"$owl_lang->change\">\n");
-//
          $xtpl->assign('BTN_CHANGE', $owl_lang->change);
          $xtpl->assign('BTN_CHANGE_ALT', $owl_lang->alt_change);
 
          $xtpl->assign('BTN_RESET', $owl_lang->btn_reset);
          $xtpl->assign('BTN_RESET_ALT', $owl_lang->alt_reset_form);
 
-         //fPrintSubmitButton($owl_lang->change, $owl_lang->alt_change);
          if ($sql->f("id") != 0 && $sql->f("id") != 1)
          {
             $xtpl->assign('BTN_DEL_GROUP', $owl_lang->deletegroup);

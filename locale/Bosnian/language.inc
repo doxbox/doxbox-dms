@@ -831,6 +831,7 @@ $owl_lang->owl_ppttotext_path          = "MS-POWERPOINT Fajlovi <br />&#8211; Pr
 $owl_lang->quota			= "Kvota 0=Iskljuceno";
 $owl_lang->reallydeluser		= "Ovaj korisnik je vlasnikf %numfiles% Fajl(ova) i %numfolders% Direktorij(a). Isti ce ovom akcijom ostati bez vlasnika. Da li jos uvijek zelite brisati?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Zapisa po stranici (0 = Neograniceno):";
 $owl_lang->recycle_enabled		= "Omoguci cuvanje Smeca:";
 $owl_lang->recycle_location		= "Lokacija Kante Za Smece:";

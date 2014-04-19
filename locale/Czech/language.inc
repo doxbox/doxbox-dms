@@ -872,6 +872,7 @@ $owl_lang->owl_ppttotext_path          = "MS-POWERPOINT soubory <br />&#8211; bl
 $owl_lang->quota			= "Kvóta 0=zakázána";
 $owl_lang->reallydeluser		= "Tento uživatel je vlastníkem %numfiles% souboru(ů) a %numfolders% složky(ek). Tyto soubory a složky budou bez vlastníka. Pořád trváte na smazání?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Zobrazení záznamů na tránku(0 = zakázáno):";
 $owl_lang->recycle_enabled		= "Umožnit koš:";
 $owl_lang->recycle_location		= "Umístění koše:";

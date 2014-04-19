@@ -879,6 +879,7 @@ $owl_lang->owl_ppttotext_path          = "MS-POWERPPOINT filer <br />&#8211; Bla
 $owl_lang->quota			= "Profilutrymme 0=avaktiverad";
 $owl_lang->reallydeluser		= "Denna användare äger %numfiles% fil(er) och %numfolders% katalog(er). Denna/dessa fil(er) och katalog(er) kommer bli föräldralös(a). Vill du fortfarande radera?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Visa inlägg per sida (0 = avaktiverad):";
 $owl_lang->recycle_enabled		= "Aktivera papperskorg:";
 $owl_lang->recycle_location		= "Sökväg till papperskorg:";

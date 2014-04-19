@@ -877,6 +877,7 @@ $owl_lang->owl_ppttotext_path          = "Arquivos MS-POWERPOINT<br />&#8211; em
 $owl_lang->quota			= "Quota 0=Inactivo";
 $owl_lang->reallydeluser		= "Este utilizador &eacute; dono de %numfiles% arquivo(s) e %numfolders% pasta(s). Este(s) arquivo(s) ou pasta(s) ficar&atilde;o sem dono. Prosseguir com a remo&ccedil;&atilde;o?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Exibir n registos por p&aacute;gina (0 = Inactivo):";
 $owl_lang->recycle_enabled		= "Activar recolha de Lixo:";
 $owl_lang->recycle_location		= "Localiza&ccedil;&atilde;o do lixo:";

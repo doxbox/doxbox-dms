@@ -825,4 +825,49 @@ jQuery(document.body).on('mouseleave', 'input[class^=fbuttondown]', function() {
       }
    }); // end of document.tooltip
 
+/**
+ * Admin Delete user and Group Delete Buttons
+ */
+
+/** USERS **/
+
+   if (jQuery('[name=owluser]').val() == '1')
+   {
+      jQuery('[name=bdeleteuser_x]').hide();
+   }
+
+   jQuery('[name=owluser]').on('change', function() {
+     if (this.value == '1')
+     {
+       jQuery('[name=bdeleteuser_x]').hide();
+     }
+     else
+     {
+       jQuery('[name=bdeleteuser_x]').show();
+      }
+   });
+
+/** GROUPS **/
+
+   /** 4 Predefiend groups that should be left alone
+    * so hide the delete button if its one of these 
+    * groups
+    */
+
+   if (jQuery('[name=group]').val() < 4)
+   {
+      jQuery('[name=bdeletegroup_x]').hide();
+   }
+
+   jQuery('[name=group]').on('change', function() {
+     if (this.value < 4)
+     {
+       jQuery('[name=bdeletegroup_x]').hide();
+     }
+     else
+     {
+       jQuery('[name=bdeletegroup_x]').show();
+     }
+   });
+
 }) // end of document.ready

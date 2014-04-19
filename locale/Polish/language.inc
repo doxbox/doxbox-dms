@@ -827,6 +827,7 @@ $owl_lang->owl_version_control		= "Kontrola wersji" . LABEL_TERMINATOR;
 $owl_lang->quota			= "Ograniczenie na wielkość (quota) 0=wyłączone";
 $owl_lang->reallydeluser                = "Ten użytkownik jest właścicielem %numfiles% plik(ów) i %numfolders% katalog(ów). Te pliki i katalogi zostaną osierocone. Czy nadal usunąć użytkownika?";
 $owl_lang->reallydeleteuser		= "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page                = "Liczba pozycji na stronie (0=wyłączone)" . LABEL_TERMINATOR;
 $owl_lang->remember_me                  = "Pokaż link PRZYPOMNIJ MI";
 $owl_lang->remember_me_checkbox         = "PRZYPOMNIJ MI";

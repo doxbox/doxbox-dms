@@ -861,6 +861,7 @@ $owl_lang->owl_ppttotext_path          = "fitxers MS-POWERPOINT<br />&#8211; En 
 $owl_lang->quota			= "Quota 0=Deshabilitat";
 $owl_lang->reallydeluser		= "Aquest usuari &eacute;s propietari de %numfiles% fitxers(s) i %numfolders% Carpetes. Aquests FITXER(s) i Carpete(s) seran &ograve;rfans. Els vols esborrar?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Mostrar Registres Per P&agrave;gina (0 = Deshabilitat):";
 $owl_lang->recycle_enabled              = "Habilitar la Paperera de Reciclatge:";
 $owl_lang->recycle_location             = "Localitzaci&oacute; de Paperera de Reciclatge:";

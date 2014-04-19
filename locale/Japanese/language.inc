@@ -870,6 +870,7 @@ $owl_lang->owl_ppttotext_path          = "MS-POWERPOINT ファイル <br />&#821
 $owl_lang->quota			= "クォータ 0=使用しない";
 $owl_lang->reallydeluser		= "このユーザは、 %numfiles% ファイル 、 %numfolders% フォルダの所有者です。これらのファイルとフォルダは行方不明になるでしょう。それでも削除しますか？";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "ページ当りの表示レコード数（ = 使用しない）:";
 $owl_lang->recycle_enabled		= "ごみ収集を可能にする:";
 $owl_lang->recycle_location		= "ごみ箱の場所:";

@@ -871,6 +871,7 @@ $owl_lang->owl_ppttotext_path          = "Berkas-berkas MS-POWERPOINT<br />&#821
 $owl_lang->quota			= "Kuota 0=Dinon-aktifkan";
 $owl_lang->reallydeluser		= "Pengguna ini adalah pemilik dari %numfiles% Berkas dan %numfolders% Map. Berkas-berkas dan Map-map ini nantinya akan tidak mempunyai pemilik. Tetap ingin dihapus?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Jumlah Catatan yang Ditampilkan per Halaman (0 = Dinon-akktifkan):";
 $owl_lang->recycle_enabled		= "Aktifkan Pengumpulan Sampah:";
 $owl_lang->recycle_location		= "Lokasi Tempat Sampah:";

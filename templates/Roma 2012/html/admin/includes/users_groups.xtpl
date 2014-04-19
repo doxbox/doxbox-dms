@@ -16,6 +16,7 @@
                   <td class="nostyle_table right_text" width="100%" colspan="2">
                     <a class="lbutton1" href="{BTN_NEW_USER_URL}" title="{BTN_NEW_USER_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_USER_LABEL}&nbsp;" onclick="location.href('{BTN_NEW_USER_URL}');"/>&nbsp;</a>
                     <input  class="fbuttonup1" name="btn_ed_user_x" type="submit" value="{BTN_EDIT_USER_LABEL}" alt="{BTN_EDIT_USER_TITLE}" title="{BTN_EDIT_USER_TITLE}" />
+                    <input class="fbuttonup1" name="bdeleteuser_x" type="submit" value="{BTN_DEL_USER_LABEL}" alt="{BTN_DEL_USER_ALT}" title="{BTN_DEL_USER_ALT}" onclick="return confirm('{BTN_DEL_USER_CONFIRM}');" />
                   </td>
                </tr>
 <!-- END: Users -->
@@ -37,6 +38,7 @@
                   <td class="nostyle_table right_text" width="100%" colspan="2">
                     <a class="lbutton1" href="{BTN_NEW_GROUP_URL}" title="{BTN_NEW_GROUP_TITLE}"><input class="fbuttonup1" type="button" value="&nbsp;{BTN_NEW_GROUP_LABEL}&nbsp;" onclick="location.href('{BTN_NEW_GROUP_URL}');" /></a>
                     <input  class="fbuttonup1" name="btn_ed_group_x" type="submit" value="{BTN_EDIT_GROUP_LABEL}" alt="{BTN_EDIT_GROUP_TITLE}" title="{BTN_EDIT_GROUP_TITLE}" />
+                    <input class="fbuttonup1" name="bdeletegroup_x" type="submit" value="{BTN_DEL_GROUP}" alt="{BTN_DEL_GROUP_ALT}" title="{BTN_DEL_GROUP_ALT}" onclick="return confirm('{BTN_DEL_GROUP_CONFIRM}');" />
                   </td>
                </tr>
 <!-- END: Groups -->
@@ -71,7 +73,7 @@
                   <td class="form2" width="100%" colspan="2">
                      <input class="fbuttonup1" type="submit" name="{BTN_CHANGE}" value="{BTN_CHANGE}" />
 <!-- BEGIN: DelGroup -->
-                     <input class="fbuttonup1" name="bdeletegroup_x" type="submit" value="{BTN_DEL_GROUP}" alt="{BTN_DEL_GROUP_ALT}" title="{BTN_DEL_GROUP_ALT}" />
+                     <input class="fbuttonup1" name="bdeletegroup_x" type="submit" value="{BTN_DEL_GROUP}" alt="{BTN_DEL_GROUP_ALT}" title="{BTN_DEL_GROUP_ALT}" onclick="return confirm('{BTN_DEL_GROUP_CONFIRM}');" />
 <!-- END: DelGroup -->
                      <input  class="fbuttonup1" type="reset" value="{BTN_RESET}" alt="{BTN_RESET_ALT}" title="{BTN_RESET_ALT}" />
                   </td>

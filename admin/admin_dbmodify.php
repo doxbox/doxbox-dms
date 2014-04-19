@@ -90,12 +90,26 @@ $xtpl->assign('ROOT_URL', $default->owl_root_url);
 // image button, If the button is not there and
 // the alternate text is shown, then this doesn't
 // work.
+
+if ( !(isset($id) and is_numeric($id)))
+{
+   $id = -1;
+}
+
 if (isset($bdeletegroup_x))
 {
    $action = $owl_lang->deletegroup;
+   if (isset($group) and is_numeric($group) and $group > 3)
+   {
+      $id = $group;
+   }
 } elseif (isset($bdeleteuser_x))
 {
    $action = $owl_lang->deleteuser;
+   if (isset($owluser) and is_numeric($owluser) and $owluser > 3)
+   {
+      $id = $owluser;
+   }
 } elseif (isset($btn_ed_user_x))
 {
    header("Location: " . "index.php?sess=$sess&action=users&owluser=$owluser");
@@ -115,7 +129,6 @@ if (!fIsAdmin(true) and !fIsUserAdmin($userid) and !fIsNewsAdmin($userid))
     header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=8&currentdb=$default->owl_current_db");
     exit;
 }
-
 
 if ($action == "edit_news")
 {
@@ -219,7 +232,6 @@ if ($action == "user")
       $user_default_revision = "0";      
    }
 
-   //if ($newlanguage != $oldlanguage)
    if (empty($newbuttons))
    {
       $newbuttons = $default->system_ButtonStyle;
@@ -455,21 +467,16 @@ if ($action == $owl_lang->deletegroup)
    $iPrimaryGroup = $sql->num_rows($sql) ;
    $sql->query("SELECT * FROM $default->owl_users_grpmem_table WHERE groupid = '$id'");
    $iMemberGroup = $sql->num_rows($sql) ;
-   //$sql->query("SELECT * FROM $default->owl_group_grpmem_table WHERE groupid = '$id'");
-   //$iGroupOfGroup = $sql->num_rows($sql) ;
 
-   //if ($iFileCount == 0 and $iFolderCount == 0 and $iPrimaryGroup == 0 and $iMemberGroup == 0 and $iGroupOfGroup == 0)
    if ($iFileCount == 0 and $iFolderCount == 0 and $iPrimaryGroup == 0 and $iMemberGroup == 0)
    {
       $sql->query("DELETE FROM $default->owl_groups_table WHERE id = '$id'");
       $sql->query("DELETE FROM $default->owl_users_grpmem_table WHERE groupid = '$id'");
-	  $sql->query("DELETE FROM $default->owl_advanced_acl_table WHERE group_id = $id");
-      //$sql->query("DELETE FROM $default->owl_group_grpmem_table WHERE groupid = '$id'");
+      $sql->query("DELETE FROM $default->owl_advanced_acl_table WHERE group_id = $id");
    }
    else
    {
       $sErrorMessage = sprintf($owl_lang->err_group_delete, $iFileCount, $iFolderCount, $iPrimaryGroup, $iMemberGroup);
-      //$sErrorMessage = sprintf($owl_lang->err_group_delete, $iFileCount, $iFolderCount, $iPrimaryGroup, $iMemberGroup, $iGroupOfGroup);
       printError($sErrorMessage);
    }
 

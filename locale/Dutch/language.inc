@@ -867,6 +867,7 @@ $owl_lang->owl_ppttotext_path          = "MS-POWERPOINT Files <br />&#8211; Blan
 $owl_lang->quota			= "Quotum (bytes) 0=onbeperkt";
 $owl_lang->reallydeluser		= "Deze gebruiker is eigenaar van %numfiles% bestand(en) en %numfolders% map(pen). Deze bestanden en mappen blijven staan zonder eigenaar. Desondanks doorgaan met verwijderen?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "Toon Records per pagina (0 = onbeperkt):";
 $owl_lang->recycle_enabled		= "Verwijderde bestanden bewaren in Prullenbak:";
 $owl_lang->recycle_location		= "Locatie van Prullenbak:";

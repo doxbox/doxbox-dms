@@ -862,6 +862,7 @@ $owl_lang->owl_version_control		= "k&auml;yt&auml; versionhallinta ominaisuutta:
 $owl_lang->quota			= "Levytilanrajoitus 0=ei k&auml;yt&ouml;ss&auml;";
 $owl_lang->reallydeluser		= "T&auml;m&auml; k&auml;ytt&auml;j&auml; on merkitty omistajaksi %numfiles% tiedostoon %numfolders% kansioon. N&auml;m&auml; Tiedosto(t) ja Kansio(t) j&auml;&auml;v&auml; orvoiksi. Onko silti Ok poistaa k&auml;ytt&auml;j&auml;?";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
+$owl_lang->reallydeletegroup            = "Really Delete this Group?";
 $owl_lang->recs_per_page		= "N&auml;yt&auml; tietueita sivua kohti (0 = Ei k&auml;yt&ouml;ss&auml;):";
 $owl_lang->remember_me_title		= "S&Auml;ILYV&Auml;N KIRJAUTUMISEN ASETUKSET";
 $owl_lang->remember_me			= "N&auml;yt&auml; muista minut linkki";

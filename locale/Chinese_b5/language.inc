@@ -865,6 +865,7 @@ $owl_lang->quota			 = "空間限制（0=停用）";
 $owl_lang->reallydeluser		 = "這個使用者擁有 %numfiles% 個檔案與 %numfolders% 個資料夾，這些檔案與資料夾將會跟著刪除，確定要刪除他？";
 $owl_lang->reallydeleteuser             = "Really Delete this User?";
 $owl_lang->recs_per_page		 = "每頁顯示資料量（0 = 停用）：";
+$owl_lang->reallydeletegroup             = "Really Delete this Group?";
 $owl_lang->recycle_enabled		 = "啟用垃圾桶回收功能：";
 $owl_lang->recycle_location		 = "垃圾桶位址：";
 $owl_lang->recycle_title		 = "垃圾桶回收設定";
