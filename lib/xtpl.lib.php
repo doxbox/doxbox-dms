@@ -1114,8 +1114,11 @@ function fPrintActionButtonsXTLP( $sequence = 0 )
    }
    else
    {
-
       $sTarget = basename($_SERVER['PHP_SELF']);
+      if ($sTarget <> 'search.php')
+      {
+         $sTarget = 'browse.php';
+      }
       if ($expand == 1)
       {
          $urlArgs2 = $urlArgs;
@@ -2102,74 +2105,6 @@ function fprintFileIconsXtpl ($fid, $filename, $checked_out, $url, $allicons, $e
    $iCheckedOut = $checked_out;
 
    $aFileAccess = check_auth($fid, "file_all", $userid, false, false);
-
-   if ( $default->advanced_security == 1 ) 
-   {
-      //if (!in_array('file_log', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlviewlog'] = 0;
-      //}
-      //if (!in_array('file_delete', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owldelete'] = 0;
-      //}
-      //if (!in_array('file_edit', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlproperties'] = 0;
-      //}
-      //if (!in_array('file_update',  $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlupdate'] = 0;
-      //}
-      //if (!in_array('file_acl',  $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlsetacl'] = 0;
-      //}
-      //if (!in_array('file_copy', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlcopy'] = 0;
-      //}
-      //if (!in_array('file_link', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owllink'] = 0;
-      //}
-      //else
-      //{
-         //$aFileAccess['owllink'] = 1;
-      //}
-      //if (!in_array('file_move', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlmove'] = 0;
-      //}
-      //if (!in_array('file_comment', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlcomment'] = 0;
-      //}
-      //if (!in_array('file_lock', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlcheckin'] = 0;
-      //}
-      //if (!in_array('file_email', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlemail'] = 0;
-      //}
-      //if (!in_array('file_monitor', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlmonitor'] = 0;
-      //}
-      //if (!in_array('file_find', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlrelsearch'] = 0;
-      //}
-      //if (!in_array('file_download', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlread'] = 0;
-      //}
-      //if (!in_array('file_view', $default->FileMenuOrder))
-      //{
-         //$aFileAccess['owlview'] = 0;
-      //}
-   }
 
    $bFileModify = $aFileAccess["owlproperties"];
    $bFileDownload = $aFileAccess["owlread"];
