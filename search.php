@@ -317,15 +317,24 @@ while($sql->next_record())
 
    $iCount++;
    $PrintDot = $iCount % 50;
-   if ($PrintDot == 0)
-   {
-      //print(".");
-   }
+
    $folders[$id] = $id;
 
    $sQuery = explode(" ", $query);
-   $sQuery = str_replace('-','', stripslashes($sQuery));
-   $sQuery = preg_replace( '/\s+/', ' ', $sQuery );
+
+   $cleanedup = array(); 
+
+   $sTempVar = '';
+
+   foreach ($sQuery as $searchstring)
+   {
+      $sTempVar = str_replace('-','', stripslashes($searchstring));
+      $sTempvar = preg_replace( '/\s+/', ' ', $sTempVar );
+      $cleanedup[] = $sTempVar;
+   }
+
+   $sQuery = $cleanedup;
+
 
    foreach($sQuery as $keyword)
    {
