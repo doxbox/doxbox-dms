@@ -1034,15 +1034,14 @@ while ($sql->next_record())
 
    if ($default->thumbnails == 1 and $default->thumbnails_small_width > 0)
    {
-      $sThumbUrl = $default->thumbnails_url . '/' . $default->owl_current_db . "_" . $iRealFileID . "_small.png";
       $sThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_small.png";
-
-      $sMedThumbUrl = $default->thumbnails_url . '/' . $default->owl_current_db . "_" . $iRealFileID . "_med.png";
-      $sMedThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_med.png";
 
       if (file_exists($sThumbLoc))
       {
-         $xtpl->assign('FILE_THUMBNAIL', "<img src=\"$sThumbUrl\" border=\"1\" alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
+         $imdata = file_get_contents($sThumbLoc);
+         $sThumbUrl = 'data:image/png;base64,' . base64_encode($imdata);
+
+         $xtpl->assign('FILE_THUMBNAIL', "<img data-thumbsize=\"thumb_small_$iRealFileID\" src=\"$sThumbUrl\" border=\"1\" alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
       }
       else
       {
@@ -1097,11 +1096,8 @@ while ($sql->next_record())
    {
       $ext = fFindFileExtension($sql->f('filename'));
 
-      //$choped = explode("\.", $sql->f("filename"));
-      //$pos = count($choped);
       if (!empty($ext))
       {
-         //$ext = strtolower($choped[$pos-1]);
          if ($iRealFileID == $sql->f('id'))
          {
             $sDispIcon = $ext;
@@ -1116,16 +1112,8 @@ while ($sql->next_record())
          $sDispIcon = "NoExtension";
       }
    
-      //if (($ext == "gz") && ($pos > 2))
-      //{
-         //$exttar = strtolower($choped[$pos-2]);
-         //if (strtolower($choped[$pos-2]) == "tar")
-            //$ext = "tar.gz";
-      //} 
-   
       if ($sql->f("url") == "1")
       {
-         //$xtpl->assign('FILE_DOCTYPE', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_filetype/url.gif\" border=\"0\" alt=\"\" />");
          $xtpl->assign('FILE_DOCTYPE_IMG', 'url');
          $xtpl->assign('FILE_DOCTYPE_URL_OPEN', '');
          $xtpl->assign('FILE_DOCTYPE_URL_CLOSE', '');;

@@ -1305,9 +1305,7 @@ if ($action == "file_modify")
 
       if ($default->thumbnails == 1)
       {
-         $sThumbUrl = $default->thumbnails_url .  '/' . $default->owl_current_db . "_" . $sql->f("id") . "_large.png";
          $sThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $sql->f("id") . "_large.png";
-
 
          $fid = fGetPhysicalFileId($sql->f("id"));
          if ($default->owl_use_fs)
@@ -1319,21 +1317,25 @@ if ($action == "file_modify")
             $path = fGetFileFromDatbase($sql->f("id"));
          }
 
-         $sFileLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db ."_". $fid ."_". flid_to_filename($fid);
-         $sFileUrl =  $default->thumbnails_url .  '/' . $default->owl_current_db ."_". $fid ."_". flid_to_filename($fid);
-
-      
-//print("<br /> FL: $sFileLoc");
-//print("<br /> FU: $sFileUrl");
-//print("<br /> P: $path");
+         $sFileUrl = "$default->owl_graphics_url/$default->sButtonStyle/ui_misc/thumb_no.png";
 
          if (file_exists($sThumbLoc))
          {
-            copy($path, $sFileLoc);
-            $xtpl->assign('FILE_LARGE_THUMB_URL', $sThumbUrl);
+            $imdata = file_get_contents($path);
+            $sFileUrl = 'data:image/png;base64,' . base64_encode($imdata);
+
             $xtpl->assign('FILE_CUR_FILE_URL', $sFileUrl);
-            $xtpl->parse('main.EditFiles.DocLargeThumb');
+
+            if (exif_imagetype($sThumbLoc))
+            {
+               $imdata = file_get_contents($sThumbLoc);
+               $sFileUrl = 'data:image/png;base64,' . base64_encode($imdata);
+            }
          }
+
+         $xtpl->assign('FILE_LARGE_THUMB_URL', $sFileUrl);
+
+         $xtpl->parse('main.EditFiles.DocLargeThumb');
    }
 
    if ($default->show_prefs == 2 or $default->show_prefs == 3)

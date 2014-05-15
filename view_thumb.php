@@ -457,8 +457,10 @@ while ($sql->next_record())
 
    if (file_exists($sThumbLoc))
    {
+      $imdata = file_get_contents($sThumbLoc);
+      $sThumbUrl = 'data:image/png;base64,' . base64_encode($imdata);
       $aRenderLine['thumb'][$RowCount] = "<table border=\"0\" class=\"nostyle_table thumb_minus_2px\"><tr><td class=\"img_thumb\"><a href=\"$sUrl\" title=\"" . $sql->f("filename"). "\">";
-      $aRenderLine['thumb'][$RowCount] .= "<img src=\"$sThumbUrl\" border=\"0\" alt=\"" . $sql->f("filename"). "\" /></tr></td></table>";
+      $aRenderLine['thumb'][$RowCount] .= "<img data-thumbsize=\"thumb_med_" .  $sql->f("id") . "\" src=\"$sThumbUrl\" border=\"0\" alt=\"" . $sql->f("filename"). "\" /></tr></td></table>";
    }
    else
    {
@@ -718,7 +720,7 @@ function fRenderThumbNails($aRenderLine, $sTrClass)
    $xtpl->assign('COLUMN_WIDTH', $iColumnWidth);
 
    $xtpl->assign('MAX_THUMB_WIDTH', $maxwidth + 20);
-   $xtpl->assign('MAX_THUMB_HEIGHT', $maxheight - 15);
+   $xtpl->assign('MAX_THUMB_HEIGHT', $maxheight);
 
    for ($c = 1; $c <= $default->thumbnail_view_columns; $c++)
    {

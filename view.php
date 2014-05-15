@@ -450,10 +450,13 @@ if ($action == "image_preview")
      $sImagePreviewLocation = $default->thumbnails_location . DIR_SEP . $default->owl_current_db ."_". $fid ."_". flid_to_filename($fid);
  
      copy($path, $sImagePreviewLocation);
+
      $xtpl->assign('VIEW_ALIGN', 'center');
-     $xtpl->assign("VIEW_CONTENT", "<img src=\"" . $default->thumbnails_url .'/' . $default->owl_current_db ."_". $fid ."_". flid_to_filename($fid) ."\" alt=\"\" />");
 
+     $imdata = file_get_contents($sImagePreviewLocation);
+     $sThumbUrl = 'data:image/png;base64,' . base64_encode($imdata);
 
+     $xtpl->assign("VIEW_CONTENT", "<img src=\"" . $sThumbUrl . "\" alt=\"\" />");
 
      if ($default->show_prefs == 2 or $default->show_prefs == 3)
      {

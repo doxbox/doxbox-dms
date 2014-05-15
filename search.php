@@ -1229,23 +1229,14 @@ $xtpl->assign('SEARCH_SCORE', $owl_lang->search_score);
          if ($default->thumbnails == 1 and $default->thumbnails_small_width > 0)
          {
 
-            $sThumbUrl = $default->thumbnails_url . '/' . $default->owl_current_db . "_" . $iRealFileID . "_small.png";
             $sThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_small.png";
-
-            $sMedThumbUrl = $default->thumbnails_url . '/' . $default->owl_current_db . "_" . $iRealFileID . "_med.png";
-            $sMedThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_med.png";
 
             if (file_exists($sThumbLoc))
             {
-               if (file_exists($sMedThumbLoc))
-               {
-                 $sJScript = "";
-               }
-               else
-               {
-                 $sJScript = "";
-               }
-               $xtpl->assign('FILE_THUMBNAIL', "<img src=\"$sThumbUrl\" border=\"1\" $sJScript alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
+               $imdata = file_get_contents($sThumbLoc);
+               $sThumbUrl = 'data:image/png;base64,' . base64_encode($imdata);
+
+               $xtpl->assign('FILE_THUMBNAIL', "<img data-thumbsize=\"thumb_small_" . $files[$key]['id'] . "\" src=\"$sThumbUrl\" border=\"1\" $sJScript alt=\"$owl_lang->alt_thumb_small\" title=\"$owl_lang->alt_thumb_small\" />");
             }
             else
             {

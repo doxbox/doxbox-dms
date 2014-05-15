@@ -848,8 +848,7 @@ $default->edit_text_files_inline[] = "html";
 // ************************************************************
 // *** OWL STATIC - FOLDER AND DOCUMENT VIEWING - Thumbnail Icons
 
-$default->thumbnails_url = $default->owl_root_url . "/ThumbNails"; // this directory has to be in the webspace
-$default->thumbnails_location = $default->owl_fs_root  . "/ThumbNails"; // this directory has to be in the webspace
+$default->thumbnails_location = $default->owl_fs_root  . "/ThumbNails"; // this directory  may reside outside the webspace
 
 // *** Video image types that will be processed with mplayer
 $default->thumbnail_video_type[] = "avi";

@@ -184,15 +184,36 @@ jQuery(document).ready(function() {
   	jQuery('.img_thumb img').hoverIntent(
   	  //rollover function
   		function() {
-  		  var imgURL = jQuery(this).attr("src");
+                  var imgURL = jQuery(this).attr("data-thumbsize");
+
+                  var aThumbInfo = imgURL.split("_");
+                  var imgSize = 'small';
+
                   if (imgURL.indexOf('_small') > -1)
                   {
-  		     imgURL = imgURL.replace('_small','_med');
+                     imgSize = 'med';
                   }
                   else
                   {
-  		     imgURL = imgURL.replace('_med','_large');
+                     imgSize = 'large';
                   }
+
+                  jQuery.ajax({
+                                url: 'scripts/Ajax/Owl/getthumb.php?sess=' + jQuery('#sess').val() + '&size=' + imgSize + '&fileid=' + aThumbInfo[2],
+                                cache: false,
+                                async: false,
+                                success: function(html){
+                                                   if (html.substring(0,10) == 'data:image')
+                                                   {
+                                                        imgURL = html;
+                                                   }
+                                                   else
+                                                   {
+                                                      return -1;
+                                                   }
+                                         }
+                  });
+
   		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/Roma 2012/img/ajax-loader.gif" title="ajaxloader" /></div>');
   		  here = jQuery(this).parents('.wrap_thumb').find('.monitor');
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').css({opacity: 0});
@@ -200,6 +221,7 @@ jQuery(document).ready(function() {
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').height(13);
   		  var windowWidth = jQuery(window).width();
   		  var halfWindow = windowWidth/2;
+
         var offset = jQuery(this).offset();
         if (offset.left < halfWindow) {
     		  jQuery(this).parents('.wrap_thumb').find('.monitor').css({top: altezzaSmall/2-15, right: -200});
@@ -253,16 +275,26 @@ jQuery(document).ready(function() {
   
 //Lightbox plugin Implementations
   jQuery('.img_thumb img').each(function () {
-    var bigImgURL = jQuery(this).attr("src");
-    if (bigImgURL.indexOf("_small") > -1)
-    {
-       bigImgURL = bigImgURL.replace('_small','_large');
-    }
-    else
-    {
-       bigImgURL = bigImgURL.replace('_med','_large');
-    }
-    jQuery(this).wrap('<a href="'+bigImgURL+'" class="lightbox" />');
+    var bigImgURL = jQuery(this).attr("data-thumbsize");
+
+    var aThumbInfo = bigImgURL.split("_");
+
+    jQuery.ajax({
+                  url: 'scripts/Ajax/Owl/getthumb.php?sess=' + jQuery('#sess').val() + '&size=large&fileid=' + aThumbInfo[2],
+                  cache: false,
+                  async: false,
+                  success: function(html){
+                                            if (html.substring(0,10) == 'data:image')
+                                            {
+                                               bigImgURL = html;
+                                            }
+                                            else
+                                            {
+                                               return -1;
+                                            }
+                                         }
+                  });
+                  jQuery(this).wrap('<a href="'+bigImgURL+'" class="lightbox" />');
   });
   
   jQuery('a.lightbox').lightBox({

@@ -143,7 +143,7 @@
                <td class="{FILE_TD_CLASS}">{FILE_ID_VALUE}</td>
 <!-- END: id -->
 <!-- BEGIN: Thumb -->
-               <td class="{FILE_TD_CLASS}">{FILE_THUMBNAIL}</td>
+               <td class="{FILE_TD_CLASS} img_thumb">{FILE_THUMBNAIL}</td>
 <!-- END: Thumb -->
 <!-- BEGIN: DocType -->
                  <td class="{FILE_TD_CLASS}">{FILE_DOCTYPE_URL_OPEN}<img src="{THEME}/img/icon_filetype/{FILE_DOCTYPE_IMG}.gif" border="0" alt="">{FILE_DOCTYPE_URL_CLOSE}</td>
