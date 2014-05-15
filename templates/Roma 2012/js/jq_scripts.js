@@ -267,9 +267,10 @@ jQuery(document).ready(function() {
   
   jQuery('a.lightbox').lightBox({
     imageLoading: 'templates/Roma%202012/img/lightbox/lightbox-ico-loading.gif',
-    imageBtnClose: 'templates/Roma%202012/img/lightbox/lightbox-btn-close.gif',
+    imageBtnClose:'templates/Roma%202012/img/lightbox/lightbox-btn-close.gif',
     imageBtnPrev: 'templates/Roma%202012/img/lightbox/lightbox-btn-prev.png',
-    imageBtnNext: 'templates/Roma%202012/img/lightbox/lightbox-btn-next.png'
+    imageBtnNext: 'templates/Roma%202012/img/lightbox/lightbox-btn-next.png',
+    imageBlank:   'templates/Roma%202012/img/lightbox/lightbox-blank.gif'
   });
   
 //jqLayerMenu 

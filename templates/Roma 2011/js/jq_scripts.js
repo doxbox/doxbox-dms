@@ -269,7 +269,8 @@ jQuery(document).ready(function() {
     imageLoading: 'templates/Roma%202011/img/lightbox/lightbox-ico-loading.gif',
     imageBtnClose: 'templates/Roma%202011/img/lightbox/lightbox-btn-close.gif',
     imageBtnPrev: 'templates/Roma%202011/img/lightbox/lightbox-btn-prev.png',
-    imageBtnNext: 'templates/Roma%202011/img/lightbox/lightbox-btn-next.png'
+    imageBtnNext: 'templates/Roma%202011/img/lightbox/lightbox-btn-next.png',
+    imageBlank:   'templates/Roma%202011/img/lightbox/lightbox-blank.gif'
   });
   
 //jqLayerMenu 

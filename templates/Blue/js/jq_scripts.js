@@ -175,7 +175,7 @@ jQuery(document).ready(function() {
 //Medium Thumbs functions
   jQuery('.img_thumb img').wrap('<div class="wrap_thumb" />');
   jQuery('.wrap_thumb').css({"position":"relative"});
-  jQuery.imgpreload('templates/Roma 2011/img/ajax-loader.gif', function(){
+  jQuery.imgpreload('templates/Blue/img/ajax-loader.gif', function(){
     mediumThumb();  
   });	
   function mediumThumb() {
@@ -191,7 +191,7 @@ jQuery(document).ready(function() {
                   {
   		     imgURL = imgURL.replace('_med','_large');
                   }
-  		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/Roma 2011/img/ajax-loader.gif" title="ajaxloader" /></div>');
+  		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/Blue/img/ajax-loader.gif" title="ajaxloader" /></div>');
   		  here = jQuery(this).parents('.wrap_thumb').find('.monitor');
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').css({opacity: 0});
   		  var altezzaSmall = jQuery(this).outerHeight();
@@ -257,10 +257,11 @@ jQuery(document).ready(function() {
   });
   
   jQuery('a.lightbox').lightBox({
-    imageLoading: 'templates/Roma%202011/img/lightbox/lightbox-ico-loading.gif',
-    imageBtnClose: 'templates/Roma%202011/img/lightbox/lightbox-btn-close.gif',
-    imageBtnPrev: 'templates/Roma%202011/img/lightbox/lightbox-btn-prev.png',
-    imageBtnNext: 'templates/Roma%202011/img/lightbox/lightbox-btn-next.png'
+    imageLoading: 'templates/Blue/lightbox/lightbox-ico-loading.gif',
+    imageBtnClose: 'templates/Blue/lightbox/lightbox-btn-close.gif',
+    imageBtnPrev: 'templates/Blue/lightbox/lightbox-btn-prev.png',
+    imageBtnNext: 'templates/Blue/lightbox/lightbox-btn-next.png',
+    imageBlank:   'templates/Blue/lightbox/lightbox-blank.gif'
   });
   
 //jqLayerMenu 
@@ -403,7 +404,7 @@ jQuery(document).ready(function() {
                         dateFormat: 'yy/mm/dd',
                         timeFormat: 'hh:mm:ss',
                         showButtonPanel: false,
-                        buttonImage: "templates/Roma 2011/ui_icons/calendar_day.png",
+                        buttonImage: "templates/Blue/ui_icons/calendar_day.png",
                         buttonImageOnly: true,
                         onClose: function(date) {
                         },
@@ -421,7 +422,7 @@ jQuery(document).ready(function() {
                         dateFormat: 'yy/mm/dd',
                         timeFormat: 'hh:mm:ss',
                         showButtonPanel: false,
-                        buttonImage: "../templates/Roma 2011/ui_icons/calendar_day.png",
+                        buttonImage: "../templates/Blue/ui_icons/calendar_day.png",
                         buttonImageOnly: true,
                         onClose: function(date) {
                         },
