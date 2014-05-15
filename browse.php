@@ -318,7 +318,7 @@ else
 $lastlogin =  fGetLastLogin();
 
 
-if ($default->show_file_stats == 1)
+if ($default->show_file_stats > 0)
 {
    fGetStatusBarCount();
 }
