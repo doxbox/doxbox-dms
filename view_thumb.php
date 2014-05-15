@@ -46,6 +46,7 @@ $dGetFolders->query($FolderQuery);
 // **********************
 // BEGIN Print Folders
 // **********************
+
 $aRenderLine = array();
 $iIsOneRecPrinted = 0;
 $RowCount = 0;
@@ -56,18 +57,16 @@ while ($dGetFolders->next_record())
    {
       if (!check_auth($dGetFolders->f("id"), "folder_view", $userid, false, false))
       {
-         //if ($default->records_per_page == 0) 
-         //{
-            //$DBFolderCount++; //count number of filez in db 2 use with array
-            //$DBFolders[$DBFolderCount] = $dGetFolders->f("name"); //create list if files in
-         //}
          continue;
       } 
    } 
+
    $iIsOneRecPrinted++;
+
    // *******************************************
    // Find out how many items (Folders and Files)
    // *******************************************
+
    $iFolderId = $dGetFolders->f("id");
    
    if(!$default->hide_folder_doc_count)
@@ -189,13 +188,6 @@ while ($dGetFolders->next_record())
       }
    
    }
-   
-   //if ($default->records_per_page == 0)
-   //{
-      //$DBFolderCount++; //count number of filez in db 2 use with array
-      //$DBFolders[$DBFolderCount] = $dGetFolders->f("name"); //create list if files in
-   //}
-   
    
    if ($default->owl_version_control == 1)
    {
@@ -454,57 +446,40 @@ while ($sql->next_record())
 
    $sZeroFilledId = str_pad($sql->f("id"),$default->doc_id_num_digits, "0", STR_PAD_LEFT);
    $aRenderLine['docid'][$RowCount] = $default->doc_id_prefix . $sZeroFilledId;
- 
-      $sThumbUrl = $default->thumbnails_url . '/'. $default->owl_current_db . "_"  . $iRealFileID . "_med.png";
-      $sThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_med.png";
 
-      $sLargeThumbUrl = $default->thumbnails_url . '/' . $default->owl_current_db . "_" . $iRealFileID . "_large.png";
-      $sLargeThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_large.png";
-
-      if (file_exists($sThumbLoc))
-      {
-         if (file_exists($sLargeThumbLoc))
-         {
-           //$sJScript = " onmouseover=\"showtrail('$sLargeThumbUrl',5);\" onmouseout=\"hidetrail();\"";
-           $sJScript = "";
-         }
-         else
-         {
-           $sJScript = "";
-         }
-      }
-
-   
    $urlArgs2 = $urlArgs;
    $urlArgs2['binary'] = 1;
    $urlArgs2['id'] = $sql->f("id");
    $urlArgs2['parent'] = $sql->f("parent");
    $sUrl = fGetURL ('download.php', $urlArgs2);
 
+   $sThumbLoc = $default->thumbnails_location . DIR_SEP . $default->owl_current_db . "_" . $iRealFileID . "_med.png";
 
-   if ($default->debug == true)
-   {
-      $imagedata = @GetImageSize("$default->owl_fs_root/templates/$default->sButtonStyle/ui_misc/thumb_no.png");
-   }
-   else
-   {
-      $imagedata = GetImageSize("$default->owl_fs_root/templates/$default->sButtonStyle/ui_misc/thumb_no.png");
-   }
-   $thumbnails_med_height = $imagedata[1];
-   
    if (file_exists($sThumbLoc))
    {
       $aRenderLine['thumb'][$RowCount] = "<table border=\"0\" class=\"nostyle_table thumb_minus_2px\"><tr><td class=\"img_thumb\"><a href=\"$sUrl\" title=\"" . $sql->f("filename"). "\">";
-      $aRenderLine['thumb'][$RowCount] .= "<img src=\"$sThumbUrl\" $sJScript border=\"0\" alt=\"" . $sql->f("filename"). "\" /></tr></td></table>";
+      $aRenderLine['thumb'][$RowCount] .= "<img src=\"$sThumbUrl\" border=\"0\" alt=\"" . $sql->f("filename"). "\" /></tr></td></table>";
    }
    else
    {
+      $sThumbLoc = "$default->owl_fs_root/templates/$default->sButtonStyle/ui_misc/thumb_no.png";
       $aRenderLine['thumb'][$RowCount] = "<a href=\"$sUrl\" title=\"$owl_lang->alt_no_thumb\">";
       $aRenderLine['thumb'][$RowCount] .= "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/thumb_no.png\" border=\"0\" alt=\"$owl_lang->alt_no_thumb\" title=\"$owl_lang->alt_no_thumb\" \>";
       $aRenderLine['thumb'][$RowCount] .= "</a>";
    }
 
- 
+   if ($default->debug == true)
+   {
+      $imagedata = GetImageSize($sThumbLoc);
+   }
+   else
+   {
+      $imagedata = @GetImageSize($sThumbLoc);
+   }
+
+   $maxwidth  =  max($default->thumbnails_med_width, $imagedata[0], $maxwidth);
+   $maxheight =  max($thumbnails_med_height, $imagedata[1], $maxheight);
+
    $sFileExtension = fFindFileExtension($sql->f("filename"));
    $aImageExtensionList = $default->thumbnail_image_type;
    $aVideoExtensionList = $default->thumbnail_video_type;
@@ -512,7 +487,7 @@ while ($sql->next_record())
    
    $imagedata = array();
 
-   if ((preg_grep("/$sFileExtension/", $aImageExtensionList)))
+   if ((preg_grep("/$sFileExtension/", $aImageExtensionList)) and file_exists($path) and exif_imagetype($path))
    {
       if ($default->debug == true)
       {
@@ -531,19 +506,6 @@ while ($sql->next_record())
          $aRenderLine['imageattr'][$RowCount] = " Unknown";
       }
       
-
-
-      if ($default->debug == true)
-      {
-         $imagedata = GetImageSize($sThumbLoc);
-      }
-      else
-      {
-         $imagedata = @GetImageSize($sThumbLoc);
-      }
-      $maxwidth  =  max($default->thumbnails_med_width, $imagedata[0], $maxwidth);
-      $maxheight =  max($thumbnails_med_height, $imagedata[1], $maxheight);
-
       $exif_data = @exif_read_data ($path);
       if ($exif_data)
       {
@@ -558,11 +520,8 @@ while ($sql->next_record())
    }
    else
    {
-      $maxwidth  =  max($default->thumbnails_med_width, $maxwidth);
-      $maxheight =  max($thumbnails_med_height, $maxheight);
       $aRenderLine['imageattr'][$RowCount] = "";
    }
-
 
 
    if (($default->expand_disp_doc_type and $expand == 1) or ($default->collapse_disp_doc_type and $expand == 0))
@@ -755,10 +714,11 @@ function fRenderThumbNails($aRenderLine, $sTrClass)
 {
    global $default, $owl_lang, $mid, $iColumnWidth, $xtpl;
    global $maxwidth, $maxheight;
+
    $xtpl->assign('COLUMN_WIDTH', $iColumnWidth);
 
    $xtpl->assign('MAX_THUMB_WIDTH', $maxwidth + 20);
-   $xtpl->assign('MAX_THUMB_HEIGHT', $maxheight + 40);
+   $xtpl->assign('MAX_THUMB_HEIGHT', $maxheight - 15);
 
    for ($c = 1; $c <= $default->thumbnail_view_columns; $c++)
    {
