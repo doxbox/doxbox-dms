@@ -6734,8 +6734,7 @@ function fGetMOTD()
 function fOwlWebDavLog ($sFunction, $sMessage)
 {
    global $default;
-
-   if ($default->owl_debug)
+   if ($default->debug)
    {
       $file = fopen("/tmp/DoxBox.DBG", 'a+');
       fwrite($file, "[$sFunction]: $sMessage\n");
@@ -6769,7 +6768,7 @@ function radius_authenticate($usr, $pswd)
 
    $radius = new Radius($default->owl_db_radiusserver["$db"], $default->owl_db_radiussecret["$db"], 1);
 
-   if ($default->owl_debug)
+   if ($default->debug)
    {
       $radius->SetDebugMode(TRUE);
    }
