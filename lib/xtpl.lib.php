@@ -1705,8 +1705,6 @@ function show_linkXTPL($column,$sortname,$sortvalue,$order,$sess,$expand,$parent
    global $default, $type, $owl_lang, $curview;
    global $xtpl, $sortorder, $sort, $sortfilename, $sortver, $sortsize, $sortposted, $sortupdator, $sortmod, $sortcheckedout;
 
- //print("<br />$sortname --- $sortvalue ");
-
    $urlArgs = array();
    $urlArgs['sess']      = $sess;
    $urlArgs['parent']    = $parent;
@@ -1734,12 +1732,6 @@ function show_linkXTPL($column,$sortname,$sortvalue,$order,$sess,$expand,$parent
 
    $sUrl = fGetURL ($self, $urlArgs2);
 
-   //print("\t\t\t\t<td class=\"title1\" ");
-   if ($title == $owl_lang->title or $title == $owl_lang->file)
-   {
-         //print("width=\"50%\"");
-   }
-   //print("><a class=\"ltitle1\" href=\"$sUrl\" title=\"$owl_lang->title_sort\">$title");
    $xtpl->assign('TITLE_URL', $sUrl);
    $xtpl->assign('TITLE_TITLE', $owl_lang->title_sort);
    $xtpl->assign('TITLE_LABEL', $title);
@@ -1747,16 +1739,15 @@ function show_linkXTPL($column,$sortname,$sortvalue,$order,$sess,$expand,$parent
    if ($order == $column)
    {
       $xtpl->assign('TITLE_SORT_IMG', "<img border=\"0\" src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_nav/$sImage\" alt=\"\" />");
-      //print("</a>&nbsp;<img border=\"0\" src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_nav/asc.gif\" alt=\"\" /><br /></td>\n");
    }
    else
    {
       $xtpl->assign('TITLE_SORT_IMG', '');
-      //print("<br /></a></td>\n");
    }
 
    $xtpl->parse('main.DataBlock.Title.'. $column);
 }
+
 function printModifyHeaderXTPL()
 {
 
