@@ -42,7 +42,6 @@ if ($sess == "0" && $default->anon_ro > 1)
 {
    header("Location: " . $default->owl_root_url . "/index.php?login=1&failure=4&fileid=$fileid&parent=$parent&currentdb=$default->owl_current_db");
    exit;
-   //printError($owl_lang->err_login);
 }
 if (isset($myaction_x))
 {
@@ -152,16 +151,11 @@ function showFoldersIn($fid, $folder)
 			$xtpl->assign('MORE_NAME', '');
             if ($sql->num_rows() > 0)
             {
-               //print "<input type=\"image\" src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/more.gif\" align=\"top\" name=\"MO" . $fid ."\"></input>";
-			   $xtpl->assign('MORE_IMG', "<input type=\"image\" src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/more.gif\" align=\"top\" name=\"MO" . $fid ."\" />");
-			   //$xtpl->assign('MORE_NAME', 'MO' . $fid);
-			   //$xtpl->parse('main.MoveFolder.TreeImageMore');
+	       $xtpl->assign('MORE_IMG', "<input type=\"image\" src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/more.gif\" align=\"top\" name=\"MO" . $fid ."\" />");
             }
             else
             {
-               //print "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/link.gif\" alt=\"\" align=\"top\" />";
-			   $xtpl->assign('MORE_IMG', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/link.gif\" alt=\"\" align=\"top\" />");
-			   //$xtpl->parse('main.MoveFolder.TreeImageMore');
+	       $xtpl->assign('MORE_IMG', "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/link.gif\" alt=\"\" align=\"top\" />");
             }
          }
 
@@ -204,8 +198,9 @@ function showFoldersIn($fid, $folder)
                }
             }
          }
+
          if (($moreFolder > 0) && ($fid == $id) and ($action == "folder" or $action == "cp_folder")) $gray = 1; //   subtree for folder moves
-         //print("fid: $fid ID: $id G: $gray");
+
          if (check_auth($fid, "folder_create", $userid) == 0)
          {
             $gray = 1; //   check for permissions
@@ -213,26 +208,23 @@ function showFoldersIn($fid, $folder)
          
          if ($gray)
          {
-            //print "<img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_filetype/folder_gray.gif\" align=\"top\" alt=\"\" />";
-            //print " <font color=\"silver\">$folder</font><br />\n";
-			//$xtpl->assign('IMG_NAME','folder_gray');
-			$xtpl->assign('IMG_ID','');
-			$xtpl->assign('IMG_NAME',"<img src=\"$default->owl_graphics_url/$default->sButtonStyle/img/icon_filetype/folder_gray.gif\" align=\"top\" alt=\"\" />");
-			$xtpl->assign('FOLDER_NAME', "<font color=\"silver\">$folder</font>");
+            $xtpl->assign('IMG_ID','');
+	    $xtpl->assign('IMG_NAME',"<img src=\"$default->owl_graphics_url/$default->sButtonStyle/img/icon_filetype/folder_gray.gif\" align=\"top\" alt=\"\" />");
+	    $xtpl->assign('FOLDER_NAME', "<font color=\"silver\">$folder</font>");
          } 
          else
          {
-            //print "<input type=\"image\" src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_filetype/folder_closed.gif\" align=\"top\" name=\"ID";
-            //print "$fid\"></input> $folder<br />\n";
-			//$xtpl->assign('IMG_NAME','folder_closed');
-			$xtpl->assign('IMG_NAME',"<input type=\"image\" src=\"$default->owl_graphics_url/$default->sButtonStyle/img/icon_filetype/folder_closed.gif\" align=\"top\" name=\"ID$fid\" />");
-			$xtpl->assign('IMG_ID',"name=\"ID$fid\"");
-			$xtpl->assign('FOLDER_IDNAME', 'ID'. $fid);
-			$xtpl->assign('FOLDER_NAME', $folder);
+	    $xtpl->assign('IMG_NAME',"<input type=\"image\" src=\"$default->owl_graphics_url/$default->sButtonStyle/img/icon_filetype/folder_closed.gif\" align=\"top\" name=\"ID$fid\" />");
+	    $xtpl->assign('IMG_ID',"name=\"ID$fid\"");
+	    $xtpl->assign('FOLDER_IDNAME', 'ID'. $fid);
+	    $xtpl->assign('FOLDER_NAME', $folder);
          } 
       } 
-	  $xtpl->parse('main.MoveFolder.TreeImage');
+
+      $xtpl->parse('main.MoveFolder.TreeImage');
+
       if (($action == "folder") && ($fid == $id)) return; //   Don't show subtree of selected folder as target for folder move
+
       for ($c = 0; $c < $fCount; $c++)
       {
          if ($folderList[$c][2] == $fid)
@@ -246,8 +238,6 @@ function showFoldersIn($fid, $folder)
          } 
       } 
    } 
-
-
 
    checkForNewFolder();
 
@@ -715,10 +705,6 @@ else
       $sql = new Owl_DB;
       $sql->query("SELECT name, parent from $default->owl_folders_table where id='$id'");
    } 
-   //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-   //print("<tr>\n");
-   //print("<td align=\"left\" valign=\"top\">\n");
-   //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
 
    if (isset($fdisp))
    {
@@ -729,7 +715,6 @@ else
          $parent = $sql2->f("parent");
          $xtpl->assign('MOVING_FOLDER_VALUE', $fname);
          $xtpl->parse('main.MoveFolder.MovingFolder');
-         //print "<tr>\n<td class=\"file1\"><b style=\"color:#0000;\">".$owl_lang->moving."</b></td>\n<td class=\"file1\">&nbsp;<img src=\"$default->owl_graphics_url/$default->sButtonStyle/icon_filetype/folder_closed.gif\" alt=\"\" />$fname</td>\n</tr>\n";
       } 
    }
    if (isset($disp))
@@ -748,33 +733,27 @@ else
          $parent = $sql->f("parent");
          $xtpl->assign('MOVING_FILE_VALUE', $fname);
          $xtpl->parse('main.MoveFolder.MovingFile');
-	 //print "<tr>\n<td class=\"file1\"><b style=\"color:#0000;\">".$owl_lang->moving."</b></td>\n<td class=\"file1\">&nbsp;<img src=\"$default->owl_graphics_url/$default->sButtonStyle/ui_misc/16x16.gif\" alt=\"\" />$fname.</td>\n</tr>\n";
       } 
    }
 
-   //print("<tr>\n");
-   //print("<td class=\"form1\">$owl_lang->select</td>\n");
-   //print("<td class=\"form1\" width=\"100%\">");
-   //print("<form method=\"post\" action=\"\">");
+   if (!empty($_GET['action']))
+   {
+      $urlArgs2['action'] = $_GET['action'];
+   }
 
-if (!empty($_GET['action']))
-{
-   $urlArgs2['action'] = $_GET['action'];
-}
-if (!empty($_POST['action']))
-{
-   $urlArgs2['action'] = $_POST['action'];
-}
+   if (!empty($_POST['action']))
+   {
+      $urlArgs2['action'] = $_POST['action'];
+   }
 
-if (!empty($_GET['id']))
-{
-   $urlArgs2['id'] = $_GET['id'];
-}
-if (!empty($_POST['id']))
-{
-   $urlArgs2['id'] = $_POST['id'];
-}
-
+   if (!empty($_GET['id']))
+   {
+      $urlArgs2['id'] = $_GET['id'];
+   }
+   if (!empty($_POST['id']))
+   {
+      $urlArgs2['id'] = $_POST['id'];
+   }
 
    $urlArgs2 = $urlArgs;
    $urlArgs2['myaction'] = $myaction;
@@ -783,30 +762,19 @@ if (!empty($_POST['id']))
    $urlArgs2['folders'] = $folders;
    $urlArgs2['type'] = $type;
    $urlArgs2['parent'] = $parent;
-   //print fGetHiddenFields ($urlArgs2);
    $xtpl->assign('FORM', "<form name=\"foldermove\" id=\"foldermove\" action=\"\" method=\"post\">");
    $xtpl->assign('HIDDEN_FIELDS', fGetHiddenFields ($urlArgs2));
 
 
    $xtpl->assign('MOVE_NAV_BAR', '');
-if (isset($moreFolder))
-{
-   //print("<!-- BEGIN -->\n");
-   //print("<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-   //print("<tr>\n");
-   //print("<td align=\"left\" valign=\"top\">\n");
-   //print("<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n");
-   //print gen_navbar($moreFolder,0,1);
-   $xtpl->assign('MOVE_NAV_BAR', gen_navbarXTPL($moreFolder,1,1));
-   //print("<!-- END -->\n");
-
-}
-else
-{
-   $xtpl->assign('MOVE_NAV_BAR', gen_navbarXTPL(1,0,1));
-}
-
-//print ("<table cellspacing=\"0\" border=\"1\" cellpadding=\"4\">\n<tr>\n<td align=\"left\" bgcolor=\"white\">\n<p>\n");
+   if (isset($moreFolder))
+   {
+      $xtpl->assign('MOVE_NAV_BAR', gen_navbarXTPL($moreFolder,1,1));
+   }
+   else
+   {
+      $xtpl->assign('MOVE_NAV_BAR', gen_navbarXTPL(1,0,1));
+   }
 
    // Get list of folders sorted by name
    $whereclause = " ";

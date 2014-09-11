@@ -1469,8 +1469,6 @@ function gen_navbarXTPL($nav_parent , $fileid = 0 , $movenav = 0)
    $urlArgs[${$sortorder}]  = $sort;
 
    $rows = array();
-   //$iRows = 1;
-
 
    if ($default->advanced_security == 1 )
    {
@@ -1485,39 +1483,35 @@ function gen_navbarXTPL($nav_parent , $fileid = 0 , $movenav = 0)
 
    if ($movenav == 0)
    {
-   if ( $fileid <> "0"  )
-   {
-      //$navbar .= DIR_SEP . fid_to_filename($fileid);
-	   $rows[]=array('BREADCRUMB_URL'=> '#', 
+      if ( $fileid <> "0"  )
+      {
+         $rows[]=array('BREADCRUMB_URL'=> '#', 
                        'BREADCRUMB_TITLE'=> '', 
                        'BREADCRUMB_LABEL'=> fid_to_filename($fileid),
                        'BREADCRUMB_SEPARATOR'=>'');
-      $urlArgs2 = $urlArgs;
-      $urlArgs2['parent'] = $nav_parent;
-      $sUrl = fGetURL ('browse.php', $urlArgs2);
-
-      //$navbar .= "<a class=\"lfile1\" href=\"$sUrl\" title=\"$owl_lang->title_return_folder $name\">$name</a>";
-      $rows[]=array('BREADCRUMB_URL'=>$sUrl, 
-                    'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
-                    'BREADCRUMB_LABEL'=>$name,
-                    'BREADCRUMB_SEPARATOR'=>'/');
+         $urlArgs2 = $urlArgs;
+         $urlArgs2['parent'] = $nav_parent;
+         $sUrl = fGetURL ('browse.php', $urlArgs2);
+   
+         $rows[]=array('BREADCRUMB_URL'=>$sUrl, 
+                       'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
+                       'BREADCRUMB_LABEL'=>$name,
+                       'BREADCRUMB_SEPARATOR'=>'/');
+      }
+      else
+      {
+         $urlArgs2 = $urlArgs;
+         $urlArgs2['parent'] = $nav_parent;
+         $sUrl = fGetURL ('browse.php', $urlArgs2);
+   
+         $rows[]=array('BREADCRUMB_URL'=>$sUrl, 
+                       'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
+                       'BREADCRUMB_LABEL'=>$name,
+                       'BREADCRUMB_SEPARATOR'=>'');
+      }
    }
    else
    {
-      $urlArgs2 = $urlArgs;
-      $urlArgs2['parent'] = $nav_parent;
-      $sUrl = fGetURL ('browse.php', $urlArgs2);
-
-      //$navbar .= "<a class=\"lfile1\" href=\"$sUrl\" title=\"$owl_lang->title_return_folder $name\">$name</a>";
-      $rows[]=array('BREADCRUMB_URL'=>$sUrl, 
-                    'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
-                    'BREADCRUMB_LABEL'=>$name,
-                    'BREADCRUMB_SEPARATOR'=>'');
-   }
-   }
-   else
-   {
-      //$navbar .= "<a class=\"lfile1\" href=\"#\" title=\"$owl_lang->title_return_folder $name\">$name</a>";
       $rows[]=array('BREADCRUMB_URL'=>'#', 
                     'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
                     'BREADCRUMB_LABEL'=>$name,
@@ -1537,10 +1531,10 @@ function gen_navbarXTPL($nav_parent , $fileid = 0 , $movenav = 0)
       {
          $newparentid = $sql->f("parent");
       }
+
       $name = fid_to_name($newparentid);
-      //if ($movenav == 0)
-      //{
-     if ($movenav == 0)
+
+      if ($movenav == 0)
       {
          $urlArgs2 = $urlArgs;
          $urlArgs2['parent'] = $newparentid;
@@ -1550,8 +1544,6 @@ function gen_navbarXTPL($nav_parent , $fileid = 0 , $movenav = 0)
                        'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
                        'BREADCRUMB_LABEL'=>$name,
                        'BREADCRUMB_SEPARATOR'=>'/');
-
-         //$navbar = "<a class=\"lfile1\" href=\"$sUrl\" title=\"$owl_lang->title_return_folder $name\">$name</a>/" . $navbar;
       }
       else
       {
@@ -1580,119 +1572,37 @@ function gen_navbarXTPL($nav_parent , $fileid = 0 , $movenav = 0)
             $sUrl .= "&folders=" . $folders;
          }
 
-         //$navbar = "<a class=\"lfile1\" href=\"$sUrl\" title=\"$owl_lang->title_return_folder $name\">$name</a>/" . $navbar;
          $rows[]=array('BREADCRUMB_URL'=>$sUrl, 
                        'BREADCRUMB_TITLE'=>$owl_lang->title_return_folder . ' '  . $name, 
                        'BREADCRUMB_LABEL'=>$name,
                        'BREADCRUMB_SEPARATOR'=>'/');
       }
       $new = $newparentid;
-   //}
 
-   $iCurrentParent =  owlfolderparent($nav_parent);
-   if ( $fileid <> "0"  )
+      $iCurrentParent =  owlfolderparent($nav_parent);
+   } 
+
+   if ($movenav == 0)
    {
-      //$navbar .= DIR_SEP . fid_to_filename($fileid);
-         //BEGIN 2011-02/02  Removed when DOING LOG.PHP TEMPLATE
-	   //$rows[]=array('BREADCRUMB_URL'=> '#', 
-                       //'BREADCRUMB_TITLE'=> '', 
-                       //'BREADCRUMB_LABEL'=> fid_to_filename($fileid),
-                       //'BREADCRUMB_SEPARATOR'=>'/');
-         //END 2011-02/02  Removed when DOING LOG.PHP TEMPLATE
-   }
-
-   /* if ($movenav == 0)
-   {
-      //$navbar .= "<br /></a></td>\n";
-      $navbar .= "<br /></td>\n";
-      $navbar .= "\t</tr>\n";
-      $navbar .= "</table>\n";
-      $navbar .= "</td></tr></table>\n";
-
-      $navbar .= "<table class=\"margin2\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\"><tr><td align=\"left\" valign=\"top\">\n";
-      $navbar .= "<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">\n";
-      $navbar .= "\t<tr>\n";
-      $navbar .= "\t<td class=\"policy1\" id=\"lpolicy1\" width=\"100%\"><b>$sFolderPolicyLable</b>&nbsp;";
-
-
-   }
-
-   if (owlusergroup($userid) == 0 || owlusergroup($userid) == $default->file_admin_group)
-   {
-      $navbar .= "<a href=\"modify.php?sess=$sess&amp;action=folder_modify&amp;id=$nav_parent&amp;parent=$iCurrentParent&amp;expand=$expand&amp;order=$order&amp;$sortorder=$sort&amp;curview=$curview\" title=\"$owl_lang->alt_mod_folder\">";
-      if ($movenav == 0)
+      $rowsize = count($rows) - 1;
+      for ($i=$rowsize; $i>=0; $i--)
       {
-        $navbar .= fDisplayPolicy($nav_parent);
+          $xtpl->assign('NAVBAR', $rows[$i]);
+          $xtpl->parse('main.NavBar.BreadCrumb');
       }
-      $navbar .= "<br /></a></td>\n";
-      $navbar .= "\t</tr>\n";
-      $navbar .= "</table>\n";
-      $navbar .= "</td></tr></table>\n";
    }
    else
    {
-      if (check_auth($nav_parent, "folder_property", $userid) == 1 and $nav_parent != $default->HomeDir)
-      {
-
-         $urlArgs2 = $urlArgs;
-         $urlArgs2['parent'] = $iCurrentParent;
-         $urlArgs2['action'] = 'folder_modify';
-         $urlArgs2['id'] = $nav_parent;
-         $url = fGetURL ('modify.php', $urlArgs2);
-
-         $navbar .= "<a href=\"$url\" title=\"$owl_lang->alt_mod_folder\">";
-         if ($movenav == 0)
-         {
-           $navbar .= fDisplayPolicy($nav_parent);
-         }
-         $navbar .= "<br /></a></td>\n";
-         $navbar .= "\t</tr>\n";
-         $navbar .= "</table>\n";
-         $navbar .= "</td></tr></table>\n";
-      }
-      else
-      {
-         if ($movenav == 0)
-         {
-           $navbar .= fDisplayPolicy($nav_parent);
-         }
-         $navbar .= "</td>\n";
-         $navbar .= "\t</tr>\n";
-         $navbar .= "</table>\n";
-         $navbar .= "</td></tr></table>\n";
-    }
-*/
-   } 
-
-   //$navbar .= "\n<!-- END: Generate Nav bar -->\n";
-    if ($movenav == 0)
-	{
-       $rowsize = count($rows) - 1;
-//print("<pre>");
-//print_r($rows);
-       for ($i=$rowsize; $i>=0; $i--)
-       {
-//print("I: " . $i);
-           $xtpl->assign('NAVBAR', $rows[$i]);
-           $xtpl->parse('main.NavBar.BreadCrumb');
-       }
-    }
-    else
-	{
        $rowsize = count($rows) - 1;
        $navbar = '';
        for ($i=$rowsize; $i>=0; $i--)
        {
           $newArray = array_slice($rows[$i], 0, 4);
 
-          //print("<br />R: " . $newArray['BREADCRUMB_URL']);
           $navbar .= " <span><a class=\"lfile1\" href=\"" . $newArray['BREADCRUMB_URL'] ."\" />" . $newArray['BREADCRUMB_LABEL'] . "</a></span> ";
           $navbar .= '<span class="or_bar_separator">' . $newArray['BREADCRUMB_SEPARATOR'] ."</span>";
-          //print("<br />R: " . $newArray['BREADCRUMB_TITLE']);
-          //print("<br />R: " .  $newArray['BREADCRUMB_LABEL']);
-          //print("<br />R: " . $newArray['BREADCRUMB_SEPARATOR']);
        }
-    }
+   }
 
    if(isset($navbar))
    {
