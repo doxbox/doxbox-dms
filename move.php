@@ -801,6 +801,10 @@ if (isset($moreFolder))
    //print("<!-- END -->\n");
 
 }
+else
+{
+   $xtpl->assign('MOVE_NAV_BAR', gen_navbarXTPL(1,0,1));
+}
 
 //print ("<table cellspacing=\"0\" border=\"1\" cellpadding=\"4\">\n<tr>\n<td align=\"left\" bgcolor=\"white\">\n<p>\n");
 
