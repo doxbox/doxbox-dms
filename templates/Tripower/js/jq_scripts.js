@@ -175,7 +175,7 @@ jQuery(document).ready(function() {
 //Medium Thumbs functions
   jQuery('.img_thumb img').wrap('<div class="wrap_thumb" />');
   jQuery('.wrap_thumb').css({"position":"relative"});
-  jQuery.imgpreload('templates/rsdx_blue1/ui_misc/ajax-loader.gif', function(){
+  jQuery.imgpreload('templates/Tripower/ui_misc/ajax-loader.gif', function(){
     mediumThumb();  
   });	
   function mediumThumb() {
@@ -212,7 +212,7 @@ jQuery(document).ready(function() {
                                                       }
                   });
 
-  		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/rsdx_blue1/ui_misc/ajax-loader.gif" title="ajaxloader" /></div>');
+  		  jQuery(this).parents('.wrap_thumb').append('<div class="monitor"><img src="templates/Tripower/ui_misc/ajax-loader.gif" title="ajaxloader" /></div>');
   		  here = jQuery(this).parents('.wrap_thumb').find('.monitor');
   		  jQuery(this).parents('.wrap_thumb').find('.monitor').css({opacity: 0});
   		  var altezzaSmall = jQuery(this).outerHeight();
@@ -289,11 +289,11 @@ jQuery(document).ready(function() {
   });
   
   jQuery('a.lightbox').lightBox({
-    imageLoading: 'templates/rsdx_blue1/img/lightbox/lightbox-ico-loading.gif',
-    imageBtnClose: 'templates/rsdx_blue1/img/lightbox/lightbox-btn-close.gif',
-    imageBtnPrev: 'templates/rsdx_blue1/img/lightbox/lightbox-btn-prev.png',
-    imageBtnNext: 'templates/rsdx_blue1/img/lightbox/lightbox-btn-next.png',
-    imageBlank:   'templates/rsdx_blue1/img/lightbox/lightbox-blank.gif'
+    imageLoading: 'templates/Tripower/img/lightbox/lightbox-ico-loading.gif',
+    imageBtnClose: 'templates/Tripower/img/lightbox/lightbox-btn-close.gif',
+    imageBtnPrev: 'templates/Tripower/img/lightbox/lightbox-btn-prev.png',
+    imageBtnNext: 'templates/Tripower/img/lightbox/lightbox-btn-next.png',
+    imageBlank:   'templates/Tripower/img/lightbox/lightbox-blank.gif'
   });
   
 //jqLayerMenu 
@@ -436,7 +436,7 @@ jQuery(document).ready(function() {
                         dateFormat: 'yy/mm/dd',
                         timeFormat: 'hh:mm:ss',
                         showButtonPanel: false,
-                        buttonImage: "templates/rsdx_blue1/ui_icons/calendar_day.png",
+                        buttonImage: "templates/Tripower/ui_icons/calendar_day.png",
                         buttonImageOnly: true,
                         onClose: function(date) {
                         },
@@ -454,7 +454,7 @@ jQuery(document).ready(function() {
                         dateFormat: 'yy/mm/dd',
                         timeFormat: 'hh:mm:ss',
                         showButtonPanel: false,
-                        buttonImage: "../templates/rsdx_blue1/ui_icons/calendar_day.png",
+                        buttonImage: "../templates/Tripower/ui_icons/calendar_day.png",
                         buttonImageOnly: true,
                         onClose: function(date) {
                         },
