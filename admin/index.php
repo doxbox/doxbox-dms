@@ -2367,14 +2367,15 @@ $default->popup_lifetime));
             $xtpl->assign('TRASH_RESTORE_PREFIX_LABEL', $owl_lang->restore_file_prefix);
             $xtpl->assign('TRASH_RESTORE_PREFIX_VALUE', $default->restore_file_prefix);
             $xtpl->assign('TRASH_RESTORE_PREFIX_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->restore_file_prefix, addslashes($owl_lang->owl_restore_file_prefix_extended), $default->popup_lifetime));
-            $xtpl->parse('main.SiteFeatures.TrashOptions');
+            $xtpl->parse('main.SiteFeatures.TrashCan.TrashOptions');
+            $xtpl->parse('main.SiteFeatures.TrashCan');
          } 
          else
          {
             $urlArgs['restore_file_prefix']      = $default->restore_file_prefix;
             $urlArgs['trash_can_location']       = $default->trash_can_location;
          } 
-
+         $xtpl->parse('main.SiteFeatures.TrashCan');
       } 
 
       // **********************************

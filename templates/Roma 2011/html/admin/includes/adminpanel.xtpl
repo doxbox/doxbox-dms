@@ -83,7 +83,9 @@
 <!-- BEGIN: BackupOn -->
                  <li><a href="#dobackup" title="{BUTTON_BACKUP_TITLE}">{BUTTON_BACKUP}</a></li>
 <!-- END: BackupOn -->
+<!-- BEGIN: RecycleOn -->
                  <li><a href="#recycle" title="{BUTTON_RECYCLE_TITLE}">{BUTTON_RECYCLE}</a></li>
+<!-- END: RecycleOn -->
                  <li><a href="#userimport" title="{BUTTON_IMPORT_USERS_TITLE}">{BUTTON_IMPORT_USERS}</a></li>
                  <li><a href="#initialload" title="{BUTTON_INITIAL_LOAD_TITLE}">{BUTTON_INITIAL_LOAD}</a></li>
                  <li><a href="#purgehist" title="{BUTTON_PURGE_HIST_TITLE}">{BUTTON_PURGE_HIST}</a></li>
@@ -100,7 +102,9 @@
 <!-- BEGIN: BackupOnDiv -->
                  <div id="dobackup" url="{BUTTON_BACKUP_URL}">BACKUP PERFORMED</div>
 <!-- END: BackupOnDiv -->
+<!-- BEGIN: TrashOnDiv -->
                  <div id="recycle" url="{BUTTON_RECYCLE_URL}"></div>
+<!-- END: TrashOnDiv -->
                  <div id="userimport" url="{BUTTON_IMPORT_USERS_URL}"></div>
                  <div id="initialload" url="{BUTTON_INITIAL_LOAD_URL}"></div>
                  <div id="purgehist" url="{BUTTON_PURGE_HIST_URL}"></div>

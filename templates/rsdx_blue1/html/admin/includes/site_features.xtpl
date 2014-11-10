@@ -718,6 +718,7 @@
    </table>
 </div>
 
+<!-- BEGIN: TrashCan -->
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
    <tr>
       <td width="1%" align="left"><a id="tc_toggle" href="#" onclick="if (imgTCState == 0 ) { document.tc_image.src = '{THEME}/ui_nav/minimize.png';} else {document.tc_image.src = '{THEME}/ui_nav/maximize.png'; }; return false;"><img src="{THEME}/ui_nav/maximize.png" name="tc_image" border="0"></a></td>
@@ -742,6 +743,7 @@
 <!-- END: TrashOptions -->
    </table>
 </div>
+<!-- END: TrashCan -->
 
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
    <tr>

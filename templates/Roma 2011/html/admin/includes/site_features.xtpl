@@ -666,6 +666,7 @@
       </tr>
    </table>
             </div>
+<!-- BEGIN: TrashCan -->
             <h3><a href="#TrashSettings">{TRASH_SETTINGS_HEADING}</a></h3>
             <div id="TrashSettings">
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -685,6 +686,7 @@
 <!-- END: TrashOptions -->
    </table>
             </div>
+<!-- END: TrashCan -->
             <h3><a href="#ReviewSettings">{REVIEW_SETTINGS_HEADING}</a></h3>
             <div id="ReviewSettings">
    <table class="nostyle_table" cellspacing="0" cellpadding="0" border="0" width="100%">

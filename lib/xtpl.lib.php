@@ -1795,16 +1795,20 @@ function fPrintAdminPanelXTPL($action)
       $xtpl->parse('main.AdminPanel.BackupOffDiv');
    }
 
+   if ($default->owl_use_fs)
+   {
+      $xtpl->parse('main.AdminPanel.TrashOn');
+      $xtpl->parse('main.AdminPanel.TrashOnDiv');
+   }
 
    if ($default->collect_trash == 1)
    {
-// print("<pre>");
-//print_r($default);
- //exit($default->trash_can_location);
       if ($action == 'trashcan')
       {
          $xtpl->assign('BUTTON_RECYCLE', $owl_lang->btn_trashcan);
-         $xtpl->parse('main.AdminPanel.RecycleOff');
+         $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+         $xtpl->parse('main.AdminPanel.RecycleOn');
+         $xtpl->parse('main.AdminPanel.TrashOn');
       }
       else
       {
@@ -1831,35 +1835,44 @@ function fPrintAdminPanelXTPL($action)
                $xtpl->assign('BUTTON_RECYCLE', $owl_lang->btn_trashcan);
                $xtpl->assign('BUTTON_RECYCLE_URL', $sUrl);
                $xtpl->assign('BUTTON_RECYCLE_TITLE', $owl_lang->alt_btn_trashcan);
+               $xtpl->parse('main.AdminPanel.TrashOn.RecycleOn');
                $xtpl->parse('main.AdminPanel.RecycleOn');
+               $xtpl->parse('main.AdminPanel.TrashOn');
             }
             else
             {
                $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle);
-               $xtpl->parse('main.AdminPanel.RecycleOff');
+               $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+               $xtpl->parse('main.AdminPanel.RecycleOn');
+               $xtpl->parse('main.AdminPanel.TrashOn');
             }
          }
          else if (is_dir($default->trash_can_location) and is_writable($default->trash_can_location))
          {
             $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle);
-            $xtpl->parse('main.AdminPanel.RecycleOff');
+            $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+            $xtpl->parse('main.AdminPanel.RecycleOn');
+            $xtpl->parse('main.AdminPanel.TrashOn');
          }
          else
          {
-//if (is_dir($default->trash_can_location))
-//{
- //exit("$default->trash_can_location");
-//}
             $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle_not_found);
-            $xtpl->parse('main.AdminPanel.RecycleOff');
+            $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+            $xtpl->parse('main.AdminPanel.RecycleOn');
+            $xtpl->parse('main.AdminPanel.TrashOn');
          }
-      }
+         }
       }
    }
    else
    {
-      $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle_disable);
-      $xtpl->parse('main.AdminPanel.RecycleOff');
+      if ($default->owl_use_fs)
+      {
+         $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle_disable);
+         $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+         $xtpl->parse('main.AdminPanel.RecycleOn');
+         $xtpl->parse('main.AdminPanel.TrashOn');
+      }
    }
 
 

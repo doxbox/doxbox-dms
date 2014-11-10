@@ -724,6 +724,7 @@
       <td class="admin4" width="99%">{TRASH_SETTINGS_HEADING}<br /></td>
    </tr>
 </table>
+<!-- BEGIN: TrashCan -->
 <div id="tc_slide" style='display:none'>
    <table cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
@@ -742,6 +743,7 @@
 <!-- END: TrashOptions -->
    </table>
 </div>
+<!-- END: TrashCan -->
 
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
    <tr>

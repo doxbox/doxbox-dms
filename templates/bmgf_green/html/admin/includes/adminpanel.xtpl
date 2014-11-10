@@ -64,12 +64,14 @@
  	       <td class="button1"><a class="lbutton1" href="{BUTTON_BACKUP_URL}" title="{BUTTON_BACKUP_TITLE}">{BUTTON_BACKUP}</a></td>
 <!-- END: BackupOn -->
 
+<!-- BEGIN: TrashOn -->
 <!-- BEGIN: RecycleOff -->
 	       <td class="abutton0">{BUTTON_RECYCLE}</td>
 <!-- END: RecycleOff -->
 <!-- BEGIN: RecycleOn -->
  	       <td class="button1"><a class="lbutton1" href="{BUTTON_RECYCLE_URL}" title="{BUTTON_RECYCLE_TITLE}">{BUTTON_RECYCLE}</a></td>
 <!-- END: RecycleOn -->
+<!-- END: TrashOn -->
 
 <!-- BEGIN: ImportUsersOff -->
 	       <td class="abutton0">{BUTTON_IMPORT_USERS}</td>
