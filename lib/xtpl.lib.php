@@ -1795,12 +1795,6 @@ function fPrintAdminPanelXTPL($action)
       $xtpl->parse('main.AdminPanel.BackupOffDiv');
    }
 
-   if ($default->owl_use_fs)
-   {
-      $xtpl->parse('main.AdminPanel.TrashOn');
-      $xtpl->parse('main.AdminPanel.TrashOnDiv');
-   }
-
    if ($default->collect_trash == 1)
    {
       if ($action == 'trashcan')
@@ -1812,55 +1806,60 @@ function fPrintAdminPanelXTPL($action)
       }
       else
       {
-      $sql = new Owl_DB; //create new db connection
-      $sql->query("SELECT name FROM $default->owl_folders_table WHERE id = '1'");
-      $sql->next_record();
-      $sRootFolderName = $sql->f("name");
-      $iFileCounter = 0;
-      if ($default->owl_use_fs)
-      {
-         if (is_dir($default->trash_can_location . DIR_SEP . $default->owl_current_db . DIR_SEP . $sRootFolderName) and is_dir($default->trash_can_location))
-         {
-            $Dir = @opendir($default->trash_can_location . DIR_SEP . $default->owl_current_db . DIR_SEP . $sRootFolderName);
-            while ($file = @readdir($Dir))
-            {
-               $iFileCounter++;
-            }
-            if ($iFileCounter > 0)
-            {
+         $sql = new Owl_DB; //create new db connection
+         $sql->query("SELECT name FROM $default->owl_folders_table WHERE id = '1'");
+         $sql->next_record();
+         $sRootFolderName = $sql->f("name");
+         $iFileCounter = 0;
 
-               $urlArgs2 = array();
-               $urlArgs2['sess'] = $sess;
-               $sUrl = fGetURL ('admin/recycle.php', $urlArgs2);
-               $xtpl->assign('BUTTON_RECYCLE', $owl_lang->btn_trashcan);
-               $xtpl->assign('BUTTON_RECYCLE_URL', $sUrl);
-               $xtpl->assign('BUTTON_RECYCLE_TITLE', $owl_lang->alt_btn_trashcan);
-               $xtpl->parse('main.AdminPanel.TrashOn.RecycleOn');
-               $xtpl->parse('main.AdminPanel.RecycleOn');
-               $xtpl->parse('main.AdminPanel.TrashOn');
+         if ($default->owl_use_fs)
+         {
+            if (is_dir($default->trash_can_location . DIR_SEP . $default->owl_current_db . DIR_SEP . $sRootFolderName) and is_dir($default->trash_can_location))
+            {
+               $Dir = @opendir($default->trash_can_location . DIR_SEP . $default->owl_current_db . DIR_SEP . $sRootFolderName);
+               while ($file = @readdir($Dir))
+               {
+                  $iFileCounter++;
+               }
+
+               if ($iFileCounter > 0)
+               {
+                  $urlArgs2 = array();
+                  $urlArgs2['sess'] = $sess;
+                  $sUrl = fGetURL ('admin/recycle.php', $urlArgs2);
+                  $xtpl->assign('BUTTON_RECYCLE', $owl_lang->btn_trashcan);
+                  $xtpl->assign('BUTTON_RECYCLE_URL', $sUrl);
+                  $xtpl->assign('BUTTON_RECYCLE_TITLE', $owl_lang->alt_btn_trashcan);
+                  $xtpl->parse('main.AdminPanel.TrashOn.RecycleOn');
+                  $xtpl->parse('main.AdminPanel.RecycleOn');
+                  $xtpl->parse('main.AdminPanel.TrashOn');
+                  $xtpl->parse('main.AdminPanel.TrashOnDiv');
+               }
+               else
+               {
+                  $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle);
+                  $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+                  $xtpl->parse('main.AdminPanel.RecycleOn');
+                  $xtpl->parse('main.AdminPanel.TrashOn');
+                  $xtpl->parse('main.AdminPanel.TrashOnDiv');
+               }
             }
-            else
+            else if (is_dir($default->trash_can_location) and is_writable($default->trash_can_location))
             {
                $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle);
                $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
                $xtpl->parse('main.AdminPanel.RecycleOn');
                $xtpl->parse('main.AdminPanel.TrashOn');
+               $xtpl->parse('main.AdminPanel.TrashOnDiv');
             }
-         }
-         else if (is_dir($default->trash_can_location) and is_writable($default->trash_can_location))
-         {
-            $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle);
-            $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
-            $xtpl->parse('main.AdminPanel.RecycleOn');
-            $xtpl->parse('main.AdminPanel.TrashOn');
-         }
-         else
-         {
-            $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle_not_found);
-            $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
-            $xtpl->parse('main.AdminPanel.RecycleOn');
-            $xtpl->parse('main.AdminPanel.TrashOn');
-         }
+            else
+            {
+               $xtpl->assign('BUTTON_RECYCLE', $owl_lang->alt_recycle_not_found);
+               $xtpl->parse('main.AdminPanel.TrashOn.RecycleOff');
+               $xtpl->parse('main.AdminPanel.RecycleOn');
+               $xtpl->parse('main.AdminPanel.TrashOn');
+               $xtpl->parse('main.AdminPanel.TrashOnDiv');
+            }
          }
       }
    }
@@ -1874,7 +1873,6 @@ function fPrintAdminPanelXTPL($action)
          $xtpl->parse('main.AdminPanel.TrashOn');
       }
    }
-
 
    $xtpl->assign('BUTTON_IMPORT_USERS', $owl_lang->btn_import_users);
    if($action == "importusers")
