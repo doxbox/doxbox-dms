@@ -135,7 +135,9 @@ else
 }
 
 
-if (("setacl.php" == basename($_SERVER["PHP_SELF"])) or (("index.php" == basename($_SERVER["PHP_SELF"])) and (ereg("admin", $_SERVER["PHP_SELF"]))))
+if (("setacl.php" == basename($_SERVER["PHP_SELF"])) or 
+   (("index.php" == basename($_SERVER["PHP_SELF"])) and 
+   (preg_match("/admin/", $_SERVER["PHP_SELF"]))))
 {
 
 $sFboxJS ='
@@ -301,7 +303,7 @@ $sFboxJS .= ');
 
 ';
 
-       if (("index.php" == basename($_SERVER["PHP_SELF"])) and (ereg("admin", $_SERVER["PHP_SELF"])))
+       if (("index.php" == basename($_SERVER["PHP_SELF"])) and (preg_match("/admin/", $_SERVER["PHP_SELF"])))
        {
 $sFboxJS .= '
 function subSelection(txtValue)
@@ -507,7 +509,7 @@ $sPHPLayers = '
 <script type="text/javascript" src="' . $default->owl_root_url . '/scripts/phplayersmenu/libjs/layerstreemenu-cookies.js"></script>';
 }
 
-if (version_compare(phpversion(), "5.4.0", ">="))
+if (version_compare(phpversion(), "7.0.0", ">="))
 {
    if (ini_get('session.upload_progress.enabled') == 1 and !strpos(php_sapi_name(), 'fcgi'))
    {
@@ -532,5 +534,3 @@ $xtpl_head->assign('ACL_NO_GROUPS_AVAILABLE', $owl_lang->acl_no_groups_available
 
 $xtpl_head->parse('html_header');
 $xtpl_head->out('html_header');
-
-?>

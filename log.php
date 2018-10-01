@@ -53,7 +53,7 @@ $xtpl->assign('ROOT_URL', $default->owl_root_url);
 // store file name and extension separately
 
 //$filename = unserialize(stripslashes(stripslashes($filename)));
-$filename = ereg_replace("<amp>","&", $filename);
+$filename = preg_replace("/<amp>/","&", $filename);
 
 $aFirstpExtension = fFindFileFirstpartExtension ($filename);
 $firstpart = $aFirstpExtension[0];
@@ -216,7 +216,7 @@ while ($sql->next_record())
       {
          $sFilePattern =  preg_quote($firstpart) .  "\_[0-9]*\-[0-9]*$haveextension" . preg_quote($file_extension);
    
-         if(!ereg("$sFilePattern", $sql->f("filename")) and  $id != $sql->f("id"))
+         if(!preg_match("/$sFilePattern/", $sql->f("filename")) and  $id != $sql->f("id"))
          {
             continue;
          }

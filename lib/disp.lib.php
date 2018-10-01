@@ -866,7 +866,7 @@ function fPrintCustomFields ($iCurrentDocType, $iFileId, $iRequired = 0 , $sWher
                        $aPickListValues = array();
                        $aPickList = array();
 
-                       $aPickList = split("\|",  $sql_custom->f("field_values"));
+                       $aPickList = preg_split("/\|/",  $sql_custom->f("field_values"));
                        $i = 0;
                        foreach ($aPickList as $sValues)
                        {
@@ -907,7 +907,7 @@ function fPrintCustomFields ($iCurrentDocType, $iFileId, $iRequired = 0 , $sWher
                                 $xtpl->parse('main.' . $sBlock . '.DocFields.Row.Table');
                                 break;
                              case "url":
-                                $aURL = split("\|", $sql_custom->f("field_values"));
+                                $aURL = preg_split("/\|/", $sql_custom->f("field_values"));
                                 $xtpl->assign('DOC_TYPE_URL_LABEL', $qFieldLabel->f("field_label"));
                                 $xtpl->assign('DOC_TYPE_URL_REQUIRED', $required);
                                 $xtpl->assign('DOC_TYPE_TYPE_URL_LOC', $aURL[1]);
@@ -919,8 +919,8 @@ function fPrintCustomFields ($iCurrentDocType, $iFileId, $iRequired = 0 , $sWher
 //****************************************************************************************************
                   case "mcheckbox":
                     $aMultipleCheckBoxLabel = array();
-                    $aMultipleCheckBoxLabel = split("\|",  $sql_custom->f("field_values"));
-                    $aMultipleCheckBox = split("\|",  $sql_custom_values->f("field_value"));
+                    $aMultipleCheckBoxLabel = preg_split("/\|/",  $sql_custom->f("field_values"));
+                    $aMultipleCheckBox = preg_split("/\|/",  $sql_custom_values->f("field_value"));
                     $i = 0;
                     $iNumberColumns  = $sql_custom->f("field_size");
                     $xtpl->assign('DOC_TYPE_MCHECK_LABEL', $qFieldLabel->f("field_label"));
@@ -958,7 +958,7 @@ function fPrintCustomFields ($iCurrentDocType, $iFileId, $iRequired = 0 , $sWher
                        $aRadioButtons = array();
                         $sSelectedValue = '';
 
-                        $aRadioButtons = split("\|",  $sql_custom->f("field_values"));
+                        $aRadioButtons = preg_split("/\|/",  $sql_custom->f("field_values"));
                         $i = 0;
                         foreach ($aRadioButtons as $sValues)
                         {
@@ -1071,8 +1071,8 @@ function fPopCustomFields ($iCurrentDocType, $iFileId)
             case "mcheckbox":
                if ($sql_custom->f("show_desc") ==" 1")
                {
-                  $aMultipleCheckBoxLabel = split("\|",  $sql_custom->f("field_values"));
-                  $aMultipleCheckBox = split("\|",  $sql_custom_values->f("field_value"));
+                  $aMultipleCheckBoxLabel = preg_split("/\|/",  $sql_custom->f("field_values"));
+                  $aMultipleCheckBox = preg_split("/\|/",  $sql_custom_values->f("field_value"));
                   $i = 0;
                   $iNumberColumns  = $sql_custom->f("field_size");
                   $sPopCustomField.= "<b>". $qFieldLabel->f("field_label") .":</b>&nbsp;";
@@ -1093,7 +1093,7 @@ function fPopCustomFields ($iCurrentDocType, $iFileId)
                if ($sql_custom->f("show_desc") ==" 1")
                {
                   $aRadioButtons = array();
-                  $aRadioButtons = split("\|",  $sql_custom->f("field_values"));
+                  $aRadioButtons = preg_split("/\|/",  $sql_custom->f("field_values"));
                   $sPopCustomField.= "<b>". $qFieldLabel->f("field_label") .":</b>&nbsp;";
                   foreach ($aRadioButtons as $sValues)
                   {

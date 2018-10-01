@@ -138,10 +138,10 @@ if ($action == "edit_news")
    //$news_end_date = $year . "-" . $month . "-" . "$day $hour" . ":" . $minute . ":00";
    //$newsdesc = ereg_replace("[\\]'", "'", $newsdesc);
    $newsdesc = stripslashes($newsdesc);
-   $newsdesc = ereg_replace("'", "\\'" , $newsdesc);
+   $newsdesc = preg_replace("/'/", "\\'" , $newsdesc);
    //$news_title = ereg_replace("[\\]'", "'", $news_title);
    $news_title = stripslashes($news_title);
-   $news_title = ereg_replace("'", "\\'" , $news_title);
+   $news_title = preg_replace("/'/", "\\'" , $news_title);
 
    if (trim($newsdesc) == "" || trim($news_title) == "")
    {
@@ -164,10 +164,10 @@ if ($action == "add_news")
    //$news_end_date = $year . "-" . $month . "-" . "$day $hour" . ":" . $minute . ":00";
    //$newsdesc = ereg_replace("[\\]'", "'", $newsdesc);
    $newsdesc = stripslashes($newsdesc);
-   $newsdesc = ereg_replace("'", "\\'" , $newsdesc);
+   $newsdesc = preg_replace("/'/", "\\'" , $newsdesc);
    //$news_title = ereg_replace("[\\]'", "'", $news_title);
    $news_title = stripslashes($news_title);
-   $news_title = ereg_replace("'", "\\'" , $news_title);
+   $news_title = preg_replace("/'/", "\\'" , $news_title);
    if (trim($newsdesc) == "" || trim($news_title) == "")
    {
       printError($owl_lang->err_news_required);
@@ -615,14 +615,14 @@ if ($action == "add")
          $link = $default->owl_notify_link . "index.php" ;
          $sHtmlLink = "<a href=\"" . $link . "\">$owl_lang->login</a>";
 
-         $aBody['HTML'] = ereg_replace("\%USER_FULLNAME\%", $name, $aBody['HTML'] );
-         $aBody['TXT'] = ereg_replace("\%USER_FULLNAME\%", $name, $aBody['TXT'] );
-         $aBody['HTML'] = ereg_replace("\%USERNAME\%", $edit_loginname, $aBody['HTML'] );
-         $aBody['TXT'] = ereg_replace("\%USERNAME\%", $edit_loginname, $aBody['TXT'] );
-         $aBody['HTML'] = ereg_replace("\%PASSWORD\%", $edit_password, $aBody['HTML'] );
-         $aBody['TXT'] = ereg_replace("\%PASSWORD\%", $edit_password, $aBody['TXT'] );
-         $aBody['HTML'] = ereg_replace("\%LINK\%", $sHtmlLink, $aBody['HTML'] );
-         $aBody['TXT'] = ereg_replace("\%LINK\%", $link, $aBody['TXT'] );
+         $aBody['HTML'] = preg_replace("/\%USER_FULLNAME\%/", $name, $aBody['HTML'] );
+         $aBody['TXT'] = preg_replace("/\%USER_FULLNAME\%/", $name, $aBody['TXT'] );
+         $aBody['HTML'] = preg_replace("/\%USERNAME\%/", $edit_loginname, $aBody['HTML'] );
+         $aBody['TXT'] = preg_replace("/\%USERNAME\%/", $edit_loginname, $aBody['TXT'] );
+         $aBody['HTML'] = preg_replace("/\%PASSWORD\%/", $edit_password, $aBody['HTML'] );
+         $aBody['TXT'] = preg_replace("/\%PASSWORD\%/", $edit_password, $aBody['TXT'] );
+         $aBody['HTML'] = preg_replace("/\%LINK\%/", $sHtmlLink, $aBody['HTML'] );
+         $aBody['TXT'] = preg_replace("/\%LINK\%/", $link, $aBody['TXT'] );
 
          $mail = new phpmailer();
          if ($default->use_smtp)
@@ -1118,7 +1118,7 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", hide_folder_doc_count = '$hide_folder_doc_count'";
    $qPrefsQuery .= ", old_action_icons = '$old_action_icons'";
    $qPrefsQuery .= ", search_result_folders = '$search_result_folders'";
-   $qPrefsQuery .= ", restore_file_prefix = '" . ereg_replace("^-", "_", $restore_file_prefix) . "'";
+   $qPrefsQuery .= ", restore_file_prefix = '" . preg_replace("/^-/", "_", $restore_file_prefix) . "'";
    $qPrefsQuery .= ", major_revision = '$major_revision'";
    $qPrefsQuery .= ", minor_revision = '$minor_revision'";
    $qPrefsQuery .= ", doc_id_prefix = '$doc_id_prefix'";

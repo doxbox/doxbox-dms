@@ -69,6 +69,9 @@ function delFile($id, $action, $historical = 0)
                   $sTrashDir = explode(DIR_SEP, $path);
 
                   $sCreatePath = $default->trash_can_location . DIR_SEP . $default->owl_current_db;
+
+//fDispVar($sCreatePath);
+
                   if (!file_exists($sCreatePath))
                   {
                      mkdir("$sCreatePath", $default->directory_mask);
@@ -103,10 +106,23 @@ function delFile($id, $action, $historical = 0)
                } 
                else
                {
-                  unlink($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $filename);
+                  if(!is_writable($default->owl_FileDir . DIR_SEP . $path))
+                  {
+                     printError('Filesystem Permission denied, no write Permission to the parent Directory');
+                  }
+                  else if(!is_writable($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $filename))
+                  {
+                     printError('Filesystem Permission denied to the file');
+                  }
+                  else if (!unlink($default->owl_FileDir . DIR_SEP . $path . DIR_SEP . $filename))
+                  {
+                    printError('Error Deleting the file');
+                  }
                } 
             } 
+
             owl_syslog(FILE_DELETED, $userid, $filename, $parent, $owl_lang->log_detail, "FILE");
+
             if (file_exists($default->thumbnails_location))
             {
                $handle = opendir($default->thumbnails_location);
@@ -1206,7 +1222,7 @@ function fInsertUnzipedFiles($path, $cParent, $FolderPolicy, $FilePolicy, $descr
                             case "seperator":
                                break;
                             case "mcheckbox":
-                                  $aMultipleCheckBox = split("\|",  $sql_custom->f("field_values"));
+                                  $aMultipleCheckBox = preg_split("/\|/",  $sql_custom->f("field_values"));
                                    $i = 0;
                                    $sFieldValues = "";
                                    foreach ($aMultipleCheckBox as $sValues)
@@ -3231,7 +3247,7 @@ function gen_filesize($file_size)
 {
    global $owl_lang;
 
-   if (ereg("[^0-9]", $file_size)) return $file_size;
+   if (preg_match("/[^0-9]/", $file_size)) return $file_size;
 
    if ($file_size >= 1073741824)
    {
@@ -3395,7 +3411,18 @@ function myDelete($file)
       } 
       else
       {
-         @unlink($file);
+         if(!is_writable(dirname($file)))
+         {
+            printError('Filesystem Permission denied, no write Permission to the parent Directory');
+         }
+         else if(!is_writable($file))
+         {
+            printError('Filesystem Permission denied to the file');
+         }
+         else if (!unlink($file))
+         {
+            printError('Error Deleting the file');
+         }
       } 
    } 
 } 
@@ -3979,7 +4006,7 @@ function fCalculateQuota($size, $current_user, $type)
           else
           {
              $aError = array();
-             $aError['code'] = 0080;
+             $aError['code'] = '0080';
              $aError['msg'] = $owl_lang->err_quota_exceed;
              print(json_encode($aError));
           }
@@ -4204,7 +4231,7 @@ function get_title_tag($chaine)
             break;
          } 
       } 
-      if (eregi("<title>(.*)</title>", $contenu, $out))
+      if (preg_match("/<title>(.*)</title>/i", $contenu, $out))
       {
          return $out[1];
       } 
@@ -4307,6 +4334,8 @@ function fFindFileExtension ($filename)
 
 function fFindFileFirstpartExtension ($filename, $sDelimiter = ".")
 {
+   /*
+
    $filesearch = explode($sDelimiter, $filename);
    $extensioncounter = 0;
    while ($filesearch[$extensioncounter + 1] != null)
@@ -4339,9 +4368,20 @@ function fFindFileFirstpartExtension ($filename, $sDelimiter = ".")
       $file_extension = $filesearch[$extensioncounter];
       $haveextension=".";
    }
+
+   */
+   $aPathParts = pathinfo($filename);
+
+   $haveextension = '';
+
+   if (!empty($aPathParts['extension']))
+   {
+      $haveextension = '.';
+   }
+
    $aFileLog = array();
-   $aFileLog[0] = $firstpart;
-   $aFileLog[1] = $file_extension;
+   $aFileLog[0] = $aPathParts['filename'];;
+   $aFileLog[1] = $aPathParts['extension'];
    $aFileLog[2] = $haveextension;
 
    return $aFileLog;
@@ -5261,7 +5301,7 @@ function fbValidUsername( $sUsername )
    {
       $bValid = false;
    }
-   if (ereg(' ', $sUsername))
+   if (preg_match('/ /', $sUsername))
    {
       $bValid = false;
    }
@@ -6444,7 +6484,7 @@ function fGetClientIP()
 function bIsMicrosoftBrowser($version = 0)
 {
 
-   if (eregi("(MSIE.6)", $_SERVER['HTTP_USER_AGENT']))
+   if (preg_match("/(MSIE.6)/i", $_SERVER['HTTP_USER_AGENT']))
    {
       if (!empty($version))
       {
@@ -6459,7 +6499,7 @@ function bIsMicrosoftBrowser($version = 0)
       }
       return true;
    }
-   else if (eregi("(MSIE.7)", $_SERVER['HTTP_USER_AGENT']))
+   else if (preg_match("/(MSIE.7)/i", $_SERVER['HTTP_USER_AGENT']))
    {
       if (!empty($version))
       {
@@ -6474,7 +6514,7 @@ function bIsMicrosoftBrowser($version = 0)
       }
       return true;
    }
-   else if (eregi("(MSIE.8)", $_SERVER['HTTP_USER_AGENT']))
+   else if (preg_match("/(MSIE.8)/i", $_SERVER['HTTP_USER_AGENT']))
    {
       if (!empty($version))
       {
@@ -6509,7 +6549,7 @@ function fCheckCustomRequiredFields($doctype)
             case "mcheckbox":
                $iValueCount = 0;
                $bThisFieldError = false;
-               $aValues = split('\|', $sql_custom->f("field_values"));
+               $aValues = preg_split('/\|/', $sql_custom->f("field_values"));
                $sThisFieldName = $sql_custom->f("field_name");
                foreach ($aValues as $sValue)
                {
@@ -7063,7 +7103,7 @@ function fGenDoctypeFieldJSValidation ()
 ";
                       break;
                       case "mcheckbox":
-                         $aMultipleCheckBox = split("\|",  $sql->f("field_values"));
+                         $aMultipleCheckBox = preg_split("/\|/",  $sql->f("field_values"));
                          $i = 0;
                          $sDoctypeValidationScript .= "
   if(typeof(formToValidate." . $sql->f("field_name") ."_0) !== 'undefined')
@@ -7295,4 +7335,32 @@ function fMakeFlatArray($aArrayOfFiles)
    return $tmp; 
 } 
 
-?>
+/**
+ * Function that displays string, array or Object in <pre> tags
+ * @author Steve Bourgeois
+ * @param  mixed  $mItemToDisplay   string, array or object to display
+ */
+
+function fDispVar ($mItemToDisplay, $bExit = false)
+{
+   if (is_string($mItemToDisplay))
+   {
+      printf('<pre>%s</pre>', $mItemToDisplay);
+   }
+   else if (is_array($mItemToDisplay) or is_object($mItemToDisplay)) // Not a string see what print_r can do with it...
+   {
+      printf('<pre>%s</pre>', print_r($mItemToDisplay, true));
+   }
+   else
+   {
+      printf('<pre>');
+      var_dump($mItemToDisplay);
+      printf('</pre>');
+   }
+
+
+   if ($bExit)
+   {
+      exit;
+   }
+}

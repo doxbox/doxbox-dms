@@ -2349,10 +2349,11 @@ $default->popup_lifetime));
       if ($default->owl_use_fs)
       {
          $xtpl->assign('TRASH_SETTINGS_HEADING', $owl_lang->recycle_title);
-         
+
          $xtpl->assign('TRASH_ENABLED_LABEL', $owl_lang->recycle_enabled);
          $xtpl->assign('TRASH_ENABLED_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->recycle_enabled, addslashes($owl_lang->owl_collect_trash_extended), $default->popup_lifetime));
          $xtpl->assign('TRASH_ENABLED_CHECKED', '');
+
          if ($default->collect_trash == 1)
          {
             $xtpl->assign('TRASH_ENABLED_CHECKED', ' checked="checked"');
@@ -2369,14 +2370,14 @@ $default->popup_lifetime));
             $xtpl->assign('TRASH_RESTORE_PREFIX_HELP_TEXT', sprintf($default->domtt_popup , $owl_lang->restore_file_prefix, addslashes($owl_lang->owl_restore_file_prefix_extended), $default->popup_lifetime));
             $xtpl->parse('main.SiteFeatures.TrashCan.TrashOptions');
             $xtpl->parse('main.SiteFeatures.TrashCan');
-         } 
+         }
          else
          {
             $urlArgs['restore_file_prefix']      = $default->restore_file_prefix;
             $urlArgs['trash_can_location']       = $default->trash_can_location;
-         } 
-         $xtpl->parse('main.SiteFeatures.TrashCan');
-      } 
+            $xtpl->parse('main.SiteFeatures.TrashCan');
+         }
+      }
 
       // **********************************
       // DOCUMENT PEER REVIEW

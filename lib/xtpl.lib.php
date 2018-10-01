@@ -238,9 +238,9 @@ function fPrintPrefsXTPL ($location)
    $xtpl->parse('main.PrefsBar' . $location . '.QuickLink');
 
 
-   if (! ereg("help_", basename($_SERVER["PHP_SELF"])))
+   if (! preg_match("/help_/", basename($_SERVER["PHP_SELF"])))
    {
-      if (ereg("admin", $_SERVER["PHP_SELF"]) or ereg("jupload", $_SERVER["PHP_SELF"]))
+      if (preg_match("/admin/", $_SERVER["PHP_SELF"]) or preg_match("/jupload/", $_SERVER["PHP_SELF"]))
       {
          if (basename(dirname($_SERVER["PHP_SELF"])) == 'admin')
          {     
@@ -2032,7 +2032,7 @@ function fprintFileIconsXtpl ($fid, $filename, $checked_out, $url, $allicons, $e
    {
       if ($url == "0") 
       {
-         $filename = ereg_replace("\&","<amp>", $filename);
+         $filename = preg_replace("/\&/","<amp>", $filename);
          $urlArgs2 = $urlArgs;
          $urlArgs2['id'] = $fid;
          $urlArgs2['filename'] = $filename;
@@ -2722,7 +2722,7 @@ function fSetPopupHelp ()
 {
    global $default, $xtpl, $action, $type;
 
-   if (ereg("admin", $_SERVER["PHP_SELF"]) or ereg("jupload", $_SERVER["PHP_SELF"]))
+   if (preg_match("/admin/", $_SERVER["PHP_SELF"]) or preg_match("/jupload/", $_SERVER["PHP_SELF"]))
    {
       if (basename(dirname($_SERVER["PHP_SELF"])) == 'admin')
       {

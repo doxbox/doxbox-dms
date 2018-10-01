@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.47, for redhat-linux-gnu (i386)
+-- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: localhost    Database: owl_110
+-- Host: localhost    Database: prototype
 -- ------------------------------------------------------
--- Server version	5.1.47
+-- Server version	5.7.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `active_sessions` (
   `dl_count` int(11) NOT NULL,
   `dl_byte_count` int(11) NOT NULL,
   PRIMARY KEY (`sessid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `advanced_acl` (
   KEY `acl_fileid` (`file_id`),
   KEY `acl_userid` (`user_id`),
   KEY `acl_groupid_index` (`group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +82,6 @@ CREATE TABLE `advanced_acl` (
 
 LOCK TABLES `advanced_acl` WRITE;
 /*!40000 ALTER TABLE `advanced_acl` DISABLE KEYS */;
-INSERT INTO advanced_acl VALUES (NULL,0,NULL,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `advanced_acl` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,10 +96,10 @@ CREATE TABLE `comments` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `fid` int(4) NOT NULL DEFAULT '0',
   `userid` int(4) DEFAULT NULL,
-  `comment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `comment_date` datetime DEFAULT NULL,
   `comments` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -124,7 +123,7 @@ CREATE TABLE `docRel` (
   `file_id` int(4) NOT NULL DEFAULT '0',
   `related_file_id` int(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`docRel_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +156,7 @@ CREATE TABLE `docfields` (
   `show_in_list` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `field_name` (`field_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,6 +165,7 @@ CREATE TABLE `docfields` (
 
 LOCK TABLES `docfields` WRITE;
 /*!40000 ALTER TABLE `docfields` DISABLE KEYS */;
+INSERT INTO `docfields` VALUES (4,45,'A',1,'text','A',40,0,1,1,1),(5,45,'B',2,'picklist','1|2|3|4|',1,0,0,1,1),(6,45,'C',3,'radio','M|F',10,1,1,1,1),(7,45,'D',4,'textarea','Enter your Data here 4',10,0,0,1,1),(11,45,'E',5,'checkbox','Insured',11,0,0,1,1),(12,45,'F',6,'mcheckbox','A|B|C|D|E|F|G',3,0,0,1,1),(14,45,'G',7,'seperator','Some VALUE FOR SEPERATOR',12,0,0,0,1),(16,45,'H',8,'url','BOZZ IT|http://www.bozzit.com',30,0,0,0,1),(17,45,'I',9,'date','',20,0,0,1,1),(19,45,'J',10,'table','ut_entities',40,0,0,1,1);
 /*!40000 ALTER TABLE `docfields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +181,7 @@ CREATE TABLE `docfieldslabel` (
   `field_label` char(80) NOT NULL DEFAULT '',
   `locale` char(80) NOT NULL DEFAULT '',
   KEY `doc_field_id` (`doc_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,6 +190,7 @@ CREATE TABLE `docfieldslabel` (
 
 LOCK TABLES `docfieldslabel` WRITE;
 /*!40000 ALTER TABLE `docfieldslabel` DISABLE KEYS */;
+INSERT INTO `docfieldslabel` VALUES (4,'A','TMP'),(4,'A','English'),(5,'B','TMP'),(5,'B','English'),(6,'C','English'),(6,'C','TMP'),(7,'D','TMP'),(7,'D','English'),(11,'E','TMP'),(11,'E','English'),(12,'F','TMP'),(12,'F','English'),(14,'G','TMP'),(14,'G','English'),(16,'H','TMP'),(16,'H','English'),(17,'I','TMP'),(17,'I','English'),(19,'J','TMP'),(19,'J','English'),(20,'J','English'),(20,'J','TMP'),(21,'J','English'),(21,'J','TMP');
 /*!40000 ALTER TABLE `docfieldslabel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +208,7 @@ CREATE TABLE `docfieldvalues` (
   `field_value` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `docvalue_fileid` (`file_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,7 +231,7 @@ CREATE TABLE `doctype` (
   `doc_type_id` int(4) NOT NULL AUTO_INCREMENT,
   `doc_type_name` char(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`doc_type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +240,7 @@ CREATE TABLE `doctype` (
 
 LOCK TABLES `doctype` WRITE;
 /*!40000 ALTER TABLE `doctype` DISABLE KEYS */;
-INSERT INTO `doctype` VALUES (1,'Default');
+INSERT INTO `doctype` VALUES (1,'Default'),(45,'A');
 /*!40000 ALTER TABLE `doctype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +259,7 @@ CREATE TABLE `ext_dictionary` (
   KEY `idDictionary` (`idDictionary`),
   KEY `tableName` (`tableName`),
   KEY `description` (`description`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +283,7 @@ CREATE TABLE `favorites` (
   `userid` int(4) NOT NULL DEFAULT '0',
   `folder_id` int(4) NOT NULL DEFAULT '1',
   `fav_label` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +309,7 @@ CREATE TABLE `file_checksum` (
   `hash3` text,
   `signature` text,
   PRIMARY KEY (`file_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -332,7 +333,7 @@ CREATE TABLE `filedata` (
   `compressed` int(4) NOT NULL DEFAULT '0',
   `data` longblob,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -358,12 +359,12 @@ CREATE TABLE `files` (
   `f_size` bigint(20) NOT NULL DEFAULT '0',
   `creatorid` int(4) NOT NULL DEFAULT '0',
   `parent` int(4) NOT NULL DEFAULT '0',
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created` datetime DEFAULT NULL,
   `description` text NOT NULL,
   `metadata` text NOT NULL,
   `security` int(4) NOT NULL DEFAULT '0',
   `groupid` int(4) NOT NULL DEFAULT '0',
-  `smodified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `smodified` datetime DEFAULT NULL,
   `checked_out` int(4) NOT NULL DEFAULT '0',
   `major_revision` int(4) NOT NULL DEFAULT '0',
   `minor_revision` int(4) NOT NULL DEFAULT '1',
@@ -375,10 +376,10 @@ CREATE TABLE `files` (
   `approved` int(4) DEFAULT NULL,
   `infected` int(4) DEFAULT '0',
   `expires` datetime DEFAULT NULL,
-  `name_search` varchar(255) NOT NULL,
-  `metadata_search` text NOT NULL,
-  `description_search` text NOT NULL,
-  `filename_search` varchar(255) NOT NULL,
+  `name_search` varchar(255) DEFAULT NULL,
+  `metadata_search` text,
+  `description_search` text,
+  `filename_search` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `files_filetype` (`url`),
   KEY `creatorid` (`creatorid`),
@@ -388,7 +389,7 @@ CREATE TABLE `files` (
   FULLTEXT KEY `filename` (`filename`),
   FULLTEXT KEY `description` (`description`),
   FULLTEXT KEY `metadata` (`metadata`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=208 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -425,7 +426,7 @@ CREATE TABLE `folders` (
   KEY `creatorid` (`creatorid`),
   FULLTEXT KEY `name` (`name`),
   FULLTEXT KEY `description` (`description`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1931 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -449,7 +450,7 @@ CREATE TABLE `groups` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `name` char(30) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -458,9 +459,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (0,'Administrators');
-UPDATE `groups`  set id = '0';
-INSERT INTO `groups` VALUES (1,'Anonymous'),(2,'File Admin'),(3,'Users');
+INSERT INTO `groups` VALUES (0,'Administrators'),(1,'Anonymous'),(2,'File Admin'),(3,'Users');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -481,7 +480,7 @@ CREATE TABLE `html` (
   `body_link` char(15) DEFAULT NULL,
   `body_vlink` char(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -507,7 +506,7 @@ CREATE TABLE `membergroup` (
   `groupadmin` int(4) DEFAULT NULL,
   KEY `userid` (`userid`),
   KEY `groupid` (`groupid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -530,7 +529,7 @@ CREATE TABLE `metakeywords` (
   `keyword_id` int(4) NOT NULL AUTO_INCREMENT,
   `keyword_text` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`keyword_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -553,7 +552,7 @@ CREATE TABLE `mimes` (
   `filetype` char(10) NOT NULL DEFAULT '',
   `mimetype` char(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`filetype`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -562,7 +561,7 @@ CREATE TABLE `mimes` (
 
 LOCK TABLES `mimes` WRITE;
 /*!40000 ALTER TABLE `mimes` DISABLE KEYS */;
-INSERT INTO `mimes` VALUES ('ai','application/postscript'),('aif','audio/x-aiff'),('aifc','audio/x-aiff'),('aiff','audio/x-aiff'),('asc','text/plain'),('au','audio/basic'),('avi','video/x-msvideo'),('bcpio','application/x-bcpio'),('bin','application/octet-stream'),('bmp','image/bmp'),('cdf','application/x-netcdf'),('class','application/octet-stream'),('cpio','application/x-cpio'),('cpt','application/mac-compactpro'),('csh','application/x-csh'),('css','text/css'),('dcr','application/x-director'),('dir','application/x-director'),('dms','application/octet-stream'),('doc','application/msword'),('dvi','application/x-dvi'),('dxr','application/x-director'),('eps','application/postscript'),('etx','text/x-setext'),('exe','application/octet-stream'),('ez','application/andrew-inset'),('gif','image/gif'),('gtar','application/x-gtar'),('hdf','application/x-hdf'),('hqx','application/mac-binhex40'),('htm','text/html'),('html','text/html'),('ice','x-conference/x-cooltalk'),('ief','image/ief'),('iges','model/iges'),('igs','model/iges'),('jpe','image/jpeg'),('jpeg','image/jpeg'),('jpg','image/jpeg'),('js','application/x-javascript'),('kar','audio/midi'),('latex','application/x-latex'),('lha','application/octet-stream'),('lzh','application/octet-stream'),('man','application/x-troff-man'),('me','application/x-troff-me'),('mesh','model/mesh'),('mid','audio/midi'),('midi','audio/midi'),('mif','application/vnd.mif'),('mov','video/quicktime'),('movie','video/x-sgi-movie'),('mp2','audio/mpeg'),('mp3','audio/mpeg'),('mpe','video/mpeg'),('mpeg','video/mpeg'),('mpg','video/mpeg'),('mpga','audio/mpeg'),('ms','application/x-troff-ms'),('msh','model/mesh'),('nc','application/x-netcdf'),('oda','application/oda'),('pbm','image/x-portable-bitmap'),('pdb','chemical/x-pdb'),('pdf','application/pdf'),('pgm','image/x-portable-graymap'),('pgn','application/x-chess-pgn'),('png','image/png'),('pnm','image/x-portable-anymap'),('ppm','image/x-portable-pixmap'),('ppt','application/vnd.ms-powerpoint'),('ps','application/postscript'),('qt','video/quicktime'),('ra','audio/x-realaudio'),('ram','audio/x-pn-realaudio'),('ras','image/x-cmu-raster'),('rgb','image/x-rgb'),('rm','audio/x-pn-realaudio'),('roff','application/x-troff'),('rpm','audio/x-pn-realaudio-plugin'),('rtf','text/rtf'),('rtx','text/richtext'),('sgm','text/sgml'),('sgml','text/sgml'),('sh','application/x-sh'),('shar','application/x-shar'),('silo','model/mesh'),('sit','application/x-stuffit'),('skd','application/x-koan'),('skm','application/x-koan'),('skp','application/x-koan'),('skt','application/x-koan'),('smi','application/smil'),('smil','application/smil'),('snd','audio/basic'),('spl','application/x-futuresplash'),('src','application/x-wais-source'),('sv4cpio','application/x-sv4cpio'),('sv4crc','application/x-sv4crc'),('swf','application/x-shockwave-flash'),('t','application/x-troff'),('tar','application/x-tar'),('tcl','application/x-tcl'),('tex','application/x-tex'),('texi','application/x-texinfo'),('texinfo','application/x-texinfo'),('tif','image/tiff'),('tiff','image/tiff'),('tr','application/x-troff'),('tsv','text/tab-separated-values'),('txt','text/plain'),('ustar','application/x-ustar'),('vcd','application/x-cdlink'),('vrml','model/vrml'),('wav','audio/x-wav'),('wrl','model/vrml'),('xbm','image/x-xbitmap'),('xls','application/vnd.ms-excel'),('xml','text/xml'),('xpm','image/x-xpixmap'),('xwd','image/x-xwindowdump'),('xyz','chemical/x-pdb'),('zip','application/zip'),('gz','application/x-gzip'),('tgz','application/x-gzip'),('sxw','application/vnd.sun.xml.writer'),('stw','application/vnd.sun.xml.writer.template'),('sxg','application/vnd.sun.xml.writer.global'),('sxc','application/vnd.sun.xml.calc'),('stc','application/vnd.sun.xml.calc.template'),('sxi','application/vnd.sun.xml.impress'),('sti','application/vnd.sun.xml.impress.template'),('sxd','application/vnd.sun.xml.draw'),('std','application/vnd.sun.xml.draw.template'),('sxm','application/vnd.sun.xml.math'),('wpd','application/wordperfect'),('pptx','application/vnd.openxmlformats-officedocument.presentationml.presentation'),('xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'),('docx','application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+INSERT INTO `mimes` VALUES ('ai','application/postscript'),('aif','audio/x-aiff'),('aifc','audio/x-aiff'),('aiff','audio/x-aiff'),('asc','text/plain'),('au','audio/basic'),('avi','video/x-msvideo'),('bcpio','application/x-bcpio'),('bin','application/octet-stream'),('bmp','image/bmp'),('cdf','application/x-netcdf'),('class','application/octet-stream'),('cpio','application/x-cpio'),('cpt','application/mac-compactpro'),('csh','application/x-csh'),('css','text/css'),('dcr','application/x-director'),('dir','application/x-director'),('dms','application/octet-stream'),('doc','application/msword'),('docx','application/vnd.openxmlformats-officedocument.wordprocessingml.document'),('dvi','application/x-dvi'),('dxr','application/x-director'),('eps','application/postscript'),('etx','text/x-setext'),('exe','application/octet-stream'),('ez','application/andrew-inset'),('gif','image/gif'),('gtar','application/x-gtar'),('gz','application/x-gzip'),('hdf','application/x-hdf'),('hqx','application/mac-binhex40'),('htm','text/html'),('html','text/html'),('ice','x-conference/x-cooltalk'),('ief','image/ief'),('iges','model/iges'),('igs','model/iges'),('jpe','image/jpeg'),('jpeg','image/jpeg'),('jpg','image/jpeg'),('js','application/x-javascript'),('kar','audio/midi'),('latex','application/x-latex'),('lha','application/octet-stream'),('lzh','application/octet-stream'),('man','application/x-troff-man'),('me','application/x-troff-me'),('mesh','model/mesh'),('mid','audio/midi'),('midi','audio/midi'),('mif','application/vnd.mif'),('mov','video/quicktime'),('movie','video/x-sgi-movie'),('mp2','audio/mpeg'),('mp3','audio/mpeg'),('mpe','video/mpeg'),('mpeg','video/mpeg'),('mpg','video/mpeg'),('mpga','audio/mpeg'),('ms','application/x-troff-ms'),('msh','model/mesh'),('nc','application/x-netcdf'),('oda','application/oda'),('pbm','image/x-portable-bitmap'),('pdb','chemical/x-pdb'),('pdf','application/pdf'),('pgm','image/x-portable-graymap'),('pgn','application/x-chess-pgn'),('png','image/png'),('pnm','image/x-portable-anymap'),('ppm','image/x-portable-pixmap'),('ppt','application/vnd.ms-powerpoint'),('pptx','application/vnd.openxmlformats-officedocument.presentationml.presentation'),('ps','application/postscript'),('qt','video/quicktime'),('ra','audio/x-realaudio'),('ram','audio/x-pn-realaudio'),('ras','image/x-cmu-raster'),('rgb','image/x-rgb'),('rm','audio/x-pn-realaudio'),('roff','application/x-troff'),('rpm','audio/x-pn-realaudio-plugin'),('rtf','text/rtf'),('rtx','text/richtext'),('sgm','text/sgml'),('sgml','text/sgml'),('sh','application/x-sh'),('shar','application/x-shar'),('silo','model/mesh'),('sit','application/x-stuffit'),('skd','application/x-koan'),('skm','application/x-koan'),('skp','application/x-koan'),('skt','application/x-koan'),('smi','application/smil'),('smil','application/smil'),('snd','audio/basic'),('spl','application/x-futuresplash'),('src','application/x-wais-source'),('stc','application/vnd.sun.xml.calc.template'),('std','application/vnd.sun.xml.draw.template'),('sti','application/vnd.sun.xml.impress.template'),('stw','application/vnd.sun.xml.writer.template'),('sv4cpio','application/x-sv4cpio'),('sv4crc','application/x-sv4crc'),('swf','application/x-shockwave-flash'),('sxc','application/vnd.sun.xml.calc'),('sxd','application/vnd.sun.xml.draw'),('sxg','application/vnd.sun.xml.writer.global'),('sxi','application/vnd.sun.xml.impress'),('sxm','application/vnd.sun.xml.math'),('sxw','application/vnd.sun.xml.writer'),('t','application/x-troff'),('tar','application/x-tar'),('tcl','application/x-tcl'),('tex','application/x-tex'),('texi','application/x-texinfo'),('texinfo','application/x-texinfo'),('tgz','application/x-gzip'),('tif','image/tiff'),('tiff','image/tiff'),('tr','application/x-troff'),('tsv','text/tab-separated-values'),('txt','text/plain'),('ustar','application/x-ustar'),('vcd','application/x-cdlink'),('vrml','model/vrml'),('wav','audio/x-wav'),('wpd','application/wordperfect'),('wrl','model/vrml'),('xbm','image/x-xbitmap'),('xls','application/vnd.ms-excel'),('xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'),('xml','text/xml'),('xpm','image/x-xpixmap'),('xwd','image/x-xwindowdump'),('xyz','chemical/x-pdb'),('zip','application/zip');
 /*!40000 ALTER TABLE `mimes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -580,7 +579,7 @@ CREATE TABLE `monitored_file` (
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`),
   KEY `fid` (`fid`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -606,7 +605,7 @@ CREATE TABLE `monitored_folder` (
   PRIMARY KEY (`id`),
   KEY `userid` (`userid`),
   KEY `fid` (`fid`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -629,11 +628,11 @@ CREATE TABLE `news` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `gid` int(4) NOT NULL DEFAULT '0',
   `news_title` varchar(255) NOT NULL DEFAULT '',
-  `news_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `news_date` datetime DEFAULT NULL,
   `news` text NOT NULL,
-  `news_end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `news_end_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -642,6 +641,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
+INSERT INTO `news` VALUES (20,-1,'XTPL Created news','2011-05-18 08:51:02','Only Edit Left','2011-05-31 10:39:00');
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -662,7 +662,7 @@ CREATE TABLE `other_userprefs` (
   `user_note` text NOT NULL,
   PRIMARY KEY (`upref_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -690,7 +690,7 @@ CREATE TABLE `owl_log` (
   `details` text,
   `ip` varchar(16) DEFAULT NULL,
   `agent` varchar(255) DEFAULT NULL,
-  `logdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `logdate` datetime DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
   `filesize` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -698,7 +698,7 @@ CREATE TABLE `owl_log` (
   KEY `parent` (`parent`),
   KEY `action` (`action`),
   KEY `logdate` (`logdate`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2670 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -723,7 +723,7 @@ CREATE TABLE `peerreview` (
   `status` int(4) NOT NULL DEFAULT '0',
   KEY `reviewer_id` (`reviewer_id`),
   KEY `file_id` (`file_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -937,7 +937,7 @@ CREATE TABLE `prefs` (
   `dl_notification_list` varchar(512) NOT NULL,
   `dl_len` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -946,8 +946,7 @@ CREATE TABLE `prefs` (
 
 LOCK TABLES `prefs` WRITE;
 /*!40000 ALTER TABLE `prefs` DISABLE KEYS */;
-INSERT INTO `prefs` (`id`, `email_from`, `email_fromname`, `email_replyto`, `email_server`, `email_subject`, `lookathd`, `lookathddel`, `def_file_security`, `def_file_group_owner`, `def_file_owner`, `def_file_title`, `def_file_meta`, `def_fold_security`, `def_fold_group_owner`, `def_fold_owner`, `max_filesize`, `tmpdir`, `timeout`, `expand`, `version_control`, `restrict_view`, `hide_backup`, `dbdump_path`, `gzip_path`, `tar_path`, `unzip_path`, `pod2html_path`, `pdftotext_path`, `wordtotext_path`, `ppttotext_path`, `file_perm`, `folder_perm`, `logging`, `log_file`, `log_login`, `log_rec_per_page`, `rec_per_page`, `self_reg`, `self_reg_quota`, `self_reg_notify`, `self_reg_attachfile`, `self_reg_disabled`, `self_reg_noprefacces`, `self_reg_maxsessions`, `self_reg_group`, `anon_ro`, `anon_user`, `file_admin_group`, `forgot_pass`, `collect_trash`, `trash_can_location`, `allow_popup`, `allow_custpopup`, `status_bar_location`, `remember_me`, `cookie_timeout`, `use_smtp`, `use_smtp_auth`, `smtp_passwd`, `search_bar`, `bulk_buttons`, `action_buttons`, `folder_tools`, `pref_bar`, `smtp_auth_login`, `expand_disp_status`, `expand_disp_doc_num`, `expand_disp_doc_type`, `expand_disp_title`, `expand_disp_version`, `expand_disp_file`, `expand_disp_size`, `expand_disp_posted`, `expand_disp_modified`, `expand_disp_action`, `expand_disp_held`, `collapse_disp_status`, `collapse_disp_doc_num`, `collapse_disp_doc_type`, `collapse_disp_title`, `collapse_disp_version`, `collapse_disp_file`, `collapse_disp_size`, `collapse_disp_posted`, `collapse_disp_modified`, `collapse_disp_action`, `collapse_disp_held`, `expand_search_disp_score`, `expand_search_disp_folder_path`, `expand_search_disp_doc_type`, `expand_search_disp_file`, `expand_search_disp_size`, `expand_search_disp_posted`, `expand_search_disp_modified`, `expand_search_disp_action`, `collapse_search_disp_score`, `colps_search_disp_fld_path`, `collapse_search_disp_doc_type`, `collapse_search_disp_file`, `collapse_search_disp_size`, `collapse_search_disp_posted`, `collapse_search_disp_modified`, `collapse_search_disp_action`, `hide_folder_doc_count`, `old_action_icons`, `search_result_folders`, `restore_file_prefix`, `major_revision`, `minor_revision`, `doc_id_prefix`, `doc_id_num_digits`, `view_doc_in_new_window`, `admin_login_to_browse_page`, `save_keywords_to_db`, `self_reg_homedir`, `self_reg_firstdir`, `virus_path`, `peer_review`, `peer_opt`, `folder_size`, `download_folder_zip`, `display_password_override`, `thumb_disp_status`, `thumb_disp_doc_num`, `thumb_disp_image_info`, `thumb_disp_version`, `thumb_disp_size`, `thumb_disp_posted`, `thumb_disp_modified`, `thumb_disp_action`, `thumb_disp_held`, `thumbnails_tool_path`, `thumbnails_video_tool_path`, `thumbnails_video_tool_opt`, `thumbnails`, `thumbnails_small_width`, `thumbnails_med_width`, `thumbnails_large_width`, `thumbnail_view_columns`, `rtftotext_path`, `min_pass_length`, `min_username_length`, `min_pass_numeric`, `min_pass_special`, `enable_lock_account`, `lock_account_bad_password`, `track_user_passwords`, `change_password_every`, `folderdescreq`, `show_user_info`, `filedescreq`, `collapse_search_disp_doc_num`, `expand_search_disp_doc_num`, `colps_search_disp_doc_fields`, `expand_search_disp_doc_fields`, `collapse_disp_doc_fields`, `expand_disp_doc_fields`, `self_create_homedir`, `self_captcha`, `info_panel_wide`, `track_favorites`, `expand_disp_updated`, `collapse_disp_updated`, `expand_search_disp_updated`, `collapse_search_disp_updated`, `thumb_disp_updated`, `default_revision`, `pdf_watermark_path`, `pdf_custom_watermark_filepath`, `pdf_watermarks`, `pdf_pdftk_tool_greater_than_1_40`, `machine_time_zone`, `show_folder_desc_as_popup`, `make_file_indexing_user_selectable`, `turn_file_index_off`, `use_wysiwyg_for_textarea`, `force_ssl`, `smtp_ssl`, `smtp_port`, `leave_old_file_accessible`, `auto_checkout_checking`, `different_filename_update`, `owl_maintenance_mode`, `smtp_max_size`, `motd`, `docRel`, `dl_count`, `dl_block`, `dl_count_trigger`, `dl_size_trigger`, `dl_notification_list`, `dl_len`) VALUES
-(1, 'dms-system@exmaple.com', 'DMS', 'dms-admin@example.com', 'localhost', '[DMS] : AUTOMATED MAIL', 'true', 0, 0, 0, 1, '', '', 0, 0, 1, 0, '/tmp', 9002, 1, 1, 0, 1, '/usr/bin/mysqldump', '/bin/gzip', '/bin/tar', '/usr/bin/unzip', '/usr/bin/perl', '/usr/bin/pdftotext', '/usr/bin/antiword', '/usr/bin/catppt', 0, 0, 0, 1, 1, 25, 0, 0, 0, 0, 0, 0, 0, -1, 0, 2, 2, 2, 1, 0, '/var/www/html/doxbox/TrashCan', 1, 1, 1, 0, 10, 0, 0, '', 2, 1, 1, 1, 1, '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 'Restored-', 1, 0, '3', 3, 1, 0, 1, 1, 1, '', 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, '/usr/bin/convert', '/usr/local/bin/mplayer', '-vo png -ss 0:05 -frames 2 -nosound -really-quiet', 1, 100, 200, 400, 4, '/usr/bin/unrtf', 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 2, '/usr/bin/pdftk', '', 1, 1, -5, 1, 0, 0, 0, 0, 0, '25', 0, 1, 1, 0, '5242880', 'Welcome to Doxbox 1.12', 1, 0, 1, 25, 1024, 'security@example.net', 20);
+INSERT INTO `prefs` VALUES (1,'owl@yourdomain.com','OWL','owl@yourdomain.com','localhost','[OWL] : AUTOMATED MAIL','true',1,0,0,1,'','',0,0,1,0,'/tmp',9000,1,1,0,1,'/usr/bin/mysqldump','/bin/gzip','/bin/tar','/usr/bin/unzip','/usr/bin/perl','/usr/bin/pdftotext','/usr/bin/antiword','/usr/bin/catppt',0,0,1,1,1,25,0,1,0,0,0,0,0,-1,0,2,2,2,1,0,'/u01/sites/sandbox/htdocs/bozz/doxbox-dms/TrashCan',1,1,1,1,10,0,0,'',1,1,1,1,1,'',1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,1,0,0,1,'Restored-',1,0,'3',3,1,0,1,1,1,'',1,1,1,0,0,1,1,1,1,1,1,1,1,1,'/usr/bin/convert','/usr/local/bin/mplayer','-vo png -ss 0:05 -frames 2 -nosound -really-quiet',1,100,200,400,4,'/usr/bin/unrtf',0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,1,2,'/usr/bin/pdftk','',1,1,-5,0,0,0,0,0,0,'25',0,1,1,0,'5242880','Welcome to BETA 2',0,0,0,0,0,'',0);
 /*!40000 ALTER TABLE `prefs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -964,7 +963,7 @@ CREATE TABLE `searchidx` (
   KEY `searchidx_wordid` (`wordid`),
   KEY `searchidx_fileid` (`owlfileid`),
   KEY `searchidx_fidwordid` (`owlfileid`,`wordid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -988,7 +987,7 @@ CREATE TABLE `trackoldpasswd` (
   `userid` int(4) NOT NULL DEFAULT '0',
   `password` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -998,6 +997,32 @@ CREATE TABLE `trackoldpasswd` (
 LOCK TABLES `trackoldpasswd` WRITE;
 /*!40000 ALTER TABLE `trackoldpasswd` DISABLE KEYS */;
 /*!40000 ALTER TABLE `trackoldpasswd` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_downloads`
+--
+
+DROP TABLE IF EXISTS `user_downloads`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_downloads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `file_id` int(11) NOT NULL,
+  `dnld_time` datetime DEFAULT NULL,
+  `dnld_size` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_downloads`
+--
+
+LOCK TABLES `user_downloads` WRITE;
+/*!40000 ALTER TABLE `user_downloads` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_downloads` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1022,18 +1047,18 @@ CREATE TABLE `users` (
   `noprefaccess` int(4) DEFAULT '0',
   `language` varchar(15) DEFAULT NULL,
   `maxsessions` int(4) DEFAULT '0',
-  `lastlogin` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `curlogin` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `lastlogin` datetime DEFAULT NULL,
+  `curlogin` datetime DEFAULT NULL,
   `lastnews` int(4) NOT NULL DEFAULT '0',
   `newsadmin` int(4) NOT NULL DEFAULT '0',
   `comment_notify` int(4) NOT NULL DEFAULT '0',
-  `buttonstyle` varchar(255) NOT NULL DEFAULT 'Roma 2011',
+  `buttonstyle` varchar(255) DEFAULT NULL,
   `homedir` int(4) DEFAULT NULL,
   `firstdir` int(4) DEFAULT NULL,
   `email_tool` int(4) DEFAULT NULL,
   `change_paswd_at_login` int(4) DEFAULT NULL,
   `login_failed` int(4) DEFAULT NULL,
-  `passwd_last_changed` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `passwd_last_changed` datetime DEFAULT NULL,
   `expire_account` varchar(80) DEFAULT NULL,
   `user_auth` char(2) DEFAULT NULL,
   `logintonewrec` int(4) DEFAULT NULL,
@@ -1051,7 +1076,7 @@ CREATE TABLE `users` (
   `user_access` int(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `groupid` (`groupid`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1060,11 +1085,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'0','admin','Administrator','21232f297a57a5a743894a0e4a801fc3',0,96791110,'dms-admin@example.com',0,0,0,0,'English',0,'2013-03-20 08:32:03','2013-03-20 09:31:30',8,0,1,'Roma 2011',1,1,1,0,0,'2011-07-04 09:29:08','','0',0,0,'-5',0,0,0,1,0,1,0,0,0,2),(2,'1','guest','Anonymous','21232f297a57a5a743894a0e4a801fc3',0,0,'',0,0,1,0,'English',19,'2004-11-10 05:02:42','2005-10-23 08:22:16',0,0,0,'Roma 2011',1,1,0,0,0,'2005-10-23 08:22:16','','0',0,0,'-12',0,0,0,0,0,1,2,0,0,0);
+INSERT INTO `users` VALUES (1,'0','admin','Administrator','21232f297a57a5a743894a0e4a801fc3',0,15681406,'bozz',0,0,0,0,'English',0,'2018-09-27 12:30:14','2018-09-27 12:33:25',8,0,1,'Roma 2012',1,1,1,0,0,'2011-07-04 09:29:08','','0',0,0,'-5',0,0,0,1,0,1,0,0,0,1),(2,'1','guest','Anonymous','21232f297a57a5a743894a0e4a801fc3',0,0,'',0,0,1,0,'English',19,'2004-11-10 05:02:42','2005-10-23 08:22:16',0,0,0,'Roma 2012',1,1,0,0,0,'2005-10-23 08:22:16','','0',0,0,'-12',0,0,0,0,0,1,2,0,0,1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `ut_entities`
@@ -1078,7 +1101,7 @@ CREATE TABLE `ut_entities` (
   `descr` varchar(255) NOT NULL DEFAULT '',
   `descr2` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1087,7 +1110,7 @@ CREATE TABLE `ut_entities` (
 
 LOCK TABLES `ut_entities` WRITE;
 /*!40000 ALTER TABLE `ut_entities` DISABLE KEYS */;
-INSERT INTO `ut_entities` VALUES (1,'Chevy Impala',''),(2,'Eagle Talon TSI',''),(3,'Corvette',''),(4,'Mazaratti',''),(13,'Ford Edge',''),(12,'BMW M5','');
+INSERT INTO `ut_entities` VALUES (1,'Chevy Impala',''),(2,'Eagle Talon TSI',''),(3,'Corvette',''),(4,'Mazaratti',''),(12,'BMW M5',''),(13,'Ford Edge','');
 /*!40000 ALTER TABLE `ut_entities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1100,10 +1123,10 @@ DROP TABLE IF EXISTS `wordidx`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `wordidx` (
   `wordid` int(4) NOT NULL DEFAULT '0',
-  `word` char(128) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `word` char(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`wordid`),
   UNIQUE KEY `word` (`word`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1114,22 +1137,7 @@ LOCK TABLES `wordidx` WRITE;
 /*!40000 ALTER TABLE `wordidx` DISABLE KEYS */;
 /*!40000 ALTER TABLE `wordidx` ENABLE KEYS */;
 UNLOCK TABLES;
---
--- Table structure for table `user_downloads`
---
 
-DROP TABLE IF EXISTS `user_downloads`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_downloads` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `file_id` int(11) NOT NULL,
-  `dnld_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `dnld_size` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1140,4 +1148,4 @@ CREATE TABLE `user_downloads` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-07-21 11:55:43
+-- Dump completed on 2018-09-27 14:03:41

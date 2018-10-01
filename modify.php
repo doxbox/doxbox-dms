@@ -88,8 +88,7 @@ $urlArgs['curview']     = $curview;
  * has session.upload_progress enabled to display File
  * Upload  Progress
  */
-
-if (version_compare(phpversion(), "5.4.0", ">="))
+if (version_compare(phpversion(), "7.0.0", ">="))
 {
    // Only need the progress bar for files and Zip File Upload
    if (ini_get('session.upload_progress.enabled') == 1 and $type == '' and !strpos(php_sapi_name(), 'fcgi'))
@@ -786,7 +785,7 @@ if ($default->use_file_expiry == 1)
 ";
                       break;
                       case "mcheckbox":
-                         $aMultipleCheckBox = split("\|",  $sql->f("field_values"));
+                         $aMultipleCheckBox = preg_split("/\|/",  $sql->f("field_values"));
                          $i = 0;
                          $sDoctypeValidationScript .= "
   if(typeof(formToValidate." . $sql->f("field_name") ."_0) !== 'undefined')
@@ -979,7 +978,10 @@ if ($action == "file_modify")
       $urlArgs2['filename']  = $sql->f("filename");
 
       fPrintNavBarXTPL($parent, $owl_lang->modifying . ":&nbsp;", $id);
-      $xtpl->assign('FORM', "<form name=\"form_upload\" id=\"form_upload\" enctype=\"multipart/form-data\" action=\"dbmodify.php\" method=\"post\" onsubmit=\"return isFormOK(this); return false;\">\n");
+
+      //$xtpl->assign('FORM', "<form name=\"form_upload\" id=\"form_upload\" enctype=\"multipart/form-data\" action=\"dbmodify.php\" method=\"post\" onsubmit=\"return isFormOK(this); return false;\">\n");
+
+      $xtpl->assign('FORM', "<form action=\"dbmodify.php\" method=\"post\" onsubmit=\"return isFormOK(this); return false;\">\n");
 
       if ($sql->f("url") == 1)
       {
@@ -1874,4 +1876,3 @@ if ($action == "file_email")
       printError($owl_lang->err_noemail);
    } 
 } 
-?>
